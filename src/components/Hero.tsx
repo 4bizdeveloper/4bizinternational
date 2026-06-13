@@ -4,16 +4,20 @@ import React, { useState, useEffect } from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
 
 export default function Hero() {
+  // ── EASILY CUSTOMIZABLE VISIBILITY CONFIGURATION ──
+  // Switch these to false to hide either section instantly without breaking layout flows
+  const showCenterText = true;
+  const showScrollDown = true;
+
   const [isScrolled, setIsScrolled] = useState(false);
   
-  // Custom interactive classes with 100% full opacity for a bright, shiny white appearance
-  const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_1px_rgba(255,255,255,0.6)]';
-  
-  // Standardized sizing classes applied uniformly to both React Component icons and Raw SVGs
+  // High-performance hardware-accelerated interactive utility styles
+  const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
   const uniformIconSize = 'w-[20px] h-[20px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300';
 
   useEffect(() => {
     const handleScroll = () => {
+      // Small threshold validation avoids scroll layout thrashing
       if (window.scrollY > 20) {
         setIsScrolled(true);
       } else {
@@ -21,12 +25,11 @@ export default function Hero() {
       }
     };
 
-    // Passive listener ensures GTmetrix/Lighthouse maximum scrolling performance (No JBH/FID blocking)
+    // Passive option maximizes GTmetrix / PageSpeed scrolling thread execution metrics
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Reordered array to match the exact sequence from the screenshot (Instagram -> Facebook -> X -> LinkedIn)
   const socials = [
     {
       href: 'https://www.instagram.com/4biz_ae',
@@ -53,68 +56,56 @@ export default function Hero() {
       href: 'https://www.linkedin.com/company/4biz-international/',
       label: 'LinkedIn',
       isComponent: false,
-      path: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z',
+      path: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z',
       target: '_blank',
     },
   ];
 
   return (
     <>
-      {/* Complete hardware-accelerated animations optimizing Paint/Layout cycles for GTmetrix performance */}
       <style jsx global>{`
         @keyframes dynamicWheel {
           0% { transform: translateY(0) scaleY(1); opacity: 0.3; }
-          20% { transform: translateY(3px) scaleY(1.4); opacity: 1; filter: drop-shadow(0 0 8px rgba(255,255,255,0.8)); }
-          60% { transform: translateY(18px) scaleY(0.7); opacity: 0; }
+          20% { transform: translateY(4px) scaleY(1.3); opacity: 1; filter: drop-shadow(0 0 6px rgba(255,255,255,0.8)); }
+          60% { transform: translateY(16px) scaleY(0.8); opacity: 0; }
           100% { transform: translateY(0) scaleY(1); opacity: 0.3; }
         }
         @keyframes microPulse {
           0%, 100% { 
-            border-color: rgba(255,255,255,0.35); 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.8), inset 0 0 0px rgba(255,255,255,0);
+            border-color: rgba(255,255,255,0.3); 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.8);
             transform: scale(1);
           }
           50% { 
-            border-color: rgba(255,255,255,0.7); 
-            box-shadow: 0 0 25px rgba(255,255,255,0.15), 0 4px 25px rgba(0,0,0,0.9), inset 0 0 4px rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.6); 
+            box-shadow: 0 0 20px rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.9);
             transform: scale(1.02);
           }
         }
         @keyframes subtleTextPulse {
-          0%, 100% { opacity: 0.65; transform: scale(1); }
-          50% { opacity: 0.95; transform: scale(1.02); }
+          0%, 100% { opacity: 0.6; transform: scale(1); }
+          50% { opacity: 0.9; transform: scale(1.01); }
         }
       `}</style>
 
       <section
-        className="relative h-svh min-h-[480px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#020406]"
-        aria-label="Introduction Summary"
+        className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
+        aria-label="Hero Introduction"
       >
-        {/* ── BACKGROUND CONTAINER ── */}
-        <div
-          /* Removed inner responsive padding (p-6, p-10, etc.) to allow the background content to spread seamlessly to the very side edges of the display screen */
-          className="absolute inset-0 z-0 select-none pointer-events-none flex items-center justify-center bg-[#020406]"
-          aria-hidden="true"
-        >
-          {/* Visual Layer wrapper creating an enhanced feather-fade edge blend so image borders vanish */}
-          <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <picture className="w-full h-full flex items-center justify-center">
-              {/* Desktop Breakpoint: >= 1024px (lg variants) */}
-              <source 
-                media="(min-width: 1024px)" 
-                srcSet="/hero-desktop-1.png" 
-                width="1920"
-                height="900"
-              />
-              {/* Tablet Breakpoint: >= 640px and < 1024px (sm variants) */}
-              <source 
-                media="(min-width: 640px)" 
-                srcSet="/hero-tablet-1.png" 
-                width="1024"
-                height="768"
-              />
-              {/* Fallback/Mobile Default: < 640px */}
+        {/* ── PERFORMANCE BACKGROUND MATRIX ── */}
+        <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
+          <div 
+            className="w-full h-full relative"
+            style={{
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, transparent 100%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%)',
+              maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, transparent 100%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%)',
+              WebkitMaskComposite: 'source-in',
+              maskComposite: 'intersect'
+            }}
+          >
+            <picture className="w-full h-full block">
+              <source media="(min-width: 1200px)" srcSet="/hero-desktop-1.png" width="1920" height="900" />
+              <source media="(min-width: 640px)" srcSet="/hero-tablet-1.png" width="1024" height="768" />
               <img
                 src="/hero-mobile-1.png"
                 alt=""
@@ -122,34 +113,25 @@ export default function Hero() {
                 height="844"
                 fetchPriority="high"
                 decoding="async"
-                /* Modified: Changed object-contain to object-cover with object-bottom positioning.
-                   Combined with a slight upward translate shift, this guarantees blank borders are filled seamlessly on all aspect ratios while preserving every detail of your main graphics. */
-                className="w-full h-full object-cover object-bottom scale-100 -translate-y-[1.5%] brightness-110 contrast-120 saturate-130"
-                style={{ 
-                  willChange: 'transform, opacity',
-                  aspectRatio: 'inherit'
-                }}
+                className="w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-300"
+                style={{ willChange: 'transform, opacity' }}
               />
             </picture>
-
-            {/* Vignette overlays remain soft and non-obstructive to ensure no clipping over the laptop deck background area */}
-            <div className="absolute inset-0 pointer-events-none mix-blend-normal shadow-[inset_0_10px_40px_10px_#020406,inset_0_-10px_30px_5px_#020406] sm:shadow-[inset_0_20px_60px_20px_#020406,inset_0_-15px_40px_10px_#020406] lg:shadow-[inset_0_30px_80px_30px_#020406,inset_0_-20px_50px_15px_#020406]" />
-            <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-20 bg-gradient-to-t from-transparent via-[#00aaff]/10 to-transparent" />
-            <div className="absolute inset-0 pointer-events-none mix-blend-multiply opacity-40 shadow-[inset_0_0_30px_15px_#020406]" />
+            <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6" />
           </div>
         </div>
 
-        {/* ── SOCIAL SIDEBAR ── */}
+        {/* ── ACCESSIBLE FIXED NAVIGATION SIDEBAR ── */}
         <nav
-          aria-label="Social media links"
+          aria-label="Social Profile Navigation"
           className={`
             absolute top-1/2 -translate-y-1/2 z-40
             flex flex-col items-center justify-center
-            left-6 gap-[18px]
-            sm:left-8 sm:gap-5
-            lg:left-10 lg:gap-[22px]
+            left-4 gap-5
+            sm:left-6 sm:gap-[22px]
+            lg:left-8
             transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)
-            ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-4' : 'opacity-100 pointer-events-auto translate-x-0'}
+            ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-3' : 'opacity-100 pointer-events-auto translate-x-0'}
           `}
           style={{ willChange: 'transform, opacity' }}
         >
@@ -165,12 +147,7 @@ export default function Hero() {
               {social.isComponent ? (
                 social.component
               ) : (
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="#FFFFFF"
-                  aria-hidden="true"
-                  className={uniformIconSize}
-                >
+                <svg viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true" className={uniformIconSize}>
                   <path d={social.path} />
                 </svg>
               )}
@@ -178,67 +155,95 @@ export default function Hero() {
           ))}
         </nav>
 
-        {/* ── CENTRE CONTENT ── */}
-        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-10 sm:px-16 z-30 pt-4 sm:pt-10 min-h-0">
-          <div className="w-full flex flex-col items-center gap-1 sm:gap-3 lg:gap-4" />
+        {/* ── FLEX CENTER CONTAINER (GUARANTEES STRUCTURAL INDEPENDENCE) ── */}
+        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-6 sm:px-16 z-30 pt-12 pb-6 min-h-0">
+          <div 
+            className={`
+              w-full flex flex-col items-center gap-1.5 sm:gap-2.5 md:gap-3 pointer-events-none transition-all duration-500
+              ${showCenterText ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}
+            `}
+            style={{ willChange: 'transform, opacity' }}
+          >
+            {/* Semantic wrapper allows crisp viewport target resizing without expanding text rows over edge nodes */}
+            <div className="w-full max-w-[270px] sm:max-w-[520px] md:max-w-[600px] lg:max-w-[740px] flex flex-col items-center gap-1 sm:gap-2">
+              <h1 
+                className="text-[1.25rem] sm:text-[2.3rem] md:text-[2.9rem] lg:text-[3.6rem] font-black uppercase tracking-[0.05em] text-white leading-none font-sans"
+                style={{
+                  textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 25px rgba(0,170,255,0.2)',
+                  WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
+                }}
+              >
+                4BIZ INTERNATIONAL
+              </h1>
+
+              <h2 
+                className="text-[0.7rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.85rem] font-extrabold uppercase tracking-[0.24em] text-[#cbd5e1] leading-none font-sans pl-[0.24em]"
+                style={{
+                  textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 6px 15px rgba(0,0,0,0.85)',
+                }}
+              >
+                IMPACTING INFINITE
+              </h2>
+            </div>
+          </div>
         </div>
 
-        {/* ── SCROLL SIGNAL ── */}
+        {/* ── SCROLL DETECTOR CONTAINER (STAYS ANCHORED REGARDLESS OF HIDDEN CONTROLS) ── */}
         <div
           className={`
-            relative w-full flex flex-col items-center justify-center pb-[3vh] z-50 pointer-events-none shrink-0
-            transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)
-            ${isScrolled ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}
+            relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500
+            ${isScrolled ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}
           `}
           style={{ willChange: 'transform, opacity' }}
           aria-hidden="true"
         >
-          <div className="flex flex-col items-center justify-center gap-y-3">
-            {/* Mouse Body Element */}
-            <div
-              style={{
-                position: 'relative',
-                width: '26px',
-                height: '44px',
-                borderRadius: '15px',
-                border: '2px solid rgba(255,255,255,0.4)',
-                background: 'rgba(2, 4, 6, 0.65)',
-                backdropFilter: 'blur(16px)',
-                WebkitBackdropFilter: 'blur(16px)',
-                display: 'flex',
-                alignItems: 'flex-start',
-                justifyContent: 'center',
-                paddingTop: '7px',
-                animation: 'microPulse 3.5s infinite ease-in-out',
-                willChange: 'transform, border-color, box-shadow',
-              }}
-            >
-              {/* Scrolling Track Dot */}
-              <span
+          <div 
+            className={`transition-all duration-500 ${showScrollDown ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+            style={{ willChange: 'transform, opacity' }}
+          >
+            <div className="flex flex-col items-center justify-center gap-y-2.5">
+              <div
                 style={{
-                  display: 'block',
-                  width: '3px',
-                  height: '9px',
-                  borderRadius: '9999px',
-                  background: '#ffffff',
-                  boxShadow: '0 0 10px #fff, 0 0 3px #fff',
-                  animation: 'dynamicWheel 2s infinite cubic-bezier(0.25, 1, 0.5, 1)',
-                  willChange: 'transform, opacity',
+                  position: 'relative',
+                  width: '24px',
+                  height: '40px',
+                  borderRadius: '12px',
+                  border: '2px solid rgba(255,255,255,0.4)',
+                  background: 'rgba(1, 3, 5, 0.6)',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  justifyContent: 'center',
+                  paddingTop: '6px',
+                  animation: 'microPulse 3s infinite ease-in-out',
+                  willChange: 'transform, border-color, box-shadow',
                 }}
-              />
-            </div>
+                className="backdrop-blur-sm"
+              >
+                <span
+                  style={{
+                    display: 'block',
+                    width: '3px',
+                    height: '8px',
+                    borderRadius: '9999px',
+                    background: '#ffffff',
+                    boxShadow: '0 0 8px #fff',
+                    animation: 'dynamicWheel 1.8s infinite cubic-bezier(0.25, 1, 0.5, 1)',
+                    willChange: 'transform, opacity',
+                  }}
+                />
+              </div>
 
-            {/* Scrolling Subtext Typography */}
-            <span
-              className="text-[0.55rem] sm:text-[0.65rem] font-black tracking-[0.55em] uppercase text-white pl-[0.55em]"
-              style={{ 
-                textShadow: '0 2px 8px #000, 0 1px 3px rgba(0,0,0,0.9)',
-                animation: 'subtleTextPulse 3.5s infinite ease-in-out',
-                willChange: 'transform, opacity'
-              }}
-            >
-              scroll down
-            </span>
+              <span
+                className="text-[0.52rem] sm:text-[0.6rem] font-black tracking-[0.5em] uppercase text-white pl-[0.5/em]"
+                style={{ 
+                  textShadow: '0 2px 6px #000',
+                  animation: 'subtleTextPulse 3s infinite ease-in-out',
+                  willChange: 'transform, opacity'
+                }}
+              >
+                scroll down
+              </span>
+            </div>
           </div>
         </div>
       </section>
