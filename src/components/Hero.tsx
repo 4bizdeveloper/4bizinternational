@@ -113,7 +113,8 @@ export default function Hero() {
                 height="844"
                 fetchPriority="high"
                 decoding="async"
-                className="w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-300"
+                /* CHANGED: Changed object-center to object-[center_bottom] on mobile, returning to center on sm screens */
+                className="w-full h-full object-cover object-[center_bottom] sm:object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-300"
                 style={{ willChange: 'transform, opacity' }}
               />
             </picture>
@@ -155,8 +156,8 @@ export default function Hero() {
           ))}
         </nav>
 
-        {/* ── FLEX CENTER CONTAINER (GUARANTEES STRUCTURAL INDEPENDENCE) ── */}
-        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-6 sm:px-16 z-30 pt-12 pb-6 min-h-0">
+        {/* ── FLEX CENTER CONTAINER ── */}
+        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-h-0">
           <div 
             className={`
               w-full flex flex-col items-center gap-1.5 sm:gap-2.5 md:gap-3 pointer-events-none transition-all duration-500
@@ -164,10 +165,11 @@ export default function Hero() {
             `}
             style={{ willChange: 'transform, opacity' }}
           >
-            {/* Semantic wrapper allows crisp viewport target resizing without expanding text rows over edge nodes */}
-            <div className="w-full max-w-[270px] sm:max-w-[520px] md:max-w-[600px] lg:max-w-[740px] flex flex-col items-center gap-1 sm:gap-2">
+            {/* CHANGED: Swapped strict max-widths out to fluidly scale using custom responsive steps so the layout adapts flawlessly */}
+            <div className="w-full max-w-[90vw] xs:max-w-[85vw] sm:max-w-[520px] md:max-w-[600px] lg:max-w-[740px] flex flex-col items-center gap-1.5 sm:gap-2">
               <h1 
-                className="text-[1.25rem] sm:text-[2.3rem] md:text-[2.9rem] lg:text-[3.6rem] font-black uppercase tracking-[0.05em] text-white leading-none font-sans"
+                /* CHANGED: Tweaked mobile scaling to use fluid text size 'text-[6.5vw]' that transitions cleanly into fixed 'sm:text-[2.3rem]' metrics */
+                className="text-[6.5vw] xs:text-[1.5rem] sm:text-[2.3rem] md:text-[2.9rem] lg:text-[3.6rem] font-black uppercase tracking-[0.05em] text-white leading-none font-sans whitespace-nowrap"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 25px rgba(0,170,255,0.2)',
                   WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
@@ -177,7 +179,8 @@ export default function Hero() {
               </h1>
 
               <h2 
-                className="text-[0.7rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.85rem] font-extrabold uppercase tracking-[0.24em] text-[#cbd5e1] leading-none font-sans pl-[0.24em]"
+                /* CHANGED: Calibrated subtitle sizing 'text-[3.2vw]' on base views so it matches the structural edges perfectly without premature breaking */
+                className="text-[3.2vw] xs:text-[0.8rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.85rem] font-extrabold uppercase tracking-[0.24em] text-[#cbd5e1] leading-none font-sans pl-[0.24em] whitespace-nowrap"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 6px 15px rgba(0,0,0,0.85)',
                 }}
@@ -188,7 +191,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── SCROLL DETECTOR CONTAINER (STAYS ANCHORED REGARDLESS OF HIDDEN CONTROLS) ── */}
+        {/* ── SCROLL DETECTOR CONTAINER ── */}
         <div
           className={`
             relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500
