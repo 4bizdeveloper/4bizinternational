@@ -106,16 +106,16 @@ export default function Testimonials() {
 
   return (
     <section 
-      className="relative w-full py-24 px-4 sm:px-6 lg:px-8 text-white overflow-hidden select-none transform-gpu flex flex-col justify-center"
+      className="relative w-full py-24 px-4 sm:px-6 lg:px-8 text-white overflow-hidden select-none transform-gpu flex flex-col justify-center -mt-px"
       style={{
         backgroundColor: '#070e25',
         contentVisibility: 'auto',
-        contain: 'paint layout',
+        contain: 'paint',
         containmentIntrinsicSize: '1px 750px',
       } as React.CSSProperties}
     >
-      {/* High-Tech Grid Structure adapted for dark backgrounds */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf803_1px,transparent_1px),linear-gradient(to_bottom,#38bdf803_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_80%,transparent_100%)] opacity-60 pointer-events-none" />
+      {/* High-Tech Grid Structure adapted to cleanly fade out near edges and remove the hard top grid line */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf803_1px,transparent_1px),linear-gradient(to_bottom,#38bdf803_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-60 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
         

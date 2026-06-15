@@ -5,12 +5,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 
-// The 4 verified operational client assets from image_ac3d47.jpg
+// All 7 verified operational client assets preserved completely
 const ALL_CLIENTS = [
+  { id: 'phf', src: '/client-logos/phf-logo.svg', alt: 'PHF Logo', isPHF: true },
   { id: 'theyyampattil', src: '/client-logos/theyyampattil-ogo.avif', alt: 'Theyyampattil Logo' },
   { id: 'opusbm', src: '/client-logos/opusbm-logo.png', alt: 'OpusBM Logo' },
   { id: 'opus-acoustic', src: '/client-logos/opus-acoustic-logo.png', alt: 'Opus Acoustic Logo' },
   { id: 'aimbridge', src: '/client-logos/aimbridge-logo.png', alt: 'Aimbridge Logo' },
+  { id: 'Alrumooz', src: '/client-logos/al-rumooz-logo.png', alt: 'Alrumooz Logo' },
+  { id: 'Apparel', src: '/client-logos/apparel-logo.svg', alt: 'Apparel-logo' },
 ];
 
 // GPU optimized, lightweight animations to prevent frame drops or layout shifts
@@ -55,13 +58,13 @@ const ClientSection = () => {
         </div>
 
         {/* 
-          Ultra-responsive, pixel-perfect layout:
+          Ultra-responsive layout updated to display 5 items in a row on desktop view:
           grid-cols-2 -> 2 columns on mobile devices
           md:grid-cols-3 -> 3 columns on tablet devices 
-          lg:grid-cols-4 -> 4 columns on large screens / desktop
+          lg:grid-cols-5 -> 5 columns on desktop screens
         */}
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-4 md:gap-5 max-w-5xl mx-auto"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-5 max-w-7xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -69,7 +72,8 @@ const ClientSection = () => {
         >
           {ALL_CLIENTS.map((client) => (
             <motion.div key={client.id} variants={itemVariants}>
-              <ClientCard client={client} />
+              {/* Pass the new isPHF prop */}
+              <ClientCard client={client} isPHF={client.isPHF} />
             </motion.div>
           ))}
          </motion.div>
@@ -98,7 +102,8 @@ const ClientSection = () => {
 };
 
 /* Individual Logo Box with hardware acceleration & subtle high-fidelity effects */
-const ClientCard = memo(({ client }: { client: { src: string; alt: string } }) => {
+// ClientCard now accepts an isPHF boolean
+const ClientCard = memo(({ client, isPHF }: { client: { src: string; alt: string }, isPHF?: boolean }) => {
   return (
     <div className="group relative flex items-center justify-center w-full h-[100px] sm:h-[120px] md:h-[125px] rounded-2xl border border-blue-500/25 bg-white/[0.01] backdrop-blur-sm overflow-hidden transition-all duration-300 hover:bg-white/[0.03] hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transform-gpu">
       <div className="relative w-[70%] h-[50%] max-w-full max-h-full transition-transform duration-300 ease-out transform-gpu group-hover:scale-105">
@@ -106,8 +111,12 @@ const ClientCard = memo(({ client }: { client: { src: string; alt: string } }) =
           src={client.src}
           alt={client.alt}
           fill
-          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          className="object-contain brightness-0 invert opacity-90 transition-all duration-300 ease-out group-hover:filter-none group-hover:opacity-100"
+          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+          className={`object-contain opacity-90 transition-all duration-300 ease-out group-hover:filter-none group-hover:opacity-100 ${
+            isPHF 
+              ? '' // PHF logo: default colored, no default inversion
+              : 'brightness-0 invert' // Other logos: default inverted
+          }`}
           loading="lazy" 
         />
       </div>

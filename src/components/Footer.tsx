@@ -81,7 +81,7 @@ const Footer = () => {
       ref={footerRef} 
       className="relative z-10 mt-0 pt-16 pb-32 md:pb-24 overflow-hidden border-t border-white/10 transform-gpu backface-hidden"
       style={{ 
-        backgroundColor: '#07002d',
+        backgroundColor: '#00192d',
         contentVisibility: 'auto', 
         paddingBottom: 'calc(120px + env(safe-area-inset-bottom))'
       } as React.CSSProperties}
