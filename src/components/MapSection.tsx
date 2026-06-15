@@ -97,16 +97,6 @@ const LocationCard = memo(({ loc, index }: { loc: Location; index: number }) => 
         <div className="shine-layer absolute inset-0 pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity duration-700 z-30" />
       </div>
     </div>
-
-    {/* SEO OPTIMIZED INFRASTRUCTURE DETAILS */}
-    <div className="mt-6 px-2 text-center w-full max-w-[310px] sm:max-w-[340px] md:max-w-[360px]">
-      <p className="text-white font-bold text-base tracking-wide mb-1 group-hover:text-cyan-400 transition-colors duration-300">
-        {loc.subtitle}
-      </p>
-      <p className="text-white/60 font-mono text-[12px] uppercase tracking-wider space-x-1 leading-relaxed">
-        <span className="text-cyan-400 font-bold">{"//"}</span> <span>{loc.address}</span>
-      </p>
-    </div>
   </motion.div>
 ));
 
