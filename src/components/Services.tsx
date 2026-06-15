@@ -13,8 +13,8 @@ interface ServiceItem {
   activeTabClass: string;
   btnGlowClass: string;
   backgroundImage: string;
-  linkUrl: string; // Dynamic routing parameter for each service container
-  showReadMoreBtn: boolean; // Config switch parameter to easily hide/unhide button at any time
+  linkUrl: string; 
+  showReadMoreBtn: boolean; 
 }
 
 const servicesData: ServiceItem[] = [
@@ -38,7 +38,7 @@ const servicesData: ServiceItem[] = [
     btnGlowClass: "bg-blue-600 hover:bg-blue-500 shadow-blue-600/40 focus:ring-blue-400",
     backgroundImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&auto=format&fit=crop&q=80",
     linkUrl: "/services/digital-workplace",
-    showReadMoreBtn: true // Flip to false anytime to completely hide this button
+    showReadMoreBtn: true
   },
   {
     id: "enterprise-apps",
@@ -62,7 +62,7 @@ const servicesData: ServiceItem[] = [
     btnGlowClass: "bg-indigo-600 hover:bg-indigo-500 shadow-indigo-600/40 focus:ring-indigo-400",
     backgroundImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80",
     linkUrl: "/services/enterprise-applications",
-    showReadMoreBtn: true // Flip to false anytime to completely hide this button
+    showReadMoreBtn: true
   },
   {
     id: "web-mobile-commerce",
@@ -86,7 +86,7 @@ const servicesData: ServiceItem[] = [
     btnGlowClass: "bg-pink-600 hover:bg-pink-500 shadow-pink-600/40 focus:ring-pink-400",
     backgroundImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1200&auto=format&fit=crop&q=80",
     linkUrl: "/services/web-mobile-commerce",
-    showReadMoreBtn: true // Flip to false anytime to completely hide this button
+    showReadMoreBtn: true
   },
   {
     id: "digital-growth",
@@ -113,7 +113,7 @@ const servicesData: ServiceItem[] = [
     btnGlowClass: "bg-cyan-600 hover:bg-cyan-500 shadow-cyan-600/40 focus:ring-cyan-400",
     backgroundImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80",
     linkUrl: "/services/digital-growth",
-    showReadMoreBtn: true // Flip to false anytime to completely hide this button
+    showReadMoreBtn: true
   },
   {
     id: "customer-engagement",
@@ -135,7 +135,7 @@ const servicesData: ServiceItem[] = [
     btnGlowClass: "bg-teal-600 hover:bg-teal-500 shadow-teal-600/40 focus:ring-teal-400",
     backgroundImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&auto=format&fit=crop&q=80",
     linkUrl: "/services/customer-engagement",
-    showReadMoreBtn: true // Flip to false anytime to completely hide this button
+    showReadMoreBtn: true
   },
   {
     id: "cloud-hosting",
@@ -162,7 +162,7 @@ const servicesData: ServiceItem[] = [
     btnGlowClass: "bg-orange-600 hover:bg-orange-500 shadow-orange-600/40 focus:ring-orange-400",
     backgroundImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&auto=format&fit=crop&q=80",
     linkUrl: "/services/cloud-infrastructure",
-    showReadMoreBtn: true // Flip to false anytime to completely hide this button
+    showReadMoreBtn: true
   },
   {
     id: "cybersecurity",
@@ -188,7 +188,7 @@ const servicesData: ServiceItem[] = [
     btnGlowClass: "bg-purple-600 hover:bg-purple-500 shadow-purple-600/40 focus:ring-purple-400",
     backgroundImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&auto=format&fit=crop&q=80",
     linkUrl: "/services/cybersecurity",
-    showReadMoreBtn: true // Flip to false anytime to completely hide this button
+    showReadMoreBtn: true
   },
   {
     id: "digital-transformation",
@@ -219,7 +219,7 @@ const servicesData: ServiceItem[] = [
     btnGlowClass: "bg-emerald-600 hover:bg-emerald-500 shadow-emerald-600/40 focus:ring-emerald-400",
     backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&auto=format&fit=crop&q=80",
     linkUrl: "/services/digital-transformation",
-    showReadMoreBtn: true // Flip to false anytime to completely hide this button
+    showReadMoreBtn: true
   }
 ];
 
@@ -227,6 +227,12 @@ export default function Services() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [visibleCards, setVisibleCards] = useState(false);
+  
+  // Touch Swiping Tracking Refs
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const minSwipeDistance = 50;
+
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -235,21 +241,44 @@ export default function Services() {
     if (isAnimating) return;
     setIsAnimating(true);
     setActiveIndex((prev) => (prev + 1) % servicesData.length);
-    setTimeout(() => setIsAnimating(false), 350);
+    setTimeout(() => setIsAnimating(false), 300);
   };
 
   const handlePrev = () => {
     if (isAnimating) return;
     setIsAnimating(true);
     setActiveIndex((prev) => (prev - 1 + servicesData.length) % servicesData.length);
-    setTimeout(() => setIsAnimating(false), 350);
+    setTimeout(() => setIsAnimating(false), 300);
   };
 
   const handleTabClick = (index: number) => {
     if (isAnimating || index === activeIndex) return;
     setIsAnimating(true);
     setActiveIndex(index);
-    setTimeout(() => setIsAnimating(false), 350);
+    setTimeout(() => setIsAnimating(false), 300);
+  };
+
+  // Touch handlers for responsive slider interaction
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchEndX.current = null;
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
   };
 
   useEffect(() => {
@@ -286,9 +315,8 @@ export default function Services() {
   return (
     <section
       ref={sectionRef}
-      className="services-section w-full py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 text-white overflow-hidden select-none relative bg-[#070e25] font-seo antialiased"
+      className="services-section w-full py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 text-white overflow-hidden relative bg-[#070e25] font-seo antialiased"
     >
-      {/* SOLID PERFORMANCE CLEAN BACKGROUND GRID OVERLAY */}
       <div className="pointer-events-none absolute inset-0 services-lines-overlay z-0 opacity-40" aria-hidden="true" />
 
       <div className={`max-w-7xl mx-auto relative z-10 transition-all duration-700 transform-gpu ${visibleCards ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -303,11 +331,11 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Main Frame */}
-        <div className="main-panel bg-white/[0.02] border border-white/[0.06] rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] p-3 sm:p-5 md:p-8 lg:p-10 shadow-2xl backdrop-blur-md transform-gpu will-change-transform">
+        {/* Main Frame Container */}
+        <div className="main-panel bg-white/[0.02] border border-white/[0.06] rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] p-3 sm:p-5 md:p-8 lg:p-10 shadow-2xl backdrop-blur-md transform-gpu">
           <div className="flex flex-col lg:flex-row gap-5 md:gap-6 lg:gap-8 items-stretch min-h-auto lg:min-h-[580px]">
 
-            {/* Navigation Tabs (Desktop / Tablet-Horizontal) */}
+            {/* Desktop Navigation Column */}
             <div className="hidden md:flex flex-col justify-start items-center w-full lg:w-[290px] shrink-0 gap-2 relative border-b lg:border-b-0 lg:border-r border-white/[0.08] pb-4 lg:pb-0 lg:pr-6 max-h-none lg:max-h-[580px]">
               <button
                 onClick={handlePrev}
@@ -348,7 +376,7 @@ export default function Services() {
               </button>
             </div>
 
-            {/* Mobile Prev/Next Controls */}
+            {/* Tablet & Mobile Layout Controls */}
             <div className="md:hidden flex items-center justify-between bg-white/[0.05] p-2.5 rounded-xl border border-white/10 shadow-lg">
               <button
                 onClick={handlePrev}
@@ -369,12 +397,14 @@ export default function Services() {
               </button>
             </div>
 
-            {/* Content Card Panel */}
+            {/* Interactive Content Card (Supports Touch Gestures) */}
             <div
               ref={contentRef}
-              className="content-card flex-1 rounded-[1.25rem] sm:rounded-[1.75rem] lg:rounded-[2rem] p-4 sm:p-6 md:p-8 lg:p-10 text-white shadow-2xl flex flex-col relative overflow-hidden transition-all duration-300 ease-out border border-white/10 transform-gpu"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+              className="content-card flex-1 rounded-[1.25rem] sm:rounded-[1.75rem] lg:rounded-[2rem] p-4 sm:p-6 md:p-8 lg:p-10 text-white shadow-2xl flex flex-col relative overflow-hidden transition-all duration-300 ease-out border border-white/10 transform-gpu touch-pan-y"
             >
-              {/* Box Background Image Integration */}
               <div className="absolute inset-0 z-0 select-none pointer-events-none transform-gpu">
                 <Image
                   src={currentService.backgroundImage}
@@ -388,10 +418,8 @@ export default function Services() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#070e25]/60 via-[#070e25]/20 to-black/40" />
               </div>
 
-              {/* Tightened Layout Container with compact vertical gaps */}
               <div className="flex-1 flex flex-col justify-start z-10 relative space-y-4 md:space-y-6" style={{ isolation: "isolate" }}>
                 
-                {/* Header text blocks */}
                 <div className="w-full flex flex-col text-left">
                   <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-1.5 sm:mb-2 lg:mb-3 tracking-tight leading-snug text-white seo-text-shadow-heavy">
                     {currentService.subtitle}
@@ -401,7 +429,6 @@ export default function Services() {
                   </p>
                 </div>
 
-                {/* Points list grid layout */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 pt-4 sm:pt-5 border-t border-white/20">
                   {currentService.points.map((point, pIdx) => (
                     <div key={pIdx} className="flex items-start space-x-2 text-sm sm:text-base md:text-lg font-bold tracking-normal group/item seo-text-shadow-heavy">
@@ -413,7 +440,6 @@ export default function Services() {
                   ))}
                 </div>
 
-                {/* Ultra-Modern Glassmorphic Action Button perfectly centered at the bottom baseline (Responsive Toggle Controlled) */}
                 {currentService.showReadMoreBtn && (
                   <div className="w-full flex justify-center pt-2 transition-all duration-300">
                     <a 
@@ -437,7 +463,7 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Indicator Dots (Mobile Screen Device Targets) */}
+        {/* Dynamic Dot Navigation indicators for tablet/mobile views */}
         <div className="flex justify-center gap-1.5 mt-5 md:hidden" aria-label="Service layout dots">
           {servicesData.map((_, index) => (
             <button
@@ -456,12 +482,10 @@ export default function Services() {
       </div>
 
       <style jsx global>{`
-        /* System UI Stack Configuration */
         .font-seo {
           font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
         }
 
-        /* HD Contrast Text Protection Isolators */
         .seo-text-shadow-heavy {
           text-shadow: 
             -1.5px -1.5px 0 #000,  
@@ -499,7 +523,6 @@ export default function Services() {
             );
         }
 
-        /* Width-Optimized Scrollbar Layout with Absolute Corner Reset */
         .custom-scrollbar::-webkit-scrollbar { 
           width: 8px;
           height: 6px;
@@ -518,49 +541,6 @@ export default function Services() {
         }
         .custom-scrollbar::-webkit-scrollbar-corner {
           background: transparent !important;
-        }
-
-        @supports (animation-timeline: view()) {
-          @media (min-width: 1024px) {
-            .services-section {
-              perspective: 1000px;
-            }
-
-            .main-panel {
-              animation: panelScrollTilt linear both;
-              animation-timeline: view();
-              animation-range: entry 0% exit 100%;
-              transform-style: preserve-3d;
-            }
-
-            .content-card {
-              animation: contentCardParallax linear both;
-              animation-timeline: view();
-              animation-range: entry 4% exit 96%;
-            }
-          }
-        }
-
-        @keyframes panelScrollTilt {
-          0%   { transform: rotateX(2.5deg) translateY(8px); }
-          45%  { transform: rotateX(0deg) translateY(0px); }
-          55%  { transform: rotateX(0deg) translateY(0px); }
-          100% { transform: rotateX(-2.5deg) translateY(-8px); }
-        }
-
-        @keyframes contentCardParallax {
-          0%   { transform: translateY(6px); }
-          50%  { transform: translateY(0px); }
-          100% { transform: translateY(-6px); }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .main-panel,
-          .content-card,
-          .animate-pulse {
-            animation: none !important;
-            transform: none !important;
-          }
         }
       `}</style>
     </section>

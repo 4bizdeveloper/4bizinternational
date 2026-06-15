@@ -15,16 +15,16 @@ const Footer = () => {
     offset: ["start end", "end end"]
   });
 
-  // PHYSICS: Eliminates "jitter" on high-refresh displays
+  // PHYSICS: Eliminates "jitter" and frame stuttering on modern high-refresh displays
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 70,
-    damping: 30,
+    stiffness: 80,
+    damping: 35,
     restDelta: 0.001
   });
 
-  // 3D Transforms trigger GPU rendering to eliminate shaking
-  const y1 = useTransform(smoothProgress, [0, 1], ["0px", "-60px"]);
-  const y2 = useTransform(smoothProgress, [0, 1], ["0px", "60px"]);
+  // 3D Transforms trigger GPU rendering layers to prevent layout jerking
+  const y1 = useTransform(smoothProgress, [0, 1], ["0px", "-40px"]);
+  const y2 = useTransform(smoothProgress, [0, 1], ["0px", "40px"]);
 
   // Declared social media schema (Call link completely extracted)
   const socialLinks = useMemo(() => [
@@ -79,44 +79,39 @@ const Footer = () => {
     <footer 
       id="footer"
       ref={footerRef} 
-      className="relative z-10 mt-0 pt-16 pb-32 md:pb-24 overflow-hidden border-t border-cyan-500/20 bg-gradient-to-b from-[#0e173f] via-[#0b102b] to-[#0d163d] transform-gpu backface-hidden"
+      className="relative z-10 mt-0 pt-16 pb-32 md:pb-24 overflow-hidden border-t border-white/10 transform-gpu backface-hidden"
       style={{ 
+        backgroundColor: '#07002d',
         contentVisibility: 'auto', 
         paddingBottom: 'calc(120px + env(safe-area-inset-bottom))'
       } as React.CSSProperties}
     >
-      {/* Toned Down IT Grid Matrix — Reduced opacity to guarantee high contrast and text readability */}
+      {/* Background Matrix: Removed high contrast white radial gradient for an elegant look */}
       <div 
-        className="absolute inset-0 bg-[linear-gradient(to_right,#1d295d_1px,transparent_1px),linear-gradient(to_bottom,#1d295d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_65%_at_50%_15%,#000_65%,transparent_100%)] opacity-15 pointer-events-none" 
+        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 pointer-events-none" 
         aria-hidden="true" 
       />
       
-      {/* Hardware Accelerated Glowing Ambient Lights */}
+      {/* Hardware Accelerated Subtle Parallax Internal Ambient Accents */}
       <motion.div 
         style={{ y: y1, translateZ: 0 }} 
-        className="absolute top-0 -right-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-cyan-500/20 blur-[90px] md:blur-[140px] rounded-full pointer-events-none -z-10 will-change-transform" 
+        className="absolute top-0 -right-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-white/[0.015] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
       />
       <motion.div 
         style={{ y: y2, translateZ: 0 }} 
-        className="absolute top-1/3 -left-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-blue-600/15 blur-[90px] md:blur-[140px] rounded-full pointer-events-none -z-10 will-change-transform" 
+        className="absolute top-1/3 -left-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-black/[0.03] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
       />
 
-      {/* Target Brightness Injection for the Very Bottom Floor */}
-      <div 
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100vw] sm:w-[1200px] h-[250px] bg-gradient-to-t from-cyan-500/20 via-blue-500/10 to-transparent blur-[80px] rounded-full pointer-events-none -z-10"
-        aria-hidden="true"
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* Top Centered Main Navigation Element */}
         <div className="w-full flex justify-center mb-16 pb-8 border-b border-white/10">
           <nav className="w-full">
-            <ul className="grid grid-cols-2 justify-items-start max-w-[260px] mx-auto gap-y-4 sm:flex sm:grid-cols-none sm:max-w-none sm:justify-center sm:gap-x-6 md:gap-x-8 sm:gap-y-3 text-[11px] font-bold uppercase tracking-[0.25em] text-white">
+            <ul className="grid grid-cols-2 justify-items-start max-w-[280px] mx-auto gap-y-4 sm:flex sm:grid-cols-none sm:max-w-none sm:justify-center sm:gap-x-6 md:gap-x-8 lg:gap-x-12 text-[12px] font-bold uppercase tracking-[0.2em] text-white/90">
               {navItems.map((item) => (
                 <li key={item.label} className="w-full sm:w-auto">
-                  <Link href={item.path} className="hover:text-cyan-400 transition-colors flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0" />
+                  <Link href={item.path} className="hover:text-white transition-colors duration-200 flex items-center gap-2 py-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/40 flex-shrink-0" />
                     {item.label}
                   </Link>
                 </li>
@@ -125,39 +120,39 @@ const Footer = () => {
           </nav>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 md:gap-14 lg:gap-8 items-start mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-14 lg:gap-8 items-start mb-16">
           
           {/* Brand Architecture Column */}
           <div className="lg:col-span-4 flex flex-col items-start space-y-6 md:space-y-8">
             <motion.div 
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.01 }}
               className="relative h-14 w-52 transition-transform duration-300 transform-gpu"
             >
               <Image 
                 src="/4biz_logo-1.png" 
-                alt="4Biz International" 
+                alt="4Biz International Logo" 
                 fill
                 className="object-contain"
-                sizes="(max-width: 768px) 208px, 208px"
+                sizes="208px"
                 priority={false}
               />
             </motion.div>
-            <p className="text-white/85 text-sm md:text-base leading-relaxed font-medium border-l-[3px] border-cyan-400 pl-5 italic antialiased max-w-sm">
+            <p className="text-white/80 text-sm md:text-base leading-relaxed font-normal border-l-2 border-white/20 pl-4 italic antialiased max-w-sm">
               "Engineering secure digital frontiers and redefining IT excellence for the next generation of global leaders."
             </p>
             
             {/* Unified Social Link Matrix */}
-            <div className="flex flex-wrap gap-2.5">
+            <div className="flex flex-wrap gap-3">
               {socialLinks.map((link, i) => (
                 <a 
                   key={i} 
                   href={link.href} 
                   target={link.target || undefined}
                   rel={link.target ? "noopener noreferrer" : undefined}
-                  aria-label={link.label}
-                  className="w-10 h-10 rounded-xl border border-white/15 flex items-center justify-center text-white/60 transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-400/15 hover:text-white hover:-translate-y-0.5 transform-gpu"
+                  aria-label={`Follow 4Biz International on ${link.label}`}
+                  className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.02] flex items-center justify-center text-white/70 transition-all duration-300 hover:border-white/40 hover:bg-white/10 hover:text-white hover:-translate-y-0.5 transform-gpu"
                 >
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                     <path d={link.path} />
                   </svg>
                 </a>
@@ -167,28 +162,28 @@ const Footer = () => {
 
           {/* Core Communications Terminals */}
           <div className="lg:col-span-4 flex flex-col space-y-6">
-            <h4 className="text-cyan-400 font-black uppercase tracking-wider text-[11px] opacity-90">
+            <h2 className="text-white/60 font-bold uppercase tracking-wider text-[11px] font-mono">
               Digital Link & Infrastructure
-            </h4>
-            <div className="space-y-5">
+            </h2>
+            <div className="space-y-4">
               {/* Mail Segment */}
-              <div className="p-4 rounded-xl border border-white/15 bg-white/[0.04] hover:bg-white/[0.07] transition-colors group">
-                <span className="text-[9px] uppercase font-mono tracking-wider font-bold bg-cyan-500/15 text-cyan-400 px-1.5 py-0.5 rounded inline-block mb-1">Mail Infrastructure</span>
-                <a href="mailto:info@4bizinternational.com" className="text-sm text-white group-hover:text-cyan-400 transition-colors font-medium break-all block mt-1">
+              <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/10 transition-all duration-200 group">
+                <span className="text-[10px] uppercase font-mono tracking-wider font-semibold bg-white/10 text-white/90 px-2 py-0.5 rounded inline-block">Mail Infrastructure</span>
+                <a href="mailto:info@4bizinternational.com" className="text-base text-white group-hover:text-white/90 transition-colors font-medium break-all block mt-2.5">
                   info@4bizinternational.com
                 </a>
               </div>
               {/* Telecoms Segment */}
-              <div className="p-4 rounded-xl border border-white/15 bg-white/[0.04] hover:bg-white/[0.07] transition-colors">
-                <span className="text-[9px] uppercase font-mono tracking-wider font-bold bg-purple-500/15 text-purple-400 px-1.5 py-0.5 rounded inline-block mb-1.5">HQ Telecoms / WhatsApp</span>
-                <div className="flex flex-col gap-2 mt-1">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <a href="https://wa.me/971527925100" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-white hover:text-cyan-400 transition-colors">+971 52 79 25 100</a>
-                    <span className="text-[8px] px-1.5 py-0.5 rounded font-mono font-bold bg-cyan-500/20 text-cyan-400 uppercase tracking-wide">Dubai</span>
+              <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/10 transition-all duration-200">
+                <span className="text-[10px] uppercase font-mono tracking-wider font-semibold bg-white/10 text-white/90 px-2 py-0.5 rounded inline-block mb-3">HQ Telecoms / WhatsApp</span>
+                <div className="flex flex-col gap-3 mt-1">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <a href="https://wa.me/971527925100" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-white/80 transition-colors" aria-label="Contact Dubai HQ via WhatsApp">+971 52 79 25 100</a>
+                    <span className="text-[9px] px-2 py-0.5 rounded font-mono font-bold bg-white/10 text-white/80 uppercase tracking-wide">Dubai</span>
                   </div>
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <a href="https://wa.me/919895717879" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-white hover:text-purple-400 transition-colors">+91 98957 17879</a>
-                    <span className="text-[8px] px-1.5 py-0.5 rounded font-mono font-bold bg-purple-500/20 text-purple-400 uppercase tracking-wide">India</span>
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <a href="https://wa.me/919895717879" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-white/80 transition-colors" aria-label="Contact India Tech Wing via WhatsApp">+91 98957 17879</a>
+                    <span className="text-[9px] px-2 py-0.5 rounded font-mono font-bold bg-white/10 text-white/80 uppercase tracking-wide">India</span>
                   </div>
                 </div>
               </div>
@@ -198,52 +193,52 @@ const Footer = () => {
                 href="/documents/4biz-international-company-profile.pdf"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-between bg-white/[0.05] border border-white/15 text-white py-3 px-4 rounded-xl transition-all hover:bg-white/[0.08] hover:border-cyan-500/40 transform-gpu"
+                className="group relative flex items-center justify-between bg-white/[0.02] border border-white/5 text-white py-3.5 px-4 rounded-xl transition-all hover:bg-white/[0.05] hover:border-white/20 transform-gpu"
               >
                 <div className="flex flex-col pr-4">
-                  <span className="text-[7px] uppercase tracking-[0.2em] text-cyan-400 mb-0.5">Access File</span>
-                  <span className="text-[10px] font-black uppercase tracking-[0.1em] text-white">Our Portfolio</span>
+                  <span className="text-[8px] uppercase tracking-[0.15em] text-white/50 font-mono mb-0.5">Access File</span>
+                  <span className="text-[11px] font-bold uppercase tracking-[0.05em] text-white/90">Our Portfolio</span>
                 </div>
-                <RiDownloadCloud2Line className="text-xl text-purple-400 group-hover:-translate-y-0.5 transition-transform" />
+                <RiDownloadCloud2Line className="text-xl text-white/70 group-hover:-translate-y-0.5 transition-transform duration-200" />
               </a>
             </div>
           </div>
 
           {/* Regional Enterprise Hubs Map */}
           <div className="lg:col-span-4 flex flex-col space-y-6">
-            <h4 className="text-purple-400 font-black uppercase tracking-wider text-[11px] opacity-90">
+            <h2 className="text-white/60 font-bold uppercase tracking-wider text-[11px] font-mono">
               Corporate Geographies
-            </h4>
-            <div className="space-y-4 text-white/90">
+            </h2>
+            <div className="space-y-5 text-white/80">
               {/* Dubai Corporate Hub */}
-              <div className="flex flex-col border-l-2 border-cyan-500/50 pl-4 py-0.5 group">
-                <div className="flex items-center gap-2 mb-1 flex-wrap">
-                  <span className="text-xs font-bold text-white group-hover:text-cyan-400 transition-colors">Dubai Corporate Hub</span>
-                  <span className="text-[8px] font-mono font-bold bg-cyan-500/20 text-cyan-400 px-1 rounded uppercase tracking-wide">Global HQ</span>
+              <div className="flex flex-col border-l border-white/20 pl-4 py-0.5 group">
+                <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                  <span className="text-sm font-semibold text-white group-hover:text-white/90 transition-colors">Dubai Corporate Hub</span>
+                  <span className="text-[9px] font-mono font-medium bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Global HQ</span>
                 </div>
-                <p className="text-xs text-white/80 leading-relaxed">
+                <p className="text-xs text-white/70 leading-relaxed font-normal">
                   Crystal Building - Office # 104 - 2C St - near ADCB Metro Station - Al Karama - Dubai, UAE
                 </p>
               </div>
 
               {/* India Tech Wing */}
-              <div className="flex flex-col border-l-2 border-purple-500/50 pl-4 py-0.5 group">
-                <div className="flex items-center gap-2 mb-1 flex-wrap">
-                  <span className="text-xs font-bold text-white group-hover:text-purple-400 transition-colors">India HiLite Business Park</span>
-                  <span className="text-[8px] font-mono font-bold bg-purple-500/20 text-purple-400 px-1 rounded uppercase tracking-wide">Tech Wing</span>
+              <div className="flex flex-col border-l border-white/20 pl-4 py-0.5 group">
+                <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                  <span className="text-sm font-semibold text-white group-hover:text-white/90 transition-colors">India HiLite Business Park</span>
+                  <span className="text-[9px] font-mono font-medium bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Tech Wing</span>
                 </div>
-                <p className="text-xs text-white/80 leading-relaxed">
+                <p className="text-xs text-white/70 leading-relaxed font-normal">
                   Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India
                 </p>
               </div>
 
               {/* India Operations */}
-              <div className="flex flex-col border-l-2 border-emerald-500/50 pl-4 py-0.5 group">
-                <div className="flex items-center gap-2 mb-1 flex-wrap">
-                  <span className="text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">India Nadakkave Office</span>
-                  <span className="text-[8px] font-mono font-bold bg-emerald-500/20 text-emerald-400 px-1 rounded uppercase tracking-wide">Operations</span>
+              <div className="flex flex-col border-l border-white/20 pl-4 py-0.5 group">
+                <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                  <span className="text-sm font-semibold text-white group-hover:text-white/90 transition-colors">India Nadakkave Office</span>
+                  <span className="text-[9px] font-mono font-medium bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Operations</span>
                 </div>
-                <p className="text-xs text-white/80 leading-relaxed">
+                <p className="text-xs text-white/70 leading-relaxed font-normal">
                   5th Floor, C. M. Mathew Brothers Arcade, Kannur Rd, near Hotel Westway, Vikas Nagar Housing Colony, West Nadakkave, Chakkorathukulam, Kozhikode, Kerala 673006, India
                 </p>
               </div>
@@ -255,8 +250,8 @@ const Footer = () => {
         {/* Bottom Metadata Pipeline */}
         <div className="pt-8 border-t border-white/10 flex flex-col items-center justify-center relative z-20">
           <div className="text-center">
-            <p className="text-white/60 text-[9px] uppercase tracking-[0.25em] font-medium font-mono">
-              © 2026 4Biz International. All Rights Reserved.
+            <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] font-medium font-mono">
+              &copy; {new Date().getFullYear()} 4Biz International. All Rights Reserved.
             </p>
           </div>
         </div>

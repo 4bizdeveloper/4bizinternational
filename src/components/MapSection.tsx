@@ -27,77 +27,79 @@ const LocationCard = memo(({ loc, index }: { loc: Location; index: number }) => 
     className="group relative flex flex-col items-center h-full w-full transform-gpu"
     style={{ willChange: 'transform' }}
   >
-    {/* OUTER HARDWARE FRAME WRAPPER - Creates realistic device depth and physical dimensions */}
-    {/* Optimized top padding (pt-[16px]) to symmetrically house the centered hardware camera array */}
-    <div className="relative w-full max-w-[340px] sm:max-w-[360px] md:max-w-[380px] aspect-[3/4] pt-[16px] pb-[12px] px-[12px] rounded-[3rem] bg-gradient-to-b from-[#334155] via-[#1e293b] to-[#0f172a] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8),inset_0_2px_4px_rgba(255,255,255,0.2)] transition-all duration-700 ring-1 ring-white/10 group-hover:from-cyan-400 group-hover:via-indigo-500 group-hover:to-purple-600 group-hover:shadow-[0_0_50px_rgba(34,211,238,0.3)]">
+    {/* OUTER HARDWARE FRAME WRAPPER */}
+    <div className="relative w-full max-w-[310px] sm:max-w-[340px] md:max-w-[360px] aspect-[9/13.5] rounded-[2.8rem] p-3.5 bg-[#0e1126] border-[4px] border-[#222954] shadow-[0_30px_70px_rgba(0,0,0,0.7),inset_0_2px_4px_rgba(255,255,255,0.1)] transition-all duration-500 hover:scale-[1.03] hover:border-cyan-400/50 transform-gpu">
       
-      {/* PHYSICAL HARDWARE SIDE BUTTON ACCENTS (Volume & Power switches) */}
-      <div className="absolute left-[-3px] top-24 w-[3px] h-10 bg-[#1e293b] rounded-l border-l border-white/10 group-hover:bg-cyan-400 transition-colors duration-700" />
-      <div className="absolute left-[-3px] top-38 w-[3px] h-14 bg-[#1e293b] rounded-l border-l border-white/10 group-hover:bg-cyan-400 transition-colors duration-700" />
-      <div className="absolute right-[-3px] top-32 w-[3px] h-16 bg-[#1e293b] rounded-r border-r border-white/10 group-hover:bg-indigo-400 transition-colors duration-700" />
+      {/* LEFT HARDWARE VOLUME KEYS (+/-) */}
+      <div className="absolute top-[24%] -left-[8px] w-[4px] h-9 bg-[#2b3369] rounded-l border-l border-white/10 shadow-md z-50 transition-colors duration-500 group-hover:bg-cyan-400/40" />
+      <div className="absolute top-[32%] -left-[8px] w-[4px] h-9 bg-[#2b3369] rounded-l border-l border-white/10 shadow-md z-50 transition-colors duration-500 group-hover:bg-cyan-400/40" />
+      
+      {/* RIGHT HARDWARE POWER SWITCH BUTTON */}
+      <div className="absolute top-[28%] -right-[8px] w-[4px] h-12 bg-[#2b3369] rounded-r border-r border-white/10 shadow-md z-50 transition-colors duration-500 group-hover:bg-cyan-400/40" />
 
-      {/* DISCRETE FRONT CAMERA / PROXIMITY SENSOR EYE - Centered symmetrically within top frame thickness */}
-      <div className="absolute top-[6px] left-1/2 -translate-x-1/2 w-2 h-2 bg-[#090d16] rounded-full z-40 flex items-center justify-center border border-white/5 shadow-inner">
-        <div className="w-0.5 h-0.5 bg-blue-500/40 rounded-full animate-pulse" />
+      {/* TOP EAR-SPEAKER STRIP & DOT SENSOR MATRIX */}
+      <div className="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-black rounded-full z-30 flex items-center justify-center space-x-1.5 px-3 border border-white/5">
+        <div className="w-8 h-1 bg-white/20 rounded-full" />
+        <div className="w-1.5 h-1.5 rounded-full bg-[#161a36]" />
       </div>
 
-      {/* INNER SCREEN EDGE INNER SHADOW & BEZEL BUFFER */}
-      <div className="relative w-full h-full overflow-hidden rounded-[2.3rem] bg-[#0d1527] ring-1 ring-black/40 shadow-[inset_0_4px_12px_rgba(0,0,0,0.9)]">
+      {/* INNER DISPLAY SURFACE & BEZEL */}
+      <div className="relative w-full h-full overflow-hidden rounded-[2.2rem] bg-black border border-black shadow-inner">
         
         {/* FLOATING GLASSMORPHIC HUD OVERLAY */}
         <a 
           href={loc.link}
           target="_blank"
           rel="noreferrer"
-          className="absolute top-4 left-4 right-4 z-20 bg-[#0d1527]/85 backdrop-blur-xl border border-white/10 p-4 rounded-2xl transition-all duration-300 hover:bg-[#0d1527]/95 group/info pointer-events-auto shadow-2xl"
+          className="absolute top-12 left-3 right-3 z-20 bg-[#070b1e]/85 backdrop-blur-xl border border-white/10 p-3.5 rounded-xl transition-all duration-300 hover:bg-[#070b1e]/95 group/info pointer-events-auto shadow-2xl"
         >
-          <div className="flex items-start justify-between gap-4">
+          <div className="flex items-start justify-between gap-3">
             <div className="space-y-0.5">
-              <div className="flex items-center gap-2 mb-1">
-                <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_10px_#22d3ee]" />
-                <span className="text-cyan-400 font-mono text-[9px] uppercase tracking-[0.25em]">Node Active</span>
+              <div className="flex items-center gap-1.5 mb-1">
+                <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_10px_#22d3ee]" />
+                <span className="text-cyan-400 font-mono text-[8px] uppercase tracking-[0.25em] font-bold">Node Active</span>
               </div>
-              <h4 className="text-white font-black text-base uppercase tracking-tight group-hover/info:text-cyan-400 transition-colors">
+              <h4 className="text-white font-black text-sm uppercase tracking-tight group-hover/info:text-cyan-400 transition-colors">
                 {loc.city}
               </h4>
-              <p className="text-cyan-400/80 text-[10px] font-mono font-bold uppercase tracking-wider">
+              <p className="text-cyan-400/80 text-[9px] font-mono font-bold uppercase tracking-wider">
                 {loc.title}
               </p>
             </div>
-            <div className="p-2 bg-white/5 border border-white/10 rounded-lg group-hover/info:bg-cyan-500 group-hover/info:border-cyan-400 transition-all duration-500 shadow-md shrink-0">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <div className="p-1.5 bg-white/5 border border-white/10 rounded-lg group-hover/info:bg-cyan-400 group-hover/info:border-cyan-300 transition-all duration-500 shadow-md shrink-0">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="group-hover/info:stroke-black">
                 <path d="M7 17L17 7M17 7H7M17 7V17"/>
               </svg>
             </div>
           </div>
         </a>
 
-        {/* NATIVE GOOGLE MAP EMBED IFRAME - RUNNING ON ISOLATED SECURITY WRAPPER */}
+        {/* NATIVE GOOGLE MAP EMBED IFRAME */}
         <iframe 
           src={loc.src} 
           width="100%" 
           height="100%" 
           style={{ 
             border: 0,
-            background: '#e5e7eb' 
+            background: '#070b1e' 
           }} 
           allowFullScreen={true}
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
           title={`${loc.city} - ${loc.title}`}
-          className="w-full h-full opacity-100 transition-opacity duration-500 transform-gpu rounded-[2.3rem]"
+          className="w-full h-full opacity-100 transition-opacity duration-500 transform-gpu rounded-[2.2rem]"
         />
 
         {/* TOP STATUS BAR POLISH / GRADIENT SHIELD */}
-        <div className="absolute inset-x-0 top-0 h-20 pointer-events-none bg-gradient-to-b from-black/40 via-black/10 to-transparent z-10" />
+        <div className="absolute inset-x-0 top-0 h-20 pointer-events-none bg-gradient-to-b from-black/50 via-black/10 to-transparent z-10" />
 
         {/* HARDWARE EMBOSSED SCREEN REFLECTION LAYER */}
-        <div className="shine-layer absolute inset-0 pointer-events-none opacity-40 group-hover:opacity-100 transition-opacity duration-700 z-30" />
+        <div className="shine-layer absolute inset-0 pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity duration-700 z-30" />
       </div>
     </div>
 
     {/* SEO OPTIMIZED INFRASTRUCTURE DETAILS */}
-    <div className="mt-6 px-2 text-center sm:text-left w-full max-w-[340px] sm:max-w-[360px] md:max-w-[380px]">
+    <div className="mt-6 px-2 text-center w-full max-w-[310px] sm:max-w-[340px] md:max-w-[360px]">
       <p className="text-white font-bold text-base tracking-wide mb-1 group-hover:text-cyan-400 transition-colors duration-300">
         {loc.subtitle}
       </p>
@@ -141,26 +143,15 @@ const MapSection = () => {
   return (
     <section 
       id="map" 
-      className="py-24 md:py-36 px-4 sm:px-6 md:px-12 relative overflow-hidden bg-[#091225]"
-      style={{ 
-        contentVisibility: 'auto', 
-        containmentIntrinsicSize: '0 1100px',
-        contain: 'paint' 
-      } as React.CSSProperties}
+      className="py-20 md:py-32 px-4 sm:px-6 md:px-12 relative overflow-hidden bg-[#070e24]"
     >
-      {/* VIBRANT MODERN TECH-BLUE BACKGROUND SYSTEM */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a142c] via-[#070d1a] to-[#0c1a36] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(34,211,238,0.22)_0%,transparent_50%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(99,102,241,0.15)_0%,transparent_45%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(139,92,246,0.12)_0%,transparent_50%)] pointer-events-none" />
-
       {/* MATRIX TECH GRID MESH */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.008)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.008)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-50" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.003)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.003)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-40" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* SEO TARGETED ACCESSIBLE HEADER */}
-        <header className="mb-24 flex flex-col items-center text-center w-full px-4">
+        <header className="mb-20 flex flex-col items-center text-center w-full px-4">
           <motion.p
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -169,14 +160,16 @@ const MapSection = () => {
           >
             Enterprise Infrastructure
           </motion.p>
+          
           <motion.h2 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter uppercase leading-[0.9] pb-5"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase leading-[0.95] pb-5"
           >
-            Global IT <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-500 inline-block">Nodes</span>
+            Global Office <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 drop-shadow-[0_0_20px_rgba(34,211,238,0.2)] inline-block">Branches</span>
           </motion.h2>
+          
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -186,16 +179,17 @@ const MapSection = () => {
           >
             Connecting cross-border innovation hubs to engineer highly scalable, secure enterprise architectures and full-cycle digital software transformations.
           </motion.p>
+          
           <motion.div 
             initial={{ width: 0 }}
             whileInView={{ width: "160px" }}
             transition={{ duration: 0.8, ease: "circOut" }}
-            className="h-1 bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full shadow-[0_0_25px_rgba(34,211,238,0.6)]"
+            className="h-1 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full shadow-[0_0_20px_rgba(34,211,238,0.3)]"
           />
         </header>
 
-        {/* RESPONSIVE IPAD GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 xl:gap-14 justify-items-center">
+        {/* RESPONSIVE FLUID INFRASTRUCTURE GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-12 justify-items-center">
           {locations.map((loc, index) => (
             <LocationCard key={index} loc={loc} index={index} />
           ))}
@@ -210,12 +204,12 @@ const MapSection = () => {
           perspective: 1200px;
         }
 
-        /* Prevent Layout Shifts and Elevate Hover Items */
+        /* Prevent Layout Shifts and Elevate Hover Items smoothly */
         .group:hover {
           z-index: 20;
         }
 
-        /* Smooth Cinematic Reflective Light Move */
+        /* Smooth Cinematic Reflective Light Move without paint performance costs */
         @keyframes shine-move {
           0% { background-position: -150% -150%; }
           100% { background-position: 250% 250%; }
@@ -225,12 +219,12 @@ const MapSection = () => {
           background: linear-gradient(
             135deg,
             transparent 40%,
-            rgba(255, 255, 255, 0.06) 50%,
-            rgba(34, 211, 238, 0.04) 55%,
+            rgba(255, 255, 255, 0.04) 50%,
+            rgba(34, 211, 238, 0.02) 55%,
             transparent 65%
           );
           background-size: 250% 250%;
-          animation: shine-move 4.5s infinite linear;
+          animation: shine-move 6s infinite linear;
         }
       `}</style>
     </section>

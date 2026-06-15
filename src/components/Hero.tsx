@@ -113,7 +113,6 @@ export default function Hero() {
                 height="844"
                 fetchPriority="high"
                 decoding="async"
-                /* CHANGED: Changed object-center to object-[center_bottom] on mobile, returning to center on sm screens */
                 className="w-full h-full object-cover object-[center_bottom] sm:object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-300"
                 style={{ willChange: 'transform, opacity' }}
               />
@@ -165,10 +164,8 @@ export default function Hero() {
             `}
             style={{ willChange: 'transform, opacity' }}
           >
-            {/* CHANGED: Swapped strict max-widths out to fluidly scale using custom responsive steps so the layout adapts flawlessly */}
             <div className="w-full max-w-[90vw] xs:max-w-[85vw] sm:max-w-[520px] md:max-w-[600px] lg:max-w-[740px] flex flex-col items-center gap-1.5 sm:gap-2">
               <h1 
-                /* CHANGED: Tweaked mobile scaling to use fluid text size 'text-[6.5vw]' that transitions cleanly into fixed 'sm:text-[2.3rem]' metrics */
                 className="text-[6.5vw] xs:text-[1.5rem] sm:text-[2.3rem] md:text-[2.9rem] lg:text-[3.6rem] font-black uppercase tracking-[0.05em] text-white leading-none font-sans whitespace-nowrap"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 25px rgba(0,170,255,0.2)',
@@ -179,8 +176,8 @@ export default function Hero() {
               </h1>
 
               <h2 
-                /* CHANGED: Calibrated subtitle sizing 'text-[3.2vw]' on base views so it matches the structural edges perfectly without premature breaking */
-                className="text-[3.2vw] xs:text-[0.8rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.85rem] font-extrabold uppercase tracking-[0.24em] text-[#cbd5e1] leading-none font-sans pl-[0.24em] whitespace-nowrap"
+                /* CHANGED: Reduced tracking configuration from tracking-[0.24em] to tracking-[0.11em] and aligned left padding balance to create a sleeker modern lockup */
+                className="text-[3.2vw] xs:text-[0.8rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.85rem] font-extrabold uppercase tracking-[0.11em] text-[#cbd5e1] leading-none font-sans pl-[0.11em] whitespace-nowrap"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 6px 15px rgba(0,0,0,0.85)',
                 }}
@@ -237,7 +234,7 @@ export default function Hero() {
               </div>
 
               <span
-                className="text-[0.52rem] sm:text-[0.6rem] font-black tracking-[0.5em] uppercase text-white pl-[0.5/em]"
+                className="text-[0.52rem] sm:text-[0.6rem] font-black tracking-[0.5em] uppercase text-white pl-[0.5em]"
                 style={{ 
                   textShadow: '0 2px 6px #000',
                   animation: 'subtleTextPulse 3s infinite ease-in-out',

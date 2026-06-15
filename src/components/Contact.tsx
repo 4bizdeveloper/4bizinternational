@@ -153,7 +153,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 px-4 sm:px-6 lg:px-16 relative overflow-hidden transform-gpu backface-hidden"
+      className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 xl:px-16 relative overflow-hidden transform-gpu backface-hidden"
       style={{
         backgroundColor: '#070e25',
         contentVisibility: 'auto',
@@ -167,7 +167,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Main Titles */}
-        <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+        <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
           <motion.h3 
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -182,18 +182,18 @@ export default function Contact() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-sm sm:text-base font-bold mt-3 text-white/70 uppercase tracking-widest"
+            className="text-xs sm:text-sm font-bold mt-3 text-white/80 uppercase tracking-widest"
           >
             To Scale your Business
           </motion.p>
         </div>
 
-        {/* 2-Column Grid Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.5)] border border-white/5 items-stretch">
+        {/* 2-Column Grid Container - Fully Responsive Grid Framework */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 rounded-3xl overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.5)] border border-white/5 items-stretch">
           
-          {/* LEFT HALF: DEEP SLATE NAVY (#0B1536) */}
+          {/* LEFT HALF: DEEP SLATE NAVY (#0B1536) - lg:col-span-5 or 6 for optimized alignment */}
           <div 
-            className="p-6 sm:p-10 lg:p-12 flex flex-col justify-between relative order-2 lg:order-1 h-full min-h-[550px] lg:min-h-auto transition-transform duration-300 transform-gpu"
+            className="lg:col-span-6 p-5 sm:p-10 lg:p-12 flex flex-col justify-between relative order-2 lg:order-1 h-full min-h-[500px] lg:min-h-auto transition-transform duration-300 transform-gpu"
             style={{ backgroundColor: '#0b1536' }}
           >
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff01_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none opacity-40" />
@@ -206,7 +206,7 @@ export default function Contact() {
                   <RiMailLine />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-[10px] font-mono tracking-wider text-white/50 uppercase font-bold">Mail Infrastructure</p>
+                  <p className="text-[10px] font-mono tracking-wider text-white/60 uppercase font-bold">Mail Infrastructure</p>
                   <p className="text-sm md:text-base font-semibold text-white tracking-wide truncate mt-0.5">info@4bizinternational.com</p>
                 </div>
               </a>
@@ -222,7 +222,7 @@ export default function Contact() {
                   <RiWhatsappLine />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-[10px] font-mono tracking-wider text-white/50 uppercase font-bold">Dubai HQ Telecoms</p>
+                  <p className="text-[10px] font-mono tracking-wider text-white/60 uppercase font-bold">Dubai HQ Telecoms</p>
                   <p className="text-sm md:text-base font-semibold text-white tracking-wide mt-0.5 flex items-center gap-2">
                     +971 52 79 25 100 <span className="text-[9px] bg-white/[0.08] text-white/80 px-2 py-0.5 rounded font-mono font-medium border border-white/5 group-hover:bg-emerald-500/20 group-hover:text-emerald-300">CONNECT</span>
                   </p>
@@ -240,7 +240,7 @@ export default function Contact() {
                   <RiWhatsappLine />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="text-[10px] font-mono tracking-wider text-white/50 uppercase font-bold">India Tech Telecoms</p>
+                  <p className="text-[10px] font-mono tracking-wider text-white/60 uppercase font-bold">India Tech Telecoms</p>
                   <p className="text-sm md:text-base font-semibold text-white tracking-wide mt-0.5 flex items-center gap-2">
                     +91 98957 17879 <span className="text-[9px] bg-white/[0.08] text-white/80 px-2 py-0.5 rounded font-mono font-medium border border-white/5 group-hover:bg-emerald-500/20 group-hover:text-emerald-300">CONNECT</span>
                   </p>
@@ -262,7 +262,7 @@ export default function Contact() {
                     <h4 className="text-xs font-bold text-white tracking-wider uppercase flex items-center gap-2 flex-wrap">
                       Dubai Corporate Hub <span className="px-2 py-0.5 text-[9px] bg-white text-[#0b1536] rounded font-mono font-extrabold uppercase tracking-wider">Global HQ</span>
                     </h4>
-                    <p className="text-xs text-white/70 mt-1.5 leading-relaxed font-normal group-hover:text-white transition-colors duration-200">
+                    <p className="text-xs text-white/80 mt-1.5 leading-relaxed font-normal group-hover:text-white transition-colors duration-200">
                       Crystal Building - Office # 104 - 2C St - near ADCB Metro Station - Al Karama - Dubai, UAE
                     </p>
                   </div>
@@ -284,7 +284,7 @@ export default function Contact() {
                     <h4 className="text-xs font-bold text-white tracking-wider uppercase flex items-center gap-2 flex-wrap">
                       India HiLite Business Park <span className="px-2 py-0.5 text-[9px] bg-white/[0.08] text-white/90 rounded font-mono font-bold uppercase tracking-wider border border-white/10 group-hover:bg-white/20">Tech Wing</span>
                     </h4>
-                    <p className="text-xs text-white/70 mt-1.5 leading-relaxed font-normal group-hover:text-white transition-colors duration-200">
+                    <p className="text-xs text-white/80 mt-1.5 leading-relaxed font-normal group-hover:text-white transition-colors duration-200">
                       Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India
                     </p>
                   </div>
@@ -306,7 +306,7 @@ export default function Contact() {
                     <h4 className="text-xs font-bold text-white tracking-wider uppercase flex items-center gap-2 flex-wrap">
                       India Nadakkave Office <span className="px-2 py-0.5 text-[9px] bg-white/[0.08] text-white/90 rounded font-mono font-bold uppercase tracking-wider border border-white/10 group-hover:bg-white/20">Operations</span>
                     </h4>
-                    <p className="text-xs text-white/70 mt-1.5 leading-relaxed font-normal group-hover:text-white transition-colors duration-200">
+                    <p className="text-xs text-white/80 mt-1.5 leading-relaxed font-normal group-hover:text-white transition-colors duration-200">
                       5th Floor, C. M. Mathew Brothers Arcade, Kannur Rd, near Hotel Westway, Vikas Nagar Housing Colony, West Nadakkave, Chakkorathukulam, Kozhikode, Kerala 673006, India
                     </p>
                   </div>
@@ -316,14 +316,15 @@ export default function Contact() {
           </div>
 
           {/* RIGHT HALF: HIGH-CONVERSION FORM */}
-          <div className="bg-white p-6 sm:p-10 lg:p-12 order-1 lg:order-2 flex flex-col justify-center h-full transform-gpu">
+          <div className="lg:col-span-6 bg-white p-5 sm:p-10 lg:p-12 order-1 lg:order-2 flex flex-col justify-center h-full transform-gpu">
             
             {/* Form Section Header */}
             <div className="mb-8 select-none text-left">
-              <h4 className="text-2xl sm:text-3xl font-black text-black tracking-tight uppercase">
-                Fill the form <br></br>to connect with us
+              <h4 className="text-2xl sm:text-3xl font-black text-black tracking-tight uppercase leading-tight">
+                Fill the form <br className="hidden sm:inline" />to connect with us
               </h4>
-              <p className="text-xs font-bold mt-1.5 text-black/40 uppercase tracking-wider">
+              {/* FIXED: Readability adjusted from text-black/40 to text-neutral-600 to mirror input placeholder richness */}
+              <p className="text-xs font-bold mt-2 text-neutral-600 uppercase tracking-wider leading-relaxed">
                 Provide your details below to activate direct strategic consulting
               </p>
             </div>
