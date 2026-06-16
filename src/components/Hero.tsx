@@ -157,7 +157,7 @@ export default function Hero() {
                 aspectRatio: '16/9'
               }}
             >
-              <source src="/hero-background-video-1.mp4" type="video/mp4" />
+              <source src="/hero-background-video-2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
