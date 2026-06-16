@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
 
 export default function Hero() {
@@ -10,7 +10,6 @@ export default function Hero() {
   const showScrollDown = true;
 
   const [isScrolled, setIsScrolled] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
   
   // High-performance hardware-accelerated interactive utility styles
   const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
@@ -28,14 +27,6 @@ export default function Hero() {
 
     // Passive option maximizes GTmetrix / PageSpeed scrolling thread execution metrics
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Low Power Mode or autoplay restrictions mitigation strategy
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-        console.log("Autoplay prevented or video paused due to device battery savings mode.");
-      });
-    }
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -101,7 +92,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── HIGH PERFORMANCE KINETIC BACKGROUND VIDEO MATRIX ── */}
+        {/* ── PERFORMANCE BACKGROUND MATRIX ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -112,28 +103,21 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* Native fluid video element optimized to maximize rendering performance metrics */}
-            <video
-              ref={videoRef}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              className="w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-500 bg-[#010305]"
-              style={{ 
-                willChange: 'transform, opacity',
-                aspectRatio: '16/9'
-              }}
-            >
-              {/* Pointing directly to your configured video path asset file */}
-              <source src="/hero-background-video-1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-
-            {/* Futuristic Cinematic Overlay Blend */}
-            <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.12] bg-gradient-to-br from-[#00aaff]/10 via-transparent to-[#00aaff]/10" />
-            <div className="absolute inset-0 pointer-events-none bg-black/15" />
+            <picture className="w-full h-full block">
+              <source media="(min-width: 1200px)" srcSet="/hero-desktop-1.png" width="1920" height="900" />
+              <source media="(min-width: 640px)" srcSet="/hero-tablet-1.png" width="1024" height="768" />
+              <img
+                src="/hero-mobile-1.png"
+                alt=""
+                width="390"
+                height="844"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-full object-cover object-[center_bottom] sm:object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-300"
+                style={{ willChange: 'transform, opacity' }}
+              />
+            </picture>
+            <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6" />
           </div>
         </div>
 
@@ -192,6 +176,7 @@ export default function Hero() {
               </h1>
 
               <h2 
+                /* CHANGED: Reduced tracking configuration from tracking-[0.24em] to tracking-[0.11em] and aligned left padding balance to create a sleeker modern lockup */
                 className="text-[3.2vw] xs:text-[0.8rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.85rem] font-extrabold uppercase tracking-[0.11em] text-[#cbd5e1] leading-none font-sans pl-[0.11em] whitespace-nowrap"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 6px 15px rgba(0,0,0,0.85)',

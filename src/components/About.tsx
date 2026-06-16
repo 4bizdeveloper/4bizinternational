@@ -60,10 +60,10 @@ export default function About() {
   };
 
   const stats = [
-    { value: 1000, suffix: '+', label: 'Projects' },
-    { value: 16, suffix: '+', label: 'Years of experience' },
-    { value: 10, suffix: '+', label: 'Top rated company' },
-    { value: 8, suffix: '+', label: 'Countries serving' },
+    { value: 1000, suffix: '+', label: 'PROJECTS' },
+    { value: 16, suffix: '+', label: 'YEARS OF EXPERIENCE' },
+    { value: 10, suffix: '+', label: 'TOP RATED COMPANY' },
+    { value: 8, suffix: '+', label: 'COUNTRIES SERVING' },
   ];
 
   return (

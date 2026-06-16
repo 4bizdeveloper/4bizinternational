@@ -154,7 +154,7 @@ export default function AboutPage() {
             <div key={idx} className="flex flex-col space-y-1 md:pl-4 md:border-l border-white/10 first:border-0 py-2">
               <div className="flex items-center justify-center md:justify-start space-x-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.2)]">
                 <Counter value={stat.value} suffix={stat.suffix} />
-                <span className="text-xl sm:text-2xl font-extrabold text-cyan-400">{stat.suffix}</span>
+              
               </div>
               <span className="text-xs sm:text-sm text-white/50 font-mono uppercase tracking-widest">{stat.label}</span>
             </div>
