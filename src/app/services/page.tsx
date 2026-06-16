@@ -6,6 +6,7 @@ import {
   ArrowRight, Users, Cpu, Monitor, Zap, 
   Mail, Server, Lock, Layers, CheckCircle2 
 } from "lucide-react";
+import Contact from "@/components/Contact";
 
 interface ServiceBlock {
   title: string;
@@ -83,7 +84,6 @@ export default function ServicesPage() {
       title: "Cloud, Hosting & Infrastructure Services",
       description: "Build a secure and scalable digital foundation with enterprise-grade hosting, cloud infrastructure, and managed IT services.",
       icon: <Server className="text-emerald-400" size={22} />,
-      // Replaced with ultra-vivid, premium dark neon datacenter setup with strong color presence
       visualAsset: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85",
       borderColor: "border-emerald-400 hover:bg-emerald-400 text-emerald-400",
       points: [
@@ -97,8 +97,7 @@ export default function ServicesPage() {
       title: "Cybersecurity & Digital Protection",
       description: "Protect your organization from evolving cyber threats with proactive security assessments, monitoring, and advanced protection solutions.",
       icon: <Lock className="text-red-400" size={22} />,
-      // Replaced with highly relevant, bright neon cyber defense operations visualization
-      visualAsset: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1200&q=85",
+      visualAsset: "https://images.unsplash.com/photo-1563986764494-4dee2763ff3f?auto=format&fit=crop&w=1200&q=85",
       borderColor: "border-red-500 hover:bg-red-500 text-red-500",
       points: [
         "Penetration Testing", "Vulnerability Assessment", "Malware Analysis", 
@@ -123,29 +122,29 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="w-full bg-[#050b1e] text-white font-sans antialiased relative min-h-screen pt-28 sm:pt-36 md:pt-40 pb-24 md:pb-32 overflow-x-hidden selection:bg-[#00e5a3] selection:text-black">
+    <div className="w-full bg-[#050b1e] text-white font-sans antialiased relative min-h-screen pt-28 sm:pt-36 md:pt-40 overflow-x-hidden selection:bg-[#00e5a3] selection:text-black">
       
       {/* Background Grid & Lighting Architecture */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.003)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.003)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none z-0" />
       <div className="absolute top-0 inset-x-0 h-[700px] bg-[radial-gradient(circle_at_50%_0%,rgba(0,229,163,0.08),transparent_60%)] pointer-events-none z-0" />
 
-      {/* Main Title Architecture */}
+      {/* Main Title Architecture - Clean No Underline Setup */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-16 xl:px-24 relative z-10 mb-16 sm:mb-24 lg:mb-32 text-center">
-        <div className="max-w-3xl mx-auto">
-          <span className="inline-block font-mono text-[10px] sm:text-xs tracking-[0.3em] uppercase text-[#00e5a3] font-bold mb-4 bg-[#00e5a3]/5 px-3 py-1 rounded-full border border-[#00e5a3]/10">
-            Digital Excellence Since 2010
-          </span>
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] text-white">
-            Our Core <br className="sm:hidden" />
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] text-white uppercase">
+            MEET OUR NETWORK OF <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5a3] via-cyan-400 to-indigo-400">
-              Capabilities
+              INDUSTRY TRAILBLAZERS.
             </span>
           </h1>
+          <p className="mt-6 text-sm sm:text-base md:text-lg font-normal tracking-wide text-slate-300 max-w-2xl mx-auto leading-relaxed opacity-90 px-2 sm:px-0">
+            We help our clients unlock growth by focusing on four key solution areas.
+          </p>
         </div>
       </div>
 
       {/* Alternating Services Layout Framework */}
-      <div className="w-full relative z-10 flex flex-col gap-20 sm:gap-28 lg:gap-36">
+      <div className="w-full relative z-10 flex flex-col gap-20 sm:gap-28 lg:gap-36 pb-24 md:pb-32">
         {totalServices.map((service, index) => {
           const isEven = index % 2 === 0;
 
@@ -156,7 +155,7 @@ export default function ServicesPage() {
               } items-center gap-8 md:gap-12 lg:gap-16 xl:gap-20`}>
                 
                 {/* Visual Asset Container - Infinite Blend Design */}
-                <div className="w-full lg:w-1/2 flex justify-center items-center h-[240px] sm:h-[360px] md:h-[400px] lg:h-[460px] relative select-none pointer-events-none w-full">
+                <div className="w-full lg:w-1/2 flex justify-center items-center h-[240px] sm:h-[360px] md:h-[400px] lg:h-[460px] relative select-none pointer-events-none">
                   
                   {/* Advanced CSS Blend & Feather Masks to completely remove borders */}
                   <div className="absolute inset-0 bg-[#050b1e]/10 z-20 mix-blend-multiply" />
@@ -184,7 +183,7 @@ export default function ServicesPage() {
                       priority={index <= 1}
                       loading={index <= 1 ? undefined : "lazy"}
                       className="object-cover opacity-75 saturate-200 brightness-125 contrast-125 transition-transform duration-700 ease-out"
-                      sizes="(max-w-1024px) 100vw, 50vw"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </div>
                 </div>
@@ -238,6 +237,11 @@ export default function ServicesPage() {
           );
         })}
       </div>
+
+      {/* Semantic integration of Contact Section at bottom */}
+      <footer className="w-full relative z-20 border-t border-slate-900/40 bg-[#050b1e]">
+        <Contact />
+      </footer>
 
       {/* Optimized Performance Custom Styling Rules */}
       <style jsx global>{`
