@@ -5,16 +5,25 @@ import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
 import Contact from '@/components/Contact';
 
-// All 7 verified operational client assets preserved completely
 const ALL_CLIENTS = [
   { id: 'phf', src: '/client-logos/phf-logo.svg', alt: 'PHF Logo', isPHF: true },
-  { id: 'theyyampattil', src: '/client-logos/theyyampattil-ogo.avif', alt: 'Theyyampattil Logo' },
+  { id: 'theyyampattil', src: '/client-logos/theyyampattil-logo.avif', alt: 'Theyyampattil Logo' },
   { id: 'opusbm', src: '/client-logos/opusbm-logo.png', alt: 'OpusBM Logo' },
-  { id: 'opus-acoustic', src: '/client-logos/opus-acoustic-logo.png', alt: 'Opus Acoustic Logo' },
   { id: 'aimbridge', src: '/client-logos/aimbridge-logo.png', alt: 'Aimbridge Logo' },
   { id: 'Alrumooz', src: '/client-logos/al-rumooz-logo.png', alt: 'Alrumooz Logo' },
-  { id: 'Apparel', src: '/client-logos/apparel-logo.svg', alt: 'Apparel-logo' },
+  { id: 'Apparel', src: '/client-logos/apparel-logo.svg', alt: 'Apparel Logo' },
+  { id: 'Inka-Dubai', src: '/client-logos/inka-dubai.png', alt: 'Inka Dubai Logo' },
+  { id: 'Novo-Cinemas', src: '/client-logos/novo-cinemas.svg', alt: 'Novo Cinemas Logo' },
+  // --- New additions from the screenshot ---
+  { id: 'sixth-street', src: '/client-logos/6thstreet.png', alt: '6th Street Logo' },
+  { id: 'al-rostamani', src: '/client-logos/al-rostamani.svg', alt: 'Al Rostamani Logo' },
+  { id: 'arab-brazilian-chamber', src: '/client-logos/arab-brazilian-chamber-of-commerce.svg', alt: 'Arab Brazilian Chamber of Commerce Logo' },
+  { id: 'beetroot', src: '/client-logos/beetroot.png', alt: 'Beetroot Logo' },
+  { id: 'blueberry-media', src: '/client-logos/blueberry-media.webp', alt: 'Blueberry Media Logo' },
+  { id: 'opus-acoustic', src: '/client-logos/opus-acoustic-logo.png', alt: 'Opus Acoustic Logo' },
+  { id: 'ramada-group', src: '/client-logos/ramada-group.png', alt: 'Ramada Group Logo' }
 ];
+
 
 // GPU optimized, lightweight animations to prevent frame drops or layout shifts
 const containerVariants: Variants = {
