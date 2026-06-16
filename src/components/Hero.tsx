@@ -29,22 +29,43 @@ export default function Hero() {
     // Passive option maximizes GTmetrix / PageSpeed scrolling thread execution metrics
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // Aggressive playback trigger to bypass strict mobile low-power mode blocks
-    const attemptAutoplay = () => {
-      if (videoRef.current) {
-        const playPromise = videoRef.current.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            // Fallback structural safety if browser forces extreme data-saver mode
-            console.log("Autoplay paused by mobile battery configurations. Handled gracefully.");
+    // Comprehensive Mobile Engine Watchdog to prevent video freezing
+    const videoElement = videoRef.current;
+    
+    const forceVideoPlayback = () => {
+      if (videoElement) {
+        // Clear any stuck states by validating paused properties
+        if (videoElement.paused) {
+          videoElement.play().catch(() => {
+            console.log("Autoplay sweep bypassed due to low battery mode restriction.");
           });
         }
       }
     };
 
-    attemptAutoplay();
+    // Trigger on mount
+    forceVideoPlayback();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Watchdog listener: Restarts or wakes up video stream if mobile network stuttered/stalled it
+    const handleStall = () => {
+      if (videoElement) {
+        videoElement.load();
+        videoElement.play().catch(() => {});
+      }
+    };
+
+    if (videoElement) {
+      videoElement.addEventListener('stalled', handleStall);
+      videoElement.addEventListener('suspend', forceVideoPlayback);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (videoElement) {
+        videoElement.removeEventListener('stalled', handleStall);
+        videoElement.removeEventListener('suspend', forceVideoPlayback);
+      }
+    };
   }, []);
 
   const socials = [
@@ -120,11 +141,7 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* GTmetrix/SEO optimization strategies implemented below:
-              1. muted, autoPlay, playsInline: Absolute prerequisites for immediate mobile renders.
-              2. preload="auto": Forces background processing instantly.
-              3. loop: Seamless infinitely looping performance hook.
-            */}
+            {/* Added: controls={false}, autoPlay, loop, muted, playsInline + crossOrigin to stop mobile stalls */}
             <video
               ref={videoRef}
               autoPlay
@@ -132,6 +149,8 @@ export default function Hero() {
               muted
               playsInline
               preload="auto"
+              controls={false}
+              crossOrigin="anonymous"
               className="w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-500 bg-[#010305]"
               style={{ 
                 willChange: 'transform, opacity',
