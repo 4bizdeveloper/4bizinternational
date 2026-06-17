@@ -127,7 +127,8 @@ export default function About() {
               {/* 📱 MOBILE & TABLET VIEW: Solid Gradient Typographic Block - Center Aligned & Fully Selectable */}
               <div className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] select-text pointer-events-auto w-full text-center">
                 4BIZ <br />
-                <span className="text-[0.42em] tracking-normal block mt-0.5">INTERNATIONAL LLC</span>
+                {/* Visual upgrade: Increased font scale on mobile screens to match high-end design requirements */}
+                <span className="text-[0.5em] xs:text-[0.55em] sm:text-[0.42em] tracking-normal block mt-1">INTERNATIONAL LLC</span>
               </div>
 
               {/* 💻 DESKTOP VIEW: High-Brilliance Vector Masking Outline Layer */}
