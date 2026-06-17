@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 
 const ALL_CLIENTS = [
-  { id: 'phf', src: '/client-logos/phf-logo.svg', alt: 'PHF Logo', isPHF: true },
+  { id: 'pharsfilm', src: '/client-logos/pharsfilm-logo.svg', alt: 'Pharsfilm', isPHF: true },
   { id: 'theyyampattil', src: '/client-logos/theyyampattil-logo.avif', alt: 'Theyyampattil Logo' },
   { id: 'opusbm', src: '/client-logos/opusbm-logo.png', alt: 'OpusBM Logo' },
   { id: 'aimbridge', src: '/client-logos/aimbridge-logo.png', alt: 'Aimbridge Logo' },
@@ -16,12 +16,13 @@ const ALL_CLIENTS = [
   { id: 'Novo-Cinemas', src: '/client-logos/novo-cinemas.svg', alt: 'Novo Cinemas Logo' },
   { id: 'sixth-street', src: '/client-logos/6thstreet.png', alt: '6th Street Logo' },
   { id: 'al-rostamani', src: '/client-logos/al-rostamani.svg', alt: 'Al Rostamani Logo' },
-  { id: 'arab-brazilian-chamber', src: '/client-logos/arab-brazilian-chamber-of-commerce.svg', alt: 'Arab Brazilian Chamber of Commerce Logo' },
   { id: 'beetroot', src: '/client-logos/beetroot.png', alt: 'Beetroot Logo' },
   { id: 'blueberry-media', src: '/client-logos/blueberry-media.webp', alt: 'Blueberry Media Logo' },
-  { id: 'opus-acoustic', src: '/client-logos/opus-acoustic-logo.png', alt: 'Opus Acoustic Logo' },
   { id: 'ramada-group', src: '/client-logos/ramada-group.png', alt: 'Ramada Group Logo' },
-  { id: 'nov-cinemas', src: '/client-logos/nov-cinemas.svg', alt: 'Nov Cinemas Logo' },
+  { id: 'apple-international-school', src: '/client-logos/apple-international-school.png', alt: 'Apple International School Logo' },
+  { id: 'fmredxb', src: '/client-logos/fmredxb.png', alt: 'FMREDXB Logo' },
+  { id: 'gulf-film', src: '/client-logos/gulf-film-llc.png', alt: 'Gulf Film LLC Logo' },
+  { id: 'h-h', src: '/client-logos/h-h.svg', alt: 'H-H Logo' },
 ];
 
 // GPU optimized, lightweight animations to prevent frame drops or layout shifts
@@ -65,23 +66,31 @@ const ClientSection = () => {
           </p>
         </div>
 
-        {/* 
-          Ultra-responsive layout updated to display:
-          grid-cols-2 -> 2 columns on mobile devices
-          md:grid-cols-3 -> 3 columns on tablet devices 
-          lg:grid-cols-5 -> 5 columns on desktop screens
+        {/* Ultra-responsive layout updated to display:
+          grid-cols-2 -> 2 columns on mobile devices (16 items = 8 clean rows)
+          md:grid-cols-3 -> 3 columns on tablet devices (15 items = 5 clean rows)
+          lg:grid-cols-5 -> 5 columns on desktop screens (15 items = 3 clean rows)
+          
+          Added 'justify-items-center justify-center' to guarantee alignment.
         */}
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-5 max-w-7xl mx-auto"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-5 max-w-7xl mx-auto justify-items-center justify-center w-full"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
           {ALL_CLIENTS.map((client, index) => {
-            // Index 0 to 14 (first 15 items) will always show everywhere.
-            // Index 15 (16th item) will only show on mobile, hiding on tablet (md) and desktop (lg).
-            const visibilityClass = index === 15 ? "block md:hidden" : "block";
+            // Index 0 to 14 (first 15 items) show everywhere.
+            // Index 15 (16th item) shows ONLY on mobile.
+            // Index 16+ (remaining items) hidden everywhere to maintain crisp counts.
+            let visibilityClass = "hidden";
+            
+            if (index < 15) {
+              visibilityClass = "block w-full";
+            } else if (index === 15) {
+              visibilityClass = "block md:hidden w-full";
+            }
 
             return (
               <motion.div 
