@@ -3,7 +3,8 @@
 import React, { useRef, useMemo, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, animate, useInView } from 'framer-motion';
 import Image from 'next/image';
-import { RiDownloadCloud2Line, RiFilePdfLine, RiCompass3Line, RiFocus2Line, RiShieldFlashLine, RiCpuLine, RiGlobalLine } from 'react-icons/ri';
+import { RiCompass3Line, RiFocus2Line, RiShieldFlashLine, RiCpuLine, RiGlobalLine } from 'react-icons/ri';
+import Contact from '@/components/Contact';
 
 // ─── PERFORMANCE OPTIMIZED CLS-FREE COUNTER ─────────────────────────────────
 interface CounterProps {
@@ -100,7 +101,7 @@ export default function AboutPage() {
           </p>
           <div className="pt-4">
             <a 
-              href="#portfolio" 
+              href="#contact" 
               className="relative group inline-flex items-center space-x-3 bg-white text-black px-8 py-4 rounded-full font-bold text-sm tracking-wide transition-all duration-300 hover:bg-cyan-400 hover:text-black shadow-lg hover:shadow-cyan-400/20 transform-gpu hover:-translate-y-0.5"
             >
               <span>Explore Architecture</span>
@@ -154,7 +155,6 @@ export default function AboutPage() {
             <div key={idx} className="flex flex-col space-y-1 md:pl-4 md:border-l border-white/10 first:border-0 py-2">
               <div className="flex items-center justify-center md:justify-start space-x-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.2)]">
                 <Counter value={stat.value} suffix={stat.suffix} />
-              
               </div>
               <span className="text-xs sm:text-sm text-white/50 font-mono uppercase tracking-widest">{stat.label}</span>
             </div>
@@ -250,94 +250,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── PORTFOLIO INTERACTIVE FULLY RESPONSIVE ADAPTIVE CONTAINER ─── */}
-      <section id="portfolio" className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 py-12 md:py-20">
-        <div className="flex flex-col space-y-8 w-full">
-          
-          {/* Header Controls Strip */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-4 border-b border-white/10">
-            <div className="flex flex-col space-y-1">
-              <span className="text-xs font-mono tracking-[0.4em] uppercase text-pink-500 font-bold">Interactive Platform Deck</span>
-              <h2 className="text-2xl sm:text-4xl font-black tracking-tight">Company Profile</h2>
-            </div>
-            
-            <a 
-              href="https://new.4bizinternational.com/documents/4biz-international-company-profile.pdf"
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center space-x-2.5 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-bold text-xs sm:text-sm tracking-wide px-6 py-3 rounded-full shadow-[0_4px_25px_rgba(236,72,153,0.3)] hover:shadow-[0_4px_35px_rgba(236,72,153,0.5)] transition-all duration-300 transform-gpu hover:-translate-y-0.5"
-            >
-              <span>Download Profile</span>
-              <RiDownloadCloud2Line className="text-base group-hover:animate-bounce" />
-            </a>
-          </div>
-
-          {/* OUTER ACCENT FRAME WITH INTEGRATED HARDWARE BUTTONS */}
-          <div className="relative w-full mx-auto max-w-4xl p-2 sm:p-3.5 rounded-[2.5rem] sm:rounded-[3rem] bg-gradient-to-tr from-pink-500 via-red-500 via-orange-400 via-cyan-400 to-purple-600 shadow-[0_25px_65px_rgba(236,72,153,0.35)] group transform-gpu transition-all duration-500">
-            
-            {/* Ambient Shadow Bleed */}
-            <div className="absolute -inset-4 bg-gradient-to-tr from-pink-500 via-purple-600 to-cyan-400 opacity-20 blur-2xl rounded-[3.5rem] pointer-events-none group-hover:opacity-35 transition-opacity duration-500" />
-            
-            {/* ── PHYSICAL HARDWARE COMPONENTS EMBEDDED DIRECTLY ON THE OUTER ACCENT BORDER ── */}
-            
-            {/* 1. VOLUME BUTTONS (+/-): Placed on the outside left edge across all sizes */}
-            <div className="absolute top-[28%] -left-[6px] w-[6px] h-10 bg-[#bd215c] rounded-l border-l border-white/20 shadow-md z-50" />
-            <div className="absolute top-[38%] -left-[6px] w-[6px] h-10 bg-[#bd215c] rounded-l border-l border-white/20 shadow-md z-50" />
-            
-            {/* 2. POWER BUTTONS: Layout positions adjust instantly to preserve responsive ergonomics */}
-            {/* Mobile: Mounted on outer right border */}
-            <div className="absolute top-[32%] -right-[6px] w-[6px] h-12 bg-[#ab4bc4] rounded-r border-r border-white/20 md:hidden z-50" />
-            {/* Desktop/Tablet: Mounted cleanly on top-right side rim */}
-            <div className="hidden md:block absolute -top-[6px] right-20 w-14 h-[6px] bg-[#ab4bc4] rounded-t border-t border-white/20 z-50" />
-
-            {/* CHASSIS MONITOR SHELL: 
-                - Mobile view: fluid 100% device span, aspect-[9/16] portrait, zero overflow.
-                - Tablet/Desktop view: switches seamlessly to standard aspect-[4/3] landscape frame.
-            */}
-            <div className="relative w-full rounded-[2.2rem] sm:rounded-[2.5rem] bg-[#0c0f24] border-[12px] sm:border-[20px] md:border-[22px] border-[#161a36] shadow-2xl overflow-hidden aspect-[9/16] md:aspect-[4/3] flex flex-col transform-gpu transition-all duration-500">
-              
-              {/* 3. CENTERED FRONT CAMERA LENS INTERNAL MATRIX */}
-              {/* Mobile Portrait Bezel Camera */}
-              <div className="absolute top-[4px] left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#202752] border border-black/50 shadow-inner md:hidden flex items-center justify-center z-50">
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400/40" />
-              </div>
-              {/* Desktop Landscape Bezel Camera */}
-              <div className="hidden md:flex absolute top-[4px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#202752] border border-black/60 shadow-inner items-center justify-center z-50">
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-500/50 flex items-center justify-center">
-                  <div className="w-0.5 h-0.5 rounded-full bg-white/80" />
-                </div>
-              </div>
-
-              {/* Secure Document Rendering Layer Content Viewport */}
-              <object
-                data="https://new.4bizinternational.com/documents/4biz-international-company-profile.pdf"
-                type="application/pdf"
-                className="w-full h-full rounded-[1.2rem] bg-[#121630]"
-              >
-                {/* Fallback Screen Viewport Control Deck */}
-                <div className="w-full h-full flex flex-col items-center justify-center text-center p-5 sm:p-8 bg-gradient-to-b from-[#141936] to-[#0d1026] text-white">
-                  <div className="w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center border border-pink-500/30 mb-4 shadow-inner">
-                    <RiFilePdfLine className="text-xl text-pink-500" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-black mb-1">Company Profile</h3>
-                  <p className="text-white/60 text-xs max-w-xs leading-relaxed mb-6">
-                    Click down below to pull and inspect our high-performance interactive portfolio assets instantly on your device screen.
-                  </p>
-                  <a
-                    href="https://new.4bizinternational.com/documents/4biz-international-company-profile.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white text-black font-bold text-xs tracking-wide px-6 py-3 rounded-full transition-all duration-300 hover:bg-cyan-400 hover:text-black shadow-md transform-gpu active:scale-95"
-                  >
-                    Launch Fullscreen Profile
-                  </a>
-                </div>
-              </object>
-            </div>
-
-          </div>
-        </div>
+      {/* ─── CONTACT SECTION ─── */}
+      <section id="contact" className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-12 md:py-20">
+        <Contact />
       </section>
 
       {/* Smooth Ambient Cursor Spotlighting Tracker Overlay */}
