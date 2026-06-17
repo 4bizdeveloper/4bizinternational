@@ -25,7 +25,7 @@ const ALL_CLIENTS = [
   // --- Missing additions referenced from the images ---
   { id: 'apple-international-school', src: '/client-logos/apple-international-school.png', alt: 'Apple International School Logo' },
   { id: 'fmredxb', src: '/client-logos/fmredxb.png', alt: 'FMREDXB Logo' },
-  { id: 'frontline-medical-centre', src: '/client-logos/Frontline-medical-centre.png', alt: 'Frontline Medical Centre Logo' },
+  { id: 'frontline-medical-centre', src: '/client-logos/frontline-medical-centre.png', alt: 'Frontline Medical Centre Logo' },
   { id: 'gulf-film', src: '/client-logos/gulf-film-llc.png', alt: 'Gulf Film LLC Logo' },
   { id: 'h-h', src: '/client-logos/h-h.svg', alt: 'H-H Logo' },
   { id: 'nano-pixel-technologies', src: '/client-logos/nano-pixel-technologies.svg', alt: 'Nano Pixel Technologies Logo' },
