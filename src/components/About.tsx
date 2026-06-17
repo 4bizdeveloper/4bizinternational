@@ -57,14 +57,13 @@ export default function About() {
     offset: ["start end", "end start"]
   });
 
-  // High-performance spring setup for buttery smooth frame-rate matching (strips out wheel stutter)
+  // Zero-latency smooth spring tracking
   const smoothScrollProgress = useSpring(scrollYProgress, { 
-    stiffness: 75, 
-    damping: 28, 
-    restDelta: 0.0005 
+    stiffness: 120, 
+    damping: 24, 
+    restDelta: 0.0001 
   });
   
-  // Dynamic high-speed scroll rotation mapping: Rings revolve beautifully on scroll without changing position/size
   const fastRingScrollRotation = useTransform(smoothScrollProgress, [0, 1], [0, 360]);
   const reverseRingScrollRotation = useTransform(smoothScrollProgress, [0, 1], [360, 0]);
 
@@ -88,7 +87,7 @@ export default function About() {
     <section 
       ref={sectionRef}
       id="about" 
-      className="relative w-full text-white py-12 md:py-20 lg:py-24 overflow-hidden font-sans select-none bg-[#070e25]"
+      className="relative w-full text-white py-12 md:py-20 lg:py-24 overflow-hidden font-sans select-text bg-[#070e25]"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '0 900px' }}
     >
       {/* Micro-mesh Grid Structural Backdrop Overlay for Premium High-Tech Feel */}
@@ -100,11 +99,11 @@ export default function About() {
         {/* Two-Column Responsive Layout Node - Optimized for Zero Dead Space */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center pt-2 mb-10 md:mb-16">
           
-          {/* Left Side Content Column (Static Layout Structure - Scroll Decoupled) */}
-          <div className="w-full lg:col-span-7 flex flex-col order-2 lg:order-1">
+          {/* Left Side Content Column - Fully centered on mobile, shifts left on desktop */}
+          <div className="w-full lg:col-span-7 flex flex-col order-2 lg:order-1 items-center lg:items-start text-center lg:text-left">
             {/* Section Sub-Tag */}
-            <div className="flex items-center mb-3">
-              <span className="text-xs sm:text-sm uppercase tracking-[0.3em] [word-spacing:0.35em] font-black text-white/90 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)]">
+            <div className="flex items-center justify-center lg:justify-start mb-3">
+              <span className="text-xs sm:text-sm uppercase tracking-[0.3em] [word-spacing:0.35em] font-black text-white/90 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)] select-text">
                 WE ARE
               </span>
             </div>
@@ -115,17 +114,17 @@ export default function About() {
               onMouseMove={handleMouseMove}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              className="relative w-full h-auto flex flex-col justify-center select-none group py-1 mb-4 lg:cursor-none"
+              className="relative w-full h-auto flex flex-col justify-center items-center lg:items-start select-text group py-1 mb-4 lg:cursor-none"
             >
-              {/* 📱 MOBILE & TABLET VIEW: Solid Gradient Typographic Block */}
-              <div className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] pointer-events-none select-none">
+              {/* 📱 MOBILE & TABLET VIEW: Solid Gradient Typographic Block - Center Aligned & Fully Selectable */}
+              <div className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] select-text pointer-events-auto w-full text-center">
                 4BIZ <br />
                 <span className="text-[0.42em] tracking-normal block mt-0.5">INTERNATIONAL LLC</span>
               </div>
 
               {/* 💻 DESKTOP VIEW: High-Brilliance Vector Masking Outline Layer */}
               <div 
-                className="hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider text-transparent pointer-events-none select-none transition-all duration-500 uppercase leading-[1.05]"
+                className="hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider text-transparent pointer-events-auto select-text transition-all duration-500 uppercase leading-[1.05]"
                 style={{ 
                   WebkitTextStroke: isHovered ? '2px rgba(57, 243, 255, 0.95)' : '2px rgba(0, 191, 255, 0.85)',
                   opacity: isHovered ? 0.95 : 0.8,
@@ -170,23 +169,23 @@ export default function About() {
               )}
             </div>
 
-            {/* Core Continuous Flowing Typography Block (Containerless Design) */}
-            <div className="flex flex-col space-y-4 pt-1 max-w-5xl">
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-snug sm:leading-tight text-left">
+            {/* Core Continuous Flowing Typography Block */}
+            <div className="flex flex-col space-y-4 pt-1 max-w-5xl items-center lg:items-start w-full">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-snug sm:leading-tight text-center lg:text-left select-text">
                 Leading IT Solutions & Software Development Company in <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-[#1ca6db] to-blue-500 drop-shadow-[0_2px_10px_rgba(34,211,238,0.2)]">Dubai</span>
               </h3>
 
-              <p className="text-white/90 leading-relaxed text-sm md:text-base text-justify font-medium tracking-wide border-l-[3px] border-cyan-400/40 pl-4 md:pl-5 py-1">
+              <p className="text-white/90 leading-relaxed text-sm md:text-base text-center lg:text-justify font-medium tracking-wide border-l-0 lg:border-l-[3px] border-cyan-400/40 lg:pl-4 md:pl-5 py-1 select-text">
                 4Biz International is a leading IT solutions and digital transformation company in Dubai, helping businesses streamline operations, accelerate growth, and embrace innovation through advanced technology solutions. Our expertise spans software development, mobile app development, web design, ERP and CRM solutions, cloud services, cybersecurity, IT infrastructure, and digital marketing. With a client-focused approach and a team of experienced professionals, we deliver scalable, secure, and future-ready solutions tailored to meet unique business requirements. At 4Biz International, we bridge the gap between technology and business excellence, empowering organizations to thrive in an increasingly digital world.
               </p>
             </div>
             
             {/* Interactive Futuristic Neon CTA Anchor Button */}
-            <div className="pt-6 text-left">
+            <div className="pt-6 text-center lg:text-left">
               <a 
                 href="#contact" 
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border border-white/20 hover:border-white rounded-full text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase transition-all duration-300 shadow-[inset_0_0_12px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] text-white bg-white/[0.02] backdrop-blur-md group"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border border-white/20 hover:border-white rounded-full text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase transition-all duration-300 shadow-[inset_0_0_12px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] text-white bg-white/[0.02] backdrop-blur-md group select-text"
               >
                 GET FREE CONSULTATION
                 <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-2 sm:ml-3 transform transition-transform duration-300 group-hover:translate-x-1.5 stroke-current" fill="none" viewBox="0 0 24 24">
@@ -196,15 +195,15 @@ export default function About() {
             </div>
           </div>
 
-          {/* ─── RIGHT SIDE COLUMN: SYMMETRICAL COSMIC MATRIX (SCROLL EMBEDDED RINGS ONLY) ─── */}
+          {/* ─── RIGHT SIDE COLUMN: SYMMETRICAL COSMIC MATRIX ─── */}
           <div className="w-full lg:col-span-5 flex items-center justify-center relative min-h-[350px] sm:min-h-[450px] order-1 lg:order-2">
             {/* Glowing Vibrant Space Backplane */}
             <div className="absolute inset-0 bg-radial-gradient from-cyan-500/20 via-emerald-500/10 to-transparent blur-3xl pointer-events-none" />
 
-            {/* RIGID COMPOSITE CONTAINER: Perfectly locks layout vectors together with no parallax structural tilting */}
+            {/* RIGID COMPOSITE CONTAINER */}
             <div className="absolute w-full h-full flex items-center justify-center pointer-events-none transform-gpu">
               
-              {/* Complex Multi-layered Particle Rings & Cosmic Track System (Completely symmetrical backdrop context) */}
+              {/* Complex Multi-layered Particle Rings & Cosmic Track System */}
               <div className="absolute inset-0 flex items-center justify-center transform-gpu">
                 {/* Diffuse Energy Vibrant Core */}
                 <div className="absolute w-52 h-52 bg-radial-gradient from-[#39f3ff]/20 via-[#39ff73]/10 to-transparent blur-2xl animate-pulse" />
@@ -213,7 +212,7 @@ export default function About() {
                 <div className="absolute w-44 h-44 rounded-full border-[5px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.35)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
                 <div className="absolute w-56 h-56 rounded-full border-[3px] border-[#39ff73]/20 shadow-[0_0_30px_rgba(57,255,115,0.25)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite_1.1s]" />
 
-                {/* Dynamic Rotating HUD Vector Geometries - Only rotation value reacts to scroll position */}
+                {/* Dynamic Rotating HUD Vector Geometries */}
                 <motion.div 
                   style={{ rotate: fastRingScrollRotation }}
                   className="absolute w-60 h-60 sm:w-72 sm:h-72 rounded-full border-[2.5px] border-dashed border-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.2)] will-change-transform"
@@ -223,7 +222,7 @@ export default function About() {
                   className="absolute w-[16rem] h-[16rem] sm:w-[19rem] sm:h-[19rem] rounded-full border-[2px] border-double border-emerald-400/40 shadow-[0_0_20px_rgba(52,211,153,0.15)] will-change-transform"
                 />
                 
-                {/* HIGH VIBRANCY: Fluorescent Neon Green & Cyan Partial Curved Outer Rings (Revolves dynamically on scroll) */}
+                {/* HIGH VIBRANCY Rings */}
                 <motion.div 
                   style={{ rotate: fastRingScrollRotation }}
                   className="absolute w-[19rem] h-[19rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[4px] border-transparent border-t-[#39ff73] border-b-cyan-400 border-l-[#39ff73] filter drop-shadow-[0_0_18px_rgba(57,255,115,0.6)] will-change-transform"
@@ -234,7 +233,7 @@ export default function About() {
                 />
               </div>
               
-              {/* Floating Center Logo Surface: Stays perfectly stationary at the direct center of the rings on scroll. Smooth layout scale applied only on cursor hover */}
+              {/* Floating Center Logo Surface */}
               <div className="absolute w-52 h-26 sm:w-64 sm:h-32 transition-transform duration-500 hover:scale-105 transform-gpu filter drop-shadow-[0_0_35px_rgba(6,182,212,0.35)] flex items-center justify-center">
                 <Image
                   src="/4biz_logo-1.png"
@@ -251,16 +250,16 @@ export default function About() {
 
         </div>
 
-        {/* Bottom Content Row: High-Brilliance Metric Cards with Polished Solid Borders */}
+        {/* Bottom Content Row: High-Brilliance Metric Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 sm:gap-6 lg:gap-10 pt-10 border-t border-white/10">
           {stats.map((stat, idx) => (
             <div 
               key={idx} 
-              className="flex flex-col space-y-1.5 pl-3 sm:pl-4 border-l-2 border-white/10 hover:border-white transition-all duration-300 group bg-gradient-to-r from-white/[0.01] to-transparent py-1"
+              className="flex flex-col items-center lg:items-start space-y-1.5 pl-0 lg:pl-4 border-l-0 lg:border-l-2 border-white/10 hover:border-white transition-all duration-300 group bg-gradient-to-r from-white/[0.01] to-transparent py-1 select-text"
             >
               <Counter value={stat.value} suffix={stat.suffix} />
-              <div className="flex flex-col space-y-1.5">
-                <span className="text-xs sm:text-sm text-white font-semibold tracking-wider max-w-[160px]">
+              <div className="flex flex-col items-center lg:items-start space-y-1.5">
+                <span className="text-xs sm:text-sm text-white font-semibold tracking-wider max-w-[160px] text-center lg:text-left select-text">
                   {stat.label}
                 </span>
                 <div className="w-10 sm:w-12 h-[2px] bg-white opacity-90 rounded-full transition-all duration-300 group-hover:w-16 sm:group-hover:w-20 shadow-[0_1px_5px_rgba(255,255,255,0.4)]" />
