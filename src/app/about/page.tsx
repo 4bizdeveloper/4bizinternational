@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useRef, useMemo, useEffect } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, animate, useInView } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import Image from 'next/image';
-import { RiCompass3Line, RiFocus2Line, RiShieldFlashLine, RiCpuLine, RiGlobalLine } from 'react-icons/ri';
-import Contact from '@/components/Contact';
 
 // ─── PERFORMANCE OPTIMIZED CLS-FREE COUNTER ─────────────────────────────────
 interface CounterProps {
@@ -18,7 +16,7 @@ const Counter: React.FC<CounterProps> = ({ value, suffix = '' }) => {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.floor(latest));
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (inView) {
       const controls = animate(count, value, {
         duration: 2.2,
@@ -28,7 +26,7 @@ const Counter: React.FC<CounterProps> = ({ value, suffix = '' }) => {
     }
   }, [inView, count, value]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     return rounded.onChange((latest) => {
       if (ref.current) {
         ref.current.textContent = latest + suffix;
@@ -36,235 +34,225 @@ const Counter: React.FC<CounterProps> = ({ value, suffix = '' }) => {
     });
   }, [rounded, suffix]);
 
-  return <span ref={ref} className="text-3xl sm:text-5xl font-black text-white" />;
+  return (
+    <span 
+      ref={ref} 
+      className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight block drop-shadow-[0_2px_15px_rgba(255,255,255,0.15)] will-change-transform h-[1.2em]"
+    >
+      0{suffix}
+    </span>
+  );
 };
 
-// ─── MAIN ABOUT PAGE COMPONENT ───────────────────────────────────────────────
-export default function AboutPage() {
+// ─── MAIN BRAND ARCHITECTURE ABOUT COMPONENT ────────────────────────────────
+export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
 
-  const smoothX = useSpring(mouseX, { stiffness: 400, damping: 40 });
-  const smoothY = useSpring(mouseY, { stiffness: 400, damping: 40 });
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
 
-  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
-
-  const stats = useMemo(() => [
-    { value: 1000, suffix: '+', label: 'Global Projects' },
-    { value: 16, suffix: '+', label: 'Years Experience' },
-    { value: 10, suffix: '+', label: 'Top Rated Matrix' },
-    { value: 8, suffix: '+', label: 'Countries Served' },
-  ], []);
-
-  const embedVideoUrl = "https://www.youtube.com/embed/xwGzKRwNSA0?autoplay=0&mute=1&rel=0&loop=1";
+  const stats = [
+    { value: 1000, suffix: '+', label: 'PROJECTS' },
+    { value: 16, suffix: '+', label: 'YEARS OF EXPERIENCE' },
+    { value: 10, suffix: '+', label: 'TOP RATED COMPANY' },
+    { value: 8, suffix: '+', label: 'COUNTRIES SERVING' },
+  ];
 
   return (
-    <div 
-      ref={containerRef}
-      onMouseMove={handleMouseMove}
-      className="relative w-full min-h-screen bg-[#070b1e] text-white overflow-hidden font-sans select-none selection:bg-cyan-500 selection:text-black"
+    <section 
+      id="about" 
+      className="relative w-full text-white py-12 md:py-20 lg:py-24 overflow-hidden font-sans select-text bg-[#070e25]"
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 900px' }}
     >
-      {/* Ambient Premium Core Gradients */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[80vw] h-[80vw] rounded-full bg-gradient-to-tr from-cyan-500/10 via-blue-600/5 to-transparent blur-[130px] mix-blend-screen" />
-        <div className="absolute bottom-[20%] right-[-10%] w-[70vw] h-[70vw] rounded-full bg-gradient-to-bl from-purple-600/10 via-pink-500/5 to-transparent blur-[140px] mix-blend-screen" />
-      </div>
+      {/* Dynamic CSS Injection for Compositor-Thread Hardware-Accelerated Mobile Scrolling */}
+      <style jsx global>{`
+        @keyframes scrollRotateClockwise {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes scrollRotateCounterClockwise {
+          from { transform: rotate(360deg); }
+          to { transform: rotate(0deg); }
+        }
+        .animate-scroll-cw {
+          animation: scrollRotateClockwise linear both;
+          animation-timeline: scroll();
+        }
+        .animate-scroll-ccw {
+          animation: scrollRotateCounterClockwise linear both;
+          animation-timeline: scroll();
+        }
+      `}</style>
 
       {/* Micro-mesh Grid Structural Backdrop Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none z-0 opacity-40" />
 
-      {/* ─── HERO SECTION ─── */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
-        <motion.div 
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full lg:w-3/5 flex flex-col space-y-6 text-left"
-        >
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/10 to-transparent border border-cyan-500/20 px-4 py-1.5 rounded-full w-fit backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-xs font-mono tracking-[0.3em] uppercase text-cyan-400 font-bold">Digital Vanguard</span>
-          </div>
-          <h1 className="text-4xl sm:text-6xl xl:text-7xl font-black tracking-tighter leading-[1.05]">
-            Architecting <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 drop-shadow-[0_0_20px_rgba(34,211,238,0.2)]">
-              Digital Futures
-            </span>
-          </h1>
-          <p className="text-white/70 text-base sm:text-lg max-w-xl leading-relaxed font-light">
-            We are a high-performance global network crafting elite ecosystems, seamless architectures, and transformational growth platforms for modern market leaders.
-          </p>
-          <div className="pt-4">
-            <a 
-              href="#contact" 
-              className="relative group inline-flex items-center space-x-3 bg-white text-black px-8 py-4 rounded-full font-bold text-sm tracking-wide transition-all duration-300 hover:bg-cyan-400 hover:text-black shadow-lg hover:shadow-cyan-400/20 transform-gpu hover:-translate-y-0.5"
-            >
-              <span>Explore Architecture</span>
-              <RiCompass3Line className="text-lg transition-transform duration-300 group-hover:rotate-45" />
-            </a>
-          </div>
-        </motion.div>
-
-        {/* Right Core Logo Frame with 3D Structural Glowing Cosmic Rings */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95, x: 30 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full lg:w-2/5 flex items-center justify-center relative min-h-[350px] sm:min-h-[420px]"
-          style={{ perspective: 1200 }}
-        >
-          {/* Energy Radiation Pulse Rings */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none transform-gpu">
-            <div className="absolute w-56 h-56 bg-radial-gradient from-cyan-500/30 via-pink-500/20 to-transparent blur-2xl animate-pulse" />
-
-            {/* Thick 3D Multi-colored Pulsating Layers */}
-            <div className="absolute w-48 h-48 rounded-full border-[6px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.4)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
-            <div className="absolute w-60 h-60 rounded-full border-[4px] border-pink-500/20 shadow-[0_0_30px_rgba(236,72,153,0.3)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite_0.9s]" />
-            <div className="absolute w-72 h-72 rounded-full border-[5px] border-purple-500/10 shadow-[0_0_35px_rgba(168,85,247,0.2)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite_1.8s]" />
-
-            {/* Dynamic Orbital Geometry Tracks */}
-            <div className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full border-[3px] border-dashed border-cyan-400/40 animate-[spin_25s_linear_infinite]" />
-            <div className="absolute w-[18rem] h-[18rem] sm:w-[23rem] sm:h-[23rem] rounded-full border-[2px] border-double border-pink-500/30 animate-[spin_18s_linear_infinite_reverse]" />
-            <div className="absolute w-[21rem] h-[21rem] sm:w-[26rem] sm:h-[26rem] rounded-full border-[4px] border-transparent border-t-purple-500/40 border-b-teal-400/40 animate-[spin_35s_linear_infinite]" />
-          </div>
-
-          <div className="absolute inset-0 bg-radial-gradient from-cyan-500/20 via-purple-500/10 to-transparent blur-3xl pointer-events-none" />
+      {/* ─── MAIN CONTENT CONTAINER ─── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 xl:px-24 relative z-10">
+        
+        {/* Two-Column Responsive Layout Node */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center pt-2 mb-10 md:mb-16">
           
-          <div className="relative w-64 h-32 sm:w-80 sm:h-40 transition-transform duration-700 hover:scale-105 transform-gpu filter drop-shadow-[0_0_40px_rgba(6,182,212,0.4)]">
-            <Image
-              src="/4biz_logo-1.png"
-              alt="4Biz International Corporate Logo"
-              fill
-              sizes="(max-width: 768px) 256px, 320px"
-              className="object-contain relative z-10"
-              priority
-            />
-          </div>
-        </motion.div>
-      </section>
+          {/* ─── TOP / RIGHT SIDE COLUMN: COSMIC MATRIX (Rings stack gracefully on top for mobile views) ─── */}
+          <div className="w-full lg:col-span-5 flex items-center justify-center relative min-h-[300px] sm:min-h-[400px] md:min-h-[450px] order-1 lg:order-2">
+            <div className="absolute inset-0 bg-radial-gradient from-cyan-500/20 via-emerald-500/10 to-transparent blur-3xl pointer-events-none" />
 
-      {/* ─── NUMERIC STATS INTERCONNECTED LINE ─── */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-8 border-t border-b border-white/5 bg-white/[0.01] backdrop-blur-md">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
-          {stats.map((stat, idx) => (
-            <div key={idx} className="flex flex-col space-y-1 md:pl-4 md:border-l border-white/10 first:border-0 py-2">
-              <div className="flex items-center justify-center md:justify-start space-x-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.2)]">
-                <Counter value={stat.value} suffix={stat.suffix} />
+            <div className="absolute w-full h-full flex items-center justify-center pointer-events-none transform-gpu">
+              <div className="absolute inset-0 flex items-center justify-center transform-gpu">
+                {/* Diffuse Energy Core */}
+                <div className="absolute w-44 h-44 sm:w-52 sm:h-52 bg-radial-gradient from-[#39f3ff]/20 via-[#39ff73]/10 to-transparent blur-2xl animate-pulse" />
+
+                {/* Pulsating Internal Rings */}
+                <div className="absolute w-36 h-36 sm:w-44 sm:h-44 rounded-full border-[4px] sm:border-[5px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.35)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
+                <div className="absolute w-48 h-48 sm:w-56 sm:h-56 rounded-full border-[2px] sm:border-[3px] border-[#39ff73]/20 shadow-[0_0_30px_rgba(57,255,115,0.25)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite_1.1s]" />
+
+                {/* Zero-Lag Composite Scroll Elements */}
+                <div className="absolute w-52 h-52 sm:w-72 sm:h-72 rounded-full border-[2.5px] border-dashed border-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.2)] will-change-transform animate-scroll-cw" />
+                <div className="absolute w-[14rem] h-[14rem] sm:w-[19rem] sm:h-[19rem] rounded-full border-[2px] border-double border-emerald-400/40 shadow-[0_0_20px_rgba(52,211,153,0.15)] will-change-transform animate-scroll-ccw" />
+                
+                <div className="absolute w-[16rem] h-[16rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[4px] border-transparent border-t-[#39ff73] border-b-cyan-400 border-l-[#39ff73] filter drop-shadow-[0_0_18px_rgba(57,255,115,0.6)] will-change-transform animate-scroll-cw" />
+                <div className="absolute w-[18rem] h-[18rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[2px] border-transparent border-r-[#39ff73]/80 border-l-cyan-400/60 filter drop-shadow-[0_0_12px_rgba(34,211,238,0.4)] will-change-transform animate-scroll-ccw" />
               </div>
-              <span className="text-xs sm:text-sm text-white/50 font-mono uppercase tracking-widest">{stat.label}</span>
+              
+              {/* Stationary Center Logo */}
+              <div className="absolute w-44 h-22 sm:w-64 sm:h-32 transition-transform duration-500 hover:scale-105 transform-gpu filter drop-shadow-[0_0_35px_rgba(6,182,212,0.35)] flex items-center justify-center">
+                <Image
+                  src="/4biz_logo-1.png"
+                  alt="4Biz International Corporate Asset Logo"
+                  fill
+                  sizes="(max-width: 768px) 176px, 256px"
+                  className="object-contain relative z-10"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Left Side Content Column */}
+          <div className="w-full lg:col-span-7 flex flex-col order-2 lg:order-1 text-center lg:text-left items-center lg:items-start">
+            {/* Section Sub-Tag */}
+            <div className="flex items-center mb-3">
+              <span className="text-xs sm:text-sm uppercase tracking-[0.3em] [word-spacing:0.35em] font-black text-white/90 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)]">
+                WE ARE
+              </span>
+            </div>
+            
+            {/* Typography Canvas Area */}
+            <div 
+              ref={containerRef}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="relative w-full h-auto flex flex-col justify-center items-center lg:items-start group py-1 mb-4 lg:cursor-none select-text"
+            >
+              {/* 📱 MOBILE & TABLET VIEW: Solid Gradient Typographic Block */}
+              <div className="block lg:hidden text-[2.4rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] pointer-events-auto">
+                4BIZ <br />
+                <span className="text-[0.42em] tracking-normal block mt-0.5">INTERNATIONAL LLC</span>
+              </div>
+
+              {/* 💻 DESKTOP VIEW: High-Brilliance Vector Masking Outline Layer */}
+              <div 
+                className="hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider text-transparent pointer-events-auto transition-all duration-500 uppercase leading-[1.05]"
+                style={{ 
+                  WebkitTextStroke: isHovered ? '2px rgba(57, 243, 255, 0.95)' : '2px rgba(0, 191, 255, 0.85)',
+                  opacity: isHovered ? 0.95 : 0.8,
+                  filter: isHovered 
+                    ? 'drop-shadow(0 0 35px rgba(0, 240, 255, 0.5)) drop-shadow(0 0 10px rgba(0, 176, 255, 0.25))' 
+                    : 'drop-shadow(0 0 20px rgba(0, 176, 255, 0.35))'
+                }}
+              >
+                4BIZ <br />
+                <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
+              </div> 
+
+              {/* 💻 DESKTOP VIEW: Interactive Spotlight Liquid Mask Overlay */}
+              <div 
+                className="absolute inset-0 py-1 hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00cdf4] to-[#4f46e5] bg-clip-text text-transparent pointer-events-none filter drop-shadow-[0_0_40px_rgba(0,240,255,0.55)] uppercase transition-opacity duration-300 leading-[1.05]"
+                style={{
+                  opacity: isHovered ? 1 : 0,
+                  clipPath: `circle(115px at ${mousePos.x}px ${mousePos.y}px)`
+                }}
+              >
+                4BIZ <br />
+                <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
+              </div> 
+
+              {/* 💻 DESKTOP VIEW: Interactive Futuristic HUD Lens Flare Crosshair */}
+              {isHovered && (
+                <div 
+                  className="absolute pointer-events-none rounded-full transition-transform duration-75 ease-out hidden lg:flex items-center justify-center"
+                  style={{
+                    width: '230px',
+                    height: '230px',
+                    left: `${mousePos.x - 115}px`,
+                    top: `${mousePos.y - 115}px`,
+                    background: 'radial-gradient(circle, rgba(0,240,255,0.12) 0%, rgba(0,0,0,0) 75%)',
+                    boxShadow: '0 0 50px rgba(0, 240, 255, 0.4), inset 0 0 20px rgba(0, 240, 255, 0.2)',
+                    border: '1.5px solid rgba(0, 240, 255, 0.85)'
+                  }}
+                >
+                  <div className="absolute w-3 h-3 border-t-2 border-l-2 border-[#00f0ff] opacity-90 top-3 left-3" />
+                  <div className="absolute w-3 h-3 border-b-2 border-r-2 border-[#00f0ff] opacity-90 bottom-3 right-3" />
+                </div>
+              )}
+            </div>
+
+            {/* Core Continuous Flowing Typography Block */}
+            <div className="flex flex-col space-y-4 pt-1 max-w-5xl items-center lg:items-start">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-snug sm:leading-tight text-center lg:text-left">
+                Leading IT Solutions & Software Development Company in <br className="hidden sm:inline" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-[#1ca6db] to-blue-500 drop-shadow-[0_2px_10px_rgba(34,211,238,0.2)]">Dubai</span>
+              </h3>
+
+              <p className="text-white/90 leading-relaxed text-sm md:text-base text-center sm:text-justify font-medium tracking-wide border-l-0 lg:border-l-[3px] border-cyan-400/40 lg:pl-4 md:pl-5 py-1">
+                4Biz International is a leading IT solutions and digital transformation company in Dubai, helping businesses streamline operations, accelerate growth, and embrace innovation through advanced technology solutions. Our expertise spans software development, mobile app development, web design, ERP and CRM solutions, cloud services, cybersecurity, IT infrastructure, and digital marketing. With a client-focused approach and a team of experienced professionals, we deliver scalable, secure, and future-ready solutions tailored to meet unique business requirements. At 4Biz International, we bridge the gap between technology and business excellence, empowering organizations to thrive in an increasingly digital world.
+              </p>
+            </div>
+            
+            {/* Interactive Futuristic Neon CTA */}
+            <div className="pt-6">
+              <a 
+                href="#contact" 
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border border-white/20 hover:border-white rounded-full text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase transition-all duration-300 shadow-[inset_0_0_12px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] text-white bg-white/[0.02] backdrop-blur-md group"
+              >
+                GET FREE CONSULTATION
+                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-2 sm:ml-3 transform transition-transform duration-300 group-hover:translate-x-1.5 stroke-current" fill="none" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Content Row: Metric Cards */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 sm:gap-6 lg:gap-10 pt-10 border-t border-white/10">
+          {stats.map((stat, idx) => (
+            <div 
+              key={idx} 
+              className="flex flex-col items-center lg:items-start space-y-1.5 pl-0 lg:pl-4 border-l-0 lg:border-l-2 border-white/10 hover:border-white transition-all duration-300 group bg-gradient-to-r from-white/[0.01] to-transparent py-1"
+            >
+              <Counter value={stat.value} suffix={stat.suffix} />
+              <div className="flex flex-col items-center lg:items-start space-y-1.5">
+                <span className="text-xs sm:text-sm text-white font-semibold tracking-wider max-w-[160px] text-center lg:text-left">
+                  {stat.label}
+                </span>
+                <div className="w-10 sm:w-12 h-[2px] bg-white opacity-90 rounded-full transition-all duration-300 group-hover:w-16 sm:group-hover:w-20 shadow-[0_1px_5px_rgba(255,255,255,0.4)]" />
+              </div>
             </div>
           ))}
         </div>
-      </section>
 
-      {/* ─── EXPANDED BRAND STORY & SMARTPHONE REEL CONTAINER ─── */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
-        {/* Extended Text Block */}
-        <div className="lg:col-span-7 flex flex-col space-y-8">
-          <div className="flex flex-col space-y-3">
-            <div className="inline-flex items-center space-x-2 text-purple-400 font-mono text-xs uppercase tracking-widest font-bold">
-              <RiFocus2Line className="text-base animate-spin" style={{ animationDuration: '6s' }} />
-              <span>Operational DNA & Strategy Blueprint</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
-              Brand Story
-            </h2>
-          </div>
-          
-          <div className="space-y-6 text-white/80 text-base sm:text-lg font-light leading-relaxed text-justify">
-            <p>
-              At 4Biz International, we see a digital landscape full of untapped potential. We transform that potential into performance by merging cutting-edge technological innovation with master-class strategic planning. Our mission is to scale your vision, optimize your operations, and ensure your business doesn't just survive the digital evolution—it leads it.
-            </p>
-            <p>
-              We drive organizational change through technical excellence and precision architecture. Our global frameworks provide companies with advanced cloud integrations, fluid user experience platforms, and scalable data models tailored for complex industries. By removing structural barriers, we turn digital capabilities into real market advantages.
-            </p>
-          </div>
-
-          {/* Value Highlights Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-white/5">
-            <div className="flex items-start space-x-3 group">
-              <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-300">
-                <RiCpuLine className="text-xl" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-white mb-1">Elite Infrastructure</h4>
-                <p className="text-xs text-white/50 leading-normal">High-throughput custom application stacks.</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-3 group">
-              <div className="p-2.5 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 group-hover:bg-purple-500 group-hover:text-black transition-all duration-300">
-                <RiShieldFlashLine className="text-xl" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-white mb-1">Absolute Velocity</h4>
-                <p className="text-xs text-white/50 leading-normal">Zero-latency optimization protocols.</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-3 group">
-              <div className="p-2.5 rounded-xl bg-pink-500/10 text-pink-400 border border-pink-500/20 group-hover:bg-pink-500 group-hover:text-black transition-all duration-300">
-                <RiGlobalLine className="text-xl" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-white mb-1">Global Scale</h4>
-                <p className="text-xs text-white/50 leading-normal">Cross-border operations across top clusters.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Brand Video Inside an Authentic Smartphone Chassis Framework */}
-        <div className="lg:col-span-5 w-full flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-[290px] sm:max-w-[320px] aspect-[9/16] rounded-[2.8rem] p-3.5 bg-[#0e1126] border-[4px] border-[#222954] shadow-[0_30px_70px_rgba(0,0,0,0.7),inset_0_2px_4px_rgba(255,255,255,0.1)] group transform-gpu transition-all duration-500 hover:scale-[1.03] hover:border-cyan-400/50">
-            
-            {/* Left Hardware Volume Keys (+/-) */}
-            <div className="absolute top-[24%] -left-[8px] w-[4px] h-9 bg-[#2b3369] rounded-l border-l border-white/10 shadow-md z-50" />
-            <div className="absolute top-[32%] -left-[8px] w-[4px] h-9 bg-[#2b3369] rounded-l border-l border-white/10 shadow-md z-50" />
-            
-            {/* Right Hardware Power Switch Button */}
-            <div className="absolute top-[28%] -right-[8px] w-[4px] h-12 bg-[#2b3369] rounded-r border-r border-white/10 shadow-md z-50" />
-            
-            {/* Top Ear-Speaker Strip & Dot Sensor Matrix */}
-            <div className="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-black rounded-full z-30 flex items-center justify-center space-x-1.5 px-3">
-              <div className="w-8 h-1 bg-white/20 rounded-full" />
-              <div className="w-1.5 h-1.5 rounded-full bg-[#161a36]" />
-            </div>
-
-            {/* Inner Display Surface */}
-            <div className="w-full h-full rounded-[2.2rem] overflow-hidden bg-black relative border border-black shadow-inner">
-              <iframe
-                className="w-full h-full relative z-10 border-0"
-                src={embedVideoUrl}
-                title="4Biz International Corporate Video Reel"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── CONTACT SECTION ─── */}
-      <section id="contact" className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-12 md:py-20">
-        <Contact />
-      </section>
-
-      {/* Smooth Ambient Cursor Spotlighting Tracker Overlay */}
-      <motion.div
-        className="pointer-events-none absolute -inset-px opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 z-10"
-        style={{
-          background: `radial-gradient(600px circle at var(--x) var(--y), rgba(34, 211, 238, 0.02), transparent 50%)`,
-          // @ts-ignore - dynamic styling variable bindings
-          '--x': smoothX,
-          '--y': smoothY,
-        }}
-      />
-    </div>
+      </div>
+    </section>
   );
 }
