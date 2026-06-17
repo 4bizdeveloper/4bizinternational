@@ -9,7 +9,7 @@ import Link from 'next/link';
 const Footer = () => {
   const footerRef = useRef<HTMLElement>(null);
   
-  // High-precision scroll tracking for Parallax ambient effects
+  // High-precision scroll tracking for Parallax element tracking
   const { scrollYProgress } = useScroll({
     target: footerRef,
     offset: ["start end", "end end"]
@@ -22,11 +22,11 @@ const Footer = () => {
     restDelta: 0.001
   });
 
-  // 3D Transforms trigger GPU rendering layers to prevent layout jerking
+  // Structural isolated layout transforms optimized via GPU layers to eliminate jumping effects
   const y1 = useTransform(smoothProgress, [0, 1], ["0px", "-40px"]);
   const y2 = useTransform(smoothProgress, [0, 1], ["0px", "40px"]);
 
-  // Declared social media schema (Call link completely extracted)
+  // Declared social media schema
   const socialLinks = useMemo(() => [
     {
       href: 'https://wa.me/971527925100?text=Hello%204Biz%20International,%20I%20am%20interested%20in%20your%20services.%20Please%20share%20more%20details.',
@@ -79,27 +79,19 @@ const Footer = () => {
     <footer 
       id="footer"
       ref={footerRef} 
-      className="relative z-10 mt-0 pt-16 pb-32 md:pb-24 overflow-hidden border-t border-white/10 transform-gpu backface-hidden"
+      className="relative z-10 mt-0 pt-16 pb-32 md:pb-24 overflow-hidden border-t border-white/10 transform-gpu backface-hidden bg-[#060b18]"
       style={{ 
-        backgroundColor: '#0b1536',
-        contentVisibility: 'auto', 
         paddingBottom: 'calc(120px + env(safe-area-inset-bottom))'
       } as React.CSSProperties}
     >
-      {/* Background Matrix: Removed high contrast white radial gradient for an elegant look */}
-      <div 
-        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 pointer-events-none" 
-        aria-hidden="true" 
-      />
-      
-      {/* Hardware Accelerated Subtle Parallax Internal Ambient Accents */}
+      {/* ─── HARDWARE ACCELERATED ISOLATED ELEMENTS (NO PARENT BACKPLANE INTERFERENCE) ─── */}
       <motion.div 
         style={{ y: y1, translateZ: 0 }} 
-        className="absolute top-0 -right-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-white/[0.015] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
+        className="absolute top-0 -right-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-white/[0.008] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
       />
       <motion.div 
         style={{ y: y2, translateZ: 0 }} 
-        className="absolute top-1/3 -left-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-black/[0.03] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
+        className="absolute top-1/3 -left-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-black/[0.05] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

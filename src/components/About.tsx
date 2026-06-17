@@ -51,26 +51,20 @@ export default function About() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
-  // ─── CINEMATIC ULTRA-MODERN 3D SCROLL PARALLAX & REVOLUTION SYSTEM ───
+  // ─── CINEMATIC ULTRA-MODERN SCROLL REVOLUTION SYSTEM ───
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]
   });
 
-  // Spring physics damper to strip away scroll-wheel stutter and eliminate jumping/jerking[cite: 4]
+  // High-performance spring setup for buttery smooth frame-rate matching (strips out wheel stutter)
   const smoothScrollProgress = useSpring(scrollYProgress, { 
     stiffness: 75, 
     damping: 28, 
     restDelta: 0.0005 
   });
-
-  // Precision 3D transformation matrices linked directly to viewport delta[cite: 4]
-  const logoScrollY = useTransform(smoothScrollProgress, [0, 1], [-70, 70]);
-  const logoScrollRotateX = useTransform(smoothScrollProgress, [0, 1], [24, -24]);
-  const logoScrollRotateY = useTransform(smoothScrollProgress, [0, 1], [-28, 28]);
-  const logoScrollScale = useTransform(smoothScrollProgress, [0, 0.5, 1], [0.92, 1.08, 0.92]);
   
-  // Dynamic high-speed scroll rotation mapping to make outer rings revolve faster when scrolling[cite: 4]
+  // Dynamic high-speed scroll rotation mapping: Rings revolve beautifully on scroll without changing position/size
   const fastRingScrollRotation = useTransform(smoothScrollProgress, [0, 1], [0, 360]);
   const reverseRingScrollRotation = useTransform(smoothScrollProgress, [0, 1], [360, 0]);
 
@@ -97,17 +91,17 @@ export default function About() {
       className="relative w-full text-white py-12 md:py-20 lg:py-24 overflow-hidden font-sans select-none bg-[#070e25]"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '0 900px' }}
     >
-      {/* Micro-mesh Grid Structural Backdrop Overlay for Premium High-Tech Feel[cite: 4] */}
+      {/* Micro-mesh Grid Structural Backdrop Overlay for Premium High-Tech Feel */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none z-0 opacity-40" />
 
       {/* ─── MAIN CONTENT CONTAINER ─── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 xl:px-24 relative z-10">
         
-        {/* Two-Column Responsive Layout Node - Optimized for Zero Dead Space[cite: 4] */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center pt-2 mb-10 md:mb-16">
+        {/* Two-Column Responsive Layout Node - Optimized for Zero Dead Space */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center pt-2 mb-10 md:mb-16">
           
           {/* Left Side Content Column (Static Layout Structure - Scroll Decoupled) */}
-          <div className="w-full lg:col-span-7 flex flex-col">
+          <div className="w-full lg:col-span-7 flex flex-col order-2 lg:order-1">
             {/* Section Sub-Tag */}
             <div className="flex items-center mb-3">
               <span className="text-xs sm:text-sm uppercase tracking-[0.3em] [word-spacing:0.35em] font-black text-white/90 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)]">
@@ -115,7 +109,7 @@ export default function About() {
               </span>
             </div>
             
-            {/* Ultra Modern Dynamic Typography Canvas Area[cite: 4] */}
+            {/* Ultra Modern Dynamic Typography Canvas Area */}
             <div 
               ref={containerRef}
               onMouseMove={handleMouseMove}
@@ -123,13 +117,13 @@ export default function About() {
               onMouseLeave={() => setIsHovered(false)}
               className="relative w-full h-auto flex flex-col justify-center select-none group py-1 mb-4 lg:cursor-none"
             >
-              {/* 📱 MOBILE & TABLET VIEW: Solid Gradient Typographic Block[cite: 4] */}
+              {/* 📱 MOBILE & TABLET VIEW: Solid Gradient Typographic Block */}
               <div className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] pointer-events-none select-none">
                 4BIZ <br />
                 <span className="text-[0.42em] tracking-normal block mt-0.5">INTERNATIONAL LLC</span>
               </div>
 
-              {/* 💻 DESKTOP VIEW: High-Brilliance Vector Masking Outline Layer[cite: 4] */}
+              {/* 💻 DESKTOP VIEW: High-Brilliance Vector Masking Outline Layer */}
               <div 
                 className="hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider text-transparent pointer-events-none select-none transition-all duration-500 uppercase leading-[1.05]"
                 style={{ 
@@ -144,9 +138,9 @@ export default function About() {
                 <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
               </div> 
 
-              {/* 💻 DESKTOP VIEW: Interactive Spotlight Liquid Mask Overlay[cite: 4] */}
+              {/* 💻 DESKTOP VIEW: Interactive Spotlight Liquid Mask Overlay */}
               <div 
-                className="absolute inset-0 py-1 hidden lg:flex flex-col justify-center text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00cdf4] to-[#4f46e5] bg-clip-text text-transparent pointer-events-none select-none filter drop-shadow-[0_0_40px_rgba(0,240,255,0.55)] uppercase transition-opacity duration-300 leading-[1.05]"
+                className="absolute inset-0 py-1 hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00cdf4] to-[#4f46e5] bg-clip-text text-transparent pointer-events-none select-none filter drop-shadow-[0_0_40px_rgba(0,240,255,0.55)] uppercase transition-opacity duration-300 leading-[1.05]"
                 style={{
                   opacity: isHovered ? 1 : 0,
                   clipPath: `circle(115px at ${mousePos.x}px ${mousePos.y}px)`
@@ -156,7 +150,7 @@ export default function About() {
                 <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
               </div> 
 
-              {/* 💻 DESKTOP VIEW: Interactive Futuristic HUD Lens Flare Crosshair[cite: 4] */}
+              {/* 💻 DESKTOP VIEW: Interactive Futuristic HUD Lens Flare Crosshair */}
               {isHovered && (
                 <div 
                   className="absolute pointer-events-none rounded-full transition-transform duration-75 ease-out hidden lg:flex items-center justify-center"
@@ -176,7 +170,7 @@ export default function About() {
               )}
             </div>
 
-            {/* Core Continuous Flowing Typography Block (Containerless Design)[cite: 4] */}
+            {/* Core Continuous Flowing Typography Block (Containerless Design) */}
             <div className="flex flex-col space-y-4 pt-1 max-w-5xl">
               <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-snug sm:leading-tight text-left">
                 Leading IT Solutions & Software Development Company in <br className="hidden sm:inline" />
@@ -184,11 +178,11 @@ export default function About() {
               </h3>
 
               <p className="text-white/90 leading-relaxed text-sm md:text-base text-justify font-medium tracking-wide border-l-[3px] border-cyan-400/40 pl-4 md:pl-5 py-1">
-                4Biz International is a leading IT solutions and digital transformation company in Dubai, helping businesses streamline operations, accelerate growth, and embrace innovation through advanced technology solutions. Our expertise spans software development, mobile app development, web design, ERP and CRM solutions, cloud services, cybersecurity, IT infrastructure, and digital marketing. With a client-focused approach and a team of experienced professionals, we deliver scalable, secure, and future-ready solutions tailored to meet unique business requirements. At 4Biz International, we bridge the gap between technology and business excellence, empowering organizations to thrive in an increasingly digital world.[cite: 4]
+                4Biz International is a leading IT solutions and digital transformation company in Dubai, helping businesses streamline operations, accelerate growth, and embrace innovation through advanced technology solutions. Our expertise spans software development, mobile app development, web design, ERP and CRM solutions, cloud services, cybersecurity, IT infrastructure, and digital marketing. With a client-focused approach and a team of experienced professionals, we deliver scalable, secure, and future-ready solutions tailored to meet unique business requirements. At 4Biz International, we bridge the gap between technology and business excellence, empowering organizations to thrive in an increasingly digital world.
               </p>
             </div>
             
-            {/* Interactive Futuristic Neon CTA Anchor Button[cite: 4] */}
+            {/* Interactive Futuristic Neon CTA Anchor Button */}
             <div className="pt-6 text-left">
               <a 
                 href="#contact" 
@@ -202,66 +196,62 @@ export default function About() {
             </div>
           </div>
 
-          {/* ─── RIGHT SIDE COLUMN: COSMIC PARTIAL RING MATRIX WITH HIGH-SPEED SCROLL REVOLUTION ─── */}
-          <motion.div 
-            style={{ 
-              y: logoScrollY,
-              rotateX: logoScrollRotateX, 
-              rotateY: logoScrollRotateY,
-              scale: logoScrollScale
-            }}
-            className="w-full lg:col-span-5 flex items-center justify-center relative min-h-[320px] sm:min-h-[400px] lg:-mt-6 will-change-transform"
-            style={{ perspective: 1400, transformStyle: "preserve-3d" }}
-          >
-            {/* Glowing Vibrant Space Backplane[cite: 4] */}
+          {/* ─── RIGHT SIDE COLUMN: SYMMETRICAL COSMIC MATRIX (SCROLL EMBEDDED RINGS ONLY) ─── */}
+          <div className="w-full lg:col-span-5 flex items-center justify-center relative min-h-[350px] sm:min-h-[450px] order-1 lg:order-2">
+            {/* Glowing Vibrant Space Backplane */}
             <div className="absolute inset-0 bg-radial-gradient from-cyan-500/20 via-emerald-500/10 to-transparent blur-3xl pointer-events-none" />
 
-            {/* Complex Multi-layered Particle Rings & Cosmic Track System[cite: 4] */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none transform-gpu" style={{ transform: "translateZ(-50px)" }}>
-              {/* Diffuse Energy Vibrant Core[cite: 4] */}
-              <div className="absolute w-52 h-52 bg-radial-gradient from-[#39f3ff]/20 via-[#39ff73]/10 to-transparent blur-2xl animate-pulse" />
-
-              {/* Pulsating Internal Ring Sub-structures[cite: 4] */}
-              <div className="absolute w-44 h-44 rounded-full border-[5px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.35)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
-              <div className="absolute w-56 h-56 rounded-full border-[3px] border-[#39ff73]/20 shadow-[0_0_30px_rgba(57,255,115,0.25)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite_1.1s]" />
-
-              {/* Dynamic Rotating HUD Vector Geometries - Accelerated by Scroll Wheel Position[cite: 4] */}
-              <motion.div 
-                style={{ rotate: fastRingScrollRotation }}
-                className="absolute w-60 h-60 sm:w-72 sm:h-72 rounded-full border-[2.5px] border-dashed border-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.2)]"
-              />
-              <motion.div 
-                style={{ rotate: reverseRingScrollRotation }}
-                className="absolute w-[16rem] h-[16rem] sm:w-[19rem] sm:h-[19rem] rounded-full border-[2px] border-double border-emerald-400/40 shadow-[0_0_20px_rgba(52,211,153,0.15)]"
-              />
+            {/* RIGID COMPOSITE CONTAINER: Perfectly locks layout vectors together with no parallax structural tilting */}
+            <div className="absolute w-full h-full flex items-center justify-center pointer-events-none transform-gpu">
               
-              {/* HIGH VIBRANCY: Fluorescent Neon Green & Cyan Partial Curved Outer Rings (Revolves dynamic on scroll)[cite: 4] */}
-              <motion.div 
-                style={{ rotate: fastRingScrollRotation }}
-                className="absolute w-[19rem] h-[19rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[4px] border-transparent border-t-[#39ff73] border-b-cyan-400 border-l-[#39ff73] filter drop-shadow-[0_0_18px_rgba(57,255,115,0.6)]"
-              />
-              <motion.div 
-                style={{ rotate: reverseRingScrollRotation }}
-                className="absolute w-[21rem] h-[21rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[2px] border-transparent border-r-[#39ff73]/80 border-l-cyan-400/60 filter drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]"
-              />
+              {/* Complex Multi-layered Particle Rings & Cosmic Track System (Completely symmetrical backdrop context) */}
+              <div className="absolute inset-0 flex items-center justify-center transform-gpu">
+                {/* Diffuse Energy Vibrant Core */}
+                <div className="absolute w-52 h-52 bg-radial-gradient from-[#39f3ff]/20 via-[#39ff73]/10 to-transparent blur-2xl animate-pulse" />
+
+                {/* Pulsating Internal Ring Sub-structures */}
+                <div className="absolute w-44 h-44 rounded-full border-[5px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.35)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
+                <div className="absolute w-56 h-56 rounded-full border-[3px] border-[#39ff73]/20 shadow-[0_0_30px_rgba(57,255,115,0.25)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite_1.1s]" />
+
+                {/* Dynamic Rotating HUD Vector Geometries - Only rotation value reacts to scroll position */}
+                <motion.div 
+                  style={{ rotate: fastRingScrollRotation }}
+                  className="absolute w-60 h-60 sm:w-72 sm:h-72 rounded-full border-[2.5px] border-dashed border-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.2)] will-change-transform"
+                />
+                <motion.div 
+                  style={{ rotate: reverseRingScrollRotation }}
+                  className="absolute w-[16rem] h-[16rem] sm:w-[19rem] sm:h-[19rem] rounded-full border-[2px] border-double border-emerald-400/40 shadow-[0_0_20px_rgba(52,211,153,0.15)] will-change-transform"
+                />
+                
+                {/* HIGH VIBRANCY: Fluorescent Neon Green & Cyan Partial Curved Outer Rings (Revolves dynamically on scroll) */}
+                <motion.div 
+                  style={{ rotate: fastRingScrollRotation }}
+                  className="absolute w-[19rem] h-[19rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[4px] border-transparent border-t-[#39ff73] border-b-cyan-400 border-l-[#39ff73] filter drop-shadow-[0_0_18px_rgba(57,255,115,0.6)] will-change-transform"
+                />
+                <motion.div 
+                  style={{ rotate: reverseRingScrollRotation }}
+                  className="absolute w-[21rem] h-[21rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[2px] border-transparent border-r-[#39ff73]/80 border-l-cyan-400/60 filter drop-shadow-[0_0_12px_rgba(34,211,238,0.4)] will-change-transform"
+                />
+              </div>
+              
+              {/* Floating Center Logo Surface: Stays perfectly stationary at the direct center of the rings on scroll. Smooth layout scale applied only on cursor hover */}
+              <div className="absolute w-52 h-26 sm:w-64 sm:h-32 transition-transform duration-500 hover:scale-105 transform-gpu filter drop-shadow-[0_0_35px_rgba(6,182,212,0.35)] flex items-center justify-center">
+                <Image
+                  src="/4biz_logo-1.png"
+                  alt="4Biz International Corporate Asset Logo"
+                  fill
+                  sizes="(max-width: 768px) 208px, 256px"
+                  className="object-contain relative z-10"
+                  priority
+                />
+              </div>
+
             </div>
-            
-            {/* Pure Floating Logo Surface with Deep Drop Shadow[cite: 4] */}
-            <div className="relative w-52 h-26 sm:w-64 sm:h-32 transition-transform duration-700 hover:scale-105 transform-gpu filter drop-shadow-[0_0_35px_rgba(6,182,212,0.35)]" style={{ transform: "translateZ(40px)" }}>
-              <Image
-                src="/4biz_logo-1.png"
-                alt="4Biz International Corporate Asset Logo"
-                fill
-                sizes="(max-width: 768px) 208px, 256px"
-                className="object-contain relative z-10"
-                priority
-              />
-            </div>
-          </motion.div>
+          </div>
 
         </div>
 
-        {/* Bottom Content Row: High-Brilliance Metric Cards with Polished Solid Borders[cite: 4] */}
+        {/* Bottom Content Row: High-Brilliance Metric Cards with Polished Solid Borders */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 sm:gap-6 lg:gap-10 pt-10 border-t border-white/10">
           {stats.map((stat, idx) => (
             <div 
