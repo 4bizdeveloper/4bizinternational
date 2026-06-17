@@ -1,9 +1,10 @@
-'use strict';
+"use client";
 
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate, useInView, useScroll, useSpring } from 'framer-motion';
+import Image from 'next/image';
 
-// --- Performance Optimized Count-Up Animation Component ---
+// ─── PERFORMANCE OPTIMIZED CLS-FREE COUNTER ─────────────────────────────────
 interface CounterProps {
   value: number;
   suffix?: string;
@@ -19,7 +20,7 @@ const Counter: React.FC<CounterProps> = ({ value, suffix = '' }) => {
     if (inView) {
       const controls = animate(count, value, {
         duration: 2.2,
-        ease: [0.16, 1, 0.3, 1], // Custom ultra-smooth cubic bezier
+        ease: [0.16, 1, 0.3, 1],
       });
       return controls.stop;
     }
@@ -36,20 +37,43 @@ const Counter: React.FC<CounterProps> = ({ value, suffix = '' }) => {
   return (
     <span 
       ref={ref} 
-      className="text-2xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#2bd4df] via-[#1ca6db] to-[#4f46e5] tracking-tight block drop-shadow-[0_2px_15px_rgba(43,212,223,0.3)] will-change-transform h-[1.2em]"
+      className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight block drop-shadow-[0_2px_15px_rgba(255,255,255,0.15)] will-change-transform h-[1.2em]"
     >
       0{suffix}
     </span>
   );
 };
 
-// --- Main About Component ---
+// ─── MAIN BRAND ARCHITECTURE ABOUT COMPONENT ────────────────────────────────
 export default function About() {
+  const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
-  // Track cursor position relative to container
+  // ─── CINEMATIC ULTRA-MODERN 3D SCROLL PARALLAX & REVOLUTION SYSTEM ───
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Spring physics damper to strip away scroll-wheel stutter and eliminate jumping/jerking[cite: 4]
+  const smoothScrollProgress = useSpring(scrollYProgress, { 
+    stiffness: 75, 
+    damping: 28, 
+    restDelta: 0.0005 
+  });
+
+  // Precision 3D transformation matrices linked directly to viewport delta[cite: 4]
+  const logoScrollY = useTransform(smoothScrollProgress, [0, 1], [-70, 70]);
+  const logoScrollRotateX = useTransform(smoothScrollProgress, [0, 1], [24, -24]);
+  const logoScrollRotateY = useTransform(smoothScrollProgress, [0, 1], [-28, 28]);
+  const logoScrollScale = useTransform(smoothScrollProgress, [0, 0.5, 1], [0.92, 1.08, 0.92]);
+  
+  // Dynamic high-speed scroll rotation mapping to make outer rings revolve faster when scrolling[cite: 4]
+  const fastRingScrollRotation = useTransform(smoothScrollProgress, [0, 1], [0, 360]);
+  const reverseRingScrollRotation = useTransform(smoothScrollProgress, [0, 1], [360, 0]);
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
@@ -68,148 +92,188 @@ export default function About() {
 
   return (
     <section 
+      ref={sectionRef}
       id="about" 
-      className="relative w-full text-white py-16 md:py-24 lg:py-32 overflow-hidden font-sans select-none bg-[#070e25]"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}
+      className="relative w-full text-white py-12 md:py-20 lg:py-24 overflow-hidden font-sans select-none bg-[#070e25]"
+      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 900px' }}
     >
-      
-      {/* ─── MODERN LUXURY BACKGROUND AESTHETIC ─── */}
-      <div className="absolute top-[-10%] left-[-10%] w-[70vw] h-[70vw] rounded-full bg-gradient-to-tr from-cyan-500/10 to-blue-600/5 blur-[140px] pointer-events-none mix-blend-screen" />
-      <div className="absolute bottom-[-10%] right-[-15%] w-[80vw] h-[80vw] rounded-full bg-gradient-to-bl from-indigo-600/10 via-purple-600/5 to-transparent blur-[160px] pointer-events-none mix-blend-screen" />
-      
-      {/* Soft Cyberpunk Ambient Light Streaks */}
-      <div className="absolute top-1/4 right-[5%] w-[300px] h-[600px] bg-gradient-to-b from-cyan-400/5 to-transparent rotate-45 blur-[80px] pointer-events-none hidden lg:block" />
-
-      {/* Cyberpunk Elegant Dynamic Line Accents */}
-      <div className="absolute inset-0 pointer-events-none opacity-25 hidden md:block">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="rgba(43,212,223,0.2)" />
-              <stop offset="40%" stopColor="rgba(28,166,219,0.05)" />
-              <stop offset="100%" stopColor="rgba(0,0,0,0)" />
-            </linearGradient>
-          </defs>
-          <line x1="5%" y1="0%" x2="45%" y2="100%" stroke="url(#lineGrad)" strokeWidth="1.2" />
-          <line x1="30%" y1="0%" x2="70%" y2="100%" stroke="url(#lineGrad)" strokeWidth="1" />
-          <line x1="55%" y1="0%" x2="95%" y2="100%" stroke="url(#lineGrad)" strokeWidth="0.8" />
-        </svg>
-      </div>
+      {/* Micro-mesh Grid Structural Backdrop Overlay for Premium High-Tech Feel[cite: 4] */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none z-0 opacity-40" />
 
       {/* ─── MAIN CONTENT CONTAINER ─── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 xl:px-24 relative z-10">
         
-        {/* Top Vertical Hierarchy with balanced modern layout gaps */}
-        <div className="flex flex-col mb-12 md:mb-20 max-w-5xl">
+        {/* Two-Column Responsive Layout Node - Optimized for Zero Dead Space[cite: 4] */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center pt-2 mb-10 md:mb-16">
           
-          {/* Section Sub-Tag */}
-          <div className="flex items-center mb-4 sm:mb-6">
-            <span className="text-xs sm:text-sm md:text-xl lg:text-2xl uppercase tracking-[0.25em] [word-spacing:0.35em] font-black text-white/90 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-              WE ARE
-            </span>
-          </div>
-          
-          {/* Ultra Modern Dynamic Typography Canvas Area */}
-          <div 
-            ref={containerRef}
-            onMouseMove={handleMouseMove}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            className="relative w-full h-auto flex flex-col justify-center select-none group py-2 mb-6 sm:mb-10 lg:cursor-none"
-          >
-            {/* 📱 MOBILE & TABLET VIEW: Crisp, scalable, static solid gradient layout without stroke issues */}
-            <div className="block lg:hidden text-[2.8rem] xs:text-[3.5rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.45)] uppercase leading-[1.1] pointer-events-none select-none">
-              4BIZ <br />
-              <span className="text-[0.42em] tracking-normal block mt-1 sm:mt-0">INTERNATIONAL LLC</span>
+          {/* Left Side Content Column (Static Layout Structure - Scroll Decoupled) */}
+          <div className="w-full lg:col-span-7 flex flex-col">
+            {/* Section Sub-Tag */}
+            <div className="flex items-center mb-3">
+              <span className="text-xs sm:text-sm uppercase tracking-[0.3em] [word-spacing:0.35em] font-black text-white/90 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)]">
+                WE ARE
+              </span>
             </div>
-
-            {/* 💻 DESKTOP VIEW: Enhanced High-Brilliance Gradient Outline Text Layer */}
+            
+            {/* Ultra Modern Dynamic Typography Canvas Area[cite: 4] */}
             <div 
-              className="hidden lg:block text-[6.5rem] xl:text-[7.5rem] font-black tracking-wider text-transparent pointer-events-none select-none transition-all duration-500 uppercase leading-[1.05]"
-              style={{ 
-                WebkitTextStroke: isHovered ? '2px rgba(57, 243, 255, 0.95)' : '2px rgba(0, 191, 255, 0.9)',
-                opacity: isHovered ? 0.95 : 0.85,
-                filter: isHovered 
-                  ? 'drop-shadow(0 0 35px rgba(0, 240, 255, 0.55)) drop-shadow(0 0 10px rgba(0, 176, 255, 0.3))' 
-                  : 'drop-shadow(0 0 25px rgba(0, 176, 255, 0.45))'
-              }}
+              ref={containerRef}
+              onMouseMove={handleMouseMove}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="relative w-full h-auto flex flex-col justify-center select-none group py-1 mb-4 lg:cursor-none"
             >
-              4BIZ <br />
-              <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
-            </div> 
+              {/* 📱 MOBILE & TABLET VIEW: Solid Gradient Typographic Block[cite: 4] */}
+              <div className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] pointer-events-none select-none">
+                4BIZ <br />
+                <span className="text-[0.42em] tracking-normal block mt-0.5">INTERNATIONAL LLC</span>
+              </div>
 
-            {/* 💻 DESKTOP VIEW: Preserved Interactive Mask Layer with Maximized Shiny Brightness */}
-            <div 
-              className="absolute inset-0 py-2 hidden lg:flex flex-col justify-center text-[6.5rem] xl:text-[7.5rem] font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00cdf4] to-[#4f46e5] bg-clip-text text-transparent pointer-events-none select-none filter drop-shadow-[0_0_40px_rgba(0,240,255,0.6)] uppercase transition-opacity duration-300 leading-[1.05]"
-              style={{
-                opacity: isHovered ? 1 : 0,
-                clipPath: `circle(110px at ${mousePos.x}px ${mousePos.y}px)`
-              }}
-            >
-              4BIZ <br />
-              <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
-            </div> 
-
-            {/* 💻 DESKTOP VIEW: Preserved Cyberpunk Dynamic Lens Flare Accent */}
-            {isHovered && (
+              {/* 💻 DESKTOP VIEW: High-Brilliance Vector Masking Outline Layer[cite: 4] */}
               <div 
-                className="absolute pointer-events-none rounded-full transition-transform duration-75 ease-out hidden lg:flex items-center justify-center"
-                style={{
-                  width: '220px',
-                  height: '220px',
-                  left: `${mousePos.x - 110}px`,
-                  top: `${mousePos.y - 110}px`,
-                  background: 'radial-gradient(circle, rgba(0,240,255,0.15) 0%, rgba(0,0,0,0) 75%)',
-                  boxShadow: '0 0 60px rgba(0, 240, 255, 0.45), inset 0 0 25px rgba(0, 240, 255, 0.25)',
-                  border: '2px solid rgba(0, 240, 255, 0.95)'
+                className="hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider text-transparent pointer-events-none select-none transition-all duration-500 uppercase leading-[1.05]"
+                style={{ 
+                  WebkitTextStroke: isHovered ? '2px rgba(57, 243, 255, 0.95)' : '2px rgba(0, 191, 255, 0.85)',
+                  opacity: isHovered ? 0.95 : 0.8,
+                  filter: isHovered 
+                    ? 'drop-shadow(0 0 35px rgba(0, 240, 255, 0.5)) drop-shadow(0 0 10px rgba(0, 176, 255, 0.25))' 
+                    : 'drop-shadow(0 0 20px rgba(0, 176, 255, 0.35))'
                 }}
               >
-                {/* Crosshair Details */}
-                <div className="absolute w-3 h-3 border-t-2 border-l-2 border-[#00f0ff] opacity-90 top-4 left-4" />
-                <div className="absolute w-3 h-3 border-b-2 border-r-2 border-[#00f0ff] opacity-90 bottom-4 right-4" />
-              </div>
-            )}
+                4BIZ <br />
+                <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
+              </div> 
+
+              {/* 💻 DESKTOP VIEW: Interactive Spotlight Liquid Mask Overlay[cite: 4] */}
+              <div 
+                className="absolute inset-0 py-1 hidden lg:flex flex-col justify-center text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00cdf4] to-[#4f46e5] bg-clip-text text-transparent pointer-events-none select-none filter drop-shadow-[0_0_40px_rgba(0,240,255,0.55)] uppercase transition-opacity duration-300 leading-[1.05]"
+                style={{
+                  opacity: isHovered ? 1 : 0,
+                  clipPath: `circle(115px at ${mousePos.x}px ${mousePos.y}px)`
+                }}
+              >
+                4BIZ <br />
+                <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
+              </div> 
+
+              {/* 💻 DESKTOP VIEW: Interactive Futuristic HUD Lens Flare Crosshair[cite: 4] */}
+              {isHovered && (
+                <div 
+                  className="absolute pointer-events-none rounded-full transition-transform duration-75 ease-out hidden lg:flex items-center justify-center"
+                  style={{
+                    width: '230px',
+                    height: '230px',
+                    left: `${mousePos.x - 115}px`,
+                    top: `${mousePos.y - 115}px`,
+                    background: 'radial-gradient(circle, rgba(0,240,255,0.12) 0%, rgba(0,0,0,0) 75%)',
+                    boxShadow: '0 0 50px rgba(0, 240, 255, 0.4), inset 0 0 20px rgba(0, 240, 255, 0.2)',
+                    border: '1.5px solid rgba(0, 240, 255, 0.85)'
+                  }}
+                >
+                  <div className="absolute w-3 h-3 border-t-2 border-l-2 border-[#00f0ff] opacity-90 top-3 left-3" />
+                  <div className="absolute w-3 h-3 border-b-2 border-r-2 border-[#00f0ff] opacity-90 bottom-3 right-3" />
+                </div>
+              )}
+            </div>
+
+            {/* Core Continuous Flowing Typography Block (Containerless Design)[cite: 4] */}
+            <div className="flex flex-col space-y-4 pt-1 max-w-5xl">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-snug sm:leading-tight text-left">
+                Leading IT Solutions & Software Development Company in <br className="hidden sm:inline" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-[#1ca6db] to-blue-500 drop-shadow-[0_2px_10px_rgba(34,211,238,0.2)]">Dubai</span>
+              </h3>
+
+              <p className="text-white/90 leading-relaxed text-sm md:text-base text-justify font-medium tracking-wide border-l-[3px] border-cyan-400/40 pl-4 md:pl-5 py-1">
+                4Biz International is a leading IT solutions and digital transformation company in Dubai, helping businesses streamline operations, accelerate growth, and embrace innovation through advanced technology solutions. Our expertise spans software development, mobile app development, web design, ERP and CRM solutions, cloud services, cybersecurity, IT infrastructure, and digital marketing. With a client-focused approach and a team of experienced professionals, we deliver scalable, secure, and future-ready solutions tailored to meet unique business requirements. At 4Biz International, we bridge the gap between technology and business excellence, empowering organizations to thrive in an increasingly digital world.[cite: 4]
+              </p>
+            </div>
+            
+            {/* Interactive Futuristic Neon CTA Anchor Button[cite: 4] */}
+            <div className="pt-6 text-left">
+              <a 
+                href="#contact" 
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border border-white/20 hover:border-white rounded-full text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase transition-all duration-300 shadow-[inset_0_0_12px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] text-white bg-white/[0.02] backdrop-blur-md group"
+              >
+                GET FREE CONSULTATION
+                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-2 sm:ml-3 transform transition-transform duration-300 group-hover:translate-x-1.5 stroke-current" fill="none" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
           </div>
 
-          {/* Core Descriptive Content Block */}
-          <div className="flex flex-col space-y-5 pt-2">
-            <h3 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-snug sm:leading-tight text-left">
-              Leading IT Solutions & Software Development Company in <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-[#1ca6db] to-blue-500 drop-shadow-[0_2px_10px_rgba(34,211,238,0.2)]">Dubai</span>
-            </h3>
+          {/* ─── RIGHT SIDE COLUMN: COSMIC PARTIAL RING MATRIX WITH HIGH-SPEED SCROLL REVOLUTION ─── */}
+          <motion.div 
+            style={{ 
+              y: logoScrollY,
+              rotateX: logoScrollRotateX, 
+              rotateY: logoScrollRotateY,
+              scale: logoScrollScale
+            }}
+            className="w-full lg:col-span-5 flex items-center justify-center relative min-h-[320px] sm:min-h-[400px] lg:-mt-6 will-change-transform"
+            style={{ perspective: 1400, transformStyle: "preserve-3d" }}
+          >
+            {/* Glowing Vibrant Space Backplane[cite: 4] */}
+            <div className="absolute inset-0 bg-radial-gradient from-cyan-500/20 via-emerald-500/10 to-transparent blur-3xl pointer-events-none" />
 
-            <p className="text-[#b1b9db]/90 leading-relaxed text-sm md:text-base text-left font-normal tracking-wide max-w-4xl border-l-2 border-cyan-500/20 pl-4 md:pl-6 bg-gradient-to-r from-cyan-500/5 to-transparent py-2 rounded-r-xl">
-              4Biz International is a leading IT solutions and digital transformation company in Dubai, helping businesses streamline operations, accelerate growth, and embrace innovation through advanced technology solutions. Our expertise spans software development, mobile app development, web design, ERP and CRM solutions, cloud services, cybersecurity, IT infrastructure, and digital marketing. With a client-focused approach and a team of experienced professionals, we deliver scalable, secure, and future-ready solutions tailored to meet unique business requirements. At 4Biz International, we bridge the gap between technology and business excellence, empowering organizations to thrive in an increasingly digital world.
-            </p>
-          </div>
-          
-          {/* Call-To-Action Neon Interactive Button */}
-          <div className="pt-8 text-left">
-            <a 
-              href="#contact" 
-              className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border border-[#2bd4df]/30 hover:border-[#00cdf4] rounded-full text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase transition-all duration-300 shadow-[inset_0_0_12px_rgba(43,212,223,0.1)] hover:shadow-[0_0_35px_rgba(0,205,244,0.35)] text-[#c4cceb] hover:text-white bg-[#070e25]/80 backdrop-blur-md group"
-            >
-              GET FREE CONSULTATION
-              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-2 sm:ml-3 transform transition-transform duration-300 group-hover:translate-x-1.5 stroke-current" fill="none" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
+            {/* Complex Multi-layered Particle Rings & Cosmic Track System[cite: 4] */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none transform-gpu" style={{ transform: "translateZ(-50px)" }}>
+              {/* Diffuse Energy Vibrant Core[cite: 4] */}
+              <div className="absolute w-52 h-52 bg-radial-gradient from-[#39f3ff]/20 via-[#39ff73]/10 to-transparent blur-2xl animate-pulse" />
+
+              {/* Pulsating Internal Ring Sub-structures[cite: 4] */}
+              <div className="absolute w-44 h-44 rounded-full border-[5px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.35)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
+              <div className="absolute w-56 h-56 rounded-full border-[3px] border-[#39ff73]/20 shadow-[0_0_30px_rgba(57,255,115,0.25)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite_1.1s]" />
+
+              {/* Dynamic Rotating HUD Vector Geometries - Accelerated by Scroll Wheel Position[cite: 4] */}
+              <motion.div 
+                style={{ rotate: fastRingScrollRotation }}
+                className="absolute w-60 h-60 sm:w-72 sm:h-72 rounded-full border-[2.5px] border-dashed border-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.2)]"
+              />
+              <motion.div 
+                style={{ rotate: reverseRingScrollRotation }}
+                className="absolute w-[16rem] h-[16rem] sm:w-[19rem] sm:h-[19rem] rounded-full border-[2px] border-double border-emerald-400/40 shadow-[0_0_20px_rgba(52,211,153,0.15)]"
+              />
+              
+              {/* HIGH VIBRANCY: Fluorescent Neon Green & Cyan Partial Curved Outer Rings (Revolves dynamic on scroll)[cite: 4] */}
+              <motion.div 
+                style={{ rotate: fastRingScrollRotation }}
+                className="absolute w-[19rem] h-[19rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[4px] border-transparent border-t-[#39ff73] border-b-cyan-400 border-l-[#39ff73] filter drop-shadow-[0_0_18px_rgba(57,255,115,0.6)]"
+              />
+              <motion.div 
+                style={{ rotate: reverseRingScrollRotation }}
+                className="absolute w-[21rem] h-[21rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[2px] border-transparent border-r-[#39ff73]/80 border-l-cyan-400/60 filter drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]"
+              />
+            </div>
+            
+            {/* Pure Floating Logo Surface with Deep Drop Shadow[cite: 4] */}
+            <div className="relative w-52 h-26 sm:w-64 sm:h-32 transition-transform duration-700 hover:scale-105 transform-gpu filter drop-shadow-[0_0_35px_rgba(6,182,212,0.35)]" style={{ transform: "translateZ(40px)" }}>
+              <Image
+                src="/4biz_logo-1.png"
+                alt="4Biz International Corporate Asset Logo"
+                fill
+                sizes="(max-width: 768px) 208px, 256px"
+                className="object-contain relative z-10"
+                priority
+              />
+            </div>
+          </motion.div>
+
         </div>
 
-        {/* Bottom Content: Numeric Metric Track Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8 sm:gap-6 lg:gap-10 pt-12 border-t border-cyan-500/10">
+        {/* Bottom Content Row: High-Brilliance Metric Cards with Polished Solid Borders[cite: 4] */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 sm:gap-6 lg:gap-10 pt-10 border-t border-white/10">
           {stats.map((stat, idx) => (
             <div 
               key={idx} 
-              className="flex flex-col space-y-2.5 pl-3 sm:pl-4 border-l-2 border-cyan-500/10 hover:border-[#00cdf4]/80 transition-all duration-300 group bg-gradient-to-r from-cyan-500/[0.01] to-transparent py-1"
+              className="flex flex-col space-y-1.5 pl-3 sm:pl-4 border-l-2 border-white/10 hover:border-white transition-all duration-300 group bg-gradient-to-r from-white/[0.01] to-transparent py-1"
             >
               <Counter value={stat.value} suffix={stat.suffix} />
-              <div className="flex flex-col space-y-2">
-                <span className="text-xs sm:text-sm text-[#8a94b3] group-hover:text-white transition-colors duration-300 font-medium tracking-wider max-w-[160px]">
+              <div className="flex flex-col space-y-1.5">
+                <span className="text-xs sm:text-sm text-white font-semibold tracking-wider max-w-[160px]">
                   {stat.label}
                 </span>
-                <div className="w-10 sm:w-12 h-[2px] bg-[#00cdf4] opacity-80 rounded-full transition-all duration-300 group-hover:w-16 sm:group-hover:w-20 group-hover:bg-cyan-300 shadow-[0_1px_5px_rgba(0,205,244,0.4)]" />
+                <div className="w-10 sm:w-12 h-[2px] bg-white opacity-90 rounded-full transition-all duration-300 group-hover:w-16 sm:group-hover:w-20 shadow-[0_1px_5px_rgba(255,255,255,0.4)]" />
               </div>
             </div>
           ))}
