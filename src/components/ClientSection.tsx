@@ -14,14 +14,14 @@ const ALL_CLIENTS = [
   { id: 'Apparel', src: '/client-logos/apparel-logo.svg', alt: 'Apparel Logo' },
   { id: 'Inka-Dubai', src: '/client-logos/inka-dubai.png', alt: 'Inka Dubai Logo' },
   { id: 'Novo-Cinemas', src: '/client-logos/novo-cinemas.svg', alt: 'Novo Cinemas Logo' },
-  // --- New additions from the screenshot ---
   { id: 'sixth-street', src: '/client-logos/6thstreet.png', alt: '6th Street Logo' },
   { id: 'al-rostamani', src: '/client-logos/al-rostamani.svg', alt: 'Al Rostamani Logo' },
   { id: 'arab-brazilian-chamber', src: '/client-logos/arab-brazilian-chamber-of-commerce.svg', alt: 'Arab Brazilian Chamber of Commerce Logo' },
   { id: 'beetroot', src: '/client-logos/beetroot.png', alt: 'Beetroot Logo' },
   { id: 'blueberry-media', src: '/client-logos/blueberry-media.webp', alt: 'Blueberry Media Logo' },
   { id: 'opus-acoustic', src: '/client-logos/opus-acoustic-logo.png', alt: 'Opus Acoustic Logo' },
-  { id: 'ramada-group', src: '/client-logos/ramada-group.png', alt: 'Ramada Group Logo' }
+  { id: 'ramada-group', src: '/client-logos/ramada-group.png', alt: 'Ramada Group Logo' },
+  { id: 'nov-cinemas', src: '/client-logos/nov-cinemas.svg', alt: 'Nov Cinemas Logo' },
 ];
 
 // GPU optimized, lightweight animations to prevent frame drops or layout shifts
@@ -66,7 +66,7 @@ const ClientSection = () => {
         </div>
 
         {/* 
-          Ultra-responsive layout updated to display 5 items in a row on desktop view:
+          Ultra-responsive layout updated to display:
           grid-cols-2 -> 2 columns on mobile devices
           md:grid-cols-3 -> 3 columns on tablet devices 
           lg:grid-cols-5 -> 5 columns on desktop screens
@@ -79,16 +79,9 @@ const ClientSection = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           {ALL_CLIENTS.map((client, index) => {
-            // Determine display rules cleanly via Tailwind responsive triggers
-            let visibilityClass = "block"; // Default behavior for first 3 items (Indices 0, 1, 2)
-
-            if (index >= 3 && index < 14) {
-              // Items 4 through 14: Show on Mobile & Desktop, Hide on Tablet
-              visibilityClass = "block md:hidden lg:block";
-            } else if (index >= 14) {
-              // Item 15: Show only on Desktop, Hide on Mobile & Tablet
-              visibilityClass = "hidden lg:block";
-            }
+            // Index 0 to 14 (first 15 items) will always show everywhere.
+            // Index 15 (16th item) will only show on mobile, hiding on tablet (md) and desktop (lg).
+            const visibilityClass = index === 15 ? "block md:hidden" : "block";
 
             return (
               <motion.div 

@@ -6,6 +6,7 @@ import { motion, Variants } from 'framer-motion';
 import Contact from '@/components/Contact';
 
 const ALL_CLIENTS = [
+  // --- Original Group ---
   { id: 'phf', src: '/client-logos/phf-logo.svg', alt: 'PHF Logo', isPHF: true },
   { id: 'theyyampattil', src: '/client-logos/theyyampattil-logo.avif', alt: 'Theyyampattil Logo' },
   { id: 'opusbm', src: '/client-logos/opusbm-logo.png', alt: 'OpusBM Logo' },
@@ -21,8 +22,7 @@ const ALL_CLIENTS = [
   { id: 'blueberry-media', src: '/client-logos/blueberry-media.webp', alt: 'Blueberry Media Logo' },
   { id: 'opus-acoustic', src: '/client-logos/opus-acoustic-logo.png', alt: 'Opus Acoustic Logo' },
   { id: 'ramada-group', src: '/client-logos/ramada-group.png', alt: 'Ramada Group Logo' },
-  
-  // --- Missing additions referenced from the images ---
+  { id: 'thumbelina', src: '/client-logos/thumbelina.jfif', alt: 'Thumbelina Logo' },
   { id: 'apple-international-school', src: '/client-logos/apple-international-school.png', alt: 'Apple International School Logo' },
   { id: 'fmredxb', src: '/client-logos/fmredxb.png', alt: 'FMREDXB Logo' },
   { id: 'frontline-medical-centre', src: '/client-logos/frontline-medical-centre.png', alt: 'Frontline Medical Centre Logo' },
@@ -31,9 +31,20 @@ const ALL_CLIENTS = [
   { id: 'nano-pixel-technologies', src: '/client-logos/nano-pixel-technologies.svg', alt: 'Nano Pixel Technologies Logo' },
   { id: 'nov-cinemas', src: '/client-logos/nov-cinemas.svg', alt: 'Nov Cinemas Logo' },
   { id: 'oxford-school', src: '/client-logos/oxford-school.svg', alt: 'Oxford School Logo' },
-  { id: 'r-and-b', src: '/client-logos/r&b-logo.svg', alt: 'R&B Logo' }
-];
+  { id: 'r-and-b', src: '/client-logos/r&b-logo.svg', alt: 'R&B Logo' },
 
+  // --- Newly Discovered Additions from Folder (Completing all 34 files) ---
+  { id: '3r-creative-fze', src: '/client-logos/3R-creative-fze.svg', alt: '3R Creative FZE Logo' },
+  { id: 'cedar-school', src: '/client-logos/cedar-school.png', alt: 'Cedar School Logo' },
+  { id: 'exiloz', src: '/client-logos/exiloz.png', alt: 'Exiloz Logo' },
+  { id: 'kanoo-stationery-bahrain', src: '/client-logos/kanoo-stationery-bahrain.png', alt: 'Kanoo Stationery Bahrain Logo' },
+  { id: 'nora-medical-poly-clinic', src: '/client-logos/nora-medical-poly-clinic.png', alt: 'Nora Medical Poly Clinic Logo' },
+  { id: 'pixcom-technologies', src: '/client-logos/pixcom-technologies.png', alt: 'Pixcom Technologies Logo' },
+  { id: 'secret-sports-gym', src: '/client-logos/secret-sports-gym.png', alt: 'Secret Sports Gym Logo' },
+  { id: 'smart-setup-gov-services', src: '/client-logos/smart-setup-gov-services.png', alt: 'Smart Setup Gov Services Logo' },
+  { id: 'sunbridge-logistics', src: '/client-logos/sunbridge-logistics.avif', alt: 'Sunbridge Logistics Logo' },
+  { id: 'taksmens', src: '/client-logos/taksmens.png', alt: 'Taksmens Logo' }
+];
 
 // GPU optimized, lightweight animations to prevent frame drops or layout shifts
 const containerVariants: Variants = {
