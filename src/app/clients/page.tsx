@@ -40,7 +40,6 @@ const ALL_CLIENTS = [
   { id: 'pixcom-technologies', src: '/client-logos/pixcom-technologies.png', alt: 'Pixcom Technologies Logo' },
   { id: 'smart-setup-gov-services', src: '/client-logos/smart-setup-gov-services.png', alt: 'Smart Setup Gov Services Logo' },
   { id: 'taksmens', src: '/client-logos/taksmens.png', alt: 'Taksmens Logo' },
-  
 ];
 
 // GPU optimized, lightweight animations to prevent frame drops or layout shifts
@@ -79,7 +78,7 @@ const ClientSection = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* Header Block - Deeply responsive modern structural layout without underline */}
+          {/* Header Block */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20 max-w-4xl mx-auto spec-header-container">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight sm:leading-none text-[#00b49d] uppercase mb-4 md:mb-5">
               MEET OUR NETWORK OF<br className="hidden sm:inline" />
@@ -92,12 +91,7 @@ const ClientSection = () => {
             </p>
           </div>
 
-          {/* 
-            Ultra-responsive grid layout displaying 5 items in a row on desktop view:
-            grid-cols-2 -> 2 columns on mobile devices
-            md:grid-cols-3 -> 3 columns on tablet devices 
-            lg:grid-cols-5 -> 5 columns on desktop screens
-          */}
+          {/* Ultra-responsive grid layout displaying 5 items in a row on desktop view */}
           <motion.div 
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6 max-w-7xl mx-auto"
             variants={containerVariants}
@@ -107,7 +101,7 @@ const ClientSection = () => {
           >
             {ALL_CLIENTS.map((client) => (
               <motion.div key={client.id} variants={itemVariants} className="w-full">
-                <ClientCard client={client} isPHF={client.isPHF} />
+                <ClientCard client={client} />
               </motion.div>
             ))}
            </motion.div>
@@ -123,8 +117,8 @@ const ClientSection = () => {
   );
 };
 
-/* Individual Logo Box with hardware acceleration & subtle high-fidelity glassmorphism effects */
-const ClientCard = memo(({ client, isPHF }: { client: { src: string; alt: string }, isPHF?: boolean }) => {
+/* Individual Logo Box with full colorful assets */
+const ClientCard = memo(({ client }: { client: { src: string; alt: string } }) => {
   return (
     <div className="group relative flex items-center justify-center w-full h-[100px] sm:h-[120px] md:h-[130px] rounded-2xl border border-blue-500/15 bg-white/[0.01] backdrop-blur-md overflow-hidden transition-all duration-300 hover:bg-white/[0.03] hover:border-[#00b49d]/50 hover:shadow-[0_0_30px_rgba(0,180,157,0.15)] transform-gpu will-change-transform">
       {/* Decorative inner ambient glow on card hover */}
@@ -136,11 +130,7 @@ const ClientCard = memo(({ client, isPHF }: { client: { src: string; alt: string
           alt={client.alt}
           fill
           sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-          className={`object-contain opacity-80 transition-all duration-300 ease-out group-hover:filter-none group-hover:opacity-100 ${
-            isPHF 
-              ? '' // PHF logo: default colored, no default inversion
-              : 'brightness-0 invert' // Other logos: default inverted
-          }`}
+          className="object-contain opacity-90 transition-all duration-300 ease-out group-hover:opacity-100"
           loading="lazy" 
         />
       </div>
