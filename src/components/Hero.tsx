@@ -1,9 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
-import Video from 'next-video';
-import heroVideo from '../../videos/hero-background-video-2.mp4';
 
 export default function Hero() {
   // ── EASILY CUSTOMIZABLE VISIBILITY CONFIGURATION ──
@@ -12,6 +10,7 @@ export default function Hero() {
   const showScrollDown = true;
 
   const [isScrolled, setIsScrolled] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   
   // High-performance hardware-accelerated interactive utility styles
   const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
@@ -30,8 +29,42 @@ export default function Hero() {
     // Passive option maximizes GTmetrix / PageSpeed scrolling thread execution metrics
     window.addEventListener('scroll', handleScroll, { passive: true });
     
+    // Comprehensive Mobile Engine Watchdog to prevent video freezing
+    const videoElement = videoRef.current;
+    
+    const forceVideoPlayback = () => {
+      if (videoElement) {
+        // Clear any stuck states by validating paused properties
+        if (videoElement.paused) {
+          videoElement.play().catch(() => {
+            console.log("Autoplay sweep bypassed due to low battery mode restriction.");
+          });
+        }
+      }
+    };
+
+    // Trigger on mount
+    forceVideoPlayback();
+
+    // Watchdog listener: Restarts or wakes up video stream if mobile network stuttered/stalled it
+    const handleStall = () => {
+      if (videoElement) {
+        videoElement.load();
+        videoElement.play().catch(() => {});
+      }
+    };
+
+    if (videoElement) {
+      videoElement.addEventListener('stalled', handleStall);
+      videoElement.addEventListener('suspend', forceVideoPlayback);
+    }
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (videoElement) {
+        videoElement.removeEventListener('stalled', handleStall);
+        videoElement.removeEventListener('suspend', forceVideoPlayback);
+      }
     };
   }, []);
 
@@ -91,15 +124,6 @@ export default function Hero() {
           0%, 100% { opacity: 0.6; transform: scale(1); }
           50% { opacity: 0.9; transform: scale(1.01); }
         }
-        
-        /* Targets the next-video shell container to guarantee zero control overlays block background text */
-        .next-video-ambient-wrap {
-          width: 100% !important;
-          height: 100% !important;
-        }
-        .next-video-ambient-wrap video {
-          pointer-events: none !important;
-        }
       `}</style>
 
       <section
@@ -109,7 +133,7 @@ export default function Hero() {
         {/* ── HIGH PERFORMANCE KINETIC BACKGROUND VIDEO MATRIX ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
-            className="w-full h-full relative next-video-ambient-wrap"
+            className="w-full h-full relative"
             style={{
               WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, transparent 100%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%)',
               maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, transparent 100%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%)',
@@ -117,23 +141,25 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* Integrated next-video processing pipeline to solve all low-bandwidth mobile freezing loops */}
-            <Video
-              src={heroVideo}
+            {/* Added: controls={false}, autoPlay, loop, muted, playsInline + crossOrigin to stop mobile stalls */}
+            <video
+              ref={videoRef}
               autoPlay
               loop
               muted
               playsInline
+              preload="auto"
               controls={false}
-              className="w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] bg-[#010305]"
+              crossOrigin="anonymous"
+              className="w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-500 bg-[#010305]"
               style={{ 
-                width: '100%',
-                height: '100%',
+                willChange: 'transform, opacity',
                 aspectRatio: '16/9'
               }}
             >
+              <source src="/hero-background-video-2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
-            </Video>
+            </video>
 
             {/* Futuristic Cinematic Overlay Blend */}
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.12] bg-gradient-to-br from-[#00aaff]/10 via-transparent to-[#00aaff]/10" />
