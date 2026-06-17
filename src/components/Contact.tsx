@@ -202,8 +202,8 @@ export default function Contact() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff01_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
       
       {/* Outer Rounded Wrapper */}
-      <div className="max-w-7xl mx-auto relative z-10 bg-[#0f1b40]/60 border border-white/5 rounded-3xl p-6 sm:p-10 lg:p-14 shadow-2xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+      <div className="max-w-7xl mx-auto relative z-10 bg-[#0f1b40]/60 border border-white/5 rounded-3xl p-5 sm:p-10 lg:p-12 xl:p-14 shadow-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-stretch">
           
           {/* LEFT COLUMN: FORM CONTAINER PLACED DIRECTLY ON DARK BACKGROUND */}
           <div className="lg:col-span-7 flex flex-col justify-start space-y-6">
@@ -212,7 +212,7 @@ export default function Contact() {
                 <span className="w-6 h-[2px] bg-amber-500 inline-block"></span>
                 <span className="text-xs font-bold uppercase tracking-wider text-white/70">Get in touch</span>
               </div>
-              <h3 className="text-4xl sm:text-5xl font-black text-white tracking-tight uppercase leading-none">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight uppercase leading-tight lg:leading-none">
                 Talk to Consultant
               </h3>
               <p className="text-xs sm:text-sm font-semibold mt-3 text-white/80 tracking-wide">
@@ -349,7 +349,7 @@ export default function Contact() {
               </form>
             </motion.div>
 
-            {/* UPDATED: Form Bottom Custom SVG Social Icons Aligned Perfectly */}
+            {/* Form Bottom Custom SVG Social Icons Aligned Perfectly */}
             <div className="pt-4 flex items-center gap-3 border-t border-white/5 mt-2">
               {socialIcons.map((icon, idx) => (
                 <a
@@ -373,92 +373,114 @@ export default function Contact() {
           </div>
 
           {/* RIGHT COLUMN: HIGH-CONTRAST PURE WHITE BOX FOR BRANCH OFFICES */}
-          <div className="lg:col-span-5 bg-white p-6 sm:p-8 lg:p-10 flex flex-col justify-start h-full rounded-3xl overflow-hidden shadow-xl border border-neutral-100">
-            <div className="mb-6">
+          <div className="lg:col-span-5 bg-white p-5 sm:p-8 lg:p-10 flex flex-col justify-start h-full rounded-3xl overflow-hidden shadow-xl border border-neutral-100">
+            <div className="mb-8">
               <div className="flex items-center gap-2 mb-1">
                 <span className="w-5 h-[2px] bg-orange-600 inline-block"></span>
-                <span className="text-xs font-bold uppercase tracking-wider text-neutral-800">Office</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-neutral-600">Corporate Presence</span>
               </div>
               <h4 className="text-3xl font-black text-neutral-900 tracking-tight">
                 Our <span className="text-orange-600">Offices</span>
               </h4>
             </div>
 
-            {/* Branch Corporate Offices */}
-            <div className="space-y-6 flex-1 flex flex-col justify-between">
+            {/* Branch Corporate Offices Categorized Elegantly */}
+            <div className="space-y-8 flex-1 flex flex-col justify-start">
               
-              {/* Branch 1: Dubai HQ */}
-              <div className="border-b border-neutral-100 pb-4 last:border-0 last:pb-0">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase">Dubai Corporate Hub</span>
-                  <span className="px-1.5 py-0.5 text-[8px] bg-orange-600 text-white rounded font-mono font-black uppercase tracking-wider">Global HQ</span>
+              {/* REGION 1: UAE OFFICES */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-2.5 pb-2 border-b border-neutral-100">
+                  <img 
+                    src="https://flagcdn.com/w40/ae.png" 
+                    alt="UAE Flag" 
+                    className="w-5 h-auto rounded-sm object-cover shadow-sm select-none"
+                    loading="lazy"
+                  />
+                  <span className="text-xs font-black uppercase tracking-widest text-neutral-700">United Arab Emirates</span>
                 </div>
-                <p className="text-xs text-neutral-900 mt-1.5 leading-relaxed font-semibold">
-                  Crystal Building - Office # 104 - 2C St - near ADCB Metro Station - Al Karama - Dubai, UAE
-                </p>
-                <div className="flex items-center gap-3 mt-3.5">
-                  <a href="https://maps.app.goo.gl/jGQ6zpmvoT4CxvfdA" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
-                    <RiMapPinLine />
-                  </a>
-                  <a href={`https://wa.me/971527925100?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
-                    <RiWhatsappLine />
-                  </a>
-                  <a href="tel:+971527925100" title="Call Office" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
-                    <RiPhoneLine />
-                  </a>
-                  <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
-                    <RiMailLine />
-                  </a>
+
+                <div className="group">
+                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-orange-600">
+                    Dubai Corporate Hub
+                  </span>
+                  <p className="text-xs text-neutral-600 mt-1.5 leading-relaxed font-medium">
+                    Crystal Building - Office # 104 - 2C St - near ADCB Metro Station - Al Karama - Dubai, UAE
+                  </p>
+                  <div className="flex items-center gap-3 mt-3.5">
+                    <a href="https://maps.app.goo.gl/jGQ6zpmvoT4CxvfdA" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                      <RiMapPinLine />
+                    </a>
+                    <a href={`https://wa.me/971527925100?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                      <RiWhatsappLine />
+                    </a>
+                    <a href="tel:+971527925100" title="Call Office" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                      <RiPhoneLine />
+                    </a>
+                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                      <RiMailLine />
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              {/* Branch 2: India Tech Wing */}
-              <div className="border-b border-neutral-100 pb-4 last:border-0 last:pb-0">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase">India HiLite Business Park</span>
-                  <span className="px-1.5 py-0.5 text-[8px] bg-neutral-900 text-white rounded font-mono font-black uppercase tracking-wider">Tech Wing</span>
+              {/* REGION 2: INDIA OFFICES */}
+              <div className="space-y-6 pt-2">
+                <div className="flex items-center gap-2.5 pb-2 border-b border-neutral-100">
+                  <img 
+                    src="https://flagcdn.com/w40/in.png" 
+                    alt="India Flag" 
+                    className="w-5 h-auto rounded-sm object-cover shadow-sm select-none"
+                    loading="lazy"
+                  />
+                  <span className="text-xs font-black uppercase tracking-widest text-neutral-700">India</span>
                 </div>
-                <p className="text-xs text-neutral-900 mt-1.5 leading-relaxed font-semibold">
-                  Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India
-                </p>
-                <div className="flex items-center gap-3 mt-3.5">
-                  <a href="https://maps.app.goo.gl/7gFHn9sHMqnKsDMc9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
-                    <RiMapPinLine />
-                  </a>
-                  <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
-                    <RiWhatsappLine />
-                  </a>
-                  <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
-                    <RiPhoneLine />
-                  </a>
-                  <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
-                    <RiMailLine />
-                  </a>
-                </div>
-              </div>
 
-              {/* Branch 3: India Operations */}
-              <div className="last:border-0 last:pb-0">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase">India Nadakkave Office</span>
-                  <span className="px-1.5 py-0.5 text-[8px] bg-neutral-900 text-white rounded font-mono font-black uppercase tracking-wider">Operations</span>
+                {/* India Branch 1 */}
+                <div className="group">
+                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-orange-600">
+                    India HiLite Business Park
+                  </span>
+                  <p className="text-xs text-neutral-600 mt-1.5 leading-relaxed font-medium">
+                    Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India
+                  </p>
+                  <div className="flex items-center gap-3 mt-3.5">
+                    <a href="https://maps.app.goo.gl/7gFHn9sHMqnKsDMc9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                      <RiMapPinLine />
+                    </a>
+                    <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                      <RiWhatsappLine />
+                    </a>
+                    <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                      <RiPhoneLine />
+                    </a>
+                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                      <RiMailLine />
+                    </a>
+                  </div>
                 </div>
-                <p className="text-xs text-neutral-900 mt-1.5 leading-relaxed font-semibold">
-                  5th Floor, C. M. Mathew Brothers Arcade, Kannur Rd, near Hotel Westway, Vikas Nagar Housing Colony, West Nadakkave, Chakkorathukulam, Kozhikode, Kerala 673006, India
-                </p>
-                <div className="flex items-center gap-3 mt-3.5">
-                  <a href="https://maps.app.goo.gl/2LzJGMQ2swaAoBdP9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
-                    <RiMapPinLine />
-                  </a>
-                  <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
-                    <RiWhatsappLine />
-                  </a>
-                  <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
-                    <RiPhoneLine />
-                  </a>
-                  <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
-                    <RiMailLine />
-                  </a>
+
+                {/* India Branch 2 */}
+                <div className="group">
+                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-orange-600">
+                    India Nadakkave Office
+                  </span>
+                  <p className="text-xs text-neutral-600 mt-1.5 leading-relaxed font-medium">
+                    5th Floor, C. M. Mathew Brothers Arcade, Kannur Rd, near Hotel Westway, Vikas Nagar Housing Colony, West Nadakkave, Chakkorathukulam, Kozhikode, Kerala 673006, India
+                  </p>
+                  <div className="flex items-center gap-3 mt-3.5">
+                    <a href="https://maps.app.goo.gl/2LzJGMQ2swaAoBdP9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                      <RiMapPinLine />
+                    </a>
+                    <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                      <RiWhatsappLine />
+                    </a>
+                    <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                      <RiPhoneLine />
+                    </a>
+                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                      <RiMailLine />
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -511,7 +533,7 @@ export default function Contact() {
           border-radius: 9999px !important;
           display: flex !important;
           align-items: center !important;
-          padding-left: 10px !important; /* Added distance from input's left edge */
+          padding-left: 10px !important;
         }
         .react-international-phone-input {
           flex: 1 !important;
@@ -562,7 +584,7 @@ export default function Contact() {
           width: 300px !important;
           position: absolute !important;
           top: 100% !important;
-          left: -10px !important; /* Adjusted alignment offset for seamless overlay opening */
+          left: -10px !important;
           z-index: 999999 !important; 
           overflow-y: auto !important;
         }
