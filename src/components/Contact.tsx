@@ -9,6 +9,7 @@ import {
   RiMailLine, 
   RiWhatsappLine, 
   RiMapPinLine,
+  RiPhoneLine,
   RiArrowRightLine
 } from 'react-icons/ri';
 import { PhoneInput } from 'react-international-phone';
@@ -19,7 +20,6 @@ export default function Contact() {
   const [errorMsg, setErrorMsg] = useState('');
   const [countryCode, setCountryCode] = useState(''); 
   
-  // Custom Validation Alert Triggers
   const [validationAlerts, setValidationAlerts] = useState({
     name: false,
     email: false,
@@ -30,8 +30,46 @@ export default function Contact() {
   const [formShake, setFormShake] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
-  // Pre-compiled global encoded WhatsApp text message
   const whatsappMessage = encodeURIComponent("I am contacting via your website and interested in your services");
+
+  const socialIcons = [
+    {
+      href: 'https://wa.me/971527925100?text=Hello%204Biz%20International,%20I%20am%20interested%20in%20your%20services.%20Please%20share%20more%20details.',
+      label: 'WhatsApp',
+      path: 'M20.52 3.48A11.8 11.8 0 0 0 12.04 0C5.4 0 .02 5.38.02 12c0 2.12.56 4.19 1.62 6.02L0 24l6.15-1.61A11.97 11.97 0 0 0 12.04 24C18.66 24 24 18.62 24 12c0-3.2-1.25-6.2-3.48-8.52zM12.04 21.9c-1.8 0-3.56-.48-5.1-1.38l-.36-.21-3.65.96.98-3.56-.24-.37A9.8 9.8 0 0 1 2.24 12c0-5.4 4.4-9.8 9.8-9.8s9.8 4.4 9.8 9.8-4.4 9.9-9.8 9.9zm5.38-7.36c-.29-.15-1.72-.85-1.99-.95-.27-.1-.47-.15-.66.15-.19.29-.76.95-.93 1.14-.17.19-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.43-.86-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.66-1.58-.9-2.16-.24-.58-.49-.5-.66-.51h-.56c-.19 0-.51.07-.78.36-.27.29-1.02 1-.98 2.43.05 1.43 1.02 2.81 1.16 3 .15.19 2.02 3.08 4.89 4.31.68.29 1.21.46 1.62.58.68.22 1.3.19 1.79.12.55-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.27-.19-.56-.34z',
+      target: '_blank',
+    },
+    {
+      href: 'https://www.facebook.com/4bizglobal',
+      label: 'Facebook',
+      path: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874V12h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z',
+      target: '_blank',
+    },
+    {
+      href: 'https://www.instagram.com/4biz_ae',
+      label: 'Instagram',
+      path: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4.162 4.162 0 1 1 0-8.324A4.162 4.162 0 0 1 12 16zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z',
+      target: '_blank',
+    },
+    {
+      href: 'https://www.linkedin.com/company/4biz-international/',
+      label: 'LinkedIn',
+      path: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z',
+      target: '_blank',
+    },
+    {
+      href: 'https://x.com/4biz123',
+      label: 'X',
+      path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z',
+      target: '_blank',
+    },
+    {
+      href: 'https://www.youtube.com/@4bizinternationalae',
+      label: 'YouTube',
+      path: 'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93-.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z',
+      target: '_blank',
+    }
+  ];
 
   useEffect(() => {
     const resolveLocation = async () => {
@@ -153,178 +191,32 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 xl:px-16 relative overflow-hidden transform-gpu backface-hidden"
+      className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 xl:px-12 relative overflow-hidden transform-gpu backface-hidden"
       style={{
         backgroundColor: '#070e25',
         contentVisibility: 'auto',
         contain: 'paint layout',
-        containmentIntrinsicSize: '1px 1200px',
+        containmentIntrinsicSize: '1px 1000px',
       } as React.CSSProperties}
     >
-      {/* Network Grid Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff01_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto relative z-10">
-        
-        {/* Main Titles */}
-        <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-          <motion.h3 
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight uppercase"
-          >
-            Contact Us
-          </motion.h3>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-xs sm:text-sm font-bold mt-3 text-white/80 uppercase tracking-widest"
-          >
-            To Scale your Business
-          </motion.p>
-        </div>
-
-        {/* 2-Column Grid Container - Fully Responsive Layout Framework with modern spacing */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+      {/* Outer Rounded Wrapper */}
+      <div className="max-w-7xl mx-auto relative z-10 bg-[#0f1b40]/60 border border-white/5 rounded-3xl p-6 sm:p-10 lg:p-14 shadow-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
-          {/* LEFT BOX: DEEP SLATE NAVY (#0B1536) WITH ROUNDED CORNERS */}
-          <div 
-            className="lg:col-span-6 p-5 sm:p-10 lg:p-12 flex flex-col justify-between relative order-2 lg:order-1 h-full min-h-[500px] lg:min-h-auto transition-transform duration-300 transform-gpu rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.4)] border border-white/5"
-            style={{ backgroundColor: '#0b1536' }}
-          >
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff01_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none opacity-40" />
-            
-            <div className="space-y-4 relative z-10 w-full my-auto">
-              
-              {/* Mail Card */}
-              <a href="mailto:info@4bizinternational.com" className="corporate-info-card group flex items-center gap-4 p-4.5 rounded-xl border border-white/5 backdrop-blur-md w-full block transition-all duration-300 hover:border-white/20">
-                <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-white text-lg group-hover:bg-white group-hover:text-[#0b1536] transition-all duration-300 shrink-0">
-                  <RiMailLine />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[10px] font-mono tracking-wider text-white/60 uppercase font-bold">Mail Infrastructure</p>
-                  <p className="text-sm md:text-base font-semibold text-white tracking-wide truncate mt-0.5">info@4bizinternational.com</p>
-                </div>
-              </a>
-
-              {/* WhatsApp Card - Dubai Wing */}
-              <a 
-                href={`https://wa.me/971527925100?text=${whatsappMessage}`}
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="corporate-info-card group flex items-center gap-4 p-4.5 rounded-xl border border-white/5 backdrop-blur-md w-full block transition-all duration-300 hover:border-white/20"
-              >
-                <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-white text-lg group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shrink-0">
-                  <RiWhatsappLine />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[10px] font-mono tracking-wider text-white/60 uppercase font-bold">Dubai HQ Telecoms</p>
-                  <p className="text-sm md:text-base font-semibold text-white tracking-wide mt-0.5 flex items-center gap-2">
-                    +971 52 79 25 100 <span className="text-[9px] bg-white/[0.08] text-white/80 px-2 py-0.5 rounded font-mono font-medium border border-white/5 group-hover:bg-emerald-500/20 group-hover:text-emerald-300">CONNECT</span>
-                  </p>
-                </div>
-              </a>
-
-              {/* WhatsApp Card - India Wing */}
-              <a 
-                href={`https://wa.me/919895717879?text=${whatsappMessage}`}
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="corporate-info-card group flex items-center gap-4 p-4.5 rounded-xl border border-white/5 backdrop-blur-md w-full block transition-all duration-300 hover:border-white/20"
-              >
-                <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-white text-lg group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shrink-0">
-                  <RiWhatsappLine />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[10px] font-mono tracking-wider text-white/60 uppercase font-bold">India Tech Telecoms</p>
-                  <p className="text-sm md:text-base font-semibold text-white tracking-wide mt-0.5 flex items-center gap-2">
-                    +91 98957 17879 <span className="text-[9px] bg-white/[0.08] text-white/80 px-2 py-0.5 rounded font-mono font-medium border border-white/5 group-hover:bg-emerald-500/20 group-hover:text-emerald-300">CONNECT</span>
-                  </p>
-                </div>
-              </a>
-
-              {/* Dubai HQ */}
-              <a 
-                href="https://maps.app.goo.gl/jGQ6zpmvoT4CxvfdA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="corporate-info-card group block p-4.5 rounded-xl border border-white/5 backdrop-blur-md transition-all duration-300 hover:border-white/20"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-white text-base shrink-0 group-hover:bg-white group-hover:text-[#0b1536] transition-all duration-300">
-                    <RiMapPinLine />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-xs font-bold text-white tracking-wider uppercase flex items-center gap-2 flex-wrap">
-                      Dubai Corporate Hub <span className="px-2 py-0.5 text-[9px] bg-white text-[#0b1536] rounded font-mono font-extrabold uppercase tracking-wider">Global HQ</span>
-                    </h4>
-                    <p className="text-xs text-white/80 mt-1.5 leading-relaxed font-normal group-hover:text-white transition-colors duration-200">
-                      Crystal Building - Office # 104 - 2C St - near ADCB Metro Station - Al Karama - Dubai, UAE
-                    </p>
-                  </div>
-                </div>
-              </a>
-
-              {/* India HiLite Business Park */}
-              <a 
-                href="https://maps.app.goo.gl/7gFHn9sHMqnKsDMc9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="corporate-info-card group block p-4.5 rounded-xl border border-white/5 backdrop-blur-md transition-all duration-300 hover:border-white/20"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-white text-base shrink-0 group-hover:bg-white group-hover:text-[#0b1536] transition-all duration-300">
-                    <RiMapPinLine />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-xs font-bold text-white tracking-wider uppercase flex items-center gap-2 flex-wrap">
-                      India HiLite Business Park <span className="px-2 py-0.5 text-[9px] bg-white/[0.08] text-white/90 rounded font-mono font-bold uppercase tracking-wider border border-white/10 group-hover:bg-white/20">Tech Wing</span>
-                    </h4>
-                    <p className="text-xs text-white/80 mt-1.5 leading-relaxed font-normal group-hover:text-white transition-colors duration-200">
-                      Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India
-                    </p>
-                  </div>
-                </div>
-              </a>
-
-              {/* India Operations */}
-              <a 
-                href="https://maps.app.goo.gl/2LzJGMQ2swaAoBdP9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="corporate-info-card group block p-4.5 rounded-xl border border-white/5 backdrop-blur-md transition-all duration-300 hover:border-white/20"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-white text-base shrink-0 group-hover:bg-white group-hover:text-[#0b1536] transition-all duration-300">
-                    <RiMapPinLine />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="text-xs font-bold text-white tracking-wider uppercase flex items-center gap-2 flex-wrap">
-                      India Nadakkave Office <span className="px-2 py-0.5 text-[9px] bg-white/[0.08] text-white/90 rounded font-mono font-bold uppercase tracking-wider border border-white/10 group-hover:bg-white/20">Operations</span>
-                    </h4>
-                    <p className="text-xs text-white/80 mt-1.5 leading-relaxed font-normal group-hover:text-white transition-colors duration-200">
-                      5th Floor, C. M. Mathew Brothers Arcade, Kannur Rd, near Hotel Westway, Vikas Nagar Housing Colony, West Nadakkave, Chakkorathukulam, Kozhikode, Kerala 673006, India
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          {/* RIGHT BOX: HIGH-CONVERSION FORM WITH ROUNDED CORNERS */}
-          <div className="lg:col-span-6 bg-white p-5 sm:p-10 lg:p-12 order-1 lg:order-2 flex flex-col justify-center h-full transform-gpu rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.4)]">
-            
-            {/* Form Section Header */}
-            <div className="mb-8 select-none text-left">
-              <h4 className="text-2xl sm:text-3xl font-black text-black tracking-tight uppercase leading-tight">
-                Fill the form <br className="hidden sm:inline" />to connect with us
-              </h4>
-              <p className="text-xs font-bold mt-2 text-neutral-600 uppercase tracking-wider leading-relaxed">
-                Provide your details below to activate direct strategic consulting
+          {/* LEFT COLUMN: FORM CONTAINER PLACED DIRECTLY ON DARK BACKGROUND */}
+          <div className="lg:col-span-7 flex flex-col justify-start space-y-6">
+            <div className="select-none text-left">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="w-6 h-[2px] bg-amber-500 inline-block"></span>
+                <span className="text-xs font-bold uppercase tracking-wider text-white/70">Get in touch</span>
+              </div>
+              <h3 className="text-4xl sm:text-5xl font-black text-white tracking-tight uppercase leading-none">
+                Talk to Consultant
+              </h3>
+              <p className="text-xs sm:text-sm font-semibold mt-3 text-white/80 tracking-wide">
+                Let's Build the Next Big Thing Together
               </p>
             </div>
 
@@ -343,15 +235,14 @@ export default function Contact() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="p-2 mb-1.5 bg-rose-50 border border-rose-100 rounded-lg flex items-center gap-2 text-[11px] font-bold text-rose-600 overflow-hidden"
+                        className="p-2 mb-1 bg-rose-500/10 border border-rose-500/20 rounded-xl flex items-center gap-2 text-[11px] font-bold text-rose-400 overflow-hidden"
                       >
                         <RiErrorWarningLine className="text-sm shrink-0" />
                         <span>Full name is required</span>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                  <input required name="name" type="text" placeholder="Full Name *" autoComplete="name" className="corporate-input" />
+                  <input required name="name" type="text" placeholder="Full Name *" autoComplete="name" className="screenshot-input" />
                 </div>
 
                 {/* Email Address */}
@@ -362,18 +253,17 @@ export default function Contact() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="p-2 mb-1.5 bg-rose-50 border border-rose-100 rounded-lg flex items-center gap-2 text-[11px] font-bold text-rose-600 overflow-hidden"
+                        className="p-2 mb-1 bg-rose-500/10 border border-rose-500/20 rounded-xl flex items-center gap-2 text-[11px] font-bold text-rose-400 overflow-hidden"
                       >
                         <RiErrorWarningLine className="text-sm shrink-0" />
                         <span>Valid email address is required</span>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                  <input required name="email" type="email" placeholder="Email Address *" autoComplete="email" autoCapitalize="none" className="corporate-input" />
+                  <input required name="email" type="email" placeholder="Email Address *" autoComplete="email" autoCapitalize="none" className="screenshot-input" />
                 </div>
 
-                {/* Phone Input */}
+                {/* Phone Input wrapper stacked sequentially */}
                 <div className="flex flex-col">
                   <AnimatePresence initial={false}>
                     {validationAlerts.phone && (
@@ -381,8 +271,7 @@ export default function Contact() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="p-2 mb-1.5 bg-rose-50 border border-rose-100 rounded-lg flex items-center gap-2 text-[11px] font-bold text-rose-600 overflow-hidden"
+                        className="p-2 mb-1 bg-rose-500/10 border border-rose-500/20 rounded-xl flex items-center gap-2 text-[11px] font-bold text-rose-400 overflow-hidden"
                       >
                         <RiErrorWarningLine className="text-sm shrink-0" />
                         <span>Phone number is required</span>
@@ -392,33 +281,36 @@ export default function Contact() {
                   <div className="phone-input-container">
                     {countryCode ? (
                       <PhoneInput
-                        key={countryCode} 
                         defaultCountry={countryCode}
                         value={phone}
                         className="w-full"
+                        placeholder="Phone Number *"
                         onChange={(phoneStr, metaData) => {
                           setPhone(phoneStr);
                           if (metaData && metaData.country && metaData.country.iso2) {
-                            setCountryCode(metaData.country.iso2.toLowerCase());
+                            const newCode = metaData.country.iso2.toLowerCase();
+                            if (newCode !== countryCode) {
+                              setCountryCode(newCode);
+                            }
                           }
                         }}
                       />
                     ) : (
-                      <div className="w-full h-[52px] bg-slate-50 animate-pulse rounded-xl border border-black" />
+                      <div className="w-full h-[50px] bg-white animate-pulse rounded-full" />
                     )}
                   </div>
                 </div>
 
                 {/* Message Details */}
                 <div className="flex flex-col">
-                  <textarea name="message" placeholder="Mission Brief / Message Details (Optional)" className="corporate-input h-28 resize-none" />
+                  <textarea name="message" placeholder="Message Details (Optional)" className="screenshot-input h-24 resize-none" />
                 </div>
 
-                {/* Premium Action Button */}
+                {/* Submit Action Button */}
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="w-full h-[52px] bg-black hover:bg-[#CC4202] text-white font-black rounded-xl tracking-widest uppercase text-xs flex items-center justify-center gap-3 transition-all duration-300 shadow-md active:scale-[0.99] disabled:opacity-70 disabled:pointer-events-none group transform-gpu"
+                  className="px-10 h-[48px] border-2 border-white/40 bg-transparent hover:bg-orange-600 hover:border-orange-600 hover:text-white text-white font-bold rounded-full tracking-widest uppercase text-xs flex items-center justify-center gap-3 transition-all duration-300 active:scale-[0.98] disabled:opacity-70 disabled:pointer-events-none w-max mt-2 transform-gpu will-change-transform"
                 >
                   {status === 'sending' ? (
                     <>
@@ -426,28 +318,27 @@ export default function Contact() {
                     </>
                   ) : (
                     <>
-                      SEND BRIEF <RiArrowRightLine className="text-base transition-transform duration-200 group-hover:translate-x-1" />
+                      SUBMIT <RiArrowRightLine className="text-base" />
                     </>
                   )}
                 </button>
 
-                {/* Status Toast Notification */}
                 <AnimatePresence mode="wait">
                   {status !== 'idle' && status !== 'sending' && (
                     <motion.div 
                       initial={{ opacity: 0, y: 5 }} 
                       animate={{ opacity: 1, y: 0 }} 
-                      exit={{ opacity: 0, scale: 0.99 }}
-                      className={`p-3.5 border rounded-xl flex items-center gap-3 text-xs font-semibold ${
+                      exit={{ opacity: 0 }}
+                      className={`p-3.5 border rounded-xl flex items-center gap-3 text-xs font-semibold will-change-transform ${
                         status === 'success' 
-                          ? 'bg-emerald-50 border-emerald-100 text-emerald-900' 
-                          : 'bg-rose-50 border-rose-100 text-rose-900'
+                          ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' 
+                          : 'bg-rose-500/10 border-rose-500/20 text-rose-400'
                       }`}
                     >
                       {status === 'success' ? (
-                        <RiCheckboxCircleLine className="text-lg shrink-0 text-emerald-600" />
+                        <RiCheckboxCircleLine className="text-lg shrink-0 text-emerald-400" />
                       ) : (
-                        <RiErrorWarningLine className="text-lg shrink-0 text-rose-600" />
+                        <RiErrorWarningLine className="text-lg shrink-0 text-rose-400" />
                       )}
                       <span>
                         {status === 'success' ? 'Thank you! Your inquiry has been transmitted successfully.' : `Error: ${errorMsg}`}
@@ -457,122 +348,228 @@ export default function Contact() {
                 </AnimatePresence>
               </form>
             </motion.div>
+
+            {/* UPDATED: Form Bottom Custom SVG Social Icons Aligned Perfectly */}
+            <div className="pt-4 flex items-center gap-3 border-t border-white/5 mt-2">
+              {socialIcons.map((icon, idx) => (
+                <a
+                  key={idx}
+                  href={icon.href}
+                  target={icon.target}
+                  rel="noopener noreferrer"
+                  aria-label={icon.label}
+                  className="w-10 h-10 rounded-full border border-white/20 hover:border-white text-white/70 hover:text-white transition-all flex items-center justify-center transform hover:scale-105 will-change-transform"
+                >
+                  <svg 
+                    viewBox="0 0 24 24" 
+                    className="w-4 h-4 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d={icon.path} />
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN: HIGH-CONTRAST PURE WHITE BOX FOR BRANCH OFFICES */}
+          <div className="lg:col-span-5 bg-white p-6 sm:p-8 lg:p-10 flex flex-col justify-start h-full rounded-3xl overflow-hidden shadow-xl border border-neutral-100">
+            <div className="mb-6">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="w-5 h-[2px] bg-orange-600 inline-block"></span>
+                <span className="text-xs font-bold uppercase tracking-wider text-neutral-800">Office</span>
+              </div>
+              <h4 className="text-3xl font-black text-neutral-900 tracking-tight">
+                Our <span className="text-orange-600">Offices</span>
+              </h4>
+            </div>
+
+            {/* Branch Corporate Offices */}
+            <div className="space-y-6 flex-1 flex flex-col justify-between">
+              
+              {/* Branch 1: Dubai HQ */}
+              <div className="border-b border-neutral-100 pb-4 last:border-0 last:pb-0">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase">Dubai Corporate Hub</span>
+                  <span className="px-1.5 py-0.5 text-[8px] bg-orange-600 text-white rounded font-mono font-black uppercase tracking-wider">Global HQ</span>
+                </div>
+                <p className="text-xs text-neutral-900 mt-1.5 leading-relaxed font-semibold">
+                  Crystal Building - Office # 104 - 2C St - near ADCB Metro Station - Al Karama - Dubai, UAE
+                </p>
+                <div className="flex items-center gap-3 mt-3.5">
+                  <a href="https://maps.app.goo.gl/jGQ6zpmvoT4CxvfdA" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <RiMapPinLine />
+                  </a>
+                  <a href={`https://wa.me/971527925100?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <RiWhatsappLine />
+                  </a>
+                  <a href="tel:+971527925100" title="Call Office" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <RiPhoneLine />
+                  </a>
+                  <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <RiMailLine />
+                  </a>
+                </div>
+              </div>
+
+              {/* Branch 2: India Tech Wing */}
+              <div className="border-b border-neutral-100 pb-4 last:border-0 last:pb-0">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase">India HiLite Business Park</span>
+                  <span className="px-1.5 py-0.5 text-[8px] bg-neutral-900 text-white rounded font-mono font-black uppercase tracking-wider">Tech Wing</span>
+                </div>
+                <p className="text-xs text-neutral-900 mt-1.5 leading-relaxed font-semibold">
+                  Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India
+                </p>
+                <div className="flex items-center gap-3 mt-3.5">
+                  <a href="https://maps.app.goo.gl/7gFHn9sHMqnKsDMc9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <RiMapPinLine />
+                  </a>
+                  <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <RiWhatsappLine />
+                  </a>
+                  <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <RiPhoneLine />
+                  </a>
+                  <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <RiMailLine />
+                  </a>
+                </div>
+              </div>
+
+              {/* Branch 3: India Operations */}
+              <div className="last:border-0 last:pb-0">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase">India Nadakkave Office</span>
+                  <span className="px-1.5 py-0.5 text-[8px] bg-neutral-900 text-white rounded font-mono font-black uppercase tracking-wider">Operations</span>
+                </div>
+                <p className="text-xs text-neutral-900 mt-1.5 leading-relaxed font-semibold">
+                  5th Floor, C. M. Mathew Brothers Arcade, Kannur Rd, near Hotel Westway, Vikas Nagar Housing Colony, West Nadakkave, Chakkorathukulam, Kozhikode, Kerala 673006, India
+                </p>
+                <div className="flex items-center gap-3 mt-3.5">
+                  <a href="https://maps.app.goo.gl/2LzJGMQ2swaAoBdP9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <RiMapPinLine />
+                  </a>
+                  <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <RiWhatsappLine />
+                  </a>
+                  <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <RiPhoneLine />
+                  </a>
+                  <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <RiMailLine />
+                  </a>
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>
       </div>
 
       <style jsx global>{`
-        /* Ultra-Clean Minimal Card Styling */
-        .corporate-info-card {
-          background: rgba(255, 255, 255, 0.02);
-          transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-          will-change: transform, background-color;
-        }
-        .corporate-info-card:hover {
-          background: rgba(255, 255, 255, 0.05);
-          transform: translateY(-1px);
-        }
-
-        /* High-Visibility Pure Black Input Fields */
-        .corporate-input {
+        /* Fully rounded pill inputs matching screenshot aesthetics */
+        .screenshot-input {
           width: 100%;
           background: #ffffff !important;
-          border: 1px solid #000000 !important;
-          padding: 0 1.25rem;
-          color: #000000 !important;
-          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.1) !important;
+          padding: 0 1.5rem;
+          color: #1a1a1a !important;
+          border-radius: 9999px;
           outline: none;
-          transition: all 0.15s ease-in-out;
+          transition: all 0.2s ease-in-out;
           font-size: 14px;
-          height: 52px;
+          height: 50px;
           font-weight: 500;
         }
-        .corporate-input:focus {
-          box-shadow: 0 0 0 1px #000000;
+        .screenshot-input:focus {
+          box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
         }
-        .corporate-input::placeholder {
-          color: #525252 !important;
+        .screenshot-input::placeholder {
+          color: #737373 !important;
           opacity: 1 !important;
-          font-weight: 500;
         }
-        textarea.corporate-input {
-          height: 110px !important;
+        textarea.screenshot-input {
+          height: 100px !important;
           padding-top: 14px !important;
+          border-radius: 20px !important;
         }
         
-        /* High-Visibility International Phone Wrapper Layouts */
+        /* FIX: Dropdown wrapper positioning configuration preventing layout cuts */
         .phone-input-container {
           width: 100%;
-          height: 52px !important;
+          height: 50px !important;
           position: relative;
-          z-index: 20 !important; 
+          z-index: 50 !important; 
         }
         .react-international-phone-input-container {
           width: 100% !important;
-          height: 52px !important;
+          height: 50px !important;
           background: #ffffff !important;
-          border: 1px solid #000000 !important;
-          border-radius: 12px !important;
-          transition: all 0.15s ease-in-out;
+          border: none !important;
+          border-radius: 9999px !important;
           display: flex !important;
           align-items: center !important;
-        }
-        .react-international-phone-input-container:focus-within {
-          box-shadow: 0 0 0 1px #000000;
+          padding-left: 10px !important; /* Added distance from input's left edge */
         }
         .react-international-phone-input {
           flex: 1 !important;
           width: 100% !important;
           background: transparent !important;
           border: none !important;
-          padding: 0 1.25rem !important;
-          color: #000000 !important; 
+          padding: 0 1.5rem 0 0.5rem !important;
+          color: #1a1a1a !important; 
           height: 100% !important;
           font-size: 14px !important;
           outline: none !important;
           font-weight: 500 !important;
         }
         .react-international-phone-input::placeholder {
-          color: #525252 !important;
+          color: #737373 !important;
           opacity: 1 !important;
+        }
+        
+        /* REMOVE FLAG INNER BORDER STYLE */
+        .react-international-phone-flag-emoji {
+          border: none !important;
+          outline: none !important;
+          box-shadow: none !important;
         }
         
         .react-international-phone-selector-button {
           background: transparent !important;
           border: none !important;
-          border-right: 1px solid #000000 !important;
           height: 100% !important;
-          width: 54px !important;
-          min-width: 54px !important;
-          padding: 0 !important;
+          width: 45px !important;
+          min-width: 45px !important;
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
-          border-top-left-radius: 12px !important;
-          border-bottom-left-radius: 12px !important;
           cursor: pointer !important;
+          padding: 0 !important;
         }
         
+        /* FIXED DROPDOWN POSITIONING LAYERING OVER CONTENT */
         .react-international-phone-country-selector-dropdown,
         ul.react-international-phone-country-selector-dropdown {
-          background-color: #ffffff !important; 
           background: #ffffff !important;
-          border: 1px solid #000000 !important; 
-          border-radius: 12px !important;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+          border: 1px solid #e2e8f0 !important; 
+          border-radius: 16px !important;
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
           padding: 6px !important;
-          max-height: 220px !important;
-          width: 280px !important;
+          max-height: 240px !important;
+          width: 300px !important;
           position: absolute !important;
           top: 100% !important;
-          left: 0 !important;
-          z-index: 99999 !important; 
+          left: -10px !important; /* Adjusted alignment offset for seamless overlay opening */
+          z-index: 999999 !important; 
+          overflow-y: auto !important;
         }
         
         ul.react-international-phone-country-selector-dropdown li {
           background: transparent !important;
-          padding: 6px 10px !important;
+          padding: 8px 12px !important;
           border-radius: 8px !important;
           display: flex !important;
           align-items: center !important;
@@ -582,18 +579,18 @@ export default function Contact() {
         .react-international-phone-country-selector-list-item-name,
         .react-international-phone-country-selector-list-item-dial-code,
         li.react-international-phone-country-selector-list-item span {
-          color: #1a1a1a !important; 
+          color: #1f2937 !important; 
           font-family: system-ui, -apple-system, sans-serif !important;
           font-size: 13px !important;
           font-weight: 600 !important;
         }
         
         li.react-international-phone-country-selector-list-item:hover {
-          background-color: #f4f4f5 !important; 
+          background-color: #f3f4f6 !important; 
         }
         
         li.react-international-phone-country-selector-list-item[aria-selected="true"] {
-          background-color: #e4e4e7 !important; 
+          background-color: #e5e7eb !important; 
         }
       `}</style>
     </section>
