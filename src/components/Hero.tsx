@@ -142,24 +142,24 @@ export default function Hero() {
             }}
           >
             {/* Added: controls={false}, autoPlay, loop, muted, playsInline + crossOrigin to stop mobile stalls */}
-            <video
-              ref={videoRef}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              controls={false}
-              crossOrigin="anonymous"
-              className="w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-500 bg-[#010305]"
-              style={{ 
-                willChange: 'transform, opacity',
-                aspectRatio: '16/9'
-              }}
-            >
-              <source src="/hero-background-video-1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+<video
+  ref={videoRef}
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+  controls={false}
+  crossOrigin="anonymous"
+  className="absolute inset-0 w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-500 bg-[#010305]"
+  style={{ 
+    willChange: 'transform, opacity' // Removed aspectRatio
+  }}
+>
+  {/* Use the RAW GitHub link here */}
+  <source src="https://raw.githubusercontent.com/4bizdeveloper/4bizinternational/main/public/hero-background-video-1.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
             {/* Futuristic Cinematic Overlay Blend */}
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.12] bg-gradient-to-br from-[#00aaff]/10 via-transparent to-[#00aaff]/10" />
