@@ -78,12 +78,28 @@ const ClientSection = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {ALL_CLIENTS.map((client) => (
-            <motion.div key={client.id} variants={itemVariants}>
-              {/* Pass the new isPHF prop */}
-              <ClientCard client={client} isPHF={client.isPHF} />
-            </motion.div>
-          ))}
+          {ALL_CLIENTS.map((client, index) => {
+            // Determine display rules cleanly via Tailwind responsive triggers
+            let visibilityClass = "block"; // Default behavior for first 3 items (Indices 0, 1, 2)
+
+            if (index >= 3 && index < 14) {
+              // Items 4 through 14: Show on Mobile & Desktop, Hide on Tablet
+              visibilityClass = "block md:hidden lg:block";
+            } else if (index >= 14) {
+              // Item 15: Show only on Desktop, Hide on Mobile & Tablet
+              visibilityClass = "hidden lg:block";
+            }
+
+            return (
+              <motion.div 
+                key={client.id} 
+                className={visibilityClass} 
+                variants={itemVariants}
+              >
+                <ClientCard client={client} isPHF={client.isPHF} />
+              </motion.div>
+            );
+          })}
          </motion.div>
 
         {/* CTA link block */}
@@ -110,7 +126,6 @@ const ClientSection = () => {
 };
 
 /* Individual Logo Box with hardware acceleration & subtle high-fidelity effects */
-// ClientCard now accepts an isPHF boolean
 const ClientCard = memo(({ client, isPHF }: { client: { src: string; alt: string }, isPHF?: boolean }) => {
   return (
     <div className="group relative flex items-center justify-center w-full h-[100px] sm:h-[120px] md:h-[125px] rounded-2xl border border-blue-500/25 bg-white/[0.01] backdrop-blur-sm overflow-hidden transition-all duration-300 hover:bg-white/[0.03] hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transform-gpu">
@@ -122,8 +137,8 @@ const ClientCard = memo(({ client, isPHF }: { client: { src: string; alt: string
           sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
           className={`object-contain opacity-90 transition-all duration-300 ease-out group-hover:filter-none group-hover:opacity-100 ${
             isPHF 
-              ? '' // PHF logo: default colored, no default inversion
-              : 'brightness-0 invert' // Other logos: default inverted
+              ? '' 
+              : 'brightness-0 invert' 
           }`}
           loading="lazy" 
         />

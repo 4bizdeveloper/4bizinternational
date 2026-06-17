@@ -14,14 +14,24 @@ const ALL_CLIENTS = [
   { id: 'Apparel', src: '/client-logos/apparel-logo.svg', alt: 'Apparel Logo' },
   { id: 'Inka-Dubai', src: '/client-logos/inka-dubai.png', alt: 'Inka Dubai Logo' },
   { id: 'Novo-Cinemas', src: '/client-logos/novo-cinemas.svg', alt: 'Novo Cinemas Logo' },
-  // --- New additions from the screenshot ---
   { id: 'sixth-street', src: '/client-logos/6thstreet.png', alt: '6th Street Logo' },
   { id: 'al-rostamani', src: '/client-logos/al-rostamani.svg', alt: 'Al Rostamani Logo' },
   { id: 'arab-brazilian-chamber', src: '/client-logos/arab-brazilian-chamber-of-commerce.svg', alt: 'Arab Brazilian Chamber of Commerce Logo' },
   { id: 'beetroot', src: '/client-logos/beetroot.png', alt: 'Beetroot Logo' },
   { id: 'blueberry-media', src: '/client-logos/blueberry-media.webp', alt: 'Blueberry Media Logo' },
   { id: 'opus-acoustic', src: '/client-logos/opus-acoustic-logo.png', alt: 'Opus Acoustic Logo' },
-  { id: 'ramada-group', src: '/client-logos/ramada-group.png', alt: 'Ramada Group Logo' }
+  { id: 'ramada-group', src: '/client-logos/ramada-group.png', alt: 'Ramada Group Logo' },
+  
+  // --- Missing additions referenced from the images ---
+  { id: 'apple-international-school', src: '/client-logos/apple-international-school.png', alt: 'Apple International School Logo' },
+  { id: 'fmredxb', src: '/client-logos/fmredxb.png', alt: 'FMREDXB Logo' },
+  { id: 'frontline-medical-centre', src: '/client-logos/Frontline-medical-centre.png', alt: 'Frontline Medical Centre Logo' },
+  { id: 'gulf-film', src: '/client-logos/gulf-film-llc.png', alt: 'Gulf Film LLC Logo' },
+  { id: 'h-h', src: '/client-logos/h-h.svg', alt: 'H-H Logo' },
+  { id: 'nano-pixel-technologies', src: '/client-logos/nano-pixel-technologies.svg', alt: 'Nano Pixel Technologies Logo' },
+  { id: 'nov-cinemas', src: '/client-logos/nov-cinemas.svg', alt: 'Nov Cinemas Logo' },
+  { id: 'oxford-school', src: '/client-logos/oxford-school.svg', alt: 'Oxford School Logo' },
+  { id: 'r-and-b', src: '/client-logos/r&b-logo.svg', alt: 'R&B Logo' }
 ];
 
 
