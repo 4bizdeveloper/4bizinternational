@@ -188,12 +188,12 @@ export default function Contact() {
           </motion.p>
         </div>
 
-        {/* 2-Column Grid Container - Fully Responsive Grid Framework */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 rounded-3xl overflow-hidden shadow-[0_30px_70px_rgba(0,0,0,0.5)] border border-white/5 items-stretch">
+        {/* 2-Column Grid Container - Fully Responsive Layout Framework with modern spacing */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           
-          {/* LEFT HALF: DEEP SLATE NAVY (#0B1536) - lg:col-span-5 or 6 for optimized alignment */}
+          {/* LEFT BOX: DEEP SLATE NAVY (#0B1536) WITH ROUNDED CORNERS */}
           <div 
-            className="lg:col-span-6 p-5 sm:p-10 lg:p-12 flex flex-col justify-between relative order-2 lg:order-1 h-full min-h-[500px] lg:min-h-auto transition-transform duration-300 transform-gpu"
+            className="lg:col-span-6 p-5 sm:p-10 lg:p-12 flex flex-col justify-between relative order-2 lg:order-1 h-full min-h-[500px] lg:min-h-auto transition-transform duration-300 transform-gpu rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.4)] border border-white/5"
             style={{ backgroundColor: '#0b1536' }}
           >
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff01_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none opacity-40" />
@@ -315,15 +315,14 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* RIGHT HALF: HIGH-CONVERSION FORM */}
-          <div className="lg:col-span-6 bg-white p-5 sm:p-10 lg:p-12 order-1 lg:order-2 flex flex-col justify-center h-full transform-gpu">
+          {/* RIGHT BOX: HIGH-CONVERSION FORM WITH ROUNDED CORNERS */}
+          <div className="lg:col-span-6 bg-white p-5 sm:p-10 lg:p-12 order-1 lg:order-2 flex flex-col justify-center h-full transform-gpu rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.4)]">
             
             {/* Form Section Header */}
             <div className="mb-8 select-none text-left">
               <h4 className="text-2xl sm:text-3xl font-black text-black tracking-tight uppercase leading-tight">
                 Fill the form <br className="hidden sm:inline" />to connect with us
               </h4>
-              {/* FIXED: Readability adjusted from text-black/40 to text-neutral-600 to mirror input placeholder richness */}
               <p className="text-xs font-bold mt-2 text-neutral-600 uppercase tracking-wider leading-relaxed">
                 Provide your details below to activate direct strategic consulting
               </p>
