@@ -5,7 +5,6 @@ import { FaFacebookF } from 'react-icons/fa6';
 
 export default function Hero() {
   // ── EASILY CUSTOMIZABLE VISIBILITY CONFIGURATION ──
-  // Switch these to false to hide either section instantly without breaking layout flows
   const showCenterText = true;
   const showScrollDown = true;
 
@@ -13,12 +12,11 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   
   // High-performance hardware-accelerated interactive utility styles
-  const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
-  const uniformIconSize = 'w-[20px] h-[20px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300';
+  const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 opacity-90 hover:opacity-100 filter drop-shadow-[0_0_8px_rgba(255,255,255,0.4)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full bg-black/40 backdrop-blur-md p-2 w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 border border-white/10';
+  const uniformIconSize = 'w-4 h-4 sm:w-4.5 sm:h-4.5 lg:w-5 lg:h-5 block shrink-0';
 
   useEffect(() => {
     const handleScroll = () => {
-      // Small threshold validation avoids scroll layout thrashing
       if (window.scrollY > 20) {
         setIsScrolled(true);
       } else {
@@ -26,7 +24,6 @@ export default function Hero() {
       }
     };
 
-    // Passive option maximizes GTmetrix / PageSpeed scrolling thread execution metrics
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     // Comprehensive Mobile Engine Watchdog to prevent video freezing
@@ -34,7 +31,6 @@ export default function Hero() {
     
     const forceVideoPlayback = () => {
       if (videoElement) {
-        // Clear any stuck states by validating paused properties
         if (videoElement.paused) {
           videoElement.play().catch(() => {
             console.log("Autoplay sweep bypassed due to low battery mode restriction.");
@@ -43,10 +39,8 @@ export default function Hero() {
       }
     };
 
-    // Trigger on mount
     forceVideoPlayback();
 
-    // Watchdog listener: Restarts or wakes up video stream if mobile network stuttered/stalled it
     const handleStall = () => {
       if (videoElement) {
         videoElement.load();
@@ -110,7 +104,7 @@ export default function Hero() {
         }
         @keyframes microPulse {
           0%, 100% { 
-            border-color: rgba(255,255,255,0.3); 
+            border-color: rgba(255,255,255,0.35); 
             box-shadow: 0 4px 20px rgba(0,0,0,0.8);
             transform: scale(1);
           }
@@ -130,54 +124,50 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── HIGH PERFORMANCE KINETIC BACKGROUND VIDEO MATRIX ── */}
+        {/* ── HIGH PERFORMANCE FULL SCREEN STREAMING BACKGROUND VIDEO MATRIX ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
-            className="w-full h-full relative"
+            className="w-full h-full absolute inset-0"
             style={{
-              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, transparent 100%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%)',
-              maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, transparent 100%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%)',
-              WebkitMaskComposite: 'source-in',
-              maskComposite: 'intersect'
+              // Fixed: Removed the horizontal transparent gradients that cause side bars on phone aspect ratios.
+              WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 85%, transparent 100%)',
+              maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 85%, transparent 100%)',
             }}
           >
-            {/* Added: controls={false}, autoPlay, loop, muted, playsInline + crossOrigin to stop mobile stalls */}
-<video
-  ref={videoRef}
-  autoPlay
-  loop
-  muted
-  playsInline
-  preload="auto"
-  controls={false}
-  crossOrigin="anonymous"
-  className="absolute inset-0 w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-500 bg-[#010305]"
-  style={{ 
-    willChange: 'transform, opacity' // Removed aspectRatio
-  }}
->
-  {/* Use the RAW GitHub link here */}
-  <source src="https://raw.githubusercontent.com/4bizdeveloper/4bizinternational/main/public/hero-background-video-1.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
+            <video
+              ref={videoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              controls={false}
+              crossOrigin="anonymous"
+              className="absolute inset-0 w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] bg-[#010305]"
+              style={{ 
+                willChange: 'transform, opacity',
+              }}
+            >
+              <source src="https://raw.githubusercontent.com/4bizdeveloper/4bizinternational/main/public/hero-background-video-1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
 
             {/* Futuristic Cinematic Overlay Blend */}
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.12] bg-gradient-to-br from-[#00aaff]/10 via-transparent to-[#00aaff]/10" />
-            <div className="absolute inset-0 pointer-events-none bg-black/15" />
+            <div className="absolute inset-0 pointer-events-none bg-black/25" />
           </div>
         </div>
 
-        {/* ── ACCESSIBLE FIXED NAVIGATION SIDEBAR ── */}
+        {/* ── RESPONSIVE NAVIGATION MATRIX (Transforms automatically on Mobile viewports) ── */}
         <nav
           aria-label="Social Profile Navigation"
           className={`
-            absolute top-1/2 -translate-y-1/2 z-40
-            flex flex-col items-center justify-center
-            left-4 gap-5
-            sm:left-6 sm:gap-[22px]
+            absolute z-50 flex
+            left-1/2 -translate-x-1/2 bottom-28 flex-row gap-4
+            sm:left-6 sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2 sm:translate-x-0 sm:flex-col sm:gap-[18px]
             lg:left-8
             transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)
-            ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-3' : 'opacity-100 pointer-events-auto translate-x-0'}
+            ${isScrolled ? 'opacity-0 pointer-events-none scale-90' : 'opacity-100 pointer-events-auto scale-100'}
           `}
           style={{ willChange: 'transform, opacity' }}
         >
@@ -201,18 +191,19 @@ export default function Hero() {
           ))}
         </nav>
 
-        {/* ── FLEX CENTER CONTAINER ── */}
-        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-h-0">
+        {/* ── COMPREHENSIVE TEXT BRANDING WRAPPER CONTAINER ── */}
+        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-14 pb-24 min-h-0">
           <div 
             className={`
-              w-full flex flex-col items-center gap-1.5 sm:gap-2.5 md:gap-3 pointer-events-none transition-all duration-500
+              w-full flex flex-col items-center gap-2 sm:gap-3 pointer-events-none transition-all duration-500
               ${showCenterText ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}
             `}
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="w-full max-w-[90vw] xs:max-w-[85vw] sm:max-w-[520px] md:max-w-[600px] lg:max-w-[740px] flex flex-col items-center gap-1.5 sm:gap-2">
+            {/* Removed absolute size constraints to let fonts adapt dynamically across devices */}
+            <div className="w-full flex flex-col items-center gap-2.5 sm:gap-3 px-2">
               <h1 
-                className="text-[6.5vw] xs:text-[1.5rem] sm:text-[2.3rem] md:text-[2.9rem] lg:text-[3.6rem] font-black uppercase tracking-[0.05em] text-white leading-none font-sans whitespace-nowrap"
+                className="text-[1.85rem] xs:text-[2.25rem] sm:text-[3rem] md:text-[3.8rem] lg:text-[4.6rem] font-black uppercase tracking-[0.06em] text-white leading-[1.1] font-sans text-center max-w-full block"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 25px rgba(0,170,255,0.2)',
                   WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
@@ -222,7 +213,7 @@ export default function Hero() {
               </h1>
 
               <h2 
-                className="text-[3.2vw] xs:text-[0.8rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.85rem] font-extrabold uppercase tracking-[0.11em] text-[#cbd5e1] leading-none font-sans pl-[0.11em] whitespace-nowrap"
+                className="text-[0.88rem] xs:text-[1.05rem] sm:text-[1.3rem] md:text-[1.65rem] lg:text-[2rem] font-extrabold uppercase tracking-[0.14em] text-[#cbd5e1] leading-none font-sans pl-[0.14em] text-center max-w-full block"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 6px 15px rgba(0,0,0,0.85)',
                 }}
@@ -233,10 +224,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── SCROLL DETECTOR CONTAINER ── */}
+        {/* ── SCROLL DETECTOR BAR CONTAINER ── */}
         <div
           className={`
-            relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500
+            absolute bottom-[3vh] left-1/2 -translate-x-1/2 w-full flex flex-col items-center justify-center z-40 pointer-events-none shrink-0 transition-all duration-500
             ${isScrolled ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}
           `}
           style={{ willChange: 'transform, opacity' }}
@@ -246,7 +237,7 @@ export default function Hero() {
             className={`transition-all duration-500 ${showScrollDown ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="flex flex-col items-center justify-center gap-y-2.5">
+            <div className="flex flex-col items-center justify-center gap-y-2">
               <div
                 style={{
                   position: 'relative',
