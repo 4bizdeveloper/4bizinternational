@@ -43,38 +43,27 @@ export default function Hero() {
       }
     };
 
-    // Trigger on mount and interaction events to clear mobile browser blockages
+    // Trigger on mount
     forceVideoPlayback();
-    
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
-        forceVideoPlayback();
-      }
-    };
 
-    // Watchdog listener: Restarts or wakes up video stream safely without triggering infinite load cascades
+    // Watchdog listener: Restarts or wakes up video stream if mobile network stuttered/stalled it
     const handleStall = () => {
-      if (videoElement && videoElement.paused) {
+      if (videoElement) {
+        videoElement.load();
         videoElement.play().catch(() => {});
       }
     };
 
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
     if (videoElement) {
       videoElement.addEventListener('stalled', handleStall);
       videoElement.addEventListener('suspend', forceVideoPlayback);
-      // Extra hooks to combat low power mode constraints on iOS devices
-      videoElement.addEventListener('webkitendfullscreen', forceVideoPlayback);
     }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (videoElement) {
         videoElement.removeEventListener('stalled', handleStall);
         videoElement.removeEventListener('suspend', forceVideoPlayback);
-        videoElement.removeEventListener('webkitendfullscreen', forceVideoPlayback);
       }
     };
   }, []);
@@ -143,8 +132,16 @@ export default function Hero() {
       >
         {/* ── HIGH PERFORMANCE KINETIC BACKGROUND VIDEO MATRIX ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
-          <div className="w-full h-full relative">
-            
+          <div 
+            className="w-full h-full relative"
+            style={{
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, transparent 100%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%)',
+              maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, transparent 100%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%)',
+              WebkitMaskComposite: 'source-in',
+              maskComposite: 'intersect'
+            }}
+          >
+            {/* Added: controls={false}, autoPlay, loop, muted, playsInline + crossOrigin to stop mobile stalls */}
             <video
               ref={videoRef}
               autoPlay
@@ -153,26 +150,16 @@ export default function Hero() {
               playsInline
               preload="auto"
               controls={false}
+              crossOrigin="anonymous"
               className="w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-500 bg-[#010305]"
               style={{ 
                 willChange: 'transform, opacity',
                 aspectRatio: '16/9'
               }}
             >
-              <source src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-background-video-1.mp4" type="video/mp4" />
+              <source src="/hero-background-video-1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-
-            {/* High Performance Non-Thrashing Overlay Mask (Replaces problematic CSS webkit-mask properties) */}
-            <div 
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: `
-                  linear-gradient(to right, #010305 0%, transparent 6%, transparent 94%, #010305 100%),
-                  linear-gradient(to bottom, #010305 0%, transparent 5%, transparent 95%, #010305 100%)
-                `
-              }}
-            />
 
             {/* Futuristic Cinematic Overlay Blend */}
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.12] bg-gradient-to-br from-[#00aaff]/10 via-transparent to-[#00aaff]/10" />
