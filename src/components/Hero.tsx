@@ -12,8 +12,8 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   
   // High-performance hardware-accelerated interactive utility styles
-  const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-110 focus:scale-110 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full bg-white/5 md:bg-transparent w-9 h-9 md:w-auto md:h-auto';
-  const uniformIconSize = 'w-[18px] h-[18px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300';
+  const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
+  const uniformIconSize = 'w-[20px] h-[20px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,13 +27,12 @@ export default function Hero() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     const videoElement = videoRef.current;
+    
     const forceVideoPlayback = () => {
-      if (videoElement) {
-        if (videoElement.paused) {
-          videoElement.play().catch(() => {
-            console.log("Autoplay sweep bypassed due to low battery mode restriction.");
-          });
-        }
+      if (videoElement && videoElement.paused) {
+        videoElement.play().catch(() => {
+          console.log("Autoplay sweep bypassed due to low battery mode restriction.");
+        });
       }
     };
 
@@ -119,10 +118,10 @@ export default function Hero() {
       `}</style>
 
       <section
-        className="relative h-svh min-h-[560px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
+        className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── BACKGROUND VIDEO MATRIX ── */}
+        {/* ── HIGH PERFORMANCE KINETIC BACKGROUND VIDEO MATRIX ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -157,16 +156,17 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── ACCESSIBLE NAVIGATION SIDEBAR / RESPONSIVE SOCIAL BAR ── */}
+        {/* ── ACCESSIBLE FIXED NAVIGATION SIDEBAR ── */}
         <nav
           aria-label="Social Profile Navigation"
           className={`
-            absolute z-40 flex items-center justify-center
-            left-1/2 -translate-x-1/2 bottom-[16%] flex-row gap-4
-            md:left-6 md:translate-x-0 md:top-1/2 md:-translate-y-1/2 md:bottom-auto md:flex-col md:gap-5
-            lg:left-8 lg:gap-[22px]
+            absolute top-1/2 -translate-y-1/2 z-40
+            flex flex-col items-center justify-center
+            left-4 gap-5
+            sm:left-6 sm:gap-[22px]
+            lg:left-8
             transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)
-            ${isScrolled ? 'opacity-0 pointer-events-none translate-y-3 md:-translate-x-3' : 'opacity-100 pointer-events-auto translate-y-0 md:translate-x-0'}
+            ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-3' : 'opacity-100 pointer-events-auto translate-x-0'}
           `}
           style={{ willChange: 'transform, opacity' }}
         >
@@ -190,8 +190,8 @@ export default function Hero() {
           ))}
         </nav>
 
-        {/* ── FLEX CENTER CONTAINER ── */}
-        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 xs:px-6 sm:px-16 z-30 pt-12 pb-24 md:pb-12 min-h-0">
+        {/* ── FLEX CENTER CONTAINER (RESPONSIVE TEXT BREAKDOWN) ── */}
+        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-w-0">
           <div 
             className={`
               w-full flex flex-col items-center gap-1.5 sm:gap-2.5 md:gap-3 pointer-events-none transition-all duration-500
@@ -199,30 +199,62 @@ export default function Hero() {
             `}
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="w-full flex flex-col items-center gap-2 sm:gap-3 px-2">
-              <h1 
-                className="text-[7.5vw] xs:text-[1.8rem] sm:text-[2.6rem] md:text-[3.2rem] lg:text-[4rem] font-black uppercase tracking-[0.06em] text-white leading-tight font-sans text-center max-w-full"
-                style={{
-                  textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 25px rgba(0,170,255,0.2)',
-                  WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
-                }}
-              >
-                4BIZ INTERNATIONAL
-              </h1>
+            <div className="w-full max-w-[90vw] xs:max-w-[85vw] sm:max-w-[600px] lg:max-w-[850px] flex flex-col items-center justify-center">
+              
+              {/* Desktop Viewport Text Group (Hidden on Mobile/Tablet) */}
+              <div className="hidden md:flex flex-col items-center gap-2">
+                <h1 
+                  className="text-[2.9rem] lg:text-[3.6rem] font-black uppercase tracking-[0.05em] text-white leading-none font-sans whitespace-nowrap"
+                  style={{
+                    textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 25px rgba(0,170,255,0.2)',
+                    WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
+                  }}
+                >
+                  4BIZ INTERNATIONAL
+                </h1>
+                <h2 
+                  className="text-[1.5rem] lg:text-[1.85rem] font-extrabold uppercase tracking-[0.11em] text-[#cbd5e1] leading-none font-sans pl-[0.11em] whitespace-nowrap"
+                  style={{
+                    textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 6px 15px rgba(0,0,0,0.85)',
+                  }}
+                >
+                  IMPACTING INFINITE
+                </h2>
+              </div>
 
-              <h2 
-                className="text-[3.6vw] xs:text-[0.9rem] sm:text-[1.25rem] md:text-[1.55rem] lg:text-[1.95rem] font-extrabold uppercase tracking-[0.14em] text-[#cbd5e1] leading-tight font-sans text-center max-w-full"
-                style={{
-                  textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 6px 15px rgba(0,0,0,0.85)',
-                }}
-              >
-                IMPACTING INFINITE
-              </h2>
+              {/* Mobile & Tablet Viewport Text Group (Hierarchically Arranged: 4BIZ -> INTERNATIONAL -> SUBTITLE) */}
+              <div className="flex md:hidden flex-col items-center text-center w-full">
+                <h1 
+                  className="text-[12vw] xs:text-[2.5rem] sm:text-[3.2rem] font-black uppercase tracking-[0.05em] text-white leading-none font-sans"
+                  style={{
+                    textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 20px rgba(0,170,255,0.2)',
+                  }}
+                >
+                  4BIZ
+                </h1>
+                <span 
+                  className="text-[7.5vw] xs:text-[1.6rem] sm:text-[2rem] font-black uppercase tracking-[0.08em] text-white/90 leading-none font-sans mt-2"
+                  style={{
+                    textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 6px 15px rgba(0,0,0,0.85)',
+                  }}
+                >
+                  INTERNATIONAL
+                </span>
+                <h2 
+                  className="text-[4vw] xs:text-[0.95rem] sm:text-[1.15rem] font-medium uppercase tracking-[0.15em] text-[#cbd5e1]/80 leading-none font-sans mt-4 max-w-[280px] xs:max-w-none break-words"
+                  style={{
+                    textShadow: '0 2px 4px rgba(0,0,0,0.9)',
+                  }}
+                >
+                  IMPACTING INFINITE
+                </h2>
+              </div>
+
             </div>
           </div>
         </div>
 
-        {/* ── SCROLL DETECTOR CONTAINER ── */}
+        {/* ── SCROLL DETECTOR CONTAINER (PRESERVED ANIMATIONS) ── */}
         <div
           className={`
             relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500
@@ -268,7 +300,7 @@ export default function Hero() {
               </div>
 
               <span
-                className="text-[0.55rem] sm:text-[0.6rem] font-black tracking-[0.5em] uppercase text-white pl-[0.5em]"
+                className="text-[0.52rem] sm:text-[0.6rem] font-black tracking-[0.5em] uppercase text-white pl-[0.5em]"
                 style={{ 
                   textShadow: '0 2px 6px #000',
                   animation: 'subtleTextPulse 3s infinite ease-in-out',
