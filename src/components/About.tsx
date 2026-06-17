@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, useMotionValue, useTransform, animate, useInView, useScroll, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
 import Image from 'next/image';
 
 // ─── PERFORMANCE OPTIMIZED CLS-FREE COUNTER ─────────────────────────────────
@@ -51,22 +51,6 @@ export default function About() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
-  // ─── CINEMATIC ULTRA-MODERN SCROLL REVOLUTION SYSTEM ───
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-
-  // Zero-latency smooth spring tracking
-  const smoothScrollProgress = useSpring(scrollYProgress, { 
-    stiffness: 120, 
-    damping: 24, 
-    restDelta: 0.0001 
-  });
-  
-  const fastRingScrollRotation = useTransform(smoothScrollProgress, [0, 1], [0, 360]);
-  const reverseRingScrollRotation = useTransform(smoothScrollProgress, [0, 1], [360, 0]);
-
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
@@ -90,6 +74,30 @@ export default function About() {
       className="relative w-full text-white py-12 md:py-20 lg:py-24 overflow-hidden font-sans select-text bg-[#070e25]"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '0 900px' }}
     >
+      {/* CSS Injection for Smooth, Continuous Ring Rotations */}
+      <style jsx global>{`
+        @keyframes continuous-spin-clockwise {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes continuous-spin-counter {
+          from { transform: rotate(360deg); }
+          to { transform: rotate(0deg); }
+        }
+        .animate-spin-continuous-fast {
+          animation: continuous-spin-clockwise 12s linear infinite;
+        }
+        .animate-spin-continuous-reverse {
+          animation: continuous-spin-counter 16s linear infinite;
+        }
+        .animate-spin-continuous-slow {
+          animation: continuous-spin-clockwise 22s linear infinite;
+        }
+        .animate-spin-continuous-slow-reverse {
+          animation: continuous-spin-counter 26s linear infinite;
+        }
+      `}</style>
+
       {/* Micro-mesh Grid Structural Backdrop Overlay for Premium High-Tech Feel */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none z-0 opacity-40" />
 
@@ -212,25 +220,13 @@ export default function About() {
                 <div className="absolute w-44 h-44 rounded-full border-[5px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.35)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
                 <div className="absolute w-56 h-56 rounded-full border-[3px] border-[#39ff73]/20 shadow-[0_0_30px_rgba(57,255,115,0.25)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite_1.1s]" />
 
-                {/* Dynamic Rotating HUD Vector Geometries */}
-                <motion.div 
-                  style={{ rotate: fastRingScrollRotation }}
-                  className="absolute w-60 h-60 sm:w-72 sm:h-72 rounded-full border-[2.5px] border-dashed border-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.2)] will-change-transform"
-                />
-                <motion.div 
-                  style={{ rotate: reverseRingScrollRotation }}
-                  className="absolute w-[16rem] h-[16rem] sm:w-[19rem] sm:h-[19rem] rounded-full border-[2px] border-double border-emerald-400/40 shadow-[0_0_20px_rgba(52,211,153,0.15)] will-change-transform"
-                />
+                {/* Continuous Non-Scroll Dependent Rotating HUD Vector Geometries */}
+                <div className="absolute w-60 h-60 sm:w-72 sm:h-72 rounded-full border-[2.5px] border-dashed border-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.2)] will-change-transform animate-spin-continuous-fast" />
+                <div className="absolute w-[16rem] h-[16rem] sm:w-[19rem] sm:h-[19rem] rounded-full border-[2px] border-double border-emerald-400/40 shadow-[0_0_20px_rgba(52,211,153,0.15)] will-change-transform animate-spin-continuous-reverse" />
                 
                 {/* HIGH VIBRANCY Rings */}
-                <motion.div 
-                  style={{ rotate: fastRingScrollRotation }}
-                  className="absolute w-[19rem] h-[19rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[4px] border-transparent border-t-[#39ff73] border-b-cyan-400 border-l-[#39ff73] filter drop-shadow-[0_0_18px_rgba(57,255,115,0.6)] will-change-transform"
-                />
-                <motion.div 
-                  style={{ rotate: reverseRingScrollRotation }}
-                  className="absolute w-[21rem] h-[21rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[2px] border-transparent border-r-[#39ff73]/80 border-l-cyan-400/60 filter drop-shadow-[0_0_12px_rgba(34,211,238,0.4)] will-change-transform"
-                />
+                <div className="absolute w-[19rem] h-[19rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[4px] border-transparent border-t-[#39ff73] border-b-cyan-400 border-l-[#39ff73] filter drop-shadow-[0_0_18px_rgba(57,255,115,0.6)] will-change-transform animate-spin-continuous-slow" />
+                <div className="absolute w-[21rem] h-[21rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[2px] border-transparent border-r-[#39ff73]/80 border-l-cyan-400/60 filter drop-shadow-[0_0_12px_rgba(34,211,238,0.4)] will-change-transform animate-spin-continuous-slow-reverse" />
               </div>
               
               {/* Floating Center Logo Surface */}
