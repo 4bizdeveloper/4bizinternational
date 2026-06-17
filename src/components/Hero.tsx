@@ -170,8 +170,7 @@ export default function Hero() {
                 background: `
                   linear-gradient(to right, #010305 0%, transparent 6%, transparent 94%, #010305 100%),
                   linear-gradient(to bottom, #010305 0%, transparent 5%, transparent 95%, #010305 100%)
-                `,
-                backgroundComposite: 'source-over'
+                `
               }}
             />
 
