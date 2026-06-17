@@ -1,11 +1,17 @@
-import { withNextVideo } from "next-video/process";
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
   devIndicators: false,
 };
 
-export default withNextVideo(nextConfig);
+export default nextConfig;
