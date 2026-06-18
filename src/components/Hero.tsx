@@ -35,14 +35,16 @@ export default function Hero() {
       videoRef.current.play()
         .then(() => setIsVideoLoaded(true))
         .catch(() => {
-          console.log("Video autoplay prevented or stalled; fallback image active.");
-          setIsVideoLoaded(false);
+          console.log("Video autoplay prevented or stalled.");
+          // Keeping video target active for manual/interaction triggers instead of hiding completely
+          setIsVideoLoaded(true);
         });
     }
   }, []);
 
   const handleVideoFailure = () => {
-    setIsVideoLoaded(false);
+    // Preserving stream context loop without collapsing visibility state
+    setIsVideoLoaded(true);
   };
 
   const socials = [
@@ -107,7 +109,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── PERFORMANCE BACKGROUND MATRIX (VIDEO & IMAGE FALLBACK) ── */}
+        {/* ── PERFORMANCE BACKGROUND MATRIX (VIDEO ONLY) ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -118,11 +120,11 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* Ultra-modern video background with proactive connection tracking hooks */}
+            {/* Ultra-modern video background configured for explicit loops across mobile nodes */}
             <video
               ref={videoRef}
               src="/hero-video-2.mp4"
-              loop
+              loop={true}
               muted
               playsInline
               autoPlay
@@ -136,21 +138,6 @@ export default function Hero() {
               }`}
               style={{ willChange: 'transform, opacity' }}
             />
-
-            {/* Optimized device-specific fallback layers images if streaming degrades */}
-            <picture className="absolute inset-0 w-full h-full block z-0">
-              <source media="(min-width: 1200px)" srcSet="/hero-desktop-1.png" width="1920" height="900" />
-              <source media="(min-width: 640px)" srcSet="/hero-tablet-1.png" width="1024" height="768" />
-              <img
-                src="/hero-mobile-1.png"
-                alt=""
-                width="390"
-                height="844"
-                fetchPriority="high"
-                decoding="async"
-                className="w-full h-full object-cover object-[center_bottom] sm:object-center brightness-[1.05] contrast-[1.05]"
-              />
-            </picture>
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
         </div>
@@ -198,8 +185,11 @@ export default function Hero() {
             `}
             style={{ willChange: 'transform, opacity' }}
           >
-            {/* Modern Stack Structure: Handles cross-device typographic layout shifting flawlessly */}
-            <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center">
+            {/* Modern Stack Structure: Fixed layer to prevent Mobile Webkit text/shadow rendering freezes */}
+            <div 
+              className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center"
+              style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
+            >
               
               {/* Heading Lockup: Stacked perfectly on mobile/tablet, single row on desktop views */}
               <h1 
