@@ -191,32 +191,25 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 px-3 sm:px-6 lg:px-8 xl:px-12 relative overflow-hidden transform-gpu backface-hidden"
+      className="relative overflow-hidden transform-gpu backface-hidden"
       style={{
-        backgroundColor: '#070e25',
+        backgroundColor: '#ffffff',
         contentVisibility: 'auto',
         contain: 'paint layout',
         containmentIntrinsicSize: '1px 1000px',
       } as React.CSSProperties}
     >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff01_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
-      
-      {/* Outer Rounded Wrapper - Modified paddings and width layout across mobile and tablet viewports */}
-      <div className="w-full max-w-7xl mx-auto relative z-10 bg-[#0f1b40]/60 border border-white/5 rounded-3xl py-10 px-5 sm:py-14 sm:px-10 lg:p-12 xl:p-14 shadow-2xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 xl:gap-12 items-stretch">
-          
-          {/* LEFT COLUMN: FORM CONTAINER PLACED DIRECTLY ON DARK BACKGROUND */}
-          <div className="lg:col-span-7 flex flex-col justify-start space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[85vh] items-stretch">
+        
+        {/* LEFT COLUMN: FULL WHITE BACKGROUND FORM SECTION */}
+        <div className="lg:col-span-6 xl:col-span-7 bg-white py-16 px-6 sm:px-12 lg:px-16 xl:px-24 flex flex-col justify-center">
+          <div className="w-full max-w-xl mx-auto space-y-8">
             <div className="select-none text-left">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-6 h-[2px] bg-amber-500 inline-block"></span>
-                <span className="text-xs font-bold uppercase tracking-wider text-white/70">Get in touch</span>
-              </div>
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight uppercase leading-tight lg:leading-none">
-                Talk to Consultant
+              <h3 className="text-4xl sm:text-5xl font-black text-[#0c9d7d] tracking-tight uppercase leading-none">
+                CONTACT US
               </h3>
-              <p className="text-xs sm:text-sm font-semibold mt-3 text-white/80 tracking-wide">
-                Let's Build the Next Big Thing Together
+              <p className="text-sm font-semibold mt-3 text-neutral-700 tracking-wide">
+                Develop web services and mobile applications on your demand. Let's do this.
               </p>
             </div>
 
@@ -225,7 +218,7 @@ export default function Contact() {
               transition={{ duration: 0.4 }}
               className="w-full will-change-transform"
             >
-              <form ref={formRef} onSubmit={handleSubmit} onChange={handleInputChange} className="space-y-4" noValidate>
+              <form ref={formRef} onSubmit={handleSubmit} onChange={handleInputChange} className="space-y-5" noValidate>
                 
                 {/* Full Name */}
                 <div className="relative w-full flex flex-col">
@@ -235,14 +228,14 @@ export default function Contact() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="p-2 mb-1 bg-rose-500/10 border border-rose-500/20 rounded-xl flex items-center gap-2 text-[11px] font-bold text-rose-400 overflow-hidden"
+                        className="p-2 mb-1 bg-rose-500/10 border border-rose-500/20 rounded-xl flex items-center gap-2 text-[11px] font-bold text-rose-600 overflow-hidden"
                       >
                         <RiErrorWarningLine className="text-sm shrink-0" />
                         <span>Full name is required</span>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                  <input required name="name" type="text" placeholder="Full Name *" autoComplete="name" className="screenshot-input" />
+                  <input required name="name" type="text" placeholder="Full Name*" autoComplete="name" className="screenshot-input" />
                 </div>
 
                 {/* Email Address */}
@@ -253,17 +246,17 @@ export default function Contact() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="p-2 mb-1 bg-rose-500/10 border border-rose-500/20 rounded-xl flex items-center gap-2 text-[11px] font-bold text-rose-400 overflow-hidden"
+                        className="p-2 mb-1 bg-rose-500/10 border border-rose-500/20 rounded-xl flex items-center gap-2 text-[11px] font-bold text-rose-600 overflow-hidden"
                       >
                         <RiErrorWarningLine className="text-sm shrink-0" />
                         <span>Valid email address is required</span>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                  <input required name="email" type="email" placeholder="Email Address *" autoComplete="email" autoCapitalize="none" className="screenshot-input" />
+                  <input required name="email" type="email" placeholder="Email*" autoComplete="email" autoCapitalize="none" className="screenshot-input" />
                 </div>
 
-                {/* Phone Input wrapper stacked sequentially */}
+                {/* Phone Input */}
                 <div className="flex flex-col">
                   <AnimatePresence initial={false}>
                     {validationAlerts.phone && (
@@ -271,7 +264,7 @@ export default function Contact() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="p-2 mb-1 bg-rose-500/10 border border-rose-500/20 rounded-xl flex items-center gap-2 text-[11px] font-bold text-rose-400 overflow-hidden"
+                        className="p-2 mb-1 bg-rose-500/10 border border-rose-500/20 rounded-xl flex items-center gap-2 text-[11px] font-bold text-rose-600 overflow-hidden"
                       >
                         <RiErrorWarningLine className="text-sm shrink-0" />
                         <span>Phone number is required</span>
@@ -284,7 +277,7 @@ export default function Contact() {
                         defaultCountry={countryCode}
                         value={phone}
                         className="w-full"
-                        placeholder="Phone Number *"
+                        placeholder="Phone Number*"
                         onChange={(phoneStr, metaData) => {
                           setPhone(phoneStr);
                           if (metaData && metaData.country && metaData.country.iso2) {
@@ -296,21 +289,21 @@ export default function Contact() {
                         }}
                       />
                     ) : (
-                      <div className="w-full h-[50px] bg-white animate-pulse rounded-full" />
+                      <div className="w-full h-[54px] bg-neutral-100 animate-pulse rounded-full" />
                     )}
                   </div>
                 </div>
 
                 {/* Message Details */}
                 <div className="flex flex-col">
-                  <textarea name="message" placeholder="Message Details (Optional)" className="screenshot-input h-24 resize-none" />
+                  <textarea name="message" placeholder="Your Message" className="screenshot-input h-28 resize-none" />
                 </div>
 
-                {/* Submit Action Button */}
+                {/* Submit Button */}
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="px-10 h-[48px] border-2 border-white/40 bg-transparent hover:bg-orange-600 hover:border-orange-600 hover:text-white text-white font-bold rounded-full tracking-widest uppercase text-xs flex items-center justify-center gap-3 transition-all duration-300 active:scale-[0.98] disabled:opacity-70 disabled:pointer-events-none w-max mt-2 transform-gpu will-change-transform"
+                  className="px-12 h-[50px] bg-black hover:bg-[#0c9d7d] text-white font-black rounded-full tracking-widest uppercase text-xs flex items-center justify-center gap-3 transition-all duration-300 active:scale-[0.98] disabled:opacity-70 disabled:pointer-events-none w-max transform-gpu will-change-transform"
                 >
                   {status === 'sending' ? (
                     <>
@@ -318,7 +311,7 @@ export default function Contact() {
                     </>
                   ) : (
                     <>
-                      SUBMIT <RiArrowRightLine className="text-base" />
+                      SEND <RiArrowRightLine className="text-base" />
                     </>
                   )}
                 </button>
@@ -331,14 +324,14 @@ export default function Contact() {
                       exit={{ opacity: 0 }}
                       className={`p-3.5 border rounded-xl flex items-center gap-3 text-xs font-semibold will-change-transform ${
                         status === 'success' 
-                          ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' 
-                          : 'bg-rose-500/10 border-rose-500/20 text-rose-400'
+                          ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-600' 
+                          : 'bg-rose-500/10 border-rose-500/20 text-rose-600'
                       }`}
                     >
                       {status === 'success' ? (
-                        <RiCheckboxCircleLine className="text-lg shrink-0 text-emerald-400" />
+                        <RiCheckboxCircleLine className="text-lg shrink-0 text-emerald-600" />
                       ) : (
-                        <RiErrorWarningLine className="text-lg shrink-0 text-rose-400" />
+                        <RiErrorWarningLine className="text-lg shrink-0 text-rose-600" />
                       )}
                       <span>
                         {status === 'success' ? 'Thank you! Your inquiry has been transmitted successfully.' : `Error: ${errorMsg}`}
@@ -349,8 +342,8 @@ export default function Contact() {
               </form>
             </motion.div>
 
-            {/* Form Bottom Custom SVG Social Icons Aligned Perfectly */}
-            <div className="pt-4 flex items-center gap-3 border-t border-white/5 mt-2">
+            {/* Social Icons Link Alignment */}
+            <div className="pt-4 flex items-center gap-3 border-t border-neutral-200 mt-2">
               {socialIcons.map((icon, idx) => (
                 <a
                   key={idx}
@@ -358,7 +351,7 @@ export default function Contact() {
                   target={icon.target}
                   rel="noopener noreferrer"
                   aria-label={icon.label}
-                  className="w-10 h-10 rounded-full border border-white/20 hover:border-white text-white/70 hover:text-white transition-all flex items-center justify-center transform hover:scale-105 will-change-transform"
+                  className="w-10 h-10 rounded-full border border-neutral-300 hover:border-[#0c9d7d] text-neutral-600 hover:text-[#0c9d7d] transition-all flex items-center justify-center transform hover:scale-105 will-change-transform"
                 >
                   <svg 
                     viewBox="0 0 24 24" 
@@ -371,52 +364,54 @@ export default function Contact() {
               ))}
             </div>
           </div>
+        </div>
 
-          {/* RIGHT COLUMN: HIGH-CONTRAST PURE WHITE BOX FOR BRANCH OFFICES */}
-          <div className="lg:col-span-5 bg-white p-6 sm:p-10 flex flex-col justify-start h-full rounded-3xl overflow-hidden shadow-xl border border-neutral-100">
-            <div className="mb-8">
+        {/* RIGHT COLUMN: MODULAR SLATE COLOR CONTAINER FOR BRANCH OFFICES */}
+        <div className="lg:col-span-6 xl:col-span-5 bg-slate-50 border-l border-neutral-100 py-16 px-6 sm:px-12 lg:px-14 xl:px-16 flex flex-col justify-center">
+          <div className="w-full max-w-xl mx-auto space-y-10">
+            <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="w-5 h-[2px] bg-orange-600 inline-block"></span>
-                <span className="text-xs font-bold uppercase tracking-wider text-neutral-600">Corporate Presence</span>
+                <span className="w-5 h-[2px] bg-[#0c9d7d] inline-block"></span>
+                <span className="text-xs font-bold uppercase tracking-wider text-neutral-500">Corporate Presence</span>
               </div>
               <h4 className="text-3xl font-black text-neutral-900 tracking-tight">
-                Our <span className="text-orange-600">Offices</span>
+                Our <span className="text-[#0c9d7d]">Offices</span>
               </h4>
             </div>
 
-            {/* Branch Corporate Offices Categorized Elegantly */}
-            <div className="space-y-8 flex-1 flex flex-col justify-start">
+            {/* Corporate Grid */}
+            <div className="space-y-8">
               
               {/* REGION 1: UAE OFFICES */}
               <div className="space-y-4">
-                <div className="flex items-center gap-2.5 pb-2 border-b border-neutral-100">
+                <div className="flex items-center gap-2.5 pb-2 border-b border-neutral-200">
                   <img 
                     src="https://flagcdn.com/w40/ae.png" 
                     alt="UAE Flag" 
                     className="w-5 h-auto rounded-sm object-cover shadow-sm select-none"
                     loading="lazy"
                   />
-                  <span className="text-xs font-black uppercase tracking-widest text-neutral-700">United Arab Emirates</span>
+                  <span className="text-xs font-black uppercase tracking-widest text-neutral-800">United Arab Emirates</span>
                 </div>
 
                 <div className="group">
-                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-orange-600">
+                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-[#0c9d7d]">
                     Dubai Corporate Hub
                   </span>
                   <p className="text-xs text-neutral-600 mt-1.5 leading-relaxed font-medium">
                     Crystal Building - Office # 104 - 2C St - near ADCB Metro Station - Al Karama - Dubai, UAE
                   </p>
                   <div className="flex items-center gap-3 mt-3.5">
-                    <a href="https://maps.app.goo.gl/jGQ6zpmvoT4CxvfdA" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <a href="https://maps.app.goo.gl/jGQ6zpmvoT4CxvfdA" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
                       <RiMapPinLine />
                     </a>
-                    <a href={`https://wa.me/971527925100?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <a href={`https://wa.me/971527925100?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-white hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
                       <RiWhatsappLine />
                     </a>
-                    <a href="tel:+971527925100" title="Call Office" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <a href="tel:+971527925100" title="Call Office" className="w-8 h-8 rounded-full bg-white hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
                       <RiPhoneLine />
                     </a>
-                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
                       <RiMailLine />
                     </a>
                   </div>
@@ -425,35 +420,35 @@ export default function Contact() {
 
               {/* REGION 2: INDIA OFFICES */}
               <div className="space-y-6 pt-2">
-                <div className="flex items-center gap-2.5 pb-2 border-b border-neutral-100">
+                <div className="flex items-center gap-2.5 pb-2 border-b border-neutral-200">
                   <img 
                     src="https://flagcdn.com/w40/in.png" 
                     alt="India Flag" 
                     className="w-5 h-auto rounded-sm object-cover shadow-sm select-none"
                     loading="lazy"
                   />
-                  <span className="text-xs font-black uppercase tracking-widest text-neutral-700">India</span>
+                  <span className="text-xs font-black uppercase tracking-widest text-neutral-800">India</span>
                 </div>
 
                 {/* India Branch 1 */}
                 <div className="group">
-                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-orange-600">
+                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-[#0c9d7d]">
                     India HiLite Business Park
                   </span>
                   <p className="text-xs text-neutral-600 mt-1.5 leading-relaxed font-medium">
                     Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India
                   </p>
                   <div className="flex items-center gap-3 mt-3.5">
-                    <a href="https://maps.app.goo.gl/7gFHn9sHMqnKsDMc9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <a href="https://maps.app.goo.gl/7gFHn9sHMqnKsDMc9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
                       <RiMapPinLine />
                     </a>
-                    <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-white hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
                       <RiWhatsappLine />
                     </a>
-                    <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-white hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
                       <RiPhoneLine />
                     </a>
-                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
                       <RiMailLine />
                     </a>
                   </div>
@@ -461,23 +456,23 @@ export default function Contact() {
 
                 {/* India Branch 2 */}
                 <div className="group">
-                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-orange-600">
+                  <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-[#0c9d7d]">
                     India Nadakkave Office
                   </span>
                   <p className="text-xs text-neutral-600 mt-1.5 leading-relaxed font-medium">
                     5th Floor, C. M. Mathew Brothers Arcade, Kannur Rd, near Hotel Westway, Vikas Nagar Housing Colony, West Nadakkave, Chakkorathukulam, Kozhikode, Kerala 673006, India
                   </p>
                   <div className="flex items-center gap-3 mt-3.5">
-                    <a href="https://maps.app.goo.gl/2LzJGMQ2swaAoBdP9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <a href="https://maps.app.goo.gl/2LzJGMQ2swaAoBdP9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
                       <RiMapPinLine />
                     </a>
-                    <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-white hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
                       <RiWhatsappLine />
                     </a>
-                    <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-white hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
                       <RiPhoneLine />
                     </a>
-                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-900 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm transform-gpu will-change-transform">
+                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
                       <RiMailLine />
                     </a>
                   </div>
@@ -486,54 +481,60 @@ export default function Contact() {
 
             </div>
           </div>
-
         </div>
+
       </div>
 
       <style jsx global>{`
-        /* Fully rounded pill inputs matching screenshot aesthetics */
+        /* Fully rounded crisp inputs with rich contrast matching the screenshot */
         .screenshot-input {
           width: 100%;
           background: #ffffff !important;
-          border: 1px solid rgba(255, 255, 255, 0.1) !important;
+          border: 1.5px solid #d4d4d8 !important;
           padding: 0 1.5rem;
-          color: #1a1a1a !important;
+          color: #18181b !important;
           border-radius: 9999px;
           outline: none;
           transition: all 0.2s ease-in-out;
           font-size: 14px;
-          height: 50px;
+          height: 54px;
           font-weight: 500;
         }
         .screenshot-input:focus {
-          box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+          border-color: #0c9d7d !important;
+          box-shadow: 0 0 0 3px rgba(12, 157, 125, 0.15);
         }
         .screenshot-input::placeholder {
-          color: #737373 !important;
+          color: #71717a !important;
           opacity: 1 !important;
         }
         textarea.screenshot-input {
-          height: 100px !important;
-          padding-top: 14px !important;
-          border-radius: 20px !important;
+          height: 120px !important;
+          padding-top: 16px !important;
+          border-radius: 24px !important;
         }
         
-        /* FIX: Dropdown wrapper positioning configuration preventing layout cuts */
+        /* Dropdown wrapper positioning configuration */
         .phone-input-container {
           width: 100%;
-          height: 50px !important;
+          height: 54px !important;
           position: relative;
           z-index: 50 !important; 
         }
         .react-international-phone-input-container {
           width: 100% !important;
-          height: 50px !important;
+          height: 54px !important;
           background: #ffffff !important;
-          border: none !important;
+          border: 1.5px solid #d4d4d8 !important;
           border-radius: 9999px !important;
           display: flex !important;
           align-items: center !important;
-          padding-left: 10px !important;
+          padding-left: 12px !important;
+          transition: all 0.2s ease-in-out;
+        }
+        .react-international-phone-input-container:focus-within {
+          border-color: #0c9d7d !important;
+          box-shadow: 0 0 0 3px rgba(12, 157, 125, 0.15);
         }
         .react-international-phone-input {
           flex: 1 !important;
@@ -541,22 +542,15 @@ export default function Contact() {
           background: transparent !important;
           border: none !important;
           padding: 0 1.5rem 0 0.5rem !important;
-          color: #1a1a1a !important; 
+          color: #18181b !important; 
           height: 100% !important;
           font-size: 14px !important;
           outline: none !important;
           font-weight: 500 !important;
         }
         .react-international-phone-input::placeholder {
-          color: #737373 !important;
+          color: #71717a !important;
           opacity: 1 !important;
-        }
-        
-        /* REMOVE FLAG INNER BORDER STYLE */
-        .react-international-phone-flag-emoji {
-          border: none !important;
-          outline: none !important;
-          box-shadow: none !important;
         }
         
         .react-international-phone-selector-button {
@@ -572,20 +566,20 @@ export default function Contact() {
           padding: 0 !important;
         }
         
-        /* FIXED DROPDOWN POSITIONING LAYERING OVER CONTENT */
+        /* Fixed dropdown popover layering over items beautifully */
         .react-international-phone-country-selector-dropdown,
         ul.react-international-phone-country-selector-dropdown {
           background: #ffffff !important;
-          border: 1px solid #e2e8f0 !important; 
+          border: 1px solid #e4e4e7 !important; 
           border-radius: 16px !important;
           box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
           padding: 6px !important;
           max-height: 240px !important;
-          width: 300px !important;
+          width: 280px !important;
           position: absolute !important;
           top: 100% !important;
-          left: -10px !important;
-          z-index: 999999 !important; 
+          left: 0 !important;
+          z-index: 99999 !important; 
           overflow-y: auto !important;
         }
         
@@ -601,18 +595,18 @@ export default function Contact() {
         .react-international-phone-country-selector-list-item-name,
         .react-international-phone-country-selector-list-item-dial-code,
         li.react-international-phone-country-selector-list-item span {
-          color: #1f2937 !important; 
+          color: #27272a !important; 
           font-family: system-ui, -apple-system, sans-serif !important;
           font-size: 13px !important;
           font-weight: 600 !important;
         }
         
         li.react-international-phone-country-selector-list-item:hover {
-          background-color: #f3f4f6 !important; 
+          background-color: #f4f4f5 !important; 
         }
         
         li.react-international-phone-country-selector-list-item[aria-selected="true"] {
-          background-color: #e5e7eb !important; 
+          background-color: #e4e4e7 !important; 
         }
       `}</style>
     </section>
