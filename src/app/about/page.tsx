@@ -67,12 +67,20 @@ export default function AboutPage() {
     <div 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative w-full min-h-screen bg-gradient-to-b from-[#010940] via-[#010522] to-[#000108] text-white overflow-hidden font-sans select-none selection:bg-cyan-500 selection:text-black"
+      className="relative w-full min-h-screen text-white overflow-hidden font-sans select-none selection:bg-cyan-500 selection:text-black"
+      style={{
+        background: `
+          radial-gradient(circle at 50% 35%, rgba(13, 27, 84, 0.95) 0%, rgba(5, 11, 40, 1) 60%),
+          radial-gradient(circle at 10% 15%, rgba(197, 160, 89, 0.04) 0%, transparent 40%),
+          radial-gradient(circle at 90% 85%, rgba(197, 160, 89, 0.03) 0%, transparent 40%),
+          #030616
+        `
+      }}
     >
-      {/* Ambient Premium Core Gradients matching image lighting */}
+      {/* Ambient Premium Core Gradients — Adjusted opacity and color palette to sync with the new backdrop */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-        <div className="absolute top-[-5%] left-[10%] w-[80vw] h-[60vw] rounded-full bg-radial-gradient from-blue-500/15 via-blue-600/5 to-transparent blur-[140px] mix-blend-screen" />
-        <div className="absolute top-[40%] right-[-10%] w-[70vw] h-[70vw] rounded-full bg-gradient-to-bl from-purple-600/5 via-blue-900/10 to-transparent blur-[140px] mix-blend-screen" />
+        <div className="absolute top-[-10%] left-[-10%] w-[80vw] h-[80vw] rounded-full bg-gradient-to-tr from-cyan-600/5 via-blue-700/5 to-transparent blur-[130px] mix-blend-screen" />
+        <div className="absolute bottom-[20%] right-[-10%] w-[70vw] h-[70vw] rounded-full bg-gradient-to-bl from-blue-900/10 via-amber-500/5 to-transparent blur-[140px] mix-blend-screen" />
       </div>
 
       {/* Micro-mesh Grid Structural Backdrop Overlay */}
