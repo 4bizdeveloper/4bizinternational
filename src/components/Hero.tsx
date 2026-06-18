@@ -29,29 +29,46 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // ── HARDWARE-LEVEL RE-TRIGGER ENGINE ──
+  // ── BULLETPROOF MOBILE AUTO-RESUME ENGINE ──
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
     const forcePlay = () => {
       if (video.paused) {
-        video.play().catch(() => {});
+        video.play().catch(() => {
+          // Suppress browser safety warnings quietly
+        });
       }
     };
 
-    // Force initialization loop parameters natively on browser intervals
-    const playbackPoll = setInterval(forcePlay, 1000);
+    // Initial manual invocation trigger
+    forcePlay();
 
+    // Intercept when mobile browsers aggressively suspend or pause video layers on scroll
+    const handleMobilePauseOverride = () => {
+      forcePlay();
+    };
+
+    // Force play when window receives any interaction or changes visibility context
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        forcePlay();
+      }
+    };
+
+    video.addEventListener('pause', handleMobilePauseOverride);
+    video.addEventListener('suspend', handleMobilePauseOverride);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
     window.addEventListener('scroll', forcePlay, { passive: true });
     window.addEventListener('touchstart', forcePlay, { passive: true });
-    document.addEventListener('visibilitychange', forcePlay);
 
     return () => {
-      clearInterval(playbackPoll);
+      video.removeEventListener('pause', handleMobilePauseOverride);
+      video.removeEventListener('suspend', handleMobilePauseOverride);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('scroll', forcePlay);
       window.removeEventListener('touchstart', forcePlay);
-      document.removeEventListener('visibilitychange', forcePlay);
     };
   }, []);
 
@@ -132,14 +149,13 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* Standard HTML Element loaded via raw attributes to target core mobile rendering pipelines directly */}
             <video
               ref={videoRef}
               src="/hero-video-2.mp4"
-              loop
-              muted
-              playsInline
-              autoPlay
+              loop={true}
+              muted={true}
+              playsInline={true}
+              autoPlay={true}
               preload="auto"
               onCanPlay={() => setIsVideoLoaded(true)}
               onStalled={handleVideoFailure}
@@ -149,6 +165,7 @@ export default function Hero() {
               className={`absolute inset-0 w-full h-full object-cover brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-700 ${
                 isVideoLoaded ? 'opacity-100' : 'opacity-0'
               }`}
+              style={{ willChange: 'transform, opacity' }}
             />
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
@@ -166,6 +183,7 @@ export default function Hero() {
             transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)
             ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-3' : 'opacity-100 pointer-events-auto translate-x-0'}
           `}
+          style={{ willChange: 'transform, opacity' }}
         >
           {socials.map((social) => (
             <a
@@ -194,11 +212,11 @@ export default function Hero() {
               w-full flex flex-col items-center pointer-events-none transition-all duration-500
               ${showCenterText ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}
             `}
+            style={{ willChange: 'transform, opacity' }}
           >
-            {/* Promotion properties forced without layout-shifting properties to bypass mobile freezing blocks */}
             <div 
               className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center"
-              style={{ transform: 'translate3d(0,0,0)', WebkitTransform: 'translate3d(0,0,0)', backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
+              style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
             >
               {/* Heading Lockup */}
               <h1 
@@ -235,10 +253,12 @@ export default function Hero() {
             relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500
             ${isScrolled ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}
           `}
+          style={{ willChange: 'transform, opacity' }}
           aria-hidden="true"
         >
           <div 
             className={`transition-all duration-500 ${showScrollDown ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+            style={{ willChange: 'transform, opacity' }}
           >
             <div className="flex flex-col items-center justify-center gap-y-2.5">
               <div
@@ -254,6 +274,7 @@ export default function Hero() {
                   justifyContent: 'center',
                   paddingTop: '6px',
                   animation: 'microPulse 3s infinite ease-in-out',
+                  willChange: 'transform, border-color, box-shadow',
                 }}
                 className="backdrop-blur-sm"
               >
@@ -266,6 +287,7 @@ export default function Hero() {
                     background: '#ffffff',
                     boxShadow: '0 0 8px #fff',
                     animation: 'dynamicWheel 1.8s infinite cubic-bezier(0.25, 1, 0.5, 1)',
+                    willChange: 'transform, opacity',
                   }}
                 />
               </div>
@@ -275,6 +297,7 @@ export default function Hero() {
                 style={{ 
                   textShadow: '0 2px 6px #000',
                   animation: 'subtleTextPulse 3s infinite ease-in-out',
+                  willChange: 'transform, opacity'
                 }}
               >
                 scroll down
