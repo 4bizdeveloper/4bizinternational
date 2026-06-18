@@ -108,14 +108,14 @@ export default function Testimonials() {
     <section 
       className="relative w-full py-24 px-4 sm:px-6 lg:px-8 text-white overflow-hidden select-none transform-gpu flex flex-col justify-center -mt-px"
       style={{
-        backgroundColor: '#070e25',
+        background: 'radial-gradient(circle at 50% 50%, #0d2266 0%, #030922 100%)',
         contentVisibility: 'auto',
         contain: 'paint',
         containmentIntrinsicSize: '1px 750px',
       } as React.CSSProperties}
     >
       {/* High-Tech Grid Structure adapted to cleanly fade out near edges and remove the hard top grid line */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf803_1px,transparent_1px),linear-gradient(to_bottom,#38bdf803_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf803_1px,transparent_1px),linear-gradient(to_bottom,#38bdf803_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
         
@@ -133,7 +133,7 @@ export default function Testimonials() {
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-400 leading-tight py-1">
             Trusted by Innovators Worldwide
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
             Discover how we help global enterprises and high-growth startups build complex architectures and digital products that scale.
           </p>
         </motion.div>
@@ -148,14 +148,14 @@ export default function Testimonials() {
               initial="enter"
               animate="center"
               exit="exit"
-              className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0d1533]/40 backdrop-blur-xl border border-slate-800 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.3)] group transform-gpu"
+              className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0d163a]/50 backdrop-blur-xl border border-slate-700/40 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.4)] group transform-gpu"
             >
               {/* Vibrant Background Quote Emblem */}
               <Quote className="absolute top-6 right-6 w-24 h-24 text-cyan-500/[0.04] pointer-events-none group-hover:text-cyan-500/10 group-hover:scale-105 transition-all duration-500 z-0" />
               
               {/* Left Column: Profile Card */}
-              <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left border-b lg:border-b-0 lg:border-r border-slate-800 pb-6 lg:pb-0 lg:pr-8 z-10 w-full">
-                <div className="relative w-24 h-24 sm:w-28 sm:h-28 mb-4 rounded-2xl overflow-hidden p-0.5 bg-gradient-to-tr from-slate-700 via-slate-800 to-cyan-500/40 shadow-xl">
+              <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left border-b lg:border-b-0 lg:border-r border-slate-700/40 pb-6 lg:pb-0 lg:pr-8 z-10 w-full">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 mb-4 rounded-2xl overflow-hidden p-0.5 bg-gradient-to-tr from-slate-600 via-slate-700 to-cyan-500/40 shadow-xl">
                   <Image 
                     src={currentTestimonial.image} 
                     alt={currentTestimonial.name}
@@ -173,7 +173,7 @@ export default function Testimonials() {
                 <p className="text-sm font-medium text-cyan-400 mt-1">
                   {currentTestimonial.role}
                 </p>
-                <p className="text-xs text-slate-400 mt-0.5">
+                <p className="text-xs text-slate-300 mt-0.5">
                   {currentTestimonial.company}
                 </p>
 
@@ -187,7 +187,7 @@ export default function Testimonials() {
               {/* Right Column: Content Block */}
               <div className="lg:col-span-8 flex flex-col justify-center relative px-2 sm:px-4 z-10 w-full">
                 <Quote className="w-10 h-10 text-cyan-400/20 mb-4 hidden lg:block" />
-                <p className="text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-light italic">
+                <p className="text-base sm:text-lg lg:text-xl text-slate-100 leading-relaxed font-light italic">
                   "{currentTestimonial.content}"
                 </p>
               </div>
@@ -208,7 +208,7 @@ export default function Testimonials() {
                   setActiveIndex(index);
                 })}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  index === activeIndex ? "w-8 bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.4)]" : "w-2 bg-slate-700 hover:bg-slate-500"
+                  index === activeIndex ? "w-8 bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.4)]" : "w-2 bg-slate-600 hover:bg-slate-400"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -219,14 +219,14 @@ export default function Testimonials() {
           <div className="flex gap-4 order-1 sm:order-2">
             <button
               onClick={() => handleManualNavigation(slidePrev)}
-              className="p-3.5 sm:p-4 rounded-xl bg-[#0d1533]/60 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-white transition-all duration-200 active:scale-95 group"
+              className="p-3.5 sm:p-4 rounded-xl bg-[#0d163a]/40 border border-slate-700/50 hover:border-slate-600 text-slate-400 hover:text-white transition-all duration-200 active:scale-95 group"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" />
             </button>
             <button
               onClick={() => handleManualNavigation(slideNext)}
-              className="p-3.5 sm:p-4 rounded-xl bg-[#0d1533]/60 border border-slate-800 hover:border-slate-700 text-slate-400 hover:text-white transition-all duration-200 active:scale-95 group"
+              className="p-3.5 sm:p-4 rounded-xl bg-[#0d163a]/40 border border-slate-700/50 hover:border-slate-600 text-slate-400 hover:text-white transition-all duration-200 active:scale-95 group"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />

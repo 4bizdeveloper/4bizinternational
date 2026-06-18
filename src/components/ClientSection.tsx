@@ -46,15 +46,16 @@ const itemVariants: Variants = {
 const ClientSection = () => {
   return (
     <section 
-      className="py-16 md:py-20 relative overflow-hidden transform-gpu select-none"
+      className="py-16 md:py-20 relative overflow-hidden transform-gpu select-none w-full"
       style={{
-        backgroundColor: '#070e25',
+        // Radial gradient capturing the rich dark-to-bright blue glow from the reference image
+        background: 'radial-gradient(circle at center, #0a1b4d 0%, #061133 50%, #03081a 100%)',
         contentVisibility: 'auto',
         contain: 'paint layout',
         containmentIntrinsicSize: '1px 500px',
       } as React.CSSProperties}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         
         {/* Header Block with optimal contrast for readability */}
         <div className="text-center mb-10 md:mb-12">

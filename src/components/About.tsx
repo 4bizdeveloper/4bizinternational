@@ -71,8 +71,12 @@ export default function About() {
     <section 
       ref={sectionRef}
       id="about" 
-      className="relative w-full text-white py-12 md:py-20 lg:py-24 overflow-hidden font-sans select-text bg-[#070e25]"
-      style={{ contentVisibility: 'auto', containIntrinsicSize: '0 900px' }}
+      className="relative w-full text-white py-12 md:py-20 lg:py-24 overflow-hidden font-sans select-text"
+      style={{ 
+        contentVisibility: 'auto', 
+        containIntrinsicSize: '0 900px',
+        background: 'radial-gradient(circle at 50% 45%, #112663 0%, #091336 60%, #04081a 100%)'
+      }}
     >
       {/* CSS Injection for Smooth, Continuous Ring Rotations */}
       <style jsx global>{`
@@ -230,7 +234,7 @@ export default function About() {
                 <div className="absolute w-[21rem] h-[21rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[2px] border-transparent border-r-[#39ff73]/80 border-l-cyan-400/60 filter drop-shadow-[0_0_12px_rgba(34,211,238,0.4)] will-change-transform animate-spin-continuous-slow-reverse" />
               </div>
               
-              {/* Floating Center Logo Surface - Referencing logo from visual requirements layout (similar style to image_fe5c03.jpg) */}
+              {/* Floating Center Logo Surface */}
               <div className="absolute w-52 h-26 sm:w-64 sm:h-32 transition-transform duration-500 hover:scale-105 transform-gpu filter drop-shadow-[0_0_35px_rgba(6,182,212,0.35)] flex items-center justify-center">
                 <Image
                   src="/4biz_logo-1.png"

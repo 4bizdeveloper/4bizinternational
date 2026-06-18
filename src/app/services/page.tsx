@@ -19,7 +19,6 @@ interface ServiceBlock {
   url: string;
 }
 
-// Simple local Scroll Reveal component to handle transitions when scrolling down
 function ScrollReveal({ children }: { children: React.ReactNode }) {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef<HTMLDivElement>(null);
@@ -33,7 +32,7 @@ function ScrollReveal({ children }: { children: React.ReactNode }) {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.12 }
     );
 
     const current = domRef.current;
@@ -47,8 +46,8 @@ function ScrollReveal({ children }: { children: React.ReactNode }) {
   return (
     <div
       ref={domRef}
-      className={`transition-all duration-1000 ease-out transform ${
-        isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-[0.98]"
+      className={`transition-all duration-1000 ease-out transform will-change-transform ${
+        isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-12 scale-[0.99]"
       }`}
     >
       {children}
@@ -121,7 +120,7 @@ export default function ServicesPage() {
       icon: <Mail className="text-purple-400" size={22} />,
       visualAsset: "/services/ai-1.png",
       accentColor: "from-purple-400 to-pink-500",
-      glowColor: "from-purple-500/40 via-purple-500/10 to-transparent",
+      glowColor: "from-purple-500/40 via-pink-500/10 to-transparent",
       url: "/services/customer-engagement",
       points: [
         "Email Marketing", "SMS Marketing", "WhatsApp Business Solutions", 
@@ -135,7 +134,7 @@ export default function ServicesPage() {
       icon: <Server className="text-emerald-400" size={22} />,
       visualAsset: "/services/ai-1.png",
       accentColor: "from-emerald-400 to-teal-500",
-      glowColor: "from-emerald-500/40 via-emerald-500/10 to-transparent",
+      glowColor: "from-emerald-500/40 via-teal-500/10 to-transparent",
       url: "/services/cloud-infrastructure",
       points: [
         "Domain Registration", "International & Country TLDs", "Shared Hosting", 
@@ -177,48 +176,64 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="w-full bg-[#121c42] text-slate-100 font-sans antialiased relative min-h-screen overflow-x-hidden selection:bg-[#00e5a3] selection:text-black scroll-smooth">
+    <div className="w-full bg-[#050b21] text-slate-100 font-sans antialiased relative min-h-screen overflow-x-hidden selection:bg-[#00e5a3] selection:text-black scroll-smooth">
       
-      {/* Premium Technical Grid Line Background Layer */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#33415518_1px,transparent_1px),linear-gradient(to_bottom,#33415518_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
+      {/* Persistent Radial Gradient Overlay Matching the Reference Color Fields */}
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_30%,#12286b_0%,#081236_50%,#04091f_100%)] pointer-events-none z-0" />
       
-      {/* Global Ambient Glow Overlays (Brightened & intensified for depth) */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,229,163,0.12),transparent_50%)] pointer-events-none z-0" />
-      <div className="absolute top-[20%] left-[-10%] w-[700px] h-[700px] bg-purple-500/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute top-[55%] right-[-10%] w-[800px] h-[800px] bg-cyan-500/10 rounded-full blur-[180px] pointer-events-none" />
-      <div className="absolute bottom-[20%] left-[-5%] w-[700px] h-[700px] bg-emerald-500/8 rounded-full blur-[160px] pointer-events-none" />
+      {/* High-Tech Architectural Grid Mesh Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none z-0" />
+      
+      {/* Ultra-Modern Connected Vector Spline System covering top header to footer */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-50 mix-blend-screen">
+        <svg className="absolute top-0 left-0 w-full h-[100%]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 5000" preserveAspectRatio="none">
+          {/* Header Spline Structure */}
+          <path d="M-100,150 C350,280 200,50 750,380 C1100,620 950,150 1600,450" fill="none" stroke="url(#spline-gradient-blue)" strokeWidth="3" />
+          {/* Middle Body Splines */}
+          <path d="M1500,600 C1100,1200 800,900 500,1700 C200,2300 700,2100 -100,2700" fill="none" stroke="url(#spline-gradient-neon)" strokeWidth="2.5" />
+          <path d="M-80,1800 C400,2200 950,1700 1100,2900 C1250,3800 600,3900 1550,4400" fill="none" stroke="url(#spline-gradient-blue)" strokeWidth="2" opacity="0.8" />
+          <path d="M1500,2500 C1000,3100 500,2800 200,3800 C-50,4500 400,4700 800,4950" fill="none" stroke="url(#spline-gradient-neon)" strokeWidth="1.5" opacity="0.6" />
+          
+          <defs>
+            <linearGradient id="spline-gradient-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#2563eb" stopOpacity="0.85" />
+              <stop offset="40%" stopColor="#38bdf8" stopOpacity="0.5" />
+              <stop offset="80%" stopColor="#a855f7" stopOpacity="0.1" />
+              <stop offset="100%" stopColor="#04091f" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="spline-gradient-neon" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#00e5a3" stopOpacity="0.75" />
+              <stop offset="50%" stopColor="#0ea5e9" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#050b21" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
 
-      {/* Boxless, Centered, Perfectly Balanced Hero Section */}
-      <header className="relative w-full min-h-[55vh] flex items-center justify-center overflow-hidden pt-36 pb-24 z-10">
-        {/* Immersive Background Canvas Blend */}
-        <div className="absolute inset-0 z-0 opacity-[0.3] mix-blend-screen pointer-events-none">
-          <Image 
-            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80"
-            alt="Hero matrix structural backdrop"
-            fill
-            priority
-            className="object-cover object-center scale-100"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#121c42] via-transparent to-[#121c42]" />
-        </div>
+      {/* Layered Dynamic Luminous Auras */}
+      <div className="absolute top-[5%] left-[-5%] w-[60vw] h-[60vw] bg-blue-500/10 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-[35%] right-[-10%] w-[50vw] h-[50vw] bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-[20%] left-[-10%] w-[55vw] h-[55vw] bg-purple-500/8 rounded-full blur-[140px] pointer-events-none" />
 
+      {/* Seamless Hero Presentation Section */}
+      <header className="relative w-full min-h-[45vh] flex items-center justify-center overflow-hidden pt-36 pb-16 z-10">
         <div className="max-w-[1440px] w-full mx-auto px-6 sm:px-12 lg:px-24 relative z-10 text-center">
           <span className="text-sm font-bold tracking-[0.45em] uppercase text-[#00e5a3] mb-5 block">
             // Enterprise Architecture Portfolio
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.05] uppercase text-white max-w-5xl mx-auto">
             Meet our network of <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5a3] via-cyan-400 to-purple-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00e5a3] via-cyan-400 to-blue-400">
               industry trailblazers.
             </span>
           </h1>
           <p className="mt-6 text-base sm:text-lg md:text-xl font-normal text-slate-200 max-w-2xl mx-auto leading-relaxed">
-            We help our clients unlock growth by focusing on four key solution areas.
+            We help our clients unlock growth by focusing on modern architectural solution spaces.
           </p>
         </div>
       </header>
 
-      {/* Borderless Continuously Merged Content Grid */}
+      {/* Structured Content Grid Stream */}
       <main className="w-full relative z-10 flex flex-col">
         {totalServices.map((service, index) => {
           const isEven = index % 2 === 0;
@@ -226,46 +241,19 @@ export default function ServicesPage() {
           return (
             <section 
               key={index} 
-              className="w-full relative scroll-mt-24"
+              className="w-full relative scroll-mt-24 py-14 sm:py-20 lg:py-24"
             >
-              {/* Premium Curved Background with an explicit curved Line Transition Divider */}
-              {!isEven && (
-                <>
-                  {/* Upper Curved Line transition */}
-                  <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-10 transform -translate-y-[99%]">
-                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] text-[#0b1129]">
-                      <path d="M0,0 C300,90 900,90 1200,0 L1200,120 L0,120 Z" fill="currentColor" />
-                      <path d="M0,0 C300,90 900,90 1200,0" fill="none" stroke="#334155" strokeWidth="2" className="opacity-30" />
-                    </svg>
-                  </div>
-
-                  {/* Dark Alternating Background Core */}
-                  <div className="absolute inset-0 bg-[#0b1129] pointer-events-none z-0" />
-
-                  {/* Lower Curved Line transition */}
-                  <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-10 transform translate-y-[99%]">
-                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] text-[#0b1129]">
-                      <path d="M0,120 C300,30 900,30 1200,120 L1200,0 L0,0 Z" fill="currentColor" />
-                      <path d="M0,120 C300,30 900,30 1200,120" fill="none" stroke="#334155" strokeWidth="2" className="opacity-30" />
-                    </svg>
-                  </div>
-                </>
-              )}
-
-              <div className="relative z-10 py-24 sm:py-32 lg:py-36">
+              <div className="relative z-10">
                 <ScrollReveal>
                   <div className={`max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-24 flex flex-col ${
                     isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                   } items-center gap-12 lg:gap-16 xl:gap-24`}>
                     
-                    {/* Visual Canvas Layer - Zero Card Borders, Seamless Blend */}
-                    <div className="w-full lg:w-1/2 flex justify-center items-center h-[260px] sm:h-[380px] md:h-[420px] lg:h-[460px] relative group">
+                    {/* Graphics / Visual Asset Column */}
+                    <div className="w-full lg:w-1/2 flex justify-center items-center h-[240px] sm:h-[360px] md:h-[400px] lg:h-[440px] relative group">
+                      <div className={`absolute inset-0 rounded-full bg-gradient-to-tr ${service.glowColor} blur-[80px] sm:blur-[100px] opacity-90 scale-95 transition-transform duration-1000 pointer-events-none`} />
                       
-                      {/* Underlay Gradient Glow Aura */}
-                      <div className={`absolute inset-0 rounded-full bg-gradient-to-tr ${service.glowColor} blur-[90px] opacity-90 scale-95 transition-transform duration-1000 pointer-events-none`} />
-                      
-                      {/* Blended Image Container */}
-                      <div className="relative w-full h-full transform transition-all duration-1000 ease-out mix-blend-screen group-hover:scale-[1.04]">
+                      <div className="relative w-full h-full transform transition-all duration-1000 ease-out mix-blend-screen group-hover:scale-[1.03]">
                         <Image
                           src={service.visualAsset}
                           alt={service.title}
@@ -278,7 +266,7 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    {/* Free Floating Premium Typographic Layout */}
+                    {/* Typography Content Unit */}
                     <div className="w-full lg:w-1/2 flex flex-col text-left">
                       
                       <div className="flex items-center gap-3 mb-3">
@@ -298,12 +286,12 @@ export default function ServicesPage() {
                         {service.description}
                       </p>
 
-                      {/* Flowing Organic Clouds */}
+                      {/* Info Value Chips */}
                       <div className="flex flex-wrap gap-x-3 gap-y-2.5 mb-8 max-w-xl">
                         {service.points.map((point, pIdx) => (
                           <div 
                             key={pIdx}
-                            className="flex items-center gap-2 bg-slate-900/60 backdrop-blur-md py-1.5 px-3 rounded-md border border-slate-700/60 hover:border-slate-500/80 transition-colors duration-300"
+                            className="flex items-center gap-2 bg-[#0d1b47]/40 backdrop-blur-md py-1.5 px-3 rounded-md border border-white/[0.05] hover:border-blue-500/40 transition-colors duration-300"
                           >
                             <CheckCircle2 size={13} className="text-[#00e5a3] shrink-0" />
                             <span className="text-slate-100 text-sm font-medium tracking-wide">
@@ -313,7 +301,7 @@ export default function ServicesPage() {
                         ))}
                       </div>
 
-                      {/* High-Tech Dynamic Action Button Grid Overlay - Colorized and routing to service.url */}
+                      {/* Interactive Action Trigger */}
                       <div className="pt-2">
                         <a
                           href={service.url}
@@ -334,8 +322,8 @@ export default function ServicesPage() {
         })}
       </main>
 
-      {/* Global Interactive Engagement Footer */}
-      <footer className="w-full relative z-20 bg-[#121c42]">
+      {/* Global Interactive Engagement Footer Container */}
+      <footer className="w-full relative z-20 bg-transparent">
         <Contact />
       </footer>
     </div>

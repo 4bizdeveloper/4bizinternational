@@ -315,7 +315,7 @@ export default function Services() {
   return (
     <section
       ref={sectionRef}
-      className="services-section w-full py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 text-white overflow-hidden relative bg-[#070e25] font-seo antialiased"
+      className="services-section w-full py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 text-white overflow-hidden relative bg-[#04091a] bg-[radial-gradient(circle_at_50%_35%,_#0e2a80_0%,_#071133_45%,_#030717_100%)] font-seo antialiased"
     >
       <div className="pointer-events-none absolute inset-0 services-lines-overlay z-0 opacity-40" aria-hidden="true" />
 

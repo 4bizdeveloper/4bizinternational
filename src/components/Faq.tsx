@@ -26,14 +26,18 @@ const FaqItem = ({ question, answer }: { question: string, answer: string }) => 
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-700">
+    <div className="border-b border-blue-900/40 last:border-b-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-center py-6 text-left focus:outline-none"
+        className="w-full flex justify-between items-start sm:items-center gap-4 py-5 sm:py-6 text-left focus:outline-none group select-none"
         aria-expanded={isOpen}
       >
-        <span className="text-lg font-medium text-white">{question}</span>
-        <span className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''} text-blue-400`}>▼</span>
+        <span className="text-base sm:text-lg font-medium text-white group-hover:text-blue-200 transition-colors duration-200">
+          {question}
+        </span>
+        <span className={`text-xs sm:text-sm mt-1 sm:mt-0 transition-transform duration-300 transform ${isOpen ? 'rotate-180' : ''} text-blue-400 shrink-0`}>
+          ▼
+        </span>
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -41,9 +45,12 @@ const FaqItem = ({ question, answer }: { question: string, answer: string }) => 
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-gray-400 leading-relaxed">{answer}</p>
+            <p className="pb-5 sm:pb-6 text-sm sm:text-base text-blue-100/80 leading-relaxed pr-4">
+              {answer}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -53,14 +60,23 @@ const FaqItem = ({ question, answer }: { question: string, answer: string }) => 
 
 export default function Faq() {
   return (
-    <section className="bg-[#070e25] py-20 px-6 md:px-12 lg:px-24" aria-labelledby="faq-title">
-      <div className="max-w-3xl mx-auto">
-        <h2 id="faq-title" className="text-4xl font-bold text-white mb-12 text-center">
+    <section 
+      className="relative w-full py-16 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden min-h-[60vh] flex items-center" 
+      style={{
+        background: 'radial-gradient(circle at center, #001f5c 0%, #000c24 70%, #000511 100%)'
+      }}
+      aria-labelledby="faq-title"
+    >
+      <div className="w-full max-w-3xl mx-auto">
+        <h2 id="faq-title" className="text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-12 text-center tracking-tight">
           Frequently Asked Questions
         </h2>
-        {faqData.map((item, index) => (
-          <FaqItem key={index} {...item} />
-        ))}
+        
+        <div className="w-full flex flex-col">
+          {faqData.map((item, index) => (
+            <FaqItem key={index} {...item} />
+          ))}
+        </div>
       </div>
     </section>
   );
