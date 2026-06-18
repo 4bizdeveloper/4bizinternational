@@ -21,7 +21,8 @@ export default function ContactPage() {
       
       {/* HERO SECTION */}
       {/* Slightly increased pt-40 sm:pt-44 to add that clean space below your header logo/menu */}
-      <section className="relative relative-hero min-h-[45vh] sm:min-h-[50vh] flex items-center justify-center pt-40 sm:pt-44 pb-6 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#070e25]">
+      {/* Updated bottom padding from pb-6 to a responsive scale (pb-12 sm:pb-16 md:pb-20) */}
+      <section className="relative relative-hero min-h-[45vh] sm:min-h-[50vh] flex items-center justify-center pt-40 sm:pt-44 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#070e25]">
 
         {/* Hero Core Content Wrapper */}
         <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center">
