@@ -29,51 +29,20 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // ── BULLETPROOF MOBILE AUTO-RESUME ENGINE ──
+  // Ensure high-performance video play safety trigger
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const forcePlay = () => {
-      if (video.paused) {
-        video.play().catch(() => {
-          // Suppress browser safety warnings quietly
+    if (videoRef.current) {
+      videoRef.current.play()
+        .then(() => setIsVideoLoaded(true))
+        .catch(() => {
+          console.log("Video autoplay prevented or stalled; fallback image active.");
+          setIsVideoLoaded(false);
         });
-      }
-    };
-
-    // Initial manual invocation trigger
-    forcePlay();
-
-    // Intercept when mobile browsers aggressively suspend or pause video layers on scroll
-    const handleMobilePauseOverride = () => {
-      forcePlay();
-    };
-
-    // Force play when window receives any interaction or changes visibility context
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
-        forcePlay();
-      }
-    };
-
-    video.addEventListener('pause', handleMobilePauseOverride);
-    video.addEventListener('suspend', handleMobilePauseOverride);
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    window.addEventListener('scroll', forcePlay, { passive: true });
-    window.addEventListener('touchstart', forcePlay, { passive: true });
-
-    return () => {
-      video.removeEventListener('pause', handleMobilePauseOverride);
-      video.removeEventListener('suspend', handleMobilePauseOverride);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      window.removeEventListener('scroll', forcePlay);
-      window.removeEventListener('touchstart', forcePlay);
-    };
+    }
   }, []);
 
   const handleVideoFailure = () => {
-    setIsVideoLoaded(true);
+    setIsVideoLoaded(false);
   };
 
   const socials = [
@@ -138,7 +107,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── PERFORMANCE BACKGROUND MATRIX (VIDEO ONLY) ── */}
+        {/* ── PERFORMANCE BACKGROUND MATRIX (VIDEO & IMAGE FALLBACK) ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -149,14 +118,14 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
+            {/* Ultra-modern video background with proactive connection tracking hooks */}
             <video
               ref={videoRef}
-              src="/hero-video-2.mp4"
-              loop={true}
-              muted={true}
-              playsInline={true}
-              autoPlay={true}
-              preload="auto"
+              src="/hero-video-1.mp4"
+              loop
+              muted
+              playsInline
+              autoPlay
               onCanPlay={() => setIsVideoLoaded(true)}
               onStalled={handleVideoFailure}
               onSuspend={handleVideoFailure}
@@ -167,6 +136,21 @@ export default function Hero() {
               }`}
               style={{ willChange: 'transform, opacity' }}
             />
+
+            {/* Optimized device-specific fallback layers images if streaming degrades */}
+            <picture className="absolute inset-0 w-full h-full block z-0">
+              <source media="(min-width: 1200px)" srcSet="/hero-desktop-1.png" width="1920" height="900" />
+              <source media="(min-width: 640px)" srcSet="/hero-tablet-1.png" width="1024" height="768" />
+              <img
+                src="/hero-mobile-1.png"
+                alt=""
+                width="390"
+                height="844"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-full object-cover object-[center_bottom] sm:object-center brightness-[1.05] contrast-[1.05]"
+              />
+            </picture>
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
         </div>
@@ -214,11 +198,10 @@ export default function Hero() {
             `}
             style={{ willChange: 'transform, opacity' }}
           >
-            <div 
-              className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center"
-              style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
-            >
-              {/* Heading Lockup */}
+            {/* Modern Stack Structure: Handles cross-device typographic layout shifting flawlessly */}
+            <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center">
+              
+              {/* Heading Lockup: Stacked perfectly on mobile/tablet, single row on desktop views */}
               <h1 
                 className="flex flex-col md:flex-row items-center justify-center gap-y-1 md:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white leading-[1.1] md:leading-none font-sans text-wrap md:whitespace-nowrap"
                 style={{
@@ -234,7 +217,7 @@ export default function Hero() {
                 </span>
               </h1>
 
-              {/* Subheading */}
+              {/* Subheading: Increased scaling size and maximum absolute brightness output text colors across device tiers */}
               <h2 
                 className="mt-6 md:mt-4 text-[3.8vw] xs:text-[0.95rem] sm:text-[1.3rem] md:text-[1.7rem] lg:text-[2.1rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
                 style={{
