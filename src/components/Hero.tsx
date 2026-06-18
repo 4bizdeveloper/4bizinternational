@@ -9,7 +9,7 @@ export default function Hero() {
   const showScrollDown = true;
 
   const [isScrolled, setIsScrolled] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   
   // High-performance hardware-accelerated interactive utility styles
   const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
@@ -25,37 +25,16 @@ export default function Hero() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    const videoElement = videoRef.current;
-    
-    // Rock-solid playback handler that obeys mobile autoplay restrictions safely
-    const forceVideoPlayback = () => {
-      if (videoElement && videoElement.paused) {
-        videoElement.play().catch(() => {
-          console.log("Autoplay sweep bypassed or user in low power mode.");
-        });
-      }
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    // Attempt immediately when the component mounts
-    forceVideoPlayback();
-
-    // Event listeners to handle mobile wake, tab switching, and backgrounding safely
-    if (videoElement) {
-      videoElement.addEventListener('suspend', forceVideoPlayback);
-      videoElement.addEventListener('play', forceVideoPlayback);
-      // Listen to visibility changes (user switches tabs/locks phone and comes back)
-      document.addEventListener('visibilitychange', forceVideoPlayback);
+  // Ensure high-performance video play safety trigger
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        console.log("Video autoplay prevented or failed; displaying image fallbacks natively.");
+      });
     }
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('visibilitychange', forceVideoPlayback);
-      if (videoElement) {
-        videoElement.removeEventListener('suspend', forceVideoPlayback);
-        videoElement.removeEventListener('play', forceVideoPlayback);
-      }
-    };
   }, []);
 
   const socials = [
@@ -120,7 +99,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── HIGH PERFORMANCE KINETIC BACKGROUND VIDEO MATRIX ── */}
+        {/* ── PERFORMANCE BACKGROUND MATRIX (VIDEO & IMAGE FALLBACK) ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -131,27 +110,33 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* Added crossOrigin, playsInline, and set explicit stream properties for mobile stability */}
+            {/* The active high-performance ultra-modern video background layer */}
             <video
               ref={videoRef}
-              autoPlay
+              src="/hero-background-video-1.mp4"
               loop
               muted
               playsInline
-              preload="metadata"
-              controls={false}
-              className="w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-500 bg-[#010305]"
-              style={{ 
-                willChange: 'transform, opacity',
-                aspectRatio: '16/9'
-              }}
-            >
-              <source src="/hero-background-video-1.webm" type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
+              autoPlay
+              className="absolute inset-0 w-full h-full object-cover brightness-[1.05] contrast-[1.05] z-10"
+              style={{ willChange: 'transform, opacity' }}
+            />
 
-            <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.12] bg-gradient-to-br from-[#00aaff]/10 via-transparent to-[#00aaff]/10" />
-            <div className="absolute inset-0 pointer-events-none bg-black/15" />
+            {/* Seamless Picture elements serving as fallbacks directly beneath or when video fails */}
+            <picture className="absolute inset-0 w-full h-full block z-0">
+              <source media="(min-width: 1200px)" srcSet="/hero-desktop-1.png" width="1920" height="900" />
+              <source media="(min-width: 640px)" srcSet="/hero-tablet-1.png" width="1024" height="768" />
+              <img
+                src="/hero-mobile-1.png"
+                alt=""
+                width="390"
+                height="844"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-full object-cover object-[center_bottom] sm:object-center brightness-[1.05] contrast-[1.05]"
+              />
+            </picture>
+            <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
         </div>
 
@@ -189,71 +174,48 @@ export default function Hero() {
           ))}
         </nav>
 
-        {/* ── FLEX CENTER CONTAINER (RESPONSIVE TEXT BREAKDOWN) ── */}
-        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-w-0">
+        {/* ── FLEX CENTER CONTAINER ── */}
+        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-h-0">
           <div 
             className={`
-              w-full flex flex-col items-center gap-1.5 sm:gap-2.5 md:gap-3 pointer-events-none transition-all duration-500
+              w-full flex flex-col items-center pointer-events-none transition-all duration-500
               ${showCenterText ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}
             `}
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="w-full max-w-[90vw] xs:max-w-[85vw] sm:max-w-[600px] lg:max-w-[850px] flex flex-col items-center justify-center">
+            {/* Modern Stack Structure: Handles cross-device typographic layout shifting flawlessly */}
+            <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[600px] lg:max-w-[740px] flex flex-col items-center">
               
-              {/* Desktop Viewport Text Group (Hidden on Mobile/Tablet) */}
-              <div className="hidden md:flex flex-col items-center gap-2">
-                <h1 
-                  className="text-[2.9rem] lg:text-[3.6rem] font-black uppercase tracking-[0.05em] text-white leading-none font-sans whitespace-nowrap"
-                  style={{
-                    textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 25px rgba(0,170,255,0.2)',
-                    WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
-                  }}
-                >
-                  4BIZ INTERNATIONAL
-                </h1>
-                <h2 
-                  className="text-[1.5rem] lg:text-[1.85rem] font-extrabold uppercase tracking-[0.11em] text-[#cbd5e1] leading-none font-sans pl-[0.11em] whitespace-nowrap"
-                  style={{
-                    textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 6px 15px rgba(0,0,0,0.85)',
-                  }}
-                >
-                  IMPACTING INFINITE
-                </h2>
-              </div>
-
-              {/* Mobile & Tablet Viewport Text Group */}
-              <div className="flex md:hidden flex-col items-center text-center w-full">
-                <h1 
-                  className="text-[12vw] xs:text-[2.5rem] sm:text-[3.2rem] font-black uppercase tracking-[0.05em] text-white leading-none font-sans"
-                  style={{
-                    textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 20px rgba(0,170,255,0.2)',
-                  }}
-                >
+              {/* Heading Lockup: Stacked perfectly on mobile/tablet, single row on desktop views */}
+              <h1 
+                className="flex flex-col md:flex-row items-center justify-center gap-y-1 md:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white leading-[1.1] md:leading-none font-sans text-wrap md:whitespace-nowrap"
+                style={{
+                  textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 25px rgba(0,170,255,0.2)',
+                  WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
+                }}
+              >
+                <span className="text-[10.5vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[2.9rem] lg:text-[3.6rem]">
                   4BIZ
-                </h1>
-                <span 
-                  className="text-[7.5vw] xs:text-[1.6rem] sm:text-[2rem] font-black uppercase tracking-[0.08em] text-white/90 leading-none font-sans mt-2"
-                  style={{
-                    textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 6px 15px rgba(0,0,0,0.85)',
-                  }}
-                >
+                </span>
+                <span className="text-[7.5vw] xs:text-[1.6rem] sm:text-[2.2rem] md:text-[2.9rem] lg:text-[3.6rem]">
                   INTERNATIONAL
                 </span>
-                <h2 
-                  className="text-[4vw] xs:text-[0.95rem] sm:text-[1.15rem] font-medium uppercase tracking-[0.15em] text-[#cbd5e1]/80 leading-none font-sans mt-4 max-w-[280px] xs:max-w-none break-words"
-                  style={{
-                    textShadow: '0 2px 4px rgba(0,0,0,0.9)',
-                  }}
-                >
-                  IMPACTING INFINITE
-                </h2>
-              </div>
+              </h1>
 
+              {/* Subheading: Aligned safely at a deliberate distance below across viewpoints */}
+              <h2 
+                className="mt-6 md:mt-3 text-[3.2vw] xs:text-[0.8rem] sm:text-[1.1rem] md:text-[1.5rem] lg:text-[1.85rem] font-extrabold uppercase tracking-[0.11em] text-[#cbd5e1] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
+                style={{
+                  textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 6px 15px rgba(0,0,0,0.85)',
+                }}
+              >
+                IMPACTING INFINITE
+              </h2>
             </div>
           </div>
         </div>
 
-        {/* ── SCROLL DETECTOR CONTAINER (PRESERVED ANIMATIONS) ── */}
+        {/* ── SCROLL DETECTOR CONTAINER ── */}
         <div
           className={`
             relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500
