@@ -250,8 +250,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── CONTACT SECTION ─── */}
-      <section id="contact" className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-12 md:py-20">
+      {/* ─── CONTACT SECTION (FULL WIDTH & FULL HEIGHT EDGE-TO-EDGE) ─── */}
+      <section id="contact" className="relative z-10 w-full min-h-screen">
         <Contact />
       </section>
 
