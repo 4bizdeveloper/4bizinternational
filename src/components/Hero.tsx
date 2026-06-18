@@ -28,6 +28,17 @@ export default function Hero() {
     
     const videoElement = videoRef.current;
     
+    if (videoElement) {
+      // CRITICAL MOBILE FIX: Force hardware-level muted property to bypass mobile autoplay blocks
+      videoElement.muted = true;
+      videoElement.defaultMuted = true;
+      
+      // Ensure video plays immediately on component mount
+      videoElement.play().catch((err) => {
+        console.log("Initial autoplay prevented or low battery mode restriction:", err);
+      });
+    }
+    
     const forceVideoPlayback = () => {
       if (videoElement && videoElement.paused) {
         videoElement.play().catch(() => {
@@ -36,24 +47,28 @@ export default function Hero() {
       }
     };
 
-    forceVideoPlayback();
-
-    const handleStall = () => {
-      if (videoElement) {
-        videoElement.load();
+    // User interaction fallback: If mobile low-power mode blocked it, start it on first touch/click
+    const handleUserInteraction = () => {
+      if (videoElement && videoElement.paused) {
         videoElement.play().catch(() => {});
+        // Clean up immediately once played
+        window.removeEventListener('touchstart', handleUserInteraction);
+        window.removeEventListener('click', handleUserInteraction);
       }
     };
 
+    window.addEventListener('touchstart', handleUserInteraction, { passive: true });
+    window.addEventListener('click', handleUserInteraction, { passive: true });
+
     if (videoElement) {
-      videoElement.addEventListener('stalled', handleStall);
       videoElement.addEventListener('suspend', forceVideoPlayback);
     }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('touchstart', handleUserInteraction);
+      window.removeEventListener('click', handleUserInteraction);
       if (videoElement) {
-        videoElement.removeEventListener('stalled', handleStall);
         videoElement.removeEventListener('suspend', forceVideoPlayback);
       }
     };
@@ -141,6 +156,7 @@ export default function Hero() {
               preload="auto"
               controls={false}
               crossOrigin="anonymous"
+              muted={true} /* Secondary fallback wrapper for older standard devices */
               className="w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-500 bg-[#010305]"
               style={{ 
                 willChange: 'transform, opacity',
