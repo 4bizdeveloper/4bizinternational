@@ -28,48 +28,32 @@ export default function Hero() {
     
     const videoElement = videoRef.current;
     
-    if (videoElement) {
-      // CRITICAL MOBILE FIX: Force hardware-level muted property to bypass mobile autoplay blocks
-      videoElement.muted = true;
-      videoElement.defaultMuted = true;
-      
-      // Ensure video plays immediately on component mount
-      videoElement.play().catch((err) => {
-        console.log("Initial autoplay prevented or low battery mode restriction:", err);
-      });
-    }
-    
+    // Rock-solid playback handler that obeys mobile autoplay restrictions safely
     const forceVideoPlayback = () => {
       if (videoElement && videoElement.paused) {
         videoElement.play().catch(() => {
-          console.log("Autoplay sweep bypassed due to low battery mode restriction.");
+          console.log("Autoplay sweep bypassed or user in low power mode.");
         });
       }
     };
 
-    // User interaction fallback: If mobile low-power mode blocked it, start it on first touch/click
-    const handleUserInteraction = () => {
-      if (videoElement && videoElement.paused) {
-        videoElement.play().catch(() => {});
-        // Clean up immediately once played
-        window.removeEventListener('touchstart', handleUserInteraction);
-        window.removeEventListener('click', handleUserInteraction);
-      }
-    };
+    // Attempt immediately when the component mounts
+    forceVideoPlayback();
 
-    window.addEventListener('touchstart', handleUserInteraction, { passive: true });
-    window.addEventListener('click', handleUserInteraction, { passive: true });
-
+    // Event listeners to handle mobile wake, tab switching, and backgrounding safely
     if (videoElement) {
       videoElement.addEventListener('suspend', forceVideoPlayback);
+      videoElement.addEventListener('play', forceVideoPlayback);
+      // Listen to visibility changes (user switches tabs/locks phone and comes back)
+      document.addEventListener('visibilitychange', forceVideoPlayback);
     }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('touchstart', handleUserInteraction);
-      window.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('visibilitychange', forceVideoPlayback);
       if (videoElement) {
         videoElement.removeEventListener('suspend', forceVideoPlayback);
+        videoElement.removeEventListener('play', forceVideoPlayback);
       }
     };
   }, []);
@@ -147,16 +131,15 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
+            {/* Added crossOrigin, playsInline, and set explicit stream properties for mobile stability */}
             <video
               ref={videoRef}
               autoPlay
               loop
               muted
               playsInline
-              preload="auto"
+              preload="metadata"
               controls={false}
-              crossOrigin="anonymous"
-              muted={true} /* Secondary fallback wrapper for older standard devices */
               className="w-full h-full object-cover object-center brightness-[1.05] contrast-[1.05] transition-opacity duration-500 bg-[#010305]"
               style={{ 
                 willChange: 'transform, opacity',
@@ -238,7 +221,7 @@ export default function Hero() {
                 </h2>
               </div>
 
-              {/* Mobile & Tablet Viewport Text Group (Hierarchically Arranged: 4BIZ -> INTERNATIONAL -> SUBTITLE) */}
+              {/* Mobile & Tablet Viewport Text Group */}
               <div className="flex md:hidden flex-col items-center text-center w-full">
                 <h1 
                   className="text-[12vw] xs:text-[2.5rem] sm:text-[3.2rem] font-black uppercase tracking-[0.05em] text-white leading-none font-sans"
