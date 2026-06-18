@@ -67,12 +67,12 @@ export default function AboutPage() {
     <div 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative w-full min-h-screen bg-[#070b1e] text-white overflow-hidden font-sans select-none selection:bg-cyan-500 selection:text-black"
+      className="relative w-full min-h-screen bg-gradient-to-b from-[#010940] via-[#010522] to-[#000108] text-white overflow-hidden font-sans select-none selection:bg-cyan-500 selection:text-black"
     >
-      {/* Ambient Premium Core Gradients */}
+      {/* Ambient Premium Core Gradients matching image lighting */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[80vw] h-[80vw] rounded-full bg-gradient-to-tr from-cyan-500/10 via-blue-600/5 to-transparent blur-[130px] mix-blend-screen" />
-        <div className="absolute bottom-[20%] right-[-10%] w-[70vw] h-[70vw] rounded-full bg-gradient-to-bl from-purple-600/10 via-pink-500/5 to-transparent blur-[140px] mix-blend-screen" />
+        <div className="absolute top-[-5%] left-[10%] w-[80vw] h-[60vw] rounded-full bg-radial-gradient from-blue-500/15 via-blue-600/5 to-transparent blur-[140px] mix-blend-screen" />
+        <div className="absolute top-[40%] right-[-10%] w-[70vw] h-[70vw] rounded-full bg-gradient-to-bl from-purple-600/5 via-blue-900/10 to-transparent blur-[140px] mix-blend-screen" />
       </div>
 
       {/* Micro-mesh Grid Structural Backdrop Overlay */}
