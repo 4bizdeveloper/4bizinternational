@@ -107,8 +107,8 @@ export default function About() {
         {/* Two-Column Responsive Layout Node - Optimized for Zero Dead Space */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center pt-2 mb-10 md:mb-16">
           
-          {/* Left Side Content Column - Fully centered on mobile, shifts left on desktop */}
-          <div className="w-full lg:col-span-7 flex flex-col order-2 lg:order-1 items-center lg:items-start text-center lg:text-left">
+          {/* Left Side Content Column - Placed first on mobile/tablet view using order-1 */}
+          <div className="w-full lg:col-span-7 flex flex-col order-1 lg:order-1 items-center lg:items-start text-center lg:text-left">
             {/* Section Sub-Tag */}
             <div className="flex items-center justify-center lg:justify-start mb-3">
               <span className="text-xs sm:text-sm uppercase tracking-[0.3em] [word-spacing:0.35em] font-black text-white/90 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)] select-text">
@@ -127,7 +127,6 @@ export default function About() {
               {/* 📱 MOBILE & TABLET VIEW: Solid Gradient Typographic Block - Center Aligned & Fully Selectable */}
               <div className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] select-text pointer-events-auto w-full text-center">
                 4BIZ <br />
-                {/* Visual upgrade: Increased font scale on mobile screens to match high-end design requirements */}
                 <span className="text-[0.5em] xs:text-[0.55em] sm:text-[0.42em] tracking-normal block mt-1">INTERNATIONAL LLC</span>
               </div>
 
@@ -205,7 +204,8 @@ export default function About() {
           </div>
 
           {/* ─── RIGHT SIDE COLUMN: SYMMETRICAL COSMIC MATRIX ─── */}
-          <div className="w-full lg:col-span-5 flex items-center justify-center relative min-h-[350px] sm:min-h-[450px] order-1 lg:order-2">
+          {/* Placed second on mobile/tablet view using order-2, shifts back to right side on desktop layout */}
+          <div className="w-full lg:col-span-5 flex items-center justify-center relative min-h-[350px] sm:min-h-[450px] order-2 lg:order-2">
             {/* Glowing Vibrant Space Backplane */}
             <div className="absolute inset-0 bg-radial-gradient from-cyan-500/20 via-emerald-500/10 to-transparent blur-3xl pointer-events-none" />
 
@@ -230,7 +230,7 @@ export default function About() {
                 <div className="absolute w-[21rem] h-[21rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[2px] border-transparent border-r-[#39ff73]/80 border-l-cyan-400/60 filter drop-shadow-[0_0_12px_rgba(34,211,238,0.4)] will-change-transform animate-spin-continuous-slow-reverse" />
               </div>
               
-              {/* Floating Center Logo Surface */}
+              {/* Floating Center Logo Surface - Referencing logo from visual requirements layout (similar style to image_fe5c03.jpg) */}
               <div className="absolute w-52 h-26 sm:w-64 sm:h-32 transition-transform duration-500 hover:scale-105 transform-gpu filter drop-shadow-[0_0_35px_rgba(6,182,212,0.35)] flex items-center justify-center">
                 <Image
                   src="/4biz_logo-1.png"

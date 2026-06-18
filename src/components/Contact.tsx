@@ -191,7 +191,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 xl:px-12 relative overflow-hidden transform-gpu backface-hidden"
+      className="py-16 md:py-24 px-3 sm:px-6 lg:px-8 xl:px-12 relative overflow-hidden transform-gpu backface-hidden"
       style={{
         backgroundColor: '#070e25',
         contentVisibility: 'auto',
@@ -201,9 +201,9 @@ export default function Contact() {
     >
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff01_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
       
-      {/* Outer Rounded Wrapper */}
-      <div className="max-w-7xl mx-auto relative z-10 bg-[#0f1b40]/60 border border-white/5 rounded-3xl p-5 sm:p-10 lg:p-12 xl:p-14 shadow-2xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-stretch">
+      {/* Outer Rounded Wrapper - Modified paddings and width layout across mobile and tablet viewports */}
+      <div className="w-full max-w-7xl mx-auto relative z-10 bg-[#0f1b40]/60 border border-white/5 rounded-3xl py-10 px-5 sm:py-14 sm:px-10 lg:p-12 xl:p-14 shadow-2xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 xl:gap-12 items-stretch">
           
           {/* LEFT COLUMN: FORM CONTAINER PLACED DIRECTLY ON DARK BACKGROUND */}
           <div className="lg:col-span-7 flex flex-col justify-start space-y-6">
@@ -373,7 +373,7 @@ export default function Contact() {
           </div>
 
           {/* RIGHT COLUMN: HIGH-CONTRAST PURE WHITE BOX FOR BRANCH OFFICES */}
-          <div className="lg:col-span-5 bg-white p-5 sm:p-8 lg:p-10 flex flex-col justify-start h-full rounded-3xl overflow-hidden shadow-xl border border-neutral-100">
+          <div className="lg:col-span-5 bg-white p-6 sm:p-10 flex flex-col justify-start h-full rounded-3xl overflow-hidden shadow-xl border border-neutral-100">
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-1">
                 <span className="w-5 h-[2px] bg-orange-600 inline-block"></span>
