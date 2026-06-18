@@ -9,6 +9,7 @@ export default function Hero() {
   const showScrollDown = true;
 
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   
   // High-performance hardware-accelerated interactive utility styles
@@ -31,11 +32,18 @@ export default function Hero() {
   // Ensure high-performance video play safety trigger
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-        console.log("Video autoplay prevented or failed; displaying image fallbacks natively.");
-      });
+      videoRef.current.play()
+        .then(() => setIsVideoLoaded(true))
+        .catch(() => {
+          console.log("Video autoplay prevented or stalled; fallback image active.");
+          setIsVideoLoaded(false);
+        });
     }
   }, []);
+
+  const handleVideoFailure = () => {
+    setIsVideoLoaded(false);
+  };
 
   const socials = [
     {
@@ -110,7 +118,7 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* The active high-performance ultra-modern video background layer */}
+            {/* Ultra-modern video background with proactive connection tracking hooks */}
             <video
               ref={videoRef}
               src="/hero-background-video-1.mp4"
@@ -118,11 +126,18 @@ export default function Hero() {
               muted
               playsInline
               autoPlay
-              className="absolute inset-0 w-full h-full object-cover brightness-[1.05] contrast-[1.05] z-10"
+              onCanPlay={() => setIsVideoLoaded(true)}
+              onStalled={handleVideoFailure}
+              onSuspend={handleVideoFailure}
+              onEmptied={handleVideoFailure}
+              onError={handleVideoFailure}
+              className={`absolute inset-0 w-full h-full object-cover brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-700 ${
+                isVideoLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
               style={{ willChange: 'transform, opacity' }}
             />
 
-            {/* Seamless Picture elements serving as fallbacks directly beneath or when video fails */}
+            {/* Optimized device-specific fallback layers images if streaming degrades */}
             <picture className="absolute inset-0 w-full h-full block z-0">
               <source media="(min-width: 1200px)" srcSet="/hero-desktop-1.png" width="1920" height="900" />
               <source media="(min-width: 640px)" srcSet="/hero-tablet-1.png" width="1024" height="768" />
@@ -184,7 +199,7 @@ export default function Hero() {
             style={{ willChange: 'transform, opacity' }}
           >
             {/* Modern Stack Structure: Handles cross-device typographic layout shifting flawlessly */}
-            <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[600px] lg:max-w-[740px] flex flex-col items-center">
+            <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center">
               
               {/* Heading Lockup: Stacked perfectly on mobile/tablet, single row on desktop views */}
               <h1 
@@ -202,11 +217,11 @@ export default function Hero() {
                 </span>
               </h1>
 
-              {/* Subheading: Aligned safely at a deliberate distance below across viewpoints */}
+              {/* Subheading: Increased scaling size and maximum absolute brightness output text colors across device tiers */}
               <h2 
-                className="mt-6 md:mt-3 text-[3.2vw] xs:text-[0.8rem] sm:text-[1.1rem] md:text-[1.5rem] lg:text-[1.85rem] font-extrabold uppercase tracking-[0.11em] text-[#cbd5e1] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
+                className="mt-6 md:mt-4 text-[3.8vw] xs:text-[0.95rem] sm:text-[1.3rem] md:text-[1.7rem] lg:text-[2.1rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
                 style={{
-                  textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 6px 15px rgba(0,0,0,0.85)',
+                  textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 6px 15px rgba(0,0,0,0.85), 0 0 12px rgba(255,255,255,0.3)',
                 }}
               >
                 IMPACTING INFINITE
