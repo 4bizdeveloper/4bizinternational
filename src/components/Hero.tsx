@@ -121,7 +121,7 @@ export default function Hero() {
             {/* Ultra-modern video background with proactive connection tracking hooks */}
             <video
               ref={videoRef}
-              src="/hero-background-video-1.mp4"
+              src="/hero-video-2.mp4"
               loop
               muted
               playsInline
