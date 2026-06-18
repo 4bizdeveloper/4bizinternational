@@ -16,6 +16,7 @@ interface ServiceBlock {
   points: string[];
   accentColor: string;
   glowColor: string;
+  url: string; // Added custom URL property
 }
 
 export default function ServicesPage() {
@@ -24,9 +25,10 @@ export default function ServicesPage() {
       title: "Digital Workplace & Productivity Solutions",
       description: "Empower your workforce with secure cloud-based productivity platforms that enhance collaboration, communication, and operational efficiency across your organization.",
       icon: <Users className="text-[#00e5a3]" size={22} />,
-      visualAsset: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80",
+      visualAsset: "/services/ai-1.png",
       accentColor: "from-[#00e5a3] to-emerald-400",
       glowColor: "from-[#00e5a3]/30 via-emerald-500/5 to-transparent",
+      url: "/services/digital-workplace-productivity-solutions", // Custom URL
       points: [
         "Microsoft 365", "Google Workspace", "Zoho Workplace", 
         "Exchange Email Solutions", "Business Email Setup", 
@@ -37,9 +39,10 @@ export default function ServicesPage() {
       title: "Enterprise Business Applications (ERP & CRM)",
       description: "Streamline operations, improve customer engagement, and gain real-time business insights through integrated ERP and CRM platforms tailored to your business needs.",
       icon: <Cpu className="text-cyan-400" size={22} />,
-      visualAsset: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1000&q=80",
+      visualAsset: "/services/ai-1.png",
       accentColor: "from-cyan-400 to-blue-500",
       glowColor: "from-cyan-500/30 via-blue-500/5 to-transparent",
+      url: "/services/enterprise-applications", // Custom URL
       points: [
         "Custom ERP Development", "Custom CRM Development", "Microsoft Dynamics 365", 
         "Odoo ERP", "ERPNext", "4Biz ERP Solutions", "Sales Automation", 
@@ -50,9 +53,10 @@ export default function ServicesPage() {
       title: "Web, Mobile & Commerce Solutions",
       description: "Create powerful digital experiences with scalable websites, mobile applications, and eCommerce platforms designed for performance and growth.",
       icon: <Monitor className="text-blue-400" size={22} />,
-      visualAsset: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=1000&q=80",
+      visualAsset: "/services/ai-1.png",
       accentColor: "from-blue-400 to-indigo-500",
       glowColor: "from-blue-500/30 via-indigo-500/5 to-transparent",
+      url: "/services/web-mobile-commerce", // Custom URL
       points: [
         "UI/UX Design", "Corporate Website Development", "Web Application Development", 
         "Mobile App Development", "E-commerce Solutions", "CMS Development", 
@@ -63,9 +67,10 @@ export default function ServicesPage() {
       title: "Digital Growth, Marketing & Brand Experience",
       description: "Drive traffic, increase conversions, and build a memorable brand presence through data-driven marketing and modern digital engagement strategies.",
       icon: <Zap className="text-amber-400" size={22} />,
-      visualAsset: "https://images.unsplash.com/photo-1618005198143-e5283b519a7f?auto=format&fit=crop&w=1000&q=80",
+      visualAsset: "/services/ai-1.png",
       accentColor: "from-amber-400 to-orange-500",
       glowColor: "from-amber-500/30 via-orange-500/5 to-transparent",
+      url: "/services/digital-marketing", // Custom URL
       points: [
         "SEO (Search Engine Optimization)", "AEO (Answer Engine Optimization)", "Social Media Management", 
         "Social Media Advertising", "Performance Marketing", "Content Marketing", "Brand Strategy", 
@@ -77,9 +82,10 @@ export default function ServicesPage() {
       title: "Communication & Customer Engagement Solutions",
       description: "Connect with your audience through intelligent communication platforms that improve engagement, retention, and customer relationships.",
       icon: <Mail className="text-purple-400" size={22} />,
-      visualAsset: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=1000&q=80",
+      visualAsset: "/services/ai-1.png",
       accentColor: "from-purple-400 to-pink-500",
       glowColor: "from-purple-500/30 via-pink-500/5 to-transparent",
+      url: "/services/customer-engagement", // Custom URL
       points: [
         "Email Marketing", "SMS Marketing", "WhatsApp Business Solutions", 
         "Marketing Automation", "Bulk Messaging Solutions", "Newsletter Campaigns", 
@@ -90,9 +96,10 @@ export default function ServicesPage() {
       title: "Cloud, Hosting & Infrastructure Services",
       description: "Build a secure and scalable digital foundation with enterprise-grade hosting, cloud infrastructure, and managed IT services.",
       icon: <Server className="text-emerald-400" size={22} />,
-      visualAsset: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
+      visualAsset: "/services/ai-1.png",
       accentColor: "from-emerald-400 to-teal-500",
       glowColor: "from-emerald-500/30 via-teal-500/5 to-transparent",
+      url: "/services/cloud-infrastructure", // Custom URL
       points: [
         "Domain Registration", "International & Country TLDs", "Shared Hosting", 
         "Reseller Hosting", "VPS Hosting", "Dedicated Servers", "AWS Cloud Solutions", 
@@ -104,9 +111,10 @@ export default function ServicesPage() {
       title: "Cybersecurity & Digital Protection",
       description: "Protect your organization from evolving cyber threats with proactive security assessments, monitoring, and advanced protection solutions.",
       icon: <Lock className="text-red-400" size={22} />,
-      visualAsset: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=85",
+      visualAsset: "/services/ai-1.png",
       accentColor: "from-red-500 to-rose-500",
       glowColor: "from-red-500/30 via-rose-500/5 to-transparent",
+      url: "/services/cybersecurity-protection", // Custom URL
       points: [
         "Penetration Testing", "Vulnerability Assessment", "Malware Analysis", 
         "Threat Intelligence", "Security Audits", "SSL Certificates", "Website Security", 
@@ -117,9 +125,10 @@ export default function ServicesPage() {
       title: "Digital Transformation & Emerging Technologies",
       description: "Transform traditional operations into intelligent, data-driven digital enterprises through AI, automation, cloud technologies, and innovation-led strategies.",
       icon: <Layers className="text-lime-400" size={22} />,
-      visualAsset: "/services/ai-1.png", // Preserved completely untouched as requested
+      visualAsset: "/services/ai-1.png", 
       accentColor: "from-lime-400 to-emerald-400",
       glowColor: "from-lime-500/40 via-emerald-500/10 to-transparent",
+      url: "/services/digital-transformation", // Custom URL
       points: [
         "Artificial Intelligence Solutions", "Generative AI Integration", "AI Chatbots & Assistants", 
         "Business Process Automation", "Data Analytics & BI", "Digital Transformation Consulting", 
@@ -237,14 +246,14 @@ export default function ServicesPage() {
                     ))}
                   </div>
 
-                  {/* High-Tech Dynamic Action Button Grid Overlay */}
+                  {/* High-Tech Dynamic Action Button Grid Overlay - Colorized and routing to service.url */}
                   <div className="pt-2">
                     <a
-                      href={`/services/${encodeURIComponent(service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-'))}`}
-                      className="group/btn inline-flex items-center gap-3 bg-gradient-to-r from-slate-900 via-slate-900 to-slate-850 hover:from-slate-850 hover:to-slate-800 border border-slate-800/80 hover:border-[#00e5a3] px-6 py-3 rounded-full text-white font-semibold text-sm uppercase tracking-widest shadow-xl shadow-black/30 hover:shadow-[#00e5a3]/5 transition-all duration-300 ease-out"
+                      href={service.url}
+                      className={`group/btn inline-flex items-center gap-3 bg-gradient-to-r ${service.accentColor} hover:saturate-[130%] px-6 py-3 rounded-full text-slate-950 font-bold text-sm uppercase tracking-widest shadow-xl shadow-black/30 hover:shadow-inherit transition-all duration-300 ease-out`}
                     >
                       <span>Read More</span>
-                      <ArrowRight size={15} className="text-[#00e5a3] transform transition-transform duration-300 group-hover/btn:translate-x-1" />
+                      <ArrowRight size={15} className="text-slate-950 transform transition-transform duration-300 group-hover/btn:translate-x-1.5" />
                     </a>
                   </div>
 
