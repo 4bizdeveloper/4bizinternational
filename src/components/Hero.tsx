@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
 
 export default function Hero() {
-  // ── EASILY CUSTOMIZABLE VISIBILITY CONFIGURATION ──
   const showCenterText = true;
   const showScrollDown = true;
 
@@ -12,7 +11,6 @@ export default function Hero() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   
-  // High-performance hardware-accelerated interactive utility styles
   const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
   const uniformIconSize = 'w-[20px] h-[20px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300';
 
@@ -24,56 +22,54 @@ export default function Hero() {
         setIsScrolled(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // ── BULLETPROOF MOBILE AUTOPLAY & RESUME ENGINE ──
+  // ── UN-BRICKABLE MOBILE VIDEO RESUME & WATCHDOG ENGINE ──
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    const attemptPlay = async () => {
+    const forcePlayVideo = async () => {
       try {
-        // Force properties programmatically right before triggering play to satisfy mobile viewports
         video.muted = true;
         video.defaultMuted = true;
-        
         await video.play();
         setIsVideoLoaded(true);
       } catch (error) {
-        console.log("Autoplay playback micro-managed or delayed:", error);
+        console.log("Mobile autoplay waiting for interaction handshake...", error);
       }
     };
 
-    // Trigger on mount
-    attemptPlay();
+    // Initial Trigger
+    forcePlayVideo();
 
-    // Fix for: Hiding browser / switching apps / waking device up freezing video
+    // Wakes the video up if user locks/unlocks phone or changes browser tabs
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
-        attemptPlay();
+        forcePlayVideo();
       }
     };
 
-    // Fix for Safari/iOS battery saving freeze after micro-stalls
-    const handleSyncPlay = () => {
+    // Recovers video from iOS Safari low-power background micro-stalls
+    const handlePlaybackSync = () => {
       if (video.paused) {
-        attemptPlay();
+        forcePlayVideo();
       }
     };
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
-    window.addEventListener('focus', handleSyncPlay);
-    window.addEventListener('pageshow', handleSyncPlay);
-    document.addEventListener('touchstart', handleSyncPlay, { once: true }); // Fallback fallback handshake trigger
+    window.addEventListener('focus', handlePlaybackSync);
+    window.addEventListener('pageshow', handlePlaybackSync);
+    // Absolute fallback: the moment a user touches anywhere on mobile, force kickplay
+    document.addEventListener('touchstart', handlePlaybackSync, { once: true });
 
     return () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
-      window.removeEventListener('focus', handleSyncPlay);
-      window.removeEventListener('pageshow', handleSyncPlay);
-      document.removeEventListener('touchstart', handleSyncPlay);
+      window.removeEventListener('focus', handlePlaybackSync);
+      window.removeEventListener('pageshow', handlePlaybackSync);
+      document.removeEventListener('touchstart', handlePlaybackSync);
     };
   }, []);
 
@@ -139,7 +135,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── PERFORMANCE BACKGROUND MATRIX (VIDEO ONLY LAYER) ── */}
+        {/* ── VIDEO ONLY CONTROLLER BACKDROP ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -150,9 +146,6 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* Ultra-modern hardware-accelerated video layer. 
-              Added dynamic inline-plays-out properties for total cross-origin rendering safety on mobile.
-            */}
             <video
               ref={videoRef}
               src="/hero-video-1.mp4"
@@ -163,19 +156,18 @@ export default function Hero() {
               controls={false}
               preload="auto"
               className={`absolute inset-0 w-full h-full object-cover brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-500 ${
-                isVideoLoaded ? 'opacity-100' : 'opacity-0'
+                isVideoLoaded ? 'opacity-100' : 'opacity-40'
               }`}
               style={{ 
                 willChange: 'transform, opacity',
-                transform: 'translate3d(0,0,0)' // Hard-locks layer to GPU rendering matrices
+                transform: 'translate3d(0,0,0)' // Fast-tracks video rendering pipelines directly to GPU
               }}
             />
-
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
         </div>
 
-        {/* ── ACCESSIBLE FIXED NAVIGATION SIDEBAR ── */}
+        {/* ── NAVIGATION SIDEBAR ── */}
         <nav
           aria-label="Social Profile Navigation"
           className={`
@@ -209,7 +201,7 @@ export default function Hero() {
           ))}
         </nav>
 
-        {/* ── FLEX CENTER CONTAINER ── */}
+        {/* ── CENTER CONTAINER ── */}
         <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-h-0">
           <div 
             className={`
@@ -218,10 +210,7 @@ export default function Hero() {
             `}
             style={{ willChange: 'transform, opacity' }}
           >
-            {/* Modern Stack Structure: Handles cross-device typographic layout shifting flawlessly */}
             <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center">
-              
-              {/* Heading Lockup: Stacked perfectly on mobile/tablet, single row on desktop views */}
               <h1 
                 className="flex flex-col md:flex-row items-center justify-center gap-y-1 md:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white leading-[1.1] md:leading-none font-sans text-wrap md:whitespace-nowrap"
                 style={{
@@ -237,7 +226,6 @@ export default function Hero() {
                 </span>
               </h1>
 
-              {/* Subheading: Increased scaling size and maximum absolute brightness output text colors across device tiers */}
               <h2 
                 className="mt-6 md:mt-4 text-[3.8vw] xs:text-[0.95rem] sm:text-[1.3rem] md:text-[1.7rem] lg:text-[2.1rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
                 style={{
@@ -250,7 +238,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── SCROLL DETECTOR CONTAINER ── */}
+        {/* ── SCROLL DOWN ANIMATION LAYER ── */}
         <div
           className={`
             relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500
