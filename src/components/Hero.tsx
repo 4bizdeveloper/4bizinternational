@@ -180,9 +180,9 @@ export default function Hero() {
                 </span>
               </h1>
 
-              {/* Subheading: Increased scaling size and maximum absolute brightness output text colors across device tiers */}
+              {/* Subheading: Optimized sizing hierarchy across responsive targets */}
               <h2 
-                className="mt-6 md:mt-4 text-[3.8vw] xs:text-[0.95rem] sm:text-[1.3rem] md:text-[1.7rem] lg:text-[2.1rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
+                className="mt-6 md:mt-4 text-[4.6vw] xs:text-[1.15rem] sm:text-[1.55rem] md:text-[1.7rem] lg:text-[2.1rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 6px 15px rgba(0,0,0,0.85), 0 0 12px rgba(255,255,255,0.3)',
                 }}
