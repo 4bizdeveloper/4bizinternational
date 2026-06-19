@@ -1,12 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import Link from 'next/link';
 
-// Ultra-optimized SEO Meta Tags (Preserved perfectly)
+// Ultra-optimized SEO Meta Tags (Preserved perfectly with requested updates)
 export const metadata: Metadata = {
   title: 'Digital Workplace & Productivity Solutions | 4Biz International',
-  description: 'Transform your business with modern digital workplace architecture, cloud productivity infrastructure, and automated workflows designed for global operations.',
+  description: 'Set up Microsoft 365, Google Workspace, Zoho, business email & workflow automation — secure, cloud-based digital workplace solutions with zero-downtime migration and 24/7 support.',
   openGraph: {
     title: 'Digital Workplace & Productivity Solutions | 4Biz International',
     description: 'Empower hybrid teams with seamless cloud environments and high-performance workflow automation.',
@@ -75,8 +74,8 @@ export default function DigitalWorkplacePage() {
       {/* ================= CONTENT WRAPPER ================= */}
       <div className="relative z-10">
         
-        {/* ================= HERO SECTION ================= */}
-        <section className="relative min-h-[85vh] flex items-center justify-center pt-36 pb-12 px-4 sm:px-6 lg:px-8">
+        {/* ================= HERO SECTION WITH REPEATED TOP IMAGES ================= */}
+        <section className="relative min-h-[85vh] flex flex-col items-center justify-center pt-36 pb-12 px-4 sm:px-6 lg:px-8">
           <div className="w-full max-w-5xl mx-auto text-center flex flex-col items-center">
             <span className="text-xs sm:text-sm font-semibold tracking-widest text-blue-400 uppercase mb-4 block backdrop-blur-sm bg-blue-950/30 px-4 py-1.5 rounded-full border border-blue-500/10">
               01 — Digital Workplace
@@ -87,25 +86,43 @@ export default function DigitalWorkplacePage() {
             <p className="mt-4 text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed font-normal transparent-content">
               Empower your workforce with secure, cloud‑based productivity platforms that enhance collaboration, communication, and operational efficiency across your organization. We design, deploy, and manage the email, document, and workflow tools your team relies on every single day.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold tracking-wide text-slate-900 uppercase bg-gradient-to-r from-sky-400 via-cyan-400 to-teal-400 hover:from-sky-300 hover:via-cyan-300 hover:to-teal-300 active:scale-95 transition-all duration-300 rounded-full shadow-[0_0_35px_rgba(56,189,248,0.25)] font-sans"
-              >
-                Talk to an Advisor
-              </Link>
-              <a 
-                href="tel:+10000000000" 
-                className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold tracking-wide text-white uppercase border border-slate-700 hover:border-blue-500 rounded-full bg-slate-950/40 backdrop-blur-sm transition-all duration-300"
-              >
-                Call Now
-              </a>
+          </div>
+
+          {/* Top Level Repeated Transparent Images Panel - Box Containers Removed for Seamless Merging */}
+          <div className="w-full max-w-5xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
+            <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden">
+              <Image
+                src="/services/ai-1.png"
+                alt="High performance UI monitoring and clean workflow automation platforms layout preview"
+                fill
+                sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 350px"
+                className="object-contain mix-blend-screen transition-transform duration-500 ease-out hover:scale-105"
+              />
+            </div>
+            <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden">
+              <Image
+                src="/services/ai-1.png"
+                alt="High performance UI monitoring and clean workflow automation platforms system preview"
+                fill
+                sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 350px"
+                className="object-contain mix-blend-screen transition-transform duration-500 ease-out hover:scale-105"
+              />
+            </div>
+            <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden sm:col-span-2 lg:col-span-1">
+              <Image
+                src="/services/ai-1.png"
+                alt="High performance UI monitoring and clean workflow automation platforms analytics preview"
+                fill
+                sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 350px"
+                className="object-contain mix-blend-screen transition-transform duration-500 ease-out hover:scale-105"
+              />
             </div>
           </div>
         </section>
 
         {/* ================= MISSION & STATS NARRATIVE ================= */}
-        <section className="relative py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-800/60 bg-slate-950/20 backdrop-blur-[2px]">
+        {/* Glassy backdrop layer, styling container, and borders fully removed to merge with the global background seamlessly */}
+        <section className="relative py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             
             {/* Fluid Narrative */}
@@ -217,22 +234,8 @@ export default function DigitalWorkplacePage() {
 
         {/* ================= STRATEGIC PILLARS (HOW WE WORK) ================= */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8 border-t border-b border-slate-800/60 bg-slate-950/10">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            
-            {/* Left Graphic Side */}
-            <div className="lg:col-span-6 relative w-full aspect-[16/10] flex items-center justify-center">
-              <div className="absolute w-[80%] h-[80%] bg-blue-500/15 blur-[100px] rounded-full pointer-events-none" />
-              <Image
-                src="/services/ai-1.png"
-                alt="High performance UI monitoring and clean workflow automation platforms"
-                fill
-                sizes="(max-w-1024px) 100vw, 700px"
-                className="object-contain mix-blend-screen transition-transform duration-700 ease-out hover:scale-[1.02]"
-              />
-            </div>
-
-            {/* Right Structural Side */}
-            <div className="lg:col-span-6 space-y-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl space-y-8 mb-12">
               <div>
                 <span className="text-xs font-bold tracking-widest text-purple-400 uppercase block mb-2">How we work</span>
                 <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
@@ -242,58 +245,41 @@ export default function DigitalWorkplacePage() {
                   The outcome isn't just "new software." It's fewer dropped handoffs, faster approvals, and a workplace your team can navigate without a manual.
                 </p>
               </div>
+            </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="text-white font-bold text-base mb-1">Security first</h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">MFA, conditional access, and encryption are configured into every deployment by default, not added later.</p>
-                </div>
-                <div>
-                  <h4 className="text-white font-bold text-base mb-1">Zero‑downtime migration</h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">Cutovers are scheduled and validated before go‑live, so mail and files move without interrupting your workday.</p>
-                </div>
-                <div>
-                  <h4 className="text-white font-bold text-base mb-1">Right‑sized for you</h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">We scope the platform and license tier to your team's size and budget, never a one‑size‑fits‑all package.</p>
-                </div>
-                <div>
-                  <h4 className="text-white font-bold text-base mb-1">Ongoing support</h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">A regional team that already knows your environment — not a ticket queue starting from zero each time.</p>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="p-6 rounded-xl bg-slate-950/40 border border-slate-800/80">
+                <h4 className="text-white font-bold text-base mb-2">Security first</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">MFA, conditional access, and encryption are configured into every deployment by default, not added later.</p>
+              </div>
+              <div className="p-6 rounded-xl bg-slate-950/40 border border-slate-800/80">
+                <h4 className="text-white font-bold text-base mb-2">Zero‑downtime migration</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">Cutovers are scheduled and validated before go‑live, so mail and files move without interrupting your workday.</p>
+              </div>
+              <div className="p-6 rounded-xl bg-slate-950/40 border border-slate-800/80">
+                <h4 className="text-white font-bold text-base mb-2">Right‑sized for you</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">We scope the platform and license tier to your team's size and budget, never a one‑size‑fits‑all package.</p>
+              </div>
+              <div className="p-6 rounded-xl bg-slate-950/40 border border-slate-800/80">
+                <h4 className="text-white font-bold text-base mb-2">Ongoing support</h4>
+                <p className="text-xs text-slate-400 leading-relaxed"> A regional team that already knows your environment — not a ticket queue starting from zero each time.</p>
               </div>
             </div>
-
           </div>
         </section>
 
-        {/* ================= CLOSING ACTION ================= */}
-        <section className="relative py-28 px-4 sm:px-6 lg:px-8 text-center">
+        {/* ================= INFORMATIONAL CLOSING SUMMARY (ALL CTAs REMOVED) ================= */}
+        <section className="relative py-24 px-4 sm:px-6 lg:px-8 text-center">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_70%,rgba(59,130,246,0.1),transparent_50%)] pointer-events-none" />
-          <div className="relative z-10 max-w-3xl mx-auto space-y-8">
+          <div className="relative z-10 max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-              Ready to modernize how your team works?
+              Modernizing how your team works
             </h2>
             <p className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              Tell us what you're using today and where it's breaking down. We'll recommend the right platform and handle the setup end to end.
+              We focus on assessing what you're using today, isolating structural breaking points, and transitioning components to the right platform setups seamlessly end to end.
             </p>
-            <div className="pt-4">
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold tracking-wide text-slate-900 uppercase bg-gradient-to-r from-sky-400 via-cyan-400 to-teal-400 hover:from-sky-300 hover:via-cyan-300 hover:to-teal-300 active:scale-95 transition-all duration-300 rounded-full shadow-[0_0_35px_rgba(56,189,248,0.25)] hover:shadow-[0_0_45px_rgba(34,211,238,0.5)] font-sans"
-              >
-                Get a Free Consultation
-              </Link>
-            </div>
-            <div className="text-xs text-slate-500 mt-4">
-              Prefer chat? Message us on <span className="text-teal-400 cursor-pointer hover:underline">WhatsApp</span> or call the number in the bottom corner.
-            </div>
           </div>
         </section>
-
-        {/* ================= FOOTER ================= */}
-        <footer className="text-center py-8 text-xs text-slate-600 border-t border-slate-900">
-          © 2026 4Biz International — Digital Workplace &amp; Productivity Solutions
-        </footer>
 
       </div>
     </div>

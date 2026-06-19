@@ -108,7 +108,7 @@ export default function Header() {
               }`}
             >
               <Link
-                href="/#contact"
+                href="/contact"
                 className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white rounded-full px-6 py-2.5 text-xs uppercase tracking-wider font-semibold transition-all duration-300 shadow-sm hover:shadow-md hover:brightness-110 whitespace-nowrap border border-white/10"
               >
                 Contact Us

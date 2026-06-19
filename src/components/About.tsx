@@ -211,7 +211,7 @@ export default function About() {
           {/* Placed second on mobile/tablet view using order-2, shifts back to right side on desktop layout */}
           <div className="w-full lg:col-span-5 flex items-center justify-center relative min-h-[280px] xs:min-h-[320px] sm:min-h-[420px] lg:min-h-[450px] order-2 lg:order-2">
             {/* Glowing Vibrant Space Backplane */}
-            <div className="absolute inset-0 bg-radial-gradient from-cyan-500/20 via-emerald-500/10 to-transparent blur-3xl pointer-events-none" />
+            <div className="absolute inset-0 bg-radial-gradient from-cyan-500/20 via-purple-500/10 to-transparent blur-3xl pointer-events-none" />
 
             {/* RIGID COMPOSITE CONTAINER */}
             <div className="absolute w-full h-full flex items-center justify-center pointer-events-none transform-gpu">
@@ -219,19 +219,19 @@ export default function About() {
               {/* Complex Multi-layered Particle Rings & Cosmic Track System */}
               <div className="absolute inset-0 flex items-center justify-center transform-gpu">
                 {/* Diffuse Energy Vibrant Core */}
-                <div className="absolute w-36 h-36 sm:w-52 sm:h-52 bg-radial-gradient from-[#39f3ff]/20 via-[#39ff73]/10 to-transparent blur-2xl animate-pulse" />
+                <div className="absolute w-36 h-36 sm:w-52 sm:h-52 bg-radial-gradient from-[#39f3ff]/20 via-[#ff41e3]/10 to-transparent blur-2xl animate-pulse" />
 
                 {/* Pulsating Internal Ring Sub-structures */}
                 <div className="absolute w-32 h-32 sm:w-44 sm:h-44 rounded-full border-[4px] sm:border-[5px] border-cyan-400/30 shadow-[0_0_20px_rgba(34,211,238,0.3)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
-                <div className="absolute w-40 h-40 sm:w-56 sm:h-56 rounded-full border-[2px] sm:border-[3px] border-[#39ff73]/20 shadow-[0_0_25px_rgba(57,255,115,0.2)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite_1.1s]" />
+                <div className="absolute w-40 h-40 sm:w-56 sm:h-56 rounded-full border-[2px] sm:border-[3px] border-[#ff41e3]/20 shadow-[0_0_25px_rgba(255,65,227,0.2)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite_1.1s]" />
 
                 {/* Continuous Non-Scroll Dependent Rotating HUD Vector Geometries */}
                 <div className="absolute w-44 h-44 xs:w-48 xs:h-48 sm:w-72 sm:h-72 rounded-full border-[2px] sm:border-[2.5px] border-dashed border-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.2)] will-change-transform animate-spin-continuous-fast" />
-                <div className="absolute w-52 h-52 xs:w-56 xs:h-56 sm:w-[19rem] sm:h-[19rem] rounded-full border-[1.5px] sm:border-[2px] border-double border-emerald-400/40 shadow-[0_0_15px_rgba(52,211,153,0.15)] will-change-transform animate-spin-continuous-reverse" />
+                <div className="absolute w-52 h-52 xs:w-56 xs:h-56 sm:w-[19rem] sm:h-[19rem] rounded-full border-[1.5px] sm:border-[2px] border-double border-[#bd29ff]/40 shadow-[0_0_15px_rgba(189,41,255,0.15)] will-change-transform animate-spin-continuous-reverse" />
                 
                 {/* HIGH VIBRANCY Rings */}
-                <div className="absolute w-[14rem] h-[14rem] xs:w-[15rem] xs:h-[15rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[3px] sm:border-[4px] border-transparent border-t-[#39ff73] border-b-cyan-400 border-l-[#39ff73] filter drop-shadow-[0_0_15px_rgba(57,255,115,0.5)] will-change-transform animate-spin-continuous-slow" />
-                <div className="absolute w-[15.5rem] h-[15.5rem] xs:w-[17rem] xs:h-[17rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[1.5px] sm:border-[2px] border-transparent border-r-[#39ff73]/80 border-l-cyan-400/60 filter drop-shadow-[0_0_10px_rgba(34,211,238,0.35)] will-change-transform animate-spin-continuous-slow-reverse" />
+                <div className="absolute w-[14rem] h-[14rem] xs:w-[15rem] xs:h-[15rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[3px] sm:border-[4px] border-transparent border-t-[#ff41e3] border-b-cyan-400 border-l-[#ff41e3] filter drop-shadow-[0_0_15px_rgba(255,65,227,0.5)] will-change-transform animate-spin-continuous-slow" />
+                <div className="absolute w-[15.5rem] h-[15.5rem] xs:w-[17rem] xs:h-[17rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[1.5px] sm:border-[2px] border-transparent border-r-[#bd29ff]/80 border-l-cyan-400/60 filter drop-shadow-[0_0_10px_rgba(34,211,238,0.35)] will-change-transform animate-spin-continuous-slow-reverse" />
               </div>
               
               {/* Floating Center Logo Surface (Optimized sizing for mobile & tablet layout balance) */}
