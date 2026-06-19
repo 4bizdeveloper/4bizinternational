@@ -67,24 +67,25 @@ export default function AboutPage() {
     <div 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative w-full min-h-screen text-white overflow-hidden font-sans select-none selection:bg-cyan-500 selection:text-black"
+      className="relative w-full min-h-screen text-white overflow-hidden font-sans select-none selection:bg-cyan-500 selection:text-black transition-colors duration-500"
       style={{
         background: `
-          radial-gradient(circle at 50% 35%, rgba(13, 27, 84, 0.95) 0%, rgba(5, 11, 40, 1) 60%),
-          radial-gradient(circle at 10% 15%, rgba(197, 160, 89, 0.04) 0%, transparent 40%),
-          radial-gradient(circle at 90% 85%, rgba(197, 160, 89, 0.03) 0%, transparent 40%),
-          #030616
+          radial-gradient(circle at 50% 40%, rgba(10, 34, 114, 0.95) 0%, rgba(4, 15, 61, 1) 70%),
+          radial-gradient(circle at 20% 20%, rgba(197, 160, 89, 0.08) 0%, transparent 45%),
+          radial-gradient(circle at 80% 80%, rgba(197, 160, 89, 0.06) 0%, transparent 45%),
+          #040d34
         `
       }}
     >
-      {/* Ambient Premium Core Gradients — Adjusted opacity and color palette to sync with the new backdrop */}
+      {/* Brightened Ambient Core Gradients matched to flyer depth — prevents absolute black zones */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[80vw] h-[80vw] rounded-full bg-gradient-to-tr from-cyan-600/5 via-blue-700/5 to-transparent blur-[130px] mix-blend-screen" />
-        <div className="absolute bottom-[20%] right-[-10%] w-[70vw] h-[70vw] rounded-full bg-gradient-to-bl from-blue-900/10 via-amber-500/5 to-transparent blur-[140px] mix-blend-screen" />
+        <div className="absolute top-[-5%] left-[-5%] w-[90vw] h-[90vw] sm:w-[80vw] sm:h-[80vw] rounded-full bg-gradient-to-tr from-blue-600/15 via-cyan-500/10 to-transparent blur-[140px] mix-blend-screen" />
+        <div className="absolute bottom-[15%] right-[-5%] w-[80vw] h-[80vw] sm:w-[70vw] sm:h-[70vw] rounded-full bg-gradient-to-bl from-blue-800/20 via-amber-500/8 to-transparent blur-[150px] mix-blend-screen" />
+        <div className="absolute top-[40%] left-[25%] w-[50vw] h-[50vw] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />
       </div>
 
       {/* Micro-mesh Grid Structural Backdrop Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
 
       {/* ─── HERO SECTION ─── */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
@@ -94,17 +95,17 @@ export default function AboutPage() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="w-full lg:w-3/5 flex flex-col space-y-6 text-left"
         >
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/10 to-transparent border border-cyan-500/20 px-4 py-1.5 rounded-full w-fit backdrop-blur-md">
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/15 to-transparent border border-cyan-500/20 px-4 py-1.5 rounded-full w-fit backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
             <span className="text-xs font-mono tracking-[0.3em] uppercase text-cyan-400 font-bold">Digital Vanguard</span>
           </div>
           <h1 className="text-4xl sm:text-6xl xl:text-7xl font-black tracking-tighter leading-[1.05]">
             Architecting <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 drop-shadow-[0_0_20px_rgba(34,211,238,0.2)]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 drop-shadow-[0_0_20px_rgba(34,211,238,0.25)]">
               Digital Futures
             </span>
           </h1>
-          <p className="text-white/70 text-base sm:text-lg max-w-xl leading-relaxed font-light">
+          <p className="text-white/80 text-base sm:text-lg max-w-xl leading-relaxed font-light">
             We are a high-performance global network crafting elite ecosystems, seamless architectures, and transformational growth platforms for modern market leaders.
           </p>
           <div className="pt-4">
@@ -141,7 +142,7 @@ export default function AboutPage() {
             <div className="absolute w-[21rem] h-[21rem] sm:w-[26rem] sm:h-[26rem] rounded-full border-[4px] border-transparent border-t-purple-500/40 border-b-teal-400/40 animate-[spin_35s_linear_infinite]" />
           </div>
 
-          <div className="absolute inset-0 bg-radial-gradient from-cyan-500/20 via-purple-500/10 to-transparent blur-3xl pointer-events-none" />
+          <div className="absolute inset-0 bg-radial-gradient from-cyan-500/25 via-purple-500/15 to-transparent blur-3xl pointer-events-none" />
           
           <div className="relative w-64 h-32 sm:w-80 sm:h-40 transition-transform duration-700 hover:scale-105 transform-gpu filter drop-shadow-[0_0_40px_rgba(6,182,212,0.4)]">
             <Image
@@ -157,14 +158,14 @@ export default function AboutPage() {
       </section>
 
       {/* ─── NUMERIC STATS INTERCONNECTED LINE ─── */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-8 border-t border-b border-white/5 bg-white/[0.01] backdrop-blur-md">
+      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-8 border-t border-b border-white/10 bg-white/[0.02] backdrop-blur-md">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
           {stats.map((stat, idx) => (
-            <div key={idx} className="flex flex-col space-y-1 md:pl-4 md:border-l border-white/10 first:border-0 py-2">
-              <div className="flex items-center justify-center md:justify-start space-x-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.2)]">
+            <div key={idx} className="flex flex-col space-y-1 md:pl-4 md:border-l border-white/15 first:border-0 py-2">
+              <div className="flex items-center justify-center md:justify-start space-x-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(34,211,238,0.25)]">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </div>
-              <span className="text-xs sm:text-sm text-white/50 font-mono uppercase tracking-widest">{stat.label}</span>
+              <span className="text-xs sm:text-sm text-white/60 font-mono uppercase tracking-widest">{stat.label}</span>
             </div>
           ))}
         </div>
@@ -176,7 +177,7 @@ export default function AboutPage() {
         {/* Extended Text Block */}
         <div className="lg:col-span-7 flex flex-col space-y-8">
           <div className="flex flex-col space-y-3">
-            <div className="inline-flex items-center space-x-2 text-purple-400 font-mono text-xs uppercase tracking-widest font-bold">
+            <div className="inline-flex items-center space-x-2 text-purple-300 font-mono text-xs uppercase tracking-widest font-bold">
               <RiFocus2Line className="text-base animate-spin" style={{ animationDuration: '6s' }} />
               <span>Operational DNA & Strategy Blueprint</span>
             </div>
@@ -185,7 +186,7 @@ export default function AboutPage() {
             </h2>
           </div>
           
-          <div className="space-y-6 text-white/80 text-base sm:text-lg font-light leading-relaxed text-justify">
+          <div className="space-y-6 text-white/90 text-base sm:text-lg font-light leading-relaxed text-justify">
             <p>
               At 4Biz International, we see a digital landscape full of untapped potential. We transform that potential into performance by merging cutting-edge technological innovation with master-class strategic planning. Our mission is to scale your vision, optimize your operations, and ensure your business doesn't just survive the digital evolution—it leads it.
             </p>
@@ -195,32 +196,32 @@ export default function AboutPage() {
           </div>
 
           {/* Value Highlights Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-white/5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-white/10">
             <div className="flex items-start space-x-3 group">
-              <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-300">
+              <div className="p-2.5 rounded-xl bg-cyan-500/15 text-cyan-400 border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-300">
                 <RiCpuLine className="text-xl" />
               </div>
               <div>
                 <h4 className="text-sm font-bold text-white mb-1">Elite Infrastructure</h4>
-                <p className="text-xs text-white/50 leading-normal">High-throughput custom application stacks.</p>
+                <p className="text-xs text-white/60 leading-normal">High-throughput custom application stacks.</p>
               </div>
             </div>
             <div className="flex items-start space-x-3 group">
-              <div className="p-2.5 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 group-hover:bg-purple-500 group-hover:text-black transition-all duration-300">
+              <div className="p-2.5 rounded-xl bg-purple-500/15 text-purple-400 border border-purple-500/20 group-hover:bg-purple-500 group-hover:text-black transition-all duration-300">
                 <RiShieldFlashLine className="text-xl" />
               </div>
               <div>
                 <h4 className="text-sm font-bold text-white mb-1">Absolute Velocity</h4>
-                <p className="text-xs text-white/50 leading-normal">Zero-latency optimization protocols.</p>
+                <p className="text-xs text-white/60 leading-normal">Zero-latency optimization protocols.</p>
               </div>
             </div>
             <div className="flex items-start space-x-3 group">
-              <div className="p-2.5 rounded-xl bg-pink-500/10 text-pink-400 border border-pink-500/20 group-hover:bg-pink-500 group-hover:text-black transition-all duration-300">
+              <div className="p-2.5 rounded-xl bg-pink-500/15 text-pink-400 border border-pink-500/20 group-hover:bg-pink-500 group-hover:text-black transition-all duration-300">
                 <RiGlobalLine className="text-xl" />
               </div>
               <div>
                 <h4 className="text-sm font-bold text-white mb-1">Global Scale</h4>
-                <p className="text-xs text-white/50 leading-normal">Cross-border operations across top clusters.</p>
+                <p className="text-xs text-white/60 leading-normal">Cross-border operations across top clusters.</p>
               </div>
             </div>
           </div>
@@ -228,19 +229,19 @@ export default function AboutPage() {
 
         {/* Brand Video Inside an Authentic Smartphone Chassis Framework */}
         <div className="lg:col-span-5 w-full flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-[290px] sm:max-w-[320px] aspect-[9/16] rounded-[2.8rem] p-3.5 bg-[#0e1126] border-[4px] border-[#222954] shadow-[0_30px_70px_rgba(0,0,0,0.7),inset_0_2px_4px_rgba(255,255,255,0.1)] group transform-gpu transition-all duration-500 hover:scale-[1.03] hover:border-cyan-400/50">
+          <div className="relative w-full max-w-[290px] sm:max-w-[320px] aspect-[9/16] rounded-[2.8rem] p-3.5 bg-[#0e1438] border-[4px] border-[#222e6b] shadow-[0_30px_70px_rgba(0,0,0,0.7),inset_0_2px_4px_rgba(255,255,255,0.1)] group transform-gpu transition-all duration-500 hover:scale-[1.03] hover:border-cyan-400/50">
             
             {/* Left Hardware Volume Keys (+/-) */}
-            <div className="absolute top-[24%] -left-[8px] w-[4px] h-9 bg-[#2b3369] rounded-l border-l border-white/10 shadow-md z-50" />
-            <div className="absolute top-[32%] -left-[8px] w-[4px] h-9 bg-[#2b3369] rounded-l border-l border-white/10 shadow-md z-50" />
+            <div className="absolute top-[24%] -left-[8px] w-[4px] h-9 bg-[#2b3a8a] rounded-l border-l border-white/10 shadow-md z-50" />
+            <div className="absolute top-[32%] -left-[8px] w-[4px] h-9 bg-[#2b3a8a] rounded-l border-l border-white/10 shadow-md z-50" />
             
             {/* Right Hardware Power Switch Button */}
-            <div className="absolute top-[28%] -right-[8px] w-[4px] h-12 bg-[#2b3369] rounded-r border-r border-white/10 shadow-md z-50" />
+            <div className="absolute top-[28%] -right-[8px] w-[4px] h-12 bg-[#2b3a8a] rounded-r border-r border-white/10 shadow-md z-50" />
             
             {/* Top Ear-Speaker Strip & Dot Sensor Matrix */}
             <div className="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-black rounded-full z-30 flex items-center justify-center space-x-1.5 px-3">
               <div className="w-8 h-1 bg-white/20 rounded-full" />
-              <div className="w-1.5 h-1.5 rounded-full bg-[#161a36]" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#161f52]" />
             </div>
 
             {/* Inner Display Surface */}
@@ -267,7 +268,7 @@ export default function AboutPage() {
       <motion.div
         className="pointer-events-none absolute -inset-px opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 z-10"
         style={{
-          background: `radial-gradient(600px circle at var(--x) var(--y), rgba(34, 211, 238, 0.02), transparent 50%)`,
+          background: `radial-gradient(600px circle at var(--x) var(--y), rgba(34, 211, 238, 0.04), transparent 50%)`,
           // @ts-ignore - dynamic styling variable bindings
           '--x': smoothX,
           '--y': smoothY,
