@@ -31,8 +31,7 @@ const Counter: React.FC<CounterProps> = ({ value, suffix = '' }) => {
   }, [inView, count, value]);
 
   return (
-    <motion.span ref={ref} className="text-3xl sm:text-5xl font-black text-white selection:bg-cyan-5
-00">
+    <motion.span ref={ref} className="text-3xl sm:text-5xl font-black text-white selection:bg-cyan-500">
       {rounded}
     </motion.span>
   );
@@ -69,18 +68,15 @@ export default function AboutPage() {
       className="relative w-full min-h-screen text-white overflow-x-hidden font-sans select-none selection:bg-cyan-500 selection:text-black transition-colors duration-500 transform-gpu"
       style={{
         background: `
-          radial-gradient(circle at 50% 40%, rgba(10, 34, 114, 0.95) 0%, rgba(4, 15, 61, 1) 70%),
-          radial-gradient(circle at 20% 20%, rgba(197, 160, 89, 0.08) 0%, transparent 45%),
-          radial-gradient(circle at 80% 80%, rgba(197, 160, 89, 0.06) 0%, transparent 45%),
-          #040d34
+          radial-gradient(circle at 50% 45%, #081d63 0%, #051245 45%, #030a2b 80%, #020721 100%)
         `
       }}
     >
-      {/* Brightened Ambient Core Gradients matched to flyer depth — prevents absolute black zones */}
+      {/* Dynamic Ambient Core Glow Layers matching the flyer's luminosity across all breakpoints */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[-5%] left-[-5%] w-[90vw] h-[90vw] sm:w-[80vw] sm:h-[80vw] rounded-full bg-gradient-to-tr from-blue-600/15 via-cyan-500/10 to-transparent blur-[140px] mix-blend-screen" />
-        <div className="absolute bottom-[15%] right-[-5%] w-[80vw] h-[80vw] sm:w-[70vw] sm:h-[70vw] rounded-full bg-gradient-to-bl from-blue-800/20 via-amber-500/8 to-transparent blur-[150px] mix-blend-screen" />
-        <div className="absolute top-[40%] left-[25%] w-[50vw] h-[50vw] rounded-full bg-blue-500/5 blur-[120px]" />
+        <div className="absolute top-[5%] left-[10%] w-[85vw] h-[85vw] sm:w-[70vw] sm:h-[70vw] rounded-full bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-transparent blur-[130px] mix-blend-screen" />
+        <div className="absolute bottom-[20%] right-[5%] w-[80vw] h-[80vw] sm:w-[60vw] sm:h-[60vw] rounded-full bg-gradient-to-tl from-blue-600/15 via-indigo-500/10 to-transparent blur-[140px] mix-blend-screen" />
+        <div className="absolute top-[45%] left-[20%] w-[60vw] h-[60vw] rounded-full bg-blue-400/8 blur-[110px] mix-blend-screen" />
       </div>
 
       {/* Micro-mesh Grid Structural Backdrop Overlay */}
