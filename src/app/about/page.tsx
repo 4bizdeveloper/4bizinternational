@@ -3,7 +3,7 @@
 import React, { useRef, useMemo, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, animate, useInView } from 'framer-motion';
 import Image from 'next/image';
-import { RiCompass3Line, RiFocus2Line, RiShieldFlashLine, RiCpuLine, RiGlobalLine } from 'react-icons/ri';
+import { RiCompass3Line, RiFocus2Line, RiShieldFlashLine, RiCpuLine, RiGlobalLine, RiEyeLine, RiRocketLine } from 'react-icons/ri';
 import Contact from '@/components/Contact';
 
 // ─── PERFORMANCE OPTIMIZED CLS-FREE COUNTER ─────────────────────────────────
@@ -16,7 +16,9 @@ const Counter: React.FC<CounterProps> = ({ value, suffix = '' }) => {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.floor(latest));
+  
+  // Declarative rendering instead of main-thread thrashing DOM selectors
+  const rounded = useTransform(count, (latest) => `${Math.floor(latest)}${suffix}`);
 
   useEffect(() => {
     if (inView) {
@@ -28,15 +30,12 @@ const Counter: React.FC<CounterProps> = ({ value, suffix = '' }) => {
     }
   }, [inView, count, value]);
 
-  useEffect(() => {
-    return rounded.onChange((latest) => {
-      if (ref.current) {
-        ref.current.textContent = latest + suffix;
-      }
-    });
-  }, [rounded, suffix]);
-
-  return <span ref={ref} className="text-3xl sm:text-5xl font-black text-white" />;
+  return (
+    <motion.span ref={ref} className="text-3xl sm:text-5xl font-black text-white selection:bg-cyan-5
+00">
+      {rounded}
+    </motion.span>
+  );
 };
 
 // ─── MAIN ABOUT PAGE COMPONENT ───────────────────────────────────────────────
@@ -67,7 +66,7 @@ export default function AboutPage() {
     <div 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative w-full min-h-screen text-white overflow-hidden font-sans select-none selection:bg-cyan-500 selection:text-black transition-colors duration-500"
+      className="relative w-full min-h-screen text-white overflow-x-hidden font-sans select-none selection:bg-cyan-500 selection:text-black transition-colors duration-500 transform-gpu"
       style={{
         background: `
           radial-gradient(circle at 50% 40%, rgba(10, 34, 114, 0.95) 0%, rgba(4, 15, 61, 1) 70%),
@@ -78,33 +77,36 @@ export default function AboutPage() {
       }}
     >
       {/* Brightened Ambient Core Gradients matched to flyer depth — prevents absolute black zones */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <div className="absolute top-[-5%] left-[-5%] w-[90vw] h-[90vw] sm:w-[80vw] sm:h-[80vw] rounded-full bg-gradient-to-tr from-blue-600/15 via-cyan-500/10 to-transparent blur-[140px] mix-blend-screen" />
         <div className="absolute bottom-[15%] right-[-5%] w-[80vw] h-[80vw] sm:w-[70vw] sm:h-[70vw] rounded-full bg-gradient-to-bl from-blue-800/20 via-amber-500/8 to-transparent blur-[150px] mix-blend-screen" />
-        <div className="absolute top-[40%] left-[25%] w-[50vw] h-[50vw] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />
+        <div className="absolute top-[40%] left-[25%] w-[50vw] h-[50vw] rounded-full bg-blue-500/5 blur-[120px]" />
       </div>
 
       {/* Micro-mesh Grid Structural Backdrop Overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
 
       {/* ─── HERO SECTION ─── */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8">
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full lg:w-3/5 flex flex-col space-y-6 text-left"
+          className="w-full lg:w-[58%] flex flex-col space-y-6 text-left"
         >
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/15 to-transparent border border-cyan-500/20 px-4 py-1.5 rounded-full w-fit backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
             <span className="text-xs font-mono tracking-[0.3em] uppercase text-cyan-400 font-bold">Digital Vanguard</span>
           </div>
-          <h1 className="text-4xl sm:text-6xl xl:text-7xl font-black tracking-tighter leading-[1.05]">
-            Architecting <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 drop-shadow-[0_0_20px_rgba(34,211,238,0.25)]">
+          
+          {/* Enhanced clipping prevention box wrapper */}
+          <h1 className="text-4xl sm:text-6xl xl:text-7xl font-black tracking-tight leading-[1.1] break-words text-white py-1">
+            Architecting <br className="hidden sm:block" />
+            <span className="inline-block px-1 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-400 via-blue-400 to-purple-500 drop-shadow-[0_0_25px_rgba(34,211,238,0.3)]">
               Digital Futures
             </span>
           </h1>
+          
           <p className="text-white/80 text-base sm:text-lg max-w-xl leading-relaxed font-light">
             We are a high-performance global network crafting elite ecosystems, seamless architectures, and transformational growth platforms for modern market leaders.
           </p>
@@ -124,7 +126,7 @@ export default function AboutPage() {
           initial={{ opacity: 0, scale: 0.95, x: 30 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full lg:w-2/5 flex items-center justify-center relative min-h-[350px] sm:min-h-[420px]"
+          className="w-full lg:w-[42%] flex items-center justify-center relative min-h-[350px] sm:min-h-[420px]"
           style={{ perspective: 1200 }}
         >
           {/* Energy Radiation Pulse Rings */}
@@ -171,8 +173,71 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ─── MISSION & VISION SECTION ─── */}
+      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-24 pb-4 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 relative">
+          
+          {/* Mission Card */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative p-8 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500 transform-gpu hover:-translate-y-1"
+          >
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="p-3.5 rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                <RiRocketLine className="text-2xl sm:text-3xl" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">Our Mission</h3>
+            </div>
+            <p className="text-white/80 text-base sm:text-lg font-light leading-relaxed text-justify">
+              To empower businesses with innovative technology, digital solutions, and expert support that drive growth, efficiency, and lasting success.
+            </p>
+          </motion.div>
+
+          {/* Vision Card */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative p-8 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-xl overflow-hidden hover:border-purple-500/30 transition-all duration-500 transform-gpu hover:-translate-y-1"
+          >
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="p-3.5 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/20 group-hover:bg-purple-500 group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.1)]">
+                <RiEyeLine className="text-2xl sm:text-3xl" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">Our Vision</h3>
+            </div>
+            <p className="text-white/80 text-base sm:text-lg font-light leading-relaxed text-justify">
+              To inspire infinite possibilities by helping businesses embrace innovation, achieve sustainable growth, and thrive in the digital future.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Center Typography Block */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-20 text-center max-w-4xl mx-auto flex flex-col space-y-5 px-4"
+        >
+          <h4 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-400 via-blue-400 to-purple-400 filter drop-shadow-[0_2px_20px_rgba(34,211,238,0.35)] uppercase py-2">
+            Impacting Infinite..!!
+          </h4>
+          <div className="w-24 h-[3px] bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full" />
+          <p className="text-white/85 text-base sm:text-lg md:text-xl tracking-wide font-medium font-mono max-w-3xl mx-auto leading-relaxed">
+            Creating limitless opportunities through technology, innovation, and business excellence
+          </p>
+        </motion.div>
+      </section>
+
       {/* ─── EXPANDED BRAND STORY & SMARTPHONE REEL CONTAINER ─── */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-12 pb-20 md:pt-14 md:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
         {/* Extended Text Block */}
         <div className="lg:col-span-7 flex flex-col space-y-8">
