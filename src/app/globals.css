@@ -5,31 +5,9 @@
   -webkit-user-select: text; /* Safari */
   -ms-user-select: text;     /* IE 10 and IE 11 */
   user-select: text;        /* Standard syntax */
-  box-sizing: border-box;
 }
 
-html, body {
-  background-color: #010305;
-  color: #ffffff;
-  overflow-x: hidden;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  scroll-behavior: smooth;
-}
-
-/* Force hardware GPU-rendering layouts across scroll iterations */
-body {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Clear tapping visual glitches on mobile devices */
-a, button, input, select {
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Targets Next.js development notification boxes */
+/* This targets the Next.js dev overlay/indicator */
 .nextjs-dev-indicator {
   display: none !important;
 }
