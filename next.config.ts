@@ -14,8 +14,31 @@ const nextConfig: NextConfig = {
   },
   devIndicators: false,
   turbopack: {
-    // This creates an absolute path to your project folder
     root: path.resolve(__dirname),
+  },
+
+  // ── UNIVERSAL HIGH-PERFORMANCE ROUTER HEADERS ──
+  // This tells standard web server runtimes how to stream your video asset
+  async headers() {
+    return [
+      {
+        source: '/hero-video-1.mp4',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Accept-Ranges',
+            value: 'bytes',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          }
+        ],
+      },
+    ];
   },
 };
 

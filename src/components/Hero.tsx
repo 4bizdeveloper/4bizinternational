@@ -35,6 +35,11 @@ export default function Hero() {
       try {
         video.muted = true;
         video.defaultMuted = true;
+        // Forces cross-origin data isolation bypass checks
+        video.setAttribute('autoplay', '');
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+        
         await video.play();
         setIsVideoLoaded(true);
       } catch (error) {
@@ -42,17 +47,17 @@ export default function Hero() {
       }
     };
 
-    // Initial Trigger
+    // Run on initial rendering mount
     forcePlayVideo();
 
-    // Wakes the video up if user locks/unlocks phone or changes browser tabs
+    // Wakes the background video up if user locks/unlocks phone screen or leaves the browser app
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
         forcePlayVideo();
       }
     };
 
-    // Recovers video from iOS Safari low-power background micro-stalls
+    // Prevents mobile browser processors from freezing media loops under low-power states
     const handlePlaybackSync = () => {
       if (video.paused) {
         forcePlayVideo();
@@ -62,7 +67,7 @@ export default function Hero() {
     document.addEventListener('visibilitychange', handleVisibilityChange);
     window.addEventListener('focus', handlePlaybackSync);
     window.addEventListener('pageshow', handlePlaybackSync);
-    // Absolute fallback: the moment a user touches anywhere on mobile, force kickplay
+    // Touch Handshake: Ensures the absolute millisecond a mobile finger touches the viewport, video kicks alive
     document.addEventListener('touchstart', handlePlaybackSync, { once: true });
 
     return () => {
@@ -135,7 +140,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── VIDEO ONLY CONTROLLER BACKDROP ── */}
+        {/* ── HIGH PERFORMANCE BACKDROP MATRIX ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -155,19 +160,20 @@ export default function Hero() {
               autoPlay
               controls={false}
               preload="auto"
+              crossOrigin="anonymous"
               className={`absolute inset-0 w-full h-full object-cover brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-500 ${
                 isVideoLoaded ? 'opacity-100' : 'opacity-40'
               }`}
               style={{ 
                 willChange: 'transform, opacity',
-                transform: 'translate3d(0,0,0)' // Fast-tracks video rendering pipelines directly to GPU
+                transform: 'translate3d(0,0,0)' // Bypasses CPU main lines, shifts processing direct to GPU
               }}
             />
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
         </div>
 
-        {/* ── NAVIGATION SIDEBAR ── */}
+        {/* ── ACCESSIBLE NAVIGATION SIDEBAR ── */}
         <nav
           aria-label="Social Profile Navigation"
           className={`
@@ -201,7 +207,7 @@ export default function Hero() {
           ))}
         </nav>
 
-        {/* ── CENTER CONTAINER ── */}
+        {/* ── TYPOGRAPHY LAYER CONTAINER ── */}
         <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-h-0">
           <div 
             className={`
@@ -238,7 +244,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── SCROLL DOWN ANIMATION LAYER ── */}
+        {/* ── SCROLL DOWN MOUSE WHEEL LAYER ── */}
         <div
           className={`
             relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500

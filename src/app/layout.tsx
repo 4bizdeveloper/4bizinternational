@@ -19,9 +19,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="apple-touch-icon" href="/images/4biz_logo.avif" />
         <link rel="shortcut icon" href="/images/4biz_logo.avif" />
         
-        {/* CRITICAL FOR INSTANT LOADING & PERFORMANCE: 
-          Preloads the heavy MP4 stream as high priority immediately before parsing JS layout maps.
-        */}
+        {/* ── HIGH PERFORMANCE MEDIA HINT ENGINE ── */}
+        {/* Instructs the network to fetch the MP4 immediately, eliminating white screens */}
         <link 
           rel="preload" 
           href="/hero-video-1.mp4" 

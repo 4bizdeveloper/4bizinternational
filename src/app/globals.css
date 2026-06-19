@@ -17,19 +17,19 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* Force hardware rendering for layout safety profiles */
+/* Force hardware GPU-rendering layouts across scroll iterations */
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Clear tapping glitches on modern touch screen displays */
+/* Clear tapping visual glitches on mobile devices */
 a, button, input, select {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* This targets the Next.js dev overlay/indicator */
+/* Targets Next.js development notification boxes */
 .nextjs-dev-indicator {
   display: none !important;
 }
