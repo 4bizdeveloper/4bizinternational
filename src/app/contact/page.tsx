@@ -17,12 +17,13 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[#070e25] text-white selection:bg-blue-500 selection:text-white overflow-x-hidden antialiased scroll-smooth">
+    /* Updated main container background to match the image's vibrant royal/navy blue radial gradient */
+    <div className="min-h-screen bg-[radial-gradient(circle_at_center,_#0b2154_0%,_#051133_50%,_#030a21_100%)] text-white selection:bg-blue-500 selection:text-white overflow-x-hidden antialiased scroll-smooth">
       
       {/* HERO SECTION */}
       {/* Slightly increased pt-40 sm:pt-44 to add that clean space below your header logo/menu */}
       {/* Updated bottom padding from pb-6 to a responsive scale (pb-12 sm:pb-16 md:pb-20) */}
-      <section className="relative relative-hero min-h-[45vh] sm:min-h-[50vh] flex items-center justify-center pt-40 sm:pt-44 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#070e25]">
+      <section className="relative relative-hero min-h-[45vh] sm:min-h-[50vh] flex items-center justify-center pt-40 sm:pt-44 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-transparent">
 
         {/* Hero Core Content Wrapper */}
         <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center">
@@ -41,7 +42,8 @@ export default function ContactPage() {
       </section>
 
       {/* IMPORTED CONTACT SECTION - Seamlessly integrated space reduction */}
-      <section className="relative z-10 w-full bg-[#070e25]">
+      {/* Set background to transparent to let the main radial gradient flow through perfectly */}
+      <section className="relative z-10 w-full bg-transparent">
         <Contact />
       </section>
 

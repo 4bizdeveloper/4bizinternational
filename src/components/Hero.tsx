@@ -29,21 +29,53 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Ensure high-performance video play safety trigger
+  // ── BULLETPROOF MOBILE AUTOPLAY & RESUME ENGINE ──
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play()
-        .then(() => setIsVideoLoaded(true))
-        .catch(() => {
-          console.log("Video autoplay prevented or stalled.");
-          setIsVideoLoaded(false);
-        });
-    }
-  }, []);
+    const video = videoRef.current;
+    if (!video) return;
 
-  const handleVideoFailure = () => {
-    setIsVideoLoaded(false);
-  };
+    const attemptPlay = async () => {
+      try {
+        // Force properties programmatically right before triggering play to satisfy mobile viewports
+        video.muted = true;
+        video.defaultMuted = true;
+        
+        await video.play();
+        setIsVideoLoaded(true);
+      } catch (error) {
+        console.log("Autoplay playback micro-managed or delayed:", error);
+      }
+    };
+
+    // Trigger on mount
+    attemptPlay();
+
+    // Fix for: Hiding browser / switching apps / waking device up freezing video
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        attemptPlay();
+      }
+    };
+
+    // Fix for Safari/iOS battery saving freeze after micro-stalls
+    const handleSyncPlay = () => {
+      if (video.paused) {
+        attemptPlay();
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('focus', handleSyncPlay);
+    window.addEventListener('pageshow', handleSyncPlay);
+    document.addEventListener('touchstart', handleSyncPlay, { once: true }); // Fallback fallback handshake trigger
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('focus', handleSyncPlay);
+      window.removeEventListener('pageshow', handleSyncPlay);
+      document.removeEventListener('touchstart', handleSyncPlay);
+    };
+  }, []);
 
   const socials = [
     {
@@ -107,7 +139,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── PERFORMANCE BACKGROUND MATRIX (VIDEO BACKGROUND CONTEXT ONLY) ── */}
+        {/* ── PERFORMANCE BACKGROUND MATRIX (VIDEO ONLY LAYER) ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -118,7 +150,9 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* Ultra-modern pure video viewport frame wrapper without fallback image DOM overhead */}
+            {/* Ultra-modern hardware-accelerated video layer. 
+              Added dynamic inline-plays-out properties for total cross-origin rendering safety on mobile.
+            */}
             <video
               ref={videoRef}
               src="/hero-video-1.mp4"
@@ -126,17 +160,17 @@ export default function Hero() {
               muted
               playsInline
               autoPlay
+              controls={false}
               preload="auto"
-              onCanPlay={() => setIsVideoLoaded(true)}
-              onStalled={handleVideoFailure}
-              onSuspend={handleVideoFailure}
-              onEmptied={handleVideoFailure}
-              onError={handleVideoFailure}
-              className={`absolute inset-0 w-full h-full object-cover brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-700 ${
-                isVideoLoaded ? 'opacity-100' : 'opacity-40'
+              className={`absolute inset-0 w-full h-full object-cover brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-500 ${
+                isVideoLoaded ? 'opacity-100' : 'opacity-0'
               }`}
-              style={{ willChange: 'transform, opacity' }}
+              style={{ 
+                willChange: 'transform, opacity',
+                transform: 'translate3d(0,0,0)' // Hard-locks layer to GPU rendering matrices
+              }}
             />
+
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
         </div>

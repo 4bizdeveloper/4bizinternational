@@ -73,20 +73,24 @@ export default function BlogsLandingPage() {
       />
 
       {/* ─── MAIN LAYOUT BLOCK ─── */}
-      {/* pt-40 guarantees safe distance from absolute/fixed headers on all screen widths */}
-      <main className="min-h-screen bg-slate-950 text-slate-100 pt-40 pb-24 px-4 sm:px-8 lg:px-12 selection:bg-blue-600 selection:text-white">
-        <div className="max-w-7xl mx-auto w-full">
+      {/* Background configured with a responsive rich radial-gradient matching the image tone, ensuring deep blues without harsh dark voids */}
+      <main className="min-h-screen text-slate-100 pt-40 pb-24 px-4 sm:px-8 lg:px-12 selection:bg-blue-600 selection:text-white relative overflow-hidden bg-[#020722] bg-[radial-gradient(circle_at_center,rgba(16,36,108,1)_0%,rgba(6,15,53,1)_50%,rgba(2,7,34,1)_100%)]">
+        
+        {/* Ambient background glow modifier to guarantee all device widths retain luminous rich blue tones */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto w-full relative z-10">
           
           {/* Centered Page Identification Header */}
           <header className="max-w-3xl mx-auto text-center mb-16 sm:mb-24 px-2">
-            <span className="text-blue-500 font-semibold uppercase tracking-[0.25em] text-xs sm:text-sm mb-4 block">
+            <span className="text-blue-400 font-semibold uppercase tracking-[0.25em] text-xs sm:text-sm mb-4 block">
               Knowledge Hub
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight mb-6 leading-tight">
-              Corporate Insights & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500">Global Strategy</span>
+              Corporate Insights & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400">Global Strategy</span>
             </h1>
             <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto mb-6 rounded-full" />
-            <p className="text-slate-400 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="text-slate-300 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
               Actionable strategic execution files, localized regulatory breakdowns, and institutional framework evaluations curated by 4Biz International advisory groups.
             </p>
           </header>
@@ -96,12 +100,12 @@ export default function BlogsLandingPage() {
           <section className="w-full px-2 sm:px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10">
               
-              <article className="group relative bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 flex flex-col justify-between transform-gpu hover:shadow-[0_10px_30px_-15px_rgba(59,130,246,0.2)]">
+              <article className="group relative bg-[#0b143c]/60 backdrop-blur-md border border-blue-900/40 rounded-2xl overflow-hidden hover:border-blue-400/50 transition-all duration-300 flex flex-col justify-between transform-gpu hover:shadow-[0_10px_40px_-15px_rgba(37,99,235,0.4)]">
                 
                 {/* Visual Top Container Block */}
                 <div>
                   {/* Hero Image Container: Lock-tight layout box ratio completely prevents cumulative layout shifts (CLS) */}
-                  <div className="relative aspect-[16/10] w-full bg-slate-900 overflow-hidden border-b border-slate-800/60">
+                  <div className="relative aspect-[16/10] w-full bg-slate-900 overflow-hidden border-b border-blue-950/60">
                     <Image 
                       src={featuredBlog.image} 
                       alt="Modern architectural glass highrises in the Dubai corporate commercial hub representing cross-border enterprise development metrics." 
@@ -111,7 +115,7 @@ export default function BlogsLandingPage() {
                       className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     />
                     <div className="absolute top-4 left-4 z-10">
-                      <span className="bg-slate-950/80 backdrop-blur-md text-blue-400 text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-md border border-white/5">
+                      <span className="bg-[#040a27]/90 backdrop-blur-md text-blue-400 text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-md border border-blue-800/30">
                         {featuredBlog.category}
                       </span>
                     </div>
@@ -120,19 +124,19 @@ export default function BlogsLandingPage() {
                   {/* Core Content Layout Block */}
                   <div className="p-6 sm:p-8">
                     {/* Timestamp & Meta Information Row */}
-                    <div className="flex items-center gap-4 text-xs text-slate-500 mb-4 font-medium">
+                    <div className="flex items-center gap-4 text-xs text-slate-400 mb-4 font-medium">
                       <div className="flex items-center gap-1.5">
-                        <RiCalendarLine className="text-sm text-slate-600" />
+                        <RiCalendarLine className="text-sm text-blue-400/80" />
                         <span>{featuredBlog.date}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <RiTimeLine className="text-sm text-slate-600" />
+                        <RiTimeLine className="text-sm text-blue-400/80" />
                         <span>{featuredBlog.readTime}</span>
                       </div>
                     </div>
 
                     {/* Headline Link Target */}
-                    <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                    <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug mb-3 group-hover:text-blue-300 transition-colors duration-300">
                       <Link href={featuredBlog.slug} className="focus:outline-none">
                         <span className="absolute inset-0" aria-hidden="true" />
                         {featuredBlog.title}
@@ -140,7 +144,7 @@ export default function BlogsLandingPage() {
                     </h2>
 
                     {/* Brief Narrative Summary */}
-                    <p className="text-slate-400 text-sm sm:text-base font-light leading-relaxed line-clamp-3">
+                    <p className="text-slate-300 text-sm sm:text-base font-light leading-relaxed line-clamp-3">
                       {featuredBlog.excerpt}
                     </p>
                   </div>
@@ -148,7 +152,7 @@ export default function BlogsLandingPage() {
 
                 {/* Card Base Row Block */}
                 <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-0 mt-auto">
-                  <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-blue-400 border-t border-slate-800/60 pt-4 w-full group-hover:text-blue-300 transition-colors">
+                  <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-blue-400 border-t border-blue-950/80 pt-4 w-full group-hover:text-blue-300 transition-colors">
                     <span>Read Investigation</span>
                     <RiArrowRightUpLine className="text-lg transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 text-blue-400 group-hover:text-blue-300" />
                   </div>
