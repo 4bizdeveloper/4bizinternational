@@ -78,7 +78,7 @@ export default function ServicesPage() {
       visualAsset: "/services/ai-1.png",
       accentColor: "from-cyan-400 to-blue-500",
       glowColor: "from-cyan-500/40 via-blue-500/10 to-transparent",
-      url: "/services/enterprise-applications",
+      url: "/services/enterprise-business-applications-erp-crm",
       points: [
         "Custom ERP Development", "Custom CRM Development", "Microsoft Dynamics 365", 
         "Odoo ERP", "ERPNext", "4Biz ERP Solutions", "Sales Automation", 
@@ -92,7 +92,7 @@ export default function ServicesPage() {
       visualAsset: "/services/ai-1.png",
       accentColor: "from-blue-400 to-indigo-500",
       glowColor: "from-blue-500/40 via-indigo-500/10 to-transparent",
-      url: "/services/web-mobile-commerce",
+      url: "/services/web-mobile-commerce-solutions",
       points: [
         "UI/UX Design", "Corporate Website Development", "Web Application Development", 
         "Mobile App Development", "E-commerce Solutions", "CMS Development", 
@@ -106,7 +106,7 @@ export default function ServicesPage() {
       visualAsset: "/services/ai-1.png",
       accentColor: "from-amber-400 to-orange-500",
       glowColor: "from-amber-500/40 via-orange-500/10 to-transparent",
-      url: "/services/digital-marketing",
+      url: "/services/digital-growth-marketing-brand-experience",
       points: [
         "SEO (Search Engine Optimization)", "AEO (Answer Engine Optimization)", "Social Media Management", 
         "Social Media Advertising", "Performance Marketing", "Content Marketing", "Brand Strategy", 
@@ -121,7 +121,7 @@ export default function ServicesPage() {
       visualAsset: "/services/ai-1.png",
       accentColor: "from-purple-400 to-pink-500",
       glowColor: "from-purple-500/40 via-pink-500/10 to-transparent",
-      url: "/services/customer-engagement",
+      url: "/services/communication-customer-engagement-solutions",
       points: [
         "Email Marketing", "SMS Marketing", "WhatsApp Business Solutions", 
         "Marketing Automation", "Bulk Messaging Solutions", "Newsletter Campaigns", 
@@ -135,7 +135,7 @@ export default function ServicesPage() {
       visualAsset: "/services/ai-1.png",
       accentColor: "from-emerald-400 to-teal-500",
       glowColor: "from-emerald-500/40 via-teal-500/10 to-transparent",
-      url: "/services/cloud-infrastructure",
+      url: "/services/cloud-hosting-infrastructure-services",
       points: [
         "Domain Registration", "International & Country TLDs", "Shared Hosting", 
         "Reseller Hosting", "VPS Hosting", "Dedicated Servers", "AWS Cloud Solutions", 
@@ -150,7 +150,7 @@ export default function ServicesPage() {
       visualAsset: "/services/ai-1.png",
       accentColor: "from-red-500 to-rose-500",
       glowColor: "from-red-500/40 via-rose-500/10 to-transparent",
-      url: "/services/cybersecurity-protection",
+      url: "/services/cybersecurity-digital-protection",
       points: [
         "Penetration Testing", "Vulnerability Assessment", "Malware Analysis", 
         "Threat Intelligence", "Security Audits", "SSL Certificates", "Website Security", 
@@ -164,7 +164,7 @@ export default function ServicesPage() {
       visualAsset: "/services/ai-1.png", 
       accentColor: "from-lime-400 to-emerald-400",
       glowColor: "from-lime-500/50 via-emerald-500/15 to-transparent",
-      url: "/services/digital-transformation",
+      url: "/services/digital-transformation-emerging-technologies",
       points: [
         "Artificial Intelligence Solutions", "Generative AI Integration", "AI Chatbots & Assistants", 
         "Business Process Automation", "Data Analytics & BI", "Digital Transformation Consulting", 
@@ -186,13 +186,16 @@ export default function ServicesPage() {
       
       {/* Ultra-Modern Connected Vector Spline System covering top header to footer */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-50 mix-blend-screen">
-        <svg className="absolute top-0 left-0 w-full h-[100%]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 5000" preserveAspectRatio="none">
+        <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 5000" preserveAspectRatio="none">
           {/* Header Spline Structure */}
           <path d="M-100,150 C350,280 200,50 750,380 C1100,620 950,150 1600,450" fill="none" stroke="url(#spline-gradient-blue)" strokeWidth="3" />
           {/* Middle Body Splines */}
           <path d="M1500,600 C1100,1200 800,900 500,1700 C200,2300 700,2100 -100,2700" fill="none" stroke="url(#spline-gradient-neon)" strokeWidth="2.5" />
           <path d="M-80,1800 C400,2200 950,1700 1100,2900 C1250,3800 600,3900 1550,4400" fill="none" stroke="url(#spline-gradient-blue)" strokeWidth="2" opacity="0.8" />
-          <path d="M1500,2500 C1000,3100 500,2800 200,3800 C-50,4500 400,4700 800,4950" fill="none" stroke="url(#spline-gradient-neon)" strokeWidth="1.5" opacity="0.6" />
+          {/* Adjusted to gracefully extend dynamically into the 5000 base threshold */}
+          <path d="M1500,2500 C1000,3100 500,2800 200,3800 C-50,4500 400,4700 800,5000" fill="none" stroke="url(#spline-gradient-neon)" strokeWidth="1.5" opacity="0.6" />
+          {/* Additional bottom spline layer to maintain density right above the footer */}
+          <path d="M-50,4100 C300,4400 800,4200 1100,4600 C1250,4850 950,4950 1550,5000" fill="none" stroke="url(#spline-gradient-blue)" strokeWidth="2.5" opacity="0.5" />
           
           <defs>
             <linearGradient id="spline-gradient-blue" x1="0%" y1="0%" x2="100%" y2="100%">
