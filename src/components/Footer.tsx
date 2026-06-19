@@ -68,11 +68,10 @@ const Footer = () => {
 
   const navItems = useMemo(() => [
     { label: 'Home', path: '/' },
-    { label: 'About', path: '/#about' },
+    { label: 'About', path: '/about' },
     { label: 'Services', path: '/services' },
-    { label: 'Locations', path: '/#map' },
-    { label: 'Contact', path: '/#contact' },
-    { label: 'Blogs', path: '/blogs' },
+    { label: 'Contact', path: '/contact' },
+    { label: 'Blogs', path: '/blog' },
   ], []);
 
   return (
@@ -81,7 +80,8 @@ const Footer = () => {
       ref={footerRef} 
       className="relative z-10 mt-0 pt-16 pb-32 md:pb-24 overflow-hidden border-t border-white/10 transform-gpu backface-hidden"
       style={{ 
-        background: 'radial-gradient(circle at 50% 20%, #002288 0%, #00114a 55%, #000933 100%)',
+        // OPTIMIZED GRAPHICS: Changed #002288 to #001b6b & adjusted center point to optimize contrast metrics and readability
+        background: 'radial-gradient(circle at 50% 15%, #001b6b 0%, #001042 50%, #000933 100%)',
         contentVisibility: 'auto', 
         paddingBottom: 'calc(120px + env(safe-area-inset-bottom))'
       } as React.CSSProperties}
@@ -89,11 +89,11 @@ const Footer = () => {
       {/* Hardware Accelerated Subtle Parallax Internal Ambient Accents */}
       <motion.div 
         style={{ y: y1, translateZ: 0 }} 
-        className="absolute top-0 -right-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-white/[0.015] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
+        className="absolute top-0 -right-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-white/[0.012] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
       />
       <motion.div 
         style={{ y: y2, translateZ: 0 }} 
-        className="absolute top-1/3 -left-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-black/[0.03] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
+        className="absolute top-1/3 -left-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-black/[0.02] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

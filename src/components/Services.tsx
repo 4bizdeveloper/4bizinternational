@@ -315,7 +315,7 @@ export default function Services() {
   return (
     <section
       ref={sectionRef}
-      className="services-section w-full py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 text-white overflow-hidden relative bg-[#04091a] bg-[radial-gradient(circle_at_50%_35%,_#0e2a80_0%,_#071133_45%,_#030717_100%)] font-seo antialiased"
+      className="services-section w-full py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 text-white overflow-hidden relative bg-[#04091a] bg-[radial-gradient(circle_at_50%_35%,_#0e2a80_0%,_#09153d_50%,_#0a122c_100%)] font-seo antialiased"
     >
       <div className="pointer-events-none absolute inset-0 services-lines-overlay z-0 opacity-40" aria-hidden="true" />
 
@@ -414,8 +414,8 @@ export default function Services() {
                   className="object-cover transition-transform duration-500"
                   priority
                 />
-                <div className="absolute inset-0 bg-[#070e25]/50 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070e25]/60 via-[#070e25]/20 to-black/40" />
+                <div className="absolute inset-0 bg-[#070e25]/40 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#09153d]/50 via-[#070e25]/15 to-black/30" />
               </div>
 
               <div className="flex-1 flex flex-col justify-start z-10 relative space-y-4 md:space-y-6" style={{ isolation: "isolate" }}>
