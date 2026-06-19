@@ -35,7 +35,7 @@ export default function Hero() {
       videoRef.current.play()
         .then(() => setIsVideoLoaded(true))
         .catch(() => {
-          console.log("Video autoplay prevented or stalled.");
+          console.log("Video autoplay prevented or stalled; fallback image active.");
           setIsVideoLoaded(false);
         });
     }
@@ -107,7 +107,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── PERFORMANCE BACKGROUND MATRIX (VIDEO BACKGROUND CONTEXT ONLY) ── */}
+        {/* ── PERFORMANCE BACKGROUND MATRIX (VIDEO & IMAGE FALLBACK) ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -118,7 +118,7 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* Ultra-modern pure video viewport frame wrapper without fallback image DOM overhead */}
+            {/* Ultra-modern video background with proactive connection tracking hooks */}
             <video
               ref={videoRef}
               src="/hero-video-1.mp4"
@@ -126,17 +126,31 @@ export default function Hero() {
               muted
               playsInline
               autoPlay
-              preload="auto"
               onCanPlay={() => setIsVideoLoaded(true)}
               onStalled={handleVideoFailure}
               onSuspend={handleVideoFailure}
               onEmptied={handleVideoFailure}
               onError={handleVideoFailure}
               className={`absolute inset-0 w-full h-full object-cover brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-700 ${
-                isVideoLoaded ? 'opacity-100' : 'opacity-40'
+                isVideoLoaded ? 'opacity-100' : 'opacity-0'
               }`}
               style={{ willChange: 'transform, opacity' }}
             />
+
+            {/* Optimized device-specific fallback layers images if streaming degrades */}
+            <picture className="absolute inset-0 w-full h-full block z-0">
+              <source media="(min-width: 1200px)" srcSet="/hero-desktop-1.png" width="1920" height="900" />
+              <source media="(min-width: 640px)" srcSet="/hero-tablet-1.png" width="1024" height="768" />
+              <img
+                src="/hero-mobile-1.png"
+                alt=""
+                width="390"
+                height="844"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-full object-cover object-[center_bottom] sm:object-center brightness-[1.05] contrast-[1.05]"
+              />
+            </picture>
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
         </div>

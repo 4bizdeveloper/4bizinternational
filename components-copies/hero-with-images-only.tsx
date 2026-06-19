@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
 
 export default function Hero() {
@@ -9,8 +9,6 @@ export default function Hero() {
   const showScrollDown = true;
 
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
   
   // High-performance hardware-accelerated interactive utility styles
   const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
@@ -28,22 +26,6 @@ export default function Hero() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Ensure high-performance video play safety trigger
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play()
-        .then(() => setIsVideoLoaded(true))
-        .catch(() => {
-          console.log("Video autoplay prevented or stalled.");
-          setIsVideoLoaded(false);
-        });
-    }
-  }, []);
-
-  const handleVideoFailure = () => {
-    setIsVideoLoaded(false);
-  };
 
   const socials = [
     {
@@ -107,7 +89,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── PERFORMANCE BACKGROUND MATRIX (VIDEO BACKGROUND CONTEXT ONLY) ── */}
+        {/* ── PERFORMANCE BACKGROUND MATRIX (IMAGE BACKGROUND ONLY) ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -118,25 +100,20 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* Ultra-modern pure video viewport frame wrapper without fallback image DOM overhead */}
-            <video
-              ref={videoRef}
-              src="/hero-video-1.mp4"
-              loop
-              muted
-              playsInline
-              autoPlay
-              preload="auto"
-              onCanPlay={() => setIsVideoLoaded(true)}
-              onStalled={handleVideoFailure}
-              onSuspend={handleVideoFailure}
-              onEmptied={handleVideoFailure}
-              onError={handleVideoFailure}
-              className={`absolute inset-0 w-full h-full object-cover brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-700 ${
-                isVideoLoaded ? 'opacity-100' : 'opacity-40'
-              }`}
-              style={{ willChange: 'transform, opacity' }}
-            />
+            {/* Optimized device-specific high-performance image layer */}
+            <picture className="absolute inset-0 w-full h-full block z-10">
+              <source media="(min-width: 1200px)" srcSet="/hero-desktop-1.png" width="1920" height="900" />
+              <source media="(min-width: 640px)" srcSet="/hero-tablet-1.png" width="1024" height="768" />
+              <img
+                src="/hero-mobile-1.png"
+                alt=""
+                width="390"
+                height="844"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-full object-cover object-[center_bottom] sm:object-center brightness-[1.05] contrast-[1.05]"
+              />
+            </picture>
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
         </div>
