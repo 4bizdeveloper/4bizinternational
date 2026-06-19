@@ -111,7 +111,7 @@ export default function About() {
         {/* Two-Column Responsive Layout Node - Optimized for Zero Dead Space */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center pt-2 mb-10 md:mb-16">
           
-          {/* Left Side Content Column - Placed first on mobile/tablet view using order-1 */}
+          {/* Left Side Content Column */}
           <div className="w-full lg:col-span-7 flex flex-col order-1 lg:order-1 items-center lg:items-start text-center lg:text-left">
             {/* Section Sub-Tag */}
             <div className="flex items-center justify-center lg:justify-start mb-3">
@@ -128,13 +128,13 @@ export default function About() {
               onMouseLeave={() => setIsHovered(false)}
               className="relative w-full h-auto flex flex-col justify-center items-center lg:items-start select-text group py-1 mb-4 lg:cursor-none"
             >
-              {/* 📱 MOBILE & TABLET VIEW: Solid Gradient Typographic Block - Center Aligned & Fully Selectable */}
+              {/* 📱 MOBILE & TABLET VIEW */}
               <div className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] select-text pointer-events-auto w-full text-center">
                 4BIZ <br />
                 <span className="text-[0.5em] xs:text-[0.55em] sm:text-[0.42em] tracking-normal block mt-1">INTERNATIONAL LLC</span>
               </div>
 
-              {/* 💻 DESKTOP VIEW: High-Brilliance Vector Masking Outline Layer */}
+              {/* 💻 DESKTOP VIEW: Outline Layer */}
               <div 
                 className="hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider text-transparent pointer-events-auto select-text transition-all duration-500 uppercase leading-[1.05]"
                 style={{ 
@@ -149,7 +149,7 @@ export default function About() {
                 <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
               </div> 
 
-              {/* 💻 DESKTOP VIEW: Interactive Spotlight Liquid Mask Overlay */}
+              {/* 💻 DESKTOP VIEW: Spotlight Liquid Mask Overlay */}
               <div 
                 className="absolute inset-0 py-1 hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00cdf4] to-[#4f46e5] bg-clip-text text-transparent pointer-events-none select-none filter drop-shadow-[0_0_40px_rgba(0,240,255,0.55)] uppercase transition-opacity duration-300 leading-[1.05]"
                 style={{
@@ -161,7 +161,7 @@ export default function About() {
                 <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
               </div> 
 
-              {/* 💻 DESKTOP VIEW: Interactive Futuristic HUD Lens Flare Crosshair */}
+              {/* 💻 DESKTOP VIEW: HUD Lens Flare Crosshair */}
               {isHovered && (
                 <div 
                   className="absolute pointer-events-none rounded-full transition-transform duration-75 ease-out hidden lg:flex items-center justify-center"
@@ -193,7 +193,7 @@ export default function About() {
               </p>
             </div>
             
-            {/* Interactive Futuristic Neon CTA Anchor Button */}
+            {/* CTA Button */}
             <div className="pt-6 text-center lg:text-left">
               <a 
                 href="#contact" 
@@ -208,7 +208,6 @@ export default function About() {
           </div>
 
           {/* ─── RIGHT SIDE COLUMN: SYMMETRICAL COSMIC MATRIX ─── */}
-          {/* Placed second on mobile/tablet view using order-2, shifts back to right side on desktop layout */}
           <div className="w-full lg:col-span-5 flex items-center justify-center relative min-h-[280px] xs:min-h-[320px] sm:min-h-[420px] lg:min-h-[450px] order-2 lg:order-2">
             {/* Glowing Vibrant Space Backplane */}
             <div className="absolute inset-0 bg-radial-gradient from-cyan-500/20 via-purple-500/10 to-transparent blur-3xl pointer-events-none" />
@@ -218,23 +217,66 @@ export default function About() {
               
               {/* Complex Multi-layered Particle Rings & Cosmic Track System */}
               <div className="absolute inset-0 flex items-center justify-center transform-gpu">
+
                 {/* Diffuse Energy Vibrant Core */}
-                <div className="absolute w-36 h-36 sm:w-52 sm:h-52 bg-radial-gradient from-[#39f3ff]/20 via-[#ff41e3]/10 to-transparent blur-2xl animate-pulse" />
+                <div className="absolute w-36 h-36 sm:w-52 sm:h-52 bg-radial-gradient from-[#00d3f2]/20 via-[#ff41e3]/10 to-transparent blur-2xl animate-pulse" />
 
-                {/* Pulsating Internal Ring Sub-structures */}
-                <div className="absolute w-32 h-32 sm:w-44 sm:h-44 rounded-full border-[4px] sm:border-[5px] border-cyan-400/30 shadow-[0_0_20px_rgba(34,211,238,0.3)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
-                <div className="absolute w-40 h-40 sm:w-56 sm:h-56 rounded-full border-[2px] sm:border-[3px] border-[#ff41e3]/20 shadow-[0_0_25px_rgba(255,65,227,0.2)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite_1.1s]" />
+                {/*
+                  ── INNER RINGS: COLORS SWAPPED ──
+                  Original inner ring 1: border-cyan-400/30  → now border-[#ff41e3]/30
+                  Original inner ring 2: border-[#ff41e3]/20 → now border-[#00d3f2]/20
+                */}
+                {/* Inner Pulsating Ring 1 — was cyan, now #ff41e3 */}
+                <div className="absolute w-32 h-32 sm:w-44 sm:h-44 rounded-full border-[4px] sm:border-[5px] border-[#ff41e3]/30 shadow-[0_0_20px_rgba(255,65,227,0.3)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
+                {/* Inner Pulsating Ring 2 — was #ff41e3, now #00d3f2 */}
+                <div className="absolute w-40 h-40 sm:w-56 sm:h-56 rounded-full border-[2px] sm:border-[3px] border-[#00d3f2]/20 shadow-[0_0_25px_rgba(0,211,242,0.2)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite_1.1s]" />
 
-                {/* Continuous Non-Scroll Dependent Rotating HUD Vector Geometries */}
-                <div className="absolute w-44 h-44 xs:w-48 xs:h-48 sm:w-72 sm:h-72 rounded-full border-[2px] sm:border-[2.5px] border-dashed border-cyan-400/50 shadow-[0_0_15px_rgba(34,211,238,0.2)] will-change-transform animate-spin-continuous-fast" />
-                <div className="absolute w-52 h-52 xs:w-56 xs:h-56 sm:w-[19rem] sm:h-[19rem] rounded-full border-[1.5px] sm:border-[2px] border-double border-[#bd29ff]/40 shadow-[0_0_15px_rgba(189,41,255,0.15)] will-change-transform animate-spin-continuous-reverse" />
-                
-                {/* HIGH VIBRANCY Rings */}
-                <div className="absolute w-[14rem] h-[14rem] xs:w-[15rem] xs:h-[15rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[3px] sm:border-[4px] border-transparent border-t-[#ff41e3] border-b-cyan-400 border-l-[#ff41e3] filter drop-shadow-[0_0_15px_rgba(255,65,227,0.5)] will-change-transform animate-spin-continuous-slow" />
-                <div className="absolute w-[15.5rem] h-[15.5rem] xs:w-[17rem] xs:h-[17rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[1.5px] sm:border-[2px] border-transparent border-r-[#bd29ff]/80 border-l-cyan-400/60 filter drop-shadow-[0_0_10px_rgba(34,211,238,0.35)] will-change-transform animate-spin-continuous-slow-reverse" />
+                {/*
+                  ── OUTER ROTATING RINGS ──
+                  Ring 1 (fast dashed): #00d3f2
+                  Ring 2 (reverse double): #ff41e3
+                  Ring 3 (slow colored arc): #00d3f2 top/left, #ff41e3 bottom — HIGH VIBRANCY
+                  Ring 4 (slow-reverse partial): #ff41e3 right, #00d3f2 left — HIGH VIBRANCY
+                */}
+                {/* Outer Ring 1 — dashed, clockwise fast → #00d3f2 */}
+                <div
+                  className="absolute w-44 h-44 xs:w-48 xs:h-48 sm:w-72 sm:h-72 rounded-full border-[2px] sm:border-[2.5px] border-dashed will-change-transform animate-spin-continuous-fast"
+                  style={{
+                    borderColor: 'rgba(0,211,242,0.50)',
+                    boxShadow: '0 0 15px rgba(0,211,242,0.20)'
+                  }}
+                />
+                {/* Outer Ring 2 — double border, counter-clockwise → #ff41e3 */}
+                <div
+                  className="absolute w-52 h-52 xs:w-56 xs:h-56 sm:w-[19rem] sm:h-[19rem] rounded-full border-[1.5px] sm:border-[2px] border-double will-change-transform animate-spin-continuous-reverse"
+                  style={{
+                    borderColor: 'rgba(255,65,227,0.40)',
+                    boxShadow: '0 0 15px rgba(255,65,227,0.15)'
+                  }}
+                />
+
+                {/* HIGH VIBRANCY Outer Ring 3 — slow clockwise arc → #00d3f2 top/left, #ff41e3 bottom */}
+                <div
+                  className="absolute w-[14rem] h-[14rem] xs:w-[15rem] xs:h-[15rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[3px] sm:border-[4px] border-transparent will-change-transform animate-spin-continuous-slow"
+                  style={{
+                    borderTopColor: '#00d3f2',
+                    borderBottomColor: '#ff41e3',
+                    borderLeftColor: '#00d3f2',
+                    filter: 'drop-shadow(0 0 15px rgba(0,211,242,0.5))'
+                  }}
+                />
+                {/* HIGH VIBRANCY Outer Ring 4 — slow counter-clockwise partial → #ff41e3 right, #00d3f2 left */}
+                <div
+                  className="absolute w-[15.5rem] h-[15.5rem] xs:w-[17rem] xs:h-[17rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[1.5px] sm:border-[2px] border-transparent will-change-transform animate-spin-continuous-slow-reverse"
+                  style={{
+                    borderRightColor: 'rgba(255,65,227,0.80)',
+                    borderLeftColor: 'rgba(0,211,242,0.60)',
+                    filter: 'drop-shadow(0 0 10px rgba(0,211,242,0.35))'
+                  }}
+                />
               </div>
               
-              {/* Floating Center Logo Surface (Optimized sizing for mobile & tablet layout balance) */}
+              {/* Floating Center Logo Surface */}
               <div className="absolute w-36 h-18 xs:w-40 xs:h-20 sm:w-64 sm:h-32 transition-transform duration-500 hover:scale-105 transform-gpu filter drop-shadow-[0_0_35px_rgba(6,182,212,0.35)] flex items-center justify-center">
                 <Image
                   src="/4biz_logo-1.png"

@@ -81,17 +81,11 @@ const Footer = () => {
       ref={footerRef} 
       className="relative z-10 mt-0 pt-16 pb-32 md:pb-24 overflow-hidden border-t border-white/10 transform-gpu backface-hidden"
       style={{ 
-        background: 'radial-gradient(circle at 50% -20%, #001355 0%, #000722 80%)',
+        background: 'radial-gradient(circle at 50% 20%, #002288 0%, #00114a 55%, #000933 100%)',
         contentVisibility: 'auto', 
         paddingBottom: 'calc(120px + env(safe-area-inset-bottom))'
       } as React.CSSProperties}
     >
-      {/* Background Matrix */}
-      <div 
-        className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 pointer-events-none" 
-        aria-hidden="true" 
-      />
-      
       {/* Hardware Accelerated Subtle Parallax Internal Ambient Accents */}
       <motion.div 
         style={{ y: y1, translateZ: 0 }} 

@@ -37,7 +37,7 @@ const servicesData: ServiceItem[] = [
     activeTabClass: "bg-blue-600 text-white shadow-xl shadow-blue-600/30 ring-1 ring-white/20",
     btnGlowClass: "bg-blue-600 hover:bg-blue-500 shadow-blue-600/40 focus:ring-blue-400",
     backgroundImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&auto=format&fit=crop&q=80",
-    linkUrl: "/services/digital-workplace",
+    linkUrl: "/services/digital-workplace-productivity-solutions",
     showReadMoreBtn: true
   },
   {
@@ -61,7 +61,7 @@ const servicesData: ServiceItem[] = [
     activeTabClass: "bg-indigo-600 text-white shadow-xl shadow-indigo-600/30 ring-1 ring-white/20",
     btnGlowClass: "bg-indigo-600 hover:bg-indigo-500 shadow-indigo-600/40 focus:ring-indigo-400",
     backgroundImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80",
-    linkUrl: "/services/enterprise-applications",
+    linkUrl: "/services/enterprise-business-applications-erp-crm",
     showReadMoreBtn: true
   },
   {
@@ -85,7 +85,7 @@ const servicesData: ServiceItem[] = [
     activeTabClass: "bg-pink-600 text-white shadow-xl shadow-pink-600/30 ring-1 ring-white/20",
     btnGlowClass: "bg-pink-600 hover:bg-pink-500 shadow-pink-600/40 focus:ring-pink-400",
     backgroundImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1200&auto=format&fit=crop&q=80",
-    linkUrl: "/services/web-mobile-commerce",
+    linkUrl: "/services/web-mobile-commerce-solutions",
     showReadMoreBtn: true
   },
   {
@@ -112,7 +112,7 @@ const servicesData: ServiceItem[] = [
     activeTabClass: "bg-cyan-600 text-white shadow-xl shadow-cyan-600/30 ring-1 ring-white/20",
     btnGlowClass: "bg-cyan-600 hover:bg-cyan-500 shadow-cyan-600/40 focus:ring-cyan-400",
     backgroundImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80",
-    linkUrl: "/services/digital-growth",
+    linkUrl: "/services/digital-growth-marketing-brand-experience",
     showReadMoreBtn: true
   },
   {
@@ -134,7 +134,7 @@ const servicesData: ServiceItem[] = [
     activeTabClass: "bg-teal-600 text-white shadow-xl shadow-teal-600/30 ring-1 ring-white/20",
     btnGlowClass: "bg-teal-600 hover:bg-teal-500 shadow-teal-600/40 focus:ring-teal-400",
     backgroundImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&auto=format&fit=crop&q=80",
-    linkUrl: "/services/customer-engagement",
+    linkUrl: "/services/communication-customer-engagement-solutions",
     showReadMoreBtn: true
   },
   {
@@ -161,7 +161,7 @@ const servicesData: ServiceItem[] = [
     activeTabClass: "bg-orange-600 text-white shadow-xl shadow-orange-600/30 ring-1 ring-white/20",
     btnGlowClass: "bg-orange-600 hover:bg-orange-500 shadow-orange-600/40 focus:ring-orange-400",
     backgroundImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&auto=format&fit=crop&q=80",
-    linkUrl: "/services/cloud-infrastructure",
+    linkUrl: "/services/cloud-hosting-infrastructure-services",
     showReadMoreBtn: true
   },
   {
@@ -187,7 +187,7 @@ const servicesData: ServiceItem[] = [
     activeTabClass: "bg-purple-600 text-white shadow-xl shadow-purple-600/30 ring-1 ring-white/20",
     btnGlowClass: "bg-purple-600 hover:bg-purple-500 shadow-purple-600/40 focus:ring-purple-400",
     backgroundImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&auto=format&fit=crop&q=80",
-    linkUrl: "/services/cybersecurity",
+    linkUrl: "/services/cybersecurity-digital-protection",
     showReadMoreBtn: true
   },
   {
@@ -218,7 +218,7 @@ const servicesData: ServiceItem[] = [
     activeTabClass: "bg-emerald-600 text-white shadow-xl shadow-emerald-600/30 ring-1 ring-white/20",
     btnGlowClass: "bg-emerald-600 hover:bg-emerald-500 shadow-emerald-600/40 focus:ring-emerald-400",
     backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&auto=format&fit=crop&q=80",
-    linkUrl: "/services/digital-transformation",
+    linkUrl: "/services/digital-transformation-emerging-technologies",
     showReadMoreBtn: true
   }
 ];
