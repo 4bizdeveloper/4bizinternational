@@ -16,9 +16,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className="bg-black text-white">
             <head>
         <meta name="robots" content="index, follow"></meta>
-        <link rel="icon" type="image/png" href="/images/4biz_logo.avif" />
-        <link rel="apple-touch-icon" href="/images/4biz_logo.avif" />
-        <link rel="shortcut icon" href="/images/4biz_logo.avif" />
+        <link rel="icon" type="image/png" href="/4biz_logo-1.png" />
+        <link rel="apple-touch-icon" href="/4biz_logo-1.png" />
+        <link rel="shortcut icon" href="/4biz_logo-1.png" />
       </head>
       <body className="bg-black relative w-full overflow-x-hidden">
         
