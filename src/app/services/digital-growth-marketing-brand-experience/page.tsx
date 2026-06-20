@@ -74,49 +74,37 @@ export default function DigitalGrowthMarketingBrandPage() {
       {/* ================= CONTENT WRAPPER ================= */}
       <div className="relative z-10">
         
-        {/* ================= HERO SECTION WITH REPEATED TOP IMAGES ================= */}
-        <section className="relative min-h-[85vh] flex flex-col items-center justify-center pt-36 pb-12 px-4 sm:px-6 lg:px-8 bg-transparent">
-          <div className="w-full max-w-5xl mx-auto text-center flex flex-col items-center">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-teal-400 uppercase mb-4 block backdrop-blur-sm bg-teal-950/20 px-4 py-1.5 rounded-full border border-teal-500/20">
-              04 — Growth &amp; Brand
-            </span>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white max-w-5xl mx-auto leading-[1.1] pb-6 break-words bg-clip-text text-transparent bg-gradient-to-b from-white via-slate-200 to-slate-400">
-              Digital Growth, Marketing &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-purple-400">Brand Experience</span>
-            </h1>
-            <p className="mt-4 text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed font-normal transparent-content">
-              Drive traffic, increase conversions, and build a memorable brand presence through data-driven marketing and modern digital engagement strategies. We plan, run, and report on the channels that bring people to you and the brand that makes them stay.
-            </p>
-          </div>
+        {/* ================= HERO SECTION WITH BALANCED 2-COLUMN LAYOUT ================= */}
+        <section className="relative min-h-[80vh] flex flex-col justify-center pt-28 md:pt-36 pb-16 px-4 sm:px-6 lg:px-8 bg-transparent">
+          <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            
+            {/* Left Content Column */}
+            <div className="text-left flex flex-col items-start order-1">
+              <span className="text-xs sm:text-sm font-semibold tracking-widest text-teal-400 uppercase mb-4 block backdrop-blur-sm bg-teal-950/20 px-4 py-1.5 rounded-full border border-teal-500/20">
+                04 — Growth &amp; Brand
+              </span>
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-[1.15] pb-4 break-words bg-clip-text text-transparent bg-gradient-to-b from-white via-slate-200 to-slate-400">
+                Digital Growth, Marketing &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-purple-400">Brand Experience</span>
+              </h1>
+              <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed font-normal transparent-content">
+                Drive traffic, increase conversions, and build a memorable brand presence through data-driven marketing and modern digital engagement strategies. We plan, run, and report on the channels that bring people to you and the brand that makes them stay.
+              </p>
+            </div>
 
-          {/* Top Level Repeated Transparent Images Panel / Blueprint Preview Reference */}
-          <div className="w-full max-w-5xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
-            <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden">
-              <Image
-                src="/services/ai-1.png"
-                alt="Digital Marketing Campaign Strategy & Analytics Dashboard Preview"
-                fill
-                sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 350px"
-                className="object-contain mix-blend-screen transition-transform duration-500 ease-out hover:scale-105"
-              />
+            {/* Right Media Column - Single Image Maintained (Other two removed cleanly) */}
+            <div className="w-full flex items-center justify-center order-2 lg:justify-end select-none pointer-events-none">
+              <div className="relative w-full max-w-[450px] aspect-square flex items-center justify-center overflow-visible">
+                <Image
+                  src="/services/digital-growth-marketing-brand-experience.png"
+                  alt="Digital Marketing Campaign Strategy & Analytics Dashboard Preview"
+                  fill
+                  priority
+                  sizes="(max-w-768px) 100vw, 450px"
+                  className="object-contain mix-blend-screen transition-all duration-700 ease-out transform scale-105 hover:scale-110"
+                />
+              </div>
             </div>
-            <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden">
-              <Image
-                src="/services/ai-1.png"
-                alt="Brand Strategy Matrix and Creative Performance Optimization Preview"
-                fill
-                sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 350px"
-                className="object-contain mix-blend-screen transition-transform duration-500 ease-out hover:scale-105"
-              />
-            </div>
-            <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden sm:col-span-2 lg:col-span-1">
-              <Image
-                src="/services/ai-1.png"
-                alt="SEO, AEO, and Multi-channel Acquisition Framework Visual Identity Preview"
-                fill
-                sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 350px"
-                className="object-contain mix-blend-screen transition-transform duration-500 ease-out hover:scale-105"
-              />
-            </div>
+
           </div>
         </section>
 
