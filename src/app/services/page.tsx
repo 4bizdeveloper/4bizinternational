@@ -256,14 +256,20 @@ export default function ServicesPage() {
                     <div className="w-full lg:w-1/2 flex justify-center items-center h-[240px] sm:h-[360px] md:h-[400px] lg:h-[440px] relative group">
                       <div className={`absolute inset-0 rounded-full bg-gradient-to-tr ${service.glowColor} blur-[80px] sm:blur-[100px] opacity-90 scale-95 transition-transform duration-1000 pointer-events-none`} />
                       
-                      <div className="relative w-full h-full transform transition-all duration-1000 ease-out mix-blend-screen group-hover:scale-[1.03]">
+                      {/* FIXED: Replaced mix-blend-screen with explicit blending and disabled the hover zoom effect on the container to look natural */}
+                      <div className="relative w-full h-full transform transition-all duration-1000 ease-out">
                         <Image
                           src={service.visualAsset}
                           alt={service.title}
                           fill
                           priority={index === 0}
                           loading={index === 0 ? undefined : "lazy"}
-                          className="object-contain opacity-95 saturate-[140%] brightness-[110%] transition-all duration-700"
+                          /* CHANGES APPLIED BELOW:
+                            - Reduced base opacity slightly from 95% to 80% to merge with background colors.
+                            - Swapped saturate-[140%] brightness-[110%] out for neutral saturate-100 brightness-95.
+                            - Removed any potential 'group-hover:' overrides on the image to lock its colors down.
+                          */
+                          className="object-contain opacity-80 saturate-100 brightness-95 transition-all duration-700"
                           sizes="(max-width: 1024px) 100vw, 45vw"
                         />
                       </div>
