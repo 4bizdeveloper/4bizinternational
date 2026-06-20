@@ -64,14 +64,12 @@ export default function AboutPage() {
     <div 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative w-full min-h-screen text-white overflow-x-hidden font-sans selection:bg-cyan-500 selection:text-black transition-colors duration-500 transform-gpu"
+      className="relative w-full text-white overflow-hidden font-sans selection:bg-cyan-500 selection:text-black transition-colors duration-500 transform-gpu bg-[#020721]"
       style={{
-        background: `
-          radial-gradient(circle at 50% 45%, #081d63 0%, #051245 45%, #030a2b 80%, #020721 100%)
-        `
+        background: `radial-gradient(circle at 50% 45%, #081d63 0%, #051245 45%, #030a2b 80%, #020721 100%)`
       }}
     >
-      {/* Dynamic Ambient Core Glow Layers matching the flyer's luminosity across all breakpoints */}
+      {/* Dynamic Ambient Core Glow Layers */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <div className="absolute top-[5%] left-[10%] w-[85vw] h-[85vw] sm:w-[70vw] sm:h-[70vw] rounded-full bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-transparent blur-[130px] mix-blend-screen" />
         <div className="absolute bottom-[20%] right-[5%] w-[80vw] h-[80vw] sm:w-[60vw] sm:h-[60vw] rounded-full bg-gradient-to-tl from-blue-600/15 via-indigo-500/10 to-transparent blur-[140px] mix-blend-screen" />
@@ -86,11 +84,6 @@ export default function AboutPage() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="w-full lg:w-[58%] flex flex-col space-y-6 text-left"
         >
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/15 to-transparent border border-cyan-500/20 px-4 py-1.5 rounded-full w-fit backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-xs font-mono tracking-[0.3em] uppercase text-cyan-400 font-bold">Digital Vanguard</span>
-          </div>
-          
           <h1 className="text-4xl sm:text-6xl xl:text-7xl font-black tracking-tight leading-[1.1] break-words text-white py-1">
             Architecting <br className="hidden sm:block" />
             <span className="inline-block px-1 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-400 via-blue-400 to-purple-500 drop-shadow-[0_0_25px_rgba(34,211,238,0.3)]">
@@ -159,52 +152,70 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── MISSION & VISION SECTION ─── */}
+      {/* ─── MISSION & VISION SECTION (ULTRA MODERN LAYOUT) ─── */}
       <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-24 pb-4 overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 relative">
           
-          {/* Mission Card */}
+          {/* Modern Mission Card */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative p-8 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500 transform-gpu hover:-translate-y-1"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative rounded-[2rem] p-10 bg-gradient-to-b from-[#0b1542] via-[#050b24] to-[#030617] border border-cyan-500/20 hover:border-cyan-400/60 shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-500 hover:shadow-cyan-500/10 flex flex-col justify-between overflow-hidden"
           >
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="p-3.5 rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-                <RiRocketLine className="text-2xl sm:text-3xl" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-cyan-500/20 transition-all duration-500" />
+            <div>
+              <div className="flex items-center justify-between mb-8">
+                <div className="p-4 rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 group-hover:scale-110 transition-transform duration-300">
+                  <RiRocketLine className="text-3xl" />
+                </div>
+                <span className="text-xs font-mono tracking-[0.3em] text-cyan-400/60 uppercase">01 / Purpose</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">Our Mission</h3>
+              <h3 className="text-3xl font-black text-white tracking-tight mb-4">
+                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Mission</span>
+              </h3>
+              <p className="text-white/70 text-base sm:text-lg font-light leading-relaxed tracking-wide text-justify">
+                To empower businesses with innovative technology, digital solutions, and expert support that drive growth, efficiency, and lasting success.
+              </p>
             </div>
-            <p className="text-white/80 text-base sm:text-lg font-light leading-relaxed text-justify">
-              To empower businesses with innovative technology, digital solutions, and expert support that drive growth, efficiency, and lasting success.
-            </p>
+            <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-white/40">
+              <span>EXPLORE FRAMEWORK</span>
+              <span className="w-8 h-px bg-cyan-500/40 group-hover:w-16 transition-all duration-500" />
+            </div>
           </motion.div>
 
-          {/* Vision Card */}
+          {/* Modern Vision Card */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative p-8 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-xl overflow-hidden hover:border-purple-500/30 transition-all duration-500 transform-gpu hover:-translate-y-1"
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative rounded-[2rem] p-10 bg-gradient-to-b from-[#140e3d] via-[#08051f] to-[#040212] border border-purple-500/20 hover:border-purple-400/60 shadow-[0_20px_50px_rgba(0,0,0,0.4)] transition-all duration-500 hover:shadow-purple-500/10 flex flex-col justify-between overflow-hidden"
           >
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="p-3.5 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/20 group-hover:bg-purple-500 group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(168,85,247,0.1)]">
-                <RiEyeLine className="text-2xl sm:text-3xl" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl pointer-events-none group-hover:bg-purple-500/20 transition-all duration-500" />
+            <div>
+              <div className="flex items-center justify-between mb-8">
+                <div className="p-4 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/30 group-hover:scale-110 transition-transform duration-300">
+                  <RiEyeLine className="text-3xl" />
+                </div>
+                <span className="text-xs font-mono tracking-[0.3em] text-purple-400/60 uppercase">02 / Horizon</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white">Our Vision</h3>
+              <h3 className="text-3xl font-black text-white tracking-tight mb-4">
+                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Vision</span>
+              </h3>
+              <p className="text-white/70 text-base sm:text-lg font-light leading-relaxed tracking-wide text-justify">
+                To inspire infinite possibilities by helping businesses embrace innovation, achieve sustainable growth, and thrive in the digital future.
+              </p>
             </div>
-            <p className="text-white/80 text-base sm:text-lg font-light leading-relaxed text-justify">
-              To inspire infinite possibilities by helping businesses embrace innovation, achieve sustainable growth, and thrive in the digital future.
-            </p>
+            <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-white/40">
+              <span>EXPLORE DESTINATION</span>
+              <span className="w-8 h-px bg-purple-500/40 group-hover:w-16 transition-all duration-500" />
+            </div>
           </motion.div>
         </div>
 
-        {/* Center Typography Block - Reduced desktop title sizing for ideal fit */}
+        {/* Center Typography Block */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -222,38 +233,16 @@ export default function AboutPage() {
         </motion.div>
       </section>
 
-      {/* ─── EXECUTIVE LEADERSHIP / CEO SPEAKS SECTION ─── */}
+      {/* ─── EXECUTIVE LEADERSHIP / CEO SPEAKS SECTION (IMAGE FLIPPED & SMOOTH BOTTOM DISSOLVE) ─── */}
       <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-24 pb-12 overflow-hidden">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           
-          {/* CEO Image Container */}
+          {/* CEO Insight Text Block (Left Side) */}
           <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full lg:w-[45%] flex justify-center items-end relative"
-          >
-            <div className="absolute bottom-[10%] w-[70%] h-[60%] rounded-full bg-cyan-500/10 blur-[80px] mix-blend-screen pointer-events-none" />
-            
-            <div className="relative w-full max-w-[400px] aspect-[4/5] overflow-visible flex items-end">
-              <Image 
-                src="/persons/4biz_international-ceo.png" 
-                alt="4BIZ INTERNATIONAL LLC CEO Ibrahim"
-                fill
-                sizes="(max-width: 768px) 100vw, 400px"
-                className="object-contain object-bottom transition-transform duration-700 hover:scale-[1.02] filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)]"
-                priority={true}
-              />
-            </div>
-          </motion.div>
-
-          {/* CEO Insight Text Block */}
-          <motion.div 
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="w-full lg:w-[55%] flex flex-col space-y-6 text-left relative z-10"
           >
             <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500/15 to-transparent border border-purple-500/20 px-4 py-1.5 rounded-full w-fit backdrop-blur-md">
@@ -284,13 +273,68 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
+          {/* CEO Image Container (Right Side - With Gradient Border-Free Cut Dissolve Layer) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[45%] flex justify-center items-end relative"
+          >
+            <div className="absolute bottom-0 w-[80%] h-[70%] rounded-full bg-cyan-500/10 blur-[90px] mix-blend-screen pointer-events-none" />
+            
+            {/* Masking Style smoothly unifies the bottom layout perfectly while protecting native graphic textures */}
+            <div 
+              className="relative w-full max-w-[400px] aspect-[4/5] overflow-visible flex items-end"
+              style={{
+                WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
+                maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)'
+              }}
+            >
+              <Image 
+                src="/persons/4biz_international-ceo.png" 
+                alt="4BIZ INTERNATIONAL LLC CEO Ibrahim"
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-contain object-bottom transition-transform duration-700 hover:scale-[1.02]"
+                priority={true}
+              />
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
-      {/* ─── EXPANDED BRAND STORY & SMARTPHONE REEL CONTAINER ─── */}
+      {/* ─── BRAND STORY & VIDEO CONTAINER (SWAPPED FROM RIGHT TO LEFT) ─── */}
       <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-12 pb-28 md:pt-14 md:pb-40 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        <div className="lg:col-span-7 flex flex-col space-y-8">
+        {/* Brand Video Smartphone Framework (Left Side) */}
+        <div className="lg:col-span-5 w-full flex justify-center lg:justify-start order-2 lg:order-1">
+          <div className="relative w-full max-w-[290px] sm:max-w-[320px] aspect-[9/16] rounded-[2.8rem] p-3.5 bg-[#0e1438] border-[4px] border-[#222e6b] shadow-[0_30px_70px_rgba(0,0,0,0.7),inset_0_2px_4px_rgba(255,255,255,0.1)] group transform-gpu transition-all duration-500 hover:scale-[1.03] hover:border-cyan-400/50">
+            <div className="absolute top-[24%] -left-[8px] w-[4px] h-9 bg-[#2b3a8a] rounded-l border-l border-white/10 shadow-md z-50" />
+            <div className="absolute top-[32%] -left-[8px] w-[4px] h-9 bg-[#2b3a8a] rounded-l border-l border-white/10 shadow-md z-50" />
+            <div className="absolute top-[28%] -right-[8px] w-[4px] h-12 bg-[#2b3a8a] rounded-r border-r border-white/10 shadow-md z-50" />
+            
+            <div className="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-black rounded-full z-30 flex items-center justify-center space-x-1.5 px-3">
+              <div className="w-8 h-1 bg-white/20 rounded-full" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#161f52]" />
+            </div>
+
+            <div className="w-full h-full rounded-[2.2rem] overflow-hidden bg-black relative border border-black shadow-inner">
+              <iframe
+                className="w-full h-full relative z-10 border-0"
+                src={embedVideoUrl}
+                title="4Biz International Corporate Video Reel"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen={true}
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Content Block (Right Side) */}
+        <div className="lg:col-span-7 flex flex-col space-y-8 order-1 lg:order-2">
           <div className="flex flex-col space-y-3">
             <div className="inline-flex items-center space-x-2 text-purple-300 font-mono text-xs uppercase tracking-widest font-bold">
               <RiFocus2Line className="text-base animate-spin" style={{ animationDuration: '6s' }} />
@@ -340,35 +384,10 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-
-        {/* Brand Video Smartphone Framework */}
-        <div className="lg:col-span-5 w-full flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-[290px] sm:max-w-[320px] aspect-[9/16] rounded-[2.8rem] p-3.5 bg-[#0e1438] border-[4px] border-[#222e6b] shadow-[0_30px_70px_rgba(0,0,0,0.7),inset_0_2px_4px_rgba(255,255,255,0.1)] group transform-gpu transition-all duration-500 hover:scale-[1.03] hover:border-cyan-400/50">
-            <div className="absolute top-[24%] -left-[8px] w-[4px] h-9 bg-[#2b3a8a] rounded-l border-l border-white/10 shadow-md z-50" />
-            <div className="absolute top-[32%] -left-[8px] w-[4px] h-9 bg-[#2b3a8a] rounded-l border-l border-white/10 shadow-md z-50" />
-            <div className="absolute top-[28%] -right-[8px] w-[4px] h-12 bg-[#2b3a8a] rounded-r border-r border-white/10 shadow-md z-50" />
-            
-            <div className="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-black rounded-full z-30 flex items-center justify-center space-x-1.5 px-3">
-              <div className="w-8 h-1 bg-white/20 rounded-full" />
-              <div className="w-1.5 h-1.5 rounded-full bg-[#161f52]" />
-            </div>
-
-            <div className="w-full h-full rounded-[2.2rem] overflow-hidden bg-black relative border border-black shadow-inner">
-              <iframe
-                className="w-full h-full relative z-10 border-0"
-                src={embedVideoUrl}
-                title="4Biz International Corporate Video Reel"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen={true}
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
       </section>
 
-      {/* ─── CONTACT SECTION ─── */}
-      <section id="contact" className="relative z-10 w-full min-h-screen">
+      {/* ─── CONTACT SECTION (GAP AND EDGE OVERLAP CORRECTION REMOVED DOUBLE SCROLL) ─── */}
+      <section id="contact" className="relative z-10 w-full block bg-[#020721] -mb-1 pb-0">
         <Contact />
       </section>
 
