@@ -47,7 +47,7 @@ function ScrollReveal({ children }: { children: React.ReactNode }) {
     <div
       ref={domRef}
       className={`transition-all duration-1000 ease-out transform will-change-transform ${
-        isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-12 scale-[0.99]"
+        isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-[0.995]"
       }`}
     >
       {children}
@@ -63,7 +63,7 @@ export default function ServicesPage() {
       icon: <Users className="text-[#00e5a3]" size={22} />,
       visualAsset: "/services/digital-workplace-productivity-solutions-1.png",
       accentColor: "from-[#00e5a3] to-emerald-400",
-      glowColor: "from-[#00e5a3]/40 via-emerald-500/10 to-transparent",
+      glowColor: "from-[#00e5a3]/30 via-emerald-500/5 to-transparent",
       url: "/services/digital-workplace-productivity-solutions",
       points: [
         "Microsoft 365", "Google Workspace", "Zoho Workplace", 
@@ -77,7 +77,7 @@ export default function ServicesPage() {
       icon: <Cpu className="text-cyan-400" size={22} />,
       visualAsset: "/services/enterprise-business-applications-erp-crm-1.png",
       accentColor: "from-cyan-400 to-blue-500",
-      glowColor: "from-cyan-500/40 via-blue-500/10 to-transparent",
+      glowColor: "from-cyan-500/30 via-blue-500/5 to-transparent",
       url: "/services/enterprise-business-applications-erp-crm",
       points: [
         "Custom ERP Development", "Custom CRM Development", "Microsoft Dynamics 365", 
@@ -91,7 +91,7 @@ export default function ServicesPage() {
       icon: <Monitor className="text-blue-400" size={22} />,
       visualAsset: "/services/web-mobile-commerce-solutions.png",
       accentColor: "from-blue-400 to-indigo-500",
-      glowColor: "from-blue-500/40 via-indigo-500/10 to-transparent",
+      glowColor: "from-blue-500/30 via-indigo-500/5 to-transparent",
       url: "/services/web-mobile-commerce-solutions",
       points: [
         "UI/UX Design", "Corporate Website Development", "Web Application Development", 
@@ -105,7 +105,7 @@ export default function ServicesPage() {
       icon: <Zap className="text-amber-400" size={22} />,
       visualAsset: "/services/digital-growth-marketing-brand-experience.png",
       accentColor: "from-amber-400 to-orange-500",
-      glowColor: "from-amber-500/40 via-orange-500/10 to-transparent",
+      glowColor: "from-amber-500/30 via-orange-500/5 to-transparent",
       url: "/services/digital-growth-marketing-brand-experience",
       points: [
         "SEO (Search Engine Optimization)", "AEO (Answer Engine Optimization)", "Social Media Management", 
@@ -120,7 +120,7 @@ export default function ServicesPage() {
       icon: <Mail className="text-purple-400" size={22} />,
       visualAsset: "/services/communication-customer-engagement-solutions.png",
       accentColor: "from-purple-400 to-pink-500",
-      glowColor: "from-purple-500/40 via-pink-500/10 to-transparent",
+      glowColor: "from-purple-500/30 via-pink-500/5 to-transparent",
       url: "/services/communication-customer-engagement-solutions",
       points: [
         "Email Marketing", "SMS Marketing", "WhatsApp Business Solutions", 
@@ -134,7 +134,7 @@ export default function ServicesPage() {
       icon: <Server className="text-emerald-400" size={22} />,
       visualAsset: "/services/cloud-hosting-infrastructure-services.png",
       accentColor: "from-emerald-400 to-teal-500",
-      glowColor: "from-emerald-500/40 via-teal-500/10 to-transparent",
+      glowColor: "from-emerald-500/30 via-teal-500/5 to-transparent",
       url: "/services/cloud-hosting-infrastructure-services",
       points: [
         "Domain Registration", "International & Country TLDs", "Shared Hosting", 
@@ -149,7 +149,7 @@ export default function ServicesPage() {
       icon: <Lock className="text-red-400" size={22} />,
       visualAsset: "/services/cybersecurity-digital-protection.png",
       accentColor: "from-red-500 to-rose-500",
-      glowColor: "from-red-500/40 via-rose-500/10 to-transparent",
+      glowColor: "from-red-500/30 via-rose-500/5 to-transparent",
       url: "/services/cybersecurity-digital-protection",
       points: [
         "Penetration Testing", "Vulnerability Assessment", "Malware Analysis", 
@@ -163,7 +163,7 @@ export default function ServicesPage() {
       icon: <Layers className="text-lime-400" size={22} />,
       visualAsset: "/services/digital-transformation-emerging-technologies.png", 
       accentColor: "from-lime-400 to-emerald-400",
-      glowColor: "from-lime-500/50 via-emerald-500/15 to-transparent",
+      glowColor: "from-lime-500/30 via-emerald-500/5 to-transparent",
       url: "/services/digital-transformation-emerging-technologies",
       points: [
         "Artificial Intelligence Solutions", "Generative AI Integration", "AI Chatbots & Assistants", 
@@ -256,20 +256,14 @@ export default function ServicesPage() {
                     <div className="w-full lg:w-1/2 flex justify-center items-center h-[240px] sm:h-[360px] md:h-[400px] lg:h-[440px] relative group">
                       <div className={`absolute inset-0 rounded-full bg-gradient-to-tr ${service.glowColor} blur-[80px] sm:blur-[100px] opacity-90 scale-95 transition-transform duration-1000 pointer-events-none`} />
                       
-                      {/* FIXED: Replaced mix-blend-screen with explicit blending and disabled the hover zoom effect on the container to look natural */}
-                      <div className="relative w-full h-full transform transition-all duration-1000 ease-out">
+                      <div className="relative w-full h-full transform transition-transform duration-[800ms] ease-out mix-blend-screen group-hover:scale-[1.025]">
                         <Image
                           src={service.visualAsset}
                           alt={service.title}
                           fill
                           priority={index === 0}
                           loading={index === 0 ? undefined : "lazy"}
-                          /* CHANGES APPLIED BELOW:
-                            - Reduced base opacity slightly from 95% to 80% to merge with background colors.
-                            - Swapped saturate-[140%] brightness-[110%] out for neutral saturate-100 brightness-95.
-                            - Removed any potential 'group-hover:' overrides on the image to lock its colors down.
-                          */
-                          className="object-contain opacity-80 saturate-100 brightness-95 transition-all duration-700"
+                          className="object-contain opacity-80 saturate-100 brightness-95 contrast-[102%] transition-none"
                           sizes="(max-width: 1024px) 100vw, 45vw"
                         />
                       </div>
