@@ -32,7 +32,7 @@ function ScrollReveal({ children }: { children: React.ReactNode }) {
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.05 } // Lower threshold prevents scrolling stalls/jumps
     );
 
     const current = domRef.current;
@@ -46,8 +46,8 @@ function ScrollReveal({ children }: { children: React.ReactNode }) {
   return (
     <div
       ref={domRef}
-      className={`transition-all duration-1000 ease-out transform will-change-transform ${
-        isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-[0.995]"
+      className={`transition-all duration-700 ease-out transform will-change-transform ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
       {children}
@@ -181,11 +181,8 @@ export default function ServicesPage() {
       {/* Persistent Radial Gradient Overlay Matching the Reference Color Fields */}
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_30%,#12286b_0%,#081236_50%,#04091f_100%)] pointer-events-none z-0" />
       
-      {/* High-Tech Architectural Grid Mesh Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none z-0" />
-      
-      {/* Ultra-Modern Connected Vector Spline System covering top header to footer */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-50 mix-blend-screen">
+      {/* Ultra-Modern Connected Vector Spline System covering top header to footer - Fixed dimensions prevent scrolling recalculations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-50 mix-blend-screen will-change-transform">
         <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 5000" preserveAspectRatio="none">
           {/* Header Spline Structure */}
           <path d="M-100,150 C350,280 200,50 750,380 C1100,620 950,150 1600,450" fill="none" stroke="url(#spline-gradient-blue)" strokeWidth="3" />
@@ -252,18 +249,17 @@ export default function ServicesPage() {
                     isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                   } items-center gap-12 lg:gap-16 xl:gap-24`}>
                     
-                    {/* Graphics / Visual Asset Column */}
+                    {/* Graphics / Visual Asset Column - Optimized configuration for instant rendering */}
                     <div className="w-full lg:w-1/2 flex justify-center items-center h-[240px] sm:h-[360px] md:h-[400px] lg:h-[440px] relative group">
-                      <div className={`absolute inset-0 rounded-full bg-gradient-to-tr ${service.glowColor} blur-[80px] sm:blur-[100px] opacity-90 scale-95 transition-transform duration-1000 pointer-events-none`} />
+                      <div className={`absolute inset-0 rounded-full bg-gradient-to-tr ${service.glowColor} blur-[80px] sm:blur-[100px] opacity-90 scale-95 transition-transform duration-700 pointer-events-none`} />
                       
-                      <div className="relative w-full h-full transform transition-transform duration-[800ms] ease-out mix-blend-screen group-hover:scale-[1.025]">
+                      <div className="relative w-full h-full transform transition-transform duration-500 ease-out mix-blend-screen group-hover:scale-[1.015]">
                         <Image
                           src={service.visualAsset}
                           alt={service.title}
                           fill
-                          priority={index === 0}
-                          loading={index === 0 ? undefined : "lazy"}
-                          className="object-contain opacity-80 saturate-100 brightness-95 contrast-[102%] transition-none"
+                          priority
+                          className="object-contain opacity-90 saturate-100 brightness-95 contrast-[102%]"
                           sizes="(max-width: 1024px) 100vw, 45vw"
                         />
                       </div>
