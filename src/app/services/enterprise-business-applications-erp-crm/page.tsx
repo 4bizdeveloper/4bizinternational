@@ -91,25 +91,25 @@ export default function EnterpriseApplicationsPage() {
 
           {/* Top Level Repeated Transparent Images Panel / Blueprint Preview Reference (image_bf076a.jpg visual integration) */}
           <div className="w-full max-w-5xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
-            <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden">
+            <div className="relative w-full aspect-[16/16] flex items-center justify-center overflow-hidden">
               <Image
-                src="/services/ai-1.png"
+                src="/services/enterprise-business-applications-erp-crm-1.png"
                 alt="High performance UI monitoring and clean workflow automation platforms layout preview"
                 fill
                 sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 350px"
                 className="object-contain mix-blend-screen transition-transform duration-500 ease-out hover:scale-105"
               />
             </div>
-            <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden">
+            <div className="relative w-full aspect-[16/16] flex items-center justify-center overflow-hidden">
               <Image
-                src="/services/ai-1.png"
+                src="/services/enterprise-business-applications-erp-crm-2.png"
                 alt="High performance UI monitoring and clean workflow automation platforms system preview"
                 fill
                 sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 350px"
                 className="object-contain mix-blend-screen transition-transform duration-500 ease-out hover:scale-105"
               />
             </div>
-            <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden sm:col-span-2 lg:col-span-1">
+            <div className="relative w-full aspect-[16/16] flex items-center justify-center overflow-hidden sm:col-span-2 lg:col-span-1">
               <Image
                 src="/services/ai-1.png"
                 alt="High performance UI monitoring and clean workflow automation platforms analytics preview"
