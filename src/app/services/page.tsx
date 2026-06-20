@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { 
   ArrowRight, Users, Cpu, Monitor, Zap, 
@@ -17,42 +17,6 @@ interface ServiceBlock {
   accentColor: string;
   glowColor: string;
   url: string;
-}
-
-function ScrollReveal({ children }: { children: React.ReactNode }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const domRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.05 } // Lower threshold prevents scrolling stalls/jumps
-    );
-
-    const current = domRef.current;
-    if (current) observer.observe(current);
-
-    return () => {
-      if (current) observer.unobserve(current);
-    };
-  }, []);
-
-  return (
-    <div
-      ref={domRef}
-      className={`transition-all duration-700 ease-out transform will-change-transform ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      }`}
-    >
-      {children}
-    </div>
-  );
 }
 
 export default function ServicesPage() {
@@ -178,11 +142,11 @@ export default function ServicesPage() {
   return (
     <div className="w-full bg-[#050b21] text-slate-100 font-sans antialiased relative min-h-screen overflow-x-hidden selection:bg-[#00e5a3] selection:text-black scroll-smooth">
       
-      {/* Persistent Radial Gradient Overlay Matching the Reference Color Fields */}
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_30%,#12286b_0%,#081236_50%,#04091f_100%)] pointer-events-none z-0" />
+      {/* Persistent Radial Gradient Overlay */}
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_30%,#12286b_0%,#081236_50%,#04091f_100%)] pointer-events-none z-0 transform translate-z-0" />
       
-      {/* Ultra-Modern Connected Vector Spline System covering top header to footer - Fixed dimensions prevent scrolling recalculations */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-50 mix-blend-screen will-change-transform">
+      {/* Ultra-Modern Connected Vector Spline System (Optimized with translate-z-0 to prevent scroll jitter) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-50 mix-blend-screen transform translate-z-0">
         <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 5000" preserveAspectRatio="none">
           {/* Header Spline Structure */}
           <path d="M-100,150 C350,280 200,50 750,380 C1100,620 950,150 1600,450" fill="none" stroke="url(#spline-gradient-blue)" strokeWidth="3" />
@@ -211,9 +175,9 @@ export default function ServicesPage() {
       </div>
 
       {/* Layered Dynamic Luminous Auras */}
-      <div className="absolute top-[5%] left-[-5%] w-[60vw] h-[60vw] bg-blue-500/10 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute top-[35%] right-[-10%] w-[50vw] h-[50vw] bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-[20%] left-[-10%] w-[55vw] h-[55vw] bg-purple-500/8 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-[5%] left-[-5%] w-[60vw] h-[60vw] bg-blue-500/10 rounded-full blur-[130px] pointer-events-none transform translate-z-0" />
+      <div className="absolute top-[35%] right-[-10%] w-[50vw] h-[50vw] bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none transform translate-z-0" />
+      <div className="absolute bottom-[20%] left-[-10%] w-[55vw] h-[55vw] bg-purple-500/8 rounded-full blur-[140px] pointer-events-none transform translate-z-0" />
 
       {/* Seamless Hero Presentation Section */}
       <header className="relative w-full min-h-[45vh] flex items-center justify-center overflow-hidden pt-36 pb-16 z-10">
@@ -244,22 +208,23 @@ export default function ServicesPage() {
               className="w-full relative scroll-mt-24 py-14 sm:py-20 lg:py-24"
             >
               <div className="relative z-10">
-                <ScrollReveal>
+                {/* Instant, Jitter-Free Structural Container */}
+                <div className="w-full transform transition-all duration-500 ease-out will-change-transform opacity-100 translate-y-0 scale-100">
                   <div className={`max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-24 flex flex-col ${
                     isEven ? "lg:flex-row" : "lg:flex-row-reverse"
                   } items-center gap-12 lg:gap-16 xl:gap-24`}>
                     
-                    {/* Graphics / Visual Asset Column - Optimized configuration for instant rendering */}
+                    {/* Graphics / Visual Asset Column */}
                     <div className="w-full lg:w-1/2 flex justify-center items-center h-[240px] sm:h-[360px] md:h-[400px] lg:h-[440px] relative group">
-                      <div className={`absolute inset-0 rounded-full bg-gradient-to-tr ${service.glowColor} blur-[80px] sm:blur-[100px] opacity-90 scale-95 transition-transform duration-700 pointer-events-none`} />
+                      <div className={`absolute inset-0 rounded-full bg-gradient-to-tr ${service.glowColor} blur-[80px] sm:blur-[100px] opacity-90 scale-95 transition-transform duration-1000 pointer-events-none`} />
                       
-                      <div className="relative w-full h-full transform transition-transform duration-500 ease-out mix-blend-screen group-hover:scale-[1.015]">
+                      <div className="relative w-full h-full transform transition-transform duration-[800ms] ease-out mix-blend-screen group-hover:scale-[1.025]">
                         <Image
                           src={service.visualAsset}
                           alt={service.title}
                           fill
-                          priority
-                          className="object-contain opacity-90 saturate-100 brightness-95 contrast-[102%]"
+                          priority={index < 2} // Preloads the first few items for stellar LCP / GTmetrix ratings
+                          className="object-contain opacity-80 saturate-100 brightness-95 contrast-[102%] transition-none"
                           sizes="(max-width: 1024px) 100vw, 45vw"
                         />
                       </div>
@@ -314,7 +279,7 @@ export default function ServicesPage() {
                     </div>
 
                   </div>
-                </ScrollReveal>
+                </div>
               </div>
             </section>
           );
