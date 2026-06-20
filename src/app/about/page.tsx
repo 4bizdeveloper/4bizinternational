@@ -17,7 +17,6 @@ const Counter: React.FC<CounterProps> = ({ value, suffix = '' }) => {
   const inView = useInView(ref, { once: true, margin: "-50px" });
   const count = useMotionValue(0);
   
-  // Declarative rendering instead of main-thread thrashing DOM selectors
   const rounded = useTransform(count, (latest) => `${Math.floor(latest)}${suffix}`);
 
   useEffect(() => {
@@ -65,7 +64,7 @@ export default function AboutPage() {
     <div 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative w-full min-h-screen text-white overflow-x-hidden font-sans select-none selection:bg-cyan-500 selection:text-black transition-colors duration-500 transform-gpu"
+      className="relative w-full min-h-screen text-white overflow-x-hidden font-sans selection:bg-cyan-500 selection:text-black transition-colors duration-500 transform-gpu"
       style={{
         background: `
           radial-gradient(circle at 50% 45%, #081d63 0%, #051245 45%, #030a2b 80%, #020721 100%)
@@ -78,9 +77,6 @@ export default function AboutPage() {
         <div className="absolute bottom-[20%] right-[5%] w-[80vw] h-[80vw] sm:w-[60vw] sm:h-[60vw] rounded-full bg-gradient-to-tl from-blue-600/15 via-indigo-500/10 to-transparent blur-[140px] mix-blend-screen" />
         <div className="absolute top-[45%] left-[20%] w-[60vw] h-[60vw] rounded-full bg-blue-400/8 blur-[110px] mix-blend-screen" />
       </div>
-
-      {/* Micro-mesh Grid Structural Backdrop Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
 
       {/* ─── HERO SECTION ─── */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8">
@@ -95,7 +91,6 @@ export default function AboutPage() {
             <span className="text-xs font-mono tracking-[0.3em] uppercase text-cyan-400 font-bold">Digital Vanguard</span>
           </div>
           
-          {/* Enhanced clipping prevention box wrapper */}
           <h1 className="text-4xl sm:text-6xl xl:text-7xl font-black tracking-tight leading-[1.1] break-words text-white py-1">
             Architecting <br className="hidden sm:block" />
             <span className="inline-block px-1 pb-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-400 via-blue-400 to-purple-500 drop-shadow-[0_0_25px_rgba(34,211,238,0.3)]">
@@ -117,7 +112,7 @@ export default function AboutPage() {
           </div>
         </motion.div>
 
-        {/* Right Core Logo Frame with 3D Structural Glowing Cosmic Rings */}
+        {/* Right Core Logo Frame */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95, x: 30 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -125,16 +120,11 @@ export default function AboutPage() {
           className="w-full lg:w-[42%] flex items-center justify-center relative min-h-[350px] sm:min-h-[420px]"
           style={{ perspective: 1200 }}
         >
-          {/* Energy Radiation Pulse Rings */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none transform-gpu">
             <div className="absolute w-56 h-56 bg-radial-gradient from-cyan-500/30 via-pink-500/20 to-transparent blur-2xl animate-pulse" />
-
-            {/* Thick 3D Multi-colored Pulsating Layers */}
             <div className="absolute w-48 h-48 rounded-full border-[6px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.4)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
             <div className="absolute w-60 h-60 rounded-full border-[4px] border-pink-500/20 shadow-[0_0_30px_rgba(236,72,153,0.3)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite_0.9s]" />
             <div className="absolute w-72 h-72 rounded-full border-[5px] border-purple-500/10 shadow-[0_0_35px_rgba(168,85,247,0.2)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite_1.8s]" />
-
-            {/* Dynamic Orbital Geometry Tracks */}
             <div className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full border-[3px] border-dashed border-cyan-400/40 animate-[spin_25s_linear_infinite]" />
             <div className="absolute w-[18rem] h-[18rem] sm:w-[23rem] sm:h-[23rem] rounded-full border-[2px] border-double border-pink-500/30 animate-[spin_18s_linear_infinite_reverse]" />
             <div className="absolute w-[21rem] h-[21rem] sm:w-[26rem] sm:h-[26rem] rounded-full border-[4px] border-transparent border-t-purple-500/40 border-b-teal-400/40 animate-[spin_35s_linear_infinite]" />
@@ -149,7 +139,7 @@ export default function AboutPage() {
               fill
               sizes="(max-width: 768px) 256px, 320px"
               className="object-contain relative z-10"
-              priority
+              priority={true}
             />
           </div>
         </motion.div>
@@ -214,7 +204,7 @@ export default function AboutPage() {
           </motion.div>
         </div>
 
-        {/* Center Typography Block */}
+        {/* Center Typography Block - Reduced desktop title sizing for ideal fit */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -222,7 +212,7 @@ export default function AboutPage() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mt-20 text-center max-w-4xl mx-auto flex flex-col space-y-5 px-4"
         >
-          <h4 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-400 via-blue-400 to-purple-400 filter drop-shadow-[0_2px_20px_rgba(34,211,238,0.35)] uppercase py-2">
+          <h4 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-400 via-blue-400 to-purple-400 filter drop-shadow-[0_2px_20px_rgba(34,211,238,0.35)] uppercase py-2">
             Impacting Infinite..!!
           </h4>
           <div className="w-24 h-[3px] bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full" />
@@ -236,18 +226,16 @@ export default function AboutPage() {
       <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-24 pb-12 overflow-hidden">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
           
-          {/* CEO Transparent Image Container - Perfect Blend as referenced in image_c06527.jpg */}
+          {/* CEO Image Container */}
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full lg:w-[45%] flex justify-center items-end relative select-none pointer-events-none"
+            className="w-full lg:w-[45%] flex justify-center items-end relative"
           >
-            {/* Subtle soft gradient ambient light directly behind the silhouette to amplify natural blending */}
             <div className="absolute bottom-[10%] w-[70%] h-[60%] rounded-full bg-cyan-500/10 blur-[80px] mix-blend-screen pointer-events-none" />
             
-            {/* Perfect zero-border container frame */}
             <div className="relative w-full max-w-[400px] aspect-[4/5] overflow-visible flex items-end">
               <Image 
                 src="/persons/4biz_international-ceo.png" 
@@ -255,7 +243,7 @@ export default function AboutPage() {
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
                 className="object-contain object-bottom transition-transform duration-700 hover:scale-[1.02] filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)]"
-                priority
+                priority={true}
               />
             </div>
           </motion.div>
@@ -282,7 +270,6 @@ export default function AboutPage() {
                 "Our journey at 4BIZ INTERNATIONAL LLC is defined by a relentless passion for excellence and an unwavering commitment to pioneering tomorrow's enterprise architectures today. We don't just engineer premium digital environments; we forge hyper-scalable ecosystems that empower global partners to unlock unprecedented performance indicators and rewrite industry standard matrices."
               </p>
               
-              {/* Enhanced & Restructured CEO Info Stack */}
               <div className="mt-6 pt-4 border-t border-white/10 flex flex-col space-y-1">
                 <span className="text-2xl font-black tracking-wide text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.15)]">
                   Ibrahim
@@ -301,10 +288,8 @@ export default function AboutPage() {
       </section>
 
       {/* ─── EXPANDED BRAND STORY & SMARTPHONE REEL CONTAINER ─── */}
-      {/* Enhanced with extra bottom padding (pb-28 md:pb-40) for flawless section separation */}
       <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-12 pb-28 md:pt-14 md:pb-40 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        {/* Extended Text Block */}
         <div className="lg:col-span-7 flex flex-col space-y-8">
           <div className="flex flex-col space-y-3">
             <div className="inline-flex items-center space-x-2 text-purple-300 font-mono text-xs uppercase tracking-widest font-bold">
@@ -325,7 +310,6 @@ export default function AboutPage() {
             </p>
           </div>
 
-          {/* Value Highlights Row */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-white/10">
             <div className="flex items-start space-x-3 group">
               <div className="p-2.5 rounded-xl bg-cyan-500/15 text-cyan-400 border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-300">
@@ -357,31 +341,25 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Brand Video Inside an Authentic Smartphone Chassis Framework */}
+        {/* Brand Video Smartphone Framework */}
         <div className="lg:col-span-5 w-full flex justify-center lg:justify-end">
           <div className="relative w-full max-w-[290px] sm:max-w-[320px] aspect-[9/16] rounded-[2.8rem] p-3.5 bg-[#0e1438] border-[4px] border-[#222e6b] shadow-[0_30px_70px_rgba(0,0,0,0.7),inset_0_2px_4px_rgba(255,255,255,0.1)] group transform-gpu transition-all duration-500 hover:scale-[1.03] hover:border-cyan-400/50">
-            
-            {/* Left Hardware Volume Keys (+/-) */}
             <div className="absolute top-[24%] -left-[8px] w-[4px] h-9 bg-[#2b3a8a] rounded-l border-l border-white/10 shadow-md z-50" />
             <div className="absolute top-[32%] -left-[8px] w-[4px] h-9 bg-[#2b3a8a] rounded-l border-l border-white/10 shadow-md z-50" />
-            
-            {/* Right Hardware Power Switch Button */}
             <div className="absolute top-[28%] -right-[8px] w-[4px] h-12 bg-[#2b3a8a] rounded-r border-r border-white/10 shadow-md z-50" />
             
-            {/* Top Ear-Speaker Strip & Dot Sensor Matrix */}
             <div className="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-3.5 bg-black rounded-full z-30 flex items-center justify-center space-x-1.5 px-3">
               <div className="w-8 h-1 bg-white/20 rounded-full" />
               <div className="w-1.5 h-1.5 rounded-full bg-[#161f52]" />
             </div>
 
-            {/* Inner Display Surface */}
             <div className="w-full h-full rounded-[2.2rem] overflow-hidden bg-black relative border border-black shadow-inner">
               <iframe
                 className="w-full h-full relative z-10 border-0"
                 src={embedVideoUrl}
                 title="4Biz International Corporate Video Reel"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
+                allowFullScreen={true}
                 loading="lazy"
               />
             </div>
@@ -389,7 +367,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── CONTACT SECTION (FULL WIDTH & FULL HEIGHT EDGE-TO-EDGE) ─── */}
+      {/* ─── CONTACT SECTION ─── */}
       <section id="contact" className="relative z-10 w-full min-h-screen">
         <Contact />
       </section>
@@ -399,7 +377,7 @@ export default function AboutPage() {
         className="pointer-events-none absolute -inset-px opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 z-10"
         style={{
           background: `radial-gradient(600px circle at var(--x) var(--y), rgba(34, 211, 238, 0.04), transparent 50%)`,
-          // @ts-ignore - dynamic styling variable bindings
+          // @ts-ignore
           '--x': smoothX,
           '--y': smoothY,
         }}

@@ -2,19 +2,19 @@ import React from 'react';
 import Image from 'next/image';
 import { Metadata } from 'next';
 
-// Ultra-optimized SEO Meta Tags (Preserved perfectly)
+// Ultra-optimized SEO Meta Tags (Updated perfectly)
 export const metadata: Metadata = {
-  title: 'Digital Workplace & Productivity Solutions | 4Biz International',
-  description: 'Set up Microsoft 365, Google Workspace, Zoho, business email & workflow automation — secure, cloud-based digital workplace solutions with zero-downtime migration and 24/7 support.',
+  title: 'Web, Mobile & Commerce Solutions | 4Biz International',
+  description: 'Build scalable websites, mobile apps & eCommerce platforms designed for performance and growth. UI/UX design, web & mobile app development, CMS, PWAs & payment gateway integration.',
   openGraph: {
-    title: 'Digital Workplace & Productivity Solutions | 4Biz International',
-    description: 'Empower hybrid teams with seamless cloud environments and high-performance workflow automation.',
-    url: 'https://4bizinternational.vercel.app/services/digital-workplace',
+    title: 'Web, Mobile & Commerce Solutions | 4Biz International',
+    description: 'Build scalable websites, mobile apps & eCommerce platforms designed for performance and growth. UI/UX design, web & mobile app development, CMS, PWAs & payment gateway integration.',
+    url: 'https://4bizinternational.vercel.app/services/web-mobile-commerce',
     type: 'website',
   },
 };
 
-export default function DigitalWorkplacePage() {
+export default function WebMobileCommercePage() {
   return (
     <div className="min-h-screen text-slate-100 selection:bg-blue-600 selection:text-white overflow-x-hidden antialiased scroll-smooth relative bg-[#040a21]">
       
@@ -78,17 +78,17 @@ export default function DigitalWorkplacePage() {
         <section className="relative min-h-[85vh] flex flex-col items-center justify-center pt-36 pb-12 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="w-full max-w-5xl mx-auto text-center flex flex-col items-center">
             <span className="text-xs sm:text-sm font-semibold tracking-widest text-teal-400 uppercase mb-4 block backdrop-blur-sm bg-teal-950/20 px-4 py-1.5 rounded-full border border-teal-500/20">
-              01 — Digital Workplace
+              03 — Digital Products
             </span>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white max-w-5xl mx-auto leading-[1.1] pb-6 break-words bg-clip-text text-transparent bg-gradient-to-b from-white via-slate-200 to-slate-400">
-              Digital Workplace &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Productivity Solutions</span>
+              Web, Mobile &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Commerce Solutions</span>
             </h1>
             <p className="mt-4 text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed font-normal transparent-content">
-              Empower your workforce with secure, cloud‑based productivity platforms that enhance collaboration, communication, and operational efficiency across your organization. We design, deploy, and manage the email, document, and workflow tools your team relies on every single day.
+              Create powerful digital experiences with scalable websites, mobile applications, and eCommerce platforms designed for performance and growth. We design, build, and integrate the products your customers actually use to find you, buy from you, and come back.
             </p>
           </div>
 
-          {/* Top Level Repeated Transparent Images Panel / Blueprint Preview Reference (image_bf076a.jpg visual integration) */}
+          {/* Top Level Repeated Transparent Images Panel / Blueprint Preview Reference */}
           <div className="w-full max-w-5xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
             <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden">
               <Image
@@ -128,32 +128,32 @@ export default function DigitalWorkplacePage() {
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs font-bold tracking-widest text-purple-400 uppercase block">Why this matters</span>
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
-                One workplace, built around how your team actually works
+                One product strategy, across every screen your customer uses
               </h2>
               <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
-                Most businesses run on a patchwork of tools that were added one at a time — a free email account here, a shared drive there, a chat app nobody fully adopted. The result is scattered files, missed messages, and no single place to see how work is actually moving.
+                A website that loads slowly, a checkout that loses customers at the payment step, an app that nobody downloads twice — most digital products lose people in small moments, not big failures. The fix is rarely "more features." It's a faster, clearer experience built around how people actually browse, decide, and buy.
               </p>
               <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
-                We start by mapping how your people communicate, share files, and hand off tasks today. From that, we configure a single connected platform — Microsoft 365, Google Workspace, or Zoho — and migrate your existing mail and documents across with a planned cutover, so nothing is lost and nobody loses access mid‑workday.
+                We start with how your customers move today — what they search for, where they drop off, what they expect at checkout. From that, we design and build the site, app, or store that fits, then connect it to your payment provider, CMS, and internal systems so updates and orders flow without manual work.
               </p>
               <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
-                The outcome isn't just "new software." It's fewer dropped handoffs, faster approvals, and a workplace your team can navigate without a manual.
+                The outcome is a digital presence that loads fast, converts visitors, and is easy for your own team to update without calling a developer every time.
               </p>
             </div>
 
             {/* Performance Statistics Grid */}
             <div className="lg:col-span-5 space-y-4 w-full">
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800/50 backdrop-blur-md">
-                <div className="text-3xl font-black text-teal-400 font-mono">48hrs</div>
-                <div className="text-sm text-slate-400 mt-1">Typical migration window, planned around your business hours</div>
+                <div className="text-3xl font-black text-teal-400 font-mono">&lt;2.5s</div>
+                <div className="text-sm text-slate-400 mt-1">Target load time we design and build toward, on real connections</div>
               </div>
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800/50 backdrop-blur-md">
-                <div className="text-3xl font-black text-teal-400 font-mono">99.9%</div>
-                <div className="text-sm text-slate-400 mt-1">Uptime SLA across hosted mail and collaboration platforms</div>
+                <div className="text-3xl font-black text-teal-400 font-mono">Mobile-first</div>
+                <div className="text-sm text-slate-400 mt-1">Every build designed for the device most of your customers actually use</div>
               </div>
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800/50 backdrop-blur-md">
                 <div className="text-3xl font-black text-teal-400 font-mono">24/7</div>
-                <div className="text-sm text-slate-400 mt-1">Support from a team that already knows your setup</div>
+                <div className="text-sm text-slate-400 mt-1">Support and monitoring once your product is live</div>
               </div>
             </div>
           </div>
@@ -165,10 +165,10 @@ export default function DigitalWorkplacePage() {
             <div className="mb-16">
               <span className="text-xs font-bold tracking-widest text-purple-400 uppercase block mb-2">What's included</span>
               <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-6">
-                Platforms and tools we set up and manage
+                Products and integrations we design and build
               </h2>
               <p className="text-slate-400 max-w-2xl text-base">
-                Pick a single platform or combine several — we configure, secure, and support each one to fit your team's size and budget.
+                From a single corporate site to a full storefront with native apps, we scope the build to what your customers need next.
               </p>
               <div className="h-1 w-20 bg-gradient-to-r from-teal-500 to-transparent rounded mt-6" />
             </div>
@@ -176,91 +176,91 @@ export default function DigitalWorkplacePage() {
             {/* Optimized Glassmorphism Box Layout with Individual Svg Node Icons */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               
-              {/* Card 1: Microsoft 365 */}
+              {/* Card 1: UI/UX Design */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><circle cx="7" cy="6" r="0.6" fill="currentColor"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Microsoft 365</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">UI/UX Design</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Outlook, Word, Excel, and Teams configured as one suite. We set up tenant security baselines, conditional access, and multi‑factor authentication so your team is productive and protected from day one.
+                  Research-led design that maps how people actually navigate, decide, and buy — then a visual system that makes that path obvious.
                 </p>
               </div>
 
-              {/* Card 2: Google Workspace */}
+              {/* Card 2: Corporate Website Development */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M12 3v6l5 3-5 3v6"/><path d="M3 12h6m6 0h6"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/><circle cx="12" cy="12" r="9"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Google Workspace</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Corporate Website Development</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Gmail, Drive, Meet, and Docs set up for real‑time, co‑authored work. We configure shared drives, calendar resource booking, and admin policies that keep your domain secure across distributed teams.
+                  A fast, on-brand site built to load quickly, rank well, and give visitors a clear next step instead of a wall of pages.
                 </p>
               </div>
 
-              {/* Card 3: Zoho Workplace */}
+              {/* Card 3: Web Application Development */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M8 13h3"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Zoho Workplace</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Web Application Development</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Zoho Mail, WorkDrive, and Cliq bundled into one console — a cost‑effective option for growing teams. We configure custom domains, storage tiers, and roles without enterprise pricing.
+                  Custom dashboards, booking systems, or internal tools built around specific business logic that off-the-shelf software can't handle.
                 </p>
               </div>
 
-              {/* Card 4: Exchange Email Solutions */}
+              {/* Card 4: Mobile App Development */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="4" y="4" width="16" height="5" rx="1"/><rect x="4" y="11" width="16" height="5" rx="1"/><circle cx="7.5" cy="6.5" r="0.6" fill="currentColor"/><circle cx="7.5" cy="13.5" r="0.6" fill="currentColor"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Exchange Email Solutions</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Mobile App Development</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Hosted or on‑premise Exchange Server for organizations that need full control over mail flow, retention, and compliance archiving. We manage mailbox databases and disaster recovery.
+                  Native and cross-platform apps for iOS and Android, built for the offline moments and notifications a mobile site can't deliver.
                 </p>
               </div>
 
-              {/* Card 5: Business Email Setup */}
+              {/* Card 5: E-commerce Solutions */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M4 4h16v16H4z"/><path d="M9 4v16M4 9h16"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M2 3h2l2.6 12.4a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 2-1.6L21 7H6"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Business Email Setup</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">E-commerce Solutions</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Professional email on your own domain, set up correctly the first time. We handle DNS, MX records, and SPF/DKIM/DMARC authentication so messages land in inboxes, not spam.
+                  Online stores with product catalogs, cart, and checkout built to convert — and inventory that stays in sync with what you actually have in stock.
                 </p>
               </div>
 
-              {/* Card 6: Team Collaboration Tools */}
+              {/* Card 6: CMS Development */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.4A8.5 8.5 0 1 1 21 11.5z"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M9.5 13.5l1.5 1.5 3-3"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Team Collaboration Tools</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">CMS Development</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Chat, video, and shared workspaces that replace scattered email threads. We deploy Teams, Slack, or Google Chat with channels mapped to how your departments actually communicate.
+                  A content system your own team can update — new pages, products, or blog posts — without filing a request to a developer.
                 </p>
               </div>
 
-              {/* Card 7: Document Management */}
+              {/* Card 7: Progressive Web Apps (PWA) */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M7 17h10M11 19.5h2"/><circle cx="12" cy="5" r="1.2" fill="currentColor"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Document Management</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Progressive Web Apps (PWA)</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Centralized, version‑controlled storage with permission tiers, e‑signature workflows, and audit trails — so the right files are easy to find and the wrong people can't see them.
+                  An app-like, installable experience that works in the browser — with offline access and push notifications, no app store required.
                 </p>
               </div>
 
-              {/* Card 8: Workflow Automation */}
+              {/* Card 8: Payment Gateway Integration */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0A1.65 1.65 0 0 0 10 3.09V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Workflow Automation</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Payment Gateway Integration</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  We map repetitive manual work — approvals, onboarding, data entry — into automated flows using Power Automate, Zapier, or native platform tools, removing busywork from routine processes.
+                  Secure checkout connected to providers like Stripe, PayPal, or Razorpay, so payments settle correctly without manual reconciliation.
                 </p>
               </div>
 
@@ -275,42 +275,42 @@ export default function DigitalWorkplacePage() {
               <div>
                 <span className="text-xs font-bold tracking-widest text-purple-400 uppercase block mb-2">How we work</span>
                 <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
-                  Built to be set up once, supported always
+                  Built for how people actually browse, decide, and buy
                 </h2>
               </div>
             </div>
 
-            {/* Increased transparency of boxes by moving from bg-slate-950/40 to clear ultra-glassy bg-white/[0.015] */}
+            {/* Premium glass-morphism panels */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
-                <h4 className="text-white font-bold text-base mb-2">Security first</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">MFA, conditional access, and encryption are configured into every deployment by default, not added later.</p>
+                <h4 className="text-white font-bold text-base mb-2">Performance-first</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">Every build is measured against load time and conversion, not just how it looks in a design file.</p>
               </div>
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
-                <h4 className="text-white font-bold text-base mb-2">Zero‑downtime migration</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">Cutovers are scheduled and validated before go‑live, so mail and files move without interrupting your workday.</p>
+                <h4 className="text-white font-bold text-base mb-2">Built to scale</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">Architecture that handles traffic spikes and new features without a rebuild a year later.</p>
               </div>
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
-                <h4 className="text-white font-bold text-base mb-2">Right‑sized for you</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">We scope the platform and license tier to your team's size and budget, never a one‑size‑fits‑all package.</p>
+                <h4 className="text-white font-bold text-base mb-2">Secure by design</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">Payment data, logins, and customer information protected from the first line of code.</p>
               </div>
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
                 <h4 className="text-white font-bold text-base mb-2">Ongoing support</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">A regional team that already knows your environment — not a ticket queue starting from zero each time.</p>
+                <p className="text-xs text-slate-400 leading-relaxed">A regional team that already knows your stack — not a ticket queue starting from zero each time.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ================= INFORMATIONAL CLOSING SUMMARY (BORDERS AND OVERLAYS CLEARED) ================= */}
+        {/* ================= INFORMATIONAL CLOSING SUMMARY ================= */}
         <section className="relative py-24 px-4 sm:px-6 lg:px-8 text-center bg-transparent">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_70%,rgba(45,217,184,0.07),transparent_50%)] pointer-events-none" />
           <div className="relative z-10 max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-              Modernizing how your team works
+              Ready to build your next digital product?
             </h2>
             <p className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              We focus on assessing what you're using today, isolating structural breaking points, and transitioning components to the right platform setups seamlessly end to end.
+              Tell us what you're trying to launch — a site, an app, or a store — and we'll scope the right build and timeline.
             </p>
           </div>
         </section>
