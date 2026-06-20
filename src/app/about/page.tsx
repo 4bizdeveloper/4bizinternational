@@ -3,7 +3,7 @@
 import React, { useRef, useMemo, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, animate, useInView } from 'framer-motion';
 import Image from 'next/image';
-import { RiCompass3Line, RiFocus2Line, RiShieldFlashLine, RiCpuLine, RiGlobalLine, RiEyeLine, RiRocketLine } from 'react-icons/ri';
+import { RiCompass3Line, RiFocus2Line, RiShieldFlashLine, RiCpuLine, RiGlobalLine, RiEyeLine, RiRocketLine, RiDoubleQuotesL } from 'react-icons/ri';
 import Contact from '@/components/Contact';
 
 // ─── PERFORMANCE OPTIMIZED CLS-FREE COUNTER ─────────────────────────────────
@@ -232,8 +232,77 @@ export default function AboutPage() {
         </motion.div>
       </section>
 
+      {/* ─── EXECUTIVE LEADERSHIP / CEO SPEAKS SECTION ─── */}
+      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-24 pb-12 overflow-hidden">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+          
+          {/* CEO Transparent Image Container - Perfect Blend as referenced in image_c06527.jpg */}
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[45%] flex justify-center items-end relative select-none pointer-events-none"
+          >
+            {/* Subtle soft gradient ambient light directly behind the silhouette to amplify natural blending */}
+            <div className="absolute bottom-[10%] w-[70%] h-[60%] rounded-full bg-cyan-500/10 blur-[80px] mix-blend-screen pointer-events-none" />
+            
+            {/* Perfect zero-border container frame */}
+            <div className="relative w-full max-w-[400px] aspect-[4/5] overflow-visible flex items-end">
+              <Image 
+                src="/persons/4biz_international-ceo.png" 
+                alt="4BIZ INTERNATIONAL LLC CEO Ibrahim"
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-contain object-bottom transition-transform duration-700 hover:scale-[1.02] filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)]"
+                priority
+              />
+            </div>
+          </motion.div>
+
+          {/* CEO Insight Text Block */}
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[55%] flex flex-col space-y-6 text-left relative z-10"
+          >
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500/15 to-transparent border border-purple-500/20 px-4 py-1.5 rounded-full w-fit backdrop-blur-md">
+              <span className="text-xs font-mono tracking-[0.2em] uppercase text-purple-400 font-bold">Executive Insights</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-white">
+              CEO Speaks
+            </h2>
+
+            <div className="relative group p-6 sm:p-8 rounded-3xl border border-white/5 bg-white/[0.01] backdrop-blur-xl">
+              <RiDoubleQuotesL className="text-4xl sm:text-5xl text-cyan-400/30 absolute -top-4 -left-2 sm:-left-4" />
+              <p className="text-white/90 text-base sm:text-lg md:text-xl font-light italic leading-relaxed text-justify tracking-wide pt-2">
+                "Our journey at 4BIZ INTERNATIONAL LLC is defined by a relentless passion for excellence and an unwavering commitment to pioneering tomorrow's enterprise architectures today. We don't just engineer premium digital environments; we forge hyper-scalable ecosystems that empower global partners to unlock unprecedented performance indicators and rewrite industry standard matrices."
+              </p>
+              
+              {/* Enhanced & Restructured CEO Info Stack */}
+              <div className="mt-6 pt-4 border-t border-white/10 flex flex-col space-y-1">
+                <span className="text-2xl font-black tracking-wide text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.15)]">
+                  Ibrahim
+                </span>
+                <span className="text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
+                  Chief Executive Officer
+                </span>
+                <span className="text-sm font-mono uppercase tracking-[0.18em] text-cyan-300 font-extrabold mt-1.5 bg-cyan-950/40 border border-cyan-500/30 px-3 py-1 rounded-md w-fit backdrop-blur-sm shadow-[0_0_15px_rgba(34,211,238,0.15)]">
+                  4BIZ INTERNATIONAL LLC
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
       {/* ─── EXPANDED BRAND STORY & SMARTPHONE REEL CONTAINER ─── */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-12 pb-20 md:pt-14 md:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      {/* Enhanced with extra bottom padding (pb-28 md:pb-40) for flawless section separation */}
+      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-12 pb-28 md:pt-14 md:pb-40 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
         {/* Extended Text Block */}
         <div className="lg:col-span-7 flex flex-col space-y-8">
