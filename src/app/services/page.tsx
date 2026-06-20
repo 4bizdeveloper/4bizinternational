@@ -39,7 +39,7 @@ export default function ServicesPage() {
       title: "Enterprise Business Applications (ERP & CRM)",
       description: "Streamline operations, improve customer engagement, and gain real-time business insights through integrated ERP and CRM platforms tailored to your business needs.",
       icon: <Cpu className="text-cyan-400" size={22} />,
-      visualAsset: "/services/enterprise-business-applications-erp-crm-1.png",
+      visualAsset: "/services/enterprise-business-applications-erp-crm-2.png",
       accentColor: "from-cyan-400 to-blue-500",
       glowColor: "from-cyan-500/30 via-blue-500/5 to-transparent",
       url: "/services/enterprise-business-applications-erp-crm",
