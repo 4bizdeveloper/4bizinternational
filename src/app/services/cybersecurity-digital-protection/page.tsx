@@ -2,19 +2,19 @@ import React from 'react';
 import Image from 'next/image';
 import { Metadata } from 'next';
 
-// Ultra-optimized SEO Meta Tags (Preserved perfectly)
+// Ultra-optimized SEO Meta Tags updated for Cybersecurity Services
 export const metadata: Metadata = {
-  title: 'Digital Workplace & Productivity Solutions | 4Biz International',
-  description: 'Set up Microsoft 365, Google Workspace, Zoho, business email & workflow automation — secure, cloud-based digital workplace solutions with zero-downtime migration and 24/7 support.',
+  title: 'Cybersecurity & Digital Protection Services | 4Biz International',
+  description: 'Protect your organisation from evolving cyber threats with 4Biz International\'s cybersecurity services — penetration testing, vulnerability assessments, 24/7 security monitoring, endpoint protection, and compliance readiness for GDPR, ISO 27001, and more.',
   openGraph: {
-    title: 'Digital Workplace & Productivity Solutions | 4Biz International',
-    description: 'Empower hybrid teams with seamless cloud environments and high-performance workflow automation.',
-    url: 'https://4bizinternational.vercel.app/services/digital-workplace',
+    title: 'Cybersecurity & Digital Protection Services | 4Biz International',
+    description: 'Protect your organisation from evolving cyber threats with proactive security assessments, continuous monitoring, and advanced protection solutions.',
+    url: 'https://4bizinternational.vercel.app/services/cybersecurity',
     type: 'website',
   },
 };
 
-export default function DigitalWorkplacePage() {
+export default function CybersecurityPage() {
   return (
     <div className="min-h-screen text-slate-100 selection:bg-blue-600 selection:text-white overflow-x-hidden antialiased scroll-smooth relative bg-[#040a21]">
       
@@ -78,17 +78,17 @@ export default function DigitalWorkplacePage() {
         <section className="relative min-h-[85vh] flex flex-col items-center justify-center pt-36 pb-12 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="w-full max-w-5xl mx-auto text-center flex flex-col items-center">
             <span className="text-xs sm:text-sm font-semibold tracking-widest text-teal-400 uppercase mb-4 block backdrop-blur-sm bg-teal-950/20 px-4 py-1.5 rounded-full border border-teal-500/20">
-              01 — Digital Workplace
+              07 — Cybersecurity
             </span>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white max-w-5xl mx-auto leading-[1.1] pb-6 break-words bg-clip-text text-transparent bg-gradient-to-b from-white via-slate-200 to-slate-400">
-              Digital Workplace &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Productivity Solutions</span>
+              Cybersecurity &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Digital Protection</span>
             </h1>
             <p className="mt-4 text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed font-normal transparent-content">
-              Empower your workforce with secure, cloud‑based productivity platforms that enhance collaboration, communication, and operational efficiency across your organization. We design, deploy, and manage the email, document, and workflow tools your team relies on every single day.
+              Protect your organization from evolving cyber threats with proactive security assessments, continuous monitoring, and advanced protection solutions — so the people trying to get in, don't.
             </p>
           </div>
 
-          {/* Top Level Repeated Transparent Images Panel / Blueprint Preview Reference (image_bf076a.jpg visual integration) */}
+          {/* Top Level Repeated Transparent Images Panel / Blueprint Preview Reference */}
           <div className="w-full max-w-5xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
             <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden">
               <Image
@@ -128,32 +128,32 @@ export default function DigitalWorkplacePage() {
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs font-bold tracking-widest text-purple-400 uppercase block">Why this matters</span>
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
-                One workplace, built around how your team actually works
+                Most breaches aren't dramatic — they're quiet, and they've already happened
               </h2>
               <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
-                Most businesses run on a patchwork of tools that were added one at a time — a free email account here, a shared drive there, a chat app nobody fully adopted. The result is scattered files, missed messages, and no single place to see how work is actually moving.
+                The majority of cyberattacks don't arrive with a warning. A phishing email lands in the right inbox, an unpatched server is probed overnight, or a third-party tool introduces a vulnerability nobody audited. By the time it's visible, the damage — data loss, downtime, reputational harm — is already done.
               </p>
               <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
-                We start by mapping how your people communicate, share files, and hand off tasks today. From that, we configure a single connected platform — Microsoft 365, Google Workspace, or Zoho — and migrate your existing mail and documents across with a planned cutover, so nothing is lost and nobody loses access mid‑workday.
+                We start by understanding what your organisation actually has exposed: your network perimeter, your applications, your user access patterns, and the compliance obligations your industry carries. From that review, we design and implement a layered security programme — covering prevention, detection, and response — scaled to your size and budget.
               </p>
               <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
-                The outcome isn't just "new software." It's fewer dropped handoffs, faster approvals, and a workplace your team can navigate without a manual.
+                The goal isn't a one-time audit. It's a posture you maintain: monitored, tested, and updated as threats evolve.
               </p>
             </div>
 
             {/* Performance Statistics Grid */}
             <div className="lg:col-span-5 space-y-4 w-full">
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800/50 backdrop-blur-md">
-                <div className="text-3xl font-black text-teal-400 font-mono">48hrs</div>
-                <div className="text-sm text-slate-400 mt-1">Typical migration window, planned around your business hours</div>
+                <div className="text-3xl font-black text-teal-400 font-mono">99.9%</div>
+                <div className="text-sm text-slate-400 mt-1">Threat detection rate across monitored environments</div>
               </div>
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800/50 backdrop-blur-md">
-                <div className="text-3xl font-black text-teal-400 font-mono">99.9%</div>
-                <div className="text-sm text-slate-400 mt-1">Uptime SLA across hosted mail and collaboration platforms</div>
+                <div className="text-3xl font-black text-teal-400 font-mono">&lt; 2 min</div>
+                <div className="text-sm text-slate-400 mt-1">Average SOC incident response and containment time</div>
               </div>
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800/50 backdrop-blur-md">
                 <div className="text-3xl font-black text-teal-400 font-mono">24/7</div>
-                <div className="text-sm text-slate-400 mt-1">Support from a team that already knows your setup</div>
+                <div className="text-sm text-slate-400 mt-1">Continuous security monitoring — no gaps, no blind spots</div>
               </div>
             </div>
           </div>
@@ -165,10 +165,10 @@ export default function DigitalWorkplacePage() {
             <div className="mb-16">
               <span className="text-xs font-bold tracking-widest text-purple-400 uppercase block mb-2">What's included</span>
               <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-6">
-                Platforms and tools we set up and manage
+                Security services we assess, implement, and manage
               </h2>
               <p className="text-slate-400 max-w-2xl text-base">
-                Pick a single platform or combine several — we configure, secure, and support each one to fit your team's size and budget.
+                From a first penetration test to a fully managed security programme, we scope each engagement to what your organisation actually needs to stay protected.
               </p>
               <div className="h-1 w-20 bg-gradient-to-r from-teal-500 to-transparent rounded mt-6" />
             </div>
@@ -176,91 +176,135 @@ export default function DigitalWorkplacePage() {
             {/* Optimized Glassmorphism Box Layout with Individual Svg Node Icons */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               
-              {/* Card 1: Microsoft 365 */}
+              {/* Card 1: Penetration Testing */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v3l2 2"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Microsoft 365</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Penetration Testing</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Outlook, Word, Excel, and Teams configured as one suite. We set up tenant security baselines, conditional access, and multi‑factor authentication so your team is productive and protected from day one.
+                  Simulated attacks on your systems, networks, and applications to uncover exploitable vulnerabilities before real adversaries do.
                 </p>
               </div>
 
-              {/* Card 2: Google Workspace */}
+              {/* Card 2: Vulnerability Assessment */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M12 3v6l5 3-5 3v6"/><path d="M3 12h6m6 0h6"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Google Workspace</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Vulnerability Assessment</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Gmail, Drive, Meet, and Docs set up for real‑time, co‑authored work. We configure shared drives, calendar resource booking, and admin policies that keep your domain secure across distributed teams.
+                  Systematic scanning and prioritised reporting of security weaknesses across your network, servers, and application stack.
                 </p>
               </div>
 
-              {/* Card 3: Zoho Workplace */}
+              {/* Card 3: Malware Analysis */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Zoho Workplace</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Malware Analysis</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Zoho Mail, WorkDrive, and Cliq bundled into one console — a cost‑effective option for growing teams. We configure custom domains, storage tiers, and roles without enterprise pricing.
+                  Forensic examination of malicious code to understand how it works, what it touched, and how to prevent a repeat incident.
                 </p>
               </div>
 
-              {/* Card 4: Exchange Email Solutions */}
+              {/* Card 4: Threat Intelligence */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="4" y="4" width="16" height="5" rx="1"/><rect x="4" y="11" width="16" height="5" rx="1"/><circle cx="7.5" cy="6.5" r="0.6" fill="currentColor"/><circle cx="7.5" cy="13.5" r="0.6" fill="currentColor"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8-10-8-10-8z"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Exchange Email Solutions</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Threat Intelligence</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Hosted or on‑premise Exchange Server for organizations that need full control over mail flow, retention, and compliance archiving. We manage mailbox databases and disaster recovery.
+                  Continuous feeds of attacker tactics, techniques, and indicators of compromise — applied to your environment in real time.
                 </p>
               </div>
 
-              {/* Card 5: Business Email Setup */}
+              {/* Card 5: Security Audits */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M4 4h16v16H4z"/><path d="M9 4v16M4 9h16"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Business Email Setup</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Security Audits</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Professional email on your own domain, set up correctly the first time. We handle DNS, MX records, and SPF/DKIM/DMARC authentication so messages land in inboxes, not spam.
+                  Review of your security policies, access controls, and configurations against recognised frameworks and your industry's requirements.
                 </p>
               </div>
 
-              {/* Card 6: Team Collaboration Tools */}
+              {/* Card 6: SSL Certificates */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.4A8.5 8.5 0 1 1 21 11.5z"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Team Collaboration Tools</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">SSL Certificates</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Chat, video, and shared workspaces that replace scattered email threads. We deploy Teams, Slack, or Google Chat with channels mapped to how your departments actually communicate.
+                  Full lifecycle management of SSL/TLS certificates — provisioned, renewed, and monitored so your encryption never silently expires.
                 </p>
               </div>
 
-              {/* Card 7: Document Management */}
+              {/* Card 7: Website Security */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Document Management</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Website Security</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Centralized, version‑controlled storage with permission tiers, e‑signature workflows, and audit trails — so the right files are easy to find and the wrong people can't see them.
+                  Protection against DDoS, SQL injection, cross-site scripting, and other web application attacks via WAF and continuous scanning.
                 </p>
               </div>
 
-              {/* Card 8: Workflow Automation */}
+              {/* Card 8: SiteLock Protection */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0A1.65 1.65 0 0 0 10 3.09V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Workflow Automation</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">SiteLock Protection</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  We map repetitive manual work — approvals, onboarding, data entry — into automated flows using Power Automate, Zapier, or native platform tools, removing busywork from routine processes.
+                  Automated daily malware scanning and removal for websites, with trust seal verification to maintain visitor confidence.
+                </p>
+              </div>
+
+              {/* Card 9: Endpoint Security */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
+                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Endpoint Security</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Next-generation protection for laptops, desktops, and mobile devices — covering detection, response, and device management.
+                </p>
+              </div>
+
+              {/* Card 10: Email Security */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
+                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Email Security</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Layered filtering to block phishing, business email compromise, and spoofing before they reach your team's inbox.
+                </p>
+              </div>
+
+              {/* Card 11: Security Monitoring */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
+                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Security Monitoring</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Round-the-clock SIEM-powered surveillance of your environment with real-time alerting and automated containment playbooks.
+                </p>
+              </div>
+
+              {/* Card 12: Compliance Readiness */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
+                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Compliance Readiness</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Guided preparation for GDPR, ISO 27001, SOC 2, HIPAA, and PCI-DSS — from gap analysis through to evidence collection and audit support.
                 </p>
               </div>
 
@@ -275,28 +319,28 @@ export default function DigitalWorkplacePage() {
               <div>
                 <span className="text-xs font-bold tracking-widest text-purple-400 uppercase block mb-2">How we work</span>
                 <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
-                  Built to be set up once, supported always
+                  Security that's tested before you need it
                 </h2>
               </div>
             </div>
 
-            {/* Increased transparency of boxes by moving from bg-slate-950/40 to clear ultra-glassy bg-white/[0.015] */}
+            {/* Core Architectural Pillars */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
-                <h4 className="text-white font-bold text-base mb-2">Security first</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">MFA, conditional access, and encryption are configured into every deployment by default, not added later.</p>
+                <h4 className="text-white font-bold text-base mb-2">Assess before you protect</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">Every engagement starts with understanding your actual attack surface — not a generic checklist applied to every client the same way.</p>
               </div>
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
-                <h4 className="text-white font-bold text-base mb-2">Zero‑downtime migration</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">Cutovers are scheduled and validated before go‑live, so mail and files move without interrupting your workday.</p>
+                <h4 className="text-white font-bold text-base mb-2">Layered by design</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">No single control stops every threat. We build defence in depth: prevention, detection, and response working together.</p>
               </div>
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
-                <h4 className="text-white font-bold text-base mb-2">Right‑sized for you</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">We scope the platform and license tier to your team's size and budget, never a one‑size‑fits‑all package.</p>
+                <h4 className="text-white font-bold text-base mb-2">Alerts that mean something</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">Tuned detection rules reduce noise so your team responds to real incidents — not a wall of low-confidence notifications.</p>
               </div>
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
-                <h4 className="text-white font-bold text-base mb-2">Ongoing support</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">A regional team that already knows your environment — not a ticket queue starting from zero each time.</p>
+                <h4 className="text-white font-bold text-base mb-2">Ongoing, not one-off</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">A security posture decays without maintenance. We re-test, re-tune, and update controls as your environment and the threat landscape change.</p>
               </div>
             </div>
           </div>
@@ -307,10 +351,10 @@ export default function DigitalWorkplacePage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_70%,rgba(45,217,184,0.07),transparent_50%)] pointer-events-none" />
           <div className="relative z-10 max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-              Modernizing how your team works
+              Ready to know where your gaps actually are?
             </h2>
             <p className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              We focus on assessing what you're using today, isolating structural breaking points, and transitioning components to the right platform setups seamlessly end to end.
+              Tell us what you're running today — and what's keeping you up at night — and we'll scope the right security programme for your organisation.
             </p>
           </div>
         </section>

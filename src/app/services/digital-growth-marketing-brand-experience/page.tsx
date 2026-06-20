@@ -2,28 +2,28 @@ import React from 'react';
 import Image from 'next/image';
 import { Metadata } from 'next';
 
-// Ultra-optimized SEO Meta Tags (Preserved perfectly)
+// Ultra-optimized SEO Meta Tags (Preserved perfectly & updated)
 export const metadata: Metadata = {
-  title: 'Digital Workplace & Productivity Solutions | 4Biz International',
-  description: 'Set up Microsoft 365, Google Workspace, Zoho, business email & workflow automation — secure, cloud-based digital workplace solutions with zero-downtime migration and 24/7 support.',
+  title: 'Digital Growth, Marketing & Brand Experience | 4Biz International',
+  description: 'Drive traffic, increase conversions, and build a memorable brand with data-driven marketing — SEO, AEO, social media, performance marketing, content, branding & video.',
   openGraph: {
-    title: 'Digital Workplace & Productivity Solutions | 4Biz International',
-    description: 'Empower hybrid teams with seamless cloud environments and high-performance workflow automation.',
-    url: 'https://4bizinternational.vercel.app/services/digital-workplace',
+    title: 'Digital Growth, Marketing & Brand Experience | 4Biz International',
+    description: 'Drive traffic, increase conversions, and build a memorable brand with data-driven marketing.',
+    url: 'https://4bizinternational.vercel.app/services/digital-growth-marketing-brand',
     type: 'website',
   },
 };
 
-export default function DigitalWorkplacePage() {
+export default function DigitalGrowthMarketingBrandPage() {
   return (
-    <div className="min-h-screen text-slate-100 selection:bg-blue-600 selection:text-white overflow-x-hidden antialiased scroll-smooth relative bg-[#040a21]">
+    <div className="min-h-screen text-slate-100 selection:bg-teal-600 selection:text-white overflow-x-hidden antialiased scroll-smooth relative bg-[#060a1c]">
       
       {/* ================= GLOBAL ULTRA-MODERN DYNAMIC BACKGROUND ================= */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Core Radial Glow Layers */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,#0f2054_0%,#061033_45%,#020717_100%)] opacity-90" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(16,37,97,0.65)_0%,transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(13,27,77,0.8)_0%,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,#0b1130_0%,#060a1c_45%,#02040d_100%)] opacity-90" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(45,217,184,0.12)_0%,transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(167,139,250,0.14)_0%,transparent_50%)]" />
         
         {/* 3D Splines Matrix */}
         <svg 
@@ -56,19 +56,19 @@ export default function DigitalWorkplacePage() {
           
           <defs>
             <linearGradient id="splineGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.95" />
-              <stop offset="50%" stopColor="#2563eb" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#60a5fa" stopOpacity="0" />
+              <stop offset="0%" stopColor="#2dd9b8" stopOpacity="0.95" />
+              <stop offset="50%" stopColor="#16a892" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#a78bfa" stopOpacity="0" />
             </linearGradient>
             <linearGradient id="splineGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#2563eb" stopOpacity="0" />
-              <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.75" />
-              <stop offset="100%" stopColor="#1e3a8a" stopOpacity="0.85" />
+              <stop offset="0%" stopColor="#16a892" stopOpacity="0" />
+              <stop offset="50%" stopColor="#2dd9b8" stopOpacity="0.75" />
+              <stop offset="100%" stopColor="#0b1130" stopOpacity="0.85" />
             </linearGradient>
           </defs>
         </svg>
 
-        <div className="absolute inset-0 bg-attachment-scroll bg-[linear-gradient(to_bottom,rgba(4,10,33,0)_0%,rgba(4,10,33,0.4)_100%)] mix-blend-multiply" />
+        <div className="absolute inset-0 bg-attachment-scroll bg-[linear-gradient(to_bottom,rgba(6,10,28,0)_0%,rgba(6,10,28,0.4)_100%)] mix-blend-multiply" />
       </div>
 
       {/* ================= CONTENT WRAPPER ================= */}
@@ -78,22 +78,22 @@ export default function DigitalWorkplacePage() {
         <section className="relative min-h-[85vh] flex flex-col items-center justify-center pt-36 pb-12 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="w-full max-w-5xl mx-auto text-center flex flex-col items-center">
             <span className="text-xs sm:text-sm font-semibold tracking-widest text-teal-400 uppercase mb-4 block backdrop-blur-sm bg-teal-950/20 px-4 py-1.5 rounded-full border border-teal-500/20">
-              01 — Digital Workplace
+              04 — Growth &amp; Brand
             </span>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white max-w-5xl mx-auto leading-[1.1] pb-6 break-words bg-clip-text text-transparent bg-gradient-to-b from-white via-slate-200 to-slate-400">
-              Digital Workplace &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">Productivity Solutions</span>
+              Digital Growth, Marketing &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-purple-400">Brand Experience</span>
             </h1>
             <p className="mt-4 text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed font-normal transparent-content">
-              Empower your workforce with secure, cloud‑based productivity platforms that enhance collaboration, communication, and operational efficiency across your organization. We design, deploy, and manage the email, document, and workflow tools your team relies on every single day.
+              Drive traffic, increase conversions, and build a memorable brand presence through data-driven marketing and modern digital engagement strategies. We plan, run, and report on the channels that bring people to you and the brand that makes them stay.
             </p>
           </div>
 
-          {/* Top Level Repeated Transparent Images Panel / Blueprint Preview Reference (image_bf076a.jpg visual integration) */}
+          {/* Top Level Repeated Transparent Images Panel / Blueprint Preview Reference */}
           <div className="w-full max-w-5xl mx-auto mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
             <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden">
               <Image
                 src="/services/ai-1.png"
-                alt="High performance UI monitoring and clean workflow automation platforms layout preview"
+                alt="Digital Marketing Campaign Strategy & Analytics Dashboard Preview"
                 fill
                 sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 350px"
                 className="object-contain mix-blend-screen transition-transform duration-500 ease-out hover:scale-105"
@@ -102,7 +102,7 @@ export default function DigitalWorkplacePage() {
             <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden">
               <Image
                 src="/services/ai-1.png"
-                alt="High performance UI monitoring and clean workflow automation platforms system preview"
+                alt="Brand Strategy Matrix and Creative Performance Optimization Preview"
                 fill
                 sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 350px"
                 className="object-contain mix-blend-screen transition-transform duration-500 ease-out hover:scale-105"
@@ -111,7 +111,7 @@ export default function DigitalWorkplacePage() {
             <div className="relative w-full aspect-[16/11] flex items-center justify-center overflow-hidden sm:col-span-2 lg:col-span-1">
               <Image
                 src="/services/ai-1.png"
-                alt="High performance UI monitoring and clean workflow automation platforms analytics preview"
+                alt="SEO, AEO, and Multi-channel Acquisition Framework Visual Identity Preview"
                 fill
                 sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 350px"
                 className="object-contain mix-blend-screen transition-transform duration-500 ease-out hover:scale-105"
@@ -128,32 +128,32 @@ export default function DigitalWorkplacePage() {
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs font-bold tracking-widest text-purple-400 uppercase block">Why this matters</span>
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
-                One workplace, built around how your team actually works
+                One growth strategy, instead of disconnected campaigns
               </h2>
               <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
-                Most businesses run on a patchwork of tools that were added one at a time — a free email account here, a shared drive there, a chat app nobody fully adopted. The result is scattered files, missed messages, and no single place to see how work is actually moving.
+                Most businesses run marketing in pieces — a boosted post here, a one-off ad campaign there, a logo that doesn't match the website. Each piece might look fine on its own, but nothing compounds, and there's no clear answer to which efforts actually bring in customers.
               </p>
               <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
-                We start by mapping how your people communicate, share files, and hand off tasks today. From that, we configure a single connected platform — Microsoft 365, Google Workspace, or Zoho — and migrate your existing mail and documents across with a planned cutover, so nothing is lost and nobody loses access mid‑workday.
+                We start by mapping where your customers actually find you — search, social, referrals, or word of mouth — and what happens after they land on your page. From that, we build a connected plan across SEO, paid media, content, and brand identity, with every channel reporting back to the same set of numbers.
               </p>
               <p className="text-slate-400 leading-relaxed text-sm sm:text-base">
-                The outcome isn't just "new software." It's fewer dropped handoffs, faster approvals, and a workplace your team can navigate without a manual.
+                The outcome is a brand that looks and sounds the same everywhere your customer meets it, and a marketing budget you can actually trace back to results.
               </p>
             </div>
 
             {/* Performance Statistics Grid */}
             <div className="lg:col-span-5 space-y-4 w-full">
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800/50 backdrop-blur-md">
-                <div className="text-3xl font-black text-teal-400 font-mono">48hrs</div>
-                <div className="text-sm text-slate-400 mt-1">Typical migration window, planned around your business hours</div>
+                <div className="text-3xl font-black text-teal-400 font-mono">Data-driven</div>
+                <div className="text-sm text-slate-400 mt-1">Every channel measured against traffic, leads, and conversions — not just likes</div>
               </div>
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800/50 backdrop-blur-md">
-                <div className="text-3xl font-black text-teal-400 font-mono">99.9%</div>
-                <div className="text-sm text-slate-400 mt-1">Uptime SLA across hosted mail and collaboration platforms</div>
+                <div className="text-3xl font-black text-teal-400 font-mono">Multi-channel</div>
+                <div className="text-sm text-slate-400 mt-1">SEO, social, paid, and content working from one shared plan</div>
               </div>
               <div className="p-6 rounded-2xl bg-white/[0.02] border border-slate-800/50 backdrop-blur-md">
                 <div className="text-3xl font-black text-teal-400 font-mono">24/7</div>
-                <div className="text-sm text-slate-400 mt-1">Support from a team that already knows your setup</div>
+                <div className="text-sm text-slate-400 mt-1">Monitoring of mentions, reviews, and campaign performance</div>
               </div>
             </div>
           </div>
@@ -165,10 +165,10 @@ export default function DigitalWorkplacePage() {
             <div className="mb-16">
               <span className="text-xs font-bold tracking-widest text-purple-400 uppercase block mb-2">What's included</span>
               <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-6">
-                Platforms and tools we set up and manage
+                Services we plan, create, and manage
               </h2>
               <p className="text-slate-400 max-w-2xl text-base">
-                Pick a single platform or combine several — we configure, secure, and support each one to fit your team's size and budget.
+                From search visibility to brand identity, we scope the channels that match where your customers actually spend their attention.
               </p>
               <div className="h-1 w-20 bg-gradient-to-r from-teal-500 to-transparent rounded mt-6" />
             </div>
@@ -176,91 +176,146 @@ export default function DigitalWorkplacePage() {
             {/* Optimized Glassmorphism Box Layout with Individual Svg Node Icons */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               
-              {/* Card 1: Microsoft 365 */}
+              {/* Card 1: SEO */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Microsoft 365</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">SEO (Search Engine Optimization)</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Outlook, Word, Excel, and Teams configured as one suite. We set up tenant security baselines, conditional access, and multi‑factor authentication so your team is productive and protected from day one.
+                  Technical and content optimization that helps search engines find, crawl, and rank your pages for the terms your customers actually search.
                 </p>
               </div>
 
-              {/* Card 2: Google Workspace */}
+              {/* Card 2: AEO */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M12 3v6l5 3-5 3v6"/><path d="M3 12h6m6 0h6"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M8 9h8M8 13h5"/><path d="M21 12a9 9 0 1 1-4.2-7.6"/><path d="M16 3l4 1-1 4"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Google Workspace</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">AEO (Answer Engine Optimization)</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Gmail, Drive, Meet, and Docs set up for real‑time, co‑authored work. We configure shared drives, calendar resource booking, and admin policies that keep your domain secure across distributed teams.
+                  Structuring your content so AI answer engines and voice assistants surface your business directly in their responses, not just a search results page.
                 </p>
               </div>
 
-              {/* Card 3: Zoho Workplace */}
+              {/* Card 3: Social Media Management */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 8h8M8 12h5M8 16h3"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Zoho Workplace</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Social Media Management</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Zoho Mail, WorkDrive, and Cliq bundled into one console — a cost‑effective option for growing teams. We configure custom domains, storage tiers, and roles without enterprise pricing.
+                  Consistent posting, community replies, and content calendars across your platforms, so your brand shows up reliably without taking over your week.
                 </p>
               </div>
 
-              {/* Card 4: Exchange Email Solutions */}
+              {/* Card 4: Social Media Advertising */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="4" y="4" width="16" height="5" rx="1"/><rect x="4" y="11" width="16" height="5" rx="1"/><circle cx="7.5" cy="6.5" r="0.6" fill="currentColor"/><circle cx="7.5" cy="13.5" r="0.6" fill="currentColor"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M3 11l18-7-7 18-3-7-8-4z"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Exchange Email Solutions</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Social Media Advertising</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Hosted or on‑premise Exchange Server for organizations that need full control over mail flow, retention, and compliance archiving. We manage mailbox databases and disaster recovery.
+                  Paid campaigns targeted to the audiences most likely to convert, with budget tracked against actual return rather than impressions alone.
                 </p>
               </div>
 
-              {/* Card 5: Business Email Setup */}
+              {/* Card 5: Performance Marketing */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M4 4h16v16H4z"/><path d="M9 4v16M4 9h16"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M3 17l5-5 4 4 7-8"/><path d="M14 8h5v5"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Business Email Setup</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Performance Marketing</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Professional email on your own domain, set up correctly the first time. We handle DNS, MX records, and SPF/DKIM/DMARC authentication so messages land in inboxes, not spam.
+                  Paid search, display, and retargeting managed against cost-per-acquisition targets, with spend shifted toward what's actually converting.
                 </p>
               </div>
 
-              {/* Card 6: Team Collaboration Tools */}
+              {/* Card 6: Content Marketing */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.4A8.5 8.5 0 1 1 21 11.5z"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M5 4h14v13l-7 4-7-4z"/><path d="M9 9h6M9 12h6"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Team Collaboration Tools</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Content Marketing</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Chat, video, and shared workspaces that replace scattered email threads. We deploy Teams, Slack, or Google Chat with channels mapped to how your departments actually communicate.
+                  Blog posts, guides, and resources built around what your customers are searching for at each stage of their decision.
                 </p>
               </div>
 
-              {/* Card 7: Document Management */}
+              {/* Card 7: Brand Strategy */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Document Management</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Brand Strategy</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  Centralized, version‑controlled storage with permission tiers, e‑signature workflows, and audit trails — so the right files are easy to find and the wrong people can't see them.
+                  Positioning, messaging, and voice defined clearly enough that every piece of marketing sounds like it came from the same business.
                 </p>
               </div>
 
-              {/* Card 8: Workflow Automation */}
+              {/* Card 8: Corporate Branding */}
               <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0A1.65 1.65 0 0 0 10 3.09V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M12 2l3 6 6 1-4.5 4.5L17.5 20 12 17l-5.5 3 1-6.5L3 9l6-1z"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Workflow Automation</h3>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Corporate Branding</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
-                  We map repetitive manual work — approvals, onboarding, data entry — into automated flows using Power Automate, Zapier, or native platform tools, removing busywork from routine processes.
+                  Logo, visual identity, and brand guidelines built to hold up across your website, packaging, and every customer touchpoint.
+                </p>
+              </div>
+
+              {/* Card 9: Creative Design */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
+                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M3 16l4-7 4 4 4-9 6 12"/></svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Creative Design</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Graphics, ad creative, and visual assets produced to one consistent standard across every channel you publish on.
+                </p>
+              </div>
+
+              {/* Card 10: Video Marketing */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
+                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="3" y="6" width="14" height="12" rx="2"/><path d="M17 10l4-3v10l-4-3"/></svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Video Marketing</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Short-form and long-form video built for the platforms your audience actually watches, from concept through to final cut.
+                </p>
+              </div>
+
+              {/* Card 11: Campaign Management */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
+                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 14l2 2 4-4"/></svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Campaign Management</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  End-to-end planning, scheduling, and reporting across channels, so every campaign has one owner and one set of numbers.
+                </p>
+              </div>
+
+              {/* Card 12: Influencer Marketing */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
+                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3 3-5 7-5s7 2 7 5"/><path d="M19 8l-2 2 2 2"/></svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Influencer Marketing</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Creator partnerships sourced, briefed, and tracked against real engagement and conversion, not just follower counts.
+                </p>
+              </div>
+
+              {/* Card 13: Online Reputation Management */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group md:col-span-2 lg:col-span-4 max-w-md mx-auto w-full">
+                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
+                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M12 21c-4-3-7-6.5-7-10a7 7 0 0 1 14 0c0 3.5-3 7-7 10z"/><path d="M9.5 11l1.7 1.7L14.5 9"/></svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Online Reputation Management</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Monitoring and responding to reviews and mentions, so one bad week doesn't define how customers see you online.
                 </p>
               </div>
 
@@ -275,28 +330,28 @@ export default function DigitalWorkplacePage() {
               <div>
                 <span className="text-xs font-bold tracking-widest text-purple-400 uppercase block mb-2">How we work</span>
                 <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white">
-                  Built to be set up once, supported always
+                  Marketing tied to revenue, not just reach
                 </h2>
               </div>
             </div>
 
-            {/* Increased transparency of boxes by moving from bg-slate-950/40 to clear ultra-glassy bg-white/[0.015] */}
+            {/* Pillar Grid Map */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
-                <h4 className="text-white font-bold text-base mb-2">Security first</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">MFA, conditional access, and encryption are configured into every deployment by default, not added later.</p>
+                <h4 className="text-white font-bold text-base mb-2">Mapped to your funnel</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">Every channel is planned around how your customers actually discover and choose you.</p>
               </div>
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
-                <h4 className="text-white font-bold text-base mb-2">Zero‑downtime migration</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">Cutovers are scheduled and validated before go‑live, so mail and files move without interrupting your workday.</p>
+                <h4 className="text-white font-bold text-base mb-2">Tracked to real ROI</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">Spend is reported against leads and sales, not vanity metrics like reach or likes.</p>
               </div>
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
-                <h4 className="text-white font-bold text-base mb-2">Right‑sized for you</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">We scope the platform and license tier to your team's size and budget, never a one‑size‑fits‑all package.</p>
+                <h4 className="text-white font-bold text-base mb-2">Consistent across channels</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">One brand voice and visual identity, whether someone meets you on search, social, or your site.</p>
               </div>
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
-                <h4 className="text-white font-bold text-base mb-2">Ongoing support</h4>
-                <p className="text-xs text-slate-400 leading-relaxed">A regional team that already knows your environment — not a ticket queue starting from zero each time.</p>
+                <h4 className="text-white font-bold text-base mb-2">Ongoing optimization</h4>
+                <p className="text-xs text-slate-400 leading-relaxed">Campaigns are reviewed and adjusted continuously, not set once and left to run.</p>
               </div>
             </div>
           </div>
@@ -307,10 +362,10 @@ export default function DigitalWorkplacePage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_70%,rgba(45,217,184,0.07),transparent_50%)] pointer-events-none" />
           <div className="relative z-10 max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-              Modernizing how your team works
+              Ready to grow your audience and your revenue?
             </h2>
             <p className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-              We focus on assessing what you're using today, isolating structural breaking points, and transitioning components to the right platform setups seamlessly end to end.
+              Tell us where your customers are coming from today, and we'll build the channel mix and brand presence to bring in more of them.
             </p>
           </div>
         </section>
