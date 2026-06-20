@@ -272,7 +272,7 @@ export default function AboutPage() {
               
               <div className="mt-6 pt-4 border-t border-white/10 flex flex-col space-y-1">
                 <span className="text-2xl font-black tracking-wide text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.15)]">
-                  Ibrahim
+                  Ibrahim Valapra
                 </span>
                 <span className="text-sm font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400">
                   Chief Executive Officer
