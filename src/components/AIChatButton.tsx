@@ -18,7 +18,7 @@ const AIChatButton = () => {
         AI top = 20 + 52 = 72px, + 12px gap = bottom: 84px for window
       */}
       <div
-        className="fixed z-[999998] hover:z-[1000000] flex flex-row items-center pointer-events-none group transform-gpu ai-position-wrapper"
+        className="fixed bottom-[10px] left-[10px] lg:bottom-[20px] lg:left-[20px] z-[999998] hover:z-[1000000] flex flex-row items-center pointer-events-none group transform-gpu ai-position-wrapper"
       >
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -66,22 +66,9 @@ const AIChatButton = () => {
       </div>
 
       <style jsx global>{`
-        /* Dynamic positioning for responsive layouts */
-        .ai-position-wrapper {
-          bottom: 10px;
-          left: 10px;
-        }
-
         /* Responsive Border Radius Overrides */
         .ai-orb, .ai-orb-core, .ai-cyber-glow, .ai-gloss {
           border-radius: 50% !important;
-        }
-
-        @media (min-width: 1024px) {
-          .ai-position-wrapper {
-            bottom: 20px;
-            left: 20px;
-          }
         }
 
         .ai-orb {
