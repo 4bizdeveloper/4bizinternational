@@ -122,17 +122,18 @@ export default function AboutPage() {
           initial={{ opacity: 0, scale: 0.95, x: 30 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full lg:w-2/5 flex items-center justify-center relative min-h-[320px] sm:min-h-[400px] lg:min-h-[420px]"
+          className="w-full lg:w-2/5 flex items-center justify-center relative min-h-[260px] sm:min-h-[350px] lg:min-h-[420px]"
           style={{ perspective: 1200 }}
         >
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none transform-gpu scale-95 sm:scale-100">
-            <div className="absolute w-48 h-48 sm:w-56 sm:h-56 bg-radial-gradient from-cyan-500/30 via-pink-500/20 to-transparent blur-2xl animate-pulse" />
-            <div className="absolute w-48 h-48 sm:w-52 sm:h-52 rounded-full border-[4px] sm:border-[6px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.4)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
-            <div className="absolute w-56 h-56 sm:w-64 sm:h-64 rounded-full border-[3px] sm:border-[4px] border-pink-500/20 shadow-[0_0_30px_rgba(236,72,153,0.3)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite_0.9s]" />
-            <div className="absolute w-64 h-64 sm:w-76 sm:h-76 rounded-full border-[3px] sm:border-[5px] border-purple-500/10 shadow-[0_0_35px_rgba(168,85,247,0.2)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite_1.8s]" />
-            <div className="absolute w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full border-[2px] sm:border-[3px] border-dashed border-cyan-400/40 animate-[spin_25s_linear_infinite]" />
-            <div className="absolute w-[17rem] h-[17rem] sm:w-[20rem] sm:h-[20rem] lg:w-[23rem] lg:h-[23rem] rounded-full border-[1.5px] sm:border-[2px] border-double border-pink-500/30 animate-[spin_18s_linear_infinite_reverse]" />
-            <div className="absolute w-[19rem] h-[19rem] sm:w-[23rem] sm:h-[23rem] lg:w-[26rem] lg:h-[26rem] rounded-full border-[3px] sm:border-[4px] border-transparent border-t-purple-500/40 border-b-teal-400/40 animate-[spin_35s_linear_infinite]" />
+          {/* Increased scale multiplier here on mobile and tablet to expand rings radius around the logo */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none transform-gpu scale-95 sm:scale-100 lg:scale-100">
+            <div className="absolute w-40 h-40 sm:w-56 sm:h-56 bg-radial-gradient from-cyan-500/30 via-pink-500/20 to-transparent blur-2xl animate-pulse" />
+            <div className="absolute w-36 h-36 sm:w-48 sm:h-48 rounded-full border-[4px] sm:border-[6px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.4)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
+            <div className="absolute w-44 h-44 sm:w-60 sm:h-60 rounded-full border-[3px] sm:border-[4px] border-pink-500/20 shadow-[0_0_30px_rgba(236,72,153,0.3)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite_0.9s]" />
+            <div className="absolute w-52 h-52 sm:w-72 sm:h-72 rounded-full border-[3px] sm:border-[5px] border-purple-500/10 shadow-[0_0_35px_rgba(168,85,247,0.2)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite_1.8s]" />
+            <div className="absolute w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full border-[2px] sm:border-[3px] border-dashed border-cyan-400/40 animate-[spin_25s_linear_infinite]" />
+            <div className="absolute w-[14rem] h-[14rem] sm:w-[18rem] sm:h-[18rem] lg:w-[23rem] lg:h-[23rem] rounded-full border-[1.5px] sm:border-[2px] border-double border-pink-500/30 animate-[spin_18s_linear_infinite_reverse]" />
+            <div className="absolute w-[16rem] h-[16rem] sm:w-[21rem] sm:h-[21rem] lg:w-[26rem] lg:h-[26rem] rounded-full border-[3px] sm:border-[4px] border-transparent border-t-purple-500/40 border-b-teal-400/40 animate-[spin_35s_linear_infinite]" />
           </div>
 
           <div className="absolute inset-0 bg-radial-gradient from-cyan-500/20 via-purple-500/10 to-transparent blur-3xl pointer-events-none" />
@@ -355,7 +356,7 @@ export default function AboutPage() {
 
           {/* CEO Image — Right Column */}
           <div className="lg:col-span-5 order-1 lg:order-2 w-full flex justify-center items-end self-end">
-            <div className="relative w-full max-w-[350px] h-[460px] sm:h-[540px] lg:h-[450px] overflow-visible">
+            <div className="relative w-full max-w-[350px] h-[360px] sm:h-[450px] overflow-visible">
               
               {/* Dynamic Backlight Glow aura under image */}
               <div
@@ -366,20 +367,20 @@ export default function AboutPage() {
                 }}
               />
 
-              {/* Seamless Edge Masking Matrix (No Borders, Perfectly Dissolved Bottom) */}
+              {/* Seamless Edge Masking Matrix (Modified mask transition points using CSS properties to stay perfectly visible and uncovered on mobile) */}
               <div
-                className="absolute inset-0 transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.01]"
+                className="absolute inset-0 transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.01] [--mask-end:85%] sm:[--mask-end:65%]"
                 style={{
                   willChange: 'transform',
-                  maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 82%, rgba(0,0,0,0) 100%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 82%, rgba(0,0,0,0) 100%)',
+                  maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) var(--mask-end), rgba(0,0,0,0) 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) var(--mask-end), rgba(0,0,0,0) 100%)',
                 }}
               >
                 <Image
                   src="/persons/4biz_international-ceo-1.png"
                   alt="4Biz International CEO"
                   fill
-                  sizes="(max-width: 768px) 350px, 350px"
+                  sizes="(max-width: 768px) 300px, 350px"
                   className="object-cover object-top border-0 outline-none select-none pointer-events-none bg-transparent"
                   priority
                 />
