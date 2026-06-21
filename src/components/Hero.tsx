@@ -4,37 +4,25 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
 
 export default function Hero() {
-  // Center typography configuration flags
   const showCenterText = true;
   const showScrollDown = true;
 
   const [isScrolled, setIsScrolled] = useState(false);
-  
-  // Real-time physical device window tracking safely bound to server component lifecycles
   const [activeDevice, setActiveDevice] = useState<'mobile' | 'tablet' | 'desktop' | null>(null);
-
-  // Dedicated media component load status parameters 
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
-  // Native player references 
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const tabletVideoRef = useRef<HTMLVideoElement>(null);
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
   
-  // High-performance hardware-accelerated interactive utility styles
   const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
   const uniformIconSize = 'w-[20px] h-[20px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300';
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
 
-    // Strict non-overlapping media break-points matching exact device criteria 
     const handleResize = () => {
       const width = window.innerWidth;
       if (width < 640) {
@@ -57,32 +45,42 @@ export default function Hero() {
     };
   }, []);
 
-  // Ensure strict loop playback initialization to guarantee mobile layers don't drop or freeze
+  // Strict execution to force play across low-power and aggressive mobile sandboxes
   useEffect(() => {
     if (!activeDevice) return;
 
-    const executeAutoplay = (ref: React.RefObject<HTMLVideoElement | null>) => {
-      const player = ref.current;
-      if (player) {
-        player.load(); // Force immediate cache buffering evaluation
-        const playPromise = player.play();
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              setIsVideoLoaded(true);
-            })
-            .catch((err) => {
-              console.warn("Autoplay context restricted or power saver state active:", err);
-              // Fallback mechanism to circumvent aggressive mobile sleep state freezes
-              setIsVideoLoaded(true);
+    const playVideo = (ref: React.RefObject<HTMLVideoElement | null>) => {
+      const vid = ref.current;
+      if (vid) {
+        vid.load(); // Forces immediate download of the CDN stream
+        
+        // This is the secret sauce: explicitly calling play on user-ready loop
+        const attemptPlay = () => {
+          vid.play()
+            .then(() => setIsVideoLoaded(true))
+            .catch(() => {
+              // Fallback for mobile Low Power Mode: try playing on first touch/scroll
+              const forcePlayOnInteraction = () => {
+                vid.play().then(() => setIsVideoLoaded(true));
+                window.removeEventListener('touchstart', forcePlayOnInteraction);
+                window.removeEventListener('scroll', forcePlayOnInteraction);
+              };
+              window.addEventListener('touchstart', forcePlayOnInteraction, { passive: true });
+              window.addEventListener('scroll', forcePlayOnInteraction, { passive: true });
             });
+        };
+
+        if (vid.readyState >= 3) {
+          attemptPlay();
+        } else {
+          vid.addEventListener('canplay', attemptPlay, { once: true });
         }
       }
     };
 
-    if (activeDevice === 'mobile') executeAutoplay(mobileVideoRef);
-    if (activeDevice === 'tablet') executeAutoplay(tabletVideoRef);
-    if (activeDevice === 'desktop') executeAutoplay(desktopVideoRef);
+    if (activeDevice === 'mobile') playVideo(mobileVideoRef);
+    if (activeDevice === 'tablet') playVideo(tabletVideoRef);
+    if (activeDevice === 'desktop') playVideo(desktopVideoRef);
   }, [activeDevice]);
 
   const socials = [
@@ -126,16 +124,8 @@ export default function Hero() {
           100% { transform: translateY(0) scaleY(1); opacity: 0.3; }
         }
         @keyframes microPulse {
-          0%, 100% { 
-            border-color: rgba(255,255,255,0.3); 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.8);
-            transform: scale(1);
-          }
-          50% { 
-            border-color: rgba(255,255,255,0.6); 
-            box-shadow: 0 0 20px rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.9);
-            transform: scale(1.02);
-          }
+          0%, 100% { border-color: rgba(255,255,255,0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.8); transform: scale(1); }
+          50% { border-color: rgba(255,255,255,0.6); box-shadow: 0 0 20px rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.9); transform: scale(1.02); }
         }
         @keyframes subtleTextPulse {
           0%, 100% { opacity: 0.6; transform: scale(1); }
@@ -147,7 +137,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── HIGH PERFORMANCE MEDIA WRAPPER ── */}
+        {/* ── PERFORMANCE BACKGROUND MATRIX ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -158,63 +148,60 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* 1. Mobile Viewport Video - Aspect Ratio 9:16 */}
+            {/* 1. Mobile Viewport Video */}
             {activeDevice === 'mobile' && (
-              <div className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
-                isVideoLoaded ? 'opacity-100' : 'opacity-20'
-              }`}>
+              <div className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${isVideoLoaded ? 'opacity-100' : 'opacity-20'}`}>
                 <video
                   ref={mobileVideoRef}
                   src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-mobile-1.mp4"
                   loop
-                  muted
+                  muted={true}
                   playsInline
-                  autoPlay
+                  webkit-playsinline="true"
+                  autoPlay={true}
                   controls={false}
                   preload="auto"
-                  onLoadedData={() => setIsVideoLoaded(true)}
+                  crossOrigin="anonymous"
                   className="w-full h-full object-cover aspect-[9/16] brightness-[1.05] contrast-[1.05]"
                   style={{ willChange: 'opacity' }}
                 />
               </div>
             )}
 
-            {/* 2. Tablet Viewport Video - Aspect Ratio 4:3 */}
+            {/* 2. Tablet Viewport Video */}
             {activeDevice === 'tablet' && (
-              <div className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
-                isVideoLoaded ? 'opacity-100' : 'opacity-20'
-              }`}>
+              <div className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${isVideoLoaded ? 'opacity-100' : 'opacity-20'}`}>
                 <video
                   ref={tabletVideoRef}
                   src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-tablet-1.mp4"
                   loop
-                  muted
+                  muted={true}
                   playsInline
-                  autoPlay
+                  webkit-playsinline="true"
+                  autoPlay={true}
                   controls={false}
                   preload="auto"
-                  onLoadedData={() => setIsVideoLoaded(true)}
+                  crossOrigin="anonymous"
                   className="w-full h-full object-cover aspect-[4/3] brightness-[1.05] contrast-[1.05]"
                   style={{ willChange: 'opacity' }}
                 />
               </div>
             )}
 
-            {/* 3. Desktop Viewport Video - Aspect Ratio 16:9 */}
+            {/* 3. Desktop Viewport Video */}
             {activeDevice === 'desktop' && (
-              <div className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
-                isVideoLoaded ? 'opacity-100' : 'opacity-20'
-              }`}>
+              <div className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${isVideoLoaded ? 'opacity-100' : 'opacity-20'}`}>
                 <video
                   ref={desktopVideoRef}
                   src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-desktop-1.mp4"
                   loop
-                  muted
+                  muted={true}
                   playsInline
-                  autoPlay
+                  webkit-playsinline="true"
+                  autoPlay={true}
                   controls={false}
                   preload="auto"
-                  onLoadedData={() => setIsVideoLoaded(true)}
+                  crossOrigin="anonymous"
                   className="w-full h-full object-cover aspect-[16/9] brightness-[1.05] contrast-[1.05]"
                   style={{ willChange: 'opacity' }}
                 />
@@ -225,18 +212,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── ACCESSIBLE NAVIGATION SIDEBAR ── */}
+        {/* ── SOCIAL NAVIGATION SIDEBAR ── */}
         <nav
           aria-label="Social Profile Navigation"
-          className={`
-            absolute top-1/2 -translate-y-1/2 z-40
-            flex flex-col items-center justify-center
-            left-4 gap-5
-            sm:left-6 sm:gap-[22px]
-            lg:left-8
-            transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)
-            ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-3' : 'opacity-100 pointer-events-auto translate-x-0'}
-          `}
+          className={`absolute top-1/2 -translate-y-1/2 z-40 flex flex-col items-center justify-center left-4 gap-5 sm:left-6 sm:gap-[22px] lg:left-8 transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-3' : 'opacity-100 pointer-events-auto translate-x-0'}`}
           style={{ willChange: 'transform, opacity' }}
         >
           {socials.map((social) => (
@@ -248,9 +227,7 @@ export default function Hero() {
               className={iconClass}
               aria-label={social.label}
             >
-              {social.isComponent ? (
-                social.component
-              ) : (
+              {social.isComponent ? social.component : (
                 <svg viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true" className={uniformIconSize}>
                   <path d={social.path} />
                 </svg>
@@ -259,18 +236,13 @@ export default function Hero() {
           ))}
         </nav>
 
-        {/* ── FLEX CENTER CONTENT CONTAINER ── */}
+        {/* ── FLEX CENTER CONTAINER ── */}
         <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-h-0">
           <div 
-            className={`
-              w-full flex flex-col items-center pointer-events-none transition-all duration-500
-              ${showCenterText ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}
-            `}
+            className={`w-full flex flex-col items-center pointer-events-none transition-all duration-500 ${showCenterText ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
             style={{ willChange: 'transform, opacity' }}
           >
             <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center">
-              
-              {/* Main Headline Lockup */}
               <h1 
                 className="flex flex-col md:flex-row items-center justify-center gap-y-1 md:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white leading-[1.1] md:leading-none font-sans text-wrap md:whitespace-nowrap"
                 style={{
@@ -278,20 +250,13 @@ export default function Hero() {
                   WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
                 }}
               >
-                <span className="text-[10.5vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[2.9rem] lg:text-[3.6rem]">
-                  4BIZ
-                </span>
-                <span className="text-[7.5vw] xs:text-[1.6rem] sm:text-[2.2rem] md:text-[2.9rem] lg:text-[3.6rem]">
-                  INTERNATIONAL
-                </span>
+                <span className="text-[10.5vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[2.9rem] lg:text-[3.6rem]">4BIZ</span>
+                <span className="text-[7.5vw] xs:text-[1.6rem] sm:text-[2.2rem] md:text-[2.9rem] lg:text-[3.6rem]">INTERNATIONAL</span>
               </h1>
 
-              {/* Tagline Subheading */}
               <h2 
                 className="mt-6 md:mt-4 text-[3.8vw] xs:text-[0.95rem] sm:text-[1.3rem] md:text-[1.7rem] lg:text-[2.1rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
-                style={{
-                  textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 6px 15px rgba(0,0,0,0.85), 0 0 12px rgba(255,255,255,0.3)',
-                }}
+                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 6px 15px rgba(0,0,0,0.85), 0 0 12px rgba(255,255,255,0.3)' }}
               >
                 IMPACTING INFINITE
               </h2>
@@ -299,19 +264,13 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── SCROLL ACTION INTERFACE ── */}
+        {/* ── SCROLL DETECTOR CONTAINER ── */}
         <div
-          className={`
-            relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500
-            ${isScrolled ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}
-          `}
+          className={`relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500 ${isScrolled ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}`}
           style={{ willChange: 'transform, opacity' }}
           aria-hidden="true"
         >
-          <div 
-            className={`transition-all duration-500 ${showScrollDown ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-            style={{ willChange: 'transform, opacity' }}
-          >
+          <div className={`transition-all duration-500 ${showScrollDown ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`} style={{ willChange: 'transform, opacity' }}>
             <div className="flex flex-col items-center justify-center gap-y-2.5">
               <div
                 style={{
@@ -330,28 +289,9 @@ export default function Hero() {
                 }}
                 className="backdrop-blur-sm"
               >
-                <span
-                  style={{
-                    display: 'block',
-                    width: '3px',
-                    height: '8px',
-                    borderRadius: '9999px',
-                    background: '#ffffff',
-                    boxShadow: '0 0 8px #fff',
-                    animation: 'dynamicWheel 1.8s infinite cubic-bezier(0.25, 1, 0.5, 1)',
-                    willChange: 'transform, opacity',
-                  }}
-                />
+                <span style={{ display: 'block', width: '3px', height: '8px', borderRadius: '9999px', background: '#ffffff', boxShadow: '0 0 8px #fff', animation: 'dynamicWheel 1.8s infinite cubic-bezier(0.25, 1, 0.5, 1)', willChange: 'transform, opacity' }} />
               </div>
-
-              <span
-                className="text-[0.52rem] sm:text-[0.6rem] font-black tracking-[0.5em] uppercase text-white pl-[0.5em]"
-                style={{ 
-                  textShadow: '0 2px 6px #000',
-                  animation: 'subtleTextPulse 3s infinite ease-in-out',
-                  willChange: 'transform, opacity'
-                }}
-              >
+              <span className="text-[0.52rem] sm:text-[0.6rem] font-black tracking-[0.5em] uppercase text-white pl-[0.5em]" style={{ textShadow: '0 2px 6px #000', animation: 'subtleTextPulse 3s infinite ease-in-out', willChange: 'transform, opacity' }}>
                 scroll down
               </span>
             </div>
