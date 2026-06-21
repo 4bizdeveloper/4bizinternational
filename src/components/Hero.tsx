@@ -70,10 +70,10 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── IMMUTABLE VIDEO MATRIX ── */}
+        {/* ── IMMUTABLE NATIVE VIDEO BACKGROUND MATRIX ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
-            className="w-full h-full relative"
+            className="w-full h-full relative opacity-100"
             style={{
               WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, transparent 100%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%)',
               maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, transparent 100%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%)',
@@ -81,9 +81,9 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* Single native element pipeline with responsive source tags */}
+            {/* Pure native HTML5 Video Engine — No dynamic React swaps */}
             <video
-              key="hero-pipeline-stream"
+              key="4biz-native-cdn-stream"
               loop
               muted
               playsInline
