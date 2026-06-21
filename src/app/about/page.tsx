@@ -115,27 +115,29 @@ export default function AboutPage() {
           initial={{ opacity: 0, scale: 0.95, x: 30 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full lg:w-[42%] flex items-center justify-center relative min-h-[350px] sm:min-h-[420px]"
+          className="w-full lg:w-[42%] flex items-center justify-center relative min-h-[260px] sm:min-h-[420px]"
           style={{ perspective: 1200 }}
         >
+          {/* Scaled-down rings on mobile view for a cleaner, ultra-modern concise appearance */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none transform-gpu">
-            <div className="absolute w-56 h-56 bg-radial-gradient from-cyan-500/30 via-pink-500/20 to-transparent blur-2xl animate-pulse" />
-            <div className="absolute w-48 h-48 rounded-full border-[6px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.4)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
-            <div className="absolute w-60 h-60 rounded-full border-[4px] border-pink-500/20 shadow-[0_0_30px_rgba(236,72,153,0.3)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite_0.9s]" />
-            <div className="absolute w-72 h-72 rounded-full border-[5px] border-purple-500/10 shadow-[0_0_35px_rgba(168,85,247,0.2)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite_1.8s]" />
-            <div className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full border-[3px] border-dashed border-cyan-400/40 animate-[spin_25s_linear_infinite]" />
-            <div className="absolute w-[18rem] h-[18rem] sm:w-[23rem] sm:h-[23rem] rounded-full border-[2px] border-double border-pink-500/30 animate-[spin_18s_linear_infinite_reverse]" />
-            <div className="absolute w-[21rem] h-[21rem] sm:w-[26rem] sm:h-[26rem] rounded-full border-[4px] border-transparent border-t-purple-500/40 border-b-teal-400/40 animate-[spin_35s_linear_infinite]" />
+            <div className="absolute w-36 h-36 sm:w-56 sm:h-56 bg-radial-gradient from-cyan-500/30 via-pink-500/20 to-transparent blur-2xl animate-pulse" />
+            <div className="absolute w-32 h-32 sm:w-48 sm:h-48 rounded-full border-[4px] sm:border-[6px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.4)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
+            <div className="absolute w-40 h-40 sm:w-60 sm:h-60 rounded-full border-[3px] sm:border-[4px] border-pink-500/20 shadow-[0_0_30px_rgba(236,72,153,0.3)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite_0.9s]" />
+            <div className="absolute w-48 h-48 sm:w-72 sm:h-72 rounded-full border-[3px] sm:border-[5px] border-purple-500/10 shadow-[0_0_35px_rgba(168,85,247,0.2)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite_1.8s]" />
+            <div className="absolute w-44 h-44 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full border-[2px] sm:border-[3px] border-dashed border-cyan-400/40 animate-[spin_25s_linear_infinite]" />
+            <div className="absolute w-[12rem] h-[12rem] sm:w-[18rem] sm:h-[18rem] md:w-[23rem] md:h-[23rem] rounded-full border-[1.5px] sm:border-[2px] border-double border-pink-500/30 animate-[spin_18s_linear_infinite_reverse]" />
+            <div className="absolute w-[14rem] h-[14rem] sm:w-[21rem] sm:h-[21rem] md:w-[26rem] md:h-[26rem] rounded-full border-[3px] sm:border-[4px] border-transparent border-t-purple-500/40 border-b-teal-400/40 animate-[spin_35s_linear_infinite]" />
           </div>
 
           <div className="absolute inset-0 bg-radial-gradient from-cyan-500/25 via-purple-500/15 to-transparent blur-3xl pointer-events-none" />
           
-          <div className="relative w-64 h-32 sm:w-80 sm:h-40 transition-transform duration-700 hover:scale-105 transform-gpu filter drop-shadow-[0_0_40px_rgba(6,182,212,0.4)]">
+          {/* Beautifully balanced responsive sizing for 4biz_logo-1.png */}
+          <div className="relative w-44 h-22 sm:w-80 sm:h-40 transition-transform duration-700 hover:scale-105 transform-gpu filter drop-shadow-[0_0_40px_rgba(6,182,212,0.4)]">
             <Image
               src="/4biz_logo-1.png"
               alt="4Biz International Corporate Logo"
               fill
-              sizes="(max-width: 768px) 256px, 320px"
+              sizes="(max-width: 768px) 176px, 320px"
               className="object-contain relative z-10"
               priority={true}
             />
@@ -249,12 +251,12 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* CEO Image Container - Optimized bounds layout with hardware acceleration layer */}
-          <div className="w-full lg:w-[45%] flex justify-center items-end relative h-[450px] sm:h-[500px] transform-gpu">
+          {/* CEO Image Container - Secured native gesture flow layer to prevent scroll jumping */}
+          <div className="w-full lg:w-[45%] flex justify-center items-end relative h-[400px] sm:h-[500px] transform-gpu pointer-events-auto">
             <div className="absolute bottom-0 w-[80%] h-[70%] rounded-full bg-cyan-500/5 blur-[80px] pointer-events-none" />
             
             <div 
-              className="relative w-full h-full max-w-[380px] overflow-hidden flex items-end select-none pointer-events-none transform-gpu"
+              className="relative w-full h-full max-w-[340px] sm:max-w-[380px] overflow-hidden flex items-end select-none pointer-events-none transform-gpu"
               style={{
                 WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0) 100%)',
                 maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0) 100%)'
@@ -264,8 +266,8 @@ export default function AboutPage() {
                 src="/persons/4biz_international-ceo.png" 
                 alt="4BIZ INTERNATIONAL LLC CEO Ibrahim"
                 fill
-                sizes="(max-width: 768px) 100vw, 380px"
-                className="object-contain object-bottom"
+                sizes="(max-width: 768px) 340px, 380px"
+                className="object-contain object-bottom transition-transform duration-500"
                 priority={true}
               />
             </div>
