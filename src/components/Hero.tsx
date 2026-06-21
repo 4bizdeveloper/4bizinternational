@@ -1,87 +1,20 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
 
 export default function Hero() {
   const showCenterText = true;
   const showScrollDown = true;
-
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeDevice, setActiveDevice] = useState<'mobile' | 'tablet' | 'desktop' | null>(null);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
-  const mobileVideoRef = useRef<HTMLVideoElement>(null);
-  const tabletVideoRef = useRef<HTMLVideoElement>(null);
-  const desktopVideoRef = useRef<HTMLVideoElement>(null);
-  
-  const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
-  const uniformIconSize = 'w-[20px] h-[20px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300';
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-
-    const handleResize = () => {
-      const width = window.innerWidth;
-      if (width < 640) {
-        setActiveDevice('mobile');
-      } else if (width >= 640 && width < 768) {
-        setActiveDevice('tablet');
-      } else {
-        setActiveDevice('desktop');
-      }
-    };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleResize, { passive: true });
-    
-    handleResize();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Strict execution to force play across low-power and aggressive mobile sandboxes
-  useEffect(() => {
-    if (!activeDevice) return;
-
-    const playVideo = (ref: React.RefObject<HTMLVideoElement | null>) => {
-      const vid = ref.current;
-      if (vid) {
-        vid.load(); // Forces immediate download of the CDN stream
-        
-        // This is the secret sauce: explicitly calling play on user-ready loop
-        const attemptPlay = () => {
-          vid.play()
-            .then(() => setIsVideoLoaded(true))
-            .catch(() => {
-              // Fallback for mobile Low Power Mode: try playing on first touch/scroll
-              const forcePlayOnInteraction = () => {
-                vid.play().then(() => setIsVideoLoaded(true));
-                window.removeEventListener('touchstart', forcePlayOnInteraction);
-                window.removeEventListener('scroll', forcePlayOnInteraction);
-              };
-              window.addEventListener('touchstart', forcePlayOnInteraction, { passive: true });
-              window.addEventListener('scroll', forcePlayOnInteraction, { passive: true });
-            });
-        };
-
-        if (vid.readyState >= 3) {
-          attemptPlay();
-        } else {
-          vid.addEventListener('canplay', attemptPlay, { once: true });
-        }
-      }
-    };
-
-    if (activeDevice === 'mobile') playVideo(mobileVideoRef);
-    if (activeDevice === 'tablet') playVideo(tabletVideoRef);
-    if (activeDevice === 'desktop') playVideo(desktopVideoRef);
-  }, [activeDevice]);
 
   const socials = [
     {
@@ -95,7 +28,7 @@ export default function Hero() {
       href: 'https://www.facebook.com/4bizglobal',
       label: 'Facebook',
       isComponent: true,
-      component: <FaFacebookF className={uniformIconSize} />,
+      component: <FaFacebookF className="w-[20px] h-[20px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300" />,
       target: '_blank',
     },
     {
@@ -137,7 +70,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── PERFORMANCE BACKGROUND MATRIX ── */}
+        {/* ── IMMUTABLE VIDEO MATRIX ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -148,65 +81,35 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* 1. Mobile Viewport Video */}
-            {activeDevice === 'mobile' && (
-              <div className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${isVideoLoaded ? 'opacity-100' : 'opacity-20'}`}>
-                <video
-                  ref={mobileVideoRef}
-                  src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-mobile-1.mp4"
-                  loop
-                  muted={true}
-                  playsInline
-                  webkit-playsinline="true"
-                  autoPlay={true}
-                  controls={false}
-                  preload="auto"
-                  crossOrigin="anonymous"
-                  className="w-full h-full object-cover aspect-[9/16] brightness-[1.05] contrast-[1.05]"
-                  style={{ willChange: 'opacity' }}
-                />
-              </div>
-            )}
-
-            {/* 2. Tablet Viewport Video */}
-            {activeDevice === 'tablet' && (
-              <div className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${isVideoLoaded ? 'opacity-100' : 'opacity-20'}`}>
-                <video
-                  ref={tabletVideoRef}
-                  src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-tablet-1.mp4"
-                  loop
-                  muted={true}
-                  playsInline
-                  webkit-playsinline="true"
-                  autoPlay={true}
-                  controls={false}
-                  preload="auto"
-                  crossOrigin="anonymous"
-                  className="w-full h-full object-cover aspect-[4/3] brightness-[1.05] contrast-[1.05]"
-                  style={{ willChange: 'opacity' }}
-                />
-              </div>
-            )}
-
-            {/* 3. Desktop Viewport Video */}
-            {activeDevice === 'desktop' && (
-              <div className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${isVideoLoaded ? 'opacity-100' : 'opacity-20'}`}>
-                <video
-                  ref={desktopVideoRef}
-                  src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-desktop-1.mp4"
-                  loop
-                  muted={true}
-                  playsInline
-                  webkit-playsinline="true"
-                  autoPlay={true}
-                  controls={false}
-                  preload="auto"
-                  crossOrigin="anonymous"
-                  className="w-full h-full object-cover aspect-[16/9] brightness-[1.05] contrast-[1.05]"
-                  style={{ willChange: 'opacity' }}
-                />
-              </div>
-            )}
+            {/* Single native element pipeline with responsive source tags */}
+            <video
+              key="hero-pipeline-stream"
+              loop
+              muted
+              playsInline
+              autoPlay
+              controls={false}
+              preload="auto"
+              crossOrigin="anonymous"
+              className="w-full h-full object-cover brightness-[1.05] contrast-[1.05]"
+              style={{ transform: 'translate3d(0,0,0)' }}
+            >
+              <source 
+                src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-mobile-1.mp4" 
+                type="video/mp4" 
+                media="(max-width: 639px)" 
+              />
+              <source 
+                src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-tablet-1.mp4" 
+                type="video/mp4" 
+                media="(min-width: 640px) and (max-width: 767px)" 
+              />
+              <source 
+                src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-desktop-1.mp4" 
+                type="video/mp4" 
+                media="(min-width: 768px)" 
+              />
+            </video>
 
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
@@ -224,11 +127,11 @@ export default function Hero() {
               href={social.href}
               target={social.target}
               rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
-              className={iconClass}
+              className="text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full"
               aria-label={social.label}
             >
               {social.isComponent ? social.component : (
-                <svg viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true" className={uniformIconSize}>
+                <svg viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true" className="w-[20px] h-[20px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300">
                   <path d={social.path} />
                 </svg>
               )}
