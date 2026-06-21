@@ -251,13 +251,19 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* CEO Image Container - Fixed layout shifts and removed shading overlay */}
-          <div className="w-full lg:w-[45%] flex justify-center items-end relative min-h-[350px] sm:min-h-[480px] md:min-h-[500px] transform-gpu">
+          {/* CEO Image Container - Secured native gesture flow layer to prevent scroll jumping */}
+          <div className="w-full lg:w-[45%] flex justify-center items-end relative h-[400px] sm:h-[500px] transform-gpu pointer-events-auto">
             <div className="absolute bottom-0 w-[80%] h-[70%] rounded-full bg-cyan-500/5 blur-[80px] pointer-events-none" />
             
-            <div className="relative w-full aspect-[340/420] max-w-[340px] sm:max-w-[380px] flex items-end select-none transform-gpu">
+            <div 
+              className="relative w-full h-full max-w-[340px] sm:max-w-[380px] overflow-hidden flex items-end select-none pointer-events-none transform-gpu"
+              style={{
+                WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0) 100%)',
+                maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0.4) 90%, rgba(0,0,0,0) 100%)'
+              }}
+            >
               <Image 
-                src="/persons/4biz_international-ceo-2.png" 
+                src="/persons/4biz_international-ceo.png" 
                 alt="4BIZ INTERNATIONAL LLC CEO Ibrahim"
                 fill
                 sizes="(max-width: 768px) 340px, 380px"
