@@ -10,134 +10,135 @@ const QuickContactButtons = () => {
   return (
     <>
       {/* =========================================================================
-          1. CALL BUTTON CONTAINER (CLEAN & SATURATED TECH ORANGE)
-          Stacked precisely at bottom 80px (directly above WhatsApp)
+          UNIFIED RESPONSIVE FLOATING CONTAINER
+          Handles absolute positioning flawlessly without layout shifts.
           ========================================================================= */}
       <div
-        className="fixed z-[999999] flex flex-row-reverse items-center pointer-events-none group transform-gpu"
-        style={{ bottom: '88px', right: '24px', overflow: 'visible' }}
+        className="fixed z-[999999] flex flex-col items-end gap-[10px] pointer-events-none transform-gpu bottom-[10px] right-[10px] md:bottom-[20px] md:right-[20px]"
+        style={{ overflow: 'visible' }}
       >
-        <a
-          href={`tel:${formattedCallNumber}`}
-          className="call-modern-orb pointer-events-auto will-change-transform relative flex items-center justify-center"
-          aria-label="Call Us Now"
-          style={{ width: 52, height: 52 }}
-        >
-          {/* Ultra-Modern Hyper-Bright Luminous Laser Pulse Sequences (Orange Aura) */}
-          <span className="call-radiation-wave call-wave-1" />
-          <span className="call-radiation-wave call-wave-2" />
-          <span className="call-radiation-wave call-wave-3" />
+        
+        {/* =========================================================================
+            1. CALL BUTTON (CLEAN & SATURATED TECH ORANGE)
+            ========================================================================= */}
+        <div className="flex flex-row-reverse items-center pointer-events-none group transform-gpu">
+          <a
+            href={`tel:${formattedCallNumber}`}
+            className="call-modern-orb pointer-events-auto will-change-transform relative flex items-center justify-center w-[52px] h-[52px] md:w-[52px] md:h-[52px]"
+            aria-label="Call Us Now"
+          >
+            {/* Ultra-Modern Hyper-Bright Luminous Laser Pulse Sequences (Orange Aura) */}
+            <span className="call-radiation-wave call-wave-1" />
+            <span className="call-radiation-wave call-wave-2" />
+            <span className="call-radiation-wave call-wave-3" />
 
-          {/* Core Structure: Clean & Saturated Symmetrical Tech Orange Base */}
-          <span className="call-cyber-core" />
+            {/* Core Structure: Clean & Saturated Symmetrical Tech Orange Base */}
+            <span className="call-cyber-core" />
 
-          {/* Internal Volumetric Energy Glow */}
-          <span className="call-cyber-glow" />
+            {/* Internal Volumetric Energy Glow */}
+            <span className="call-cyber-glow" />
 
-          {/* Premium Glass Specular Shard Overlay (Enhanced Brightness/Shiness) */}
-          <span style={{
-            position: 'absolute', inset: 0, borderRadius: '50%',
-            background: 'linear-gradient(135deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.15) 45%, transparent 60%)',
-            zIndex: 10, pointerEvents: 'none',
-          }} />
+            {/* Premium Glass Specular Shard Overlay */}
+            <span style={{
+              position: 'absolute', inset: 0, borderRadius: '50%',
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.15) 45%, transparent 60%)',
+              zIndex: 10, pointerEvents: 'none',
+            }} />
 
-          {/* Modern Phone Call Icon */}
-          <svg 
-            viewBox="0 0 24 24"
-            style={{ 
-              width: 22, 
-              height: 22, 
-              fill: 'none',
-              stroke: '#ffffff',
-              strokeWidth: '2.5',
-              strokeLinecap: 'round',
-              strokeLinejoin: 'round',
-              position: 'relative', 
-              zIndex: 20, 
-              flexShrink: 0, 
-              transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
-              filter: 'drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.4))'
-            }}
-            className="group-hover:scale-110 group-hover:rotate-12">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-        </a>
+            {/* Modern Phone Call Icon */}
+            <svg 
+              viewBox="0 0 24 24"
+              style={{ 
+                width: 22, 
+                height: 22, 
+                fill: 'none',
+                stroke: '#ffffff',
+                strokeWidth: '2.5',
+                strokeLinecap: 'round',
+                strokeLinejoin: 'round',
+                position: 'relative', 
+                zIndex: 20, 
+                flexShrink: 0, 
+                transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                filter: 'drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.4))'
+              }}
+              className="group-hover:scale-110 group-hover:rotate-12 icon-scale">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </a>
 
-        {/* Premium Cyber Tooltip — Call Button */}
-        <div className="hidden lg:flex items-center mr-4 px-4 py-2 bg-[#1c0a01]/95 backdrop-blur-xl border border-[#ff5500]/[0.45] rounded-xl text-white text-[10px] font-bold uppercase tracking-[0.32em] opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 ease-out pointer-events-none whitespace-nowrap"
-          style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.3), 0 0 24px rgba(255,85,0,0.25)' }}>
-          <span className="relative flex h-2 w-2 mr-3 flex-shrink-0">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: '#ff5500' }}></span>
-            <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#ea580c' }}></span>
-          </span>
-          Instant Phone Call
+          {/* Premium Cyber Tooltip — Call Button */}
+          <div className="hidden lg:flex items-center mr-4 px-4 py-2 bg-[#1c0a01]/95 backdrop-blur-xl border border-[#ff5500]/[0.45] rounded-xl text-white text-[10px] font-bold uppercase tracking-[0.32em] opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 ease-out pointer-events-none whitespace-nowrap"
+            style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.3), 0 0 24px rgba(255,85,0,0.25)' }}>
+            <span className="relative flex h-2 w-2 mr-3 flex-shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: '#ff5500' }}></span>
+              <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#ea580c' }}></span>
+            </span>
+            Instant Phone Call
+          </div>
         </div>
+
+        {/* =========================================================================
+            2. WHATSAPP BUTTON (DEEPENED RICH TECH GREEN)
+            ========================================================================= */}
+        <div className="flex flex-row-reverse items-center pointer-events-none group transform-gpu">
+          <a
+            href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="wa-modern-orb pointer-events-auto will-change-transform relative flex items-center justify-center w-[52px] h-[52px] md:w-[52px] md:h-[52px]"
+            aria-label="Contact on WhatsApp"
+          >
+            {/* Ultra-Modern Hyper-Bright Luminous Laser Pulse Sequences (Green Aura) */}
+            <span className="wa-radiation-wave wave-1" />
+            <span className="wa-radiation-wave wave-2" />
+            <span className="wa-radiation-wave wave-3" />
+
+            {/* Core Structure: Symmetrical Saturated Deep Tech Green Base */}
+            <span className="wa-cyber-core" />
+
+            {/* Internal Volumetric Energy Glow */}
+            <span className="wa-cyber-glow" />
+
+            {/* Premium Glass Specular Shard Overlay */}
+            <span style={{
+              position: 'absolute', inset: 0, borderRadius: '50%',
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.15) 45%, transparent 60%)',
+              zIndex: 10, pointerEvents: 'none',
+            }} />
+
+            {/* Original WhatsApp Icon */}
+            <svg viewBox="0 0 32 32"
+              style={{ 
+                width: 26, 
+                height: 26, 
+                fill: '#ffffff', 
+                position: 'relative', 
+                zIndex: 20, 
+                flexShrink: 0, 
+                transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                filter: 'drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.4))'
+              }}
+              className="group-hover:scale-110 group-hover:rotate-6 icon-scale">
+              <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.48 2.025 7.78l-2.025 7.395 7.58-1.99c2.35 1.4 5.08 2.215 8.02 2.215 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.355c-2.585 0-4.99-.745-7.035-2.035l-.505-.315-4.485 1.175 1.2-4.385-.35-.555c-1.425-2.275-2.18-4.91-2.18-7.64 0-7.72 6.28-14 14-14s14 6.28 14 14-6.28 14-14 14zM22.9 19.33c-.385-.195-2.275-1.12-2.625-1.245s-.605-.195-.855.195-.975 1.245-1.195 1.5-.445.285-.83.09c-.385-.195-1.63-.6-3.105-1.915-1.145-1.025-1.92-2.29-2.145-2.675s-.025-.595.17-.79c.175-.175.385-.45.58-.675.19-.22.255-.385.385-.64s.065-.48-.035-.675-.855-2.065-1.17-2.825c-.305-.745-.615-.645-.855-.655s-.485-.015-.745-.015-.675.1-1.03.495c-.35.395-1.345 1.315-1.345 3.205s1.375 3.715 1.57 3.975c.195.255 2.705 4.13 6.55 5.79.915.39 1.63.625 2.185.8 1.015.32 1.935.275 2.665.165.815-.12 2.275-.93 2.59-1.83.315-.895.315-1.66.22-1.825-.095-.175-.35-.275-.735-.47z"/>
+            </svg>
+          </a>
+
+          {/* Premium Cyber Tooltip — WhatsApp Button */}
+          <div className="hidden lg:flex items-center mr-4 px-4 py-2 bg-[#011c15]/95 backdrop-blur-xl border border-[#10b981]/[0.45] rounded-xl text-white text-[10px] font-bold uppercase tracking-[0.32em] opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 ease-out pointer-events-none whitespace-nowrap"
+            style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.3), 0 0 24px rgba(16,185,129,0.25)' }}>
+            <span className="relative flex h-2 w-2 mr-3 flex-shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: '#10b981' }}></span>
+              <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#10b981' }}></span>
+            </span>
+            Instant IT Support
+          </div>
+        </div>
+
       </div>
 
       {/* =========================================================================
-          2. WHATSAPP BUTTON CONTAINER (DEEPENED RICH TECH GREEN)
-          Positioned precisely at bottom 20px
-          ========================================================================= */}
-      <div
-        className="fixed z-[999999] flex flex-row-reverse items-center pointer-events-none group transform-gpu"
-        style={{ bottom: '24px', right: '24px', overflow: 'visible' }}
-      >
-        <a
-          href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="wa-modern-orb pointer-events-auto will-change-transform relative flex items-center justify-center"
-          aria-label="Contact on WhatsApp"
-          style={{ width: 52, height: 52 }}
-        >
-          {/* Ultra-Modern Hyper-Bright Luminous Laser Pulse Sequences (Green Aura) */}
-          <span className="wa-radiation-wave wave-1" />
-          <span className="wa-radiation-wave wave-2" />
-          <span className="wa-radiation-wave wave-3" />
-
-          {/* Core Structure: Symmetrical Saturated Deep Tech Green Base */}
-          <span className="wa-cyber-core" />
-
-          {/* Internal Volumetric Energy Glow */}
-          <span className="wa-cyber-glow" />
-
-          {/* Premium Glass Specular Shard Overlay (Enhanced Brightness/Shiness) */}
-          <span style={{
-            position: 'absolute', inset: 0, borderRadius: '50%',
-            background: 'linear-gradient(135deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.15) 45%, transparent 60%)',
-            zIndex: 10, pointerEvents: 'none',
-          }} />
-
-          {/* Original WhatsApp Icon */}
-          <svg viewBox="0 0 32 32"
-            style={{ 
-              width: 26, 
-              height: 26, 
-              fill: '#ffffff', 
-              position: 'relative', 
-              zIndex: 20, 
-              flexShrink: 0, 
-              transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
-              filter: 'drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.4))'
-            }}
-            className="group-hover:scale-110 group-hover:rotate-6">
-            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.48 2.025 7.78l-2.025 7.395 7.58-1.99c2.35 1.4 5.08 2.215 8.02 2.215 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.355c-2.585 0-4.99-.745-7.035-2.035l-.505-.315-4.485 1.175 1.2-4.385-.35-.555c-1.425-2.275-2.18-4.91-2.18-7.64 0-7.72 6.28-14 14-14s14 6.28 14 14-6.28 14-14 14zM22.9 19.33c-.385-.195-2.275-1.12-2.625-1.245s-.605-.195-.855.195-.975 1.245-1.195 1.5-.445.285-.83.09c-.385-.195-1.63-.6-3.105-1.915-1.145-1.025-1.92-2.29-2.145-2.675s-.025-.595.17-.79c.175-.175.385-.45.58-.675.19-.22.255-.385.385-.64s.065-.48-.035-.675-.855-2.065-1.17-2.825c-.305-.745-.615-.645-.855-.655s-.485-.015-.745-.015-.675.1-1.03.495c-.35.395-1.345 1.315-1.345 3.205s1.375 3.715 1.57 3.975c.195.255 2.705 4.13 6.55 5.79.915.39 1.63.625 2.185.8 1.015.32 1.935.275 2.665.165.815-.12 2.275-.93 2.59-1.83.315-.895.315-1.66.22-1.825-.095-.175-.35-.275-.735-.47z"/>
-          </svg>
-        </a>
-
-        {/* Premium Cyber Tooltip — WhatsApp Button */}
-        <div className="hidden lg:flex items-center mr-4 px-4 py-2 bg-[#011c15]/95 backdrop-blur-xl border border-[#10b981]/[0.45] rounded-xl text-white text-[10px] font-bold uppercase tracking-[0.32em] opacity-0 translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-400 ease-out pointer-events-none whitespace-nowrap"
-          style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.3), 0 0 24px rgba(16,185,129,0.25)' }}>
-          <span className="relative flex h-2 w-2 mr-3 flex-shrink-0">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ background: '#10b981' }}></span>
-            <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: '#10b981' }}></span>
-          </span>
-          Instant IT Support
-        </div>
-      </div>
-
-      {/* =========================================================================
-          3. SCOPED ENGINE STYLING (Optimized Bright Borders & Isolation Proofing)
+          3. SCOPED ENGINE STYLING (Preserved Animations & Isolation Proofing)
           ========================================================================= */}
       <style jsx global>{`
         /* ----------------------------------------------------
@@ -152,7 +153,6 @@ const QuickContactButtons = () => {
           transform: scale(1.12) translateY(-2px); 
         }
 
-        /* Enhanced isolation stroke and outer drop shadows to combat pure white backgrounds */
         .call-cyber-core {
           position: absolute; inset: 0; border-radius: 50%; z-index: 1;
           background: linear-gradient(135deg, #ff6a14 0%, #ea580c 100%);
@@ -216,7 +216,6 @@ const QuickContactButtons = () => {
           transform: scale(1.12) translateY(-2px); 
         }
 
-        /* Added secondary deep shadows and explicit edge definitions for total cross-background compatibility */
         .wa-cyber-core {
           position: absolute; inset: 0; border-radius: 50%; z-index: 1;
           background: linear-gradient(135deg, #12a14b 0%, #0b662f 100%);
@@ -269,20 +268,15 @@ const QuickContactButtons = () => {
         }
 
         /* ----------------------------------------------------
-           RESPONSIVE SAFETY FOOTPRINT LAWS
+           RESPONSIVE LAWS & PERFORMANCE PROOFING
         ---------------------------------------------------- */
         @media (max-width: 768px) {
           .call-modern-orb, .wa-modern-orb {
             width: 46px !important;
             height: 46px !important;
           }
-          .call-modern-orb svg {
-            width: 20px !important;
-            height: 20px !important;
-          }
-          .wa-modern-orb svg {
-            width: 22px !important;
-            height: 22px !important;
+          .icon-scale {
+            transform: scale(0.88);
           }
         }
       `}</style>
