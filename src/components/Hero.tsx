@@ -1,20 +1,47 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
 
 export default function Hero() {
   const showCenterText = true;
   const showScrollDown = true;
   const [isScrolled, setIsScrolled] = useState(false);
+  const [videoSrc, setVideoSrc] = useState('');
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // FIX: Detect screen size on client-side mount and supply a single direct source link.
+    // This completely bypasses mobile browser bugs caused by using multiple <source media="..."> tags.
+    const width = window.innerWidth;
+    if (width < 640) {
+      setVideoSrc('https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-mobile-1.mp4');
+    } else if (width < 768) {
+      setVideoSrc('https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-tablet-1.mp4');
+    } else {
+      setVideoSrc('https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-desktop-1.mp4');
+    }
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Force play engine to prevent low-power mode or gesture restriction freezes
+  useEffect(() => {
+    if (videoSrc && videoRef.current) {
+      videoRef.current.load();
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((error) => {
+          console.log('Autoplay playback engine handled smoothly:', error);
+        });
+      }
+    }
+  }, [videoSrc]);
 
   const socials = [
     {
@@ -81,34 +108,21 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            <video
-              key="4biz-native-cdn-stream"
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls={false}
-              preload="metadata"
-              crossOrigin="anonymous"
-              className="w-full h-full object-cover brightness-[1.05] contrast-[1.05]"
-              style={{ transform: 'translate3d(0,0,0)' }}
-            >
-              <source 
-                src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-mobile-1.mp4" 
-                type="video/mp4" 
-                media="(max-width: 639px)" 
+            {videoSrc && (
+              <video
+                ref={videoRef}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls={false}
+                preload="metadata"
+                crossOrigin="anonymous"
+                className="w-full h-full object-cover brightness-[1.05] contrast-[1.05]"
+                style={{ transform: 'translate3d(0,0,0)' }}
+                src={videoSrc}
               />
-              <source 
-                src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-tablet-1.mp4" 
-                type="video/mp4" 
-                media="(min-width: 640px) and (max-width: 767px)" 
-              />
-              <source 
-                src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-desktop-1.mp4" 
-                type="video/mp4" 
-                media="(min-width: 768px)" 
-              />
-            </video>
+            )}
 
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
@@ -139,7 +153,8 @@ export default function Hero() {
         </nav>
 
         {/* ── ULTRA MODERN FLUID CENTRAL TYPOGRAPHY ── */}
-        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto pl-14 pr-6 xs:px-8 sm:px-16 z-30 pt-12 pb-6 min-h-0">
+        {/* FIX: Set px-12 symmetrically so text stays 100% perfectly centered in the screen width, while acting as a barrier blocking any icon collision */}
+        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-12 sm:px-16 z-30 pt-12 pb-6 min-h-0">
           <div 
             className={`w-full flex flex-col items-center pointer-events-none transition-all duration-500 ${showCenterText ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
             style={{ willChange: 'transform, opacity' }}
@@ -152,12 +167,13 @@ export default function Hero() {
                   WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
                 }}
               >
-                <span className="text-[6.8vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem]">4BIZ</span>
-                <span className="text-[6.8vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem]">INTERNATIONAL</span>
+                {/* FIX: Tuned text from 6.8vw to 5.4vw on small mobile view to cleanly fit single-line view without touching icons */}
+                <span className="text-[5.4vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem]">4BIZ</span>
+                <span className="text-[5.4vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem]">INTERNATIONAL</span>
               </h1>
 
               <h2 
-                className="mt-4 sm:mt-5 md:mt-6 text-[2.9vw] xs:text-[0.95rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.9rem] font-black uppercase tracking-[0.22em] text-[#ffffff] leading-none font-sans pl-[0.22em] whitespace-nowrap"
+                className="mt-4 sm:mt-5 md:mt-6 text-[2.6vw] xs:text-[0.95rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.9rem] font-black uppercase tracking-[0.22em] text-[#ffffff] leading-none font-sans pl-[0.22em] whitespace-nowrap"
                 style={{ textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 6px 15px rgba(0,0,0,0.85), 0 0 12px rgba(255,255,255,0.3)' }}
               >
                 IMPACTING INFINITE
