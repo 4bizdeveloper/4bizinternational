@@ -17,6 +17,9 @@ export default function Hero() {
 
   const [isScrolled, setIsScrolled] = useState(false);
   
+  // Track active viewport cleanly to prevent loading multiple videos simultaneously on mobile hardware
+  const [activeDevice, setActiveDevice] = useState<'mobile' | 'tablet' | 'desktop' | null>(null);
+
   // Track video loading separately per device variant to keep transitions completely seamless
   const [isMobileVideoLoaded, setIsMobileVideoLoaded] = useState(false);
   const [isTabletVideoLoaded, setIsTabletVideoLoaded] = useState(false);
@@ -40,30 +43,51 @@ export default function Hero() {
       }
     };
 
+    // Correctly handle dynamic window breakpoints to instantiate only one media asset loop at a time
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setActiveDevice('mobile');
+      } else if (width >= 640 && width < 768) {
+        setActiveDevice('tablet');
+      } else {
+        setActiveDevice('desktop');
+      }
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
+    // Initial calculation
+    handleResize();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
-  // Guarantee continuous auto-play cycles across all rendered instances safely
+  // Guarantee continuous auto-play cycles across the active rendered instance safely
   useEffect(() => {
+    if (!activeDevice) return;
+
     const firePlay = (ref: React.RefObject<any>, setLoaded: (val: boolean) => void) => {
       if (ref.current) {
-        // next-video wraps the player; play implementation is normalized safely via underlying mechanisms
         const player = ref.current.play ? ref.current : ref.current.getNativePlayer?.();
         if (player && typeof player.play === 'function') {
           player.play()
             .then(() => setLoaded(true))
             .catch(() => {
-              console.log("Autoplay resisted by browser sandbox or resource prioritization engine.");
+              console.log("Autoplay resisted by browser sandbox or low power mode.");
             });
         }
       }
     };
 
-    firePlay(mobileVideoRef, setIsMobileVideoLoaded);
-    firePlay(tabletVideoRef, setIsTabletVideoLoaded);
-    firePlay(desktopVideoRef, setIsDesktopVideoLoaded);
-  }, []);
+    if (activeDevice === 'mobile') firePlay(mobileVideoRef, setIsMobileVideoLoaded);
+    if (activeDevice === 'tablet') firePlay(tabletVideoRef, setIsTabletVideoLoaded);
+    if (activeDevice === 'desktop') firePlay(desktopVideoRef, setIsDesktopVideoLoaded);
+  }, [activeDevice]);
 
   const socials = [
     {
@@ -121,7 +145,6 @@ export default function Hero() {
           0%, 100% { opacity: 0.6; transform: scale(1); }
           50% { opacity: 0.9; transform: scale(1.01); }
         }
-        /* Hide unnecessary controls and overlays injected by some mobile players */
         .next-video-container video {
           object-fit: cover !important;
         }
@@ -142,59 +165,65 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* 1. Mobile Viewport Video */}
-            <div className={`absolute inset-0 w-full h-full block sm:hidden transition-opacity duration-700 ${
-              isMobileVideoLoaded ? 'opacity-100' : 'opacity-40'
-            }`}>
-              <Video
-                ref={mobileVideoRef}
-                src={videoMobile}
-                loop
-                muted
-                playsInline
-                autoPlay
-                controls={false}
-                onCanPlay={() => setIsMobileVideoLoaded(true)}
-                className="w-full h-full object-cover aspect-[9/16] brightness-[1.05] contrast-[1.05]"
-                style={{ willChange: 'opacity' }}
-              />
-            </div>
+            {/* 1. Mobile Viewport Video - Rendered purely on mobile screens */}
+            {activeDevice === 'mobile' && (
+              <div className={`absolute inset-0 w-full h-full block transition-opacity duration-700 ${
+                isMobileVideoLoaded ? 'opacity-100' : 'opacity-40'
+              }`}>
+                <Video
+                  ref={mobileVideoRef}
+                  src={videoMobile}
+                  loop
+                  muted
+                  playsInline
+                  autoPlay
+                  controls={false}
+                  onCanPlay={() => setIsMobileVideoLoaded(true)}
+                  className="w-full h-full object-cover aspect-[9/16] brightness-[1.05] contrast-[1.05]"
+                  style={{ willChange: 'opacity' }}
+                />
+              </div>
+            )}
 
-            {/* 2. Tablet Viewport Video */}
-            <div className={`absolute inset-0 w-full h-full hidden sm:block md:hidden transition-opacity duration-700 ${
-              isTabletVideoLoaded ? 'opacity-100' : 'opacity-40'
-            }`}>
-              <Video
-                ref={tabletVideoRef}
-                src={videoTablet}
-                loop
-                muted
-                playsInline
-                autoPlay
-                controls={false}
-                onCanPlay={() => setIsTabletVideoLoaded(true)}
-                className="w-full h-full object-cover aspect-[4/3] brightness-[1.05] contrast-[1.05]"
-                style={{ willChange: 'opacity' }}
-              />
-            </div>
+            {/* 2. Tablet Viewport Video - Rendered purely on tablet screen bounds */}
+            {activeDevice === 'tablet' && (
+              <div className={`absolute inset-0 w-full h-full block transition-opacity duration-700 ${
+                isTabletVideoLoaded ? 'opacity-100' : 'opacity-40'
+              }`}>
+                <Video
+                  ref={tabletVideoRef}
+                  src={videoTablet}
+                  loop
+                  muted
+                  playsInline
+                  autoPlay
+                  controls={false}
+                  onCanPlay={() => setIsTabletVideoLoaded(true)}
+                  className="w-full h-full object-cover aspect-[4/3] brightness-[1.05] contrast-[1.05]"
+                  style={{ willChange: 'opacity' }}
+                />
+              </div>
+            )}
 
-            {/* 3. Desktop Viewport Video */}
-            <div className={`absolute inset-0 w-full h-full hidden md:block transition-opacity duration-700 ${
-              isDesktopVideoLoaded ? 'opacity-100' : 'opacity-40'
-            }`}>
-              <Video
-                ref={desktopVideoRef}
-                src={videoDesktop}
-                loop
-                muted
-                playsInline
-                autoPlay
-                controls={false}
-                onCanPlay={() => setIsDesktopVideoLoaded(true)}
-                className="w-full h-full object-cover aspect-[16/9] brightness-[1.05] contrast-[1.05]"
-                style={{ willChange: 'opacity' }}
-              />
-            </div>
+            {/* 3. Desktop Viewport Video - Rendered purely on desktop screen bounds */}
+            {activeDevice === 'desktop' && (
+              <div className={`absolute inset-0 w-full h-full block transition-opacity duration-700 ${
+                isDesktopVideoLoaded ? 'opacity-100' : 'opacity-40'
+              }`}>
+                <Video
+                  ref={desktopVideoRef}
+                  src={videoDesktop}
+                  loop
+                  muted
+                  playsInline
+                  autoPlay
+                  controls={false}
+                  onCanPlay={() => setIsDesktopVideoLoaded(true)}
+                  className="w-full h-full object-cover aspect-[16/9] brightness-[1.05] contrast-[1.05]"
+                  style={{ willChange: 'opacity' }}
+                />
+              </div>
+            )}
 
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
