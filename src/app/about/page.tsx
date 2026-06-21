@@ -76,7 +76,7 @@ export default function AboutPage() {
     <div 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="group relative w-full min-h-screen text-white overflow-hidden font-sans select-none selection:bg-cyan-500 selection:text-black bg-[radial-gradient(circle_at_center,rgba(11,29,87,1)_0%,rgba(6,12,49,1)_100%)]"
+      className="group relative w-full min-h-screen text-white overflow-hidden font-sans select-none selection:bg-cyan-500 selection:text-black bg-[#060c31] sm:bg-[radial-gradient(circle_at_center,rgba(11,29,87,1)_0%,rgba(6,12,49,1)_100%)]"
     >
       {/* Ambient Premium Core Gradients */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
@@ -312,75 +312,75 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── CEO SECTION — OPTIMIZED & CLS-FREE ─── */}
+      {/* ─── CEO SECTION ─── */}
       <section
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-20 md:py-28 overflow-hidden"
-        style={{ willChange: 'auto', contain: 'layout style' }}
+        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16 md:py-24 overflow-hidden"
+        style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
           {/* CEO Quote — Left Column */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 flex flex-col space-y-6 order-2 lg:order-1"
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 flex flex-col space-y-6 order-2 lg:order-1 relative"
           >
             <div className="flex flex-col space-y-2">
               <span className="text-xs font-mono tracking-[0.3em] uppercase text-cyan-400 font-bold">Leadership Message</span>
               <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">CEO Speaks</h2>
             </div>
             
-            {/* Safe zone padding added to avoid quote overlapping with box border */}
-            <div className="relative bg-white/[0.03] border border-white/10 p-8 sm:p-10 rounded-3xl backdrop-blur-xl shadow-2xl mt-4">
-              <RiDoubleQuotesL className="absolute -top-5 left-4 text-5xl text-cyan-500/20 pointer-events-none" />
-              <p className="text-white/95 text-lg sm:text-xl font-light italic leading-relaxed relative z-10 pl-2">
+            {/* Box Container with Inside-Positioned Quote Icon */}
+            <div className="relative bg-[#0b1d57]/40 border border-cyan-500/20 p-6 sm:p-10 rounded-3xl backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col space-y-4">
+              <div>
+                <RiDoubleQuotesL className="text-4xl sm:text-5xl text-cyan-400/40 select-none" />
+              </div>
+              
+              <p className="text-white/90 text-base sm:text-xl font-light italic leading-relaxed relative z-10">
                 "Our philosophy centers on building digital systems with timeless structural integrity. We don't just solve modern execution challenges; we equip dynamic market leaders with scalable assets that spark continuous global influence and compound long-term returns."
               </p>
               
-              <div className="mt-6 pt-6 border-t border-white/10 flex flex-col pl-2">
-                <span className="text-lg font-bold tracking-wide bg-gradient-to-r from-white via-white to-cyan-400 bg-clip-text text-transparent">
+              <div className="pt-4 border-t border-white/10 flex flex-col">
+                <span className="text-lg font-bold tracking-wide bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent">
                   Chief Executive Officer
                 </span>
-                <span className="text-xs font-mono uppercase text-white/40 tracking-widest mt-0.5">
+                <span className="text-xs font-mono uppercase text-white/40 tracking-widest mt-1">
                   4Biz International
                 </span>
               </div>
             </div>
           </motion.div>
 
-          {/* CEO Image — Right Column (Border-Free Seamless Blending) */}
+          {/* CEO Image — Right Column */}
           <div className="lg:col-span-5 order-1 lg:order-2 w-full flex justify-center items-end self-end">
-            <div className="relative w-full max-w-[380px] h-[400px] sm:h-[500px] flex items-end overflow-hidden">
+            <div className="relative w-full max-w-[350px] h-[360px] sm:h-[450px] overflow-visible">
               
-              {/* Ambient backlighting glow */}
+              {/* Dynamic Backlight Glow aura under image */}
               <div
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full pointer-events-none -z-10"
+                className="absolute bottom-4 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full pointer-events-none -z-10 opacity-70"
                 style={{
-                  background: 'radial-gradient(circle, rgba(34,211,238,0.18) 0%, transparent 70%)',
-                  filter: 'blur(50px)',
+                  background: 'radial-gradient(circle, rgba(34,211,238,0.25) 0%, transparent 70%)',
+                  filter: 'blur(40px)',
                 }}
               />
 
-              {/* 
-                Premium Masking Area: Incorporates linear alpha fades 
-                to cleanly dissolve the bottom edges natively without sudden crops or border breaks as shown in image_34da82.jpg.
-              */}
+              {/* Seamless Edge Masking Matrix (No Borders, Perfectly Dissolved Bottom) */}
               <div
-                className="relative w-full h-full transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.015]"
+                className="absolute inset-0 transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.01]"
                 style={{
                   willChange: 'transform',
-                  maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
+                  maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%)',
                 }}
               >
                 <Image
                   src="/persons/4biz_international-ceo-1.png"
                   alt="4Biz International CEO"
                   fill
-                  sizes="(max-width: 768px) 340px, 380px"
-                  className="object-contain object-bottom border-0 outline-none select-none pointer-events-none"
+                  sizes="(max-width: 768px) 300px, 350px"
+                  className="object-cover object-top border-0 outline-none select-none pointer-events-none bg-transparent"
                   priority
                 />
               </div>
