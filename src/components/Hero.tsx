@@ -1,47 +1,31 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
 
 export default function Hero() {
+  // ── EASILY CUSTOMIZABLE VISIBILITY CONFIGURATION ──
   const showCenterText = true;
   const showScrollDown = true;
+
   const [isScrolled, setIsScrolled] = useState(false);
-  const [videoSrc, setVideoSrc] = useState('');
-  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  // High-performance hardware-accelerated interactive utility styles
+  const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
+  const uniformIconSize = 'w-[20px] h-[20px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300';
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-
-    // FIX: Detect screen size on client-side mount and supply a single direct source link.
-    // This completely bypasses mobile browser bugs caused by using multiple <source media="..."> tags.
-    const width = window.innerWidth;
-    if (width < 640) {
-      setVideoSrc('https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-mobile-1.mp4');
-    } else if (width < 768) {
-      setVideoSrc('https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-tablet-1.mp4');
-    } else {
-      setVideoSrc('https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-desktop-1.mp4');
-    }
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Force play engine to prevent low-power mode or gesture restriction freezes
-  useEffect(() => {
-    if (videoSrc && videoRef.current) {
-      videoRef.current.load();
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.log('Autoplay playback engine handled smoothly:', error);
-        });
-      }
-    }
-  }, [videoSrc]);
 
   const socials = [
     {
@@ -55,7 +39,7 @@ export default function Hero() {
       href: 'https://www.facebook.com/4bizglobal',
       label: 'Facebook',
       isComponent: true,
-      component: <FaFacebookF className="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300" />,
+      component: <FaFacebookF className={uniformIconSize} />,
       target: '_blank',
     },
     {
@@ -84,8 +68,16 @@ export default function Hero() {
           100% { transform: translateY(0) scaleY(1); opacity: 0.3; }
         }
         @keyframes microPulse {
-          0%, 100% { border-color: rgba(255,255,255,0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.8); transform: scale(1); }
-          50% { border-color: rgba(255,255,255,0.6); box-shadow: 0 0 20px rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.9); transform: scale(1.02); }
+          0%, 100% { 
+            border-color: rgba(255,255,255,0.3); 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.8);
+            transform: scale(1);
+          }
+          50% { 
+            border-color: rgba(255,255,255,0.6); 
+            box-shadow: 0 0 20px rgba(255,255,255,0.1), 0 4px 20px rgba(0,0,0,0.9);
+            transform: scale(1.02);
+          }
         }
         @keyframes subtleTextPulse {
           0%, 100% { opacity: 0.6; transform: scale(1); }
@@ -97,10 +89,10 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── HIGH PERFORMANCE NATIVE VIDEO ENGINE ── */}
+        {/* ── PERFORMANCE BACKGROUND MATRIX (IMAGE BACKGROUND ONLY) ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
-            className="w-full h-full relative opacity-100"
+            className="w-full h-full relative"
             style={{
               WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, transparent 100%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%)',
               maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 6%, rgba(0,0,0,1) 94%, transparent 100%), linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%)',
@@ -108,31 +100,37 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {videoSrc && (
-              <video
-                ref={videoRef}
-                autoPlay
-                loop
-                muted
-                playsInline
-                controls={false}
-                preload="metadata"
-                crossOrigin="anonymous"
-                className="w-full h-full object-cover brightness-[1.05] contrast-[1.05]"
-                style={{ transform: 'translate3d(0,0,0)' }}
-                src={videoSrc}
+            {/* Optimized device-specific high-performance image layer */}
+            <picture className="absolute inset-0 w-full h-full block z-10">
+              <source media="(min-width: 1200px)" srcSet="/hero-desktop-1.png" width="1920" height="900" />
+              <source media="(min-width: 640px)" srcSet="/hero-tablet-1.png" width="1024" height="768" />
+              <img
+                src="/hero-mobile-1.png"
+                alt=""
+                width="390"
+                height="844"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-full object-cover object-[center_bottom] sm:object-center brightness-[1.05] contrast-[1.05]"
               />
-            )}
-
+            </picture>
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
         </div>
 
-        {/* ── SOCIAL NAVIGATION SIDEBAR (STRICTICON SYMMETRY) ── */}
+        {/* ── ACCESSIBLE FIXED NAVIGATION SIDEBAR ── */}
         <nav
           aria-label="Social Profile Navigation"
-          className={`absolute top-1/2 -translate-y-1/2 z-40 flex flex-col items-center justify-center left-4 gap-5 sm:left-6 sm:gap-[22px] lg:left-8 transition-all duration-500 ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-3' : 'opacity-100 pointer-events-auto translate-x-0'}`}
-          style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)', willChange: 'transform, opacity' }}
+          className={`
+            absolute top-1/2 -translate-y-1/2 z-40
+            flex flex-col items-center justify-center
+            left-4 gap-5
+            sm:left-6 sm:gap-[22px]
+            lg:left-8
+            transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)
+            ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-3' : 'opacity-100 pointer-events-auto translate-x-0'}
+          `}
+          style={{ willChange: 'transform, opacity' }}
         >
           {socials.map((social) => (
             <a
@@ -140,11 +138,13 @@ export default function Hero() {
               href={social.href}
               target={social.target}
               rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
-              className="text-white w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] lg:w-[22px] lg:h-[22px] flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full"
+              className={iconClass}
               aria-label={social.label}
             >
-              {social.isComponent ? social.component : (
-                <svg viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true" className="w-full h-full block shrink-0 transition-transform duration-300">
+              {social.isComponent ? (
+                social.component
+              ) : (
+                <svg viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true" className={uniformIconSize}>
                   <path d={social.path} />
                 </svg>
               )}
@@ -152,29 +152,40 @@ export default function Hero() {
           ))}
         </nav>
 
-        {/* ── ULTRA MODERN FLUID CENTRAL TYPOGRAPHY ── */}
-        {/* FIX: Set px-12 symmetrically so text stays 100% perfectly centered in the screen width, while acting as a barrier blocking any icon collision */}
-        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-12 sm:px-16 z-30 pt-12 pb-6 min-h-0">
+        {/* ── FLEX CENTER CONTAINER ── */}
+        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-h-0">
           <div 
-            className={`w-full flex flex-col items-center pointer-events-none transition-all duration-500 ${showCenterText ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
+            className={`
+              w-full flex flex-col items-center pointer-events-none transition-all duration-500
+              ${showCenterText ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}
+            `}
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="w-full max-w-[95vw] sm:max-w-[600px] md:max-w-[720px] lg:max-w-[1000px] flex flex-col items-center">
+            {/* Modern Stack Structure: Handles cross-device typographic layout shifting flawlessly */}
+            <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center">
+              
+              {/* Heading Lockup: Stacked perfectly on mobile/tablet, single row on desktop views */}
               <h1 
-                className="flex flex-row items-center justify-center gap-x-2 sm:gap-x-3 md:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white whitespace-nowrap"
+                className="flex flex-col md:flex-row items-center justify-center gap-y-1 md:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white leading-[1.1] md:leading-none font-sans text-wrap md:whitespace-nowrap"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 25px rgba(0,170,255,0.2)',
                   WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
                 }}
               >
-                {/* FIX: Tuned text from 6.8vw to 5.4vw on small mobile view to cleanly fit single-line view without touching icons */}
-                <span className="text-[5.4vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem]">4BIZ</span>
-                <span className="text-[5.4vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem]">INTERNATIONAL</span>
+                <span className="text-[10.5vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[2.9rem] lg:text-[3.6rem]">
+                  4BIZ
+                </span>
+                <span className="text-[7.5vw] xs:text-[1.6rem] sm:text-[2.2rem] md:text-[2.9rem] lg:text-[3.6rem]">
+                  INTERNATIONAL
+                </span>
               </h1>
 
+              {/* Subheading: Optimized sizing hierarchy across responsive targets */}
               <h2 
-                className="mt-4 sm:mt-5 md:mt-6 text-[2.6vw] xs:text-[0.95rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.9rem] font-black uppercase tracking-[0.22em] text-[#ffffff] leading-none font-sans pl-[0.22em] whitespace-nowrap"
-                style={{ textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 6px 15px rgba(0,0,0,0.85), 0 0 12px rgba(255,255,255,0.3)' }}
+                className="mt-6 md:mt-4 text-[4.6vw] xs:text-[1.15rem] sm:text-[1.55rem] md:text-[1.7rem] lg:text-[2.1rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
+                style={{
+                  textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 6px 15px rgba(0,0,0,0.85), 0 0 12px rgba(255,255,255,0.3)',
+                }}
               >
                 IMPACTING INFINITE
               </h2>
@@ -182,13 +193,19 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── SCROLL DETECTOR CONTAINER (IMMUTABLE SMOOTH ANIMATION) ── */}
+        {/* ── SCROLL DETECTOR CONTAINER ── */}
         <div
-          className={`relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500 ${isScrolled ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}`}
+          className={`
+            relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500
+            ${isScrolled ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}
+          `}
           style={{ willChange: 'transform, opacity' }}
           aria-hidden="true"
         >
-          <div className={`transition-all duration-500 ${showScrollDown ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`} style={{ willChange: 'transform, opacity' }}>
+          <div 
+            className={`transition-all duration-500 ${showScrollDown ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+            style={{ willChange: 'transform, opacity' }}
+          >
             <div className="flex flex-col items-center justify-center gap-y-2.5">
               <div
                 style={{
@@ -207,9 +224,28 @@ export default function Hero() {
                 }}
                 className="backdrop-blur-sm"
               >
-                <span style={{ display: 'block', width: '3px', height: '8px', borderRadius: '9999px', background: '#ffffff', boxShadow: '0 0 8px #fff', animation: 'dynamicWheel 1.8s infinite cubic-bezier(0.25, 1, 0.5, 1)', willChange: 'transform, opacity' }} />
+                <span
+                  style={{
+                    display: 'block',
+                    width: '3px',
+                    height: '8px',
+                    borderRadius: '9999px',
+                    background: '#ffffff',
+                    boxShadow: '0 0 8px #fff',
+                    animation: 'dynamicWheel 1.8s infinite cubic-bezier(0.25, 1, 0.5, 1)',
+                    willChange: 'transform, opacity',
+                  }}
+                />
               </div>
-              <span className="text-[0.52rem] sm:text-[0.6rem] font-black tracking-[0.5em] uppercase text-white pl-[0.5em]" style={{ textShadow: '0 2px 6px #000', animation: 'subtleTextPulse 3s infinite ease-in-out', willChange: 'transform, opacity' }}>
+
+              <span
+                className="text-[0.52rem] sm:text-[0.6rem] font-black tracking-[0.5em] uppercase text-white pl-[0.5em]"
+                style={{ 
+                  textShadow: '0 2px 6px #000',
+                  animation: 'subtleTextPulse 3s infinite ease-in-out',
+                  willChange: 'transform, opacity'
+                }}
+              >
                 scroll down
               </span>
             </div>
