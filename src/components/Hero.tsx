@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
 
 export default function Hero() {
@@ -9,6 +9,15 @@ export default function Hero() {
   const showScrollDown = true;
 
   const [isScrolled, setIsScrolled] = useState(false);
+  
+  // Track video loading separately per device variant to keep transitions completely seamless
+  const [isMobileVideoLoaded, setIsMobileVideoLoaded] = useState(false);
+  const [isTabletVideoLoaded, setIsTabletVideoLoaded] = useState(false);
+  const [isDesktopVideoLoaded, setIsDesktopVideoLoaded] = useState(false);
+
+  const mobileVideoRef = useRef<HTMLVideoElement | null>(null);
+  const tabletVideoRef = useRef<HTMLVideoElement | null>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement | null>(null);
   
   // High-performance hardware-accelerated interactive utility styles
   const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
@@ -25,6 +34,23 @@ export default function Hero() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Guarantee continuous auto-play cycles across all rendered instances safely
+  useEffect(() => {
+    const firePlay = (ref: React.RefObject<HTMLVideoElement | null>, setLoaded: (val: boolean) => void) => {
+      if (ref.current) {
+        ref.current.play()
+          .then(() => setLoaded(true))
+          .catch(() => {
+            console.log("Autoplay resisted by browser sandbox or resource prioritization engine.");
+          });
+      }
+    };
+
+    firePlay(mobileVideoRef, setIsMobileVideoLoaded);
+    firePlay(tabletVideoRef, setIsTabletVideoLoaded);
+    firePlay(desktopVideoRef, setIsDesktopVideoLoaded);
   }, []);
 
   const socials = [
@@ -89,7 +115,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── PERFORMANCE BACKGROUND MATRIX (IMAGE BACKGROUND ONLY) ── */}
+        {/* ── PERFORMANCE BACKGROUND MATRIX ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -100,20 +126,54 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* Optimized device-specific high-performance image layer */}
-            <picture className="absolute inset-0 w-full h-full block z-10">
-              <source media="(min-width: 1200px)" srcSet="/hero-desktop-1.png" width="1920" height="900" />
-              <source media="(min-width: 640px)" srcSet="/hero-tablet-1.png" width="1024" height="768" />
-              <img
-                src="/hero-mobile-1.png"
-                alt=""
-                width="390"
-                height="844"
-                fetchPriority="high"
-                decoding="async"
-                className="w-full h-full object-cover object-[center_bottom] sm:object-center brightness-[1.05] contrast-[1.05]"
-              />
-            </picture>
+            {/* 1. Mobile Viewport Video - Aspect Ratio: 9:16 (Targeted up to small tablets) */}
+            <video
+              ref={mobileVideoRef}
+              src="/hero-video-mobile-1.mp4"
+              loop
+              muted
+              playsInline
+              autoPlay
+              preload="auto"
+              onCanPlay={() => setIsMobileVideoLoaded(true)}
+              className={`absolute inset-0 w-full h-full object-cover aspect-[9/16] brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-700 block sm:hidden ${
+                isMobileVideoLoaded ? 'opacity-100' : 'opacity-40'
+              }`}
+              style={{ willChange: 'opacity' }}
+            />
+
+            {/* 2. Tablet Viewport Video - Aspect Ratio: 4:3 (Targeted from sm screens to md/lg split) */}
+            <video
+              ref={tabletVideoRef}
+              src="/hero-video-tablet-1.mp4"
+              loop
+              muted
+              playsInline
+              autoPlay
+              preload="auto"
+              onCanPlay={() => setIsTabletVideoLoaded(true)}
+              className={`absolute inset-0 w-full h-full object-cover aspect-[4/3] brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-700 hidden sm:block md:hidden ${
+                isTabletVideoLoaded ? 'opacity-100' : 'opacity-40'
+              }`}
+              style={{ willChange: 'opacity' }}
+            />
+
+            {/* 3. Desktop Viewport Video - Aspect Ratio: 16:9 (Targeted from md screens onwards) */}
+            <video
+              ref={desktopVideoRef}
+              src="/hero-video-desktop-1.mp4"
+              loop
+              muted
+              playsInline
+              autoPlay
+              preload="auto"
+              onCanPlay={() => setIsDesktopVideoLoaded(true)}
+              className={`absolute inset-0 w-full h-full object-cover aspect-[16/9] brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-700 hidden md:block ${
+                isDesktopVideoLoaded ? 'opacity-100' : 'opacity-40'
+              }`}
+              style={{ willChange: 'opacity' }}
+            />
+
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
         </div>
@@ -161,10 +221,9 @@ export default function Hero() {
             `}
             style={{ willChange: 'transform, opacity' }}
           >
-            {/* Modern Stack Structure: Handles cross-device typographic layout shifting flawlessly */}
             <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center">
               
-              {/* Heading Lockup: Stacked perfectly on mobile/tablet, single row on desktop views */}
+              {/* Heading Lockup: Single-row desktop representation preserving core rules */}
               <h1 
                 className="flex flex-col md:flex-row items-center justify-center gap-y-1 md:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white leading-[1.1] md:leading-none font-sans text-wrap md:whitespace-nowrap"
                 style={{
@@ -180,9 +239,9 @@ export default function Hero() {
                 </span>
               </h1>
 
-              {/* Subheading: Optimized sizing hierarchy across responsive targets */}
+              {/* Subheading */}
               <h2 
-                className="mt-6 md:mt-4 text-[4.6vw] xs:text-[1.15rem] sm:text-[1.55rem] md:text-[1.7rem] lg:text-[2.1rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
+                className="mt-6 md:mt-4 text-[3.8vw] xs:text-[0.95rem] sm:text-[1.3rem] md:text-[1.7rem] lg:text-[2.1rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 6px 15px rgba(0,0,0,0.85), 0 0 12px rgba(255,255,255,0.3)',
                 }}
