@@ -97,7 +97,6 @@ export default function AboutPage() {
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
             <span className="text-xs font-mono tracking-[0.3em] uppercase text-cyan-400 font-bold">Digital Vanguard</span>
           </div>
-          {/* Made "ABOUT" and header sizes slightly smaller here as requested */}
           <h1 className="text-3xl sm:text-5xl xl:text-6xl font-black tracking-tighter leading-[1.1] sm:leading-[1.05]">
             ABOUT <br />
             <span className="inline-block pr-3 pb-1 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 drop-shadow-[0_0_20px_rgba(34,211,238,0.2)]">
@@ -313,7 +312,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── CEO SECTION — CLS/JUMP FREE ─── */}
+      {/* ─── CEO SECTION — OPTIMIZED & CLS-FREE ─── */}
       <section
         className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-20 md:py-28 overflow-hidden"
         style={{ willChange: 'auto', contain: 'layout style' }}
@@ -333,13 +332,14 @@ export default function AboutPage() {
               <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white">CEO Speaks</h2>
             </div>
             
-            <div className="relative bg-white/[0.03] border border-white/10 p-6 sm:p-8 rounded-3xl backdrop-blur-xl shadow-2xl">
-              <RiDoubleQuotesL className="absolute -top-4 -left-2 text-6xl text-cyan-500/10 pointer-events-none" />
-              <p className="text-white/95 text-lg sm:text-xl font-light italic leading-relaxed relative z-10">
+            {/* Safe zone padding added to avoid quote overlapping with box border */}
+            <div className="relative bg-white/[0.03] border border-white/10 p-8 sm:p-10 rounded-3xl backdrop-blur-xl shadow-2xl mt-4">
+              <RiDoubleQuotesL className="absolute -top-5 left-4 text-5xl text-cyan-500/20 pointer-events-none" />
+              <p className="text-white/95 text-lg sm:text-xl font-light italic leading-relaxed relative z-10 pl-2">
                 "Our philosophy centers on building digital systems with timeless structural integrity. We don't just solve modern execution challenges; we equip dynamic market leaders with scalable assets that spark continuous global influence and compound long-term returns."
               </p>
               
-              <div className="mt-6 pt-6 border-t border-white/10 flex flex-col">
+              <div className="mt-6 pt-6 border-t border-white/10 flex flex-col pl-2">
                 <span className="text-lg font-bold tracking-wide bg-gradient-to-r from-white via-white to-cyan-400 bg-clip-text text-transparent">
                   Chief Executive Officer
                 </span>
@@ -350,38 +350,37 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* CEO Image — Right Column (CLS-free, no layout jump) */}
-          <div className="lg:col-span-5 order-1 lg:order-2 w-full flex justify-center items-end">
-            <div className="relative w-full max-w-[360px] h-[380px] sm:h-[480px]">
+          {/* CEO Image — Right Column (Border-Free Seamless Blending) */}
+          <div className="lg:col-span-5 order-1 lg:order-2 w-full flex justify-center items-end self-end">
+            <div className="relative w-full max-w-[380px] h-[400px] sm:h-[500px] flex items-end overflow-hidden">
               
-              {/* Ambient backlighting — absolute so it's outside layout flow */}
+              {/* Ambient backlighting glow */}
               <div
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full pointer-events-none -z-10"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full pointer-events-none -z-10"
                 style={{
-                  background: 'radial-gradient(circle, rgba(34,211,238,0.20) 0%, transparent 70%)',
-                  filter: 'blur(48px)',
+                  background: 'radial-gradient(circle, rgba(34,211,238,0.18) 0%, transparent 70%)',
+                  filter: 'blur(50px)',
                 }}
               />
 
               {/* 
-                Image container: absolute fill inside the fixed-height wrapper.
-                will-change: transform isolates hover scale to compositor thread.
-                No min-h, no aspect-ratio — avoids the double layout calculation.
+                Premium Masking Area: Incorporates linear alpha fades 
+                to cleanly dissolve the bottom edges natively without sudden crops or border breaks as shown in image_34da82.jpg.
               */}
               <div
-                className="absolute inset-0 transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.02]"
+                className="relative w-full h-full transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.015]"
                 style={{
                   willChange: 'transform',
-                  maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
+                  maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
                 }}
               >
                 <Image
                   src="/persons/4biz_international-ceo-1.png"
                   alt="4Biz International CEO"
                   fill
-                  sizes="(max-width: 768px) 320px, 360px"
-                  className="object-cover object-top filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)]"
+                  sizes="(max-width: 768px) 340px, 380px"
+                  className="object-contain object-bottom border-0 outline-none select-none pointer-events-none"
                   priority
                 />
               </div>
