@@ -139,7 +139,7 @@ export default function Hero() {
         </nav>
 
         {/* ── ULTRA MODERN FLUID CENTRAL TYPOGRAPHY ── */}
-        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-h-0">
+        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto pl-14 pr-6 xs:px-8 sm:px-16 z-30 pt-12 pb-6 min-h-0">
           <div 
             className={`w-full flex flex-col items-center pointer-events-none transition-all duration-500 ${showCenterText ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
             style={{ willChange: 'transform, opacity' }}
@@ -152,12 +152,12 @@ export default function Hero() {
                   WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
                 }}
               >
-                <span className="text-[7.5vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem]">4BIZ</span>
-                <span className="text-[7.5vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem]">INTERNATIONAL</span>
+                <span className="text-[6.8vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem]">4BIZ</span>
+                <span className="text-[6.8vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem]">INTERNATIONAL</span>
               </h1>
 
               <h2 
-                className="mt-4 sm:mt-5 md:mt-6 text-[3.2vw] xs:text-[0.95rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.9rem] font-black uppercase tracking-[0.22em] text-[#ffffff] leading-none font-sans pl-[0.22em] whitespace-nowrap"
+                className="mt-4 sm:mt-5 md:mt-6 text-[2.9vw] xs:text-[0.95rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.9rem] font-black uppercase tracking-[0.22em] text-[#ffffff] leading-none font-sans pl-[0.22em] whitespace-nowrap"
                 style={{ textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 6px 15px rgba(0,0,0,0.85), 0 0 12px rgba(255,255,255,0.3)' }}
               >
                 IMPACTING INFINITE
