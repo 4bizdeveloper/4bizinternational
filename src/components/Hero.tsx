@@ -2,33 +2,24 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
-// Import the next-video component
-import Video from 'next-video';
-
-// Import video assets mapped to the @videos configuration path
-import videoMobile from '@videos/hero-video-mobile-1.mp4';
-import videoTablet from '@videos/hero-video-tablet-1.mp4';
-import videoDesktop from '@videos/hero-video-desktop-1.mp4';
 
 export default function Hero() {
-  // ── EASILY CUSTOMIZABLE VISIBILITY CONFIGURATION ──
+  // Center typography configuration flags
   const showCenterText = true;
   const showScrollDown = true;
 
   const [isScrolled, setIsScrolled] = useState(false);
   
-  // Track active viewport cleanly to prevent loading multiple videos simultaneously on mobile hardware
+  // Real-time physical device window tracking safely bound to server component lifecycles
   const [activeDevice, setActiveDevice] = useState<'mobile' | 'tablet' | 'desktop' | null>(null);
 
-  // Track video loading separately per device variant to keep transitions completely seamless
-  const [isMobileVideoLoaded, setIsMobileVideoLoaded] = useState(false);
-  const [isTabletVideoLoaded, setIsTabletVideoLoaded] = useState(false);
-  const [isDesktopVideoLoaded, setIsDesktopVideoLoaded] = useState(false);
+  // Dedicated media component load status parameters 
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
-  // Updated typings to comply with the underlying player architecture
-  const mobileVideoRef = useRef<any>(null);
-  const tabletVideoRef = useRef<any>(null);
-  const desktopVideoRef = useRef<any>(null);
+  // Native player references 
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+  const tabletVideoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
   
   // High-performance hardware-accelerated interactive utility styles
   const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
@@ -43,7 +34,7 @@ export default function Hero() {
       }
     };
 
-    // Correctly handle dynamic window breakpoints to instantiate only one media asset loop at a time
+    // Strict non-overlapping media break-points matching exact device criteria 
     const handleResize = () => {
       const width = window.innerWidth;
       if (width < 640) {
@@ -56,9 +47,8 @@ export default function Hero() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
     
-    // Initial calculation
     handleResize();
 
     return () => {
@@ -67,26 +57,32 @@ export default function Hero() {
     };
   }, []);
 
-  // Guarantee continuous auto-play cycles across the active rendered instance safely
+  // Ensure strict loop playback initialization to guarantee mobile layers don't drop or freeze
   useEffect(() => {
     if (!activeDevice) return;
 
-    const firePlay = (ref: React.RefObject<any>, setLoaded: (val: boolean) => void) => {
-      if (ref.current) {
-        const player = ref.current.play ? ref.current : ref.current.getNativePlayer?.();
-        if (player && typeof player.play === 'function') {
-          player.play()
-            .then(() => setLoaded(true))
-            .catch(() => {
-              console.log("Autoplay resisted by browser sandbox or low power mode.");
+    const executeAutoplay = (ref: React.RefObject<HTMLVideoElement | null>) => {
+      const player = ref.current;
+      if (player) {
+        player.load(); // Force immediate cache buffering evaluation
+        const playPromise = player.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              setIsVideoLoaded(true);
+            })
+            .catch((err) => {
+              console.warn("Autoplay context restricted or power saver state active:", err);
+              // Fallback mechanism to circumvent aggressive mobile sleep state freezes
+              setIsVideoLoaded(true);
             });
         }
       }
     };
 
-    if (activeDevice === 'mobile') firePlay(mobileVideoRef, setIsMobileVideoLoaded);
-    if (activeDevice === 'tablet') firePlay(tabletVideoRef, setIsTabletVideoLoaded);
-    if (activeDevice === 'desktop') firePlay(desktopVideoRef, setIsDesktopVideoLoaded);
+    if (activeDevice === 'mobile') executeAutoplay(mobileVideoRef);
+    if (activeDevice === 'tablet') executeAutoplay(tabletVideoRef);
+    if (activeDevice === 'desktop') executeAutoplay(desktopVideoRef);
   }, [activeDevice]);
 
   const socials = [
@@ -145,16 +141,13 @@ export default function Hero() {
           0%, 100% { opacity: 0.6; transform: scale(1); }
           50% { opacity: 0.9; transform: scale(1.01); }
         }
-        .next-video-container video {
-          object-fit: cover !important;
-        }
       `}</style>
 
       <section
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── PERFORMANCE BACKGROUND MATRIX ── */}
+        {/* ── HIGH PERFORMANCE MEDIA WRAPPER ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative"
@@ -165,60 +158,63 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* 1. Mobile Viewport Video - Rendered purely on mobile screens */}
+            {/* 1. Mobile Viewport Video - Aspect Ratio 9:16 */}
             {activeDevice === 'mobile' && (
-              <div className={`absolute inset-0 w-full h-full block transition-opacity duration-700 ${
-                isMobileVideoLoaded ? 'opacity-100' : 'opacity-40'
+              <div className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+                isVideoLoaded ? 'opacity-100' : 'opacity-20'
               }`}>
-                <Video
+                <video
                   ref={mobileVideoRef}
-                  src={videoMobile}
+                  src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-mobile-1.mp4"
                   loop
                   muted
                   playsInline
                   autoPlay
                   controls={false}
-                  onCanPlay={() => setIsMobileVideoLoaded(true)}
+                  preload="auto"
+                  onLoadedData={() => setIsVideoLoaded(true)}
                   className="w-full h-full object-cover aspect-[9/16] brightness-[1.05] contrast-[1.05]"
                   style={{ willChange: 'opacity' }}
                 />
               </div>
             )}
 
-            {/* 2. Tablet Viewport Video - Rendered purely on tablet screen bounds */}
+            {/* 2. Tablet Viewport Video - Aspect Ratio 4:3 */}
             {activeDevice === 'tablet' && (
-              <div className={`absolute inset-0 w-full h-full block transition-opacity duration-700 ${
-                isTabletVideoLoaded ? 'opacity-100' : 'opacity-40'
+              <div className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+                isVideoLoaded ? 'opacity-100' : 'opacity-20'
               }`}>
-                <Video
+                <video
                   ref={tabletVideoRef}
-                  src={videoTablet}
+                  src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-tablet-1.mp4"
                   loop
                   muted
                   playsInline
                   autoPlay
                   controls={false}
-                  onCanPlay={() => setIsTabletVideoLoaded(true)}
+                  preload="auto"
+                  onLoadedData={() => setIsVideoLoaded(true)}
                   className="w-full h-full object-cover aspect-[4/3] brightness-[1.05] contrast-[1.05]"
                   style={{ willChange: 'opacity' }}
                 />
               </div>
             )}
 
-            {/* 3. Desktop Viewport Video - Rendered purely on desktop screen bounds */}
+            {/* 3. Desktop Viewport Video - Aspect Ratio 16:9 */}
             {activeDevice === 'desktop' && (
-              <div className={`absolute inset-0 w-full h-full block transition-opacity duration-700 ${
-                isDesktopVideoLoaded ? 'opacity-100' : 'opacity-40'
+              <div className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+                isVideoLoaded ? 'opacity-100' : 'opacity-20'
               }`}>
-                <Video
+                <video
                   ref={desktopVideoRef}
-                  src={videoDesktop}
+                  src="https://npxg6ysglejstfll.public.blob.vercel-storage.com/hero-video-desktop-1.mp4"
                   loop
                   muted
                   playsInline
                   autoPlay
                   controls={false}
-                  onCanPlay={() => setIsDesktopVideoLoaded(true)}
+                  preload="auto"
+                  onLoadedData={() => setIsVideoLoaded(true)}
                   className="w-full h-full object-cover aspect-[16/9] brightness-[1.05] contrast-[1.05]"
                   style={{ willChange: 'opacity' }}
                 />
@@ -229,7 +225,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── ACCESSIBLE FIXED NAVIGATION SIDEBAR ── */}
+        {/* ── ACCESSIBLE NAVIGATION SIDEBAR ── */}
         <nav
           aria-label="Social Profile Navigation"
           className={`
@@ -263,7 +259,7 @@ export default function Hero() {
           ))}
         </nav>
 
-        {/* ── FLEX CENTER CONTAINER ── */}
+        {/* ── FLEX CENTER CONTENT CONTAINER ── */}
         <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-h-0">
           <div 
             className={`
@@ -274,7 +270,7 @@ export default function Hero() {
           >
             <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center">
               
-              {/* Heading Lockup */}
+              {/* Main Headline Lockup */}
               <h1 
                 className="flex flex-col md:flex-row items-center justify-center gap-y-1 md:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white leading-[1.1] md:leading-none font-sans text-wrap md:whitespace-nowrap"
                 style={{
@@ -290,7 +286,7 @@ export default function Hero() {
                 </span>
               </h1>
 
-              {/* Subheading */}
+              {/* Tagline Subheading */}
               <h2 
                 className="mt-6 md:mt-4 text-[3.8vw] xs:text-[0.95rem] sm:text-[1.3rem] md:text-[1.7rem] lg:text-[2.1rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
                 style={{
@@ -303,7 +299,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── SCROLL DETECTOR CONTAINER ── */}
+        {/* ── SCROLL ACTION INTERFACE ── */}
         <div
           className={`
             relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500
