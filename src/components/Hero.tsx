@@ -28,7 +28,7 @@ export default function Hero() {
       href: 'https://www.facebook.com/4bizglobal',
       label: 'Facebook',
       isComponent: true,
-      component: <FaFacebookF className="w-[20px] h-[20px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300" />,
+      component: <FaFacebookF className="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300" />,
       target: '_blank',
     },
     {
@@ -70,7 +70,7 @@ export default function Hero() {
         className="relative h-svh min-h-[520px] w-full flex flex-col justify-between text-center overflow-hidden bg-[#010305] select-none"
         aria-label="Hero Introduction"
       >
-        {/* ── IMMUTABLE NATIVE VIDEO BACKGROUND MATRIX ── */}
+        {/* ── HIGH PERFORMANCE NATIVE VIDEO ENGINE ── */}
         <div className="absolute inset-0 z-0 pointer-events-none w-full h-full bg-[#010305]" aria-hidden="true">
           <div 
             className="w-full h-full relative opacity-100"
@@ -81,15 +81,14 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* Pure native HTML5 Video Engine — No dynamic React swaps */}
             <video
               key="4biz-native-cdn-stream"
+              autoPlay
               loop
               muted
               playsInline
-              autoPlay
               controls={false}
-              preload="auto"
+              preload="metadata"
               crossOrigin="anonymous"
               className="w-full h-full object-cover brightness-[1.05] contrast-[1.05]"
               style={{ transform: 'translate3d(0,0,0)' }}
@@ -115,11 +114,11 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── SOCIAL NAVIGATION SIDEBAR ── */}
+        {/* ── SOCIAL NAVIGATION SIDEBAR (STRICTICON SYMMETRY) ── */}
         <nav
           aria-label="Social Profile Navigation"
-          className={`absolute top-1/2 -translate-y-1/2 z-40 flex flex-col items-center justify-center left-4 gap-5 sm:left-6 sm:gap-[22px] lg:left-8 transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-3' : 'opacity-100 pointer-events-auto translate-x-0'}`}
-          style={{ willChange: 'transform, opacity' }}
+          className={`absolute top-1/2 -translate-y-1/2 z-40 flex flex-col items-center justify-center left-4 gap-5 sm:left-6 sm:gap-[22px] lg:left-8 transition-all duration-500 ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-3' : 'opacity-100 pointer-events-auto translate-x-0'}`}
+          style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)', willChange: 'transform, opacity' }}
         >
           {socials.map((social) => (
             <a
@@ -127,11 +126,11 @@ export default function Hero() {
               href={social.href}
               target={social.target}
               rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
-              className="text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full"
+              className="text-white w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] lg:w-[22px] lg:h-[22px] flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full"
               aria-label={social.label}
             >
               {social.isComponent ? social.component : (
-                <svg viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true" className="w-[20px] h-[20px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300">
+                <svg viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true" className="w-full h-full block shrink-0 transition-transform duration-300">
                   <path d={social.path} />
                 </svg>
               )}
@@ -139,26 +138,26 @@ export default function Hero() {
           ))}
         </nav>
 
-        {/* ── FLEX CENTER CONTAINER ── */}
+        {/* ── ULTRA MODERN FLUID CENTRAL TYPOGRAPHY ── */}
         <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-h-0">
           <div 
             className={`w-full flex flex-col items-center pointer-events-none transition-all duration-500 ${showCenterText ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center">
+            <div className="w-full max-w-[95vw] sm:max-w-[600px] md:max-w-[720px] lg:max-w-[1000px] flex flex-col items-center">
               <h1 
-                className="flex flex-col md:flex-row items-center justify-center gap-y-1 md:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white leading-[1.1] md:leading-none font-sans text-wrap md:whitespace-nowrap"
+                className="flex flex-row items-center justify-center gap-x-2 sm:gap-x-3 md:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white whitespace-nowrap"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 25px rgba(0,170,255,0.2)',
                   WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
                 }}
               >
-                <span className="text-[10.5vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[2.9rem] lg:text-[3.6rem]">4BIZ</span>
-                <span className="text-[7.5vw] xs:text-[1.6rem] sm:text-[2.2rem] md:text-[2.9rem] lg:text-[3.6rem]">INTERNATIONAL</span>
+                <span className="text-[7.5vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem]">4BIZ</span>
+                <span className="text-[7.5vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.8rem] lg:text-[4.6rem]">INTERNATIONAL</span>
               </h1>
 
               <h2 
-                className="mt-6 md:mt-4 text-[3.8vw] xs:text-[0.95rem] sm:text-[1.3rem] md:text-[1.7rem] lg:text-[2.1rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
+                className="mt-4 sm:mt-5 md:mt-6 text-[3.2vw] xs:text-[0.95rem] sm:text-[1.2rem] md:text-[1.5rem] lg:text-[1.9rem] font-black uppercase tracking-[0.22em] text-[#ffffff] leading-none font-sans pl-[0.22em] whitespace-nowrap"
                 style={{ textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 6px 15px rgba(0,0,0,0.85), 0 0 12px rgba(255,255,255,0.3)' }}
               >
                 IMPACTING INFINITE
@@ -167,7 +166,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── SCROLL DETECTOR CONTAINER ── */}
+        {/* ── SCROLL DETECTOR CONTAINER (IMMUTABLE SMOOTH ANIMATION) ── */}
         <div
           className={`relative w-full flex flex-col items-center justify-center pb-[4vh] z-40 pointer-events-none shrink-0 transition-all duration-500 ${isScrolled ? 'opacity-0 translate-y-3' : 'opacity-100 translate-y-0'}`}
           style={{ willChange: 'transform, opacity' }}
