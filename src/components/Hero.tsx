@@ -2,6 +2,13 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
+// Import the next-video component
+import Video from 'next-video';
+
+// Import video assets mapped to the @videos configuration path
+import videoMobile from '@videos/hero-video-mobile-1.mp4';
+import videoTablet from '@videos/hero-video-tablet-1.mp4';
+import videoDesktop from '@videos/hero-video-desktop-1.mp4';
 
 export default function Hero() {
   // ── EASILY CUSTOMIZABLE VISIBILITY CONFIGURATION ──
@@ -15,9 +22,10 @@ export default function Hero() {
   const [isTabletVideoLoaded, setIsTabletVideoLoaded] = useState(false);
   const [isDesktopVideoLoaded, setIsDesktopVideoLoaded] = useState(false);
 
-  const mobileVideoRef = useRef<HTMLVideoElement | null>(null);
-  const tabletVideoRef = useRef<HTMLVideoElement | null>(null);
-  const desktopVideoRef = useRef<HTMLVideoElement | null>(null);
+  // Updated typings to comply with the underlying player architecture
+  const mobileVideoRef = useRef<any>(null);
+  const tabletVideoRef = useRef<any>(null);
+  const desktopVideoRef = useRef<any>(null);
   
   // High-performance hardware-accelerated interactive utility styles
   const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-115 opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.8)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full';
@@ -38,13 +46,17 @@ export default function Hero() {
 
   // Guarantee continuous auto-play cycles across all rendered instances safely
   useEffect(() => {
-    const firePlay = (ref: React.RefObject<HTMLVideoElement | null>, setLoaded: (val: boolean) => void) => {
+    const firePlay = (ref: React.RefObject<any>, setLoaded: (val: boolean) => void) => {
       if (ref.current) {
-        ref.current.play()
-          .then(() => setLoaded(true))
-          .catch(() => {
-            console.log("Autoplay resisted by browser sandbox or resource prioritization engine.");
-          });
+        // next-video wraps the player; play implementation is normalized safely via underlying mechanisms
+        const player = ref.current.play ? ref.current : ref.current.getNativePlayer?.();
+        if (player && typeof player.play === 'function') {
+          player.play()
+            .then(() => setLoaded(true))
+            .catch(() => {
+              console.log("Autoplay resisted by browser sandbox or resource prioritization engine.");
+            });
+        }
       }
     };
 
@@ -109,6 +121,10 @@ export default function Hero() {
           0%, 100% { opacity: 0.6; transform: scale(1); }
           50% { opacity: 0.9; transform: scale(1.01); }
         }
+        /* Hide unnecessary controls and overlays injected by some mobile players */
+        .next-video-container video {
+          object-fit: cover !important;
+        }
       `}</style>
 
       <section
@@ -126,53 +142,59 @@ export default function Hero() {
               maskComposite: 'intersect'
             }}
           >
-            {/* 1. Mobile Viewport Video - Aspect Ratio: 9:16 (Targeted up to small tablets) */}
-            <video
-              ref={mobileVideoRef}
-              src="/hero-video-mobile-1.mp4"
-              loop
-              muted
-              playsInline
-              autoPlay
-              preload="auto"
-              onCanPlay={() => setIsMobileVideoLoaded(true)}
-              className={`absolute inset-0 w-full h-full object-cover aspect-[9/16] brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-700 block sm:hidden ${
-                isMobileVideoLoaded ? 'opacity-100' : 'opacity-40'
-              }`}
-              style={{ willChange: 'opacity' }}
-            />
+            {/* 1. Mobile Viewport Video */}
+            <div className={`absolute inset-0 w-full h-full block sm:hidden transition-opacity duration-700 ${
+              isMobileVideoLoaded ? 'opacity-100' : 'opacity-40'
+            }`}>
+              <Video
+                ref={mobileVideoRef}
+                src={videoMobile}
+                loop
+                muted
+                playsInline
+                autoPlay
+                controls={false}
+                onCanPlay={() => setIsMobileVideoLoaded(true)}
+                className="w-full h-full object-cover aspect-[9/16] brightness-[1.05] contrast-[1.05]"
+                style={{ willChange: 'opacity' }}
+              />
+            </div>
 
-            {/* 2. Tablet Viewport Video - Aspect Ratio: 4:3 (Targeted from sm screens to md/lg split) */}
-            <video
-              ref={tabletVideoRef}
-              src="/hero-video-tablet-1.mp4"
-              loop
-              muted
-              playsInline
-              autoPlay
-              preload="auto"
-              onCanPlay={() => setIsTabletVideoLoaded(true)}
-              className={`absolute inset-0 w-full h-full object-cover aspect-[4/3] brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-700 hidden sm:block md:hidden ${
-                isTabletVideoLoaded ? 'opacity-100' : 'opacity-40'
-              }`}
-              style={{ willChange: 'opacity' }}
-            />
+            {/* 2. Tablet Viewport Video */}
+            <div className={`absolute inset-0 w-full h-full hidden sm:block md:hidden transition-opacity duration-700 ${
+              isTabletVideoLoaded ? 'opacity-100' : 'opacity-40'
+            }`}>
+              <Video
+                ref={tabletVideoRef}
+                src={videoTablet}
+                loop
+                muted
+                playsInline
+                autoPlay
+                controls={false}
+                onCanPlay={() => setIsTabletVideoLoaded(true)}
+                className="w-full h-full object-cover aspect-[4/3] brightness-[1.05] contrast-[1.05]"
+                style={{ willChange: 'opacity' }}
+              />
+            </div>
 
-            {/* 3. Desktop Viewport Video - Aspect Ratio: 16:9 (Targeted from md screens onwards) */}
-            <video
-              ref={desktopVideoRef}
-              src="/hero-video-desktop-1.mp4"
-              loop
-              muted
-              playsInline
-              autoPlay
-              preload="auto"
-              onCanPlay={() => setIsDesktopVideoLoaded(true)}
-              className={`absolute inset-0 w-full h-full object-cover aspect-[16/9] brightness-[1.05] contrast-[1.05] z-10 transition-opacity duration-700 hidden md:block ${
-                isDesktopVideoLoaded ? 'opacity-100' : 'opacity-40'
-              }`}
-              style={{ willChange: 'opacity' }}
-            />
+            {/* 3. Desktop Viewport Video */}
+            <div className={`absolute inset-0 w-full h-full hidden md:block transition-opacity duration-700 ${
+              isDesktopVideoLoaded ? 'opacity-100' : 'opacity-40'
+            }`}>
+              <Video
+                ref={desktopVideoRef}
+                src={videoDesktop}
+                loop
+                muted
+                playsInline
+                autoPlay
+                controls={false}
+                onCanPlay={() => setIsDesktopVideoLoaded(true)}
+                className="w-full h-full object-cover aspect-[16/9] brightness-[1.05] contrast-[1.05]"
+                style={{ willChange: 'opacity' }}
+              />
+            </div>
 
             <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-[0.1] bg-gradient-to-br from-[#00aaff]/6 via-transparent to-[#00aaff]/6 z-20" />
           </div>
@@ -223,7 +245,7 @@ export default function Hero() {
           >
             <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center">
               
-              {/* Heading Lockup: Single-row desktop representation preserving core rules */}
+              {/* Heading Lockup */}
               <h1 
                 className="flex flex-col md:flex-row items-center justify-center gap-y-1 md:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white leading-[1.1] md:leading-none font-sans text-wrap md:whitespace-nowrap"
                 style={{
