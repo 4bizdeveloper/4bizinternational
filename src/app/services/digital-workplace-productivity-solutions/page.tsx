@@ -1,6 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import { 
+  Blocks, 
+  CloudSun, 
+  Briefcase, 
+  ServerCrash, 
+  MailCheck, 
+  Users2, 
+  FolderGit, 
+  Workflow 
+} from 'lucide-react';
 
 // Ultra-optimized SEO Meta Tags (Preserved perfectly)
 export const metadata: Metadata = {
@@ -25,17 +35,18 @@ export default function DigitalWorkplacePage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(16,37,97,0.65)_0%,transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(13,27,77,0.8)_0%,transparent_50%)]" />
         
-        {/* 3D Splines Matrix */}
+        {/* 3D Splines Matrix - Optimized with parallel, non-crossing balance curves on the right */}
         <svg 
-          className="absolute inset-0 w-full h-[200vh] opacity-55 mix-blend-screen will-change-transform transform motion-safe:animate-[pulse_8s_ease-in-out_infinite]"
+          className="absolute inset-0 w-full h-[200vh] opacity-55 mix-blend-screen will-change-transform transform"
           style={{
-            transform: 'translateY(calc(var(--scroll-y, 0px) * -0.15))',
+            transform: 'translateY(calc(var(--scroll-y, 0px) * -0.05))',
             perspective: '1000px'
           }}
           viewBox="0 0 1440 1800" 
           fill="none" 
           xmlns="http://www.w3.org/2000/svg"
         >
+          {/* Left / Center Splines */}
           <path 
             d="M-100 200C300 400 500 -50 900 350C1300 750 800 1200 1600 1100" 
             stroke="url(#splineGradient1)" 
@@ -54,6 +65,21 @@ export default function DigitalWorkplacePage() {
             opacity="0.8"
           />
           
+          {/* Balanced Right portion curves - Beautifully filling empty spaces without intersecting */}
+          <path 
+            d="M950 100C1100 250 1200 150 1400 300C1550 420 1500 700 1600 950" 
+            stroke="url(#splineGradient3)" 
+            strokeWidth="1.5"
+            strokeDasharray="6 6"
+            opacity="0.6"
+          />
+          <path 
+            d="M1020 50C1180 220 1290 90 1480 220C1610 310 1590 640 1680 880" 
+            stroke="url(#splineGradient4)" 
+            strokeWidth="2"
+            opacity="0.4"
+          />
+          
           <defs>
             <linearGradient id="splineGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.95" />
@@ -64,6 +90,14 @@ export default function DigitalWorkplacePage() {
               <stop offset="0%" stopColor="#2563eb" stopOpacity="0" />
               <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.75" />
               <stop offset="100%" stopColor="#1e3a8a" stopOpacity="0.85" />
+            </linearGradient>
+            <linearGradient id="splineGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="splineGradient4" x1="100%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stopColor="#2563eb" stopOpacity="0.7" />
+              <stop offset="100%" stopColor="#a855f7" stopOpacity="0" />
             </linearGradient>
           </defs>
         </svg>
@@ -100,7 +134,7 @@ export default function DigitalWorkplacePage() {
                   fill
                   priority
                   sizes="(max-w-768px) 100vw, 450px"
-                  className="object-contain mix-blend-screen transition-all duration-700 ease-out transform scale-105 hover:scale-110"
+                  className="object-contain mix-blend-screen transition-all duration-700 ease-out transform scale-105"
                 />
               </div>
             </div>
@@ -147,7 +181,7 @@ export default function DigitalWorkplacePage() {
           </div>
         </section>
 
-        {/* ================= OPTIMIZED CORE CAPABILITIES (GLASSY BOXES & DISTINCT ICONS) ================= */}
+        {/* ================= OPTIMIZED CORE CAPABILITIES (GLASSY BOXES & DISTINCT BRAND ICONS) ================= */}
         <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-6xl mx-auto">
             <div className="mb-16">
@@ -158,96 +192,96 @@ export default function DigitalWorkplacePage() {
               <p className="text-slate-400 max-w-2xl text-base">
                 Pick a single platform or combine several — we configure, secure, and support each one to fit your team's size and budget.
               </p>
-              <div className="h-1 w-20 bg-gradient-to-r from-teal-500 to-transparent rounded mt-6" />
+              <div className="h-1 w-20 bg-gradient-to-r from-blue-500 to-transparent rounded mt-6" />
             </div>
 
-            {/* Optimized Glassmorphism Box Layout with Individual Svg Node Icons */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Seamless Grid System - Optimized Colors per platform layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               
               {/* Card 1: Microsoft 365 */}
-              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
-                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-blue-500/40 hover:-translate-y-1 group flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-xl bg-blue-600/10 border border-blue-500/20 flex items-center justify-center mb-5 group-hover:bg-blue-600/20 group-hover:border-blue-500/40 transition-colors">
+                  <Blocks className="w-8 h-8 text-blue-400 group-hover:text-blue-300 transition-colors" strokeWidth={1.8} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Microsoft 365</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-blue-300">Microsoft 365</h3>
+                <p className="text-sm text-slate-400 leading-relaxed text-left">
                   Outlook, Word, Excel, and Teams configured as one suite. We set up tenant security baselines, conditional access, and multi‑factor authentication so your team is productive and protected from day one.
                 </p>
               </div>
 
               {/* Card 2: Google Workspace */}
-              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
-                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M12 3v6l5 3-5 3v6"/><path d="M3 12h6m6 0h6"/></svg>
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-red-500/40 hover:-translate-y-1 group flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-5 group-hover:bg-red-500/20 group-hover:border-red-500/40 transition-colors">
+                  <CloudSun className="w-8 h-8 text-red-400 group-hover:text-amber-400 transition-colors" strokeWidth={1.8} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Google Workspace</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-red-300">Google Workspace</h3>
+                <p className="text-sm text-slate-400 leading-relaxed text-left">
                   Gmail, Drive, Meet, and Docs set up for real‑time, co‑authored work. We configure shared drives, calendar resource booking, and admin policies that keep your domain secure across distributed teams.
                 </p>
               </div>
 
-              {/* Card 3: Zoho Workplace */}
-              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
-                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/></svg>
+              {/* Card 3: Identity Workspace */}
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-amber-500/40 hover:-translate-y-1 group flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-5 group-hover:bg-amber-500/20 group-hover:border-amber-500/40 transition-colors">
+                  <Briefcase className="w-8 h-8 text-amber-400 group-hover:text-emerald-400 transition-colors" strokeWidth={1.8} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Zoho Workplace</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-amber-300">Identity Workspace</h3>
+                <p className="text-sm text-slate-400 leading-relaxed text-left">
                   Zoho Mail, WorkDrive, and Cliq bundled into one console — a cost‑effective option for growing teams. We configure custom domains, storage tiers, and roles without enterprise pricing.
                 </p>
               </div>
 
               {/* Card 4: Exchange Email Solutions */}
-              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
-                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><rect x="4" y="4" width="16" height="5" rx="1"/><rect x="4" y="11" width="16" height="5" rx="1"/><circle cx="7.5" cy="6.5" r="0.6" fill="currentColor"/><circle cx="7.5" cy="13.5" r="0.6" fill="currentColor"/></svg>
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-violet-500/40 hover:-translate-y-1 group flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center mb-5 group-hover:bg-violet-500/20 group-hover:border-violet-500/40 transition-colors">
+                  <ServerCrash className="w-8 h-8 text-violet-400 group-hover:text-violet-300 transition-colors" strokeWidth={1.8} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Exchange Email Solutions</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-violet-300">Exchange Email Solutions</h3>
+                <p className="text-sm text-slate-400 leading-relaxed text-left">
                   Hosted or on‑premise Exchange Server for organizations that need full control over mail flow, retention, and compliance archiving. We manage mailbox databases and disaster recovery.
                 </p>
               </div>
 
               {/* Card 5: Business Email Setup */}
-              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
-                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M4 4h16v16H4z"/><path d="M9 4v16M4 9h16"/></svg>
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-emerald-500/40 hover:-translate-y-1 group flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-5 group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40 transition-colors">
+                  <MailCheck className="w-8 h-8 text-emerald-400 group-hover:text-emerald-300 transition-colors" strokeWidth={1.8} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Business Email Setup</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-emerald-300">Business Email Setup</h3>
+                <p className="text-sm text-slate-400 leading-relaxed text-left">
                   Professional email on your own domain, set up correctly the first time. We handle DNS, MX records, and SPF/DKIM/DMARC authentication so messages land in inboxes, not spam.
                 </p>
               </div>
 
               {/* Card 6: Team Collaboration Tools */}
-              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
-                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.4A8.5 8.5 0 1 1 21 11.5z"/></svg>
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-cyan-500/40 hover:-translate-y-1 group flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-5 group-hover:bg-cyan-500/20 group-hover:border-cyan-500/40 transition-colors">
+                  <Users2 className="w-8 h-8 text-cyan-400 group-hover:text-cyan-300 transition-colors" strokeWidth={1.8} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Team Collaboration Tools</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-cyan-300">Team Collaboration Tools</h3>
+                <p className="text-sm text-slate-400 leading-relaxed text-left">
                   Chat, video, and shared workspaces that replace scattered email threads. We deploy Teams, Slack, or Google Chat with channels mapped to how your departments actually communicate.
                 </p>
               </div>
 
               {/* Card 7: Document Management */}
-              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
-                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg>
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-fuchsia-500/40 hover:-translate-y-1 group flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-xl bg-fuchsia-500/10 border border-fuchsia-500/20 flex items-center justify-center mb-5 group-hover:bg-fuchsia-500/20 group-hover:border-fuchsia-500/40 transition-colors">
+                  <FolderGit className="w-8 h-8 text-fuchsia-400 group-hover:text-fuchsia-300 transition-colors" strokeWidth={1.8} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Document Management</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-fuchsia-300">Document Management</h3>
+                <p className="text-sm text-slate-400 leading-relaxed text-left">
                   Centralized, version‑controlled storage with permission tiers, e‑signature workflows, and audit trails — so the right files are easy to find and the wrong people can't see them.
                 </p>
               </div>
 
               {/* Card 8: Workflow Automation */}
-              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-500/40 hover:-translate-y-1 group">
-                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 group-hover:border-teal-500/40 transition-colors">
-                  <svg className="w-5 h-5 stroke-teal-400" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0A1.65 1.65 0 0 0 10 3.09V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              <div className="p-6 rounded-2xl bg-white/[0.03] border border-slate-800/60 backdrop-blur-xl transition-all duration-300 hover:border-rose-500/40 hover:-translate-y-1 group flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-5 group-hover:bg-rose-500/20 group-hover:border-rose-500/40 transition-colors">
+                  <Workflow className="w-8 h-8 text-rose-400 group-hover:text-rose-300 transition-colors animate-[pulse_4s_ease-in-out_infinite]" strokeWidth={1.8} />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Workflow Automation</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-rose-300">Workflow Automation</h3>
+                <p className="text-sm text-slate-400 leading-relaxed text-left">
                   We map repetitive manual work — approvals, onboarding, data entry — into automated flows using Power Automate, Zapier, or native platform tools, removing busywork from routine processes.
                 </p>
               </div>
@@ -268,7 +302,6 @@ export default function DigitalWorkplacePage() {
               </div>
             </div>
 
-            {/* Increased transparency of boxes by moving from bg-slate-950/40 to clear ultra-glassy bg-white/[0.015] */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="p-6 rounded-xl bg-white/[0.015] border border-slate-800/40 backdrop-blur-sm pt-[18px] border-t-2 border-t-teal-400">
                 <h4 className="text-white font-bold text-base mb-2">Security first</h4>
