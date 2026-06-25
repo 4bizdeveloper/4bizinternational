@@ -34,7 +34,7 @@ if (empty($name) || !$email || empty($phone)) {
 $to          = "info@4bizinternational.com";
 $fromEmail   = "info@4bizinternational.com"; 
 $ccEmail     = "4bizdeveloper@gmail.com";
-$subject     = "New Business Lead from Website: " . $name;
+$subject     = "New Contact Form Submission From 4biz Wesite" ;
 
 $displayCountry = !empty($countryCode) ? strtoupper($countryCode) : "Not Detected";
 
@@ -42,7 +42,7 @@ $displayCountry = !empty($countryCode) ? strtoupper($countryCode) : "Not Detecte
 $htmlContent = "
 <html>
 <head>
-    <title>New Submission</title>
+    <title>New Contact Form Submission From 4Biz Wesite</title>
     <style>
         body { font-family: Arial, sans-serif; background-color: #f4f4f7; color: #333333; padding: 20px; }
         .container { max-width: 600px; background: #ffffff; padding: 30px; border-radius: 8px; border: 1px solid #e8e8e8; }

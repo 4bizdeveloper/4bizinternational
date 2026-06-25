@@ -208,7 +208,7 @@ export default function Contact() {
               <h3 className="text-4xl sm:text-5xl font-black text-[#0c9d7d] tracking-tight uppercase leading-none">
                 CONTACT US
               </h3>
-              <p className="text-sm font-semibold mt-3 text-neutral-700 tracking-wide">
+              <p className="text-sm font-semibold mt-3 text-neutral-900 tracking-wide">
                 Develop web services and mobile applications on your demand. Let's do this.
               </p>
             </div>
@@ -289,7 +289,7 @@ export default function Contact() {
                         }}
                       />
                     ) : (
-                      <div className="w-full h-[54px] bg-neutral-100 animate-pulse rounded-full" />
+                      <div className="w-full h-[54px] bg-neutral-200 animate-pulse rounded-full" />
                     )}
                   </div>
                 </div>
@@ -343,7 +343,7 @@ export default function Contact() {
             </motion.div>
 
             {/* Social Icons Link Alignment */}
-            <div className="pt-4 flex items-center gap-3 border-t border-neutral-200 mt-2">
+            <div className="pt-4 flex items-center gap-3 border-t border-neutral-300 mt-2">
               {socialIcons.map((icon, idx) => (
                 <a
                   key={idx}
@@ -351,7 +351,7 @@ export default function Contact() {
                   target={icon.target}
                   rel="noopener noreferrer"
                   aria-label={icon.label}
-                  className="w-10 h-10 rounded-full border border-neutral-300 hover:border-[#0c9d7d] text-neutral-600 hover:text-[#0c9d7d] transition-all flex items-center justify-center transform hover:scale-105 will-change-transform"
+                  className="w-10 h-10 rounded-full border border-neutral-500 hover:border-[#0c9d7d] text-neutral-800 hover:text-[#0c9d7d] transition-all flex items-center justify-center transform hover:scale-105 will-change-transform"
                 >
                   <svg 
                     viewBox="0 0 24 24" 
@@ -367,12 +367,12 @@ export default function Contact() {
         </div>
 
         {/* RIGHT COLUMN: MODULAR SLATE COLOR CONTAINER FOR BRANCH OFFICES */}
-        <div className="lg:col-span-6 xl:col-span-5 bg-slate-50 border-l border-neutral-100 py-16 px-6 sm:px-12 lg:px-14 xl:px-16 flex flex-col justify-center">
+        <div className="lg:col-span-6 xl:col-span-5 bg-slate-50 border-l border-neutral-200 py-16 px-6 sm:px-12 lg:px-14 xl:px-16 flex flex-col justify-center">
           <div className="w-full max-w-xl mx-auto space-y-10">
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <span className="w-5 h-[2px] bg-[#0c9d7d] inline-block"></span>
-                <span className="text-xs font-bold uppercase tracking-wider text-neutral-500">Corporate Presence</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-neutral-700">Corporate Presence</span>
               </div>
               <h4 className="text-3xl font-black text-neutral-900 tracking-tight">
                 Our <span className="text-[#0c9d7d]">Offices</span>
@@ -384,34 +384,34 @@ export default function Contact() {
               
               {/* REGION 1: UAE OFFICES */}
               <div className="space-y-4">
-                <div className="flex items-center gap-2.5 pb-2 border-b border-neutral-200">
+                <div className="flex items-center gap-2.5 pb-2 border-b border-neutral-300">
                   <img 
                     src="https://flagcdn.com/w40/ae.png" 
                     alt="UAE Flag" 
                     className="w-5 h-auto rounded-sm object-cover shadow-sm select-none"
                     loading="lazy"
                   />
-                  <span className="text-xs font-black uppercase tracking-widest text-neutral-800">United Arab Emirates</span>
+                  <span className="text-xs font-black uppercase tracking-widest text-neutral-900">United Arab Emirates</span>
                 </div>
 
                 <div className="group">
                   <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-[#0c9d7d]">
                     Dubai Corporate Hub
                   </span>
-                  <p className="text-xs text-neutral-600 mt-1.5 leading-relaxed font-medium">
+                  <p className="text-xs text-neutral-800 mt-1.5 leading-relaxed font-semibold">
                     Crystal Building - Office # 104 - 2C St - near ADCB Metro Station - Al Karama - Dubai, UAE
                   </p>
                   <div className="flex items-center gap-3 mt-3.5">
-                    <a href="https://maps.app.goo.gl/jGQ6zpmvoT4CxvfdA" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
+                    <a href="https://maps.app.goo.gl/jGQ6zpmvoT4CxvfdA" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiMapPinLine />
                     </a>
-                    <a href={`https://wa.me/971527925100?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-white hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
+                    <a href={`https://wa.me/971527925100?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-white hover:bg-emerald-600 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiWhatsappLine />
                     </a>
-                    <a href="tel:+971527925100" title="Call Office" className="w-8 h-8 rounded-full bg-white hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
+                    <a href="tel:+971527925100" title="Call Office" className="w-8 h-8 rounded-full bg-white hover:bg-blue-600 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiPhoneLine />
                     </a>
-                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
+                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiMailLine />
                     </a>
                   </div>
@@ -420,14 +420,14 @@ export default function Contact() {
 
               {/* REGION 2: INDIA OFFICES */}
               <div className="space-y-6 pt-2">
-                <div className="flex items-center gap-2.5 pb-2 border-b border-neutral-200">
+                <div className="flex items-center gap-2.5 pb-2 border-b border-neutral-300">
                   <img 
                     src="https://flagcdn.com/w40/in.png" 
                     alt="India Flag" 
                     className="w-5 h-auto rounded-sm object-cover shadow-sm select-none"
                     loading="lazy"
                   />
-                  <span className="text-xs font-black uppercase tracking-widest text-neutral-800">India</span>
+                  <span className="text-xs font-black uppercase tracking-widest text-neutral-900">India</span>
                 </div>
 
                 {/* India Branch 1 */}
@@ -435,20 +435,20 @@ export default function Contact() {
                   <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-[#0c9d7d]">
                     India HiLite Business Park
                   </span>
-                  <p className="text-xs text-neutral-600 mt-1.5 leading-relaxed font-medium">
+                  <p className="text-xs text-neutral-800 mt-1.5 leading-relaxed font-semibold">
                     Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India
                   </p>
                   <div className="flex items-center gap-3 mt-3.5">
-                    <a href="https://maps.app.goo.gl/7gFHn9sHMqnKsDMc9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
+                    <a href="https://maps.app.goo.gl/7gFHn9sHMqnKsDMc9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiMapPinLine />
                     </a>
-                    <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-white hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
+                    <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-white hover:bg-emerald-600 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiWhatsappLine />
                     </a>
-                    <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-white hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
+                    <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-white hover:bg-blue-600 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiPhoneLine />
                     </a>
-                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
+                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiMailLine />
                     </a>
                   </div>
@@ -459,20 +459,20 @@ export default function Contact() {
                   <span className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-[#0c9d7d]">
                     India Nadakkave Office
                   </span>
-                  <p className="text-xs text-neutral-600 mt-1.5 leading-relaxed font-medium">
+                  <p className="text-xs text-neutral-800 mt-1.5 leading-relaxed font-semibold">
                     5th Floor, C. M. Mathew Brothers Arcade, Kannur Rd, near Hotel Westway, Vikas Nagar Housing Colony, West Nadakkave, Chakkorathukulam, Kozhikode, Kerala 673006, India
                   </p>
                   <div className="flex items-center gap-3 mt-3.5">
-                    <a href="https://maps.app.goo.gl/2LzJGMQ2swaAoBdP9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
+                    <a href="https://maps.app.goo.gl/2LzJGMQ2swaAoBdP9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiMapPinLine />
                     </a>
-                    <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-white hover:bg-emerald-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
+                    <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-white hover:bg-emerald-600 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiWhatsappLine />
                     </a>
-                    <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-white hover:bg-blue-600 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
+                    <a href="tel:+919388001524" title="Call Office" className="w-8 h-8 rounded-full bg-white hover:bg-blue-600 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiPhoneLine />
                     </a>
-                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-800 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-200">
+                    <a href="mailto:info@4bizinternational.com" title="Send Email" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiMailLine />
                     </a>
                   </div>
@@ -486,11 +486,11 @@ export default function Contact() {
       </div>
 
       <style jsx global>{`
-        /* Fully rounded crisp inputs with rich contrast matching the screenshot */
+        /* Fully rounded crisp inputs with updated dark high contrast borders */
         .screenshot-input {
           width: 100%;
           background: #ffffff !important;
-          border: 1.5px solid #d4d4d8 !important;
+          border: 1.5px solid #71717a !important; /* Enhanced from #d4d4d8 */
           padding: 0 1.5rem;
           color: #18181b !important;
           border-radius: 9999px;
@@ -505,7 +505,7 @@ export default function Contact() {
           box-shadow: 0 0 0 3px rgba(12, 157, 125, 0.15);
         }
         .screenshot-input::placeholder {
-          color: #71717a !important;
+          color: #52525b !important; /* Slightly darkened placeholder for improved contrast */
           opacity: 1 !important;
         }
         textarea.screenshot-input {
@@ -525,7 +525,7 @@ export default function Contact() {
           width: 100% !important;
           height: 54px !important;
           background: #ffffff !important;
-          border: 1.5px solid #d4d4d8 !important;
+          border: 1.5px solid #71717a !important; /* Enhanced from #d4d4d8 */
           border-radius: 9999px !important;
           display: flex !important;
           align-items: center !important;
@@ -549,7 +549,7 @@ export default function Contact() {
           font-weight: 500 !important;
         }
         .react-international-phone-input::placeholder {
-          color: #71717a !important;
+          color: #52525b !important;
           opacity: 1 !important;
         }
         
@@ -570,7 +570,7 @@ export default function Contact() {
         .react-international-phone-country-selector-dropdown,
         ul.react-international-phone-country-selector-dropdown {
           background: #ffffff !important;
-          border: 1px solid #e4e4e7 !important; 
+          border: 1px solid #a1a1aa !important; 
           border-radius: 16px !important;
           box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
           padding: 6px !important;
@@ -595,7 +595,7 @@ export default function Contact() {
         .react-international-phone-country-selector-list-item-name,
         .react-international-phone-country-selector-list-item-dial-code,
         li.react-international-phone-country-selector-list-item span {
-          color: #27272a !important; 
+          color: #18181b !important; 
           font-family: system-ui, -apple-system, sans-serif !important;
           font-size: 13px !important;
           font-weight: 600 !important;

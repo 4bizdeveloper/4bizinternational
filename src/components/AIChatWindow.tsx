@@ -213,7 +213,7 @@ const AIChatWindow = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
       if (!apiKey) throw new Error("API Key missing");
       const genAI = new GoogleGenerativeAI(apiKey);
       const model = genAI.getGenerativeModel({
-        model: 'gemini-flash-latest',
+        model: 'gemini-flash-lite-latest',
         systemInstruction: SYSTEM_PROMPT,
       });
       const result = await model.generateContent(msg);
