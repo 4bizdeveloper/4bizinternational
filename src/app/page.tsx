@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.4bizinternational.com/',
   },
+  verification: {
+    google: 'BZ4Tew_7L_bfrDJyIb_R_nZi4wN7SKpIbTCCrsrV-NU',
+  },
 };
 
 // --- CLIENT SIDE COMPONENTS WRAPPER ---
