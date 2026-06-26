@@ -4,31 +4,23 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Header() {
-  const [visible, setVisible] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const lastScrollY = useRef(0);
   const ticking = useRef(false);
 
-  // Throttled scroll handler via rAF for high-performance scroll evaluation
+  // Throttled scroll handler via rAF for instant evaluation without layout thrashing
   const handleScroll = useCallback(() => {
     if (!ticking.current) {
       window.requestAnimationFrame(() => {
         const currentScrollPos = window.scrollY;
 
-        if (currentScrollPos <= 50) {
-          setVisible(true);
-          setIsSticky(false);
+        // Transitions dynamically when moving past the zero-point line
+        if (currentScrollPos > 20) {
+          setIsSticky(true);
         } else {
-          if (currentScrollPos > lastScrollY.current) {
-            setVisible(false);
-          } else {
-            setVisible(true);
-            setIsSticky(true);
-          }
+          setIsSticky(false);
         }
-        lastScrollY.current = currentScrollPos;
         ticking.current = false;
       });
       ticking.current = true;
@@ -40,7 +32,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
-  // Performance Optimization: Cache body reference and handle overflow smoothly
+  // Performance Optimization: Cache body reference and handle overlay lock seamlessly
   useEffect(() => {
     const body = document.body;
     if (menuOpen) {
@@ -64,32 +56,33 @@ export default function Header() {
 
   const contactLinkClass = 'hover:text-blue-400 transition-colors duration-200 break-all';
 
-  // Enhanced thickness for consistent visibility across zoom levels
-  const lineClass = `h-[3.5px] rounded-full transition-all duration-300 ${
-    !isSticky ? 'bg-white' : 'bg-slate-900'
-  }`;
+  // Preserved structural hamburger visual properties with static white coloring
+  const lineClass = 'h-[2.5px] rounded-full bg-white transition-all duration-300';
 
   return (
     <>
       {/* ─── HEADER BAR ─────────────────────────────────────────────────────── */}
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out will-change-transform ${
-          visible ? 'translate-y-0' : '-translate-y-full'
-        } ${
+        style={{
+          backgroundImage: isSticky 
+            ? 'radial-gradient(circle at 50% 0%, rgba(13, 27, 77, 0.85) 0%, rgba(8, 17, 49, 0.75) 100%)' 
+            : 'none'
+        }}
+        className={`fixed top-0 left-0 w-full z-50 border-b transition-all duration-300 ease-in-out will-change-[background-color,padding,backdrop-filter,border-color] ${
           isSticky
-            ? 'bg-white shadow-md py-2.5 sm:py-3.5 text-slate-900'
-            : 'bg-transparent py-5 sm:py-7 text-white'
+            ? 'backdrop-blur-md border-white/10 py-2 sm:py-2.5 text-white shadow-lg shadow-blue-950/20'
+            : 'bg-transparent border-transparent py-5 sm:py-6 text-white'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
           
-          {/* Logo Container */}
+          {/* Logo Container - Responsively scales down when sticky to save screen height */}
           <a href="/" className="flex items-center flex-shrink-0 transition-transform duration-300 hover:opacity-90">
             <div className={`relative flex items-center justify-center transition-all duration-300 ${
-              isSticky ? 'w-20 h-10 sm:w-24 sm:h-11' : 'w-24 h-12 sm:w-28 sm:h-14'
+              isSticky ? 'w-20 h-10 sm:w-24 sm:h-12' : 'w-24 h-12 sm:w-28 sm:h-14'
             }`}>
               <Image
-                src={isSticky ? "/4biz-logo-4.png" : "/4biz_logo-3.png"}
+                src="/4biz_logo-3.png"
                 alt="4biz Logo"
                 fill
                 sizes="(max-width: 640px) 96px, 112px"
@@ -99,23 +92,21 @@ export default function Header() {
             </div>
           </a>
 
-          {/* Right side */}
+          {/* Right side controls */}
           <div className="flex items-center gap-5 sm:gap-7 flex-shrink-0">
-            {/* "Contact Us" pill — Zoom responsive display locks */}
-            <div
-              className={`hidden md:flex items-center transition-all duration-300 overflow-hidden ${
-                isSticky ? 'max-w-[200px] opacity-100' : 'max-w-0 opacity-0 pointer-events-none'
-              }`}
-            >
+            {/* Ultra-modern "Get In Touch" Button - Hidden on Mobile/Tablet, Displayed ONLY on Desktop (lg and up) */}
+            <div className="hidden lg:flex items-center">
               <Link
                 href="/contact"
-                className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white rounded-full px-6 py-2.5 text-xs uppercase tracking-wider font-semibold transition-all duration-300 shadow-sm hover:shadow-md hover:brightness-110 whitespace-nowrap border border-white/10"
+                className={`inline-flex items-center justify-center border border-white text-white rounded-full uppercase tracking-wider font-medium transition-all duration-300 hover:bg-white hover:text-black whitespace-nowrap ${
+                  isSticky ? 'px-4 py-1.5 sm:px-5 sm:py-2 text-[11px] sm:text-xs' : 'px-5 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-sm'
+                }`}
               >
-                Contact Us
+                Get In Touch
               </Link>
             </div>
 
-            {/* Asymmetrical hamburger with explicit structural bounding */}
+            {/* Structured responsive white hamburger button */}
             <button
               onClick={() => setMenuOpen(true)}
               className="flex flex-col gap-1.5 cursor-pointer p-1.5 focus:outline-none items-end justify-center group flex-shrink-0 min-w-[36px]"
@@ -137,7 +128,7 @@ export default function Header() {
         role="dialog"
         aria-modal="true"
         aria-label="Navigation Menu"
-        className={`fixed inset-0 z-[9999999] bg-slate-950 bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950 text-white
+        className={`fixed inset-0 z-[9999999] bg-[#081131] bg-gradient-to-br from-[#081131] via-[#0d1b4d] to-blue-950 text-white
           overflow-y-auto overscroll-contain min-h-screen w-full
           transition-all duration-300 ease-out will-change-[transform,opacity] transform-gpu
           ${menuOpen
@@ -168,7 +159,7 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Main Layout Container — Fluid layout blocks preventing clip overflows */}
+          {/* Main Layout Container */}
           <div className="flex-grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 py-6 sm:py-10 items-start content-center">
             
             {/* LEFT: Navigation Links */}
