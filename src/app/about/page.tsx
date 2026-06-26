@@ -76,7 +76,7 @@ export default function AboutPage() {
     <div 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="group relative w-full min-h-screen text-white overflow-hidden font-sans select-none selection:bg-cyan-500 selection:text-black bg-[#060c31] sm:bg-[radial-gradient(circle_at_center,rgba(11,29,87,1)_0%,rgba(6,12,49,1)_100%)]"
+      className="group relative w-full min-h-screen text-white overflow-hidden font-sans select-none selection:bg-cyan-500 selection:text-black bg-[#060c31] sm:bg-[radial-gradient(circle_at_center,rgba(11,29,87,1)_0%,rgba(6,12,49,1)_100%)] scroll-smooth"
     >
       {/* Ambient Premium Core Gradients */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
@@ -125,7 +125,6 @@ export default function AboutPage() {
           className="w-full lg:w-2/5 flex items-center justify-center relative min-h-[260px] sm:min-h-[350px] lg:min-h-[420px]"
           style={{ perspective: 1200 }}
         >
-          {/* Increased scale multiplier here on mobile and tablet to expand rings radius around the logo */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none transform-gpu scale-95 sm:scale-100 lg:scale-100">
             <div className="absolute w-40 h-40 sm:w-56 sm:h-56 bg-radial-gradient from-cyan-500/30 via-pink-500/20 to-transparent blur-2xl animate-pulse" />
             <div className="absolute w-36 h-36 sm:w-48 sm:h-48 rounded-full border-[4px] sm:border-[6px] border-cyan-400/30 shadow-[0_0_25px_rgba(34,211,238,0.4)] animate-[ping_3.5s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
@@ -314,19 +313,16 @@ export default function AboutPage() {
       </section>
 
       {/* ─── CEO SECTION ─── */}
-      <section
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16 md:py-24 overflow-hidden"
-        style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}
-      >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <section className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16 md:py-24 containment-layout">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center transform-gpu">
 
           {/* CEO Quote — Left Column */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
+            viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 flex flex-col space-y-6 order-2 lg:order-1 relative"
+            className="lg:col-span-7 flex flex-col space-y-6 order-2 lg:order-1 relative will-change-transform"
           >
             <div className="flex flex-col space-y-2">
               <span className="text-xs font-mono tracking-[0.3em] uppercase text-cyan-400 font-bold">Leadership Message</span>
@@ -344,21 +340,24 @@ export default function AboutPage() {
               </p>
               
               <div className="pt-4 border-t border-white/10 flex flex-col">
-                <span className="text-lg font-bold tracking-wide bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent">
+                <span className="text-xl sm:text-2xl font-black tracking-wide text-white">
+                  Ibrahim V
+                </span>
+                <span className="text-sm font-medium tracking-wide bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent mt-0.5">
                   Chief Executive Officer
                 </span>
-                <span className="text-xs font-mono uppercase text-white/40 tracking-widest mt-1">
+                <span className="text-xs font-mono uppercase text-cyan-400/90 font-bold tracking-widest mt-1.5 drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]">
                   4Biz International
                 </span>
               </div>
             </div>
           </motion.div>
 
-          {/* CEO Image — Right Column */}
+          {/* CEO Image — Right Column[cite: 2] */}
           <div className="lg:col-span-5 order-1 lg:order-2 w-full flex justify-center items-end self-end">
-            <div className="relative w-full max-w-[350px] h-[360px] sm:h-[450px] overflow-visible">
+            <div className="relative w-full max-w-[350px] h-[420px] sm:h-[460px] lg:h-[480px] overflow-visible">
               
-              {/* Dynamic Backlight Glow aura under image */}
+              {/* Dynamic Backlight Glow aura under image[cite: 2] */}
               <div
                 className="absolute bottom-4 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full pointer-events-none -z-10 opacity-70"
                 style={{
@@ -367,21 +366,21 @@ export default function AboutPage() {
                 }}
               />
 
-              {/* Seamless Edge Masking Matrix (Modified mask transition points using CSS properties to stay perfectly visible and uncovered on mobile) */}
+              {/* Seamless Edge Masking Matrix (Optimized mask transition points to ensure he is fully shown down to the bottom profile on all layouts)[cite: 2] */}
               <div
-                className="absolute inset-0 transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.01] [--mask-end:85%] sm:[--mask-end:65%]"
+                className="absolute inset-0 transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.01]"
                 style={{
                   willChange: 'transform',
-                  maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) var(--mask-end), rgba(0,0,0,0) 100%)',
-                  WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) var(--mask-end), rgba(0,0,0,0) 100%)',
+                  maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%)',
                 }}
               >
                 <Image
                   src="/persons/4biz_international-ceo-1.png"
                   alt="4Biz International CEO"
                   fill
-                  sizes="(max-width: 768px) 300px, 350px"
-                  className="object-cover object-top border-0 outline-none select-none pointer-events-none bg-transparent"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 350px, 400px"
+                  className="object-contain object-bottom border-0 outline-none select-none pointer-events-none bg-transparent"
                   priority
                 />
               </div>
