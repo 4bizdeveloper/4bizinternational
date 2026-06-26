@@ -172,7 +172,7 @@ const Footer = () => {
                 <span className="text-[10px] uppercase font-mono tracking-wider font-semibold bg-white/10 text-white/90 px-2 py-0.5 rounded inline-block mb-3">HQ Telecoms / WhatsApp</span>
                 <div className="flex flex-col gap-3 mt-1">
                   <div className="flex items-center gap-3 flex-wrap">
-                    <a href="https://wa.me/971527925100" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-white/80 transition-colors" aria-label="Contact Dubai HQ via WhatsApp">+971 52 79 25 100</a>
+                    <a href="https://wa.me/971527925100" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-white/80 transition-colors" aria-label="Contact Dubai HQ via WhatsApp">+971 52 792 5100</a>
                     <span className="text-[9px] px-2 py-0.5 rounded font-mono font-bold bg-white/10 text-white/80 uppercase tracking-wide">Dubai</span>
                   </div>
                   <div className="flex items-center gap-3 flex-wrap">

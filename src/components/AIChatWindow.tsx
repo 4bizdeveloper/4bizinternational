@@ -220,7 +220,7 @@ const AIChatWindow = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
       const response = await result.response;
       setMessages(prev => [...prev, { role: 'bot', text: response.text() }]);
     } catch {
-      setMessages(prev => [...prev, { role: 'bot', text: "I'm having a connection issue. Please try again or reach us at +971 52 792 5100." }]);
+      setMessages(prev => [...prev, { role: 'bot', text: "To give you the most immediate and accurate support for your IT or Digital Marketing needs, please connect directly with our team at +971 52 792 5100. We're ready to help!" }]);
     } finally {
       setIsThinking(false);
     }

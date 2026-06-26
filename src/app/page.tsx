@@ -9,7 +9,10 @@ export const metadata: Metadata = {
     canonical: 'https://www.4bizinternational.com/',
   },
   verification: {
-    google: 'BZ4Tew_7L_bfrDJyIb_R_nZi4wN7SKpIbTCCrsrV-NU',
+    google: [
+      'BZ4Tew_7L_bfrDJyIb_R_nZi4wN7SKpIbTCCrsrV-NU',
+      'Np59UNG71PX2xlLxwSRvACIs9hjria8GTaKLWmU0RAs'
+    ],
   },
 };
 
