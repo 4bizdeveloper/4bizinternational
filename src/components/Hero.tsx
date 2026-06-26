@@ -165,7 +165,7 @@ export default function Hero() {
                 }}
               >
                 <span className="text-[10.5vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[2.9rem] lg:text-[3.6rem]">
-                  4BIZ
+                  4BIZ&nbsp;
                 </span>
                 <span className="text-[7.5vw] xs:text-[1.6rem] sm:text-[2.2rem] md:text-[2.9rem] lg:text-[3.6rem]">
                   INTERNATIONAL
