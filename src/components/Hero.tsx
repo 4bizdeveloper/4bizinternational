@@ -121,16 +121,8 @@ export default function Hero() {
         {/* ── ACCESSIBLE FIXED NAVIGATION SIDEBAR ── */}
         <nav
           aria-label="Social Profile Navigation"
-          className={`
-            absolute top-1/2 -translate-y-1/2 z-40
-            flex flex-col items-center justify-center
-            left-4 gap-5
-            sm:left-6 sm:gap-[22px]
-            lg:left-8
-            transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)
-            ${isScrolled ? 'opacity-0 pointer-events-none -translate-x-3' : 'opacity-100 pointer-events-auto translate-x-0'}
-          `}
-          style={{ willChange: 'transform, opacity' }}
+          className="absolute top-1/2 -translate-y-1/2 z-40 flex flex-col items-center justify-center left-4 gap-5 sm:left-6 sm:gap-[22px] lg:left-8 opacity-100 pointer-events-auto translate-x-0 transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1)"
+          style={{ willChange: 'transform' }}
         >
           {socials.map((social) => (
             <a
