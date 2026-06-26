@@ -191,7 +191,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden transform-gpu backface-hidden"
+      className="relative overflow-hidden transform-gpu backface-hidden border-t border-neutral-100"
       style={{
         backgroundColor: '#ffffff',
         contentVisibility: 'auto',
@@ -199,10 +199,11 @@ export default function Contact() {
         containmentIntrinsicSize: '1px 1000px',
       } as React.CSSProperties}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[85vh] items-stretch">
+      {/* 90-degree Vertical Grid Boundary Split for Ultra-Modern Appearance */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[85vh] items-stretch grid-items-split">
         
         {/* LEFT COLUMN: FULL WHITE BACKGROUND FORM SECTION */}
-        <div className="lg:col-span-6 xl:col-span-7 bg-white py-16 px-6 sm:px-12 lg:px-16 xl:px-24 flex flex-col justify-center">
+        <div className="lg:col-span-6 xl:col-span-7 bg-white py-16 px-6 sm:px-12 lg:px-16 xl:px-24 flex flex-col justify-center transition-all duration-300">
           <div className="w-full max-w-xl mx-auto space-y-8">
             <div className="select-none text-left">
               <h3 className="text-4xl sm:text-5xl font-black text-[#0c9d7d] tracking-tight uppercase leading-none">
@@ -366,8 +367,8 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: MODULAR SLATE COLOR CONTAINER FOR BRANCH OFFICES */}
-        <div className="lg:col-span-6 xl:col-span-5 bg-slate-50 border-l border-neutral-200 py-16 px-6 sm:px-12 lg:px-14 xl:px-16 flex flex-col justify-center">
+        {/* RIGHT COLUMN: MODULAR SLATE COLOR CONTAINER FOR BRANCH OFFICES WITH PERFECT 90-DEGREE BORDER VERTICALLY */}
+        <div className="lg:col-span-6 xl:col-span-5 bg-slate-50 border-t lg:border-t-0 lg:border-l border-neutral-200 py-16 px-6 sm:px-12 lg:px-14 xl:px-16 flex flex-col justify-center transition-all duration-300">
           <div className="w-full max-w-xl mx-auto space-y-10">
             <div>
               <div className="flex items-center gap-2 mb-1">
@@ -525,6 +526,18 @@ export default function Contact() {
       </div>
 
       <style jsx global>{`
+        /* Avoid jumping & layout layout shifts */
+        html {
+          scroll-behavior: smooth;
+        }
+
+        /* Perfectly vertical 90-degree vector grid separator line */
+        @media (min-width: 1024px) {
+          .grid-items-split {
+            align-items: stretch !important;
+          }
+        }
+
         /* Fully rounded crisp inputs with updated dark high contrast borders */
         .screenshot-input {
           width: 100%;
@@ -534,7 +547,7 @@ export default function Contact() {
           color: #18181b !important;
           border-radius: 9999px;
           outline: none;
-          transition: all 0.2s ease-in-out;
+          transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
           font-size: 14px;
           height: 54px;
           font-weight: 500;
@@ -569,7 +582,7 @@ export default function Contact() {
           display: flex !important;
           align-items: center !important;
           padding-left: 12px !important;
-          transition: all 0.2s ease-in-out;
+          transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
         .react-international-phone-input-container:focus-within {
           border-color: #0c9d7d !important;

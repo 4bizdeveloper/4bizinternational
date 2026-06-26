@@ -26,7 +26,7 @@ const Footer = () => {
   const y1 = useTransform(smoothProgress, [0, 1], ["0px", "-40px"]);
   const y2 = useTransform(smoothProgress, [0, 1], ["0px", "40px"]);
 
-  // Declared social media schema (Call link completely extracted)
+  // Declared social media schema
   const socialLinks = useMemo(() => [
     {
       href: 'https://wa.me/971527925100?text=Hello%204Biz%20International,%20I%20am%20interested%20in%20your%20services.%20Please%20share%20more%20details.',
@@ -78,12 +78,11 @@ const Footer = () => {
     <footer 
       id="footer"
       ref={footerRef} 
-      className="relative z-10 mt-0 pt-16 pb-32 md:pb-24 overflow-hidden border-t border-white/10 transform-gpu backface-hidden"
+      className="relative z-10 mt-0 pt-16 overflow-hidden border-t border-white/10 transform-gpu backface-hidden"
       style={{ 
-        // OPTIMIZED GRAPHICS: Changed #002288 to #001b6b & adjusted center point to optimize contrast metrics and readability
         background: 'radial-gradient(circle at 50% 15%, #001b6b 0%, #001042 50%, #000933 100%)',
         contentVisibility: 'auto', 
-        paddingBottom: 'calc(120px + env(safe-area-inset-bottom))'
+        paddingBottom: 'calc(140px + env(safe-area-inset-bottom))' // Increased clear zone for floating action badges shown in image_d9b67f.jpg
       } as React.CSSProperties}
     >
       {/* Hardware Accelerated Subtle Parallax Internal Ambient Accents */}
@@ -104,9 +103,9 @@ const Footer = () => {
             <ul className="grid grid-cols-2 justify-items-start max-w-[280px] mx-auto gap-y-4 sm:flex sm:grid-cols-none sm:max-w-none sm:justify-center sm:gap-x-6 md:gap-x-8 lg:gap-x-12 text-[12px] font-bold uppercase tracking-[0.2em] text-white/90">
               {navItems.map((item) => (
                 <li key={item.label} className="w-full sm:w-auto">
-                  <Link href={item.path} className="hover:text-white transition-colors duration-200 flex items-center gap-2 py-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white/40 flex-shrink-0" />
-                    {item.label}
+                  <Link href={item.path} className="hover:text-white transition-colors duration-200 flex items-center gap-2 py-1 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/40 group-hover:bg-cyan-400 transition-colors flex-shrink-0" />
+                    <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all group-hover:after:w-full">{item.label}</span>
                   </Link>
                 </li>
               ))}
@@ -119,7 +118,7 @@ const Footer = () => {
           {/* Brand Architecture Column */}
           <div className="lg:col-span-4 flex flex-col items-start space-y-6 md:space-y-8">
             <motion.div 
-              whileHover={{ scale: 1.01 }}
+              whileHover={{ scale: 1.02 }}
               className="relative h-14 w-52 transition-transform duration-300 transform-gpu"
             >
               <Image 
@@ -131,7 +130,7 @@ const Footer = () => {
                 priority={false}
               />
             </motion.div>
-            <p className="text-white/80 text-sm md:text-base leading-relaxed font-normal border-l-2 border-white/20 pl-4 italic antialiased max-w-sm">
+            <p className="text-white/80 text-sm md:text-base leading-relaxed font-normal border-l-2 border-cyan-500/40 pl-4 italic antialiased max-w-sm">
               "Engineering secure digital frontiers and redefining IT excellence for the next generation of global leaders."
             </p>
             
@@ -144,7 +143,7 @@ const Footer = () => {
                   target={link.target || undefined}
                   rel={link.target ? "noopener noreferrer" : undefined}
                   aria-label={`Follow 4Biz International on ${link.label}`}
-                  className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.02] flex items-center justify-center text-white/70 transition-all duration-300 hover:border-white/40 hover:bg-white/10 hover:text-white hover:-translate-y-0.5 transform-gpu"
+                  className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.02] flex items-center justify-center text-white/70 transition-all duration-300 hover:border-cyan-400/50 hover:bg-white/10 hover:text-white hover:-translate-y-1 shadow-sm hover:shadow-cyan-500/10 transform-gpu"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                     <path d={link.path} />
@@ -156,83 +155,83 @@ const Footer = () => {
 
           {/* Core Communications Terminals */}
           <div className="lg:col-span-4 flex flex-col space-y-6">
-            <h2 className="text-white/60 font-bold uppercase tracking-wider text-[11px] font-mono">
-              Digital Link & Infrastructure
+            <h2 className="text-white/60 font-bold uppercase tracking-wider text-[11px] font-mono flex items-center gap-2">
+              <span className="w-1 h-1 rounded-full bg-cyan-400"></span> Digital Link & Infrastructure
             </h2>
             <div className="space-y-4">
               {/* Mail Segment */}
-              <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/10 transition-all duration-200 group">
+              <div className="p-4 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group shadow-sm">
                 <span className="text-[10px] uppercase font-mono tracking-wider font-semibold bg-white/10 text-white/90 px-2 py-0.5 rounded inline-block">Mail Infrastructure</span>
-                <a href="mailto:info@4bizinternational.com" className="text-base text-white group-hover:text-white/90 transition-colors font-medium break-all block mt-2.5">
+                <a href="mailto:info@4bizinternational.com" className="text-base text-white group-hover:text-cyan-400 transition-colors font-medium break-all block mt-2.5">
                   info@4bizinternational.com
                 </a>
               </div>
               {/* Telecoms Segment */}
-              <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/10 transition-all duration-200">
+              <div className="p-4 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 shadow-sm">
                 <span className="text-[10px] uppercase font-mono tracking-wider font-semibold bg-white/10 text-white/90 px-2 py-0.5 rounded inline-block mb-3">HQ Telecoms / WhatsApp</span>
                 <div className="flex flex-col gap-3 mt-1">
                   <div className="flex items-center gap-3 flex-wrap">
-                    <a href="https://wa.me/971527925100" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-white/80 transition-colors" aria-label="Contact Dubai HQ via WhatsApp">+971 52 792 5100</a>
+                    <a href="https://wa.me/971527925100" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-cyan-400 transition-colors" aria-label="Contact Dubai HQ via WhatsApp">+971 52 792 5100</a>
                     <span className="text-[9px] px-2 py-0.5 rounded font-mono font-bold bg-white/10 text-white/80 uppercase tracking-wide">Dubai</span>
                   </div>
                   <div className="flex items-center gap-3 flex-wrap">
-                    <a href="https://wa.me/919895717879" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-white/80 transition-colors" aria-label="Contact India Tech Wing via WhatsApp">+91 98957 17879</a>
+                    <a href="https://wa.me/919895717879" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-cyan-400 transition-colors" aria-label="Contact India Tech Wing via WhatsApp">+91 98957 17879</a>
                     <span className="text-[9px] px-2 py-0.5 rounded font-mono font-bold bg-white/10 text-white/80 uppercase tracking-wide">India</span>
                   </div>
                 </div>
               </div>
 
-              {/* Company Profile Panel Link Placed inside Infrastructure Matrix Column */}
+              {/* Company Profile Panel Link */}
               <a 
                 href="/documents/4biz-international-company-profile.pdf"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-between bg-white/[0.02] border border-white/5 text-white py-3.5 px-4 rounded-xl transition-all hover:bg-white/[0.05] hover:border-white/20 transform-gpu"
+                className="group relative flex items-center justify-between bg-white/[0.02] border border-white/5 text-white py-3.5 px-4 rounded-xl transition-all hover:bg-white/[0.05] hover:border-cyan-500/30 shadow-sm transform-gpu"
               >
                 <div className="flex flex-col pr-4">
                   <span className="text-[8px] uppercase tracking-[0.15em] text-white/50 font-mono mb-0.5">Access File</span>
-                  <span className="text-[11px] font-bold uppercase tracking-[0.05em] text-white/90">Our Portfolio</span>
+                  <span className="text-[11px] font-bold uppercase tracking-[0.05em] text-white/90 group-hover:text-cyan-400 transition-colors">Our Portfolio</span>
                 </div>
-                <RiDownloadCloud2Line className="text-xl text-white/70 group-hover:-translate-y-0.5 transition-transform duration-200" />
+                <RiDownloadCloud2Line className="text-xl text-white/70 group-hover:text-cyan-400 group-hover:-translate-y-0.5 transition-all duration-200" />
               </a>
             </div>
           </div>
 
           {/* Regional Enterprise Hubs Map */}
           <div className="lg:col-span-4 flex flex-col space-y-6">
-            <h2 className="text-white/60 font-bold uppercase tracking-wider text-[11px] font-mono">
-              Corporate Geographies
+            <h2 className="text-white/60 font-bold uppercase tracking-wider text-[11px] font-mono flex items-center gap-2">
+              <span className="w-1 h-1 rounded-full bg-cyan-400"></span> Corporate Geographies
             </h2>
             <div className="space-y-5 text-white/80">
               {/* Dubai Corporate Hub */}
-              <div className="flex flex-col border-l border-white/20 pl-4 py-0.5 group">
+              <div className="flex flex-col border-l border-white/10 hover:border-cyan-500/50 pl-4 py-0.5 group transition-colors duration-300">
                 <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                  <span className="text-sm font-semibold text-white group-hover:text-white/90 transition-colors">Dubai Corporate Hub</span>
+                  <span className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">Dubai Corporate Hub</span>
                   <span className="text-[9px] font-mono font-medium bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Global HQ</span>
                 </div>
-                <p className="text-xs text-white/70 leading-relaxed font-normal">
+                <p className="text-xs text-white/60 leading-relaxed font-normal group-hover:text-white/80 transition-colors">
                   Crystal Building - Office # 104 - 2C St - near ADCB Metro Station - Al Karama - Dubai, UAE
                 </p>
               </div>
 
               {/* India Tech Wing */}
-              <div className="flex flex-col border-l border-white/20 pl-4 py-0.5 group">
+              <div className="flex flex-col border-l border-white/10 hover:border-cyan-500/50 pl-4 py-0.5 group transition-colors duration-300">
                 <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                  <span className="text-sm font-semibold text-white group-hover:text-white/90 transition-colors">India HiLite Business Park</span>
+                  <span className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">India HiLite Business Park</span>
                   <span className="text-[9px] font-mono font-medium bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Tech Wing</span>
                 </div>
-                <p className="text-xs text-white/70 leading-relaxed font-normal">
+                <p className="text-xs text-white/60 leading-relaxed font-normal group-hover:text-white/80 transition-colors">
                   Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India
                 </p>
               </div>
 
               {/* India Operations */}
-              <div className="flex flex-col border-l border-white/20 pl-4 py-0.5 group">
+              <div className="flex flex-col border-l border-white/10 hover:border-cyan-500/50 pl-4 py-0.5 group transition-colors duration-300">
                 <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                  <span className="text-sm font-semibold text-white group-hover:text-white/90 transition-colors">India Nadakkave Office</span>
+                  <span className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">India Nadakkave Office</span>
                   <span className="text-[9px] font-mono font-medium bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Operations</span>
                 </div>
-                <p className="text-xs text-white/70 leading-relaxed font-normal">
+                <p className="text-xs text-white/60 leading-relaxed font-normal group-hover:text-white/80 transition-colors">
                   5th Floor, C. M. Mathew Brothers Arcade, Kannur Rd, near Hotel Westway, Vikas Nagar Housing Colony, West Nadakkave, Chakkorathukulam, Kozhikode, Kerala 673006, India
                 </p>
               </div>
@@ -243,9 +242,9 @@ const Footer = () => {
 
         {/* Bottom Metadata Pipeline */}
         <div className="pt-8 border-t border-white/10 flex flex-col items-center justify-center relative z-20">
-          <div className="text-center">
-            <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] font-medium font-mono">
-              &copy; {new Date().getFullYear()} 4Biz International. All Rights Reserved.
+          <div className="w-full max-w-md mx-auto text-center px-4">
+            <p className="text-white/50 text-[10px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.2em] font-medium font-mono leading-relaxed break-words sm:break-normal">
+              &copy; {new Date().getFullYear()} 4Biz International.<br className="block sm:hidden" /> All Rights Reserved.
             </p>
           </div>
         </div>
