@@ -145,7 +145,7 @@ export default function Hero() {
         </nav>
 
         {/* ── FLEX CENTER CONTAINER ── */}
-        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-4 sm:px-16 z-30 pt-12 pb-6 min-h-0">
+        <div className="relative flex-1 flex flex-col items-center justify-center w-full max-w-7xl mx-auto px-6 sm:px-16 z-30 pt-12 pb-6 min-h-0">
           <div 
             className={`
               w-full flex flex-col items-center pointer-events-none transition-all duration-500
@@ -153,28 +153,30 @@ export default function Hero() {
             `}
             style={{ willChange: 'transform, opacity' }}
           >
-            {/* Modern Stack Structure: Handles cross-device typographic layout shifting flawlessly */}
-            <div className="w-full max-w-[95vw] sm:max-w-[520px] md:max-w-[650px] lg:max-w-[780px] flex flex-col items-center">
+            {/* Modern Stack Structure: Container size adjusted so typography does not cut off or trigger layout shifts */}
+            <div className="w-full max-w-[95vw] sm:max-w-[600px] md:max-w-[760px] lg:max-w-[1000px] flex flex-col items-center">
               
-              {/* Heading Lockup: Stacked perfectly on mobile/tablet, single row on desktop views */}
+              {/* Heading Lockup: Spacing fixed for SEO, text-wrap safe for all screen sizes */}
               <h1 
-                className="flex flex-col md:flex-row items-center justify-center gap-y-1 md:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white leading-[1.1] md:leading-none font-sans text-wrap md:whitespace-nowrap"
+                className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 sm:gap-x-4 text-center font-black uppercase tracking-[0.05em] text-white leading-[1.1] md:leading-none font-sans"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.9), 0 8px 20px rgba(0,0,0,0.85), 0 0 25px rgba(0,170,255,0.2)',
                   WebkitTextStroke: '0.5px rgba(255, 255, 255, 0.1)',
                 }}
               >
-                <span className="text-[10.5vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[2.9rem] lg:text-[3.6rem]">
-                  4BIZ&nbsp;
+                <span className="text-[10.5vw] xs:text-[2.2rem] sm:text-[2.8rem] md:text-[3.2rem] lg:text-[4.2rem]">
+                  4BIZ
                 </span>
-                <span className="text-[7.5vw] xs:text-[1.6rem] sm:text-[2.2rem] md:text-[2.9rem] lg:text-[3.6rem]">
+                {/* Visual spacer hidden from screen readers / SEO to ensure layout doesn't break */}
+                <span className="hidden md:inline" aria-hidden="true">&nbsp;</span>
+                <span className="text-[7.5vw] xs:text-[1.6rem] sm:text-[2.2rem] md:text-[3.2rem] lg:text-[4.2rem]">
                   INTERNATIONAL
                 </span>
               </h1>
 
               {/* Subheading: Optimized sizing hierarchy across responsive targets */}
               <h2 
-                className="mt-6 md:mt-4 text-[4.6vw] xs:text-[1.15rem] sm:text-[1.55rem] md:text-[1.7rem] lg:text-[2.1rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
+                className="mt-6 md:mt-5 text-[4.6vw] xs:text-[1.15rem] sm:text-[1.55rem] md:text-[1.8rem] lg:text-[2.4rem] font-black uppercase tracking-[0.11em] text-[#ffffff] leading-none font-sans pl-[0.11em] text-wrap md:whitespace-nowrap"
                 style={{
                   textShadow: '0 2px 4px rgba(0,0,0,0.95), 0 6px 15px rgba(0,0,0,0.85), 0 0 12px rgba(255,255,255,0.3)',
                 }}
