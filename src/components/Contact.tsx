@@ -401,7 +401,20 @@ export default function Contact() {
                   <p className="text-xs text-neutral-800 mt-1.5 leading-relaxed font-semibold">
                     Crystal Building - Office # 104 - 2C St - near ADCB Metro Station - Al Karama - Dubai, UAE
                   </p>
-                  <div className="flex items-center gap-3 mt-3.5">
+                  
+                  {/* Inline Explicit Dynamic Contacts */}
+                  <div className="mt-3 space-y-1.5 border-l-2 border-neutral-300 pl-3">
+                    <div className="flex items-center gap-2 text-xs font-bold text-neutral-700">
+                      <span className="text-neutral-900 text-sm"><RiPhoneLine /></span>
+                      <a href="tel:+971527925100" className="hover:text-[#0c9d7d] transition-colors tracking-wide">+971 52 792 5100</a>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs font-bold text-neutral-700">
+                      <span className="text-neutral-900 text-sm"><RiMailLine /></span>
+                      <a href="mailto:info@4bizinternational.com" className="hover:text-[#0c9d7d] transition-colors tracking-wide">info@4bizinternational.com</a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 mt-4">
                     <a href="https://maps.app.goo.gl/jGQ6zpmvoT4CxvfdA" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiMapPinLine />
                     </a>
@@ -438,7 +451,20 @@ export default function Contact() {
                   <p className="text-xs text-neutral-800 mt-1.5 leading-relaxed font-semibold">
                     Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India
                   </p>
-                  <div className="flex items-center gap-3 mt-3.5">
+                  
+                  {/* Inline Explicit Dynamic Contacts */}
+                  <div className="mt-3 space-y-1.5 border-l-2 border-neutral-300 pl-3">
+                    <div className="flex items-center gap-2 text-xs font-bold text-neutral-700">
+                      <span className="text-neutral-900 text-sm"><RiPhoneLine /></span>
+                      <a href="tel:+919388001524" className="hover:text-[#0c9d7d] transition-colors tracking-wide">+91 93880 01524</a>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs font-bold text-neutral-700">
+                      <span className="text-neutral-900 text-sm"><RiMailLine /></span>
+                      <a href="mailto:info@4bizinternational.com" className="hover:text-[#0c9d7d] transition-colors tracking-wide">info@4bizinternational.com</a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 mt-4">
                     <a href="https://maps.app.goo.gl/7gFHn9sHMqnKsDMc9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiMapPinLine />
                     </a>
@@ -462,7 +488,20 @@ export default function Contact() {
                   <p className="text-xs text-neutral-800 mt-1.5 leading-relaxed font-semibold">
                     5th Floor, C. M. Mathew Brothers Arcade, Kannur Rd, near Hotel Westway, Vikas Nagar Housing Colony, West Nadakkave, Chakkorathukulam, Kozhikode, Kerala 673006, India
                   </p>
-                  <div className="flex items-center gap-3 mt-3.5">
+                  
+                  {/* Inline Explicit Dynamic Contacts */}
+                  <div className="mt-3 space-y-1.5 border-l-2 border-neutral-300 pl-3">
+                    <div className="flex items-center gap-2 text-xs font-bold text-neutral-700">
+                      <span className="text-neutral-900 text-sm"><RiPhoneLine /></span>
+                      <a href="tel:+919388001524" className="hover:text-[#0c9d7d] transition-colors tracking-wide">+91 93880 01524</a>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs font-bold text-neutral-700">
+                      <span className="text-neutral-900 text-sm"><RiMailLine /></span>
+                      <a href="mailto:info@4bizinternational.com" className="hover:text-[#0c9d7d] transition-colors tracking-wide">info@4bizinternational.com</a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 mt-4">
                     <a href="https://maps.app.goo.gl/2LzJGMQ2swaAoBdP9" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiMapPinLine />
                     </a>
@@ -490,7 +529,7 @@ export default function Contact() {
         .screenshot-input {
           width: 100%;
           background: #ffffff !important;
-          border: 1.5px solid #71717a !important; /* Enhanced from #d4d4d8 */
+          border: 1.5px solid #71717a !important;
           padding: 0 1.5rem;
           color: #18181b !important;
           border-radius: 9999px;
@@ -505,7 +544,7 @@ export default function Contact() {
           box-shadow: 0 0 0 3px rgba(12, 157, 125, 0.15);
         }
         .screenshot-input::placeholder {
-          color: #52525b !important; /* Slightly darkened placeholder for improved contrast */
+          color: #52525b !important;
           opacity: 1 !important;
         }
         textarea.screenshot-input {
@@ -525,7 +564,7 @@ export default function Contact() {
           width: 100% !important;
           height: 54px !important;
           background: #ffffff !important;
-          border: 1.5px solid #71717a !important; /* Enhanced from #d4d4d8 */
+          border: 1.5px solid #71717a !important;
           border-radius: 9999px !important;
           display: flex !important;
           align-items: center !important;
