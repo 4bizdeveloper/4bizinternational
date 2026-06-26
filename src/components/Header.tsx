@@ -9,13 +9,12 @@ export default function Header() {
 
   const ticking = useRef(false);
 
-  // Throttled scroll handler via rAF for instant evaluation without layout thrashing
+  // Throttled scroll handler via requestAnimationFrame for sub-millisecond layout stability
   const handleScroll = useCallback(() => {
     if (!ticking.current) {
       window.requestAnimationFrame(() => {
         const currentScrollPos = window.scrollY;
-
-        // Transitions dynamically when moving past the zero-point line
+        // Evaluate condition instantly past threshold
         if (currentScrollPos > 20) {
           setIsSticky(true);
         } else {
@@ -32,7 +31,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
-  // Performance Optimization: Cache body reference and handle overlay lock seamlessly
+  // Performance Optimization: Prevent background scroll layout thrashing during overlay active state
   useEffect(() => {
     const body = document.body;
     if (menuOpen) {
@@ -49,38 +48,44 @@ export default function Header() {
   }, [menuOpen]);
 
   const iconClass =
-    'text-white hover:text-blue-400 hover:scale-110 transition-all duration-200 flex items-center justify-center min-w-[24px] min-h-[24px]';
+    'text-white hover:text-blue-400 hover:scale-110 transition-all duration-200 flex items-center justify-center min-w-[24px] min-h-[24px] transform-gpu';
 
   const navLinkClass =
     'text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl font-light tracking-wide text-white hover:text-blue-400 transition-colors duration-300 block py-2 lg:py-3.5 break-words';
 
   const contactLinkClass = 'hover:text-blue-400 transition-colors duration-200 break-all';
 
-  // Preserved structural hamburger visual properties with static white coloring
-  const lineClass = 'h-[2.5px] rounded-full bg-white transition-all duration-300';
+  // Structural hamburger properties
+  const lineClass = 'h-[2.5px] rounded-full bg-white transition-all duration-300 transform-gpu';
 
   return (
     <>
       {/* ─── HEADER BAR ─────────────────────────────────────────────────────── */}
+      {/* Sizing, height, and padding parameters are completely static (py-2.5) across all scroll states. */}
       <header
-        style={{
-          backgroundImage: isSticky 
-            ? 'radial-gradient(circle at 50% 0%, rgba(13, 27, 77, 0.85) 0%, rgba(8, 17, 49, 0.75) 100%)' 
-            : 'none'
-        }}
-        className={`fixed top-0 left-0 w-full z-50 border-b transition-all duration-300 ease-in-out will-change-[background-color,padding,backdrop-filter,border-color] ${
+        className={`fixed top-0 left-0 w-full z-50 text-white transform-gpu transition-all duration-300 ease-out border-b py-2.5 will-change-[border-color,box-shadow] ${
           isSticky
-            ? 'backdrop-blur-md border-white/10 py-2 sm:py-2.5 text-white shadow-lg shadow-blue-950/20'
-            : 'bg-transparent border-transparent py-5 sm:py-6 text-white'
+            ? 'border-white/10 shadow-lg shadow-blue-950/20'
+            : 'border-transparent'
         }`}
       >
+        {/* Single Dynamic Background Layer: Shifts composite style smoothly without background-layer blending artifacts */}
+        <div 
+          style={{
+            backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(13, 27, 77, 0.95) 0%, rgba(8, 17, 49, 0.9) 100%)'
+          }}
+          className={`absolute inset-0 -z-10 transition-all duration-300 ease-out transform-gpu will-change-[opacity,backdrop-filter] ${
+            isSticky 
+              ? 'opacity-100 backdrop-blur-md' 
+              : 'opacity-0 backdrop-blur-none pointer-events-none'
+          }`} 
+        />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
           
-          {/* Logo Container - Responsively scales down when sticky to save screen height */}
-          <a href="/" className="flex items-center flex-shrink-0 transition-transform duration-300 hover:opacity-90">
-            <div className={`relative flex items-center justify-center transition-all duration-300 ${
-              isSticky ? 'w-20 h-10 sm:w-24 sm:h-12' : 'w-24 h-12 sm:w-28 sm:h-14'
-            }`}>
+          {/* Logo Container - Explicit static dimensions guarantee zero dynamic element layout thrashing */}
+          <a href="/" className="flex items-center flex-shrink-0 transition-opacity duration-300 hover:opacity-90">
+            <div className="relative flex items-center justify-center transform-gpu w-20 h-10 sm:w-24 sm:h-12">
               <Image
                 src="/4biz_logo-3.png"
                 alt="4biz Logo"
@@ -94,19 +99,17 @@ export default function Header() {
 
           {/* Right side controls */}
           <div className="flex items-center gap-5 sm:gap-7 flex-shrink-0">
-            {/* Ultra-modern "Get In Touch" Button - Hidden on Mobile/Tablet, Displayed ONLY on Desktop (lg and up) */}
+            {/* Ultra-modern "Get In Touch" Button */}
             <div className="hidden lg:flex items-center">
               <Link
                 href="/contact"
-                className={`inline-flex items-center justify-center border border-white text-white rounded-full uppercase tracking-wider font-medium transition-all duration-300 hover:bg-white hover:text-black whitespace-nowrap ${
-                  isSticky ? 'px-4 py-1.5 sm:px-5 sm:py-2 text-[11px] sm:text-xs' : 'px-5 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-sm'
-                }`}
+                className="inline-flex items-center justify-center border border-white text-white rounded-full uppercase tracking-wider font-medium transform-gpu transition-all duration-300 hover:bg-white hover:text-black whitespace-nowrap text-xs sm:text-sm px-4 py-1.5"
               >
                 Get In Touch
               </Link>
             </div>
 
-            {/* Structured responsive white hamburger button */}
+            {/* Hamburger Activation Toggle */}
             <button
               onClick={() => setMenuOpen(true)}
               className="flex flex-col gap-1.5 cursor-pointer p-1.5 focus:outline-none items-end justify-center group flex-shrink-0 min-w-[36px]"
@@ -152,7 +155,7 @@ export default function Header() {
             </div>
             <button
               onClick={() => setMenuOpen(false)}
-              className="p-2 text-white hover:text-red-400 focus:outline-none text-4xl font-light hover:rotate-90 transition-all duration-300 ease-in-out leading-none select-none min-w-[48px] min-h-[48px] flex items-center justify-center"
+              className="p-2 text-white hover:text-red-400 focus:outline-none text-4xl font-light hover:rotate-90 transition-all duration-300 ease-in-out leading-none select-none min-w-[48px] min-h-[48px] flex items-center justify-center transform-gpu"
               aria-label="Close Menu"
             >
               ✕
@@ -209,7 +212,7 @@ export default function Header() {
                   {/* Instagram */}
                   <a href="https://www.instagram.com/4biz_ae" target="_blank" rel="noopener noreferrer" className={iconClass} aria-label="Instagram">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0 3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4.162 4.162 0 1 1 0-8.324A4.162 4.162 0 0 1 12 16zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0 3.204.013-3.583.07-4.849.149-3.227 1.664-4.771-4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4.162 4.162 0 1 1 0-8.324A4.162 4.162 0 0 1 12 16zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
                     </svg>
                   </a>
                   {/* LinkedIn */}
