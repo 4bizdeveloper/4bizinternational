@@ -312,17 +312,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── CEO SECTION ─── */}
-      <section className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16 md:py-24 containment-layout">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center transform-gpu">
+      {/* ─── CEO SECTION (JUMP-FREE & BRIGHTNESS OPTIMIZED) ─── */}
+      <section className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16 md:py-24 clear-both block">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
           {/* CEO Quote — Left Column */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 flex flex-col space-y-6 order-2 lg:order-1 relative will-change-transform"
+            className="lg:col-span-7 flex flex-col space-y-6 order-2 lg:order-1 relative"
           >
             <div className="flex flex-col space-y-2">
               <span className="text-xs font-mono tracking-[0.3em] uppercase text-cyan-400 font-bold">Leadership Message</span>
@@ -366,7 +366,7 @@ export default function AboutPage() {
                 }}
               />
 
-              {/* Seamless Edge Masking Matrix (Optimized mask transition points to ensure he is fully shown down to the bottom profile on all layouts)[cite: 2] */}
+              {/* Seamless Edge Masking Matrix[cite: 2] */}
               <div
                 className="absolute inset-0 transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.01]"
                 style={{
@@ -380,7 +380,7 @@ export default function AboutPage() {
                   alt="4Biz International CEO"
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 350px, 400px"
-                  className="object-contain object-bottom border-0 outline-none select-none pointer-events-none bg-transparent"
+                  className="object-contain object-bottom border-0 outline-none select-none pointer-events-none bg-transparent filter brightness-[1.12] contrast-[1.03]"
                   priority
                 />
               </div>
