@@ -221,23 +221,13 @@ export default function About() {
                 {/* Diffuse Energy Vibrant Core */}
                 <div className="absolute w-36 h-36 sm:w-52 sm:h-52 bg-radial-gradient from-[#00d3f2]/20 via-[#ff41e3]/10 to-transparent blur-2xl animate-pulse" />
 
-                {/*
-                  ── INNER RINGS: COLORS SWAPPED ──
-                  Original inner ring 1: border-cyan-400/30  → now border-[#ff41e3]/30
-                  Original inner ring 2: border-[#ff41e3]/20 → now border-[#00d3f2]/20
-                */}
-                {/* Inner Pulsating Ring 1 — was cyan, now #ff41e3 */}
+                {/* ── INNER RINGS ── */}
+                {/* Inner Pulsating Ring 1 */}
                 <div className="absolute w-32 h-32 sm:w-44 sm:h-44 rounded-full border-[4px] sm:border-[5px] border-[#ff41e3]/30 shadow-[0_0_20px_rgba(255,65,227,0.3)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
-                {/* Inner Pulsating Ring 2 — was #ff41e3, now #00d3f2 */}
+                {/* Inner Pulsating Ring 2 */}
                 <div className="absolute w-40 h-40 sm:w-56 sm:h-56 rounded-full border-[2px] sm:border-[3px] border-[#00d3f2]/20 shadow-[0_0_25px_rgba(0,211,242,0.2)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite_1.1s]" />
 
-                {/*
-                  ── OUTER ROTATING RINGS ──
-                  Ring 1 (fast dashed): #00d3f2
-                  Ring 2 (reverse double): #ff41e3
-                  Ring 3 (slow colored arc): #00d3f2 top/left, #ff41e3 bottom — HIGH VIBRANCY
-                  Ring 4 (slow-reverse partial): #ff41e3 right, #00d3f2 left — HIGH VIBRANCY
-                */}
+                {/* ── OUTER ROTATING RINGS ── */}
                 {/* Outer Ring 1 — dashed, clockwise fast → #00d3f2 */}
                 <div
                   className="absolute w-44 h-44 xs:w-48 xs:h-48 sm:w-72 sm:h-72 rounded-full border-[2px] sm:border-[2.5px] border-dashed will-change-transform animate-spin-continuous-fast"
@@ -255,22 +245,26 @@ export default function About() {
                   }}
                 />
 
-                {/* HIGH VIBRANCY Outer Ring 3 — slow clockwise arc → #00d3f2 top/left, #ff41e3 bottom */}
+                {/* INCREASED CURVE LENGTH: Outer Ring 3 — slow clockwise arc extended to 7/8ths around */}
                 <div
                   className="absolute w-[14rem] h-[14rem] xs:w-[15rem] xs:h-[15rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[3px] sm:border-[4px] border-transparent will-change-transform animate-spin-continuous-slow"
                   style={{
                     borderTopColor: '#00d3f2',
                     borderBottomColor: '#ff41e3',
                     borderLeftColor: '#00d3f2',
+                    borderRightColor: 'rgba(0,211,242,0.45)', // Extended arc segment
                     filter: 'drop-shadow(0 0 15px rgba(0,211,242,0.5))'
                   }}
                 />
-                {/* HIGH VIBRANCY Outer Ring 4 — slow counter-clockwise partial → #ff41e3 right, #00d3f2 left */}
+                
+                {/* INCREASED CURVE LENGTH: Outer Ring 4 — slow counter-clockwise partial extended significantly */}
                 <div
                   className="absolute w-[15.5rem] h-[15.5rem] xs:w-[17rem] xs:h-[17rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[1.5px] sm:border-[2px] border-transparent will-change-transform animate-spin-continuous-slow-reverse"
                   style={{
-                    borderRightColor: 'rgba(255,65,227,0.80)',
-                    borderLeftColor: 'rgba(0,211,242,0.60)',
+                    borderRightColor: 'rgba(255,65,227,0.85)',
+                    borderLeftColor: 'rgba(0,211,242,0.75)',
+                    borderTopColor: 'rgba(0,211,242,0.35)',  // Extended arc segment
+                    borderBottomColor: 'rgba(255,65,227,0.35)', // Extended arc segment
                     filter: 'drop-shadow(0 0 10px rgba(0,211,242,0.35))'
                   }}
                 />
