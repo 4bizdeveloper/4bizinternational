@@ -86,7 +86,7 @@ export default function AboutPage() {
       </div>
 
       {/* ─── HERO SECTION ─── */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+      <section className="relative pt-32 pb-14 md:pt-40 md:pb-20 z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -151,7 +151,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── NUMERIC STATS ─── */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-8 border-t border-b border-white/10 bg-white/[0.02] backdrop-blur-md">
+      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-6 border-t border-b border-white/10 bg-white/[0.02] backdrop-blur-md">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
           {stats.map((stat, idx) => (
             <div key={idx} className="flex flex-col space-y-1 md:pl-4 md:border-l border-white/15 first:border-0 py-2">
@@ -165,8 +165,8 @@ export default function AboutPage() {
       </section>
 
       {/* ─── MISSION & VISION SECTION ─── */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-24 pb-12 flex flex-col space-y-16">
-        <div className="w-full flex flex-col space-y-12">
+      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-16 pb-0 flex flex-col">
+        <div className="w-full flex flex-col space-y-10">
           
           {/* OUR MISSION BLOCK */}
           <motion.div 
@@ -216,24 +216,26 @@ export default function AboutPage() {
         </div>
 
         {/* IMPACTING INFINITE BANNER */}
+        {/* Adjusted padding to cleanly increase distance from top and tightly reduce distance to the content below */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="w-full text-center pt-4 flex flex-col items-center justify-center space-y-4"
+          className="w-full text-center pt-16 pb-4 sm:pt-24 sm:pb-6 flex flex-col items-center justify-center space-y-3"
         >
           <h4 className="text-2xl sm:text-4xl font-black tracking-widest bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_4px_12px_rgba(6,182,212,0.25)]">
             IMPACTING INFINITE..!!
           </h4>
           <div className="w-24 sm:w-36 h-[3px] rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500" />
-          <p className="text-white/70 text-sm sm:text-base lg:text-lg max-w-3xl font-light tracking-wide px-4 leading-relaxed pt-2">
+          <p className="text-white/70 text-sm sm:text-base lg:text-lg max-w-3xl font-light tracking-wide px-4 leading-relaxed pt-1">
             Creating limitless opportunities through technology, innovation, and business excellence
           </p>
         </motion.div>
       </section>
 
       {/* ─── BRAND STORY & VIDEO SECTION ─── */}
-      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      {/* Optimized padding top (pt-4 md:pt-6) to safely collapse bottom distance under the banner */}
+      <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-4 pb-14 md:pt-6 md:pb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
         {/* Extended Text Block */}
         <div className="lg:col-span-7 flex flex-col space-y-8">
@@ -313,7 +315,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── CEO SECTION (JUMP-FREE & BRIGHTNESS OPTIMIZED) ─── */}
-      <section className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 py-16 md:py-24 clear-both block">
+      <section className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pt-4 pb-14 md:pb-20 clear-both block">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
           {/* CEO Quote — Left Column */}
@@ -353,11 +355,11 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* CEO Image — Right Column[cite: 2] */}
+          {/* CEO Image — Right Column */}
           <div className="lg:col-span-5 order-1 lg:order-2 w-full flex justify-center items-end self-end">
             <div className="relative w-full max-w-[350px] h-[420px] sm:h-[460px] lg:h-[480px] overflow-visible">
               
-              {/* Dynamic Backlight Glow aura under image[cite: 2] */}
+              {/* Dynamic Backlight Glow aura under image */}
               <div
                 className="absolute bottom-4 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full pointer-events-none -z-10 opacity-70"
                 style={{
@@ -366,7 +368,7 @@ export default function AboutPage() {
                 }}
               />
 
-              {/* Seamless Edge Masking Matrix[cite: 2] */}
+              {/* Seamless Edge Masking Matrix */}
               <div
                 className="absolute inset-0 transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.01]"
                 style={{
