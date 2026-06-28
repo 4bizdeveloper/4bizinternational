@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Mock FAQ data matching image_157a47.jpg context
 const faqData = [
   {
     question: "What IT services does 4Biz International offer?",
@@ -22,33 +23,55 @@ const faqData = [
   }
 ];
 
-const FaqItem = ({ question, answer }: { question: string, answer: string }) => {
-  const [isOpen, setIsOpen] = useState(false);
+interface FaqItemProps {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  onToggle: () => void;
+}
 
+const FaqItem = ({ question, answer, isOpen, onToggle }: FaqItemProps) => {
   return (
-    <div className="border-b border-blue-900/40 last:border-b-0">
+    <div className="border-b border-blue-900/40 last:border-b-0 backdrop-blur-sm">
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex justify-between items-start sm:items-center gap-4 py-5 sm:py-6 text-left focus:outline-none group select-none"
+        onClick={onToggle}
+        className="w-full flex justify-between items-center gap-6 py-5 sm:py-6 text-left focus:outline-none group select-none transition-all duration-300"
         aria-expanded={isOpen}
       >
-        <span className="text-base sm:text-lg font-medium text-white group-hover:text-blue-200 transition-colors duration-200">
+        <span className="text-base sm:text-lg font-medium text-white group-hover:text-blue-300 transition-colors duration-300 ease-out tracking-wide">
           {question}
         </span>
-        <span className={`text-xs sm:text-sm mt-1 sm:mt-0 transition-transform duration-300 transform ${isOpen ? 'rotate-180' : ''} text-blue-400 shrink-0`}>
-          ▼
-        </span>
+        
+        {/* Modern Interactive Plus/Minus Icon */}
+        <div className="relative w-5 h-5 flex items-center justify-center shrink-0">
+          {/* Horizontal line - updated to pure white */}
+          <span className="absolute w-4 h-[2px] bg-white rounded-full transition-transform duration-300 ease-in-out" />
+          {/* Vertical line (rotates/shrinks to form a minus when open) - updated to pure white */}
+          <span 
+            className={`absolute h-4 w-[2px] bg-white rounded-full transition-all duration-300 ease-in-out ${
+              isOpen ? 'rotate-90 scale-0 opacity-0' : 'rotate-0 scale-100 opacity-100'
+            }`} 
+          />
+        </div>
       </button>
-      <AnimatePresence>
+
+      <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
+            animate={{ 
+              height: 'auto', 
+              opacity: 1,
+              transition: { height: { duration: 0.35, ease: [0.25, 1, 0.5, 1] }, opacity: { duration: 0.25, delay: 0.05 } }
+            }}
+            exit={{ 
+              height: 0, 
+              opacity: 0,
+              transition: { height: { duration: 0.3, ease: [0.25, 1, 0.5, 1] }, opacity: { duration: 0.15 } }
+            }}
             className="overflow-hidden"
           >
-            <p className="pb-5 sm:pb-6 text-sm sm:text-base text-blue-100/80 leading-relaxed pr-4">
+            <p className="pb-5 sm:pb-6 text-sm sm:text-base text-blue-100/80 leading-relaxed pr-6 max-w-2xl antialiased">
               {answer}
             </p>
           </motion.div>
@@ -59,22 +82,41 @@ const FaqItem = ({ question, answer }: { question: string, answer: string }) => 
 };
 
 export default function Faq() {
+  // Lifted state handles mutual exclusivity (only 1 open at a time)
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(prevIndex => prevIndex === index ? null : index);
+  };
+
   return (
     <section 
-      className="relative w-full py-16 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden min-h-[60vh] flex items-center" 
+      className="relative w-full py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden min-h-[60vh] flex items-center contain-intrinsic-size" 
       style={{
         background: 'radial-gradient(circle at center, #001f5c 0%, #000c24 70%, #000511 100%)'
       }}
       aria-labelledby="faq-title"
     >
-      <div className="w-full max-w-3xl mx-auto">
-        <h2 id="faq-title" className="text-3xl sm:text-4xl font-bold text-white mb-8 sm:mb-12 text-center tracking-tight">
+      {/* Decorative Subtle Radial Glow for Premium Look */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="w-full max-w-3xl mx-auto relative z-10">
+        <h2 
+          id="faq-title" 
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-10 sm:mb-16 text-center tracking-tight bg-clip-text bg-gradient-to-b from-white to-neutral-300"
+        >
           Frequently Asked Questions
         </h2>
         
-        <div className="w-full flex flex-col">
+        <div className="w-full flex flex-col border-t border-blue-900/40">
           {faqData.map((item, index) => (
-            <FaqItem key={index} {...item} />
+            <FaqItem 
+              key={index} 
+              question={item.question}
+              answer={item.answer}
+              isOpen={openIndex === index}
+              onToggle={() => handleToggle(index)}
+            />
           ))}
         </div>
       </div>

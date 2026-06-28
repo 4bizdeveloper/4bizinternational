@@ -34,9 +34,9 @@ const servicesData: ServiceItem[] = [
       "Document Management",
       "Workflow Automation"
     ],
-    activeTabClass: "bg-blue-600 text-white shadow-xl shadow-blue-600/30 ring-1 ring-white/20",
+    activeTabClass: "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-xl shadow-blue-600/30 ring-1 ring-white/30",
     btnGlowClass: "bg-blue-600 hover:bg-blue-500 shadow-blue-600/40 focus:ring-blue-400",
-    backgroundImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&auto=format&fit=crop&q=80",
+    backgroundImage: "/services/digital-workplace-productivity-solutions-1.png",
     linkUrl: "/services/digital-workplace-productivity-solutions",
     showReadMoreBtn: true
   },
@@ -58,9 +58,9 @@ const servicesData: ServiceItem[] = [
       "Inventory & Finance Management",
       "HR & Payroll Solutions"
     ],
-    activeTabClass: "bg-indigo-600 text-white shadow-xl shadow-indigo-600/30 ring-1 ring-white/20",
+    activeTabClass: "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-xl shadow-indigo-600/30 ring-1 ring-white/30",
     btnGlowClass: "bg-indigo-600 hover:bg-indigo-500 shadow-indigo-600/40 focus:ring-indigo-400",
-    backgroundImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80",
+    backgroundImage: "/services/enterprise-business-applications-erp-crm-2.png",
     linkUrl: "/services/enterprise-business-applications-erp-crm",
     showReadMoreBtn: true
   },
@@ -82,9 +82,9 @@ const servicesData: ServiceItem[] = [
       "API Integration",
       "Portal Development"
     ],
-    activeTabClass: "bg-pink-600 text-white shadow-xl shadow-pink-600/30 ring-1 ring-white/20",
+    activeTabClass: "bg-gradient-to-r from-pink-600 to-rose-600 text-white shadow-xl shadow-pink-600/30 ring-1 ring-white/30",
     btnGlowClass: "bg-pink-600 hover:bg-pink-500 shadow-pink-600/40 focus:ring-pink-400",
-    backgroundImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1200&auto=format&fit=crop&q=80",
+    backgroundImage: "/services/web-mobile-commerce-solutions.png",
     linkUrl: "/services/web-mobile-commerce-solutions",
     showReadMoreBtn: true
   },
@@ -109,9 +109,9 @@ const servicesData: ServiceItem[] = [
       "Influencer Marketing",
       "Online Reputation Management"
     ],
-    activeTabClass: "bg-cyan-600 text-white shadow-xl shadow-cyan-600/30 ring-1 ring-white/20",
+    activeTabClass: "bg-gradient-to-r from-cyan-600 to-teal-600 text-white shadow-xl shadow-cyan-600/30 ring-1 ring-white/30",
     btnGlowClass: "bg-cyan-600 hover:bg-cyan-500 shadow-cyan-600/40 focus:ring-cyan-400",
-    backgroundImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80",
+    backgroundImage: "/services/digital-growth-marketing-brand-experience.png",
     linkUrl: "/services/digital-growth-marketing-brand-experience",
     showReadMoreBtn: true
   },
@@ -131,9 +131,9 @@ const servicesData: ServiceItem[] = [
       "Customer Engagement Workflows",
       "Lead Nurturing Solutions"
     ],
-    activeTabClass: "bg-teal-600 text-white shadow-xl shadow-teal-600/30 ring-1 ring-white/20",
+    activeTabClass: "bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-xl shadow-teal-600/30 ring-1 ring-white/30",
     btnGlowClass: "bg-teal-600 hover:bg-teal-500 shadow-teal-600/40 focus:ring-teal-400",
-    backgroundImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&auto=format&fit=crop&q=80",
+    backgroundImage: "/services/communication-customer-engagement-solutions.png",
     linkUrl: "/services/communication-customer-engagement-solutions",
     showReadMoreBtn: true
   },
@@ -158,9 +158,9 @@ const servicesData: ServiceItem[] = [
       "Storage Solutions",
       "Disaster Recovery"
     ],
-    activeTabClass: "bg-orange-600 text-white shadow-xl shadow-orange-600/30 ring-1 ring-white/20",
+    activeTabClass: "bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-xl shadow-orange-600/30 ring-1 ring-white/30",
     btnGlowClass: "bg-orange-600 hover:bg-orange-500 shadow-orange-600/40 focus:ring-orange-400",
-    backgroundImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&auto=format&fit=crop&q=80",
+    backgroundImage: "/services/cloud-hosting-infrastructure-services.png",
     linkUrl: "/services/cloud-hosting-infrastructure-services",
     showReadMoreBtn: true
   },
@@ -184,9 +184,9 @@ const servicesData: ServiceItem[] = [
       "Security Monitoring",
       "Compliance Readiness"
     ],
-    activeTabClass: "bg-purple-600 text-white shadow-xl shadow-purple-600/30 ring-1 ring-white/20",
+    activeTabClass: "bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white shadow-xl shadow-purple-600/30 ring-1 ring-white/30",
     btnGlowClass: "bg-purple-600 hover:bg-purple-500 shadow-purple-600/40 focus:ring-purple-400",
-    backgroundImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&auto=format&fit=crop&q=80",
+    backgroundImage: "services/cybersecurity-digital-protection.png",
     linkUrl: "/services/cybersecurity-digital-protection",
     showReadMoreBtn: true
   },
@@ -215,9 +215,9 @@ const servicesData: ServiceItem[] = [
       "SaaS Licensing",
       "Online & On-Premise Licensing"
     ],
-    activeTabClass: "bg-emerald-600 text-white shadow-xl shadow-emerald-600/30 ring-1 ring-white/20",
+    activeTabClass: "bg-gradient-to-r from-emerald-600 to-green-600 text-white shadow-xl shadow-emerald-600/30 ring-1 ring-white/30",
     btnGlowClass: "bg-emerald-600 hover:bg-emerald-500 shadow-emerald-600/40 focus:ring-emerald-400",
-    backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&auto=format&fit=crop&q=80",
+    backgroundImage: "services/digital-transformation-emerging-technologies.png",
     linkUrl: "/services/digital-transformation-emerging-technologies",
     showReadMoreBtn: true
   }
@@ -315,14 +315,14 @@ export default function Services() {
   return (
     <section
       ref={sectionRef}
-      className="services-section w-full py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 text-white overflow-hidden relative bg-[#04091a] bg-[radial-gradient(circle_at_50%_35%,_#0e2a80_0%,_#09153d_50%,_#0a122c_100%)] font-seo antialiased"
+      className="services-section w-full py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 lg:px-16 text-white overflow-hidden relative bg-[#04091a] bg-[radial-gradient(circle_at_50%_35%,_#0e2a80_0%,_#09153d_50%,_#0a122c_100%)] font-seo antialiased"
     >
       <div className="pointer-events-none absolute inset-0 services-lines-overlay z-0 opacity-40" aria-hidden="true" />
 
       <div className={`max-w-7xl mx-auto relative z-10 transition-all duration-700 transform-gpu ${visibleCards ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
 
         {/* Section Heading */}
-        <div className="text-center mb-10 md:mb-16">
+        <div className="text-center mb-10 md:mb-14 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
             What we do <span className="text-cyan-400">?</span>
           </h2>
@@ -332,14 +332,14 @@ export default function Services() {
         </div>
 
         {/* Main Frame Container */}
-        <div className="main-panel bg-white/[0.02] border border-white/[0.06] rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] p-3 sm:p-5 md:p-8 lg:p-10 shadow-2xl backdrop-blur-md transform-gpu">
+        <div className="main-panel bg-white/[0.02] border border-white/[0.06] rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.2rem] lg:rounded-[2.5rem] p-3 sm:p-5 md:p-6 lg:p-10 shadow-2xl backdrop-blur-md transform-gpu">
           <div className="flex flex-col lg:flex-row gap-5 md:gap-6 lg:gap-8 items-stretch min-h-auto lg:min-h-[580px]">
 
-            {/* Desktop Navigation Column */}
-            <div className="hidden md:flex flex-col justify-start items-center w-full lg:w-[290px] shrink-0 gap-2 relative border-b lg:border-b-0 lg:border-r border-white/[0.08] pb-4 lg:pb-0 lg:pr-6 max-h-none lg:max-h-[580px]">
+            {/* Desktop Navigation Column (Visible ONLY on LG and above) */}
+            <div className="hidden lg:flex flex-col justify-start items-center w-[300px] shrink-0 gap-2 relative border-r border-white/[0.08] pr-6 max-h-[580px]">
               <button
                 onClick={handlePrev}
-                className="text-white/80 hover:text-cyan-400 transition-colors py-1.5 w-full text-center sticky top-0 backdrop-blur-sm z-20 cursor-pointer hidden lg:block bg-transparent border-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] focus:outline-none"
+                className="text-white/80 hover:text-cyan-400 transition-colors py-1.5 w-full text-center sticky top-0 backdrop-blur-sm z-20 cursor-pointer bg-transparent border-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] focus:outline-none"
                 aria-label="Scroll Up"
               >
                 <ChevronUp size={24} className="mx-auto animate-pulse" />
@@ -355,9 +355,9 @@ export default function Services() {
                     <button
                       key={service.id}
                       onClick={() => handleTabClick(index)}
-                      className={`w-full px-4 py-3 md:py-3.5 rounded-xl md:rounded-2xl text-left font-bold transition-all duration-300 transform-gpu text-xs sm:text-sm md:text-base leading-snug tracking-tight border cursor-pointer drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] ${
+                      className={`w-full px-5 py-3.5 rounded-2xl text-left font-bold transition-all duration-300 transform-gpu text-sm xl:text-base leading-snug tracking-tight border cursor-pointer drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] ${
                         isActive
-                          ? service.activeTabClass + " scale-[1.01]"
+                          ? service.activeTabClass + " scale-[1.02]"
                           : "text-white bg-white/[0.03] hover:bg-white/15 border-white/[0.06] hover:border-white/20"
                       }`}
                     >
@@ -369,89 +369,98 @@ export default function Services() {
 
               <button
                 onClick={handleNext}
-                className="text-white/80 hover:text-cyan-400 transition-colors py-1.5 w-full text-center sticky bottom-0 backdrop-blur-sm z-20 cursor-pointer hidden lg:block bg-transparent border-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] focus:outline-none"
+                className="text-white/80 hover:text-cyan-400 transition-colors py-1.5 w-full text-center sticky bottom-0 backdrop-blur-sm z-20 cursor-pointer bg-transparent border-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] focus:outline-none"
                 aria-label="Scroll Down"
               >
                 <ChevronDown size={24} className="mx-auto animate-pulse" />
               </button>
             </div>
 
-            {/* Tablet & Mobile Layout Controls */}
-            <div className="md:hidden flex items-center justify-between bg-white/[0.05] p-2.5 rounded-xl border border-white/10 shadow-lg">
+            {/* Mobile & Tablet Top Bar Controls */}
+            <div className="lg:hidden flex items-center justify-between bg-white/[0.04] p-3 rounded-xl border border-white/10 shadow-xl">
               <button
                 onClick={handlePrev}
-                className="p-2 rounded-lg bg-white/5 text-white border border-white/10 hover:bg-white/10 active:scale-95 transition-all cursor-pointer focus:outline-none"
+                className="p-2 rounded-lg bg-white/5 text-white border border-white/10 hover:bg-white/10 active:scale-95 transition-all cursor-pointer focus:outline-none shrink-0"
                 aria-label="Previous service"
               >
-                <ChevronLeft size={18} />
+                <ChevronLeft size={20} />
               </button>
-              <span className="font-bold text-xs sm:text-sm tracking-normal text-cyan-400 text-center px-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] max-w-[70%] truncate">
+              <span className="font-extrabold text-sm sm:text-base tracking-wide text-cyan-300 text-center px-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] truncate max-w-[80%]">
                 {currentService.title}
               </span>
               <button
                 onClick={handleNext}
-                className="p-2 rounded-lg bg-white/5 text-white border border-white/10 hover:bg-white/10 active:scale-95 transition-all cursor-pointer focus:outline-none"
+                className="p-2 rounded-lg bg-white/5 text-white border border-white/10 hover:bg-white/10 active:scale-95 transition-all cursor-pointer focus:outline-none shrink-0"
                 aria-label="Next service"
               >
-                <ChevronRight size={18} />
+                <ChevronRight size={20} />
               </button>
             </div>
 
-            {/* Interactive Content Card (Supports Touch Gestures) */}
+            {/* Interactive Content Card */}
             <div
               ref={contentRef}
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
               onTouchEnd={onTouchEnd}
-              className="content-card flex-1 rounded-[1.25rem] sm:rounded-[1.75rem] lg:rounded-[2rem] p-4 sm:p-6 md:p-8 lg:p-10 text-white shadow-2xl flex flex-col relative overflow-hidden transition-all duration-300 ease-out border border-white/10 transform-gpu touch-pan-y"
+              className="content-card flex-1 rounded-[1.25rem] sm:rounded-[1.5rem] lg:rounded-[2rem] p-5 sm:p-6 md:p-8 lg:p-10 text-white shadow-2xl flex flex-col relative overflow-hidden transition-all duration-300 ease-out border border-white/10 transform-gpu touch-pan-y"
             >
               <div className="absolute inset-0 z-0 select-none pointer-events-none transform-gpu">
                 <Image
                   src={currentService.backgroundImage}
                   alt={`${currentService.title} asset backdrop`}
                   fill
-                  sizes="(max-w-768px) 100vw, (max-w-1024px) 80vw, 55vw"
-                  className="object-cover transition-transform duration-500"
+                  sizes="(max-w-1024px) 100vw, 60vw"
+                  className="object-cover scale-105 transition-transform duration-700"
                   priority
                 />
-                <div className="absolute inset-0 bg-[#070e25]/40 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#09153d]/50 via-[#070e25]/15 to-black/30" />
+                <div className="absolute inset-0 bg-[#060b1e]/65 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#04091a] via-[#070f2b]/80 to-transparent" />
               </div>
 
-              <div className="flex-1 flex flex-col justify-start z-10 relative space-y-4 md:space-y-6" style={{ isolation: "isolate" }}>
+              <div className="flex-1 flex flex-col justify-start z-10 relative space-y-5 md:space-y-6" style={{ isolation: "isolate" }}>
                 
+                {/* Text Blocks with Colorful Differentiation */}
                 <div className="w-full flex flex-col text-left">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-1.5 sm:mb-2 lg:mb-3 tracking-tight leading-snug text-white seo-text-shadow-heavy">
+                  {/* Changed text color from dark text gradient overlay to explicit bright #00d2f1 */}
+                  <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black mb-2 sm:mb-3 lg:mb-4 tracking-tight leading-snug text-[#00d2f1] seo-text-shadow-heavy">
                     {currentService.subtitle}
                   </h3>
-                  <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed font-bold tracking-normal max-w-4xl seo-text-shadow-medium opacity-95">
+                  <p className="text-cyan-50/95 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed font-semibold tracking-normal max-w-4xl seo-text-shadow-medium">
                     {currentService.description}
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 pt-4 sm:pt-5 border-t border-white/20">
+                {/* Sub-points with Identical Baseline Positioning */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5 pt-5 border-t border-white/15">
                   {currentService.points.map((point, pIdx) => (
-                    <div key={pIdx} className="flex items-start space-x-2 text-sm sm:text-base md:text-lg font-bold tracking-normal group/item seo-text-shadow-heavy">
-                      <span className="text-cyan-400 font-black text-base sm:text-lg select-none shrink-0 mt-0.5">»</span>
-                      <span className="cursor-default text-left text-white leading-tight transition-colors duration-150 group-hover/item:text-cyan-200">
+                    <div 
+                      key={pIdx} 
+                      className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.07] hover:border-white/15 transition-all duration-200 group/item backdrop-blur-sm shadow-[0_2px_8px_rgba(0,0,0,0.2)]"
+                    >
+                      <span className="flex items-center justify-center text-cyan-400 transition-transform duration-200 group-hover/item:translate-x-0.5 shrink-0">
+                        <ArrowRight size={16} strokeWidth={3} className="drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" />
+                      </span>
+                      <span className="cursor-default text-left font-bold text-xs sm:text-sm md:text-base text-teal-200 group-hover/item:text-white leading-none tracking-wide transition-colors duration-150">
                         {point}
                       </span>
                     </div>
                   ))}
                 </div>
 
+                {/* Bottom Read More Action Button */}
                 {currentService.showReadMoreBtn && (
-                  <div className="w-full flex justify-center pt-2 transition-all duration-300">
+                  <div className="w-full flex justify-center pt-3 transition-all duration-300">
                     <a 
                       href={currentService.linkUrl}
-                      className="group/glass-btn relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer decoration-0 text-white select-none shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_4px_12px_rgba(0,0,0,0.3)]"
+                      className="group/glass-btn relative inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer decoration-0 text-white select-none shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_4px_12px_rgba(0,0,0,0.4)]"
                       aria-label={`Read details about ${currentService.subtitle}`}
                     >
-                      <span className="font-extrabold text-[11px] sm:text-xs tracking-widest uppercase text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                      <span className="font-extrabold text-xs tracking-widest uppercase text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
                         Read More
                       </span>
-                      <div className={`p-1 rounded-full text-white transition-all duration-300 ${currentService.btnGlowClass.split(' ')[0]} shadow-md`}>
-                        <ArrowRight size={11} className="transform transition-transform duration-300 group-hover/glass-btn:translate-x-0.5" />
+                      <div className={`p-1.5 rounded-full text-white transition-all duration-300 ${currentService.btnGlowClass.split(' ')[0]} shadow-md`}>
+                        <ArrowRight size={12} className="transform transition-transform duration-300 group-hover/glass-btn:translate-x-0.5" />
                       </div>
                     </a>
                   </div>
@@ -463,15 +472,15 @@ export default function Services() {
           </div>
         </div>
 
-        {/* Dynamic Dot Navigation indicators for tablet/mobile views */}
-        <div className="flex justify-center gap-1.5 mt-5 md:hidden" aria-label="Service layout dots">
+        {/* Dynamic Navigation Indicators */}
+        <div className="flex justify-center gap-1.5 mt-5 lg:hidden" aria-label="Service layout dots">
           {servicesData.map((_, index) => (
             <button
               key={index}
               onClick={() => handleTabClick(index)}
               className={`rounded-full transition-all duration-300 border-0 h-2 cursor-pointer focus:outline-none ${
                 index === activeIndex
-                  ? "w-5 bg-cyan-400"
+                  ? "w-6 bg-cyan-400"
                   : "w-2 bg-slate-600 hover:bg-slate-500"
               }`}
               aria-label={`Show layout tab ${index + 1}`}
@@ -492,16 +501,15 @@ export default function Services() {
              1.5px -1.5px 0 #000,
             -1.5px  1.5px 0 #000,
              1.5px  1.5px 0 #000,
-             0px 4px 8px rgba(0, 0, 0, 1),
-             0px 1px 2px rgba(0, 0, 0, 1);
+             0px 4px 10px rgba(0, 0, 0, 1);
         }
 
         .seo-text-shadow-medium {
           text-shadow: 
-            -1px -1px 0 rgba(0,0,0,1),  
-             1px -1px 0 rgba(0,0,0,1),
-            -1px  1px 0 rgba(0,0,0,1),
-             1px  1px 0 rgba(0,0,0,1),
+            -1px -1px 0 rgba(0,0,0,0.9),  
+             1px -1px 0 rgba(0,0,0,0.9),
+            -1px  1px 0 rgba(0,0,0,0.9),
+             1px  1px 0 rgba(0,0,0,0.9),
              0px 3px 6px rgba(0, 0, 0, 1);
         }
 
@@ -524,23 +532,18 @@ export default function Services() {
         }
 
         .custom-scrollbar::-webkit-scrollbar { 
-          width: 8px;
-          height: 6px;
+          width: 6px;
         }
         .custom-scrollbar::-webkit-scrollbar-track { 
-          background: rgba(255, 255, 255, 0.03);
+          background: rgba(255, 255, 255, 0.02);
           border-radius: 8px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb { 
-          background: rgba(255, 255, 255, 0.3); 
+          background: rgba(255, 255, 255, 0.25); 
           border-radius: 8px;
-          border: 1.5px solid transparent;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover { 
-          background: rgba(255, 255, 255, 0.5); 
-        }
-        .custom-scrollbar::-webkit-scrollbar-corner {
-          background: transparent !important;
+          background: rgba(255, 255, 255, 0.45); 
         }
       `}</style>
     </section>

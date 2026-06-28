@@ -182,13 +182,14 @@ export default function About() {
             </div>
 
             {/* Core Continuous Flowing Typography Block */}
-            <div className="flex flex-col space-y-4 pt-1 max-w-5xl items-center lg:items-start w-full">
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-snug sm:leading-tight text-center lg:text-left select-text">
+            <div className="flex flex-col space-y-5 pt-1 max-w-5xl items-center lg:items-start w-full">
+              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-snug sm:leading-tight text-center lg:text-left select-text text-balance">
                 Leading IT Solutions & Software Development Company in <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-[#1ca6db] to-blue-500 drop-shadow-[0_2px_10px_rgba(34,211,238,0.2)]">Dubai</span>
               </h3>
 
-              <p className="text-white/90 leading-relaxed text-sm md:text-base text-center lg:text-justify font-medium tracking-wide border-l-0 lg:border-l-[3px] border-cyan-400/40 lg:pl-4 md:pl-5 py-1 select-text">
+              {/* OPTIMIZED PARAGRAPH FOR FLUID TYPOGRAPHY AND CLEAN WRAPPING */}
+              <p className="text-white/95 text-justify lg:text-justify text-xs tracking-normal [word-spacing:0.04rem] leading-[1.75] xs:text-sm xs:leading-[1.8] md:text-base md:leading-[1.85] font-medium border-l-0 lg:border-l-[3px] border-cyan-400/40 lg:pl-4 py-1 select-text text-wrap-balance">
                 4Biz International is a leading IT solutions and digital transformation company in Dubai, helping businesses streamline operations, accelerate growth, and embrace innovation through advanced technology solutions. Our expertise spans software development, mobile app development, web design, ERP and CRM solutions, cloud services, cybersecurity, IT infrastructure, and digital marketing. With a client-focused approach and a team of experienced professionals, we deliver scalable, secure, and future-ready solutions tailored to meet unique business requirements. At 4Biz International, we bridge the gap between technology and business excellence, empowering organizations to thrive in an increasingly digital world.
               </p>
             </div>
