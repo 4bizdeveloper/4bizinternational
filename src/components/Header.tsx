@@ -62,12 +62,16 @@ export default function Header() {
     <>
       {/* ─── HEADER BAR ─────────────────────────────────────────────────────── */}
       {/* Sizing, height, and padding parameters are completely static (py-2.5) across all scroll states. */}
+      {/* Added inline style dynamic rule for the specific #00d3f2 border color on scroll state without layout layout-shifting */}
       <header
         className={`fixed top-0 left-0 w-full z-50 text-white transform-gpu transition-all duration-300 ease-out border-b py-2.5 will-change-[border-color,box-shadow] ${
           isSticky
-            ? 'border-white/10 shadow-lg shadow-blue-950/20'
+            ? 'shadow-lg shadow-blue-950/20'
             : 'border-transparent'
         }`}
+        style={{
+          borderBottomColor: isSticky ? '#00d3f2' : 'transparent'
+        }}
       >
         {/* Single Dynamic Background Layer: Shifts composite style smoothly without background-layer blending artifacts */}
         <div 
