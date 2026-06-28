@@ -113,9 +113,9 @@ export default function About() {
           
           {/* Left Side Content Column */}
           <div className="w-full lg:col-span-7 flex flex-col order-1 lg:order-1 items-center lg:items-start text-center lg:text-left">
-            {/* Section Sub-Tag */}
+            {/* Section Sub-Tag - Subtly increased on mobile from text-xs to text-[13px] */}
             <div className="flex items-center justify-center lg:justify-start mb-3">
-              <span className="text-xs sm:text-sm uppercase tracking-[0.3em] [word-spacing:0.35em] font-black text-white/90 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)] select-text">
+              <span className="text-[13px] sm:text-sm uppercase tracking-[0.3em] [word-spacing:0.35em] font-black text-white/90 drop-shadow-[0_0_10px_rgba(255,255,255,0.25)] select-text">
                 WE ARE
               </span>
             </div>
@@ -131,7 +131,7 @@ export default function About() {
               {/* 📱 MOBILE & TABLET VIEW */}
               <div className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] select-text pointer-events-auto w-full text-center">
                 4BIZ <br />
-                <span className="text-[0.5em] xs:text-[0.55em] sm:text-[0.42em] tracking-normal block mt-1">INTERNATIONAL LLC</span>
+                <span className="text-[0.52em] xs:text-[0.55em] sm:text-[0.42em] tracking-normal block mt-1">INTERNATIONAL LLC</span>
               </div>
 
               {/* 💻 DESKTOP VIEW: Outline Layer */}
@@ -188,17 +188,17 @@ export default function About() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-[#1ca6db] to-blue-500 drop-shadow-[0_2px_10px_rgba(34,211,238,0.2)]">Dubai</span>
               </h3>
 
-              {/* OPTIMIZED PARAGRAPH FOR FLUID TYPOGRAPHY AND CLEAN WRAPPING */}
-              <p className="text-white/95 text-justify lg:text-justify text-xs tracking-normal [word-spacing:0.04rem] leading-[1.75] xs:text-sm xs:leading-[1.8] md:text-base md:leading-[1.85] font-medium border-l-0 lg:border-l-[3px] border-cyan-400/40 lg:pl-4 py-1 select-text text-wrap-balance">
+              {/* OPTIMIZED PARAGRAPH: Increased base size slightly on tiny viewports (text-[13.5px] up from text-xs) for optimized readability */}
+              <p className="text-white/95 text-justify lg:text-justify text-[13.5px] tracking-normal [word-spacing:0.04rem] leading-[1.75] xs:text-[14.5px] xs:leading-[1.8] md:text-base md:leading-[1.85] font-medium border-l-0 lg:border-l-[3px] border-cyan-400/40 lg:pl-4 py-1 select-text text-wrap-balance">
                 4Biz International is a leading IT solutions and digital transformation company in Dubai, helping businesses streamline operations, accelerate growth, and embrace innovation through advanced technology solutions. Our expertise spans software development, mobile app development, web design, ERP and CRM solutions, cloud services, cybersecurity, IT infrastructure, and digital marketing. With a client-focused approach and a team of experienced professionals, we deliver scalable, secure, and future-ready solutions tailored to meet unique business requirements. At 4Biz International, we bridge the gap between technology and business excellence, empowering organizations to thrive in an increasingly digital world.
               </p>
             </div>
             
-            {/* CTA Button */}
+            {/* CTA Button - Enhanced tiny viewport text styling */}
             <div className="pt-6 text-center lg:text-left">
               <a 
                 href="/about" 
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border border-white/20 hover:border-white rounded-full text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase transition-all duration-300 shadow-[inset_0_0_12px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] text-white bg-white/[0.02] backdrop-blur-md group select-text"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border border-white/20 hover:border-white rounded-full text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase transition-all duration-300 shadow-[inset_0_0_12px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] text-white bg-white/[0.02] backdrop-blur-md group select-text"
               >
                 MORE ABOUT US
                 <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 ml-2 sm:ml-3 transform transition-transform duration-300 group-hover:translate-x-1.5 stroke-current" fill="none" viewBox="0 0 24 24">
@@ -288,7 +288,7 @@ export default function About() {
 
         </div>
 
-        {/* Bottom Content Row: High-Brilliance Metric Cards */}
+        {/* Bottom Content Row: High-Brilliance Metric Cards - Label size increased on mobile to text-[13px] */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 sm:gap-6 lg:gap-10 pt-10 border-t border-white/10">
           {stats.map((stat, idx) => (
             <div 
@@ -297,7 +297,7 @@ export default function About() {
             >
               <Counter value={stat.value} suffix={stat.suffix} />
               <div className="flex flex-col items-center lg:items-start space-y-1.5">
-                <span className="text-xs sm:text-sm text-white font-semibold tracking-wider max-w-[160px] text-center lg:text-left select-text">
+                <span className="text-[13px] sm:text-sm text-white font-semibold tracking-wider max-w-[160px] text-center lg:text-left select-text">
                   {stat.label}
                 </span>
                 <div className="w-10 sm:w-12 h-[2px] bg-white opacity-90 rounded-full transition-all duration-300 group-hover:w-16 sm:group-hover:w-20 shadow-[0_1px_5px_rgba(255,255,255,0.4)]" />
