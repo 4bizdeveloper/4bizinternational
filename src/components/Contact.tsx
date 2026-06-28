@@ -199,7 +199,6 @@ export default function Contact() {
         containmentIntrinsicSize: '1px 1000px',
       } as React.CSSProperties}
     >
-      {/* 90-degree Vertical Grid Boundary Split for Ultra-Modern Appearance */}
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[85vh] items-stretch grid-items-split">
         
         {/* LEFT COLUMN: FULL WHITE BACKGROUND FORM SECTION */}
@@ -405,12 +404,12 @@ export default function Contact() {
                   
                   {/* Inline Explicit Dynamic Contacts */}
                   <div className="mt-3 space-y-1.5 border-l-2 border-neutral-300 pl-3">
-                    <div className="flex items-center gap-2 text-xs font-bold text-neutral-700">
-                      <span className="text-neutral-900 text-sm"><RiPhoneLine /></span>
+                    <div className="flex items-center gap-2 text-xs font-medium text-neutral-950">
+                      <span className="text-neutral-950 text-sm"><RiPhoneLine /></span>
                       <a href="tel:+971527925100" className="hover:text-[#0c9d7d] transition-colors tracking-wide">+971 52 792 5100</a>
                     </div>
-                    <div className="flex items-center gap-2 text-xs font-bold text-neutral-700">
-                      <span className="text-neutral-900 text-sm"><RiMailLine /></span>
+                    <div className="flex items-center gap-2 text-xs font-medium text-neutral-950">
+                      <span className="text-neutral-950 text-sm"><RiMailLine /></span>
                       <a href="mailto:info@4bizinternational.com" className="hover:text-[#0c9d7d] transition-colors tracking-wide">info@4bizinternational.com</a>
                     </div>
                   </div>
@@ -455,12 +454,12 @@ export default function Contact() {
                   
                   {/* Inline Explicit Dynamic Contacts */}
                   <div className="mt-3 space-y-1.5 border-l-2 border-neutral-300 pl-3">
-                    <div className="flex items-center gap-2 text-xs font-bold text-neutral-700">
-                      <span className="text-neutral-900 text-sm"><RiPhoneLine /></span>
+                    <div className="flex items-center gap-2 text-xs font-medium text-neutral-950">
+                      <span className="text-neutral-950 text-sm"><RiPhoneLine /></span>
                       <a href="tel:+919388001524" className="hover:text-[#0c9d7d] transition-colors tracking-wide">+91 93880 01524</a>
                     </div>
-                    <div className="flex items-center gap-2 text-xs font-bold text-neutral-700">
-                      <span className="text-neutral-900 text-sm"><RiMailLine /></span>
+                    <div className="flex items-center gap-2 text-xs font-medium text-neutral-950">
+                      <span className="text-neutral-950 text-sm"><RiMailLine /></span>
                       <a href="mailto:info@4bizinternational.com" className="hover:text-[#0c9d7d] transition-colors tracking-wide">info@4bizinternational.com</a>
                     </div>
                   </div>
@@ -492,12 +491,12 @@ export default function Contact() {
                   
                   {/* Inline Explicit Dynamic Contacts */}
                   <div className="mt-3 space-y-1.5 border-l-2 border-neutral-300 pl-3">
-                    <div className="flex items-center gap-2 text-xs font-bold text-neutral-700">
-                      <span className="text-neutral-900 text-sm"><RiPhoneLine /></span>
+                    <div className="flex items-center gap-2 text-xs font-medium text-neutral-950">
+                      <span className="text-neutral-950 text-sm"><RiPhoneLine /></span>
                       <a href="tel:+919388001524" className="hover:text-[#0c9d7d] transition-colors tracking-wide">+91 93880 01524</a>
                     </div>
-                    <div className="flex items-center gap-2 text-xs font-bold text-neutral-700">
-                      <span className="text-neutral-900 text-sm"><RiMailLine /></span>
+                    <div className="flex items-center gap-2 text-xs font-medium text-neutral-950">
+                      <span className="text-neutral-950 text-sm"><RiMailLine /></span>
                       <a href="mailto:info@4bizinternational.com" className="hover:text-[#0c9d7d] transition-colors tracking-wide">info@4bizinternational.com</a>
                     </div>
                   </div>
@@ -542,7 +541,7 @@ export default function Contact() {
         .screenshot-input {
           width: 100%;
           background: #ffffff !important;
-          border: 1.5px solid #71717a !important;
+          border: 1.5px solid #000000 !important;
           padding: 0 1.5rem;
           color: #18181b !important;
           border-radius: 9999px;
@@ -577,7 +576,7 @@ export default function Contact() {
           width: 100% !important;
           height: 54px !important;
           background: #ffffff !important;
-          border: 1.5px solid #71717a !important;
+          border: 1.5px solid #000000 !important;
           border-radius: 9999px !important;
           display: flex !important;
           align-items: center !important;
@@ -622,7 +621,7 @@ export default function Contact() {
         .react-international-phone-country-selector-dropdown,
         ul.react-international-phone-country-selector-dropdown {
           background: #ffffff !important;
-          border: 1px solid #a1a1aa !important; 
+          border: 1px solid #000000 !important; 
           border-radius: 16px !important;
           box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
           padding: 6px !important;

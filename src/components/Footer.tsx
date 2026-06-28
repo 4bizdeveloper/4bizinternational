@@ -78,11 +78,11 @@ const Footer = () => {
     <footer 
       id="footer"
       ref={footerRef} 
-      className="relative z-10 mt-0 pt-16 overflow-hidden border-t border-white/10 transform-gpu backface-hidden"
+      className="relative z-10 mt-0 pt-16 overflow-hidden border-t border-[#00D3F2] transform-gpu backface-hidden"
       style={{ 
         background: 'radial-gradient(circle at 50% 15%, #001b6b 0%, #001042 50%, #000933 100%)',
         contentVisibility: 'auto', 
-        paddingBottom: 'calc(140px + env(safe-area-inset-bottom))' // Increased clear zone for floating action badges shown in image_d9b67f.jpg
+        paddingBottom: 'calc(140px + env(safe-area-inset-bottom))' // Increased clear zone for floating action badges shown in image_3121c2.jpg
       } as React.CSSProperties}
     >
       {/* Hardware Accelerated Subtle Parallax Internal Ambient Accents */}
@@ -104,7 +104,7 @@ const Footer = () => {
               {navItems.map((item) => (
                 <li key={item.label} className="w-full sm:w-auto">
                   <Link href={item.path} className="hover:text-white transition-colors duration-200 flex items-center gap-2 py-1 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white/40 group-hover:bg-cyan-400 transition-colors flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00D3F2] group-hover:bg-[#00D3F2]/80 transition-colors flex-shrink-0" />
                     <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all group-hover:after:w-full">{item.label}</span>
                   </Link>
                 </li>
@@ -130,7 +130,7 @@ const Footer = () => {
                 priority={false}
               />
             </motion.div>
-            <p className="text-white/80 text-sm md:text-base leading-relaxed font-normal border-l-2 border-cyan-500/40 pl-4 italic antialiased max-w-sm">
+            <p className="text-white/80 text-sm md:text-base leading-relaxed font-normal border-l-2 border-[#00D3F2]/40 pl-4 italic antialiased max-w-sm">
               "Engineering secure digital frontiers and redefining IT excellence for the next generation of global leaders."
             </p>
             
@@ -143,7 +143,7 @@ const Footer = () => {
                   target={link.target || undefined}
                   rel={link.target ? "noopener noreferrer" : undefined}
                   aria-label={`Follow 4Biz International on ${link.label}`}
-                  className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.02] flex items-center justify-center text-white/70 transition-all duration-300 hover:border-cyan-400/50 hover:bg-white/10 hover:text-white hover:-translate-y-1 shadow-sm hover:shadow-cyan-500/10 transform-gpu"
+                  className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.02] flex items-center justify-center text-white/70 transition-all duration-300 hover:border-[#00D3F2]/50 hover:bg-white/10 hover:text-white hover:-translate-y-1 shadow-sm hover:shadow-[#00D3F2]/10 transform-gpu"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                     <path d={link.path} />
@@ -156,13 +156,13 @@ const Footer = () => {
           {/* Core Communications Terminals */}
           <div className="lg:col-span-4 flex flex-col space-y-6">
             <h2 className="text-white/60 font-bold uppercase tracking-wider text-[11px] font-mono flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-cyan-400"></span> Digital Link & Infrastructure
+              <span className="w-1 h-1 rounded-full bg-[#00D3F2]"></span> Digital Link & Infrastructure
             </h2>
             <div className="space-y-4">
               {/* Mail Segment */}
               <div className="p-4 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group shadow-sm">
                 <span className="text-[10px] uppercase font-mono tracking-wider font-semibold bg-white/10 text-white/90 px-2 py-0.5 rounded inline-block">Mail Infrastructure</span>
-                <a href="mailto:info@4bizinternational.com" className="text-base text-white group-hover:text-cyan-400 transition-colors font-medium break-all block mt-2.5">
+                <a href="mailto:info@4bizinternational.com" className="text-base text-white group-hover:text-[#00D3F2] transition-colors font-medium break-all block mt-2.5">
                   info@4bizinternational.com
                 </a>
               </div>
@@ -171,11 +171,11 @@ const Footer = () => {
                 <span className="text-[10px] uppercase font-mono tracking-wider font-semibold bg-white/10 text-white/90 px-2 py-0.5 rounded inline-block mb-3">HQ Telecoms / WhatsApp</span>
                 <div className="flex flex-col gap-3 mt-1">
                   <div className="flex items-center gap-3 flex-wrap">
-                    <a href="https://wa.me/971527925100" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-cyan-400 transition-colors" aria-label="Contact Dubai HQ via WhatsApp">+971 52 792 5100</a>
+                    <a href="https://wa.me/971527925100" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-[#00D3F2] transition-colors" aria-label="Contact Dubai HQ via WhatsApp">+971 52 792 5100</a>
                     <span className="text-[9px] px-2 py-0.5 rounded font-mono font-bold bg-white/10 text-white/80 uppercase tracking-wide">Dubai</span>
                   </div>
                   <div className="flex items-center gap-3 flex-wrap">
-                    <a href="https://wa.me/919895717879" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-cyan-400 transition-colors" aria-label="Contact India Tech Wing via WhatsApp">+91 98957 17879</a>
+                    <a href="https://wa.me/919895717879" target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-[#00D3F2] transition-colors" aria-label="Contact India Tech Wing via WhatsApp">+91 98957 17879</a>
                     <span className="text-[9px] px-2 py-0.5 rounded font-mono font-bold bg-white/10 text-white/80 uppercase tracking-wide">India</span>
                   </div>
                 </div>
@@ -186,13 +186,13 @@ const Footer = () => {
                 href="/documents/4biz-international-company-profile.pdf"
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-between bg-white/[0.02] border border-white/5 text-white py-3.5 px-4 rounded-xl transition-all hover:bg-white/[0.05] hover:border-cyan-500/30 shadow-sm transform-gpu"
+                className="group relative flex items-center justify-between bg-white/[0.02] border border-white/5 text-white py-3.5 px-4 rounded-xl transition-all hover:bg-white/[0.05] hover:border-[#00D3F2]/30 shadow-sm transform-gpu"
               >
                 <div className="flex flex-col pr-4">
                   <span className="text-[8px] uppercase tracking-[0.15em] text-white/50 font-mono mb-0.5">Access File</span>
-                  <span className="text-[11px] font-bold uppercase tracking-[0.05em] text-white/90 group-hover:text-cyan-400 transition-colors">Our Portfolio</span>
+                  <span className="text-[11px] font-bold uppercase tracking-[0.05em] text-white/90 group-hover:text-[#00D3F2] transition-colors">Our Portfolio</span>
                 </div>
-                <RiDownloadCloud2Line className="text-xl text-white/70 group-hover:text-cyan-400 group-hover:-translate-y-0.5 transition-all duration-200" />
+                <RiDownloadCloud2Line className="text-xl text-white/70 group-hover:text-[#00D3F2] group-hover:-translate-y-0.5 transition-all duration-200" />
               </a>
             </div>
           </div>
@@ -200,13 +200,13 @@ const Footer = () => {
           {/* Regional Enterprise Hubs Map */}
           <div className="lg:col-span-4 flex flex-col space-y-6">
             <h2 className="text-white/60 font-bold uppercase tracking-wider text-[11px] font-mono flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-cyan-400"></span> Corporate Geographies
+              <span className="w-1 h-1 rounded-full bg-[#00D3F2]"></span> Corporate Geographies
             </h2>
             <div className="space-y-5 text-white/80">
               {/* Dubai Corporate Hub */}
-              <div className="flex flex-col border-l border-white/10 hover:border-cyan-500/50 pl-4 py-0.5 group transition-colors duration-300">
+              <div className="flex flex-col border-l border-white/10 hover:border-[#00D3F2]/50 pl-4 py-0.5 group transition-colors duration-300">
                 <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                  <span className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">Dubai Corporate Hub</span>
+                  <span className="text-sm font-semibold text-white group-hover:text-[#00D3F2] transition-colors">Dubai Corporate Hub</span>
                   <span className="text-[9px] font-mono font-medium bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Global HQ</span>
                 </div>
                 <p className="text-xs text-white/60 leading-relaxed font-normal group-hover:text-white/80 transition-colors">
@@ -215,9 +215,9 @@ const Footer = () => {
               </div>
 
               {/* India Tech Wing */}
-              <div className="flex flex-col border-l border-white/10 hover:border-cyan-500/50 pl-4 py-0.5 group transition-colors duration-300">
+              <div className="flex flex-col border-l border-white/10 hover:border-[#00D3F2]/50 pl-4 py-0.5 group transition-colors duration-300">
                 <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                  <span className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">India HiLite Business Park</span>
+                  <span className="text-sm font-semibold text-white group-hover:text-[#00D3F2] transition-colors">India HiLite Business Park</span>
                   <span className="text-[9px] font-mono font-medium bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Tech Wing</span>
                 </div>
                 <p className="text-xs text-white/60 leading-relaxed font-normal group-hover:text-white/80 transition-colors">
@@ -226,9 +226,9 @@ const Footer = () => {
               </div>
 
               {/* India Operations */}
-              <div className="flex flex-col border-l border-white/10 hover:border-cyan-500/50 pl-4 py-0.5 group transition-colors duration-300">
+              <div className="flex flex-col border-l border-white/10 hover:border-[#00D3F2]/50 pl-4 py-0.5 group transition-colors duration-300">
                 <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-                  <span className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">India Nadakkave Office</span>
+                  <span className="text-sm font-semibold text-white group-hover:text-[#00D3F2] transition-colors">India Nadakkave Office</span>
                   <span className="text-[9px] font-mono font-medium bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Operations</span>
                 </div>
                 <p className="text-xs text-white/60 leading-relaxed font-normal group-hover:text-white/80 transition-colors">
