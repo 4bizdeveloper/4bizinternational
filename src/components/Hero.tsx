@@ -102,10 +102,10 @@ export default function Hero() {
           >
             {/* Optimized device-specific high-performance image layer */}
             <picture className="absolute inset-0 w-full h-full block z-10">
-              <source media="(min-width: 1200px)" srcSet="/hero-desktop-1.png" width="1920" height="900" />
-              <source media="(min-width: 640px)" srcSet="/hero-tablet-1.png" width="1024" height="768" />
+              <source media="(min-width: 1200px)" srcSet="/hero-desktop-1.avif" width="1920" height="900" />
+              <source media="(min-width: 640px)" srcSet="/hero-tablet-1.avif" width="1024" height="768" />
               <img
-                src="/hero-mobile-1.png"
+                src="/hero-mobile-1.avif"
                 alt=""
                 width="390"
                 height="844"
