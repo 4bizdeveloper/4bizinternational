@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "@/app/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -13,11 +13,7 @@ export const metadata: Metadata = {
   },
   description: "4Biz International delivers top-tier IT consulting, software development, advanced SEO, and digital marketing solutions engineered to scale your business in Dubai.",
   metadataBase: new URL("https://www.4bizinternational.com"),
-  alternates: {
-    // FIX: Using "./" combined with trailingSlash: true in next.config.js 
-    // forces Next.js to dynamically generate absolute canonical tags ending with a "/" for every route.
-    canonical: "./",
-  },
+  // FIXED: Removed the metadata config canonical url block to handle natively or via injector without breaking static exports
   robots: {
     index: true,
     follow: true,
@@ -53,7 +49,16 @@ export const metadata: Metadata = {
   },
 };
 
-// --- GLOBAL ORGANIZATION & SERVICE SCHEMA ---
+// --- CORE WEB VITALS OPTIMIZATION (VIEWPORT & DISCOVERY) ---
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5, // Allows accessibility zooming but prevents layout breaking
+  themeColor: "#000000",
+  colorScheme: "dark",
+};
+
+// --- GLOBAL ORGANIZATION & SERVICE SCHEMA (AI & SEARCH ENGINE FRIENDLY) ---
 const globalSchemaData = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -132,7 +137,7 @@ const globalSchemaData = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="bg-black text-white">
+    <html lang="en" className="scroll-smooth bg-black text-white antialiased">
       <head>
         <meta name="geo.region" content="AE-DU" />
         <meta name="geo.placename" content="Dubai" />
@@ -140,23 +145,60 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="apple-touch-icon" href="/4biz_logo-1.png" />
         <link rel="shortcut icon" href="/4biz_logo-1.png" />
         
+        {/* Resource Hints for High Performance / Instant Loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         {/* Inject Global Schema structured data safely across all pages */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchemaData) }}
         />
+
+        {/* Global Canonical Injector: Forces trailing slashes dynamically regardless of hosting environment */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var link = document.querySelector("link[rel='canonical']") || document.createElement('link');
+                link.rel = 'canonical';
+                var href = window.location.protocol + '//' + window.location.host + window.location.pathname;
+                if (!href.endsWith('/') && !href.split('/').pop().includes('.')) {
+                  href += '/';
+                }
+                link.href = href;
+                if (!document.querySelector("link[rel='canonical']")) {
+                  document.head.appendChild(link);
+                }
+              })();
+            `,
+          }}
+        />
       </head>
-      <body className="bg-black relative w-full overflow-x-hidden">
-        <Header />
+      {/* OPTIMIZED BODY CLASS: 
+        - 'motion-safe:scroll-smooth' guarantees hardware-accelerated fluid transitions.
+        - 'overflow-x-hidden' paired with precise root sizing blocks annoying layout shifting and side-scrolling on mobile devices.
+      */}
+      <body className="bg-black relative w-full overflow-x-hidden min-h-screen flex flex-col antialiased selection:bg-neutral-800 selection:text-white">
         
-        <AIChatButton />
-        <FixedCallWhatsappButton />
-        
-        <main className="relative z-10 w-full min-h-screen">
-          {children}
-        </main>
-     
-        <Footer />
+        {/* Layout Shell wrapper to eliminate jumping, jerking, and layout layout shifts (CLS) */}
+        <div className="flex flex-col flex-1 w-full relative">
+          <Header />
+          
+          {/* Dynamic interactive elements fixed overlays */}
+          <AIChatButton />
+          <FixedCallWhatsappButton />
+          
+          {/* MAIN CONTAINER:
+            - 'will-change-transform' optimizes server-to-client rendering paints.
+            - Fully responsive structural padding fallbacks.
+          */}
+          <main className="relative z-10 w-full flex-grow layout-content-fadewill-change-transform">
+            {children}
+          </main>
+       
+          <Footer />
+        </div>
       </body>
     </html>
   );

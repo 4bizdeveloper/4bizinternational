@@ -6,10 +6,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Digital Growth, Marketing & Brand Experience | 4Biz International',
   description: 'Drive traffic, increase conversions, and build a memorable brand with data-driven marketing — SEO, AEO, social media, performance marketing, content, branding & video.',
+  alternates: {
+    canonical: 'https://www.4bizinternational.com/services/digital-growth-marketing-brand-experience/',
+  },
   openGraph: {
     title: 'Digital Growth, Marketing & Brand Experience | 4Biz International',
     description: 'Drive traffic, increase conversions, and build a memorable brand with data-driven marketing.',
-    url: 'https://4bizinternational.vercel.app/services/digital-growth-marketing-brand',
+    url: 'https://www.4bizinternational.com/services/digital-growth-marketing-brand-experience/',
     type: 'website',
   },
 };

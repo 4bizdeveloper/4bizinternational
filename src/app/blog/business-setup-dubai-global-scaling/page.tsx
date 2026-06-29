@@ -1,89 +1,118 @@
-"use client";
-
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { RiCalendarLine, RiTimeLine, RiBuilding4Line, RiShieldFlashLine, RiGlobalLine } from 'react-icons/ri';
+import type { Metadata } from 'next';
+
+const post = {
+  title: "Ultimate Guide to Business Setup in Dubai 2026 – 4BIZ",
+  description: "Learn how to set up your business in Dubai and scale globally from the UAE in 2026. Expert guidance from 4BIZ International — your trusted IT & business partner.",
+  url: "https://www.4bizinternational.com/blog/business-setup-dubai-global-scaling/",
+  date: "2026-06-08",
+};
+
+// Next.js Server-Level & Static-Export Compliant Metadata
+export const metadata: Metadata = {
+  title: post.title,
+  description: post.description,
+  alternates: {
+    canonical: post.url,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: post.title,
+    description: post.description,
+    url: post.url,
+    type: 'article',
+    publishedTime: post.date,
+    modifiedTime: '2026-06-09',
+    authors: ['4Biz International'],
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200',
+        width: 1200,
+        height: 630,
+        alt: post.title,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: post.title,
+    description: post.description,
+    images: ['https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200'],
+  },
+};
 
 export default function BlogPostDetail() {
-  const post = {
-    title: "Ultimate Guide to Business Setup in Dubai: Scaling Globally from UAE in 2026",
-    description: "Navigate corporate tax laws, mainland vs free zone licensing, and optimize your international operational frameworks with 4Biz experts.",
-    url: "https://new.4bizinternational.com/blog/business-setup-dubai-global-scaling",
-    date: "2026-06-08",
+  // Schema.org structured data for elite search engine and AI crawling
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.description,
+    "datePublished": post.date,
+    "dateModified": "2026-06-09",
+    "mainEntityOfPage": post.url,
+    "author": { 
+      "@type": "Organization", 
+      "name": "4Biz International",
+      "url": "https://www.4bizinternational.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "4Biz International",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.4bizinternational.com/4biz_logo-1.png"
+      }
+    }
   };
 
   return (
     <>
-      {/* ─── NEXT.JS HEADER COMPLIANT METADATA ELEMENTS ─── */}
-      <title>{post.title}</title>
-      <meta name="description" content={post.description} />
-      <link rel="canonical" href={post.url} />
-      <meta name="robots" content="index, follow" />
-      
-      {/* Social Meta Tags */}
-      <meta property="og:title" content={post.title} />
-      <meta property="og:description" content={post.description} />
-      <meta property="og:url" content={post.url} />
-      <meta property="og:type" content="article" />
-      <meta property="og:image" content="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200" />
-      <meta name="twitter:card" content="summary_large_image" />
-
-      {/* SEO Schema Injection */}
+      {/* Inject JSON-LD directly into the document head at server level */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": post.title,
-            "description": post.description,
-            "datePublished": post.date,
-            "dateModified": "2026-06-09",
-            "author": { 
-              "@type": "Organization", 
-              "name": "4Biz International",
-              "url": "https://new.4bizinternational.com"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "4Biz International",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://new.4bizinternational.com/4biz_logo-1.png"
-              }
-            }
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ─── MAIN LAYOUT BLOCK ─── */}
       <main 
-        className="min-h-screen text-slate-200 pt-40 pb-24 px-4 sm:px-8 lg:px-16 selection:bg-blue-600 selection:text-white bg-no-repeat bg-cover"
+        className="min-h-screen text-slate-200 pt-32 md:pt-40 pb-24 px-4 sm:px-8 lg:px-16 selection:bg-blue-600 selection:text-white bg-no-repeat bg-cover scroll-smooth"
         style={{ 
           background: 'radial-gradient(circle at center, #0f3178 0%, #0a204e 50%, #061535 100%)',
           backgroundAttachment: 'fixed'
         }}
       >
-        <article className="max-w-5xl mx-auto">
+        <article className="max-w-5xl mx-auto will-change-transform">
           
           {/* Header Section */}
-          <header className="mb-14 text-center max-w-4xl mx-auto">
-            <span className="text-blue-400 font-semibold uppercase tracking-[0.25em] text-xs mb-4 block">Business Intelligence</span>
+          <header className="mb-14 text-center max-w-4xl mx-auto animate-fade-in">
+            <span className="text-blue-400 font-semibold uppercase tracking-[0.25em] text-xs mb-4 block">
+              Business Intelligence
+            </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-8 tracking-tight balance">
               {post.title}
             </h1>
             <div className="flex items-center justify-center gap-6 text-xs sm:text-sm text-slate-300 border-y border-slate-700/40 py-4 max-w-xl mx-auto">
-              <div className="flex items-center gap-2"><RiCalendarLine className="text-blue-400 text-base" /> {post.date}</div>
+              <div className="flex items-center gap-2">
+                <RiCalendarLine className="text-blue-400 text-base" /> 
+                {post.date}
+              </div>
               <div className="w-1.5 h-1.5 rounded-full bg-slate-700" />
-              <div className="flex items-center gap-2"><RiTimeLine className="text-blue-400 text-base" /> 12 min read</div>
+              <div className="flex items-center gap-2">
+                <RiTimeLine className="text-blue-400 text-base" /> 
+                12 min read
+              </div>
             </div>
           </header>
 
           {/* Main Body Grid Arrangement */}
           <div className="prose prose-invert max-w-none text-slate-200 text-sm sm:text-base md:text-lg space-y-12 leading-relaxed">
             
-            {/* Intro Grid: Left Text, Right Short/Concise Image */}
+            {/* Intro Grid */}
             <div className="max-w-4xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
               <div className="flex-1 space-y-6">
                 <p className="text-lg sm:text-xl text-white font-light leading-relaxed mb-0">
@@ -94,7 +123,7 @@ export default function BlogPostDetail() {
                 </p>
               </div>
               
-              {/* Refactored First Image: Short, concise layout on the right side */}
+              {/* Rigid Aspect Ratio prevents Layout Shift (Jumping Effect) */}
               <div className="w-full lg:w-[340px] shrink-0">
                 <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden border border-slate-700/50 shadow-[0_20px_50px_-25px_rgba(59,130,246,0.3)]">
                   <Image 
@@ -102,14 +131,15 @@ export default function BlogPostDetail() {
                     alt="Modern architectural glass highrises in the Dubai corporate commercial hub."
                     fill
                     priority
-                    className="object-cover object-center scale-[1.01]"
+                    sizes="(max-width: 1024px) 100vw, 340px"
+                    className="object-cover object-center scale-[1.01] transition-transform duration-500 hover:scale-105"
                   />
                 </div>
                 <span className="text-[11px] text-slate-400 mt-2 block text-center italic">Fig 1. Dubai Commercial Innovation District</span>
               </div>
             </div>
 
-            {/* ─── SECTION 1: SIDE-BY-SIDE INTERACTIVE CARD STYLE ─── */}
+            {/* ─── SECTION 1 ─── */}
             <div className="max-w-4xl mx-auto pt-4">
               <h2 className="text-2xl sm:text-3xl font-bold text-blue-400 tracking-tight mb-6 flex items-center gap-3">
                 <span className="text-slate-400 font-mono text-xl sm:text-2xl">01/</span> 
@@ -142,7 +172,7 @@ export default function BlogPostDetail() {
               </div>
             </div>
 
-            {/* Concise Stats Ribbon */}
+            {/* Metrics Ribbon */}
             <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 my-12">
               {[
                 { metric: '100%', label: 'Foreign Ownership' },
@@ -156,7 +186,7 @@ export default function BlogPostDetail() {
               ))}
             </div>
 
-            {/* ─── SECTION 2: CONCISE MODERN WRAP/FLOAT LAYOUT ─── */}
+            {/* ─── SECTION 2 ─── */}
             <div className="max-w-4xl mx-auto pt-4">
               <h2 className="text-2xl sm:text-3xl font-bold text-blue-400 tracking-tight mb-8 flex items-center gap-3">
                 <span className="text-slate-400 font-mono text-xl sm:text-2xl">02/</span> 
@@ -164,7 +194,6 @@ export default function BlogPostDetail() {
               </h2>
 
               <div className="flex flex-col lg:flex-row gap-10 items-start">
-                {/* Content Block */}
                 <div className="flex-1 space-y-6 order-2 lg:order-1">
                   <p className="text-base font-light text-slate-200">
                     To build regulatory resilience across newly engineered international brackets, tech corporations must follow clear, structured compliance checkpoints during asset deployment steps:
@@ -187,7 +216,6 @@ export default function BlogPostDetail() {
                   </ul>
                 </div>
 
-                {/* Concise Image Box */}
                 <div className="w-full lg:w-[340px] shrink-0 order-1 lg:order-2">
                   <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden border border-slate-700/50 shadow-lg">
                     <Image 
@@ -195,7 +223,8 @@ export default function BlogPostDetail() {
                       alt="Corporate meeting reviewing strategic structural development files."
                       fill
                       loading="lazy"
-                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 340px"
+                      className="object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
                   <span className="text-[11px] text-slate-400 mt-2 block text-center italic">Fig 2. Compliance Architecture Validation</span>
@@ -203,7 +232,7 @@ export default function BlogPostDetail() {
               </div>
             </div>
 
-            {/* Intermediate Contextual Pillar */}
+            {/* Contextual Pillar */}
             <div className="max-w-3xl mx-auto bg-slate-900/30 border-l-2 border-blue-500 p-6 my-8 rounded-r-xl backdrop-blur-sm">
               <h4 className="text-white font-bold mb-2 text-base">Navigating the Evolving 9% Corporate Tax Architecture</h4>
               <p className="text-sm text-slate-300 leading-relaxed m-0">
@@ -211,7 +240,7 @@ export default function BlogPostDetail() {
               </p>
             </div>
 
-            {/* ─── SECTION 3: ALTERNATING ASYMMETRICAL WRAP ─── */}
+            {/* ─── SECTION 3 ─── */}
             <div className="max-w-4xl mx-auto pt-4">
               <h2 className="text-2xl sm:text-3xl font-bold text-blue-400 tracking-tight mb-8 flex items-center gap-3">
                 <span className="text-slate-400 font-mono text-xl sm:text-2xl">03/</span> 
@@ -219,7 +248,6 @@ export default function BlogPostDetail() {
               </h2>
 
               <div className="flex flex-col lg:flex-row gap-10 items-start">
-                {/* Concise Image Box - Upgraded third image to high-end premium Dubai tech ecosystem asset */}
                 <div className="w-full lg:w-[340px] shrink-0">
                   <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden border border-slate-700/50 shadow-lg">
                     <Image 
@@ -227,13 +255,13 @@ export default function BlogPostDetail() {
                       alt="Dubai downtown modern business towers reflecting global enterprise growth."
                       fill
                       loading="lazy"
-                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 340px"
+                      className="object-cover transition-transform duration-500 hover:scale-105"
                     />
                   </div>
                   <span className="text-[11px] text-slate-400 mt-2 block text-center italic">Fig 3. Cross-Border Asset Integration Metrics</span>
                 </div>
 
-                {/* Content Block */}
                 <div className="flex-1 space-y-4">
                   <p className="m-0">
                     For scaling IT service providers and engineering-heavy product businesses, creating a synchronized operational bridge between India and Dubai offers a major competitive edge. This structure lets companies combine India’s immense engineering and software development capabilities with Dubai's highly favorable tax frameworks and direct access to global capital networks.
@@ -245,9 +273,9 @@ export default function BlogPostDetail() {
               </div>
             </div>
 
-            {/* ─── CONCLUSION / CONVERSION AREA ─── */}
+            {/* ─── CONCLUSION / CTA AREA ─── */}
             <div className="max-w-3xl mx-auto pt-8 border-t border-slate-800">
-              <div className="bg-gradient-to-br from-slate-900/60 to-slate-950/60 border border-slate-700/40 p-8 rounded-2xl relative overflow-hidden shadow-2xl backdrop-blur-sm">
+              <div className="bg-gradient-to-br from-slate-900/60 to-slate-950/60 border border-slate-700/40 p-8 rounded-2xl relative overflow-hidden shadow-2xl backdrop-blur-sm transform transition-all duration-300 hover:shadow-blue-500/5">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
                 <div className="flex items-center gap-2 text-blue-400 text-xs font-bold uppercase tracking-widest mb-3">
                   <RiShieldFlashLine className="text-base" /> Corporate Protection Strategy

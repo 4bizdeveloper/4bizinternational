@@ -6,10 +6,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Enterprise Business Applications (ERP & CRM) | 4Biz International',
   description: 'Streamline operations and boost customer engagement with integrated ERP & CRM platforms — Microsoft Dynamics 365, Odoo, ERPNext, custom development & sales automation tailored to your business.',
+  alternates: {
+    canonical: 'https://www.4bizinternational.com/services/enterprise-business-applications-erp-crm/',
+  },
   openGraph: {
     title: 'Enterprise Business Applications (ERP & CRM) | 4Biz International',
     description: 'Streamline operations and boost customer engagement with integrated ERP & CRM platforms — Microsoft Dynamics 365, Odoo, ERPNext, custom development & sales automation tailored to your business.',
-    url: 'https://4bizinternational.vercel.app/services/enterprise-applications',
+    url: 'https://www.4bizinternational.com/services/enterprise-business-applications-erp-crm/',
     type: 'website',
   },
 };

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "4Biz International Blog | Business & IT Insights Dubai",
   description: "Read the latest articles from 4Biz International on IT consulting, digital marketing, cyber security, business setup in Dubai, and global tech trends. Updated regularly.",
   alternates: {
-    canonical: "https://new.4bizinternational.com/blog",
+    canonical: "https://new.4bizinternational.com/blog/",
   },
   robots: {
     index: true,

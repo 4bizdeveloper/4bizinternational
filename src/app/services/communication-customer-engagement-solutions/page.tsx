@@ -6,10 +6,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Communication & Customer Engagement Solutions | 4Biz International',
   description: 'Connect with your audience through intelligent communication platforms. Email marketing, SMS, WhatsApp Business, marketing automation & lead nurturing to boost engagement and retention.',
+  alternates: {
+    canonical: 'https://www.4bizinternational.com/services/communication-customer-engagement-solutions/',
+  },
   openGraph: {
     title: 'Communication & Customer Engagement Solutions | 4Biz International',
     description: 'Connect with your audience through intelligent communication platforms. Email marketing, SMS, WhatsApp Business, marketing automation & lead nurturing to boost engagement and retention.',
-    url: 'https://4bizinternational.vercel.app/services/communication',
+    url: 'https://www.4bizinternational.com/services/communication-customer-engagement-solutions/',
     type: 'website',
   },
 };

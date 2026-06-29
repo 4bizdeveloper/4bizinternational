@@ -1,7 +1,15 @@
 import React, { memo } from 'react';
 import Image from 'next/image';
+import { Metadata } from 'next';
 import Contact from '@/components/Contact';
 import ClientAnimationWrapper from "./ClientAnimationWrapper";
+
+// Canonical URL configuration for Next.js App Router
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.4bizinternational.com/clients/',
+  },
+};
 
 // Data strictly kept on the server to reduce bundle sizes and speed up delivery
 const ALL_CLIENTS = [

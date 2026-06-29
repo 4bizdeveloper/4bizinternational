@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "4Biz International Services | IT, Digital Marketing & Cyber Security Dubai",
   description: "Explore 4Biz International's full range of services — IT consulting, software development, digital marketing, cyber security, cloud hosting & more. Serving Dubai & globally.",
   alternates: {
-    canonical: "/services", // Replace with your exact canonical URL domain structure if absolute
+    canonical: "https://www.4bizinternational.com/services/", 
   },
   openGraph: {
     title: "4Biz International Services | IT, Digital Marketing & Cyber Security Dubai",

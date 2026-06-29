@@ -6,10 +6,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Cybersecurity & Digital Protection Services | 4Biz International',
   description: 'Protect your organisation from evolving cyber threats with 4Biz International\'s cybersecurity services — penetration testing, vulnerability assessments, 24/7 security monitoring, endpoint protection, and compliance readiness for GDPR, ISO 27001, and more.',
+  alternates: {
+    canonical: 'https://www.4bizinternational.com/services/cybersecurity-digital-protection/',
+  },
   openGraph: {
     title: 'Cybersecurity & Digital Protection Services | 4Biz International',
     description: 'Protect your organisation from evolving cyber threats with proactive security assessments, continuous monitoring, and advanced protection solutions.',
-    url: 'https://4bizinternational.vercel.app/services/cybersecurity',
+    url: 'https://www.4bizinternational.com/services/cybersecurity-digital-protection/',
     type: 'website',
   },
 };

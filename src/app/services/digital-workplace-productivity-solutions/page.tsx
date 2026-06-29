@@ -12,14 +12,17 @@ import {
   Workflow 
 } from 'lucide-react';
 
-// Ultra-optimized SEO Meta Tags (Preserved perfectly)
+// Ultra-optimized SEO Meta Tags (Preserved perfectly with added canonical URL)
 export const metadata: Metadata = {
   title: 'Digital Workplace & Productivity Solutions | 4Biz International',
   description: 'Set up Microsoft 365, Google Workspace, Zoho, business email & workflow automation — secure, cloud-based digital workplace solutions with zero-downtime migration and 24/7 support.',
+  alternates: {
+    canonical: 'https://www.4bizinternational.com/services/digital-workplace-productivity-solutions/',
+  },
   openGraph: {
     title: 'Digital Workplace & Productivity Solutions | 4Biz International',
     description: 'Empower hybrid teams with seamless cloud environments and high-performance workflow automation.',
-    url: 'https://4bizinternational.vercel.app/services/digital-workplace',
+    url: 'https://www.4bizinternational.com/services/digital-workplace-productivity-solutions/',
     type: 'website',
   },
 };

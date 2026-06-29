@@ -9,6 +9,9 @@ import Contact from '@/components/Contact';
 export const metadata: Metadata = {
   title: 'Contact 4Biz International | IT Consulting Dubai',
   description: 'Get in touch with 4Biz International. Contact our Dubai & global offices for IT consulting, software development, digital marketing & cyber security services.',
+  alternates: {
+    canonical: 'https://www.4bizinternational.com/contact/',
+  },
   robots: {
     index: true,
     follow: true,
@@ -24,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact 4Biz International | IT Consulting Dubai',
     description: 'Get in touch with 4Biz International. Contact our Dubai & global offices for IT consulting, software development, digital marketing & cyber security services.',
-    url: 'https://4bizinternational.vercel.app/contact',
+    url: 'https://4bizinternational.com/contact',
     type: 'website',
     siteName: '4Biz International',
     locale: 'en_US',
@@ -47,8 +50,8 @@ export default function ContactPage() {
     'mainEntity': {
       '@type': 'Organization',
       'name': '4Biz International',
-      'url': 'https://4bizinternational.vercel.app',
-      'logo': 'https://4bizinternational.vercel.app/logo.png',
+      'url': 'https://4bizinternational.com',
+      'logo': 'https://4bizinternational.com/logo.png',
       'description': 'Global provider for IT consulting, software development, digital marketing & cyber security services.',
       'address': {
         '@type': 'PostalAddress',

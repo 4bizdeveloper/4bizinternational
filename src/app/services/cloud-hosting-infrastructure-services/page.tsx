@@ -6,10 +6,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Cloud, Hosting & Infrastructure Services | 4Biz International',
   description: 'Build a secure, scalable digital foundation with enterprise-grade hosting, cloud infrastructure & managed IT services. Domain registration, VPS, AWS, Azure, backup & disaster recovery.',
+  alternates: {
+    canonical: 'https://www.4bizinternational.com/services/cloud-hosting-infrastructure-services/',
+  },
   openGraph: {
     title: 'Cloud, Hosting & Infrastructure Services | 4Biz International',
     description: 'Build a secure, scalable digital foundation with enterprise-grade hosting, cloud infrastructure & managed IT services.',
-    url: 'https://4bizinternational.vercel.app/services/infrastructure',
+    url: 'https://www.4bizinternational.com/services/cloud-hosting-infrastructure-services/',
     type: 'website',
   },
 };

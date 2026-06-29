@@ -6,10 +6,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Web, Mobile & Commerce Solutions | 4Biz International',
   description: 'Build scalable websites, mobile apps & eCommerce platforms designed for performance and growth. UI/UX design, web & mobile app development, CMS, PWAs & payment gateway integration.',
+    alternates: {
+    canonical: 'https://www.4bizinternational.com/services/web-mobile-commerce-solutions/',
+  },
   openGraph: {
     title: 'Web, Mobile & Commerce Solutions | 4Biz International',
     description: 'Build scalable websites, mobile apps & eCommerce platforms designed for performance and growth. UI/UX design, web & mobile app development, CMS, PWAs & payment gateway integration.',
-    url: 'https://4bizinternational.vercel.app/services/web-mobile-commerce',
+    url: 'https://www.4bizinternational.com/services/web-mobile-commerce-solutions/',
     type: 'website',
   },
 };
