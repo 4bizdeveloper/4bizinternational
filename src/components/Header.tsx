@@ -149,7 +149,7 @@ export default function Header() {
           <div className="flex justify-between items-center py-5 sm:py-7 flex-shrink-0 gap-4">
             <div className="relative w-24 h-12 sm:w-28 sm:h-14 flex items-center justify-center">
               <Image
-                src="/4biz_logo-1.svg"
+                src="/4biz_logo-1.png"
                 alt="4biz Logo"
                 fill
                 sizes="(max-width: 640px) 96px, 112px"
