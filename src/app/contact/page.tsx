@@ -8,9 +8,6 @@ import Contact from '@/components/Contact';
 export const metadata: Metadata = {
   title: 'Contact 4Biz International | IT Consulting Dubai',
   description: 'Get in touch with 4Biz International. Contact our Dubai & global offices for IT consulting, software development, digital marketing & cyber security services.',
-  alternates: {
-    canonical: 'https://4bizinternational.vercel.app/contact', // Prevents duplicate content issues
-  },
   robots: {
     index: true,
     follow: true,

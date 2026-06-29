@@ -5,9 +5,6 @@ import AboutClientView from './AboutClientView';
 export const metadata: Metadata = {
   title: "About 4Biz International | Our Story, Mission & Vision",
   description: "Learn about 4Biz International — a global IT company with 16+ years of experience, 1000+ projects delivered, and offices in Dubai & India. Meet our team.",
-  alternates: {
-    canonical: 'https://4bizinternational.com/about', // Adjust to your production URL configuration
-  },
   openGraph: {
     title: "About 4Biz International | Our Story, Mission & Vision",
     description: "Learn about 4Biz International — a global IT company with 16+ years of experience, 1000+ projects delivered, and offices in Dubai & India. Meet our team.",

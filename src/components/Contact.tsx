@@ -199,7 +199,10 @@ export default function Contact() {
         containmentIntrinsicSize: '1px 1000px',
       } as React.CSSProperties}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[85vh] items-stretch grid-items-split">
+      {/* Perfect vertical 90-degree vector grid separator line using an absolute layer */}
+      <div className="hidden lg:block absolute top-0 bottom-0 left-[50%] xl:left-[58.333333%] w-[1px] bg-neutral-200 z-10" />
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[85vh] items-stretch relative">
         
         {/* LEFT COLUMN: FULL WHITE BACKGROUND FORM SECTION */}
         <div className="lg:col-span-6 xl:col-span-7 bg-white py-16 px-6 sm:px-12 lg:px-16 xl:px-24 flex flex-col justify-center transition-all duration-300">
@@ -366,8 +369,8 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: MODULAR SLATE COLOR CONTAINER FOR BRANCH OFFICES WITH PERFECT 90-DEGREE BORDER VERTICALLY */}
-        <div className="lg:col-span-6 xl:col-span-5 bg-slate-50 border-t lg:border-t-0 lg:border-l border-neutral-200 py-16 px-6 sm:px-12 lg:px-14 xl:px-16 flex flex-col justify-center transition-all duration-300">
+        {/* RIGHT COLUMN: MODULAR SLATE COLOR CONTAINER FOR BRANCH OFFICES */}
+        <div className="lg:col-span-6 xl:col-span-5 bg-slate-50 border-t lg:border-t-0 py-16 px-6 sm:px-12 lg:px-14 xl:px-16 flex flex-col justify-center transition-all duration-300">
           <div className="w-full max-w-xl mx-auto space-y-10">
             <div>
               <div className="flex items-center gap-2 mb-1">
@@ -525,16 +528,9 @@ export default function Contact() {
       </div>
 
       <style jsx global>{`
-        /* Avoid jumping & layout layout shifts */
+        /* Avoid jumping & layout shifts */
         html {
           scroll-behavior: smooth;
-        }
-
-        /* Perfectly vertical 90-degree vector grid separator line */
-        @media (min-width: 1024px) {
-          .grid-items-split {
-            align-items: stretch !important;
-          }
         }
 
         /* Fully rounded crisp inputs with updated dark high contrast borders */

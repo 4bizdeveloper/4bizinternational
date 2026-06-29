@@ -28,7 +28,6 @@ export default function BlogsLandingPage() {
       {/* ─── NEXT.JS HEADER COMPLIANT METADATA ELEMENTS ─── */}
       <title>{pageMeta.title}</title>
       <meta name="description" content={pageMeta.description} />
-      <link rel="canonical" href={pageMeta.url} />
       <meta name="robots" content="index, follow" />
 
       {/* Social Graphs (Open Graph / Facebook / LinkedIn / X) */}
