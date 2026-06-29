@@ -7,9 +7,9 @@ import { RiCalendarLine, RiTimeLine, RiArrowRightUpLine } from 'react-icons/ri';
 
 export default function BlogsLandingPage() {
   const pageMeta = {
-    title: "Global Business Insights & Market Analysis | 4Biz International",
-    description: "Expert corporate perspectives on setting up business operations in Dubai, international tax compliance strategies, and dual-jurisdiction operational scaling frameworks.",
-    url: "https://new.4bizinternational.com/blogs",
+    title: "4Biz International Blog | Business & IT Insights Dubai",
+    description: "Read the latest articles from 4Biz International on IT consulting, digital marketing, cyber security, business setup in Dubai, and global tech trends. Updated regularly.",
+    url: "https://new.4bizinternational.com/blog",
   };
 
   // Preserved structural data model with requested unsplash thumbnail

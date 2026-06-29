@@ -14,7 +14,9 @@ export const metadata: Metadata = {
   description: "4Biz International delivers top-tier IT consulting, software development, advanced SEO, and digital marketing solutions engineered to scale your business in Dubai.",
   metadataBase: new URL("https://www.4bizinternational.com"),
   alternates: {
-    canonical: "./",
+    // This instructs Next.js to append the sub-page path to this exact base domain.
+    // When paired with 'trailingSlash: true' in next.config.ts, Next.js generates absolute canonical tags with slashes.
+    canonical: "https://www.4bizinternational.com/",
   },
   robots: {
     index: true,
