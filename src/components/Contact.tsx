@@ -161,7 +161,7 @@ export default function Contact() {
     payload.countryCode = (countryCode || 'ae').toUpperCase(); 
 
     try {
-      const response = await fetch('./send-mail.php', {
+      const response = await fetch('/api/send-mail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -559,6 +559,17 @@ export default function Contact() {
           height: 120px !important;
           padding-top: 16px !important;
           border-radius: 24px !important;
+        }
+
+        /* FORCE AUTOFILL OVERRIDES TO STAY CLEAN WHITE AND UNIQUE TEXT STYLE */
+        .screenshot-input:-webkit-autofill,
+        .screenshot-input:-webkit-autofill:hover, 
+        .screenshot-input:-webkit-autofill:focus,
+        .screenshot-input:-webkit-autofill:active {
+          -webkit-text-fill-color: #18181b !important;
+          -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+          box-shadow: 0 0 0 1000px #ffffff inset !important;
+          transition: background-color 5000s ease-in-out 0s;
         }
         
         /* Dropdown wrapper positioning configuration */
