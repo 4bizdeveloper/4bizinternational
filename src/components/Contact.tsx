@@ -299,7 +299,7 @@ export default function Contact() {
 
                 {/* Message Details */}
                 <div className="flex flex-col">
-                  <textarea name="message" placeholder="Your Message" className="screenshot-input h-28 resize-none" />
+                  <textarea name="message" placeholder="Your Message (optional)" className="screenshot-input h-28 resize-none" />
                 </div>
 
                 {/* Submit Button */}
