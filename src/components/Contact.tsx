@@ -212,7 +212,7 @@ export default function Contact() {
                 CONTACT US
               </h3>
               <p className="text-sm font-semibold mt-3 text-neutral-900 tracking-wide">
-                Develop web services and mobile applications on your demand. Let's do this.
+                Drive digital growth with expert IT solutions. Let us scale your business.
               </p>
             </div>
 
