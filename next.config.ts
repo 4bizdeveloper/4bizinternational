@@ -3,15 +3,12 @@ import type { NextConfig } from 'next';
 import path from 'path';
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  
-  // --- SEO & STATIC EXPORT ROUTING OPTIMIZATION ---
-  // Forces Next.js to export paths as `/about/index.html` instead of `/about.html`.
-  // This matches your canonical URLs and prevents search engines from seeing non-canonical mismatches.
+  // --- SEO & ROUTING OPTIMIZATION ---
   trailingSlash: true,
 
   images: {
-    unoptimized: true,
+    // CHANGED TO FALSE: This enables automatic image resizing and WebP/AVIF generation on Vercel
+    unoptimized: false, 
     remotePatterns: [
       {
         protocol: 'https',
@@ -21,7 +18,6 @@ const nextConfig: NextConfig = {
   },
   devIndicators: false,
   turbopack: {
-    // This creates an absolute path to your project folder
     root: path.resolve(__dirname),
   },
 };
