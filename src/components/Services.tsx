@@ -412,25 +412,35 @@ export default function Services() {
               onTouchEnd={onTouchEnd}
               className="content-card flex-1 rounded-[1.25rem] sm:rounded-[1.5rem] lg:rounded-[2rem] p-5 sm:p-6 md:p-8 lg:p-10 text-white shadow-[0_0_30px_rgba(0,210,241,0.15)] flex flex-col relative overflow-hidden transition-all duration-300 ease-out border border-[#00D2F1]/60 transform-gpu touch-pan-y"
             >
-              <div className="absolute inset-0 z-0 select-none pointer-events-none transform-gpu">
-                <Image
-                  src={currentService.backgroundImage}
-                  alt={currentService.seoAlt}
-                  fill
-                  sizes="(max-w-1024px) 100vw, 60vw"
-                  className="object-cover scale-100 transition-transform duration-700"
-                  priority
-                />
-                <div className="absolute inset-0 bg-[#050a1d]/55" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#04091a]/70 via-[#04091a]/30 to-[#04091a]/70" />
+              {/* FIXED & RESPONSIVE: Preloaded instantly toggled images */}
+              <div className="absolute inset-0 z-0 select-none pointer-events-none transform-gpu w-full h-full">
+                {servicesData.map((service, index) => (
+                  <div
+                    key={service.id}
+                    className={`absolute inset-0 w-full h-full transition-opacity duration-0 ${
+                      index === activeIndex ? "opacity-100 visible" : "opacity-0 invisible"
+                    }`}
+                  >
+                    <Image
+                      src={service.backgroundImage}
+                      alt={service.seoAlt}
+                      fill
+                      sizes="(max-w-640px) 100vw, (max-w-1024px) 80vw, 60vw"
+                      className="object-cover object-center w-full h-full"
+                      priority={index === activeIndex || index === 0}
+                    />
+                  </div>
+                ))}
+                {/* Overlays placed consistently over all backgrounds */}
+                <div className="absolute inset-0 bg-[#050a1d]/55 z-10 w-full h-full" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#04091a]/70 via-[#04091a]/30 to-[#04091a]/70 z-10 w-full h-full" />
               </div>
 
-              <div className="flex-1 flex flex-col justify-between z-10 relative space-y-6 md:space-y-8 h-full" style={{ isolation: "isolate" }}>
+              <div className="flex-1 flex flex-col justify-between z-20 relative space-y-6 md:space-y-8 h-full" style={{ isolation: "isolate" }}>
                 
                 <div className="space-y-6 md:space-y-8">
                   {/* Headers / Brand Copy */}
                   <div className="w-full flex flex-col text-left">
-                    {/* Synchronized font style with the description for complete uniformity */}
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-wide mb-3 leading-snug text-white seo-text-shadow-heavy">
                       {currentService.subtitle}
                     </h3>
@@ -449,7 +459,6 @@ export default function Services() {
                         <span className="flex items-center justify-center text-white transition-transform duration-200 group-hover/item:translate-x-1 shrink-0">
                           <ArrowRight size={16} strokeWidth={2} className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]" />
                         </span>
-                        {/* Match font-medium and style perfectly with the master description */}
                         <span className="cursor-default text-left font-medium text-sm sm:text-base text-white group-hover/item:text-slate-200 tracking-wide transition-colors duration-150 seo-text-shadow-medium">
                           {point}
                         </span>
