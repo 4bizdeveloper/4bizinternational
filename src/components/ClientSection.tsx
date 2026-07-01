@@ -18,7 +18,7 @@ const ALL_CLIENTS = [
   { id: 'al-rostamani', src: '/client-logos/al-rostamani.svg', alt: 'Al Rostamani Logo' },
   { id: 'beetroot', src: '/client-logos/beetroot.png', alt: 'Beetroot Logo' },
   { id: 'blueberry-media', src: '/client-logos/blueberry-media.webp', alt: 'Blueberry Media Logo' },
-  { id: 'ramada-group', src: '/client-logos/ramada-group.png', alt: 'Ramada Group Logo' },
+  { id: 'ramada-group', src: '/client-logos/ramada-logo.png', alt: 'Ramada Group Logo' },
   { id: 'apple-international-school', src: '/client-logos/apple-international-school.png', alt: 'Apple International School Logo' },
   { id: 'fmredxb', src: '/client-logos/fmredxb.png', alt: 'FMREDXB Logo' },
   { id: 'gulf-film', src: '/client-logos/gulf-film-llc.png', alt: 'Gulf Film LLC Logo' },
