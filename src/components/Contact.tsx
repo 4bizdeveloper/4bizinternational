@@ -382,7 +382,7 @@ export default function Contact() {
               </h3>
             </div>
 
-            {/* Vertical Layout Panel */}
+            {/* Structured Vertical Layout Grid */}
             <div className="w-full space-y-12 block text-left items-start">
               
               {/* REGION SECTION 1: UAE */}
@@ -397,7 +397,8 @@ export default function Contact() {
                   <span className="text-xs font-black uppercase tracking-widest text-neutral-900 block">United Arab Emirates</span>
                 </div>
 
-                <div className="group w-full block text-left">
+                {/* Symmetrical Left Padding Container */}
+                <div className="group w-full block text-left pl-[32px]">
                   <h4 className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-[#0c9d7d] block">
                     Dubai Corporate Hub
                   </h4>
@@ -417,7 +418,7 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-center gap-3 mt-5 w-full justify-start">
-                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
+                    <a href="https://maps.app.goo.gl/zz1z6RrXVv2vGMMt5" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiMapPinLine />
                     </a>
                     <a href={`https://wa.me/971527925100?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-white hover:bg-emerald-600 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
@@ -445,8 +446,8 @@ export default function Contact() {
                   <span className="text-xs font-black uppercase tracking-widest text-neutral-900 block">India</span>
                 </div>
 
-                {/* India HQ Facility 1 */}
-                <div className="group w-full block text-left">
+                {/* India HQ Facility 1 - Symmetrical Left Padding Container */}
+                <div className="group w-full block text-left pl-[32px]">
                   <h4 className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-[#0c9d7d] block">
                     India HiLite Business Park
                   </h4>
@@ -466,7 +467,7 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-center gap-3 mt-5 w-full justify-start">
-                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
+                    <a href="https://maps.app.goo.gl/zkz2FKXFnjxbw2ep8" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiMapPinLine />
                     </a>
                     <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-white hover:bg-emerald-600 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
@@ -481,8 +482,8 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* India HQ Facility 2 */}
-                <div className="group w-full block text-left pt-2">
+                {/* India HQ Facility 2 - Symmetrical Left Padding Container */}
+                <div className="group w-full block text-left pt-2 pl-[32px]">
                   <h4 className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-[#0c9d7d] block">
                     India Nadakkave Office
                   </h4>
@@ -502,7 +503,7 @@ export default function Contact() {
                   </div>
 
                   <div className="flex items-center gap-3 mt-5 w-full justify-start">
-                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
+                    <a href="https://maps.app.goo.gl/VVfL19hr1EvMxcpw5" target="_blank" rel="noopener noreferrer" title="View Location" className="w-8 h-8 rounded-full bg-white hover:bg-neutral-950 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">
                       <RiMapPinLine />
                     </a>
                     <a href={`https://wa.me/919388001524?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" className="w-8 h-8 rounded-full bg-white hover:bg-emerald-600 text-neutral-900 hover:text-white transition-all flex items-center justify-center text-base shadow-sm border border-neutral-300">

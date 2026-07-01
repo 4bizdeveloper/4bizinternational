@@ -384,7 +384,7 @@ export default function Services() {
             </div>
 
             {/* Mobile & Tablet Top Bar Controls */}
-            <div className="lg:hidden flex items-center justify-between bg-white/[0.04] p-3 rounded-xl border border-white/10 shadow-xl">
+            <div className="lg:hidden flex items-center justify-between bg-white/[0.04] p-3 rounded-xl border border-white/10 shadow-xl w-full">
               <button
                 onClick={handlePrev}
                 className="p-2.5 rounded-lg bg-[#00D2F1]/5 text-[#00D2F1] border border-[#00D2F1]/50 shadow-[0_0_10px_rgba(0,210,241,0.2)] hover:bg-[#00D2F1]/15 active:scale-95 transition-all cursor-pointer focus:outline-none shrink-0"
@@ -392,7 +392,7 @@ export default function Services() {
               >
                 <ChevronLeft size={20} />
               </button>
-              <span className="font-extrabold text-sm sm:text-base tracking-wide text-[#00D2F1] text-center px-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] truncate max-w-[80%]">
+              <span className="font-extrabold text-sm sm:text-base tracking-wide text-white text-center px-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] truncate max-w-[80%]">
                 {currentService.title}
               </span>
               <button
@@ -421,8 +421,8 @@ export default function Services() {
                   className="object-cover scale-100 transition-transform duration-700"
                   priority
                 />
-                <div className="absolute inset-0 bg-[#050a1d]/60 mix-blend-multiply" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#04091a] via-[#070f2b]/85 to-transparent" />
+                <div className="absolute inset-0 bg-[#050a1d]/55" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#04091a]/70 via-[#04091a]/30 to-[#04091a]/70" />
               </div>
 
               <div className="flex-1 flex flex-col justify-between z-10 relative space-y-6 md:space-y-8 h-full" style={{ isolation: "isolate" }}>
@@ -430,10 +430,11 @@ export default function Services() {
                 <div className="space-y-6 md:space-y-8">
                   {/* Headers / Brand Copy */}
                   <div className="w-full flex flex-col text-left">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black mb-3 tracking-tight leading-snug text-[#00D2F1] seo-text-shadow-heavy">
+                    {/* Synchronized font style with the description for complete uniformity */}
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-medium tracking-wide mb-3 leading-snug text-white seo-text-shadow-heavy">
                       {currentService.subtitle}
                     </h3>
-                    <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed font-bold tracking-wide max-w-4xl seo-text-shadow-medium">
+                    <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed font-medium tracking-wide max-w-4xl seo-text-shadow-medium">
                       {currentService.description}
                     </p>
                   </div>
@@ -445,10 +446,11 @@ export default function Services() {
                         key={pIdx} 
                         className="flex items-center gap-3 py-1 bg-transparent group/item select-none"
                       >
-                        <span className="flex items-center justify-center text-[#00D2F1] transition-transform duration-200 group-hover/item:translate-x-1 shrink-0">
-                          <ArrowRight size={18} strokeWidth={2.5} className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]" />
+                        <span className="flex items-center justify-center text-white transition-transform duration-200 group-hover/item:translate-x-1 shrink-0">
+                          <ArrowRight size={16} strokeWidth={2} className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]" />
                         </span>
-                        <span className="cursor-default text-left font-black text-sm sm:text-base text-cyan-200 group-hover/item:text-white tracking-wide transition-colors duration-150 seo-text-shadow-medium">
+                        {/* Match font-medium and style perfectly with the master description */}
+                        <span className="cursor-default text-left font-medium text-sm sm:text-base text-white group-hover/item:text-slate-200 tracking-wide transition-colors duration-150 seo-text-shadow-medium">
                           {point}
                         </span>
                       </div>
@@ -461,14 +463,14 @@ export default function Services() {
                   <div className="w-full flex justify-center lg:justify-start pt-6 mt-auto transition-all duration-300">
                     <a 
                       href={currentService.linkUrl}
-                      className="group/glass-btn relative inline-flex items-center gap-4 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00D2F1]/5 to-transparent backdrop-blur-md border border-[#00D2F1]/60 hover:from-[#00D2F1]/15 hover:to-[#00D2F1]/5 transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer decoration-0 text-white select-none shadow-[0_0_15px_rgba(0,210,241,0.2)] hover:shadow-[0_0_20px_rgba(0,210,241,0.35)]"
+                      className="group/glass-btn relative inline-flex items-center gap-4 px-8 py-3.5 rounded-full bg-gradient-to-r from-white/5 to-transparent backdrop-blur-md border border-white/40 hover:from-white/15 hover:to-white/5 transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer decoration-0 text-white select-none shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.25)]"
                       aria-label={`Read details about ${currentService.subtitle}`}
                     >
-                      <span className="font-black text-sm tracking-widest uppercase text-white drop-shadow-[0_1.5px_3px_rgba(0,0,0,0.8)]">
+                      <span className="font-medium text-sm tracking-widest uppercase text-white drop-shadow-[0_1.5px_3px_rgba(0,0,0,0.8)]">
                         Read More
                       </span>
-                      <div className="p-1.5 rounded-full text-white transition-all duration-300 bg-[#00D2F1]/90 group-hover/glass-btn:bg-[#00E5FF] shadow-[0_0_8px_rgba(0,210,241,0.3)] flex items-center justify-center">
-                        <ArrowRight size={14} strokeWidth={2.5} className="transform transition-transform duration-300 group-hover/glass-btn:translate-x-0.5" />
+                      <div className="p-1.5 rounded-full text-white transition-all duration-300 bg-white/20 group-hover/glass-btn:bg-white/40 shadow-[0_0_8px_rgba(255,255,255,0.2)] flex items-center justify-center">
+                        <ArrowRight size={14} strokeWidth={2} className="transform transition-transform duration-300 group-hover/glass-btn:translate-x-0.5" />
                       </div>
                     </a>
                   </div>
@@ -488,7 +490,7 @@ export default function Services() {
               onClick={() => handleTabClick(index)}
               className={`rounded-full transition-all duration-300 border-0 h-2.5 cursor-pointer focus:outline-none ${
                 index === activeIndex
-                  ? "w-8 bg-[#00D2F1] shadow-[0_0_8px_rgba(0,210,241,0.4)]"
+                  ? "w-8 bg-white shadow-[0_0_8px_rgba(255,255,255,0.4)]"
                   : "w-2.5 bg-slate-600 hover:bg-slate-500"
               }`}
               aria-label={`Show layout tab ${index + 1}`}
@@ -505,20 +507,19 @@ export default function Services() {
 
         .seo-text-shadow-heavy {
           text-shadow: 
-            -2px -2px 0 #000,  
-             2px -2px 0 #000,
-            -2px  2px 0 #000,
-             2px  2px 0 #000,
-             0px 4px 12px rgba(0, 0, 0, 1),
-             0px 1px 2px rgba(0, 0, 0, 1);
+            -1.5px -1.5px 0 #000,  
+             1.5px -1.5px 0 #000,
+            -1.5px  1.5px 0 #000,
+             1.5px  1.5px 0 #000,
+             0px 4px 12px rgba(0, 0, 0, 1);
         }
 
         .seo-text-shadow-medium {
           text-shadow: 
-            -1.5px -1.5px 0 rgba(0,0,0,1),  
-             1.5px -1.5px 0 rgba(0,0,0,1),
-            -1.5px  1.5px 0 rgba(0,0,0,1),
-             1.5px  1.5px 0 rgba(0,0,0,1),
+            -1px -1px 0 #000,  
+             1px -1px 0 #000,
+            -1px  1px 0 #000,
+             1px  1px 0 #000,
              0px 3px 8px rgba(0, 0, 0, 1);
         }
 
@@ -555,7 +556,6 @@ export default function Services() {
           background: rgba(255, 255, 255, 0.45); 
         }
         
-        /* Mitigate CLS Layout Jumps During Tab Transition states */
         .content-card {
           will-change: transform, opacity;
           backface-visibility: hidden;
