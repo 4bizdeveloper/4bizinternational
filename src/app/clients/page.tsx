@@ -37,7 +37,7 @@ const ALL_CLIENTS = [
   { id: 'sunbridge-logistics', src: '/client-logos/sunbridge-logistics.avif', alt: 'Sunbridge Logistics Logo' },
   { id: 'arab-brazilian-chamber', src: '/client-logos/arab-brazilian-chamber-of-commerce.svg', alt: 'Arab Brazilian Chamber of Commerce Logo' },
   { id: 'secret-sports-gym', src: '/client-logos/secret-sports-gym.png', alt: 'Secret Sports Gym Logo' },
-  { id: 'thumbelina', src: '/client-logos/thumbelina.jfif', alt: 'Thumbelina Logo' },
+  { id: 'thumbelina', src: '/client-logos/thumbelina.webp', alt: 'Thumbelina Logo' },
   { id: 'frontline-medical-centre', src: '/client-logos/frontline-medical-centre.png', alt: 'Frontline Medical Centre Logo' },
   { id: 'oxford-school', src: '/client-logos/oxford-school.svg', alt: 'Oxford School Logo' },
   { id: 'r-and-b', src: '/client-logos/r&b-logo.svg', alt: 'R&B Logo' },
