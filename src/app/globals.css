@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* 1. Global Absolute Selection Overrides - Optimized Native Alternative */
+::selection {
+  background-color: rgb(38 38 38 / var(--tw-bg-opacity, 1)); /* Tailwind neutral-800 fallback */
+  color: #fff;
+}
+
+/* 2. Elite Performance Tweaks - Eliminates Jumping & Jerking */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust based on fixed header height to prevent structural jump cuts */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Modern smooth rendering for graphics pipeline layers */
+.transform-gpu {
+  transform: translateZ(0);
+  will-change: transform;
+}
