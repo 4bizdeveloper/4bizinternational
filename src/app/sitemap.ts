@@ -6,7 +6,7 @@ export const dynamic = 'force-static'
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.4bizinternational.com'
 
-  // 1. Core Core Pages (Matching your exact trailing slash preferences)
+  // 1. Core Pages (Explicit trailing slash for ALL pages)
   const corePages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/`, // Home page
@@ -15,7 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/about`, // About (No trailing slash)
+      url: `${baseUrl}/about/`, // About (Updated to trailing slash)
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
