@@ -9,11 +9,11 @@ const nextConfig: NextConfig = {
 
   // --- IMAGES & PERFORMANCE OPTIMIZATION ---
   images: {
-    unoptimized: false, // KEEPS automatic resizing, WebP/AVIF generation active
+    unoptimized: false, // Keeps automatic resizing and WebP/AVIF generation active on Vercel
     formats: ['image/avif', 'image/webp'], // Delivers next-gen images first for maximum performance
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840], // Custom responsive breakpoints
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384], // Sharp, layout-shift free thumbnail grids
-    minimumCacheTTL: 31536000, // Instructs edge cache to cache images for 1 year
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384], // Sharp thumbnail grids without layout shift
+    minimumCacheTTL: 31536000, // Directs Vercel edge CDN to cache images for 1 year
     remotePatterns: [
       {
         protocol: 'https',
@@ -53,10 +53,8 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // --- DEV & COMPILER RULES ---
-  devIndicators: {
-    buildActivity: false,
-  },
+  // --- EXPERIMENTAL & COMPILER RULES ---
+  devIndicators: false,
 
   // Advanced Webpack configuration to guarantee zero layout shifts and instant bundle delivery
   webpack: (config) => {
@@ -69,9 +67,6 @@ const nextConfig: NextConfig = {
 
   turbopack: {
     root: path.resolve(__dirname),
-    resolveAlias: {
-      '@': path.resolve(__dirname),
-    },
   },
 };
 
