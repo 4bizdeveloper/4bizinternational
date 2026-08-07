@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 1. Core Pages (Explicit trailing slash for ALL pages)
   const corePages: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/`, // Home page
+      url: `${baseUrl}/`, // Home page (https://www.4bizinternational.com/)
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0,
@@ -43,6 +43,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/privacy-policy/`, // Privacy policy page
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/terms-and-conditions/`, // Terms and conditions page
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
   ]
 

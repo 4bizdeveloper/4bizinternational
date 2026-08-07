@@ -74,6 +74,11 @@ const Footer = () => {
     { label: 'Blogs', path: '/blog' },
   ], []);
 
+  const legalItems = useMemo(() => [
+    { label: 'Privacy Policy', path: '/privacy-policy/' },
+    { label: 'Terms & Conditions', path: '/terms-and-conditions/' },
+  ], []);
+
   return (
     <footer 
       id="footer"
@@ -82,7 +87,8 @@ const Footer = () => {
       style={{ 
         background: 'radial-gradient(circle at 50% 15%, #001b6b 0%, #001042 50%, #000933 100%)',
         contentVisibility: 'auto', 
-        paddingBottom: 'calc(140px + env(safe-area-inset-bottom))'
+        /* Safe area bottom buffer ensures no floating widget covers any links on mobile/tablet/desktop */
+        paddingBottom: 'calc(160px + env(safe-area-inset-bottom))'
       } as React.CSSProperties}
       itemScope 
       itemType="https://schema.org/WPFooter"
@@ -115,7 +121,8 @@ const Footer = () => {
           </nav>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-14 lg:gap-8 items-start mb-16">
+        {/* Stacked 1 column layout on mobile & tablet (grid-cols-1), expanding to 12-cols only on desktop (lg:grid-cols-12) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-14 lg:gap-8 items-start mb-16">
           
           {/* Brand Architecture Column */}
           <div className="lg:col-span-4 flex flex-col items-start space-y-6 md:space-y-8">
@@ -162,8 +169,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Core Communications Terminals (Middle Column - Balanced & Reduced) */}
-          <div className="lg:col-span-4 flex flex-col space-y-6 md:mt-1">
+          {/* Core Communications Terminals */}
+          <div className="lg:col-span-4 flex flex-col space-y-6">
             <h2 className="text-white/60 font-sans font-bold uppercase tracking-wider text-[11px] flex items-center gap-2">
               <span className="w-1 h-1 rounded-full bg-[#00D3F2]"></span> Digital Link & Infrastructure
             </h2>
@@ -207,12 +214,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Regional Enterprise Hubs Map (Right Column - Enlarged Address & Moved Down) */}
-          <div className="lg:col-span-4 flex flex-col space-y-6 md:mt-1">
+          {/* Regional Enterprise Hubs Map */}
+          <div className="lg:col-span-4 flex flex-col space-y-6">
             <h2 className="text-white/60 font-sans font-bold uppercase tracking-wider text-[11px] flex items-center gap-2">
               <span className="w-1 h-1 rounded-full bg-[#00D3F2]"></span> Corporate Geographies
             </h2>
-            {/* Enhanced structural alignment creates flawless balance horizontally */}
             <div className="space-y-6 text-white/80 pt-1">
               {/* Dubai Corporate Hub */}
               <div className="flex flex-col border-l border-white/10 hover:border-[#00D3F2]/50 pl-4 py-0.5 group transition-colors duration-300">
@@ -240,14 +246,35 @@ const Footer = () => {
 
         </div>
 
-        {/* Bottom Metadata Pipeline */}
-        <div className="pt-8 border-t border-white/10 flex flex-col items-center justify-center relative z-20">
+        {/* Bottom Metadata Pipeline & Legal Navigation */}
+        <div className="pt-8 border-t border-white/10 flex flex-col items-center justify-center relative z-20 space-y-4">
+          {/* Privacy Policy and Terms Links with cyan bullets */}
+          <nav aria-label="Legal Navigation" className="w-full">
+            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70">
+              {legalItems.map((item) => (
+                <li key={item.label}>
+                  <Link 
+                    href={item.path} 
+                    className="hover:text-white transition-colors duration-200 flex items-center gap-2 py-1 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00D3F2] group-hover:bg-[#00D3F2]/80 transition-colors flex-shrink-0" />
+                    <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00D3F2] after:transition-all group-hover:after:w-full">
+                      {item.label}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Copyright Metadata */}
           <div className="w-full max-w-md mx-auto text-center px-4">
             <p className="text-white/50 text-[10px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.2em] font-sans font-bold leading-relaxed break-words sm:break-normal">
               &copy; {new Date().getFullYear()} 4Biz International.<br className="block sm:hidden" /> All Rights Reserved.
             </p>
           </div>
         </div>
+
       </div>
     </footer>
   );
