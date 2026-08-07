@@ -1,16 +1,16 @@
 import React from 'react';
-import Head from 'next/head';
+import Link from 'next/link';
 import Image from 'next/image';
 import Contact from '@/components/Contact';
 
 export const metadata = {
-  title: "4Biz International: Who We Are & What We Do | Dubai IT Solutions Company",
+  title: "Who We Are & What We Do | Dubai IT Solutions Company",
   description: "Discover 4Biz International, a Dubai-based IT solutions and digital transformation company offering ERP/CRM, web & mobile development, cloud, cybersecurity, and digital marketing services.",
   alternates: {
     canonical: "https://www.4bizinternational.com/blog/4biz-international-who-we-are",
   },
   openGraph: {
-    title: "4Biz International: Who We Are & What We Do",
+    title: "Who We Are & What We Do",
     description: "Discover 4Biz International, a Dubai-based IT solutions and digital transformation company offering ERP/CRM, web & mobile development, cloud, cybersecurity, and digital marketing services.",
     url: "https://www.4bizinternational.com/blog/4biz-international-who-we-are",
     type: "article",
@@ -26,17 +26,42 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "4Biz International: Who We Are & What We Do",
+    title: "Who We Are & What We Do",
     description: "Discover 4Biz International, a Dubai-based IT solutions and digital transformation company.",
     images: ["https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&h=630&q=80"],
   },
 };
 
 export default function BlogPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.4bizinternational.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blogs",
+        "item": "https://www.4bizinternational.com/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Who We Are and What We Do",
+        "item": "https://www.4bizinternational.com/blog/4biz-international-who-we-are"
+      }
+    ]
+  };
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "4Biz International: Who We Are and What We Do",
+    "headline": "Who We Are and What We Do",
     "description": "Discover 4Biz International, a Dubai-based IT solutions and digital transformation company offering ERP/CRM, web & mobile development, cloud, cybersecurity, and digital marketing services.",
     "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&h=630&q=80",
     "datePublished": "2026-07-07T00:00:00.000Z",
@@ -118,6 +143,10 @@ export default function BlogPage() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <script
@@ -125,19 +154,58 @@ export default function BlogPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Enhanced Luxury Bright Navy Gradient Background (Increased overall page visibility, preventing deep black zones) */}
+      {/* Enhanced Luxury Bright Navy Gradient Background */}
       <div className="min-h-screen bg-gradient-to-b from-[#0A163A] via-[#0E225C] to-[#061130] text-gray-100 font-sans antialiased scroll-smooth selection:bg-amber-500 selection:text-black">
         
         {/* HERO SECTION - Safely clears sticky/fixed layouts without page overlaps */}
-        <header className="relative w-full max-w-7xl mx-auto pt-36 sm:pt-40 lg:pt-48 pb-16 px-4 sm:px-6 lg:px-8">
+        <header className="relative w-full max-w-7xl mx-auto pt-28 sm:pt-36 lg:pt-40 pb-16 px-4 sm:px-6 lg:px-8">
+          
+          {/* Centered Breadcrumb Component with Spacing & High Usability */}
+          <nav aria-label="Breadcrumb" className="w-full flex justify-center mb-8 sm:mb-12">
+            <ol className="inline-flex items-center flex-wrap justify-center gap-1.5 sm:gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md text-xs sm:text-sm font-medium shadow-lg transition-all duration-300 hover:border-amber-500/30">
+              <li className="inline-flex items-center">
+                <Link 
+                  href="https://www.4bizinternational.com/" 
+                  className="text-slate-300 hover:text-amber-400 transition-colors duration-200 flex items-center gap-1"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l1.293 1.293a1 1 0 001.414-1.414l-7-7z" />
+                  </svg>
+                  <span>Home</span>
+                </Link>
+              </li>
+              <li className="text-slate-500 flex items-center">
+                <svg className="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </li>
+              <li className="inline-flex items-center">
+                <Link 
+                  href="https://www.4bizinternational.com/blog/" 
+                  className="text-slate-300 hover:text-amber-400 transition-colors duration-200"
+                >
+                  Blogs
+                </Link>
+              </li>
+              <li className="text-slate-500 flex items-center">
+                <svg className="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </li>
+              <li aria-current="page" className="text-amber-400 font-semibold truncate max-w-[180px] sm:max-w-xs md:max-w-md">
+                Who We Are and What We Do
+              </li>
+            </ol>
+          </nav>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-7 space-y-6 text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
-                Focus Keyword: 4Biz International
+                4Biz International LLC
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight bg-clip-text bg-gradient-to-r from-white via-slate-100 to-amber-300">
-                4Biz International: Who We Are and What We Do
+                Who We Are and What We Do
               </h1>
               <p className="text-lg sm:text-xl text-slate-200 font-light leading-relaxed">
                 If you've been searching for a reliable IT solutions and digital transformation partner in Dubai, you've probably come across the name 4Biz International. But who exactly are we, and what makes us different from the dozens of other tech companies in the UAE? This post breaks it all down—our story, our services, and why businesses across the Middle East and beyond trust us with their digital growth.
@@ -147,10 +215,10 @@ export default function BlogPage() {
             <div className="lg:col-span-5 relative w-full h-[320px] sm:h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group transition-all duration-500 hover:border-amber-500/30">
               <Image 
                 src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" 
-                alt="4Biz International Corporate Hub Strategy" 
+                alt="4Biz International Digital Transformation Hub" 
                 fill 
                 priority
-                sizes="(max-w-7xl) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A163A] via-transparent to-transparent opacity-40"></div>
@@ -168,7 +236,7 @@ export default function BlogPage() {
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
                 alt="Digital Operations and Enterprise Management" 
                 fill
-                sizes="(max-w-7xl) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" 
               />
             </div>
@@ -212,7 +280,7 @@ export default function BlogPage() {
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
                 alt="Agile Collaborative Tech Development Team" 
                 fill
-                sizes="(max-w-7xl) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" 
               />
             </div>
@@ -288,7 +356,7 @@ export default function BlogPage() {
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" 
                 alt="4Biz Global Headquarters and Operations" 
                 fill
-                sizes="(max-w-7xl) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" 
               />
             </div>
