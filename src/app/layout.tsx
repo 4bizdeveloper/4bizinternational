@@ -186,9 +186,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           
           {/* Dynamic Interactive Floating Layer */}
           <div className="fixed inset-0 pointer-events-none z-50 flex flex-col items-end justify-end p-4 gap-4">
-            <div className="pointer-events-auto select-none">
+            {/* <div className="pointer-events-auto select-none">
               <AIChatButton />
-            </div>
+            </div> */}
             <div className="pointer-events-auto select-none">
               <FixedCallWhatsappButton />
             </div>
