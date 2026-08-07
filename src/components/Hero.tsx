@@ -46,7 +46,7 @@ export default function Home() {
 
   return (
     <section 
-      className="relative w-full h-[100dvh] min-h-[480px] overflow-hidden bg-black scroll-smooth"
+      className="relative w-full min-h-[100dvh] min-h-[480px] overflow-x-clip bg-black"
       style={{ 
         contentVisibility: 'auto', 
         containIntrinsicSize: '100dvh',
@@ -110,7 +110,7 @@ export default function Home() {
       </nav>
       
       {/* ── FLEX CENTER HERO CONTAINER ── */}
-      <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white px-6 w-full max-w-7xl mx-auto sm:px-12 md:px-16 pt-12 pb-6 min-h-0 transform-gpu -translate-y-12 sm:-translate-y-10 lg:-translate-y-4">
+      <div className="relative z-20 flex flex-col items-center justify-center min-h-[100dvh] text-center text-white px-6 w-full max-w-7xl mx-auto sm:px-12 md:px-16 pt-12 pb-6 min-h-0 transform-gpu -translate-y-12 sm:-translate-y-10 lg:-translate-y-4">
         <header 
           className="w-full flex flex-col items-center pointer-events-none transition-all duration-500 opacity-100 scale-100 will-change-transform transform-gpu"
         >

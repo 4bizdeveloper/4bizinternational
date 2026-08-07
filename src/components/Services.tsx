@@ -208,9 +208,9 @@ export default function Services() {
     "@context": "https://schema.org",
     "@type": "Service",
     "provider": {
-  "@type": "Organization",
-  "name": "4Biz International",
-  "url": "https://www.4bizinternational.com"
+      "@type": "Organization",
+      "name": "4Biz International",
+      "url": "https://www.4bizinternational.com"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -230,7 +230,7 @@ export default function Services() {
 
   return (
     <section 
-      className="w-full py-16 md:py-24 px-4 sm:px-8 lg:px-16 bg-slate-950 text-white overflow-hidden relative font-sans antialiased selection:bg-[#00D2F1]/30 transform-gpu"
+      className="w-full py-16 md:py-24 px-4 sm:px-8 lg:px-16 bg-slate-950 text-white overflow-x-clip relative font-sans antialiased selection:bg-[#00D2F1]/30 transform-gpu"
       style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}
     >
       <script
@@ -289,7 +289,7 @@ export default function Services() {
 
           <div 
             ref={carouselRef}
-            className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar pb-6 pt-2 px-4 sm:px-0 transform-gpu will-change-transform"
+            className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar pb-6 pt-2 px-4 sm:px-0 transform-gpu will-change-transform touch-pan-y"
             style={{ 
               scrollbarWidth: "none", 
               WebkitOverflowScrolling: "touch"

@@ -15,6 +15,17 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 3. Mobile Scroll Lock & Touch Engine Fix */
+html,
+body {
+  /* Fixes touch scroll locks/freezes on mobile devices without breaking layout overflow */
+  overflow-x: clip;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Modern smooth rendering for graphics pipeline layers */
 .transform-gpu {
   transform: translateZ(0);
