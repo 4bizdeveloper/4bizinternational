@@ -227,7 +227,7 @@ export default function Header() {
                 { label: 'About', path: '/about' },
                 { label: 'Services', path: '/services' },
                 { label: 'Contact', path: '/contact' },
-                { label: 'Blogs', path: '/blog' },
+                { label: 'Blog', path: '/blog' },
               ].map((item) => (
                 <Link
                   key={item.label}

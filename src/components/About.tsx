@@ -197,7 +197,7 @@ export default function About() {
             {/* CTA Button */}
             <div className="pt-6 text-center lg:text-left">
               <a 
-                href="/about" 
+                href="/about/" 
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border border-white/20 hover:border-white rounded-full text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase transition-all duration-300 shadow-[inset_0_0_12px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] text-white bg-white/[0.02] backdrop-blur-md group select-text"
               >
                 MORE ABOUT US
