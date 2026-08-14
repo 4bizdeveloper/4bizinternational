@@ -43,33 +43,34 @@ const itemVariants: Variants = {
 const ClientSection = () => {
   return (
     <section 
-      className="py-16 md:py-24 relative overflow-hidden transform-gpu select-none w-full will-change-transform"
+      aria-label="Trusted Enterprise Clients and Partners"
+      className="py-8 md:py-12 relative overflow-hidden transform-gpu select-none w-full will-change-transform"
       style={{
         background: 'radial-gradient(circle at center, #0a1b4d 0%, #061133 60%, #03081a 100%)',
         contentVisibility: 'auto',
         contain: 'paint layout',
-        containmentIntrinsicSize: '1px 650px',
+        containmentIntrinsicSize: '1px 450px',
       } as React.CSSProperties}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         
-        {/* Semantic Header Block for Search Engines & LLM Scraping Systems */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight md:tracking-tighter text-[#00b49d] uppercase mb-4">
-            Our Clients
+        {/* Semantic Header Block for Search Engines, AEO & GEO */}
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight md:tracking-tighter text-[#00b49d] uppercase mb-2">
+            Our Clients & Partners
           </h2>
-          <p className="text-base sm:text-lg font-normal tracking-wide text-gray-300 max-w-2xl mx-auto leading-relaxed opacity-90">
-            We&apos;re proud parents when it comes to our client list
+          <p className="text-sm sm:text-base font-normal tracking-wide text-gray-300 max-w-2xl mx-auto leading-relaxed opacity-90">
+            Trusted by industry-leading global enterprises, educational institutions, and retail brands.
           </p>
         </div>
 
         {/* Fluid Adaptive Responsive Grid Layer */}
         <motion.div 
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 max-w-7xl mx-auto justify-items-center justify-center w-full"
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 max-w-7xl mx-auto justify-items-center justify-center w-full"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: true, margin: "-40px" }}
         >
           {ALL_CLIENTS.slice(0, 15).map((client, index) => {
             const is15thItem = index === 14;
@@ -77,7 +78,6 @@ const ClientSection = () => {
             return (
               <motion.div 
                 key={client.id} 
-                // Controls breakpoint logic: Hidden on mobile views (grid-cols-2), appears on tablet views (sm:block)
                 className={is15thItem ? "hidden sm:block w-full" : "block w-full"} 
                 variants={itemVariants}
               >
@@ -91,11 +91,12 @@ const ClientSection = () => {
           })}
         </motion.div>
 
-        {/* Action Layer with Bright Solid Neon Cyan Border & Vivid Glow */}
-        <div className="mt-12 md:mt-16 text-center">
+        {/* Action Layer */}
+        <div className="mt-8 md:mt-10 text-center">
           <Link 
             href="/clients" 
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full border-2 border-[#00d2f1] bg-transparent text-xs font-bold text-white uppercase tracking-widest drop-shadow-[0_0_10px_rgba(0,210,241,0.75)] transition-all duration-300 hover:bg-[#00d2f1]/10 hover:shadow-[0_0_25px_rgba(0,210,241,0.4)] hover:scale-[1.01] transform-gpu"
+            title="View full list of client partners"
+            className="group inline-flex items-center gap-3 px-7 py-3 rounded-full border-2 border-[#00d2f1] bg-transparent text-xs font-bold text-white uppercase tracking-widest drop-shadow-[0_0_10px_rgba(0,210,241,0.75)] transition-all duration-300 hover:bg-[#00d2f1]/10 hover:shadow-[0_0_25px_rgba(0,210,241,0.4)] hover:scale-[1.01] transform-gpu"
           >
             <span className="text-white">View All Clients</span>
             <svg 
@@ -127,7 +128,6 @@ const ClientCard = memo(({
   let blendClass = "";
   
   if (isColorful) {
-    // Keeps Pharsfilm colorful, bright, and untouched by white logic
     filterClass = "opacity-100 brightness-105 contrast-105";
   } else if (isSharjahLogo) {
     filterClass = "brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity duration-300";
@@ -135,8 +135,8 @@ const ClientCard = memo(({
   }
 
   return (
-    <div className="group relative flex items-center justify-center w-full h-[100px] sm:h-[120px] md:h-[130px] rounded-2xl border border-blue-500/15 bg-white/[0.02] backdrop-blur-md overflow-hidden transition-all duration-300 hover:bg-white/[0.05] hover:border-[#00b49d]/50 hover:shadow-[0_0_25px_rgba(0,180,157,0.15)] transform-gpu">
-      <div className={`relative w-full h-full max-w-[70%] max-h-[50%] transition-all duration-300 ease-out transform-gpu group-hover:scale-105 ${blendClass}`}>
+    <div className="group relative flex items-center justify-center w-full h-[80px] sm:h-[100px] md:h-[110px] rounded-xl border border-blue-500/15 bg-white/[0.02] backdrop-blur-md overflow-hidden transition-all duration-300 hover:bg-white/[0.05] hover:border-[#00b49d]/50 hover:shadow-[0_0_25px_rgba(0,180,157,0.15)] transform-gpu">
+      <div className={`relative w-full h-full max-w-[70%] max-h-[55%] transition-all duration-300 ease-out transform-gpu group-hover:scale-105 ${blendClass}`}>
         <Image
           src={client.src}
           alt={client.alt}
