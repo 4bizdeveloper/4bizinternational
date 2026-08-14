@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 
 const ALL_CLIENTS = [
-  { id: 'pharsfilm', src: '/client-logos/pharsfilm-logo.svg', alt: 'Pharsfilm', isColorful: true },
+  { id: 'pharsfilm', src: '/client-logos/pharsfilm-logo.svg', alt: 'Pharsfilm Logo', isColorful: true },
   { id: 'theyyampattil', src: '/client-logos/theyyampattil-logo.avif', alt: 'Theyyampattil Logo' },
   { id: 'opusbm', src: '/client-logos/opusbm-logo.png', alt: 'OpusBM Logo' },
   { id: 'aimbridge', src: '/client-logos/aimbridge-logo.png', alt: 'Aimbridge Logo' },
@@ -32,39 +32,41 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { opacity: 0, y: 10 },
   visible: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.35, ease: [0.215, 0.610, 0.355, 1.000] }
+    transition: { duration: 0.3, ease: [0.215, 0.610, 0.355, 1.000] }
   }
 };
 
-const ClientSection = () => {
+export default function ClientSection() {
   return (
     <section 
-      aria-label="Trusted Enterprise Clients and Partners"
-      className="py-8 md:py-12 relative overflow-hidden transform-gpu select-none w-full will-change-transform"
+      aria-labelledby="clients-title"
+      className="pt-10 pb-6 md:pt-14 md:pb-8 relative overflow-hidden transform-gpu select-none w-full"
       style={{
-        background: 'radial-gradient(circle at center, #0a1b4d 0%, #061133 60%, #03081a 100%)',
+        background: 'radial-gradient(circle at center top, #001f5c 0%, #000c24 70%, #000511 100%)',
         contentVisibility: 'auto',
         contain: 'paint layout',
-        containmentIntrinsicSize: '1px 450px',
-      } as React.CSSProperties}
+      }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         
-        {/* Semantic Header Block for Search Engines, AEO & GEO */}
-        <div className="text-center mb-6 md:mb-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight md:tracking-tighter text-[#00b49d] uppercase mb-2">
-            Our Clients & Partners
+        {/* Header Block */}
+        <header className="text-center mb-6 md:mb-8">
+          <h2 
+            id="clients-title"
+            className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-[#00b49d] uppercase mb-2"
+          >
+            Our Clients
           </h2>
-          <p className="text-sm sm:text-base font-normal tracking-wide text-gray-300 max-w-2xl mx-auto leading-relaxed opacity-90">
-            Trusted by industry-leading global enterprises, educational institutions, and retail brands.
+          <p className="text-sm sm:text-base font-normal tracking-wide text-gray-300 max-w-xl mx-auto leading-normal opacity-90">
+            Trusted by industry leaders across global markets
           </p>
-        </div>
+        </header>
 
-        {/* Fluid Adaptive Responsive Grid Layer */}
+        {/* Client Logos Grid */}
         <motion.div 
           className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 max-w-7xl mx-auto justify-items-center justify-center w-full"
           variants={containerVariants}
@@ -91,18 +93,20 @@ const ClientSection = () => {
           })}
         </motion.div>
 
-        {/* Action Layer */}
+        {/* View All CTA Button */}
         <div className="mt-8 md:mt-10 text-center">
           <Link 
             href="/clients" 
-            title="View full list of client partners"
-            className="group inline-flex items-center gap-3 px-7 py-3 rounded-full border-2 border-[#00d2f1] bg-transparent text-xs font-bold text-white uppercase tracking-widest drop-shadow-[0_0_10px_rgba(0,210,241,0.75)] transition-all duration-300 hover:bg-[#00d2f1]/10 hover:shadow-[0_0_25px_rgba(0,210,241,0.4)] hover:scale-[1.01] transform-gpu"
+            title="View full portfolio of 4Biz International clients"
+            aria-label="View full portfolio of 4Biz International clients"
+            className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full border-2 border-[#00d2f1] bg-transparent text-xs font-bold text-white uppercase tracking-widest drop-shadow-[0_0_10px_rgba(0,210,241,0.75)] transition-all duration-300 hover:bg-[#00d2f1]/10 hover:shadow-[0_0_25px_rgba(0,210,241,0.4)] hover:scale-[1.01] transform-gpu"
           >
-            <span className="text-white">View All Clients</span>
+            <span>View All Clients</span>
             <svg 
-              className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1 stroke-[#00d2f1]" 
+              className="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-x-1 stroke-[#00d2f1]" 
               fill="none" 
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
@@ -112,9 +116,8 @@ const ClientSection = () => {
       </div>
     </section>
   );
-};
+}
 
-/* Memoized Client Card Component with Uniform Vector Bounds */
 const ClientCard = memo(({ 
   client, 
   isColorful, 
@@ -135,8 +138,8 @@ const ClientCard = memo(({
   }
 
   return (
-    <div className="group relative flex items-center justify-center w-full h-[80px] sm:h-[100px] md:h-[110px] rounded-xl border border-blue-500/15 bg-white/[0.02] backdrop-blur-md overflow-hidden transition-all duration-300 hover:bg-white/[0.05] hover:border-[#00b49d]/50 hover:shadow-[0_0_25px_rgba(0,180,157,0.15)] transform-gpu">
-      <div className={`relative w-full h-full max-w-[70%] max-h-[55%] transition-all duration-300 ease-out transform-gpu group-hover:scale-105 ${blendClass}`}>
+    <div className="group relative flex items-center justify-center w-full h-[80px] sm:h-[95px] md:h-[105px] rounded-xl border border-blue-500/15 bg-white/[0.02] backdrop-blur-md overflow-hidden transition-all duration-300 hover:bg-white/[0.05] hover:border-[#00b49d]/50 hover:shadow-[0_0_20px_rgba(0,180,157,0.15)] transform-gpu">
+      <div className={`relative w-full h-full max-w-[65%] max-h-[45%] transition-all duration-300 ease-out transform-gpu group-hover:scale-105 ${blendClass}`}>
         <Image
           src={client.src}
           alt={client.alt}
@@ -150,5 +153,3 @@ const ClientCard = memo(({
   );
 });
 ClientCard.displayName = 'ClientCard';
-
-export default ClientSection;
