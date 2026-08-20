@@ -283,7 +283,7 @@ export default function BlogPage() {
                   To explore our full scope of capabilities, learn more <Link href="/about/" className="text-amber-400 underline hover:text-amber-300">about our corporate vision</Link>, browse our <Link href="/services/" className="text-amber-400 underline hover:text-amber-300">core IT services directory</Link>, review our <Link href="/portfolio/" className="text-amber-400 underline hover:text-amber-300">enterprise client portfolio</Link>, or contact our technical team via our <Link href="/contact/" className="text-amber-400 underline hover:text-amber-300">official contact portal</Link>.
                 </p>
                 <blockquote className="border-l-2 border-amber-400/50 pl-4 py-2 italic bg-white/5 rounded-r-lg text-amber-300">
-                  "Impacting Infinite" represents our commitment to designing software systems that eliminate scalability barriers and expand business capability.
+                  &quot;Impacting Infinite&quot; represents our commitment to designing software systems that eliminate scalability barriers and expand business capability.
                 </blockquote>
               </div>
             </div>
