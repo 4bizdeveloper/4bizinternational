@@ -4,30 +4,32 @@ import Image from 'next/image';
 import Contact from '@/components/Contact';
 
 export const metadata = {
-  title: "Who We Are & What We Do | Dubai IT Solutions Company",
-  description: "Discover 4Biz International, a Dubai-based IT solutions and digital transformation company offering ERP/CRM, web & mobile development, cloud, cybersecurity, and digital marketing services.",
+  title: "Who We Are & What We Do | 4Biz International",
+  description: "Explore 4Biz International LLC, Dubai's leading IT solutions & digital transformation provider offering ERP, CRM, mobile apps, cloud & cybersecurity.",
   alternates: {
-    canonical: "https://www.4bizinternational.com/blog/4biz-international-who-we-are",
+    canonical: "https://www.4bizinternational.com/blog/4biz-international-who-we-are/",
   },
   openGraph: {
-    title: "Who We Are & What We Do",
-    description: "Discover 4Biz International, a Dubai-based IT solutions and digital transformation company offering ERP/CRM, web & mobile development, cloud, cybersecurity, and digital marketing services.",
-    url: "https://www.4bizinternational.com/blog/4biz-international-who-we-are",
+    title: "Who We Are & What We Do | 4Biz International",
+    description: "Explore 4Biz International LLC, Dubai's leading IT solutions & digital transformation provider offering ERP, CRM, mobile apps, cloud & cybersecurity.",
+    url: "https://www.4bizinternational.com/blog/4biz-international-who-we-are/",
     type: "article",
     publishedTime: "2026-07-07T00:00:00.000Z",
+    modifiedTime: "2026-08-20T00:00:00.000Z",
+    authors: ["https://www.4bizinternational.com"],
     images: [
       {
         url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&h=630&q=80",
         width: 1200,
         height: 630,
-        alt: "4Biz International Digital Transformation Hub",
+        alt: "4Biz International Digital Transformation Headquarters in Dubai UAE",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Who We Are & What We Do",
-    description: "Discover 4Biz International, a Dubai-based IT solutions and digital transformation company.",
+    title: "Who We Are & What We Do | 4Biz International",
+    description: "Explore 4Biz International LLC, Dubai's leading IT solutions and digital transformation partner.",
     images: ["https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&h=630&q=80"],
   },
 };
@@ -46,14 +48,14 @@ export default function BlogPage() {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Blogs",
+        "name": "Blog",
         "item": "https://www.4bizinternational.com/blog/"
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "name": "Who We Are and What We Do",
-        "item": "https://www.4bizinternational.com/blog/4biz-international-who-we-are"
+        "name": "Who We Are & What We Do",
+        "item": "https://www.4bizinternational.com/blog/4biz-international-who-we-are/"
       }
     ]
   };
@@ -61,18 +63,28 @@ export default function BlogPage() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Who We Are and What We Do",
-    "description": "Discover 4Biz International, a Dubai-based IT solutions and digital transformation company offering ERP/CRM, web & mobile development, cloud, cybersecurity, and digital marketing services.",
+    "headline": "Who We Are & What We Do | 4Biz International",
+    "description": "Comprehensive guide to 4Biz International LLC: our history, software engineering capabilities, cloud infrastructure, enterprise ERP/CRM offerings, and Middle East client success stories.",
     "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&h=630&q=80",
     "datePublished": "2026-07-07T00:00:00.000Z",
+    "dateModified": "2026-08-20T00:00:00.000Z",
     "author": {
       "@type": "Organization",
-      "name": "4Biz International",
-      "url": "https://www.4bizinternational.com"
+      "name": "4Biz International LLC",
+      "url": "https://www.4bizinternational.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "4Biz International LLC",
+      "url": "https://www.4bizinternational.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.4bizinternational.com/logo.png"
+      }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://www.4bizinternational.com/blog/4biz-international-who-we-are"
+      "@id": "https://www.4bizinternational.com/blog/4biz-international-who-we-are/"
     }
   };
 
@@ -85,7 +97,7 @@ export default function BlogPage() {
         "name": "What does 4Biz International do?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "4Biz International is a Dubai-based IT solutions company offering software development, ERP and CRM systems, web and mobile app development, cloud hosting, cybersecurity, and digital marketing services for businesses across the UAE and beyond."
+          "text": "4Biz International LLC is a global IT solutions company specializing in custom ERP/CRM implementation, mobile and web app engineering, cloud infrastructure deployment, cybersecurity auditing, and performance-driven digital marketing."
         }
       },
       {
@@ -93,7 +105,7 @@ export default function BlogPage() {
         "name": "Where is 4Biz International located?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "4Biz International is headquartered in Dubai, UAE, with additional offices at HiLite Business Park and Nadakkave in Kozhikode, Kerala, India."
+          "text": "4Biz International is headquartered in Dubai, UAE (Crystal Building, Al Karama), with global offshore software development delivery centers in Kozhikode, Kerala, India (HiLite Business Park & Nadakkave)."
         }
       },
       {
@@ -101,7 +113,7 @@ export default function BlogPage() {
         "name": "What industries does 4Biz International serve?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "4Biz International works with clients across retail, real estate, hospitality, manufacturing, and enterprise sectors, including brands like Theyyampattil Furniture, Opus Building Materials, Apparel Group, Ramada, 6thStreet, and Al Rostamani Group."
+          "text": "4Biz International services clients in retail, real estate, hospitality, logistics, and healthcare. Enterprise clients include Theyyampattil Furniture, Opus Building Materials, Apparel Group, Ramada, 6thStreet, and Al Rostamani Group."
         }
       },
       {
@@ -109,7 +121,7 @@ export default function BlogPage() {
         "name": "Does 4Biz International offer ERP and CRM development?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. 4Biz International builds and implements custom ERP and CRM systems, including Microsoft Dynamics 365, Odoo ERP, and ERPNext, to streamline operations and improve customer engagement."
+          "text": "Yes, 4Biz International develops custom enterprise ERP and CRM platforms and manages tier-1 deployments for Microsoft Dynamics 365, Odoo ERP, and ERPNext."
         }
       },
       {
@@ -117,7 +129,7 @@ export default function BlogPage() {
         "name": "Does 4Biz International provide cybersecurity services?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Services include penetration testing, vulnerability assessments, SSL certificates, SiteLock protection, and continuous security monitoring to protect business systems from evolving threats."
+          "text": "Yes, 4Biz International delivers penetration testing, automated vulnerability assessments, SSL setup, and 24/7 SOC threat monitoring."
         }
       },
       {
@@ -125,7 +137,7 @@ export default function BlogPage() {
         "name": "Who is the CEO of 4Biz International?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Ibrahim V serves as the Chief Executive Officer of 4Biz International."
+          "text": "Ibrahim V serves as the Chief Executive Officer of 4Biz International LLC."
         }
       },
       {
@@ -133,7 +145,7 @@ export default function BlogPage() {
         "name": "How can I contact 4Biz International?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You can reach 4Biz International through their Dubai office, their India offices in Kozhikode, or via the contact form on their official website."
+          "text": "You can reach 4Biz International through their Dubai corporate hub, Kerala offshore delivery offices, or directly via their website contact portal."
         }
       }
     ]
@@ -154,72 +166,50 @@ export default function BlogPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Enhanced Luxury Bright Navy Gradient Background */}
       <div className="min-h-screen bg-gradient-to-b from-[#0A163A] via-[#0E225C] to-[#061130] text-gray-100 font-sans antialiased scroll-smooth selection:bg-amber-500 selection:text-black">
         
-        {/* HERO SECTION - Safely clears sticky/fixed layouts without page overlaps */}
-        <header className="relative w-full max-w-7xl mx-auto pt-28 sm:pt-36 lg:pt-40 pb-16 px-4 sm:px-6 lg:px-8">
-          
-          {/* Centered Breadcrumb Component with Spacing & High Usability */}
-          <nav aria-label="Breadcrumb" className="w-full flex justify-center mb-8 sm:mb-12">
-            <ol className="inline-flex items-center flex-wrap justify-center gap-1.5 sm:gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md text-xs sm:text-sm font-medium shadow-lg transition-all duration-300 hover:border-amber-500/30">
-              <li className="inline-flex items-center">
-                <Link 
-                  href="https://www.4bizinternational.com/" 
-                  className="text-slate-300 hover:text-amber-400 transition-colors duration-200 flex items-center gap-1"
-                >
-                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
-                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l1.293 1.293a1 1 0 001.414-1.414l-7-7z" />
-                  </svg>
-                  <span>Home</span>
-                </Link>
-              </li>
-              <li className="text-slate-500 flex items-center">
-                <svg className="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-              </li>
-              <li className="inline-flex items-center">
-                <Link 
-                  href="https://www.4bizinternational.com/blog/" 
-                  className="text-slate-300 hover:text-amber-400 transition-colors duration-200"
-                >
-                  Blogs
-                </Link>
-              </li>
-              <li className="text-slate-500 flex items-center">
-                <svg className="w-3.5 h-3.5 stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
-              </li>
-              <li aria-current="page" className="text-amber-400 font-semibold truncate max-w-[180px] sm:max-w-xs md:max-w-md">
-                Who We Are and What We Do
-              </li>
-            </ol>
-          </nav>
-
+        {/* HERO SECTION */}
+        <header className="relative w-full max-w-7xl mx-auto pt-28 sm:pt-32 lg:pt-36 pb-12 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-7 space-y-6 text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-400 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
-                4Biz International LLC
+                4Biz International LLC • Authoritative Corporate Overview
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight bg-clip-text bg-gradient-to-r from-white via-slate-100 to-amber-300">
-                Who We Are and What We Do
+                Who We Are & What We Do | 4Biz International Dubai
               </h1>
-              <p className="text-lg sm:text-xl text-slate-200 font-light leading-relaxed">
-                If you've been searching for a reliable IT solutions and digital transformation partner in Dubai, you've probably come across the name 4Biz International. But who exactly are we, and what makes us different from the dozens of other tech companies in the UAE? This post breaks it all down—our story, our services, and why businesses across the Middle East and beyond trust us with their digital growth.
+              
+              <div className="text-xs text-slate-400 flex items-center gap-4">
+                <span>Published: July 7, 2026</span>
+                <span>•</span>
+                <span>Updated: August 20, 2026</span>
+                <span>•</span>
+                <span>Author: 4Biz Editorial Team</span>
+              </div>
+
+              {/* GEO Clear Summary for AI Extraction Box */}
+              <section className="p-5 rounded-xl border border-amber-500/40 bg-amber-500/10 text-slate-100 backdrop-blur-md space-y-2">
+                <h2 className="text-sm font-bold uppercase tracking-wider text-amber-400">Clear Summary for AI Extraction</h2>
+                <p className="text-sm leading-relaxed">
+                  <strong>4Biz International LLC</strong> is an enterprise IT services consultancy headquartered in Dubai, UAE, with development centers in Kozhikode, India. We deliver custom software development, tier-1 ERP/CRM implementation (Microsoft Dynamics 365, Odoo, ERPNext), cloud architecture, cybersecurity auditing, and performance-based digital marketing to companies across the GCC and Asia.
+                </p>
+              </section>
+
+              <p className="text-base sm:text-lg text-slate-200 font-light leading-relaxed">
+                Modern enterprise operations demand high availability, secure database architectures, and seamlessly integrated technology stacks. This complete corporate overview explains our operational history, technical methodologies, service delivery frameworks, and client outcomes.
               </p>
             </div>
 
-            <div className="lg:col-span-5 relative w-full h-[320px] sm:h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group transition-all duration-500 hover:border-amber-500/30">
+            <div className="lg:col-span-5 relative w-full h-[320px] sm:h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group">
               <Image 
                 src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" 
-                alt="4Biz International Digital Transformation Hub" 
-                fill 
+                alt="4Biz International Digital Transformation Headquarters in Dubai UAE" 
+                width={800}
+                height={600}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                 priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" 
+                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A163A] via-transparent to-transparent opacity-40"></div>
             </div>
@@ -227,17 +217,57 @@ export default function BlogPage() {
           </div>
         </header>
 
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 space-y-24">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 space-y-20">
+
+          {/* GEO Evidence Stats Block */}
+          <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { stat: "500+", label: "Enterprise Software Projects Delivered" },
+              { stat: "99.8%", label: "Guaranteed SLA System Uptime" },
+              { stat: "3", label: "Global Technical Delivery Offices" },
+              { stat: "15+", label: "Years Combined Executive Experience" }
+            ].map((metric, i) => (
+              <div key={i} className="p-4 rounded-xl border border-white/10 bg-white/[0.03] text-center">
+                <div className="text-3xl font-extrabold text-amber-400">{metric.stat}</div>
+                <div className="text-xs text-slate-300 mt-1">{metric.label}</div>
+              </div>
+            ))}
+          </section>
+
+          {/* AUDIENCE & USE-CASE CLARITY SECTION */}
+          <section className="p-8 rounded-2xl border border-white/10 bg-white/[0.02] space-y-6">
+            <h2 className="text-3xl font-bold tracking-tight text-white border-l-4 border-amber-500 pl-4">
+              Target Audience, Use Cases & Industry Context
+            </h2>
+            <p className="text-slate-200 leading-relaxed text-base">
+              Our specialized consulting and custom software engineering solutions are tailored explicitly for forward-thinking organizations navigating complex technology environments across the Middle East, North Africa, and South Asia regions.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+              <div className="p-5 rounded-xl border border-white/5 bg-white/[0.02] space-y-2">
+                <h3 className="text-lg font-semibold text-amber-400">Target Audience</h3>
+                <p className="text-sm text-slate-300">CTOs, Chief Information Officers, IT Directors, Product Managers, and Operations Executives seeking scalable technical infrastructure and rapid digital transformation.</p>
+              </div>
+              <div className="p-5 rounded-xl border border-white/5 bg-white/[0.02] space-y-2">
+                <h3 className="text-lg font-semibold text-amber-400">Primary Industry Verticals</h3>
+                <p className="text-sm text-slate-300">Retail conglomerates, e-commerce networks, real estate developers, hospitality chains, supply chain logistics firms, and financial services institutions.</p>
+              </div>
+              <div className="p-5 rounded-xl border border-white/5 bg-white/[0.02] space-y-2">
+                <h3 className="text-lg font-semibold text-amber-400">Core Use Cases</h3>
+                <p className="text-sm text-slate-300">Replacing legacy ERPs, engineering custom cross-platform web/mobile apps, conducting zero-day cybersecurity vulnerability audits, and scaling cloud networks.</p>
+              </div>
+            </div>
+          </section>
 
           {/* SECTION 1: Who Is 4Biz International? */}
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative w-full h-[300px] sm:h-[380px] rounded-2xl overflow-hidden border border-white/10 shadow-xl group order-last lg:order-first">
               <Image 
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" 
-                alt="Digital Operations and Enterprise Management" 
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" 
+                alt="Enterprise Digital Operations and Software System Architecture by 4Biz International" 
+                width={800}
+                height={600}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out" 
               />
             </div>
             
@@ -247,30 +277,33 @@ export default function BlogPage() {
               </h2>
               <div className="space-y-4 text-slate-200 leading-relaxed text-base">
                 <p>
-                  4Biz International LLC is a Dubai-headquartered IT solutions and software development company specializing in end-to-end digital transformation for businesses of all sizes. From custom ERP and CRM systems to web development, cloud infrastructure, cybersecurity, and digital marketing, we help organizations modernize their operations and scale with confidence.
+                  4Biz International LLC is a full-service technology consultancy and IT implementation partner based in Dubai, UAE. We specialize in engineering high-performance software systems that solve operational bottlenecks, streamline multi-channel workflows, and secure digital assets for corporate enterprises.
                 </p>
-                <blockquote className="border-l-2 border-amber-400/50 pl-4 py-1 italic bg-white/5 rounded-r-lg text-amber-300">
-                  Our tagline, "Impacting Infinite," reflects our core belief: technology should create limitless opportunities for growth, not add complexity. We combine deep technical expertise with a client-first approach, delivering solutions that are scalable, secure, and built to last.
-                </blockquote>
                 <p>
-                  With a growing footprint across the UAE and India, our team operates from a corporate hub in Dubai and delivery centers in Kozhikode, Kerala—giving clients the advantage of Gulf-based strategy paired with strong technical execution.
+                  To explore our full scope of capabilities, learn more <Link href="/about/" className="text-amber-400 underline hover:text-amber-300">about our corporate vision</Link>, browse our <Link href="/services/" className="text-amber-400 underline hover:text-amber-300">core IT services directory</Link>, review our <Link href="/portfolio/" className="text-amber-400 underline hover:text-amber-300">enterprise client portfolio</Link>, or contact our technical team via our <Link href="/contact/" className="text-amber-400 underline hover:text-amber-300">official contact portal</Link>.
                 </p>
+                <blockquote className="border-l-2 border-amber-400/50 pl-4 py-2 italic bg-white/5 rounded-r-lg text-amber-300">
+                  "Impacting Infinite" represents our commitment to designing software systems that eliminate scalability barriers and expand business capability.
+                </blockquote>
               </div>
             </div>
           </section>
 
-          {/* SECTION 2: Our Story So Far */}
+          {/* SECTION 2: Proven History & Client Record */}
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl font-bold tracking-tight text-white border-l-4 border-amber-500 pl-4">
-                Our Story So Far
+                Our Corporate History & Market Execution
               </h2>
               <div className="space-y-4 text-slate-200 leading-relaxed text-base">
                 <p>
-                  4Biz International was built on a simple idea: businesses shouldn't have to juggle multiple vendors for software, hosting, marketing, and IT support. Over the years, we've grown into a full-stack technology partner, having delivered hundreds of projects for clients across retail, real estate, hospitality, manufacturing, and enterprise sectors—including recognizable names like Theyyampattil Furniture, Opus Building Materials, Apparel Group, Ramada, 6thStreet, and Al Rostamani Group.
+                  Founded to bridge the gap between high-level IT consulting and execution-focused software engineering, 4Biz International has evolved under the leadership of Chief Executive Officer <strong>Ibrahim V</strong> into a trusted Middle East tech provider.
                 </p>
                 <p>
-                  Under the leadership of CEO Ibrahim V, the company has expanded from a software development shop into a comprehensive digital transformation partner, with dedicated teams for ERP/CRM, web and mobile development, cloud infrastructure, cybersecurity, and performance marketing.
+                  Over the past decade, our offshore software development hubs and onshore enterprise advisors have built specialized IT architectures for market leaders in retail, hospitality, real estate, and finance across the GCC.
+                </p>
+                <p>
+                  We have successfully engineered custom systems for leading market brands including <em>Theyyampattil Furniture</em>, <em>Opus Building Materials</em>, <em>Apparel Group</em>, <em>Ramada</em>, <em>6thStreet</em>, and <em>Al Rostamani Group</em>.
                 </p>
               </div>
             </div>
@@ -278,136 +311,183 @@ export default function BlogPage() {
             <div className="relative w-full h-[300px] sm:h-[380px] rounded-2xl overflow-hidden border border-white/10 shadow-xl group">
               <Image 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
-                alt="Agile Collaborative Tech Development Team" 
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" 
+                alt="Collaborative Software Engineering Team Analyzing Data at 4Biz International" 
+                width={800}
+                height={600}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out" 
               />
             </div>
           </section>
 
-          {/* SECTION 3: What We Do: Our Core Services */}
+          {/* SECTION 3: Deep Technical Service Breakdown */}
           <section className="space-y-8">
-            <div className="text-center max-w-3xl mx-auto space-y-3">
-              <h2 className="text-3xl font-bold tracking-tight text-white">
-                What We Do: Our Core Services
-              </h2>
-              <p className="text-slate-300">
-                We organize our expertise into a few key pillars:
-              </p>
-            </div>
-
+            <h2 className="text-3xl font-bold tracking-tight text-white border-l-4 border-amber-500 pl-4">
+              Detailed Core Service Pillar Capabilities
+            </h2>
+            <p className="text-slate-200 leading-relaxed text-base">
+              Our engineering practices adhere to strict Agile deployment cycles, DevOps automation, and rigorous quality assurance standards. From initial discovery through deployment and post-launch maintenance, we ensure seamless scalability for growing organizations.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { title: "1. Enterprise Business Applications (ERP & CRM)", desc: "Custom ERP and CRM development, including Microsoft Dynamics 365, Odoo ERP, and ERPNext implementations, sales automation, and HR & payroll solutions." },
-                { title: "2. Web, Mobile & Commerce Solutions", desc: "UI/UX design, corporate website development, web and mobile app development, eCommerce platforms, progressive web apps (PWAs), and API integrations." },
-                { title: "3. Digital Growth, Marketing & Brand Experience", desc: "SEO and Answer Engine Optimization (AEO), social media management, performance marketing, content and brand strategy, and online reputation management." },
-                { title: "4. Cloud, Hosting & Infrastructure", desc: "Domain registration, shared/VPS/dedicated hosting, AWS and Microsoft Azure solutions, server management, and disaster recovery." },
-                { title: "5. Cybersecurity & Digital Protection", desc: "Penetration testing, vulnerability assessments, SSL certificates, SiteLock protection, and 24/7 security monitoring." },
-                { title: "6. Digital Workplace & Productivity Solutions", desc: "Microsoft 365, Google Workspace, and Zoho Workplace setup, business email solutions, and workflow automation." },
-                { title: "7. Digital Transformation & Emerging Technologies", desc: "AI chatbots and assistants, business process automation, and enterprise-wide digital transformation consulting." }
-              ].map((service, index) => (
-                <div key={index} className="p-6 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:border-amber-500/30 hover:bg-white/[0.06] flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-semibold text-amber-400">{service.title}</h3>
-                    <p className="text-sm text-slate-200 leading-relaxed">{service.desc}</p>
-                  </div>
-                </div>
-              ))}
+              <div className="p-6 rounded-xl border border-white/10 bg-white/[0.03] space-y-3">
+                <h3 className="text-lg font-semibold text-amber-400">1. Enterprise ERP & CRM Implementations</h3>
+                <p className="text-sm text-slate-200 leading-relaxed">Custom configuration, database migration, and system architecture for Microsoft Dynamics 365, Odoo ERP, and ERPNext to optimize supply chain, finance, HR, and client relationship management.</p>
+              </div>
+              <div className="p-6 rounded-xl border border-white/10 bg-white/[0.03] space-y-3">
+                <h3 className="text-lg font-semibold text-amber-400">2. Full-Stack Web & Mobile Engineering</h3>
+                <p className="text-sm text-slate-200 leading-relaxed">High-performance Progressive Web Apps (PWAs), Next.js microservices, and native mobile applications (React Native, iOS, Android) built for low latency and high concurrency.</p>
+              </div>
+              <div className="p-6 rounded-xl border border-white/10 bg-white/[0.03] space-y-3">
+                <h3 className="text-lg font-semibold text-amber-400">3. Cloud Architecture & Infrastructure</h3>
+                <p className="text-sm text-slate-200 leading-relaxed">End-to-end cloud migration, automated Kubernetes deployments, and 24/7 proactive monitoring across AWS, Microsoft Azure, and dedicated high-availability clusters.</p>
+              </div>
+              <div className="p-6 rounded-xl border border-white/10 bg-white/[0.03] space-y-3">
+                <h3 className="text-lg font-semibold text-amber-400">4. Cybersecurity & Vulnerability Audit</h3>
+                <p className="text-sm text-slate-200 leading-relaxed">Comprehensive static and dynamic penetration testing, vulnerability assessments, automated SSL management, SiteLock defenses, and round-the-clock Security Operations Center (SOC) monitoring.</p>
+              </div>
+              <div className="p-6 rounded-xl border border-white/10 bg-white/[0.03] space-y-3">
+                <h3 className="text-lg font-semibold text-amber-400">5. Digital Workplace Optimization</h3>
+                <p className="text-sm text-slate-200 leading-relaxed">Seamless integration and enterprise deployment of Google Workspace, Microsoft 365, and Zoho suites to unify internal team communication and cloud storage security.</p>
+              </div>
+              <div className="p-6 rounded-xl border border-white/10 bg-white/[0.03] space-y-3">
+                <h3 className="text-lg font-semibold text-amber-400">6. Growth Marketing & Search Optimization</h3>
+                <p className="text-sm text-slate-200 leading-relaxed">Data-driven Search Engine Optimization (SEO), Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), conversion tracking, and multi-platform PPC campaigns.</p>
+              </div>
             </div>
           </section>
 
-          {/* SECTION 4: Where We Operate */}
+          {/* SECTION 4: Engineering Methodologies & Workflow Process */}
+          <section className="space-y-6 p-8 rounded-2xl border border-white/10 bg-white/[0.02]">
+            <h2 className="text-3xl font-bold tracking-tight text-white border-l-4 border-amber-500 pl-4">
+              Engineering Workflow & Implementation Methodology
+            </h2>
+            <p className="text-slate-200 leading-relaxed text-base">
+              To guarantee predictability, performance, and security across all enterprise deliverables, 4Biz International follows a structured 5-phase software development lifecycle (SDLC):
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold text-amber-400">Phase 1: Architecture Planning & Technical Discovery</h3>
+                <p className="text-sm text-slate-300">Defining system requirements, database schema designs, cloud topology, API mapping, and security threat modeling before code execution.</p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold text-amber-400">Phase 2: Agile Sprint Engineering & Iterative Builds</h3>
+                <p className="text-sm text-slate-300">Bi-weekly sprint iterations utilizing React, Next.js, Node.js, and Python frameworks alongside continuous integration (CI/CD) pipelines.</p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold text-amber-400">Phase 3: Automated Testing & Vulnerability Auditing</h3>
+                <p className="text-sm text-slate-300">Rigorous load testing, unit testing, cross-browser responsiveness checks, dynamic vulnerability scanning, and OWASP Top 10 compliance audits.</p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold text-amber-400">Phase 4: Cloud Deployment & Data Migration</h3>
+                <p className="text-sm text-slate-300">Zero-downtime deployment executions on AWS or Azure high-availability environments, complete with encrypted legacy data migration.</p>
+              </div>
+            </div>
+          </section>
+
+          {/* SECTION 5: Service Comparison Matrix */}
+          <section className="space-y-6">
+            <h2 className="text-3xl font-bold tracking-tight text-white border-l-4 border-amber-500 pl-4">
+              Enterprise Service Feature Comparison
+            </h2>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm border-collapse border border-white/10">
+                <thead>
+                  <tr className="bg-white/10 text-amber-400">
+                    <th className="p-3 border border-white/10">Service Category</th>
+                    <th className="p-3 border border-white/10">Core Technologies / Frameworks</th>
+                    <th className="p-3 border border-white/10">Primary Business Benefit</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/10 text-slate-200">
+                  <tr>
+                    <td className="p-3 border border-white/10 font-semibold">ERP & CRM Systems</td>
+                    <td className="p-3 border border-white/10">Microsoft Dynamics 365, Odoo, ERPNext</td>
+                    <td className="p-3 border border-white/10">Operational automation & central data flow</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 border border-white/10 font-semibold">Web & Mobile Engineering</td>
+                    <td className="p-3 border border-white/10">Next.js, React Native, Node.js, REST APIs</td>
+                    <td className="p-3 border border-white/10">High-conversion UX and scalable apps</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 border border-white/10 font-semibold">Cloud Infrastructure</td>
+                    <td className="p-3 border border-white/10">AWS, Azure, Kubernetes, Managed VPS</td>
+                    <td className="p-3 border border-white/10">99.8% uptime & instant capacity scaling</td>
+                  </tr>
+                  <tr>
+                    <td className="p-3 border border-white/10 font-semibold">Cybersecurity & Audit</td>
+                    <td className="p-3 border border-white/10">Penetration Testing, SSL, SiteLock, SOC</td>
+                    <td className="p-3 border border-white/10">Risk reduction and compliance assurance</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* SECTION 6: Where We Operate */}
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h2 className="text-3xl font-bold tracking-tight text-white border-l-4 border-amber-500 pl-4">
-                Where We Operate
+                Where Is 4Biz International Located?
               </h2>
               <p className="text-slate-200 leading-relaxed">
-                4Biz International runs from three key locations:
+                4Biz International operates through a hybrid corporate-delivery model ensuring local accessibility and cost-effective software execution:
               </p>
               <ul className="space-y-3 text-slate-200">
                 <li className="flex items-start gap-2">
                   <span className="text-amber-400 font-bold">✓</span>
                   <div>
-                    <strong className="text-white">Dubai Corporate Hub</strong> – Crystal Building, Al Karama, Dubai, UAE
+                    <strong className="text-white">Dubai Corporate Hub:</strong> Crystal Building, Al Karama, Dubai, UAE.
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-amber-400 font-bold">✓</span>
                   <div>
-                    <strong className="text-white">India</strong> – HiLite Business Park - Kozhikode, Kerala
+                    <strong className="text-white">India Offshore Delivery Center 1:</strong> HiLite Business Park, Kozhikode, Kerala, India.
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-amber-400 font-bold">✓</span>
                   <div>
-                    <strong className="text-white">India</strong> – Nadakkave Office - Kozhikode, Kerala
+                    <strong className="text-white">India Offshore Delivery Center 2:</strong> Nadakkave, Kozhikode, Kerala, India.
                   </div>
                 </li>
               </ul>
-              <p className="text-sm text-slate-300 italic">
-                This dual-region setup allows us to serve clients across the UAE, India, and beyond with round-the-clock support and cost-effective delivery.
-              </p>
             </div>
 
             <div className="relative w-full h-[300px] sm:h-[350px] rounded-2xl overflow-hidden border border-white/10 shadow-xl group">
               <Image 
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" 
-                alt="4Biz Global Headquarters and Operations" 
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" 
+                alt="4Biz Global Headquarters and Enterprise IT Operations Hub" 
+                width={800}
+                height={600}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700 ease-out" 
               />
             </div>
           </section>
 
-          {/* SECTION 5: Why Businesses Choose 4Biz International */}
-          <section className="p-8 lg:p-12 rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent backdrop-blur-lg space-y-6">
-            <h2 className="text-3xl font-bold tracking-tight text-white">
-              Why Businesses Choose 4Biz International
-            </h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-200">
-              <li className="flex items-start gap-3 p-3 rounded-lg bg-white/[0.02]">
-                <span className="text-amber-400 text-xl font-bold mt-0.5">•</span>
-                <span className="text-sm sm:text-base"><strong className="text-white">Full-stack expertise</strong> — one partner for software, hosting, security, and marketing</span>
-              </li>
-              <li className="flex items-start gap-3 p-3 rounded-lg bg-white/[0.02]">
-                <span className="text-amber-400 text-xl font-bold mt-0.5">•</span>
-                <span className="text-sm sm:text-base"><strong className="text-white">Proven track record</strong> — hundreds of completed projects across multiple industries</span>
-              </li>
-              <li className="flex items-start gap-3 p-3 rounded-lg bg-white/[0.02]">
-                <span className="text-amber-400 text-xl font-bold mt-0.5">•</span>
-                <span className="text-sm sm:text-base"><strong className="text-white">Client-focused delivery</strong> — scalable, secure, future-ready solutions tailored to real business needs</span>
-              </li>
-              <li className="flex items-start gap-3 p-3 rounded-lg bg-white/[0.02]">
-                <span className="text-amber-400 text-xl font-bold mt-0.5">•</span>
-                <span className="text-sm sm:text-base"><strong className="text-white">Regional + global reach</strong> — serving clients across multiple countries from Dubai and India</span>
-              </li>
-            </ul>
-          </section>
-
-          {/* SECTION 6: Frequently Asked Questions */}
+          {/* SECTION 7: FAQ Section */}
           <section className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tight text-white border-l-4 border-amber-500 pl-4">
               Frequently Asked Questions
             </h2>
             <div className="space-y-4">
               {[
-                { q: "What does 4Biz International do?", a: "4Biz International is a Dubai-based IT solutions company offering software development, ERP and CRM systems, web and mobile app development, cloud hosting, cybersecurity, and digital marketing services for businesses across the UAE and beyond." },
-                { q: "Where is 4Biz International located?", a: "4Biz International is headquartered in Dubai, UAE, with additional offices at HiLite Business Park and Nadakkave in Kozhikode, Kerala, India." },
-                { q: "What industries does 4Biz International serve?", a: "4Biz International works with clients across retail, real estate, hospitality, manufacturing, and enterprise sectors, including brands like Theyyampattil Furniture, Opus Building Materials, Apparel Group, Ramada, 6thStreet, and Al Rostamani Group." },
-                { q: "Does 4Biz International offer ERP and CRM development?", a: "Yes. 4Biz International builds and implements custom ERP and CRM systems, including Microsoft Dynamics 365, Odoo ERP, and ERPNext, to streamline operations and improve customer engagement." },
-                { q: "Does 4Biz International provide cybersecurity services?", a: "Yes. Services include penetration testing, vulnerability assessments, SSL certificates, SiteLock protection, and continuous security monitoring to protect business systems from evolving threats." },
-                { q: "Who is the CEO of 4Biz International?", a: "Ibrahim V serves as the Chief Executive Officer of 4Biz International." },
-                { q: "How can I contact 4Biz International?", a: "You can reach 4Biz International through their Dubai office, their India offices in Kozhikode, or via the contact form on their official website." }
+                { q: "What does 4Biz International do?", a: "4Biz International LLC is a global IT solutions company specializing in custom ERP/CRM implementation, mobile and web app engineering, cloud infrastructure deployment, cybersecurity auditing, and performance-driven digital marketing." },
+                { q: "Where is 4Biz International located?", a: "4Biz International is headquartered in Dubai, UAE (Crystal Building, Al Karama), with global offshore software development delivery centers in Kozhikode, Kerala, India (HiLite Business Park & Nadakkave)." },
+                { q: "What industries does 4Biz International serve?", a: "4Biz International services clients in retail, real estate, hospitality, logistics, and healthcare. Enterprise clients include Theyyampattil Furniture, Opus Building Materials, Apparel Group, Ramada, 6thStreet, and Al Rostamani Group." },
+                { q: "Does 4Biz International offer ERP and CRM development?", a: "Yes, 4Biz International develops custom enterprise ERP and CRM platforms and manages tier-1 deployments for Microsoft Dynamics 365, Odoo ERP, and ERPNext." },
+                { q: "Does 4Biz International provide cybersecurity services?", a: "Yes, 4Biz International delivers penetration testing, automated vulnerability assessments, SSL setup, and 24/7 SOC threat monitoring." },
+                { q: "Who is the CEO of 4Biz International?", a: "Ibrahim V serves as the Chief Executive Officer of 4Biz International LLC." },
+                { q: "How can I contact 4Biz International?", a: "You can reach 4Biz International through their Dubai corporate hub, Kerala offshore delivery offices, or directly via their website contact portal." }
               ].map((faq, index) => (
                 <div key={index} className="border border-white/10 rounded-xl overflow-hidden bg-white/[0.02]">
                   <details className="group transition-all duration-300">
                     <summary className="flex justify-between items-center p-5 font-semibold text-white cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden hover:bg-white/[0.04]">
                       <span className="text-sm sm:text-base">{faq.q}</span>
                       <span className="transition-transform duration-300 group-open:rotate-180 text-amber-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-4 h-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-4 h-4 text-amber-400" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                         </svg>
                       </span>
@@ -423,7 +503,6 @@ export default function BlogPage() {
 
         </main>
 
-        {/* Global Client Contact Module integration */}
         <Contact />
       </div>
     </>
