@@ -28,6 +28,23 @@ interface ServiceBlock {
 // ----------------------------------------------------------------------
 const totalServices: ServiceBlock[] = [
   {
+    title: "Web, Mobile & Commerce Solutions",
+    questionTitle: "What are Web, Mobile & Commerce Development Solutions?",
+    directAnswer: "Web and mobile commerce solutions combine high-performance headless architecture with intuitive UI/UX design to maximize customer conversion rates.",
+    description: "Create powerful digital experiences with scalable websites, mobile applications, and eCommerce platforms designed for performance and growth.",
+    icon: <Monitor className="text-blue-400" size={22} />,
+    visualAsset: "/services/web-mobile-commerce-solutions.png",
+    accentColor: "from-blue-400 to-indigo-500",
+    glowColor: "from-blue-500/20 via-indigo-500/5 to-transparent",
+    url: "/services/web-mobile-commerce-solutions",
+    imageAlt: "Responsive e-commerce and mobile application development framework graphics",
+    points: [
+      "UI/UX Design", "Corporate Website Development", "Web Application Development", 
+      "Mobile App Development", "E-commerce Solutions", "CMS Development", 
+      "Progressive Web Apps (PWA)", "Payment Gateway Integration", "API Integration", "Portal Development"
+    ]
+  },
+  {
     title: "Digital Workplace & Productivity Solutions",
     questionTitle: "What are Digital Workplace & Productivity Solutions?",
     directAnswer: "Digital workplace solutions integrate enterprise cloud infrastructure, managed email systems, and unified collaboration tools to enable secure, productive hybrid operations.",
@@ -59,23 +76,6 @@ const totalServices: ServiceBlock[] = [
       "Custom ERP Development", "Custom CRM Development", "Microsoft Dynamics 365", 
       "Odoo ERP", "ERPNext", "4Biz ERP Solutions", "Sales Automation", 
       "Customer Relationship Management", "Inventory & Finance Management", "HR & Payroll Solutions"
-    ]
-  },
-  {
-    title: "Web, Mobile & Commerce Solutions",
-    questionTitle: "What are Web, Mobile & Commerce Development Solutions?",
-    directAnswer: "Web and mobile commerce solutions combine high-performance headless architecture with intuitive UI/UX design to maximize customer conversion rates.",
-    description: "Create powerful digital experiences with scalable websites, mobile applications, and eCommerce platforms designed for performance and growth.",
-    icon: <Monitor className="text-blue-400" size={22} />,
-    visualAsset: "/services/web-mobile-commerce-solutions.png",
-    accentColor: "from-blue-400 to-indigo-500",
-    glowColor: "from-blue-500/20 via-indigo-500/5 to-transparent",
-    url: "/services/web-mobile-commerce-solutions",
-    imageAlt: "Responsive e-commerce and mobile application development framework graphics",
-    points: [
-      "UI/UX Design", "Corporate Website Development", "Web Application Development", 
-      "Mobile App Development", "E-commerce Solutions", "CMS Development", 
-      "Progressive Web Apps (PWA)", "Payment Gateway Integration", "API Integration", "Portal Development"
     ]
   },
   {
