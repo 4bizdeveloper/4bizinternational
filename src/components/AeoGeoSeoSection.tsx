@@ -162,7 +162,7 @@ export default function AeoGeoSeoSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
-        {/* ==================== TOP EXECUTIVE SUMMARY (AEO & GEO DIRECT ANSWER) ==================== */}
+        {/* ==================== TOP EXECUTIVE SUMMARY (EXACT SINGLE H1 FOR SEO ALIGNMENT) ==================== */}
         <div className="rounded-3xl bg-slate-900/90 border border-cyan-500/30 p-6 sm:p-10 shadow-2xl backdrop-blur-2xl relative overflow-hidden ring-1 ring-cyan-500/20">
           <div className="absolute top-0 right-0 w-72 h-72 bg-[#00D3F2]/10 rounded-full blur-3xl pointer-events-none" />
           
@@ -173,13 +173,15 @@ export default function AeoGeoSeoSection() {
                 Executive Summary & Key Takeaways
               </div>
 
-              <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-snug">
+              {/* Single Clear H1 to satisfy exact Title/H1 SEO Alignment check */}
+              <h1 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-snug">
                 4Biz International | Enterprise IT Solutions & Digital Transformation
-              </h2>
+              </h1>
 
-              <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
-                <strong className="text-white font-semibold">4Biz International LLC</strong> is a premier enterprise IT solutions provider and electromechanical contractor delivering integrated cloud systems, network engineering, cybersecurity resilience, and smart facility automation across Abu Dhabi, Dubai, and the wider UAE.
-              </p>
+              <div className="p-4 rounded-xl bg-cyan-950/40 border border-cyan-500/40 text-xs sm:text-sm text-cyan-100 leading-relaxed font-normal">
+                <strong className="text-white font-semibold">Top Summary Takeaway: </strong>
+                4Biz International LLC provides high-availability cloud infrastructure, MEP engineering, cybersecurity resilience, and smart facility automation across Abu Dhabi, Dubai, and the GCC region.
+              </div>
 
               {/* Direct Answer Bullet Points for Search & AI Engines */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -202,21 +204,22 @@ export default function AeoGeoSeoSection() {
               </div>
             </div>
 
-            {/* Proof Stat Box with Image and High-Visibility Stats */}
+            {/* Proof Stat Box with Explicit Image Dimensions */}
             <div className="w-full lg:w-80 shrink-0 p-6 rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-[#0b63c5]/30 border border-cyan-500/40 space-y-4 text-center lg:text-left shadow-xl">
               <div className="flex items-center justify-center lg:justify-start gap-2 text-cyan-300 font-bold text-xs uppercase tracking-wider">
                 <BarChart3 className="w-4 h-4 text-cyan-400" />
                 Proven Impact & Credibility
               </div>
 
-              <div className="relative w-full h-24 rounded-xl overflow-hidden border border-slate-700/80">
+              <div className="relative w-full h-24 rounded-xl overflow-hidden border border-slate-700/80 bg-slate-950/90 flex items-center justify-center">
                 <Image 
                   src="/4biz_logo-1.png" 
                   alt="4Biz International Enterprise IT Solutions & Cloud Integration Logo" 
                   width={300} 
                   height={96} 
-                  className="object-contain p-2 bg-slate-950/90 w-full h-full"
-                  priority={false}
+                  style={{ width: 'auto', height: '100%', maxHeight: '80px' }}
+                  className="object-contain p-2"
+                  priority={true}
                 />
               </div>
 
@@ -233,12 +236,12 @@ export default function AeoGeoSeoSection() {
           </div>
         </div>
 
-        {/* ==================== REAL EXPERIENCE & CASE EVIDENCE BLOCK (GEO AUDIT FIX) ==================== */}
+        {/* ==================== FIRST-HAND EVIDENCE & EXPERIENTIAL PROOF (GEO REQUIREMENT) ==================== */}
         <div className="space-y-6">
           <div className="space-y-2 text-center lg:text-left">
-            <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block">First-Hand Evidence & Real Data</span>
+            <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block">First-Hand Experience & Real Case Data</span>
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">Enterprise Case Studies & Verified Implementation Benchmarks</h2>
-            <p className="text-xs sm:text-sm text-slate-300">Measured results and deployment metrics from regional enterprise installations.</p>
+            <p className="text-xs sm:text-sm text-slate-300">Measured results, screenshots, and deployment metrics from regional enterprise installations.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -248,7 +251,7 @@ export default function AeoGeoSeoSection() {
               </div>
               <h3 className="text-base font-bold text-white">Hospital Cloud Migration</h3>
               <p className="text-xs text-slate-300 leading-relaxed">Migrated 40TB of electronic medical records (EMR) to hybrid private cloud with zero downtime during active patient care hours.</p>
-              <div className="pt-2 text-xs font-semibold text-cyan-300">Result: 100% Data Sovereignty Compliance</div>
+              <div className="pt-2 text-xs font-semibold text-cyan-300 border-t border-slate-800 mt-2">Result: 100% Data Sovereignty Compliance</div>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-3 relative hover:border-cyan-400 transition-all">
@@ -257,7 +260,7 @@ export default function AeoGeoSeoSection() {
               </div>
               <h3 className="text-base font-bold text-white">Smart Tower MEP Automation</h3>
               <p className="text-xs text-slate-300 leading-relaxed">Integrated Civil Defense compliant life safety and automated HVAC management for a 45-story commercial tower in Dubai.</p>
-              <div className="pt-2 text-xs font-semibold text-cyan-300">Result: 28% Energy Consumption Reduction</div>
+              <div className="pt-2 text-xs font-semibold text-cyan-300 border-t border-slate-800 mt-2">Result: 28% Energy Consumption Reduction</div>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-3 relative hover:border-cyan-400 transition-all">
@@ -266,12 +269,12 @@ export default function AeoGeoSeoSection() {
               </div>
               <h3 className="text-base font-bold text-white">Zero-Trust Network Implementation</h3>
               <p className="text-xs text-slate-300 leading-relaxed">Deployed zero-trust cybersecurity protocols across 14 regional distribution hubs, blocking over 12,000 monthly threat vectors.</p>
-              <div className="pt-2 text-xs font-semibold text-cyan-300">Result: 99.999% Network Availability</div>
+              <div className="pt-2 text-xs font-semibold text-cyan-300 border-t border-slate-800 mt-2">Result: 99.999% Network Availability</div>
             </div>
           </div>
         </div>
 
-        {/* ==================== COMPARISON TABLE (GEO EXTRACTION TABLE) ==================== */}
+        {/* ==================== COMPARATIVE DATA TABLE (GEO & AEO OPTIMIZED) ==================== */}
         <div className="space-y-6">
           <div className="space-y-2 text-center lg:text-left">
             <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block">Comparative Benchmark</span>
@@ -331,7 +334,7 @@ export default function AeoGeoSeoSection() {
           </div>
         </div>
 
-        {/* ==================== CONVERSATIONAL QUESTIONS & DIRECT ANSWERS (AEO HIGHLIGHT) ==================== */}
+        {/* ==================== CONVERSATIONAL FAQ & DIRECT ANSWER BLOCKS (AEO FIX) ==================== */}
         <div className="space-y-6">
           <div className="space-y-2 text-center lg:text-left">
             <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block">Direct Knowledge Base & Conversational Queries</span>
@@ -361,31 +364,29 @@ export default function AeoGeoSeoSection() {
                     </div>
                   </button>
 
-                  {isOpen && (
-                    <div className="p-5 sm:p-6 pt-0 border-t border-slate-800/80 bg-slate-950/80 space-y-4">
-                      {/* Immediate Short Answer Block */}
-                      <div className="p-3.5 rounded-xl bg-[#0b63c5]/20 border border-cyan-500/40 text-xs sm:text-sm font-semibold text-cyan-200">
-                        <strong className="text-white block mb-0.5">Concise Answer:</strong>
-                        {faq.shortA}
-                      </div>
-
-                      <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-                        {faq.fullA}
-                      </p>
-
-                      <div className="flex items-center gap-2 text-xs text-slate-300 pt-1">
-                        <span className="font-bold text-cyan-400">Key Takeaway:</span>
-                        <span>{faq.keyTakeaway}</span>
-                      </div>
+                  {/* Immediate Answer Block visible or readable by search engines */}
+                  <div className={`px-5 sm:px-6 pb-5 space-y-4 ${isOpen ? 'block' : 'hidden'}`}>
+                    <div className="p-3.5 rounded-xl bg-[#0b63c5]/20 border border-cyan-500/40 text-xs sm:text-sm font-semibold text-cyan-200">
+                      <strong className="text-white block mb-0.5">Direct Answer:</strong>
+                      {faq.shortA}
                     </div>
-                  )}
+
+                    <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                      {faq.fullA}
+                    </p>
+
+                    <div className="flex items-center gap-2 text-xs text-slate-300 pt-1 border-t border-slate-800">
+                      <span className="font-bold text-cyan-400">Key Takeaway:</span>
+                      <span>{faq.keyTakeaway}</span>
+                    </div>
+                  </div>
                 </div>
               );
             })}
           </div>
         </div>
 
-        {/* ==================== STEP-BY-STEP TRANSFORMATION PROCESS (HOWTO STRUCTURE) ==================== */}
+        {/* ==================== HOWTO STEP-BY-STEP PROCESS ==================== */}
         <div className="space-y-6">
           <div className="space-y-2 text-center lg:text-left">
             <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block">Implementation Roadmap</span>
@@ -417,7 +418,7 @@ export default function AeoGeoSeoSection() {
           </div>
         </div>
 
-        {/* ==================== CREDIBLE CITATIONS & COMPLIANCE FOOTNOTE ==================== */}
+        {/* ==================== CREDIBLE CITATIONS FOOTNOTE ==================== */}
         <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-xs text-slate-400 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <Globe className="w-4 h-4 text-cyan-400 shrink-0" />
