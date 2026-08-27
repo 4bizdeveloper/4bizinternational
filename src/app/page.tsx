@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 // --- SERVER-SIDE CLIENT COMPONENTS (Preserved Imports) ---
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
+import AeoGeoSeoSection from '@/components/AeoGeoSeoSection';
 import About from "@/components/About";
 import ClientSection from '@/components/ClientSection';
 import Faq from '@/components/Faq';
@@ -124,9 +125,10 @@ function HomeClientContent() {
       
       {/* Content Sections: Structured cleanly to prevent DOM jumping */}
       <About />
-      <Services />  
+      <Services />
+      
       <ClientSection />   
-      <Faq />  
+      <AeoGeoSeoSection /> 
       <Contact />         
     </div>
   );
