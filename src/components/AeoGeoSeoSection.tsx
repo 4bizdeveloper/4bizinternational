@@ -23,6 +23,16 @@ const schemaData = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://www.4bizinternational.com/#organization",
+      "name": "4Biz International LLC",
+      "url": "https://www.4bizinternational.com",
+      "logo": "https://www.4bizinternational.com/4biz_logo-1.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/4biz-international"
+      ]
+    },
+    {
       "@type": "FAQPage",
       "@id": "https://www.4bizinternational.com/#faq-section",
       "mainEntity": [
@@ -128,7 +138,6 @@ const faqs: FaqItem[] = [
 ];
 
 export default function AeoGeoSeoSection() {
-  // FIXED: Set default to null so no FAQ is auto-opened on page load
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (idx: number) => {
@@ -137,8 +146,8 @@ export default function AeoGeoSeoSection() {
 
   return (
     <section 
-      aria-label="Enterprise IT & Transformation Knowledge Base" 
-      className="w-full py-16 sm:py-24 bg-gradient-to-b from-[#020b2d] via-[#031548] to-[#010820] text-slate-100 relative overflow-hidden font-sans border-t border-blue-500/30 shadow-2xl"
+      aria-label="Enterprise IT Solutions & Digital Transformation Knowledge Base" 
+      className="w-full py-16 sm:py-24 bg-gradient-to-b from-[#020b2d] via-[#031548] to-[#061e52] text-slate-100 relative overflow-hidden font-sans border-t border-blue-500/30 shadow-2xl"
     >
       {/* Schema Injection for Search Engines & AI Crawlers */}
       <script
@@ -148,7 +157,8 @@ export default function AeoGeoSeoSection() {
 
       {/* Ambient Visual Backdrops Extracted from Brand Color Palette */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-b from-[#00D3F2]/20 via-[#0b63c5]/15 to-transparent blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] bg-gradient-to-t from-[#00D3F2]/20 via-[#0b63c5]/20 to-transparent blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/15 rounded-full blur-[150px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
@@ -163,9 +173,8 @@ export default function AeoGeoSeoSection() {
                 Executive Summary & Key Takeaways
               </div>
 
-              {/* H2 section header maintains proper document hierarchy */}
               <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-snug">
-                Enterprise IT Infrastructure & Digital Transformation Matrix
+                4Biz International | Enterprise IT Solutions & Digital Transformation
               </h2>
 
               <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
@@ -412,7 +421,7 @@ export default function AeoGeoSeoSection() {
         <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-xs text-slate-400 flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <Globe className="w-4 h-4 text-cyan-400 shrink-0" />
-            <span>Verified Standards: Compliant with UAE Data Sovereignty & Regional Regulatory Rules.</span>
+            <span>Verified Standards: Compliant with UAE Data Sovereignty & Regional Regulatory Rules. Source: <a href="https://www.4bizinternational.com" className="text-cyan-400 underline hover:text-cyan-300">4Biz Official Specs</a>.</span>
           </div>
         </div>
 
@@ -428,7 +437,6 @@ export default function AeoGeoSeoSection() {
             Speak directly with our technology architects to receive a tailored digital roadmap, cost assessment, and SLA guarantee.
           </p>
           
-          {/* FIXED: Cleaned button styling to prevent bleeding colors or ugly overflow drop shadows */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <a 
               href="/contact" 
