@@ -77,7 +77,7 @@ export default function Home() {
         }}
         {...({ fetchPriority: 'high' } as CustomVideoProps)}
       >
-        <source src="/hero-1.mp4" type="video/mp4" />
+        <source src="/background-video-1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
