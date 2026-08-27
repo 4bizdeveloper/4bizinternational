@@ -438,7 +438,7 @@ export default function AeoGeoSeoSection() {
               <ArrowRight className="w-4 h-4" />
             </a>
             <a 
-              href="tel:+971528976025" 
+              href="tel:+971527925100" 
               className="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-950 border border-slate-700 hover:border-cyan-400 text-slate-100 font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2"
             >
               <span>Call Technical Support</span>
