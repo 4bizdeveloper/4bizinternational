@@ -668,11 +668,6 @@ export default function AeoGeoSeoSection() {
             <Globe className="w-4 h-4 text-cyan-400 shrink-0" />
             <span>Verified IT Frameworks: ISO 27001 Certified Security, Zero-Trust Access, and Gartner Benchmarking. Source: <Link href="/" className="text-cyan-400 underline hover:text-cyan-300">4Biz Official Specs</Link>.</span>
           </div>
-          <div className="flex items-center gap-3 shrink-0 text-[11px] text-slate-400">
-            <a href="https://www.gartner.com" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 underline">Gartner Standards</a>
-            <span>•</span>
-            <a href="https://www.iso.org" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 underline">ISO 27001 Info</a>
-          </div>
         </div>
 
         {/* ==================== HIGH-CONVERSION CTA BLOCK ==================== */}
