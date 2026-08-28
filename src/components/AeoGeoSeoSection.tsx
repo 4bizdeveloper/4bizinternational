@@ -249,7 +249,7 @@ export default function AeoGeoSeoSection() {
           </div>
         </div>
 
-        {/* ==================== 8 CORE ENTERPRISE IT CAPABILITIES (UPDATED INTERNAL LINKS) ==================== */}
+        {/* ==================== 8 CORE ENTERPRISE IT CAPABILITIES (UPDATED INTERNAL LINKS & CENTERED LAST TWO CARDS ON DESKTOP) ==================== */}
         <div className="space-y-6 sm:space-y-8">
           <div className="space-y-2 text-center lg:text-left">
             <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block">Enterprise Capabilities</span>
@@ -257,10 +257,10 @@ export default function AeoGeoSeoSection() {
             <p className="text-xs sm:text-sm text-slate-300">Comprehensive technology suite engineered to modernize enterprise workflows and secure infrastructure.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 sm:gap-6">
             
             {/* Capability 01: Web & Mobile Commerce Solutions */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
+            <div className="lg:col-span-2 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">01— Enterprise Capability</span>
@@ -284,7 +284,7 @@ export default function AeoGeoSeoSection() {
             </div>
 
             {/* Capability 02: Digital Workplace & Productivity Solutions */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
+            <div className="lg:col-span-2 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">02— Enterprise Capability</span>
@@ -308,7 +308,7 @@ export default function AeoGeoSeoSection() {
             </div>
 
             {/* Capability 03: ERP & CRM */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
+            <div className="lg:col-span-2 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">03— Enterprise Capability</span>
@@ -332,7 +332,7 @@ export default function AeoGeoSeoSection() {
             </div>
 
             {/* Capability 04: Digital Growth & AEO */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
+            <div className="lg:col-span-2 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">04— Enterprise Capability</span>
@@ -356,7 +356,7 @@ export default function AeoGeoSeoSection() {
             </div>
 
             {/* Capability 05: Communication & Engagement */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
+            <div className="lg:col-span-2 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">05— Enterprise Capability</span>
@@ -380,7 +380,7 @@ export default function AeoGeoSeoSection() {
             </div>
 
             {/* Capability 06: Cloud & Infrastructure */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
+            <div className="lg:col-span-2 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">06— Enterprise Capability</span>
@@ -403,8 +403,8 @@ export default function AeoGeoSeoSection() {
               </Link>
             </div>
 
-            {/* Capability 07: Cybersecurity */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
+            {/* Capability 07: Cybersecurity (Centered on Desktop via lg:col-start-2 lg:col-span-2) */}
+            <div className="lg:col-start-2 lg:col-span-2 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">07— Enterprise Capability</span>
@@ -427,8 +427,8 @@ export default function AeoGeoSeoSection() {
               </Link>
             </div>
 
-            {/* Capability 08: Digital Transformation & AI */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
+            {/* Capability 08: Digital Transformation & AI (Centered on Desktop via lg:col-span-2) */}
+            <div className="lg:col-span-2 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">08— Enterprise Capability</span>
