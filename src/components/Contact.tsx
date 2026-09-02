@@ -97,7 +97,12 @@ export default function Contact() {
       } catch (_) {}
 
       try {
-        const res = await fetch('https://ipapi.co/json/');
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 1200);
+        
+        const res = await fetch('https://ipapi.co/json/', { signal: controller.signal });
+        clearTimeout(timeoutId);
+        
         if (res.ok) {
           const data = await res.json();
           if (data.country_code) {
@@ -162,7 +167,6 @@ export default function Contact() {
     payload.countryCode = (countryCode || 'ae').toUpperCase(); 
 
     try {
-      // 1. Dispatch notification email[cite: 14]
       const response = await fetch('/api/send-mail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -174,25 +178,42 @@ export default function Contact() {
       const result = await response.json();
 
       if (result.status === 'success') {
-        // 2. Forward lead record structural schema safely to FastAPI[cite: 11]
-        try {
-          await fetch("https://fourbiz-lead-crm-backend-python.onrender.com/api/leads", {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              name: name,
-              email: email,
-              phone: phone,
-              message: message || ""
-            })
-          });
-        } catch (backendError) {
-          console.error("Email successful, backend CRM submission failure:", backendError);
-        }
-
         setStatus('success');
         if (formRef.current) formRef.current.reset();
         setPhone('');
+
+        // Safe background fetch wrapper handling CORS & network drops
+        const safeFetch = async (url: string, options: RequestInit) => {
+          try {
+            await fetch(url, options);
+          } catch (err) {
+            console.warn(`Background dispatch error for ${url}:`, err);
+          }
+        };
+
+        // Fire secondary endpoints without throwing unhandled exceptions
+        safeFetch("https://fourbiz-lead-crm-backend-python.onrender.com/api/leads", {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            message: message || ""
+          })
+        });
+
+        safeFetch("https://4biz-crm-app.vercel.app/api/contact", {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone,
+            requirements: message || "",
+            campaign_name: 'Official Website Direct Inquiry'
+          })
+        });
 
         setTimeout(() => {
           setStatus('idle');
@@ -386,7 +407,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* RIGHT COMPONENT: BRAND OFFICE PANEL - Perfectly Symmetric Layout */}
+        {/* RIGHT COMPONENT: BRAND OFFICE PANEL */}
         <div className="lg:col-span-6 xl:col-span-5 bg-slate-100 border-t lg:border-t-0 border-neutral-200/50 py-16 px-6 sm:px-12 lg:px-12 xl:px-16 flex flex-col justify-center transition-colors duration-300 w-full">
           <div className="w-full max-w-xl mx-auto space-y-12">
             <div>
@@ -399,7 +420,6 @@ export default function Contact() {
               </h3>
             </div>
 
-            {/* Structured Symmetrical Vertical Layout Grid */}
             <div className="w-full space-y-12 block text-left items-start">
               
               {/* REGION SECTION 1: UAE */}
@@ -408,7 +428,6 @@ export default function Contact() {
                   <span className="text-xs font-black uppercase tracking-widest text-neutral-900 block">United Arab Emirates</span>
                 </div>
 
-                {/* Dubai Corporate Hub */}
                 <div className="group w-full block text-left">
                   <h4 className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-[#0c9d7d] block">
                     Dubai Corporate Hub
@@ -451,7 +470,6 @@ export default function Contact() {
                   <span className="text-xs font-black uppercase tracking-widest text-neutral-900 block">India</span>
                 </div>
 
-                {/* India HQ Facility 1 */}
                 <div className="group w-full block text-left">
                   <h4 className="text-sm font-extrabold text-neutral-900 tracking-wide uppercase transition-colors duration-200 group-hover:text-[#0c9d7d] block">
                     India HiLite Business Park
