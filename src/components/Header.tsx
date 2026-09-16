@@ -128,7 +128,7 @@ export default function Header() {
             <div className="relative flex items-center justify-center transform-gpu w-20 h-10 sm:w-24 sm:h-12">
               <Image
                 src="/4biz_logo-3.png"
-                alt="4biz International Logo - Global Corporate Business setup and Consultants"
+                alt="4biz International Logo - Global IT Solutions, Business Setup, and Corporate Consulting"
                 fill
                 sizes="(max-width: 640px) 96px, 112px"
                 className="object-contain"
@@ -193,7 +193,7 @@ export default function Header() {
               <div className="relative w-24 h-12 sm:w-28 sm:h-14 flex items-center justify-center transform-gpu">
                 <Image
                   src="/4biz_logo-1.png"
-                  alt="4biz International Navigation Logo - Corporate Advisors"
+                  alt="4biz International Navigation Logo - IT Services and Corporate Advisory Consultancy"
                   fill
                   sizes="(max-width: 640px) 96px, 112px"
                   className="object-contain"

@@ -12,7 +12,7 @@ import Contact from '@/components/Contact';
 
 // --- HOME-SPECIFIC HIGH-CONVERSION METADATA (Server-Side SEO/AEO/GEO) ---
 export const metadata: Metadata = {
-  title: '4Biz International | Enterprise IT Solutions & Digital Transformation',
+  title: '4Biz International | IT Solutions & Digital Transformation Dubai',
   description: '4Biz International delivers custom ERP/CRM software, enterprise IT consulting, cloud infrastructure, cybersecurity, and digital marketing in Dubai, UAE.',
   keywords: [
     'IT Solutions Dubai',
@@ -100,6 +100,50 @@ const homepageSchemaGraph = {
         },
       ],
     },
+    {
+      '@type': 'Organization',
+      '@id': 'https://www.4bizinternational.com/#organization',
+      'name': '4Biz International',
+      'url': 'https://www.4bizinternational.com',
+      'logo': {
+        '@type': 'ImageObject',
+        'url': 'https://www.4bizinternational.com/4biz_logo-1.png',
+      },
+      'description': '4Biz International is an enterprise IT consulting and digital transformation provider specializing in custom ERP/CRM, cloud infrastructure, cybersecurity, and digital marketing.',
+      'areaServed': [
+        'Dubai',
+        'United Arab Emirates',
+        'GCC'
+      ],
+      'knowsAbout': [
+        'Enterprise Software Development',
+        'ERP & CRM Integration',
+        'Cloud Infrastructure & Migration',
+        'Cybersecurity',
+        'Digital Marketing & SEO'
+      ]
+    },
+    {
+      '@type': 'LocalBusiness',
+      '@id': 'https://www.4bizinternational.com/#localbusiness',
+      'name': '4Biz International',
+      'url': 'https://www.4bizinternational.com',
+      'image': 'https://www.4bizinternational.com/4biz_logo-1.png',
+      'priceRange': '$$$',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': 'Dubai',
+        'addressCountry': 'AE'
+      },
+      'geo': {
+        '@type': 'GeoCoordinates',
+        'latitude': 25.2048,
+        'longitude': 55.2708
+      },
+      'parentOrganization': {
+        '@id': 'https://www.4bizinternational.com/#organization'
+      }
+    }
   ],
 };
 

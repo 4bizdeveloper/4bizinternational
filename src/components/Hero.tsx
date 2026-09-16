@@ -25,7 +25,7 @@ export default function Home() {
       href: 'https://www.facebook.com/4bizglobal',
       label: 'Facebook',
       isComponent: true,
-      component: <FaFacebookF className={uniformIconSize} />,
+      component: <FaFacebookF className={uniformIconSize} aria-hidden="true" />,
       target: '_blank',
     },
     {
@@ -69,6 +69,7 @@ export default function Home() {
         preload="auto"
         crossOrigin="anonymous"
         poster="/hero-desktop-1.png"
+        aria-label="4Biz International Corporate Hero Background Video - IT Consulting & Software Development Solutions"
         className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 transform-gpu"
         style={{ 
           transform: 'translate3d(0,0,0)',
@@ -96,7 +97,7 @@ export default function Home() {
             target={social.target}
             rel={social.target === '_blank' ? 'noopener noreferrer' : undefined}
             className={iconClass}
-            aria-label={`Follow 4Biz International on ${social.label}`}
+            aria-label={`Follow 4Biz International IT Services on ${social.label}`}
           >
             {social.isComponent ? (
               social.component

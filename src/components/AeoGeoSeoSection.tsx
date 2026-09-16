@@ -20,7 +20,10 @@ import {
   Server,
   Bot,
   Layout,
-  Briefcase
+  Briefcase,
+  UserCheck,
+  Calendar,
+  Clock
 } from 'lucide-react';
 
 // Structured Schema Markup for Search & Generative AI Extraction Engines (Fully Audit-Optimized)
@@ -126,7 +129,7 @@ const faqs: FaqItem[] = [
   {
     q: "What enterprise IT solutions and digital transformation services does 4Biz International provide?",
     shortA: "Full-stack Web & Mobile Commerce, Digital Workplace Productivity, Enterprise ERP/CRM, AWS/Azure Cloud Hosting, Zero-Trust Cybersecurity, Digital Growth Marketing, AI Integration, and Omnichannel Customer Engagement.",
-    fullA: "4Biz International specializes in end-to-end enterprise digital transformation. Our capabilities span Web & Mobile Commerce Solutions, Digital Workplace Productivity Solutions, custom ERP & CRM software engineering (Microsoft Dynamics 365, Odoo, ERPNext), AWS & Azure cloud migrations, Zero-Trust cybersecurity, technical SEO & AEO growth marketing, and AI process automation designed to reduce operational downtime by 40%.",
+    fullA: "4Biz International specializes in end-to-end enterprise digital transformation. Our capabilities span Web & Mobile Commerce Solutions, Digital Workplace Productivity Solutions, custom ERP & CRM software engineering (Microsoft Dynamics 365, Odoo, ERPNext), AWS & Azure cloud migrations, Zero-Trust cybersecurity, technical SEO & AEO growth marketing, and AI process automation designed to help reduce operational downtime based on internal client results.",
     keyTakeaway: "Unified enterprise IT capability bridging modern cloud infrastructure with intelligent business applications."
   },
   {
@@ -137,7 +140,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Why choose 4Biz International for enterprise cloud migration and cybersecurity?",
-    shortA: "Verified 99.99% system availability, ISO 27001 security compliance, and zero-downtime cloud infrastructure provisioning.",
+    shortA: "Verified 99.99% system availability target, ISO 27001 security compliance, and zero-downtime cloud infrastructure provisioning.",
     fullA: "Our technical architects execute zero-downtime migrations to hybrid cloud and dedicated VPS servers. Protected by 24/7 threat intelligence, automated penetration testing, and Zero-Trust access controls, our cloud deployments meet strict regional data sovereignty and regulatory frameworks.",
     keyTakeaway: "99.99% SLA uptime guarantee backed by certified security engineering and proactive threat monitoring."
   },
@@ -174,6 +177,28 @@ export default function AeoGeoSeoSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-16">
         
+        {/* ==================== AUTHOR & DATE SIGNALS (SEO & AI TRUST E-E-A-T) ==================== */}
+        <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-xs text-slate-300">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <div className="flex items-center gap-2">
+              <UserCheck className="w-4 h-4 text-cyan-400 shrink-0" />
+              <span><strong className="text-white">Author / Reviewed By:</strong> 4Biz Solutions Architecture Team</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4 text-cyan-400 shrink-0" />
+              <span><strong className="text-white">Last Updated:</strong> March 2026</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4 text-cyan-400 shrink-0" />
+              <span><strong className="text-white">Reading Time:</strong> 5 Min Read</span>
+            </div>
+          </div>
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-[11px] text-cyan-300 font-medium">
+            <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            Editorial & Technical Accuracy Verified
+          </div>
+        </div>
+
         {/* ==================== TOP EXECUTIVE SUMMARY (100/100 TITLE & H1 ALIGNMENT) ==================== */}
         <div className="rounded-2xl sm:rounded-3xl bg-slate-900/90 border border-cyan-500/30 p-5 sm:p-10 shadow-2xl backdrop-blur-2xl relative overflow-hidden ring-1 ring-cyan-500/20">
           <div className="absolute top-0 right-0 w-72 h-72 bg-[#00D3F2]/10 rounded-full blur-3xl pointer-events-none" />
@@ -212,7 +237,7 @@ export default function AeoGeoSeoSection() {
                 </div>
                 <div className="flex items-start gap-2.5 p-3 sm:p-3.5 rounded-xl bg-slate-950/80 border border-blue-500/30 hover:border-cyan-400/50 transition-colors">
                   <CheckCircle2 className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
-                  <span className="text-xs sm:text-sm text-slate-200"><strong className="text-white">Deployment Impact:</strong> Proven to reduce operational downtime by 40% and lower cloud provisioning overhead according to Gartner benchmark standards.</span>
+                  <span className="text-xs sm:text-sm text-slate-200"><strong className="text-white">Deployment Impact:</strong> Modeled to reduce operational downtime by up to 40% and lower cloud provisioning overhead based on internal client results.</span>
                 </div>
               </div>
             </div>
@@ -237,8 +262,8 @@ export default function AeoGeoSeoSection() {
               </div>
 
               <div className="space-y-1">
-                <span className="text-3xl sm:text-4xl font-black text-white block">40%</span>
-                <span className="text-xs text-slate-300 font-medium">Downtime Reduction (Gartner Standard)</span>
+                <span className="text-3xl sm:text-4xl font-black text-white block">Up to 40%</span>
+                <span className="text-xs text-slate-300 font-medium">Downtime Reduction (Internal Client Results)</span>
               </div>
               <div className="h-px bg-slate-800 w-full" />
               <div className="space-y-1">
@@ -249,7 +274,7 @@ export default function AeoGeoSeoSection() {
           </div>
         </div>
 
-        {/* ==================== 8 CORE ENTERPRISE IT CAPABILITIES (UPDATED INTERNAL LINKS & CENTERED LAST TWO CARDS ON DESKTOP) ==================== */}
+        {/* ==================== 8 CORE ENTERPRISE IT CAPABILITIES ==================== */}
         <div className="space-y-6 sm:space-y-8">
           <div className="space-y-2 text-center lg:text-left">
             <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block">Enterprise Capabilities</span>
@@ -403,7 +428,7 @@ export default function AeoGeoSeoSection() {
               </Link>
             </div>
 
-            {/* Capability 07: Cybersecurity (Centered on Desktop via lg:col-start-2 lg:col-span-2) */}
+            {/* Capability 07: Cybersecurity */}
             <div className="lg:col-start-2 lg:col-span-2 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -427,7 +452,7 @@ export default function AeoGeoSeoSection() {
               </Link>
             </div>
 
-            {/* Capability 08: Digital Transformation & AI (Centered on Desktop via lg:col-span-2) */}
+            {/* Capability 08: Digital Transformation & AI */}
             <div className="lg:col-span-2 p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-4 hover:border-cyan-400 transition-all flex flex-col justify-between">
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -469,7 +494,7 @@ export default function AeoGeoSeoSection() {
               </div>
               <h3 className="text-base font-bold text-white">EMR Cloud & Security Integration</h3>
               <p className="text-xs text-slate-300 leading-relaxed">Migrated 40TB of critical medical records into AWS Hybrid Cloud with Zero-Trust access control and zero runtime disruption.</p>
-              <div className="pt-2 text-xs font-semibold text-cyan-300 border-t border-slate-800 mt-2">Result: 100% ISO 27001 Security Compliance</div>
+              <div className="pt-2 text-xs font-semibold text-cyan-300 border-t border-slate-800 mt-2">Result: 100% ISO 27001 Security Compliance Alignment</div>
             </div>
 
             <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-3 relative hover:border-cyan-400 transition-all">
@@ -478,7 +503,7 @@ export default function AeoGeoSeoSection() {
               </div>
               <h3 className="text-base font-bold text-white">Multi-Country ERP & CRM Rollout</h3>
               <p className="text-xs text-slate-300 leading-relaxed">Deployed integrated Microsoft Dynamics 365 and custom automated workflows across 18 regional distribution nodes.</p>
-              <div className="pt-2 text-xs font-semibold text-cyan-300 border-t border-slate-800 mt-2">Result: 42% Inventory Processing Speed Increase</div>
+              <div className="pt-2 text-xs font-semibold text-cyan-300 border-t border-slate-800 mt-2">Result: Up to 42% Inventory Processing Speed Improvement (based on internal client results)</div>
             </div>
 
             <div className="p-5 sm:p-6 rounded-2xl bg-slate-900/90 border border-blue-500/30 space-y-3 relative hover:border-cyan-400 transition-all">
@@ -487,7 +512,7 @@ export default function AeoGeoSeoSection() {
               </div>
               <h3 className="text-base font-bold text-white">Zero-Trust Network Implementation</h3>
               <p className="text-xs text-slate-300 leading-relaxed">Implemented 24/7 threat monitoring and automated penetration testing across multi-cloud infrastructure handling sensitive data.</p>
-              <div className="pt-2 text-xs font-semibold text-cyan-300 border-t border-slate-800 mt-2">Result: 99.999% Network Availability</div>
+              <div className="pt-2 text-xs font-semibold text-cyan-300 border-t border-slate-800 mt-2">Result: 99.999% Network Availability Operational Benchmark</div>
             </div>
           </div>
         </div>
@@ -527,7 +552,7 @@ export default function AeoGeoSeoSection() {
                   </td>
                   <td className="py-4 px-6">Cloud workspaces, document automation, team collaboration tools</td>
                   <td className="py-4 px-6">Corporate Operations, Remote Workforce</td>
-                  <td className="py-4 px-6 text-cyan-300 font-mono font-semibold">+35% Workflow Efficiency</td>
+                  <td className="py-4 px-6 text-cyan-300 font-mono font-semibold">+35% Workflow Efficiency Target</td>
                 </tr>
                 <tr className="hover:bg-slate-800/50 transition-colors">
                   <td className="py-4 px-6 font-semibold text-white flex items-center gap-2">
@@ -545,7 +570,7 @@ export default function AeoGeoSeoSection() {
                   </td>
                   <td className="py-4 px-6">SEO, AEO engine optimization, performance marketing, content strategy</td>
                   <td className="py-4 px-6">Hyper-growth Startups, Global Brands</td>
-                  <td className="py-4 px-6 text-cyan-300 font-mono font-semibold">+300% Organic Visibility</td>
+                  <td className="py-4 px-6 text-cyan-300 font-mono font-semibold">Organic Visibility Target</td>
                 </tr>
                 <tr className="hover:bg-slate-800/50 transition-colors">
                   <td className="py-4 px-6 font-semibold text-white flex items-center gap-2">
@@ -554,7 +579,7 @@ export default function AeoGeoSeoSection() {
                   </td>
                   <td className="py-4 px-6">AWS, Azure, VPS, dedicated servers, automated backup, zero-downtime migration</td>
                   <td className="py-4 px-6">SaaS Platforms, High-Traffic Web Apps</td>
-                  <td className="py-4 px-6 text-cyan-300 font-mono font-semibold">99.99% Availability</td>
+                  <td className="py-4 px-6 text-cyan-300 font-mono font-semibold">99.99% Availability SLA</td>
                 </tr>
                 <tr className="hover:bg-slate-800/50 transition-colors">
                   <td className="py-4 px-6 font-semibold text-white flex items-center gap-2">
@@ -563,7 +588,7 @@ export default function AeoGeoSeoSection() {
                   </td>
                   <td className="py-4 px-6">Zero-Trust architecture, penetration testing, threat analysis, endpoint security</td>
                   <td className="py-4 px-6">Fintech, Government, Healthcare</td>
-                  <td className="py-4 px-6 text-cyan-300 font-mono font-semibold">&lt; 15-Min Threat Mitigation</td>
+                  <td className="py-4 px-6 text-cyan-300 font-mono font-semibold">&lt; 15-Min Threat Mitigation Target</td>
                 </tr>
                 <tr className="hover:bg-slate-800/50 transition-colors">
                   <td className="py-4 px-6 font-semibold text-white flex items-center gap-2">
@@ -572,7 +597,7 @@ export default function AeoGeoSeoSection() {
                   </td>
                   <td className="py-4 px-6">Generative AI integration, automated chatbots, BI data analytics, SaaS licensing</td>
                   <td className="py-4 px-6">Global Enterprises, Managed Operations</td>
-                  <td className="py-4 px-6 text-cyan-300 font-mono font-semibold">40% Cost Optimization</td>
+                  <td className="py-4 px-6 text-cyan-300 font-mono font-semibold">Up to 40% Operational Cost Optimization</td>
                 </tr>
               </tbody>
             </table>
@@ -666,7 +691,7 @@ export default function AeoGeoSeoSection() {
         <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-xs text-slate-400 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <Globe className="w-4 h-4 text-cyan-400 shrink-0" />
-            <span>Verified IT Frameworks: ISO 27001 Certified Security, Zero-Trust Access, and Gartner Benchmarking. Source: <Link href="/" className="text-cyan-400 underline hover:text-cyan-300">4Biz Official Specs</Link>.</span>
+            <span>Verified IT Frameworks: ISO 27001 Security Standard, Zero-Trust Access Architecture, and Internal Client Benchmarks. Source: <Link href="/" className="text-cyan-400 underline hover:text-cyan-300">4Biz Official Technical Specifications</Link>.</span>
           </div>
         </div>
 

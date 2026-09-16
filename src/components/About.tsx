@@ -314,7 +314,7 @@ export default function About() {
               <div className="absolute w-44 h-22 xs:w-52 xs:h-26 sm:w-76 sm:h-38 lg:w-80 lg:h-40 transition-transform duration-500 hover:scale-105 transform-gpu filter drop-shadow-[0_0_35px_rgba(6,182,212,0.35)] flex items-center justify-center">
                 <Image
                   src="/4biz_logo-1.png"
-                  alt="4Biz International LLC - Leading IT Solutions and Software Development Company Logo"
+                  alt="4Biz International LLC logo - Provider of IT solutions, custom software development, mobile apps, ERP, and CRM services in Dubai, UAE"
                   fill
                   sizes="(max-width: 640px) 208px, (max-width: 1024px) 304px, 320px"
                   className="object-contain relative z-10"

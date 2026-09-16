@@ -6,21 +6,21 @@ import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 
 const ALL_CLIENTS = [
-  { id: 'pharsfilm', src: '/client-logos/pharsfilm-logo.svg', alt: 'Pharsfilm Logo', isColorful: true },
-  { id: 'theyyampattil', src: '/client-logos/theyyampattil-logo.avif', alt: 'Theyyampattil Logo' },
-  { id: 'opusbm', src: '/client-logos/opusbm-logo.png', alt: 'OpusBM Logo' },
-  { id: 'aimbridge', src: '/client-logos/aimbridge-logo.png', alt: 'Aimbridge Logo' },
-  { id: 'Alrumooz', src: '/client-logos/al-rumooz-logo.png', alt: 'Alrumooz Logo' },
-  { id: 'Apparel', src: '/client-logos/apparel-logo.svg', alt: 'Apparel Group Logo' },
-  { id: 'Inka-Dubai', src: '/client-logos/inka-dubai.png', alt: 'Inka Dubai Logo' },
-  { id: 'university-of-sharja', src: '/client-logos/university-of-sharja.png', alt: 'University of Sharjah Logo', isSharjahLogo: true },
-  { id: 'sixth-street', src: '/client-logos/6thstreet-logo.webp', alt: '6th Street Logo' },
-  { id: 'al-rostamani', src: '/client-logos/al-rostamani.svg', alt: 'Al Rostamani Group Logo' },
-  { id: 'beetroot', src: '/client-logos/beetroot.png', alt: 'Beetroot Logo' },
-  { id: 'Novo-Cinemas', src: '/client-logos/novo-cinemas.svg', alt: 'Novo Cinemas Logo' },
-  { id: 'ramada-group', src: '/client-logos/ramada-logo.png', alt: 'Ramada Group Logo' },
-  { id: 'apple-international-school', src: '/client-logos/apple-international-school.png', alt: 'Apple International School Logo' },
-  { id: 'fmredxb', src: '/client-logos/fmredxb.png', alt: 'FMREDXB Logo' },
+  { id: 'pharsfilm', src: '/client-logos/pharsfilm-logo.svg', alt: 'Phars Film corporate client logo', isColorful: true },
+  { id: 'theyyampattil', src: '/client-logos/theyyampattil-logo.avif', alt: 'Theyyampattil Furniture corporate partner logo' },
+  { id: 'opusbm', src: '/client-logos/opusbm-logo.png', alt: 'Opus BM business management client logo' },
+  { id: 'aimbridge', src: '/client-logos/aimbridge-logo.png', alt: 'Aimbridge Hospitality corporate client logo' },
+  { id: 'Alrumooz', src: '/client-logos/al-rumooz-logo.png', alt: 'Al Rumooz Group corporate client logo' },
+  { id: 'Apparel', src: '/client-logos/apparel-logo.svg', alt: 'Apparel Group retail brand partner logo' },
+  { id: 'Inka-Dubai', src: '/client-logos/inka-dubai.png', alt: 'Inka Dubai restaurant client logo' },
+  { id: 'university-of-sharja', src: '/client-logos/university-of-sharja.png', alt: 'University of Sharjah educational institution client logo', isSharjahLogo: true },
+  { id: 'sixth-street', src: '/client-logos/6thstreet-logo.webp', alt: '6th Street e-commerce retail partner logo' },
+  { id: 'al-rostamani', src: '/client-logos/al-rostamani.svg', alt: 'Al Rostamani Group corporate client logo' },
+  { id: 'beetroot', src: '/client-logos/beetroot.png', alt: 'Beetroot IT solutions partner logo' },
+  { id: 'Novo-Cinemas', src: '/client-logos/novo-cinemas.svg', alt: 'Novo Cinemas entertainment client logo' },
+  { id: 'ramada-group', src: '/client-logos/ramada-logo.png', alt: 'Ramada Group hospitality partner logo' },
+  { id: 'apple-international-school', src: '/client-logos/apple-international-school.png', alt: 'Apple International School academic client logo' },
+  { id: 'fmredxb', src: '/client-logos/fmredxb.png', alt: 'FMREDXB facilities management client logo' },
 ];
 
 const containerVariants: Variants = {
