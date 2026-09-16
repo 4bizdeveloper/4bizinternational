@@ -285,6 +285,17 @@ export default function DigitalGrowthMarketingBrandPage() {
                 </p>
               </div>
 
+              {/* NEW CARD: Google Ads (Placed right after SEO/AEO) */}
+              <div className="p-6 rounded-2xl bg-white/[0.04] border border-slate-700/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-400/60 hover:-translate-y-1 group">
+                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 transition-colors">
+                  <svg className="w-5 h-5 stroke-teal-300" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/><path d="M10 7v6l4 2"/></svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Google Ads (Search, Shopping &amp; YouTube)</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  Search, Performance Max, Shopping, and YouTube campaigns built around buying intent, with keyword themes, negative lists, and bidding managed against cost per lead rather than clicks.
+                </p>
+              </div>
+
               {/* Card 3: Social Media Management */}
               <div className="p-6 rounded-2xl bg-white/[0.04] border border-slate-700/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-400/60 hover:-translate-y-1 group">
                 <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 transition-colors">
@@ -304,6 +315,17 @@ export default function DigitalGrowthMarketingBrandPage() {
                 <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Social Media Advertising</h3>
                 <p className="text-sm text-slate-300 leading-relaxed">
                   Paid campaigns targeted to the audiences most likely to convert, with budget tracked against actual return rather than impressions alone.
+                </p>
+              </div>
+
+              {/* NEW CARD: Meta Ads (Placed right after Social Media Advertising) */}
+              <div className="p-6 rounded-2xl bg-white/[0.04] border border-slate-700/60 backdrop-blur-xl transition-all duration-300 hover:border-teal-400/60 hover:-translate-y-1 group">
+                <div className="w-11 h-11 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center mb-5 group-hover:bg-teal-500/20 transition-colors">
+                  <svg className="w-5 h-5 stroke-teal-300" viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 transition-colors group-hover:text-teal-300">Meta Ads (Facebook &amp; Instagram)</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  Facebook and Instagram campaigns structured across cold, warm, and retargeting audiences, with creative tested in sets so you know which hook and offer is actually producing sales.
                 </p>
               </div>
 
