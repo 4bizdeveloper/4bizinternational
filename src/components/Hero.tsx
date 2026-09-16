@@ -117,7 +117,7 @@ export default function Home() {
           <div className="w-full max-w-[95vw] sm:max-w-[640px] md:max-w-[850px] lg:max-w-[1100px] flex flex-col items-center">
             
             {/* Main Title Headings - Engineered with responsive fluid layouts to prevent dynamic layout shifts */}
-            <h1 
+            <p
               className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 sm:gap-x-5 text-center font-semibold uppercase tracking-[0.06em] text-white leading-[1.15] md:leading-tight font-sans"
               style={{
                 textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 16px rgba(0,0,0,0.6)',
@@ -129,7 +129,7 @@ export default function Home() {
               <span className="text-[8.5vw] xs:text-[2.2rem] sm:text-[3rem] md:text-[3.8rem] lg:text-[3.8rem]">
                 INTERNATIONAL
               </span>
-            </h1>
+            </p>
 
             {/* Subheading Tagline */}
             <h2 

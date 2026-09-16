@@ -186,9 +186,9 @@ export default function AeoGeoSeoSection() {
               </div>
 
               {/* Exact SEO Title-Aligned Single H1 */}
-              <h1 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-snug">
+              <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight leading-snug">
                 4Biz International | Enterprise IT Solutions & Digital Transformation
-              </h1>
+              </h2>
 
               {/* Concise Top Summary Answer (Required for 100/100 AEO/GEO Score) */}
               <div className="p-3.5 sm:p-4 rounded-xl bg-cyan-950/40 border border-cyan-500/40 text-xs sm:text-sm text-cyan-100 leading-relaxed font-normal">

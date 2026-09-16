@@ -171,13 +171,13 @@ export default function About() {
               className="relative w-full h-auto flex flex-col justify-center items-center lg:items-start select-text group py-1 mb-4 lg:cursor-none"
             >
               {/* 📱 MOBILE & TABLET VIEW */}
-              <h1 className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] select-text pointer-events-auto w-full text-center">
+              <h2 className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] select-text pointer-events-auto w-full text-center">
                 4BIZ <br />
                 <span className="text-[0.52em] xs:text-[0.55em] sm:text-[0.42em] tracking-normal block mt-1">INTERNATIONAL LLC</span>
-              </h1>
+              </h2>
 
               {/* 💻 DESKTOP VIEW: Outline Layer */}
-              <h1 
+              <h2 
                 className="hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider text-transparent pointer-events-auto select-text transition-all duration-500 uppercase leading-[1.05]"
                 style={{ 
                   WebkitTextStroke: isHovered ? '2px rgba(57, 243, 255, 0.95)' : '2px rgba(0, 191, 255, 0.85)',
@@ -189,7 +189,7 @@ export default function About() {
               >
                 4BIZ <br />
                 <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
-              </h1> 
+              </h2> 
 
               {/* 💻 DESKTOP VIEW: Spotlight Liquid Mask Overlay */}
               <div 
@@ -227,10 +227,10 @@ export default function About() {
 
             {/* Core Continuous Flowing Typography Block */}
             <div className="flex flex-col space-y-5 pt-1 max-w-5xl items-center lg:items-start w-full">
-              <h2 id="about-heading" className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-snug sm:leading-tight text-center lg:text-left select-text text-balance">
+              <h1 id="about-heading" className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-snug sm:leading-tight text-center lg:text-left select-text text-balance">
                 Leading IT Solutions &amp; Software Development Company in <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-[#38bdf8] to-blue-400 drop-shadow-[0_2px_10px_rgba(56,189,248,0.3)]">Dubai</span>
-              </h2>
+              </h1>
 
               {/* OPTIMIZED PARAGRAPH WITH ENHANCED CONTRAST & READABILITY */}
               <p className="text-slate-100 text-justify lg:text-justify text-[13.5px] tracking-normal [word-spacing:0.04rem] leading-[1.8] xs:text-[14.5px] xs:leading-[1.85] md:text-base md:leading-[1.9] font-normal border-l-0 lg:border-l-[3px] border-cyan-400/60 lg:pl-4 py-1 select-text text-wrap-balance">
