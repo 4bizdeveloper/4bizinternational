@@ -163,21 +163,22 @@ export default function About() {
             </div>
             
             {/* Ultra Modern Dynamic Typography Canvas Area */}
-            <header 
+            <div 
               ref={containerRef}
               onMouseMove={handleMouseMove}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               className="relative w-full h-auto flex flex-col justify-center items-center lg:items-start select-text group py-1 mb-4 lg:cursor-none"
+              aria-hidden="true"
             >
               {/* 📱 MOBILE & TABLET VIEW */}
-              <h2 className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] select-text pointer-events-auto w-full text-center">
+              <div className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] select-text pointer-events-auto w-full text-center">
                 4BIZ <br />
                 <span className="text-[0.52em] xs:text-[0.55em] sm:text-[0.42em] tracking-normal block mt-1">INTERNATIONAL LLC</span>
-              </h2>
+              </div>
 
               {/* 💻 DESKTOP VIEW: Outline Layer */}
-              <h2 
+              <div 
                 className="hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider text-transparent pointer-events-auto select-text transition-all duration-500 uppercase leading-[1.05]"
                 style={{ 
                   WebkitTextStroke: isHovered ? '2px rgba(57, 243, 255, 0.95)' : '2px rgba(0, 191, 255, 0.85)',
@@ -189,7 +190,7 @@ export default function About() {
               >
                 4BIZ <br />
                 <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
-              </h2> 
+              </div> 
 
               {/* 💻 DESKTOP VIEW: Spotlight Liquid Mask Overlay */}
               <div 
@@ -223,12 +224,14 @@ export default function About() {
                   <div className="absolute w-3 h-3 border-b-2 border-r-2 border-[#00f0ff] opacity-90 bottom-3 right-3" />
                 </div>
               )}
-            </header>
+            </div>
 
             {/* Core Continuous Flowing Typography Block */}
             <div className="flex flex-col space-y-5 pt-1 max-w-5xl items-center lg:items-start w-full">
+              
+              {/* CLEAN, SINGLE H1 NODE FOR SEO CRAWLERS */}
               <h1 id="about-heading" className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-snug sm:leading-tight text-center lg:text-left select-text text-balance">
-                Leading IT Solutions &amp; Software Development Company in <br className="hidden sm:inline" />
+                4BIZ INTERNATIONAL LLC - Leading IT Solutions &amp; Software Development Company in <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-[#38bdf8] to-blue-400 drop-shadow-[0_2px_10px_rgba(56,189,248,0.3)]">Dubai</span>
               </h1>
 
