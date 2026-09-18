@@ -172,7 +172,7 @@ function HomeClientContent() {
       <Services />
       
       <ClientSection />   
-      <AeoGeoSeoSection /> 
+      <Faq /> 
       <Contact />         
     </div>
   );
