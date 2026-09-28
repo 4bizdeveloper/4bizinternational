@@ -1,6 +1,8 @@
 import React from 'react';
 import { Metadata } from 'next';
-import BlogCardList from "./BlogCardList";
+import Image from 'next/image';
+import Link from 'next/link';
+import { RiCalendarLine, RiUser3Line, RiArrowRightUpLine } from 'react-icons/ri';
 
 export const metadata: Metadata = {
   title: "4Biz International Blog | Business & IT Insights Dubai",
@@ -35,15 +37,106 @@ export const metadata: Metadata = {
   },
 };
 
+interface BlogItem {
+  title: string;
+  excerpt: string;
+  slug: string;
+  image: string;
+  date: string;
+  author: string;
+  authorUrl: string;
+  category: string;
+}
+
+function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
+  return (
+    <section className="w-full px-1 sm:px-2">
+      <div className="flex flex-wrap justify-center gap-8 xl:gap-10 transition-all duration-300">
+        {blogs.map((blog, index) => (
+          <article 
+            key={index}
+            className="group relative bg-white rounded-[2.5rem] overflow-hidden transition-all duration-300 ease-out flex flex-col justify-between transform-gpu shadow-[0_35px_70px_-15px_rgba(0,3,20,0.7)] hover:shadow-[0_45px_85px_-10px_rgba(59,130,246,0.45)] hover:-translate-y-1.5 will-change-transform w-full md:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.34rem)] max-w-md"
+          >
+            <div>
+              <div className="relative aspect-[16/10] w-full bg-slate-100 overflow-hidden">
+                <Image 
+                  src={blog.image} 
+                  alt={blog.title}
+                  fill
+                  sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 33vw"
+                  priority={index === 0}
+                  className="object-cover object-center transition-transform duration-700 ease-out transform-gpu group-hover:scale-[1.02] will-change-transform"
+                />
+              </div>
+
+              <div className="p-6 sm:p-8 pb-4">
+                {/* Meta Row */}
+                <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 mb-5 font-medium">
+                  <div className="flex items-center gap-1.5 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200/60 shrink-0">
+                    <RiCalendarLine className="text-sm text-blue-600" />
+                    <span>{blog.date}</span>
+                  </div>
+                  
+                  {/* Author Tag Linking to 4Biz International Website */}
+                  <a
+                    href={blog.authorUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative z-30 flex items-center gap-1.5 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200/60 hover:border-blue-400 hover:bg-blue-50 transition-colors text-slate-700 font-semibold shrink-0"
+                  >
+                    <RiUser3Line className="text-sm text-blue-600" />
+                    <span>{blog.author}</span>
+                  </a>
+                </div>
+
+                <h2 className="text-xl sm:text-2xl font-extrabold text-[#001759] tracking-tight leading-snug mb-4 group-hover:text-[#1e3a8a] transition-colors duration-300">
+                  <Link href={blog.slug} className="focus:outline-none">
+                    <span className="absolute inset-0 z-20" aria-hidden="true" />
+                    {blog.title}
+                  </Link>
+                </h2>
+
+                <p className="text-black text-sm sm:text-base font-normal leading-relaxed line-clamp-3 relative z-10 opacity-90">
+                  {blog.excerpt}
+                </p>
+              </div>
+            </div>
+
+            <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-4 relative z-10">
+              <div className="flex justify-start">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#001759] text-white rounded-full border border-[#001759] text-xs font-bold uppercase tracking-wider transition-all duration-300 ease-out shadow-sm">
+                  <span>Read Article</span>
+                  <RiArrowRightUpLine className="text-base" />
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function BlogsLandingPage() {
-  const blogDataList = [
+  const blogDataList: BlogItem[] = [
+    {
+      title: "What Is AEO (Answer Engine Optimization) and Why Brands Need It Now",
+      excerpt: "AI search tools are changing how customers find businesses. Learn what Answer Engine Optimization (AEO) is and how to optimize your content for AI Overviews and chat assistants.",
+      slug: "/blog/what-is-aeo",
+      image: "/blog/aeo-1.png",
+      date: "Sep 28, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
     {
       title: "4Biz International: Who We Are & What We Do | Dubai IT Solutions Company",
       excerpt: "Discover 4Biz International, a Dubai-based IT solutions and digital transformation company offering ERP/CRM, web & mobile development, cloud, cybersecurity, and digital marketing services.",
       slug: "/blog/4biz-international-who-we-are",
       image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80",
       date: "Jul 07, 2026",
-      readTime: "7 min read",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
       category: "Business Setup"
     }
   ];
@@ -77,17 +170,13 @@ export default function BlogsLandingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Corporate Luxury Dark Blue Workspace Environment */}
       <main className="min-h-screen text-slate-100 pt-36 sm:pt-44 pb-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-[#000a29] via-[#001759] to-[#000d38] selection:bg-blue-600 selection:text-white">
         
-        {/* Vector Background Blurs providing depth separation layer */}
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-600/20 blur-[130px] rounded-full pointer-events-none z-0 mix-blend-screen" />
         <div className="absolute top-1/3 right-1/4 w-[700px] h-[700px] bg-indigo-600/15 blur-[150px] rounded-full pointer-events-none z-0 mix-blend-screen" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(30,64,175,0.3),transparent_60%)] pointer-events-none z-0" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
-          
-          {/* Header Module Section */}
           <header className="max-w-3xl mx-auto text-center mb-20 sm:mb-28 px-2">
             <span className="text-blue-400 font-bold uppercase tracking-[0.3em] text-xs sm:text-sm mb-4 block">
               Knowledge Hub
@@ -101,9 +190,7 @@ export default function BlogsLandingPage() {
             </p>
           </header>
 
-          {/* Dynamic Grid Hook */}
           <BlogCardList blogs={blogDataList} />
-          
         </div>
       </main>
     </>
