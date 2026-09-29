@@ -51,11 +51,12 @@ interface BlogItem {
 function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
   return (
     <section className="w-full px-1 sm:px-2">
-      <div className="flex flex-wrap justify-center gap-8 xl:gap-10 transition-all duration-300">
+      {/* Updated to CSS Grid: 1 col on mobile, 2 cols on tablet (md), 3 cols on desktop (lg) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10 transition-all duration-300">
         {blogs.map((blog, index) => (
           <article 
             key={index}
-            className="group relative bg-white rounded-[2.5rem] overflow-hidden transition-all duration-300 ease-out flex flex-col justify-between transform-gpu shadow-[0_35px_70px_-15px_rgba(0,3,20,0.7)] hover:shadow-[0_45px_85px_-10px_rgba(59,130,246,0.45)] hover:-translate-y-1.5 will-change-transform w-full md:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.34rem)] max-w-md"
+            className="group relative bg-white rounded-[2.5rem] overflow-hidden transition-all duration-300 ease-out flex flex-col justify-between transform-gpu shadow-[0_35px_70px_-15px_rgba(0,3,20,0.7)] hover:shadow-[0_45px_85px_-10px_rgba(59,130,246,0.45)] hover:-translate-y-1.5 will-change-transform w-full"
           >
             <div>
               <div className="relative aspect-[16/10] w-full bg-slate-100 overflow-hidden">
@@ -63,7 +64,7 @@ function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
                   src={blog.image} 
                   alt={blog.title}
                   fill
-                  sizes="(max-w-640px) 100vw, (max-w-1024px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   priority={index === 0}
                   className="object-cover object-center transition-transform duration-700 ease-out transform-gpu group-hover:scale-[1.02] will-change-transform"
                 />
@@ -120,9 +121,19 @@ function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
 export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
     {
+      title: "Digital Marketing Agency in the UAE | 4Biz International",
+      excerpt: "What does a digital marketing agency in the UAE actually deliver? A breakdown of core services, pricing structures, and how to know if your business needs one. ",
+      slug: "/blog/digital-marketing-agency-uae/",
+      image: "/blog/digital-marketing-1.png",
+      date: "Sep 29, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
+    {
       title: "What Is AEO (Answer Engine Optimization) and Why Brands Need It Now",
       excerpt: "AI search tools are changing how customers find businesses. Learn what Answer Engine Optimization (AEO) is and how to optimize your content for AI Overviews and chat assistants.",
-      slug: "/blog/what-is-aeo",
+      slug: "/blog/what-is-aeo/",
       image: "/blog/aeo-1.png",
       date: "Sep 28, 2026",
       author: "4Biz International LLC",
@@ -132,7 +143,7 @@ export default function BlogsLandingPage() {
     {
       title: "4Biz International: Who We Are & What We Do | Dubai IT Solutions Company",
       excerpt: "Discover 4Biz International, a Dubai-based IT solutions and digital transformation company offering ERP/CRM, web & mobile development, cloud, cybersecurity, and digital marketing services.",
-      slug: "/blog/4biz-international-who-we-are",
+      slug: "/blog/4biz-international-who-we-are/",
       image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80",
       date: "Jul 07, 2026",
       author: "4Biz International LLC",
