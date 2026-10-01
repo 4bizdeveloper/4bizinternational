@@ -120,6 +120,20 @@ function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
 
 export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
+
+
+      {
+      title: "SEO Services in the UAE: What's Included & Cost | 4Biz",
+      excerpt: "Looking into SEO services in the UAE? Here's what SEO actually involves, how long it takes to work, what it costs, and how it helps your business get found. ",
+      slug: "/blog/seo-services-uae/",
+      image: "/blog/seo-2.png",
+      date: "Oct 01, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
+
+
     {
       title: "Digital Marketing Agency in the UAE | 4Biz International",
       excerpt: "What does a digital marketing agency in the UAE actually deliver? A breakdown of core services, pricing structures, and how to know if your business needs one. ",
