@@ -121,6 +121,17 @@ function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
 export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
 
+      {
+      title: "Google Ads Management Services in UAE | 4Biz International",
+      excerpt: "Thinking about Google Ads in UAE? 4Biz International explains how it works, what management includes, how much to budget, and how long it takes to get leads. ",
+      slug: "/blog/google-ads-management-services-uae/",
+      image: "/blog/google-ad-2.webp",
+      date: "Oct 09, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
+
 
       {
       title: "SEO Services in the UAE: What's Included & Cost | 4Biz",
