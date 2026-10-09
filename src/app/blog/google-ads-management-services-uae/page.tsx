@@ -1,8 +1,44 @@
-"use client";
-
-import { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Google Ads Management Services in UAE | 4Biz International",
+  description:
+    "Thinking about Google Ads in UAE? 4Biz International explains how it works, what management includes, how much to budget, and how long it takes to get leads.",
+  alternates: {
+    canonical:
+      "https://www.4bizinternational.com/blog/google-ads-management-services-uae/",
+  },
+  openGraph: {
+    title: "Google Ads Management Services in UAE | 4Biz International",
+    description:
+      "Thinking about Google Ads in UAE? 4Biz International explains how it works, what management includes, how much to budget, and how long it takes to get leads.",
+    url: "https://www.4bizinternational.com/blog/google-ads-management-services-uae/",
+    siteName: "4Biz International",
+    type: "article",
+    images: [
+      {
+        url: "https://www.4bizinternational.com/blog/google-ad-1.webp",
+        width: 1200,
+        height: 630,
+        alt: "Google Ads Management Services in UAE",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Google Ads Management Services in UAE | 4Biz International",
+    description:
+      "Thinking about Google Ads in UAE? 4Biz International explains how it works, what management includes, how much to budget, and how long it takes to get leads.",
+    images: ["https://www.4bizinternational.com/blog/google-ad-1.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const faqs = [
   {
@@ -71,6 +107,7 @@ const articleSchema = {
     "How Do Google Ads Work, and What Does Google Ads Management Include?",
   description:
     "Thinking about Google Ads in UAE? 4Biz International explains how it works, what management includes, how much to budget, and how long it takes to get leads.",
+  image: "https://www.4bizinternational.com/blog/google-ad-1.webp",
   author: {
     "@type": "Organization",
     name: "4Biz International LLC",
@@ -78,17 +115,18 @@ const articleSchema = {
   },
   publisher: {
     "@type": "Organization",
-    name: "4Biz International",
+    name: "4Biz International LLC",
     logo: {
       "@type": "ImageObject",
       url: "https://www.4bizinternational.com/logo.png",
     },
   },
-  datePublished: new Date().toISOString().split("T")[0],
-  dateModified: new Date().toISOString().split("T")[0],
+  datePublished: "2026-10-09",
+  dateModified: "2026-10-09",
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": "https://www.4bizinternational.com/blog/google-ads-management-services-uae/",
+    "@id":
+      "https://www.4bizinternational.com/blog/google-ads-management-services-uae/",
   },
 };
 
@@ -105,28 +143,16 @@ const faqSchema = {
   })),
 };
 
-export default function GoogleAdsClient() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
-
-  const today = new Date().toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-
+export default function GoogleAdsPage() {
   return (
     <div
-      className="min-h-screen"
+      className="min-h-screen text-slate-100 font-sans antialiased"
       style={{
         background:
           "linear-gradient(135deg, #06112c 0%, #0c1b40 45%, #08306b 100%)",
       }}
     >
-      {/* JSON-LD Schemas */}
+      {/* Schema Injections */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -140,8 +166,8 @@ export default function GoogleAdsClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-16 md:pb-24">
+      {/* HERO SECTION */}
+      <section className="relative w-full overflow-hidden pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-16 md:pb-24 border-b border-slate-800/80">
         <Image
           src="/blog/google-ad-1.webp"
           alt="Google Ads Management Services in UAE"
@@ -149,40 +175,38 @@ export default function GoogleAdsClient() {
           priority
           className="object-cover opacity-65"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#06112c]/70 via-[#0c1b40]/60 to-[#08306b]/80" />
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Breadcrumb */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#06112c]/80 via-[#0c1b40]/70 to-[#06112c]" />
+
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex flex-wrap items-center gap-2 text-sm text-slate-300">
+            <ol className="flex flex-wrap items-center gap-2 text-sm text-cyan-300 font-medium">
               <li>
-                <Link
-                  href="https://www.4bizinternational.com/"
-                  className="hover:text-cyan-300 transition-colors"
-                >
+                <Link href="/" className="hover:text-white transition-colors">
                   Home
                 </Link>
               </li>
-              <li className="text-slate-500">/</li>
+              <li>/</li>
               <li>
                 <Link
-                  href="https://www.4bizinternational.com/blog/"
-                  className="hover:text-cyan-300 transition-colors"
+                  href="/blog/"
+                  className="hover:text-white transition-colors"
                 >
                   Blog
                 </Link>
               </li>
-              <li className="text-slate-500">/</li>
-              <li className="text-cyan-300 font-medium" aria-current="page">
+              <li>/</li>
+              <li className="text-slate-300 truncate max-w-xs sm:max-w-md">
                 Google Ads Management Services in UAE
               </li>
             </ol>
           </nav>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
             How Do Google Ads Work, and What Does Google Ads Management Include?
           </h1>
 
-          <div className="flex flex-wrap items-center gap-4 text-sm text-slate-200">
+          <div className="flex flex-wrap items-center gap-4 text-sm text-slate-300 pt-4 border-t border-slate-700/60">
             <span className="flex items-center gap-2">
               <svg
                 className="w-4 h-4 text-cyan-300"
@@ -200,38 +224,25 @@ export default function GoogleAdsClient() {
               </svg>
               <Link
                 href="https://www.4bizinternational.com/"
-                className="hover:text-cyan-300 transition-colors font-medium"
+                className="text-cyan-300 hover:text-cyan-200 underline font-semibold transition-colors"
               >
                 4Biz International LLC
               </Link>
             </span>
-            <span className="text-slate-500">|</span>
-            <span className="flex items-center gap-2">
-              <svg
-                className="w-4 h-4 text-cyan-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              {today}
+            <span>•</span>
+            <span>
+              Published:{" "}
+              <span className="text-white font-medium">October 9, 2026</span>
             </span>
           </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <article className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 md:pt-12 pb-20">
+      {/* MAIN CONTENT */}
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 space-y-12 md:space-y-16">
         {/* Intro */}
-        <div className="prose prose-invert max-w-none mb-12">
-          <p className="text-slate-100 text-lg leading-relaxed mb-6">
+        <section className="space-y-6 text-base md:text-lg text-slate-200 leading-relaxed">
+          <p>
             Google Ads is a paid advertising platform that places a
             business&apos;s ads at the top of search results, on YouTube, and
             across partner websites, charging the advertiser when someone clicks
@@ -241,39 +252,38 @@ export default function GoogleAdsClient() {
             business wants customers to find it immediately, rather than waiting
             months for organic rankings to build.
           </p>
-          <p className="text-slate-100 text-lg leading-relaxed mb-6">
+          <p>
             Most people searching this topic aren&apos;t looking for an agency
             yet. They want to know how it works, what it costs, and whether
             it&apos;s worth it for their business. At{" "}
             <Link
               href="https://www.4bizinternational.com/services/"
-              className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 transition-colors"
+              className="text-cyan-300 font-semibold underline hover:text-cyan-200 transition-colors"
             >
               4Biz International
             </Link>
             , these are the first questions we answer with businesses across UAE,
             so this guide covers them directly.
           </p>
-        </div>
+        </section>
 
-        {/* Section: How Do Google Ads Work? */}
-        <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">
+        {/* How Do Google Ads Work? */}
+        <section className="space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight border-b border-cyan-500/30 pb-3">
             How Do Google Ads Work?
           </h2>
-          <p className="text-slate-100 text-lg leading-relaxed mb-8">
+          <p className="text-slate-200 leading-relaxed">
             Google runs an auction every time someone searches. Advertisers bid
             on keywords, and Google decides which ads show based on bid amount
             and ad quality.
           </p>
 
-          {/* Row 1: Text Left, Image Right */}
-          <div className="flex flex-col md:flex-row items-stretch gap-6 md:gap-8 mb-10">
-            <div className="w-full md:w-1/2 flex flex-col justify-center">
-              <h3 className="text-xl font-semibold text-cyan-300 mb-3">
+          <div className="flex flex-col md:flex-row items-stretch gap-8">
+            <div className="w-full md:w-1/2 flex flex-col justify-between space-y-4 text-slate-200 leading-relaxed">
+              <h3 className="text-xl font-semibold text-cyan-300">
                 Keywords and Search Intent
               </h3>
-              <p className="text-slate-100 leading-relaxed">
+              <p>
                 You choose the searches you want to appear for, such as
                 &quot;office fit-out services&quot; or &quot;buy laptops
                 online.&quot; Matching intent matters more than matching volume.
@@ -283,7 +293,7 @@ export default function GoogleAdsClient() {
                 the biggest keyword list.
               </p>
             </div>
-            <div className="w-full md:w-1/2 relative min-h-[250px] md:min-h-full rounded-xl overflow-hidden">
+            <div className="w-full md:w-1/2 min-h-[280px] md:min-h-full relative rounded-xl overflow-hidden shadow-xl border border-slate-700/50">
               <Image
                 src="/blog/google-ad-2.webp"
                 alt="Keyword research and search intent analysis"
@@ -293,127 +303,107 @@ export default function GoogleAdsClient() {
             </div>
           </div>
 
-          <h3 className="text-xl font-semibold text-cyan-300 mb-3">
+          <h3 className="text-xl font-semibold text-cyan-300">
             Quality Score and Ad Relevance
           </h3>
-          <p className="text-slate-100 leading-relaxed mb-6">
+          <p className="text-slate-200 leading-relaxed">
             Google rates how relevant your ad, keyword, and landing page are to
             each other. Higher relevance lowers your cost per click and improves
             your ad position.
           </p>
 
-          <h3 className="text-xl font-semibold text-cyan-300 mb-3">
+          <h3 className="text-xl font-semibold text-cyan-300">
             Cost Per Click (CPC) Model
           </h3>
-          <p className="text-slate-100 leading-relaxed mb-6">
+          <p className="text-slate-200 leading-relaxed">
             You pay when someone clicks, not when your ad is shown. This is why
             campaign structure and keyword selection directly affect how far
             your budget goes.
           </p>
         </section>
 
-        {/* Section: Campaign Types */}
-        <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">
+        {/* Campaign Types */}
+        <section className="space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight border-b border-cyan-500/30 pb-3">
             What Types of Google Ads Campaigns Exist?
           </h2>
 
-          {/*
-            On lg screens: first 3 cards in row 1 (3 cols), last 2 cards centered in row 2.
-            On sm screens: 2 cards per row; last 1 centered via justify-center.
-            On mobile: single column, all stacked.
-          */}
-          <div className="space-y-4 mb-8">
-            {/* First row: 3 cards (Search, Display, YouTube) */}
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  title: "Search Ads",
-                  desc: "Text ads that appear when someone searches a specific term. Best for capturing customers who are already looking for what you offer.",
-                },
-                {
-                  title: "Display Ads",
-                  desc: "Image-based ads shown across websites and apps. Best for awareness and retargeting people who already visited your site.",
-                },
-                {
-                  title: "YouTube / Video Ads",
-                  desc: "Video placements before or alongside content. Best for brand visibility and showing a product in action.",
-                },
-              ].map((campaign) => (
-                <div
-                  key={campaign.title}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 hover:border-cyan-400/40 transition-colors"
-                >
-                  <h3 className="text-lg font-semibold text-cyan-300 mb-2">
-                    {campaign.title}
-                  </h3>
-                  <p className="text-slate-200 text-sm leading-relaxed">
-                    {campaign.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Second row: 2 cards centered on desktop */}
-            <div className="grid gap-4 sm:grid-cols-2 lg:flex lg:justify-center lg:gap-4">
-              {[
-                {
-                  title: "Shopping Ads",
-                  desc: "Product listings with image and price shown in search results. Best for e-commerce businesses.",
-                },
-                {
-                  title: "Performance Max",
-                  desc: "An automated campaign type that distributes ads across all Google channels using your goals and creative assets. Best used once conversion tracking is reliable.",
-                },
-              ].map((campaign) => (
-                <div
-                  key={campaign.title}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 hover:border-cyan-400/40 transition-colors lg:w-1/3"
-                >
-                  <h3 className="text-lg font-semibold text-cyan-300 mb-2">
-                    {campaign.title}
-                  </h3>
-                  <p className="text-slate-200 text-sm leading-relaxed">
-                    {campaign.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Search Ads",
+                desc: "Text ads that appear when someone searches a specific term. Best for capturing customers who are already looking for what you offer.",
+              },
+              {
+                title: "Display Ads",
+                desc: "Image-based ads shown across websites and apps. Best for awareness and retargeting people who already visited your site.",
+              },
+              {
+                title: "YouTube / Video Ads",
+                desc: "Video placements before or alongside content. Best for brand visibility and showing a product in action.",
+              },
+              {
+                title: "Shopping Ads",
+                desc: "Product listings with image and price shown in search results. Best for e-commerce businesses.",
+              },
+              {
+                title: "Performance Max",
+                desc: "An automated campaign type that distributes ads across all Google channels using your goals and creative assets. Best used once conversion tracking is reliable.",
+              },
+            ].map((campaign) => (
+              <div
+                key={campaign.title}
+                className="bg-slate-900/60 backdrop-blur-sm border border-slate-700/80 rounded-xl p-5 hover:border-cyan-400/40 transition-colors"
+              >
+                <h3 className="text-lg font-semibold text-cyan-300 mb-2">
+                  {campaign.title}
+                </h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  {campaign.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* Section: What Does Management Include */}
-        <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">
+        {/* What Does Management Include */}
+        <section className="space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight border-b border-cyan-500/30 pb-3">
             What Does Google Ads Management Actually Include?
           </h2>
-          <p className="text-slate-100 text-lg leading-relaxed mb-6">
+          <p className="text-slate-200 leading-relaxed">
             A proper management service, including the one 4Biz International
             provides, typically covers:
           </p>
 
-          {/* Row 2: Image Left, Text Right */}
-          <div className="flex flex-col md:flex-row-reverse items-stretch gap-6 md:gap-8 mb-8">
-            <div className="w-full md:w-1/2 flex flex-col justify-center">
-              <ul className="space-y-4">
-                {[
-                  "Account and campaign setup: structure, keyword research, ad copy, and targeting",
-                  "Conversion tracking: measuring calls, form submissions, and purchases, not just clicks",
-                  "Bid and budget management: shifting spend toward what performs",
-                  "Negative keyword control: blocking irrelevant searches that drain budget",
-                  "Landing page recommendations: since a good ad sent to a weak page still loses the customer",
-                  "Reporting: cost per lead, cost per sale, and return on ad spend",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-cyan-400" />
-                    <span className="text-slate-100 leading-relaxed">
-                      {item}
-                    </span>
-                  </li>
-                ))}
+          <div className="flex flex-col md:flex-row-reverse items-stretch gap-8">
+            <div className="w-full md:w-1/2 flex flex-col justify-between space-y-4 text-slate-200 leading-relaxed">
+              <ul className="list-disc pl-5 space-y-3">
+                <li>
+                  Account and campaign setup: structure, keyword research, ad
+                  copy, and targeting
+                </li>
+                <li>
+                  Conversion tracking: measuring calls, form submissions, and
+                  purchases, not just clicks
+                </li>
+                <li>
+                  Bid and budget management: shifting spend toward what performs
+                </li>
+                <li>
+                  Negative keyword control: blocking irrelevant searches that
+                  drain budget
+                </li>
+                <li>
+                  Landing page recommendations: since a good ad sent to a weak
+                  page still loses the customer
+                </li>
+                <li>
+                  Reporting: cost per lead, cost per sale, and return on ad spend
+                </li>
               </ul>
             </div>
-            <div className="w-full md:w-1/2 relative min-h-[250px] md:min-h-full rounded-xl overflow-hidden">
+            <div className="w-full md:w-1/2 min-h-[280px] md:min-h-full relative rounded-xl overflow-hidden shadow-xl border border-slate-700/50">
               <Image
                 src="/blog/google-ad-3.webp"
                 alt="Google Ads management dashboard and analytics"
@@ -424,62 +414,48 @@ export default function GoogleAdsClient() {
           </div>
         </section>
 
-        {/* Section: Budget */}
-        <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">
+        {/* Budget */}
+        <section className="space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight border-b border-cyan-500/30 pb-3">
             How Much Should You Budget for Google Ads in UAE?
           </h2>
-          <p className="text-slate-100 text-lg leading-relaxed mb-6">
+          <p className="text-slate-200 leading-relaxed">
             Costs have two parts: what you pay Google for clicks (ad spend) and
             what you pay for management.
           </p>
 
-          <div className="overflow-x-auto rounded-xl border border-white/10 mb-6">
-            <table className="w-full text-left">
+          <div className="overflow-x-auto rounded-xl border border-slate-700/80 bg-slate-900/60 backdrop-blur-sm">
+            <table className="w-full text-left border-collapse min-w-[600px]">
               <thead>
-                <tr className="bg-white/10">
-                  <th className="px-5 py-4 text-cyan-300 font-semibold text-sm uppercase tracking-wider">
-                    Cost Component
-                  </th>
-                  <th className="px-5 py-4 text-cyan-300 font-semibold text-sm uppercase tracking-wider">
-                    What It Covers
-                  </th>
-                  <th className="px-5 py-4 text-cyan-300 font-semibold text-sm uppercase tracking-wider">
-                    Key Point
-                  </th>
+                <tr className="border-b border-slate-700 bg-slate-800/80 text-cyan-300 font-semibold text-sm sm:text-base">
+                  <th className="p-4 w-1/4">Cost Component</th>
+                  <th className="p-4 w-2/5">What It Covers</th>
+                  <th className="p-4 w-1/3">Key Point</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/10">
-                <tr className="hover:bg-white/5 transition-colors">
-                  <td className="px-5 py-4 text-white font-medium">
-                    Ad spend
-                  </td>
-                  <td className="px-5 py-4 text-slate-200">
-                    Paid directly to Google for clicks
-                  </td>
-                  <td className="px-5 py-4 text-slate-200">
+              <tbody className="divide-y divide-slate-800 text-slate-200 text-sm sm:text-base">
+                <tr className="hover:bg-slate-800/40 transition-colors">
+                  <td className="p-4 font-medium text-white">Ad spend</td>
+                  <td className="p-4">Paid directly to Google for clicks</td>
+                  <td className="p-4">
                     Varies by industry competitiveness and keywords
                   </td>
                 </tr>
-                <tr className="hover:bg-white/5 transition-colors">
-                  <td className="px-5 py-4 text-white font-medium">
+                <tr className="hover:bg-slate-800/40 transition-colors">
+                  <td className="p-4 font-medium text-white">
                     Management fee
                   </td>
-                  <td className="px-5 py-4 text-slate-200">
-                    Setup, optimization, and reporting
-                  </td>
-                  <td className="px-5 py-4 text-slate-200">
+                  <td className="p-4">Setup, optimization, and reporting</td>
+                  <td className="p-4">
                     Charged as a flat fee or a share of ad spend
                   </td>
                 </tr>
-                <tr className="hover:bg-white/5 transition-colors">
-                  <td className="px-5 py-4 text-white font-medium">
+                <tr className="hover:bg-slate-800/40 transition-colors">
+                  <td className="p-4 font-medium text-white">
                     Creative and landing pages
                   </td>
-                  <td className="px-5 py-4 text-slate-200">
-                    Ad copy, visuals, page improvements
-                  </td>
-                  <td className="px-5 py-4 text-slate-200">
+                  <td className="p-4">Ad copy, visuals, page improvements</td>
+                  <td className="p-4">
                     Sometimes included, sometimes billed separately
                   </td>
                 </tr>
@@ -487,13 +463,13 @@ export default function GoogleAdsClient() {
             </table>
           </div>
 
-          <p className="text-slate-100 leading-relaxed mb-6">
+          <p className="text-slate-300 text-sm md:text-base bg-slate-800/40 p-4 rounded-lg border border-slate-700/60 leading-relaxed">
             Competitive industries such as real estate, healthcare, and legal
             services generally cost more per click than niche B2B categories.
             Whichever provider you choose, including{" "}
             <Link
               href="https://www.4bizinternational.com/services/"
-              className="text-cyan-300 hover:text-cyan-200 underline underline-offset-4 transition-colors"
+              className="text-cyan-300 font-semibold underline hover:text-cyan-200 transition-colors"
             >
               4Biz International
             </Link>
@@ -502,16 +478,16 @@ export default function GoogleAdsClient() {
           </p>
         </section>
 
-        {/* Section: How Long Does It Take */}
-        <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">
+        {/* How Long Does It Take */}
+        <section className="space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight border-b border-cyan-500/30 pb-3">
             How Long Does It Take to See Results?
           </h2>
-          <p className="text-slate-100 text-lg leading-relaxed mb-6">
+          <p className="text-slate-200 leading-relaxed">
             Google Ads is faster than SEO, but it isn&apos;t instant.
           </p>
 
-          <div className="space-y-4 mb-6">
+          <ul className="space-y-3 text-slate-200 leading-relaxed list-none">
             {[
               {
                 period: "First days to 2 weeks",
@@ -526,37 +502,20 @@ export default function GoogleAdsClient() {
                 desc: "Performance stabilizes, and cost per lead becomes predictable",
               },
             ].map((phase) => (
-              <div
+              <li
                 key={phase.period}
-                className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5"
+                className="flex items-start gap-3 bg-slate-900/60 border border-slate-700/80 rounded-xl p-5"
               >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-400/20 flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-cyan-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-cyan-300 font-semibold mb-1">
-                    {phase.period}
-                  </h3>
-                  <p className="text-slate-200">{phase.desc}</p>
-                </div>
-              </div>
+                <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-cyan-400" />
+                <span>
+                  <strong className="text-cyan-300">{phase.period}:</strong>{" "}
+                  {phase.desc}
+                </span>
+              </li>
             ))}
-          </div>
+          </ul>
 
-          <p className="text-slate-100 leading-relaxed">
+          <p className="text-slate-200 leading-relaxed">
             Early weeks are a learning period. Judging a campaign after a few
             days usually leads to cutting something that hasn&apos;t had time to
             work. 4Biz International sets this expectation upfront so clients
@@ -564,31 +523,24 @@ export default function GoogleAdsClient() {
           </p>
         </section>
 
-        {/* Section: Google Ads vs SEO */}
-        <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">
+        {/* Google Ads vs SEO */}
+        <section className="space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight border-b border-cyan-500/30 pb-3">
             Google Ads vs SEO: Which One Does Your Business Need?
           </h2>
 
-          {/* Row 3: Text Left, Image Right */}
-          <div className="flex flex-col md:flex-row items-stretch gap-6 md:gap-8 mb-8">
+          <div className="flex flex-col md:flex-row items-stretch gap-8">
             <div className="w-full md:w-1/2 flex flex-col justify-center">
-              <div className="overflow-x-auto rounded-xl border border-white/10">
-                <table className="w-full text-left">
+              <div className="overflow-x-auto rounded-xl border border-slate-700/80 bg-slate-900/60 backdrop-blur-sm">
+                <table className="w-full text-left border-collapse min-w-[500px]">
                   <thead>
-                    <tr className="bg-white/10">
-                      <th className="px-5 py-4 text-cyan-300 font-semibold text-sm uppercase tracking-wider">
-                        Factor
-                      </th>
-                      <th className="px-5 py-4 text-cyan-300 font-semibold text-sm uppercase tracking-wider">
-                        Google Ads
-                      </th>
-                      <th className="px-5 py-4 text-cyan-300 font-semibold text-sm uppercase tracking-wider">
-                        SEO
-                      </th>
+                    <tr className="border-b border-slate-700 bg-slate-800/80 text-cyan-300 font-semibold text-sm sm:text-base">
+                      <th className="p-4">Factor</th>
+                      <th className="p-4">Google Ads</th>
+                      <th className="p-4">SEO</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-white/10">
+                  <tbody className="divide-y divide-slate-800 text-slate-200 text-sm sm:text-base">
                     {[
                       [
                         "Speed of results",
@@ -618,20 +570,20 @@ export default function GoogleAdsClient() {
                     ].map((row, i) => (
                       <tr
                         key={i}
-                        className="hover:bg-white/5 transition-colors"
+                        className="hover:bg-slate-800/40 transition-colors"
                       >
-                        <td className="px-5 py-4 text-white font-medium">
+                        <td className="p-4 font-medium text-white">
                           {row[0]}
                         </td>
-                        <td className="px-5 py-4 text-slate-200">{row[1]}</td>
-                        <td className="px-5 py-4 text-slate-200">{row[2]}</td>
+                        <td className="p-4">{row[1]}</td>
+                        <td className="p-4">{row[2]}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
             </div>
-            <div className="w-full md:w-1/2 relative min-h-[250px] md:min-h-full rounded-xl overflow-hidden">
+            <div className="w-full md:w-1/2 min-h-[280px] md:min-h-full relative rounded-xl overflow-hidden shadow-xl border border-slate-700/50">
               <Image
                 src="/blog/google-ad-4.webp"
                 alt="Google Ads versus SEO comparison"
@@ -641,7 +593,7 @@ export default function GoogleAdsClient() {
             </div>
           </div>
 
-          <p className="text-slate-100 leading-relaxed mb-6">
+          <p className="text-slate-200 leading-relaxed">
             Most businesses benefit from both: ads for immediate leads while SEO
             builds a lasting base. Because 4Biz International runs both under one
             digital marketing service, the two channels can share keyword data
@@ -649,13 +601,13 @@ export default function GoogleAdsClient() {
           </p>
         </section>
 
-        {/* Section: What Gets Missed */}
-        <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">
+        {/* What Gets Missed */}
+        <section className="space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight border-b border-cyan-500/30 pb-3">
             What Gets Missed in Google Ads Campaigns
           </h2>
 
-          <div className="grid gap-3 sm:grid-cols-2">
+          <ul className="list-disc pl-5 space-y-3 text-slate-200 leading-relaxed">
             {[
               "Conversion tracking never set up, so the account optimizes for clicks instead of enquiries",
               "Broad keywords left unchecked, bringing in irrelevant searches that waste budget",
@@ -664,241 +616,109 @@ export default function GoogleAdsClient() {
               "Ad account created under the agency's name, leaving the business without ownership of its own history and data",
               "Location and language settings ignored, so ads show to audiences outside the real service area",
             ].map((item, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-3 bg-red-500/10 border border-red-400/20 rounded-xl p-4"
-              >
-                <svg
-                  className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                  />
-                </svg>
-                <span className="text-slate-100 text-sm leading-relaxed">
-                  {item}
-                </span>
-              </div>
+              <li key={i}>{item}</li>
             ))}
-          </div>
+          </ul>
         </section>
 
-        {/* Section: Is It Worth It */}
-        <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">
+        {/* Is It Worth It */}
+        <section className="space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight border-b border-cyan-500/30 pb-3">
             Is Google Ads Worth It for Your Business?
           </h2>
-          <p className="text-slate-100 text-lg leading-relaxed mb-6">
+          <p className="text-slate-200 leading-relaxed">
             It tends to work well when:
           </p>
 
-          <div className="grid gap-4 md:grid-cols-2 mb-8">
-            <div className="bg-green-500/10 border border-green-400/20 rounded-xl p-6">
-              <h3 className="text-green-300 font-semibold text-lg mb-4 flex items-center gap-2">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                Works Well When
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  "Customers actively search for what you sell",
-                  "You have a clear offer and a landing page that supports it",
-                  "You can track and follow up on leads quickly",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-green-400" />
-                    <span className="text-slate-100">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <ul className="list-disc pl-5 space-y-3 text-slate-200 leading-relaxed">
+            <li>Customers actively search for what you sell</li>
+            <li>
+              You have a clear offer and a landing page that supports it
+            </li>
+            <li>You can track and follow up on leads quickly</li>
+          </ul>
 
-            <div className="bg-red-500/10 border border-red-400/20 rounded-xl p-6">
-              <h3 className="text-red-300 font-semibold text-lg mb-4 flex items-center gap-2">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                Underperforms When
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  "There's no tracking",
-                  "The website is slow or unclear",
-                  "The budget is too small to gather meaningful data",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-red-400" />
-                    <span className="text-slate-100">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <p className="text-slate-100 leading-relaxed">
-            If you&apos;re unsure which side your business falls on, the team at
-            4Biz International can review your current setup before you commit
-            any budget.
+          <p className="text-slate-200 leading-relaxed">
+            It tends to underperform when there&apos;s no tracking, the website
+            is slow or unclear, or the budget is too small to gather meaningful
+            data. If you&apos;re unsure which side your business falls on, the
+            team at 4Biz International can review your current setup before you
+            commit any budget.
           </p>
         </section>
 
-        {/* Section: How 4Biz Approaches */}
-        <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">
+        {/* How 4Biz Approaches */}
+        <section className="bg-slate-900/70 rounded-2xl p-6 sm:p-8 border border-slate-700/80 space-y-4 backdrop-blur-md">
+          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
             How 4Biz International Approaches Google Ads
           </h2>
-          <p className="text-slate-100 text-lg leading-relaxed mb-6">
+          <p className="text-slate-200 leading-relaxed text-base md:text-lg">
             4Biz International manages Google Ads as part of its digital
             marketing and growth services, connecting campaign setup, tracking,
             and reporting with website and SEO work so paid traffic lands on
             pages built to convert. We work with businesses across Dubai, Abu
             Dhabi, and the wider UAE, from our offices in Dubai and Kerala.
           </p>
-          <blockquote className="border-l-4 border-cyan-400 bg-white/5 rounded-r-xl p-6 italic text-slate-100 text-lg">
+          <p className="text-cyan-200 font-medium italic border-l-4 border-cyan-400 pl-4 py-1 text-base md:text-lg">
             Paying for clicks without tracking what happens after them is the
             most common way ad budgets disappear without anyone being able to
             say why.
-          </blockquote>
+          </p>
         </section>
 
-        {/* FAQ Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 border-l-4 border-cyan-400 pl-4">
+        {/* FAQ Section (native details/summary) */}
+        <section className="space-y-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight border-b border-cyan-500/30 pb-3">
             Frequently Asked Questions
           </h2>
-
-          <div className="space-y-3">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-colors hover:border-cyan-400/30"
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => (
+              <details
+                key={idx}
+                className="group rounded-xl border border-slate-700/80 bg-slate-900/50 overflow-hidden transition-all duration-200"
               >
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
-                  aria-expanded={openFaq === index}
-                >
-                  <span className="text-white font-semibold text-base sm:text-lg">
-                    {faq.question}
+                <summary className="p-5 sm:p-6 font-semibold text-base sm:text-lg text-white flex justify-between items-center cursor-pointer list-none hover:bg-slate-800/50 transition-colors focus:outline-none">
+                  <span>{faq.question}</span>
+                  <span className="text-cyan-400 text-xl font-bold shrink-0 transition-transform group-open:rotate-45">
+                    +
                   </span>
-                  <svg
-                    className={`w-5 h-5 text-cyan-300 flex-shrink-0 transition-transform duration-300 ${
-                      openFaq === index ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                <div
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    openFaq === index
-                      ? "max-h-96 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="px-6 pb-5 text-slate-200 leading-relaxed border-t border-white/10 pt-4">
-                    {faq.answer}
-                  </div>
+                </summary>
+                <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-800 pt-4">
+                  {faq.answer}
                 </div>
-              </div>
+              </details>
             ))}
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-400/30 rounded-2xl p-8 md:p-12 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+        <section className="rounded-2xl bg-gradient-to-r from-blue-900/80 via-slate-900 to-indigo-900/80 p-8 md:p-10 text-center border border-cyan-500/30 shadow-2xl space-y-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
             Talk to 4Biz International About Google Ads for Your Business
           </h2>
-          <p className="text-slate-100 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-slate-200 text-base md:text-lg max-w-2xl mx-auto">
             Turn ad spend into trackable enquiries, not just clicks.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-6 text-slate-200 font-medium">
             <a
               href="tel:+971527925100"
-              className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-[#06112c] font-bold px-8 py-4 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/20"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                />
-              </svg>
-              +971 52 792 5100
+              Phone: +971 52 792 5100
             </a>
             <Link
               href="https://www.4bizinternational.com/services/"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl border border-white/20 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white/10 text-white font-semibold hover:bg-white/20 border border-white/20 transition-colors"
             >
               Explore Our Services
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
             </Link>
           </div>
-          <p className="text-slate-300 text-sm mt-6">
-            Coverage: Dubai, Abu Dhabi, and all UAE Emirates, plus India (Kerala)
+          <p className="text-slate-300 text-sm">
+            <span className="font-semibold text-white">Coverage:</span> Dubai,
+            Abu Dhabi, and all UAE Emirates, plus India (Kerala)
           </p>
         </section>
-      </article>
+      </main>
     </div>
   );
 }
