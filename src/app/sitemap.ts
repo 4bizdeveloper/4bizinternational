@@ -77,15 +77,38 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.75, // Giving these deep service links a strong weight
   }))
 
-  // 3. Blog Articles
-  // Note: Once you scale your blog, you can replace this static array 
-  // with a dynamic database fetch (e.g., await getBlogPosts())
+  // 3. Blog Articles (Ordered from Oldest to Newest)
+  // Note: Dates are approximate based on the screenshots provided.
   const blogPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/blog/4biz-international-who-we-are/`,
-      lastModified: new Date(), // Replace with actual article update date if known
+      lastModified: new Date('2026-07-07'), // Oldest
       changeFrequency: 'monthly',
       priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/digital-marketing-agency-uae/`,
+      lastModified: new Date('2026-09-29'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/seo-services-uae/`,
+      lastModified: new Date('2026-10-01'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/google-ads-management-services-uae/`,
+      lastModified: new Date('2026-10-09'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/what-is-aeo/`,
+      lastModified: new Date(), // Newest (Created "Today")
+      changeFrequency: 'monthly',
+      priority: 0.7, // Slightly higher priority for fresh content
     },
   ]
 
