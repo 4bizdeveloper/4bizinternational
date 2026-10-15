@@ -121,6 +121,21 @@ function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
 export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
 
+
+      {
+      title: "Website Design Services in UAE: What’s Included & Cost | 4Biz International",
+      excerpt: "Thinking about Google Ads in UAE? 4Biz International explains how it works, what management includes, how much to budget, and how long it takes to get leads. ",
+      slug: "/blog/website-design-services-uae/",
+      image: "/blog/website-design-1.webp",
+      date: "Oct 15, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
+
+
+
+
       {
       title: "Google Ads Management Services in UAE | 4Biz International",
       excerpt: "Thinking about Google Ads in UAE? 4Biz International explains how it works, what management includes, how much to budget, and how long it takes to get leads. ",

@@ -9,56 +9,56 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 1. Core Pages (Explicit trailing slash for ALL pages)
   const corePages: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/`, // Home page (https://www.4bizinternational.com/)
-      lastModified: new Date(),
+      url: `${baseUrl}/`, // Home page
+      lastModified: new Date('2026-10-15'),
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/about/`, // About (Updated to trailing slash)
-      lastModified: new Date(),
+      url: `${baseUrl}/about/`, // About
+      lastModified: new Date('2026-10-15'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/services/`, // Services (With trailing slash)
-      lastModified: new Date(),
+      url: `${baseUrl}/services/`, // Services
+      lastModified: new Date('2026-10-15'),
       changeFrequency: 'weekly',
-      priority: 0.9, // High priority to push indexing
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/blog/`, // Blog listing
-      lastModified: new Date(),
+      lastModified: new Date('2026-10-15'),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/clients/`, // Clients page
-      lastModified: new Date(),
+      lastModified: new Date('2026-10-15'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/contact/`, // Contact page
-      lastModified: new Date(),
+      lastModified: new Date('2026-10-15'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/privacy-policy/`, // Privacy policy page
-      lastModified: new Date(),
+      lastModified: new Date('2026-10-15'),
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/terms-and-conditions/`, // Terms and conditions page
-      lastModified: new Date(),
+      lastModified: new Date('2026-10-15'),
       changeFrequency: 'monthly',
       priority: 0.5,
     },
   ]
 
-  // 2. Service Sub-Pages (Deep links to push crawler discovery)
+  // 2. Service Sub-Pages
   const serviceSubPagesList = [
     'digital-workplace-productivity-solutions',
     'enterprise-business-applications-erp-crm',
@@ -72,43 +72,48 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const servicePages: MetadataRoute.Sitemap = serviceSubPagesList.map((slug) => ({
     url: `${baseUrl}/services/${slug}/`,
-    lastModified: new Date(),
+    lastModified: new Date('2026-10-15'),
     changeFrequency: 'monthly',
-    priority: 0.75, // Giving these deep service links a strong weight
+    priority: 0.75,
   }))
 
-  // 3. Blog Articles (Ordered from Oldest to Newest)
-  // Note: Dates are approximate based on the screenshots provided.
+  // 3. Blog Articles (Sorted from Oldest to Newest)
   const blogPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/blog/4biz-international-who-we-are/`,
-      lastModified: new Date('2026-07-07'), // Oldest
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/digital-marketing-agency-uae/`,
-      lastModified: new Date('2026-09-29'),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/seo-services-uae/`,
-      lastModified: new Date('2026-10-01'),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/google-ads-management-services-uae/`,
-      lastModified: new Date('2026-10-09'),
+      lastModified: new Date('2026-07-07'), // Jul 07, 2026
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
       url: `${baseUrl}/blog/what-is-aeo/`,
-      lastModified: new Date(), // Newest (Created "Today")
+      lastModified: new Date('2026-09-28'), // Sep 28, 2026
       changeFrequency: 'monthly',
-      priority: 0.7, // Slightly higher priority for fresh content
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/digital-marketing-agency-uae/`,
+      lastModified: new Date('2026-09-29'), // Sep 29, 2026
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/seo-services-uae/`,
+      lastModified: new Date('2026-10-01'), // Oct 01, 2026
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/google-ads-management-services-uae/`,
+      lastModified: new Date('2026-10-09'), // Oct 09, 2026
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/website-design-services-uae/`,
+      lastModified: new Date('2026-10-15'), // Oct 15, 2026 
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
   ]
 
