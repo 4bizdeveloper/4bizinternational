@@ -115,6 +115,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+        {
+      url: `${baseUrl}/blog/microsoft-365-vs-google-workspace-uae/`,
+      lastModified: new Date('2026-10-19'), // Oct 19, 2026 
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ]
 
   // Combine all routes into one clean sitemap array

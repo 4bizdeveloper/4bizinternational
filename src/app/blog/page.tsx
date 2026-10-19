@@ -121,6 +121,17 @@ function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
 export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
 
+      {
+      title: "Microsoft 365 vs Google Workspace in UAE: Which Is Better? | 4Biz International",
+      excerpt: "Microsoft 365 or Google Workspace for your business in UAE? 4Biz International compares features, pricing, security, and migration so you can choose with confidence. ",
+      slug: "/blog/microsoft-365-vs-google-workspace-uae/",
+      image: "/blog/microsoft-365-vs-google-workspace-3.webp",
+      date: "Oct 19, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
+
 
       {
       title: "Website Design Services in UAE: What’s Included & Cost | 4Biz International",
