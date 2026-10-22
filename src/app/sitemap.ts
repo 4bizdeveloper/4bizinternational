@@ -115,9 +115,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-        {
+      {
       url: `${baseUrl}/blog/microsoft-365-vs-google-workspace-uae/`,
       lastModified: new Date('2026-10-19'), // Oct 19, 2026 
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+      {
+      url: `${baseUrl}/blog/server-management-services-uae/ `,
+      lastModified: new Date('2026-10-22'), // Oct 22, 2026 
       changeFrequency: 'monthly',
       priority: 0.7,
     },

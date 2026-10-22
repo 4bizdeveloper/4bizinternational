@@ -122,6 +122,17 @@ export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
 
       {
+      title: "Server Management Services in UAE: What’s Included | 4Biz International",
+      excerpt: "What do server management services in UAE include? 4Biz International explains monitoring, patching, backups, security, and when to outsource your servers.",
+      slug: "/blog/server-management-services-uae/",
+      image: "/blog/server-management-2.webp",
+      date: "Oct 22, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
+
+      {
       title: "Microsoft 365 vs Google Workspace in UAE: Which Is Better? | 4Biz International",
       excerpt: "Microsoft 365 or Google Workspace for your business in UAE? 4Biz International compares features, pricing, security, and migration so you can choose with confidence. ",
       slug: "/blog/microsoft-365-vs-google-workspace-uae/",
