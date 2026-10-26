@@ -228,7 +228,7 @@ export default function About() {
             {/* Core Continuous Flowing Typography Block */}
             <div className="flex flex-col space-y-5 pt-1 max-w-5xl items-center lg:items-start w-full">
               <h1 id="about-heading" className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-snug sm:leading-tight text-center lg:text-left select-text text-balance">
-                4Biz International LLC | Leading IT Solutions &amp; Software Development Company in <br className="hidden sm:inline" />
+                4Biz International | Leading IT Solutions &amp; Software Development Company in <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-[#38bdf8] to-blue-400 drop-shadow-[0_2px_10px_rgba(56,189,248,0.3)]">Dubai</span>
               </h1>
 
