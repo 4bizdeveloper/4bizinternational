@@ -8,7 +8,9 @@ import {
   UploadCloud, FileText, X, ShieldCheck,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { JOBS, getJobBySlug } from "@/lib/jobs";
+import {useEffect} from "react";
+import type {Job} from "@/lib/jobs";
+import {normalizeJobs} from "@/lib/careers-catalog";
 
 const MAX_CV_MB = 5;
 const ACCEPTED_EXT = [".pdf", ".doc", ".docx"];
@@ -30,7 +32,10 @@ export default function ApplyPage() {
 function ApplyPageInner() {
   const searchParams = useSearchParams();
   const jobSlug = searchParams.get("job") || "";
-  const selectedJob = getJobBySlug(jobSlug);
+  const [chosenJob,setChosenJob]=useState(jobSlug);
+  const [jobs,setJobs]=useState<Job[]>([]);
+  useEffect(()=>{let alive=true;fetch("/api/careers/jobs",{cache:"no-store"}).then(r=>r.json()).then(d=>{if(alive)setJobs(normalizeJobs(d.jobs||[]))}).catch(()=>{});return()=>{alive=false}},[]);
+  const selectedJob = jobs.find(j=>j.slug===chosenJob);
 
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -179,13 +184,14 @@ function ApplyPageInner() {
                   </label>
                   <select
                     name="job"
-                    defaultValue={jobSlug}
+                    value={chosenJob}
+                    onChange={e=>setChosenJob(e.target.value)}
                     className={`w-full px-4 py-3 rounded-xl border-2 bg-white text-slate-900 text-sm font-medium focus:outline-none transition-colors ${
                       alerts.job ? "border-rose-400" : "border-slate-200 focus:border-[#0b1f4e]"
                     }`}
                   >
                     <option value="">Select a position</option>
-                    {JOBS.map((j) => (
+                    {jobs.map((j) => (
                       <option key={j.slug} value={j.slug}>{j.title}</option>
                     ))}
                   </select>

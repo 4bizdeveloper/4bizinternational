@@ -5,21 +5,19 @@ import {
   MapPin, Clock, Briefcase, ArrowRight, ArrowLeft,
   CheckCircle2, Star,
 } from "lucide-react";
-import { JOBS, getJobBySlug, getAllJobSlugs } from "@/lib/jobs";
+import {getPublicJobs} from "@/lib/careers-catalog";
+export const dynamic="force-dynamic";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 /* ---------- Static generation ---------- */
-export async function generateStaticParams() {
-  return getAllJobSlugs().map((slug) => ({ slug }));
-}
 
 /* ---------- Per-job metadata ---------- */
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const job = getJobBySlug(slug);
+  const job = (await getPublicJobs().catch(()=>[])).find(j=>j.slug===slug);
   if (!job) return { title: "Job Not Found" };
 
   return {
@@ -40,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 /* ---------- Page ---------- */
 export default async function JobDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const job = getJobBySlug(slug);
+  const job = (await getPublicJobs().catch(()=>[])).find(j=>j.slug===slug);
 
   if (!job) notFound();
 

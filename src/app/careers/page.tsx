@@ -1,18 +1,22 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import {
   Search, MapPin, Briefcase, Clock, ArrowRight, Filter,
 } from "lucide-react";
-import { JOBS } from "@/lib/jobs";
+import type {Job} from "@/lib/jobs";
+import {normalizeJobs} from "@/lib/careers-catalog";
 
 export default function CareersPage() {
+  const [jobs,setJobs] = useState<Job[]>([]);
+  const [loading,setLoading] = useState(true);
+  useEffect(()=>{let alive=true;fetch("/api/careers/jobs",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{if(alive)setJobs(normalizeJobs(d.jobs||[]))}).catch(()=>{if(alive)setJobs([])}).finally(()=>{if(alive)setLoading(false)});return()=>{alive=false}},[]);
   const [titleQuery, setTitleQuery] = useState("");
   const [locationQuery, setLocationQuery] = useState("");
 
   const filteredJobs = useMemo(() => {
-    return JOBS.filter((job) => {
+    return jobs.filter((job) => {
       const matchesTitle =
         titleQuery.trim() === "" ||
         job.title.toLowerCase().includes(titleQuery.toLowerCase()) ||
@@ -24,7 +28,7 @@ export default function CareersPage() {
 
       return matchesTitle && matchesLocation;
     });
-  }, [titleQuery, locationQuery]);
+  }, [titleQuery, locationQuery, jobs]);
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
@@ -102,8 +106,8 @@ export default function CareersPage() {
               Available Positions
             </h2>
             <p className="text-slate-500 text-sm mt-1">
-              Showing {filteredJobs.length} of {JOBS.length} open position
-              {JOBS.length !== 1 ? "s" : ""}
+              Showing {filteredJobs.length} of {jobs.length} open position
+              {jobs.length !== 1 ? "s" : ""}
             </p>
           </div>
           <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-4 py-2 rounded-full">
@@ -113,7 +117,7 @@ export default function CareersPage() {
         </div>
 
         {/* Empty state */}
-        {filteredJobs.length === 0 && (
+        {!loading && filteredJobs.length === 0 && (
           <div className="text-center py-20 bg-slate-50 rounded-2xl border border-slate-200">
             <Briefcase className="w-16 h-16 text-slate-300 mx-auto mb-4" />
             <h3 className="text-xl font-bold text-slate-700 mb-2">No matching jobs found</h3>
@@ -129,6 +133,7 @@ export default function CareersPage() {
           </div>
         )}
 
+        {loading && <p className="text-slate-500 py-6">Loading available positions…</p>}
         {/* Job cards */}
         <div className="space-y-4">
           {filteredJobs.map((job) => (
