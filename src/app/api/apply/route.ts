@@ -19,7 +19,8 @@ export async function POST(req: Request) {
     const fullName = (form.get('fullName') as string | null)?.trim() || '';
     const email = (form.get('email') as string | null)?.trim() || '';
     const phone = (form.get('phone') as string | null)?.trim() || '';
-    const location = (form.get('location') as string | null)?.trim() || '';
+    // FIX: Match the field name sent from the frontend
+    const location = (form.get('currentLocation') as string | null)?.trim() || '';
     const linkedin = (form.get('linkedin') as string | null)?.trim() || '';
     const experience = (form.get('experience') as string | null)?.trim() || '';
     const message = (form.get('message') as string | null)?.trim() || '';
@@ -151,14 +152,17 @@ export async function POST(req: Request) {
     );
   } catch (err: any) {
     console.error('Job Application API error:', err);
+    
     return NextResponse.json(
-      { status: 'error', error: err?.message || 'Internal server error.' },
-      { status: 500 }
+      { 
+        status: 'error', 
+        error: err?.message || 'Internal server error. Failed to deliver email.' 
+      },
+      { status: 500 } 
     );
   }
 }
 
-/* Tiny helper to prevent HTML injection in email body */
 function escapeHtml(s: string): string {
   return s
     .replace(/&/g, '&amp;')

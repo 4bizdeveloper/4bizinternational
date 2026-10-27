@@ -86,6 +86,7 @@ export default function ApplyPage() {
     try {
       const res = await fetch('/api/apply', { method: 'POST', body: payload });
       const data = await res.json().catch(() => ({}));
+      
       if (res.ok && data.status === 'success') {
         setStatus('success');
         formRef.current?.reset();
@@ -327,7 +328,7 @@ export default function ApplyPage() {
                     name="message"
                     rows={4}
                     placeholder="Tell us briefly why you're a strong fit for this role…"
-                    className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-900 text-sm font-medium focus:outline-none focus:border-[#0c9d7d] focus:bg-white transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-900 text-sm font-medium focus:outline-none focus:border-[#0c9d7d] transition-colors resize-none"
                   />
                 </div>
 
@@ -366,6 +367,28 @@ export default function ApplyPage() {
           </AnimatePresence>
         </div>
       </div>
+
+      {/* GLOBAL CSS OVERRIDE TO FORCE AUTOFILL COLORS */}
+      <style jsx global>{`
+        /* Force browser autofill to stay white with dark text */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        textarea:-webkit-autofill:active,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus,
+        select:-webkit-autofill:active {
+          -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+          box-shadow: 0 0 0 1000px #ffffff inset !important;
+          -webkit-text-fill-color: #0f172a !important;
+          transition: background-color 5000s ease-in-out 0s;
+        }
+      `}</style>
     </div>
   );
 }
@@ -387,7 +410,7 @@ function Field({
         name={name}
         type={type}
         placeholder={placeholder}
-        className={`w-full px-4 py-3 rounded-xl border-2 bg-slate-50 text-slate-900 text-sm font-medium focus:outline-none focus:bg-white transition-colors ${
+        className={`w-full px-4 py-3 rounded-xl border-2 bg-white text-slate-900 text-sm font-medium focus:outline-none transition-colors ${
           error
             ? 'border-rose-400 bg-rose-50'
             : 'border-slate-200 focus:border-[#0c9d7d]'
@@ -410,7 +433,7 @@ function SelectField({
       <select
         name={name}
         defaultValue=""
-        className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-900 text-sm font-medium focus:outline-none focus:border-[#0c9d7d] focus:bg-white transition-colors"
+        className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-900 text-sm font-medium focus:outline-none focus:border-[#0c9d7d] transition-colors"
       >
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
