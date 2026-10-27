@@ -90,6 +90,7 @@ The content is organized as follows:
       c93bee01d6ff48596c37e21c98a44302c9bd61
     0c/
       8ad255d7dcb9e15ae7ec6dbe2c1fd4ac92c54d
+      d72632ee76faa3bc1099244668f42e90ffc5e5
     0d/
       20e423e9549b5fc8a3812c2a6fc4d630fb6b14
       3fbc2d039734ba073e21266cc76f6d253e2c7a
@@ -102,6 +103,7 @@ The content is organized as follows:
     13/
       e1853174f48b20ec937399233a16eda46518e3
     16/
+      5511728034d258e02e7092944ee691c69700ca
       ecaf9ad37b4583c8f717ab62888947595415f1
     17/
       27051aa45ec212d277b31096e4911ff8ec5237
@@ -157,6 +159,8 @@ The content is organized as follows:
       a37107b3e8da29bbf2854a08da31847474b108
     40/
       de4712af39585d65cd98b314acb3a06f4094f8
+    41/
+      b2df762273fb4287b745f5481db35bed0ca2ad
     43/
       c994c2d3617f947bcb5adf1933e21dabe46bb5
     45/
@@ -208,6 +212,8 @@ The content is organized as follows:
       c45e129812748860e65bed2f7e04b0aaab66b7
     63/
       aed35b86ef7b278804295469681a3777e2ccf9
+    64/
+      c1f262e116bf27cebcaf519d5975e85482115f
     66/
       92226875e00ce5bf1da18a0125c35a9447fee8
       ce3f10a2da4d31256d387d9d8f386d65975a1c
@@ -242,6 +248,7 @@ The content is organized as follows:
       dd92eeabcc6291b9c9b900e61b2627d5391921
     75/
       37bc01dc4b4daa30066811fe4d90d8316390eb
+      d94fcf894006cc00362dc8af5cd51d02727a83
     76/
       a3768597ca14485eb14eb4080773e8085a6747
     77/
@@ -268,6 +275,8 @@ The content is organized as follows:
       e39941c70140aed969fbfd81bd371f685d6638
     83/
       8c37df35f67ea88db23a8e272ee706f67670b9
+    84/
+      f322cf5c3e14b19d6b194ee93ecd594c36462d
     87/
       e8f105c98f30afc40d1262fd951ab931dd514e
     88/
@@ -292,9 +301,12 @@ The content is organized as follows:
       314cbffe0fb59d560354e9cab71fa94bdc2afb
     95/
       17bf5df7bb823b3a833b33b27b19a268b0a29a
+    98/
+      8f177204c5ae40c2193de384c1a33f1a2237c9
     9b/
       cdbca00ba637a9bfb2710856de88f597886dee
     9c/
+      13c45ece7066b7874c802c55b202f7d8382a3a
       8276f282a341897583806be23138ae15252d98
       fb773465ecbcb26fe0eeb947deb8a3d0ea3355
     9d/
@@ -340,6 +352,8 @@ The content is organized as follows:
       2a1b220d5f28871305d896b8ebd8af3fda1096
     c2/
       b21e746def5b5b8efb93ca91abbc36193f83c9
+    c4/
+      d9ed2bd269a92ab026723d0b7f40314da87740
     c5/
       e8c2635317fffbaa1e94b59dff0c915f19665f
     c8/
@@ -364,6 +378,7 @@ The content is organized as follows:
       27077f9f550892129f92b04793be260be7b6a0
       2777a81656b2e3a9d63756009f8790a5d71c06
     d7/
+      0f6e41998f7416b5d35b545f647f595884e8d5
       2d5de1a87963c6432b354a92f2977cb3fd528e
     d8/
       39afe358e8ff7b188476537c6af219cdb677a5
@@ -383,6 +398,7 @@ The content is organized as follows:
       096850a967ab5835d0d2e025e0a0a88e5cb10a
       26d883025ce4a21c04c9fe99d0d40295b04d6b
       50e83e1145295c7a90d57dbe28e07d66239003
+      d3cea143d40ed35d32ce2261d3854ac8d4dae7
       f29850683752dd82aae1502e5bdaf65c7bed63
       f5a80bc807a003e328c31ff374ba9aeb3b45f8
     e2/
@@ -1638,11 +1654,13 @@ exit 0
 0000000000000000000000000000000000000000 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4bizdeveloper <4bizdeveloper@gmail.com> 1793014752 +0530	commit (initial): today
 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4bizdeveloper <4bizdeveloper@gmail.com> 1793014757 +0530	Branch: renamed refs/heads/master to refs/heads/main
 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4592a743e876b799bcfab3442806d140515faabb 4bizdeveloper <4bizdeveloper@gmail.com> 1793015514 +0530	commit: today
+4592a743e876b799bcfab3442806d140515faabb 84f322cf5c3e14b19d6b194ee93ecd594c36462d 4bizdeveloper <4bizdeveloper@gmail.com> 1793083297 +0530	commit: today
 </file>
 
 <file path=".git/logs/refs/remotes/origin/main">
 0000000000000000000000000000000000000000 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4bizdeveloper <4bizdeveloper@gmail.com> 1793014915 +0530	update by push
 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4592a743e876b799bcfab3442806d140515faabb 4bizdeveloper <4bizdeveloper@gmail.com> 1793015523 +0530	update by push
+4592a743e876b799bcfab3442806d140515faabb 84f322cf5c3e14b19d6b194ee93ecd594c36462d 4bizdeveloper <4bizdeveloper@gmail.com> 1793083307 +0530	update by push
 </file>
 
 <file path=".git/logs/HEAD">
@@ -1650,14 +1668,15 @@ exit 0
 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 0000000000000000000000000000000000000000 4bizdeveloper <4bizdeveloper@gmail.com> 1793014757 +0530	Branch: renamed refs/heads/master to refs/heads/main
 0000000000000000000000000000000000000000 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4bizdeveloper <4bizdeveloper@gmail.com> 1793014757 +0530	Branch: renamed refs/heads/master to refs/heads/main
 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4592a743e876b799bcfab3442806d140515faabb 4bizdeveloper <4bizdeveloper@gmail.com> 1793015514 +0530	commit: today
+4592a743e876b799bcfab3442806d140515faabb 84f322cf5c3e14b19d6b194ee93ecd594c36462d 4bizdeveloper <4bizdeveloper@gmail.com> 1793083297 +0530	commit: today
 </file>
 
 <file path=".git/refs/heads/main">
-4592a743e876b799bcfab3442806d140515faabb
+84f322cf5c3e14b19d6b194ee93ecd594c36462d
 </file>
 
 <file path=".git/refs/remotes/origin/main">
-4592a743e876b799bcfab3442806d140515faabb
+84f322cf5c3e14b19d6b194ee93ecd594c36462d
 </file>
 
 <file path=".git/COMMIT_EDITMSG">
@@ -3824,185 +3843,6 @@ export default function AboutPage() {
       <AboutClientView />
     </>
   );
-}
-</file>
-
-<file path="src/app/api/apply/route.ts">
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-
-export const runtime = 'nodejs';
-export const dynamic = 'force-dynamic';
-
-const MAX_CV_BYTES = 5 * 1024 * 1024; // 5MB
-const ALLOWED_MIME = [
-  'application/pdf',
-  'application/msword',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-];
-
-export async function POST(req: Request) {
-  try {
-    /* ---------- Parse multipart form ---------- */
-    const form = await req.formData();
-
-    const fullName = (form.get('fullName') as string | null)?.trim() || '';
-    const email = (form.get('email') as string | null)?.trim() || '';
-    const phone = (form.get('phone') as string | null)?.trim() || '';
-    const location = (form.get('location') as string | null)?.trim() || '';
-    const linkedin = (form.get('linkedin') as string | null)?.trim() || '';
-    const experience = (form.get('experience') as string | null)?.trim() || '';
-    const message = (form.get('message') as string | null)?.trim() || '';
-    const cv = form.get('cv');
-
-    /* ---------- Validation ---------- */
-    if (!fullName || !email || !phone) {
-      return NextResponse.json(
-        { status: 'error', error: 'Missing required fields: fullName, email, phone.' },
-        { status: 400 }
-      );
-    }
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if (!emailOk) {
-      return NextResponse.json(
-        { status: 'error', error: 'Invalid email address.' },
-        { status: 400 }
-      );
-    }
-    if (!(cv instanceof File) || cv.size === 0) {
-      return NextResponse.json(
-        { status: 'error', error: 'CV file is required.' },
-        { status: 400 }
-      );
-    }
-    if (cv.size > MAX_CV_BYTES) {
-      return NextResponse.json(
-        { status: 'error', error: 'CV exceeds 5MB limit.' },
-        { status: 400 }
-      );
-    }
-    if (!ALLOWED_MIME.includes(cv.type)) {
-      return NextResponse.json(
-        { status: 'error', error: 'CV must be PDF, DOC, or DOCX.' },
-        { status: 400 }
-      );
-    }
-
-    /* ---------- Read env (job-specific first, fallback to contact form) ---------- */
-    const smtpUser = process.env.JOB_SMTP_USER || process.env.SMTP_USER;
-    const smtpPass = process.env.JOB_SMTP_PASS || process.env.SMTP_PASS;
-    const toEmail = process.env.JOB_NOTIFICATION_EMAIL || '4bizdeveloper@gmail.com';
-
-    if (!smtpUser || !smtpPass) {
-      console.error('SMTP credentials missing');
-      return NextResponse.json(
-        { status: 'error', error: 'Mail server not configured.' },
-        { status: 500 }
-      );
-    }
-
-    /* ---------- Convert CV to Buffer ---------- */
-    const arrayBuffer = await cv.arrayBuffer();
-    const cvBuffer = Buffer.from(arrayBuffer);
-
-    /* ---------- Build email ---------- */
-    const subject = `New Job Application: ${fullName} — Senior SOC Analyst`;
-
-    const textBody = [
-      `New job application received via 4bizinternational.com/careers/apply`,
-      ``,
-      `Position:   Senior Analyst — SOC Monitoring`,
-      `Full Name:  ${fullName}`,
-      `Email:      ${email}`,
-      `Phone:      ${phone}`,
-      `Location:   ${location || '—'}`,
-      `LinkedIn:   ${linkedin || '—'}`,
-      `Experience: ${experience || '—'} years SOC`,
-      ``,
-      `Cover Note:`,
-      message || '—',
-      ``,
-      `CV attached: ${cv.name} (${(cv.size / 1024).toFixed(1)} KB)`,
-      `Submitted:   ${new Date().toISOString()}`,
-    ].join('\n');
-
-    const htmlBody = `
-      <div style="font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width:600px; margin:0 auto; background:#f8fafc; padding:24px;">
-        <div style="background:linear-gradient(135deg,#0f2054,#061033); padding:24px; border-radius:12px 12px 0 0;">
-          <h1 style="color:#00D3F2; margin:0 0 4px; font-size:20px;">New Job Application</h1>
-          <p style="color:#cbd5e1; margin:0; font-size:13px;">Senior Analyst — SOC Monitoring · 4Biz International</p>
-        </div>
-        <div style="background:#ffffff; padding:24px; border-radius:0 0 12px 12px; border:1px solid #e2e8f0; border-top:0;">
-          <table style="width:100%; border-collapse:collapse; font-size:14px; color:#0f172a;">
-            <tr><td style="padding:8px 0; font-weight:600; width:130px; color:#475569;">Full Name</td><td>${escapeHtml(fullName)}</td></tr>
-            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Email</td><td><a href="mailto:${escapeHtml(email)}" style="color:#0c9d7d;">${escapeHtml(email)}</a></td></tr>
-            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Phone</td><td><a href="tel:${escapeHtml(phone)}" style="color:#0c9d7d;">${escapeHtml(phone)}</a></td></tr>
-            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Location</td><td>${escapeHtml(location) || '—'}</td></tr>
-            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">LinkedIn</td><td>${linkedin ? `<a href="${escapeHtml(linkedin)}" style="color:#0c9d7d;">${escapeHtml(linkedin)}</a>` : '—'}</td></tr>
-            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Experience</td><td>${escapeHtml(experience) || '—'} years SOC</td></tr>
-          </table>
-          <div style="margin-top:20px; padding:16px; background:#f1f5f9; border-radius:8px; border-left:4px solid #0c9d7d;">
-            <p style="margin:0 0 6px; font-weight:600; color:#0f172a;">Cover Note:</p>
-            <p style="margin:0; color:#334155; white-space:pre-wrap; font-size:14px; line-height:1.6;">${escapeHtml(message) || '—'}</p>
-          </div>
-          <p style="margin:20px 0 0; font-size:12px; color:#64748b;">
-            CV attached: <strong>${escapeHtml(cv.name)}</strong> (${(cv.size / 1024).toFixed(1)} KB)<br>
-            Submitted: ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })} (Dubai)
-          </p>
-        </div>
-      </div>
-    `;
-
-    /* ---------- Send via SMTP ---------- */
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: { user: smtpUser, pass: smtpPass },
-    });
-
-    // The await here ensures that if sending fails, it throws an error and skips the success return
-    await transporter.sendMail({
-      from: `"4Biz Careers" <${smtpUser}>`,
-      to: toEmail,
-      replyTo: email,
-      subject,
-      text: textBody,
-      html: htmlBody,
-      attachments: [
-        {
-          filename: cv.name,
-          content: cvBuffer,
-          contentType: cv.type,
-        },
-      ],
-    });
-
-    // This only returns if the try block succeeds entirely
-    return NextResponse.json(
-      { status: 'success', message: 'Application submitted successfully.' },
-      { status: 200 }
-    );
-  } catch (err: any) {
-    console.error('Job Application API error:', err);
-    
-    // FIX: Ensure a 500 status is returned when email delivery fails
-    return NextResponse.json(
-      { 
-        status: 'error', 
-        error: err?.message || 'Internal server error. Failed to deliver email.' 
-      },
-      { status: 500 } 
-    );
-  }
-}
-
-/* Tiny helper to prevent HTML injection in email body */
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
 }
 </file>
 
@@ -9081,434 +8921,6 @@ export default function BlogsLandingPage() {
         </div>
       </main>
     </>
-  );
-}
-</file>
-
-<file path="src/app/careers/apply/page.tsx">
-'use client';
-
-import React, { useState, useRef } from 'react';
-import Link from 'next/link';
-import {
-  RiArrowLeftLine, RiCheckboxCircleLine, RiErrorWarningLine,
-  RiLoader4Line, RiUploadCloud2Line, RiFileTextLine, RiCloseLine,
-  RiShieldKeyholeLine
-} from 'react-icons/ri';
-import { motion, AnimatePresence } from 'framer-motion';
-
-const MAX_CV_SIZE_MB = 5;
-const ACCEPTED_EXT = ['.pdf', '.doc', '.docx'];
-
-export default function ApplyPage() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-  const [errorMsg, setErrorMsg] = useState('');
-  const [cvFile, setCvFile] = useState<File | null>(null);
-  const [dragOver, setDragOver] = useState(false);
-  const [validationAlerts, setValidationAlerts] = useState({
-    fullName: false, email: false, phone: false, cv: false,
-  });
-  const formRef = useRef<HTMLFormElement>(null);
-
-  /* ============== File handling ============== */
-  const validateFile = (file: File): string | null => {
-    const ext = '.' + file.name.split('.').pop()?.toLowerCase();
-    if (!ACCEPTED_EXT.includes(ext)) return 'Only PDF, DOC, or DOCX files are accepted.';
-    if (file.size > MAX_CV_SIZE_MB * 1024 * 1024)
-      return `File size must not exceed ${MAX_CV_SIZE_MB}MB.`;
-    return null;
-  };
-
-  const handleFileSelect = (file: File | null) => {
-    if (!file) { setCvFile(null); return; }
-    const err = validateFile(file);
-    if (err) {
-      setErrorMsg(err);
-      setStatus('error');
-      setTimeout(() => { if (status === 'error') { setStatus('idle'); setErrorMsg(''); } }, 4000);
-      return;
-    }
-    setCvFile(file);
-    setValidationAlerts(p => ({ ...p, cv: false }));
-  };
-
-  const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    setDragOver(false);
-    const f = e.dataTransfer.files?.[0];
-    if (f) handleFileSelect(f);
-  };
-
-  /* ============== Submit ============== */
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-
-    const errors = {
-      fullName: !fd.get('fullName'),
-      email: !fd.get('email'),
-      phone: !fd.get('phone'),
-      cv: !cvFile,
-    };
-    setValidationAlerts(errors);
-    if (Object.values(errors).some(Boolean)) return;
-    if (!cvFile) return;
-
-    setStatus('sending');
-    setErrorMsg('');
-
-    const payload = new FormData();
-    payload.append('fullName', (fd.get('fullName') as string).trim());
-    payload.append('email', (fd.get('email') as string).trim());
-    payload.append('phone', (fd.get('phone') as string).trim());
-    payload.append('nationality', (fd.get('nationality') as string) || '');
-    payload.append('currentLocation', (fd.get('currentLocation') as string) || '');
-    payload.append('visaStatus', (fd.get('visaStatus') as string) || '');
-    payload.append('currentCompany', (fd.get('currentCompany') as string) || '');
-    payload.append('experience', (fd.get('experience') as string) || '');
-    payload.append('noticePeriod', (fd.get('noticePeriod') as string) || '');
-    payload.append('linkedin', (fd.get('linkedin') as string) || '');
-    payload.append('message', (fd.get('message') as string) || '');
-    payload.append('cv', cvFile);
-
-    try {
-      const res = await fetch('/api/apply', { method: 'POST', body: payload });
-      const data = await res.json().catch(() => ({}));
-      
-      if (res.ok && data.status === 'success') {
-        setStatus('success');
-        formRef.current?.reset();
-        setCvFile(null);
-      } else {
-        // FIX: Throw the exact error message returned from the API (500 status)
-        throw new Error(data.error || 'Submission failed. Please try again.');
-      }
-    } catch (err: any) {
-      setStatus('error');
-      setErrorMsg(err.message || 'Network error. Please try again.');
-    }
-  };
-
-  /* ============== File input refs ============== */
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  return (
-    <div
-      className="min-h-screen text-slate-100 font-sans antialiased overflow-x-hidden pt-24 sm:pt-28 md:pt-32 pb-16"
-      style={{
-        background:
-          'radial-gradient(circle at 50% 30%, #0f2054 0%, #061033 45%, #020717 100%)',
-      }}
-    >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Back link */}
-        <Link
-          href="/careers"
-          className="inline-flex items-center gap-2 text-sm text-[#00D3F2] hover:text-cyan-300 font-bold uppercase tracking-widest mb-8 transition-colors"
-        >
-          <RiArrowLeftLine /> Back to Job Details
-        </Link>
-
-        {/* Header */}
-        <div className="mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00D3F2]/10 border border-[#00D3F2]/40 text-[#00D3F2] text-xs font-bold uppercase tracking-widest mb-5">
-            <RiShieldKeyholeLine /> Application Form
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
-            Apply: Digital Marketer 
-          </h1>
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-            Complete the form below and attach your CV. Our hiring team will
-            review your application within 5 business days.
-          </p>
-        </div>
-
-        {/* Form Container - Full Width, No Sidebar */}
-        <div className="w-full rounded-2xl bg-white shadow-2xl p-6 sm:p-10">
-          <AnimatePresence mode="wait">
-            {status === 'success' ? (
-              <motion.div
-                key="success"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-center py-10"
-              >
-                <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6">
-                  <RiCheckboxCircleLine className="text-5xl text-emerald-600" />
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Application Submitted!</h2>
-                <p className="text-slate-600 mb-8 max-w-md mx-auto">
-                  Thank you for applying. Our hiring team has received your CV and
-                  will be in touch if your profile matches the role.
-                </p>
-                <Link
-                  href="/careers"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0c9d7d] hover:bg-[#0a8a6e] text-white font-bold transition-colors"
-                >
-                  <RiArrowLeftLine /> Back to Job
-                </Link>
-              </motion.div>
-            ) : (
-              <motion.form
-                key="form"
-                ref={formRef}
-                onSubmit={handleSubmit}
-                className="space-y-6"
-                noValidate
-              >
-                
-                {/* Personal Details Section */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <Field
-                    name="fullName"
-                    label="Full Name *"
-                    type="text"
-                    placeholder="Your full name"
-                    error={validationAlerts.fullName}
-                  />
-                  <Field
-                    name="email"
-                    label="Email Address *"
-                    type="email"
-                    placeholder="you@email.com"
-                    error={validationAlerts.email}
-                  />
-                  <Field
-                    name="phone"
-                    label="Phone Number *"
-                    type="tel"
-                    placeholder="+971 50 123 4567"
-                    error={validationAlerts.phone}
-                  />
-                  <Field
-                    name="nationality"
-                    label="Nationality"
-                    type="text"
-                    placeholder="e.g. Indian, Filipino, Emirati"
-                  />
-                </div>
-
-                {/* Location & Availability Section */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                  <Field
-                    name="currentLocation"
-                    label="Current Location"
-                    type="text"
-                    placeholder="e.g. Kozhikode, Kerala"
-                  />
-                  <Field
-                    name="visaStatus"
-                    label="Visa Status"
-                    type="text"
-                    placeholder="e.g. Visit Visa, Employment Visa"
-                  />
-                  <Field
-                    name="currentCompany"
-                    label="Current Company (Optional)"
-                    type="text"
-                    placeholder="e.g. Tech Solutions LLC"
-                  />
-                  <SelectField
-                    name="experience"
-                    label="Total Years of Experience"
-                    options={[
-                      { label: 'Select experience level', value: '' },
-                      { label: 'Fresher', value: 'fresher' },
-                      { label: '1–2 years', value: '1-2' },
-                      { label: '3–5 years', value: '3-5' },
-                      { label: '5+ years', value: '5+' },
-                    ]}
-                  />
-                  <SelectField
-                    name="noticePeriod"
-                    label="Notice Period"
-                    options={[
-                      { label: 'Select notice period', value: '' },
-                      { label: 'Immediate', value: 'immediate' },
-                      { label: '15 Days', value: '15-days' },
-                      { label: '30 Days', value: '30-days' },
-                      { label: '60 Days+', value: '60-days' },
-                    ]}
-                  />
-                  <Field
-                    name="linkedin"
-                    label="LinkedIn Profile (Optional)"
-                    type="url"
-                    placeholder="https://linkedin.com/in/yourprofile"
-                  />
-                </div>
-
-                {/* CV Upload */}
-                <div className="pt-2">
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Upload CV * <span className="text-slate-400 font-normal normal-case">(PDF, DOC, DOCX — max 5MB)</span>
-                  </label>
-
-                  <AnimatePresence initial={false}>
-                    {validationAlerts.cv && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="mb-2 p-2 bg-rose-500/10 border border-rose-500/20 rounded-lg flex items-center gap-2 text-xs font-bold text-rose-600"
-                      >
-                        <RiErrorWarningLine /> Please attach your CV
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-
-                  {!cvFile ? (
-                    <div
-                      onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-                      onDragLeave={() => setDragOver(false)}
-                      onDrop={onDrop}
-                      onClick={() => fileInputRef.current?.click()}
-                      className={`cursor-pointer rounded-xl border-2 border-dashed p-6 sm:p-8 text-center transition-colors ${
-                        dragOver
-                          ? 'border-[#0c9d7d] bg-emerald-50'
-                          : 'border-slate-300 bg-slate-50 hover:border-[#0c9d7d] hover:bg-emerald-50/50'
-                      }`}
-                    >
-                      <RiUploadCloud2Line className="text-4xl text-[#0c9d7d] mx-auto mb-3" />
-                      <p className="text-sm font-bold text-slate-700 mb-1">
-                        Click to upload or drag & drop
-                      </p>
-                      <p className="text-xs text-slate-500">
-                        PDF, DOC, DOCX · max 5MB
-                      </p>
-                      <input
-                        ref={fileInputRef}
-                        type="file"
-                        accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                        onChange={(e) => handleFileSelect(e.target.files?.[0] || null)}
-                        className="hidden"
-                      />
-                    </div>
-                  ) : (
-                    <div className="flex items-center gap-3 p-4 rounded-xl border-2 border-emerald-300 bg-emerald-50">
-                      <div className="w-11 h-11 rounded-lg bg-emerald-600 flex items-center justify-center text-white shrink-0">
-                        <RiFileTextLine className="text-2xl" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-bold text-slate-900 truncate">{cvFile.name}</p>
-                        <p className="text-xs text-slate-500">
-                          {(cvFile.size / 1024 / 1024).toFixed(2)} MB
-                        </p>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => setCvFile(null)}
-                        className="p-2 rounded-lg text-slate-600 hover:bg-rose-100 hover:text-rose-600 transition-colors shrink-0"
-                        aria-label="Remove CV"
-                      >
-                        <RiCloseLine className="text-xl" />
-                      </button>
-                    </div>
-                  )}
-                </div>
-
-                {/* Cover Note */}
-                <div className="pt-2">
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Cover Note (Optional)
-                  </label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    placeholder="Tell us briefly why you're a strong fit for this role…"
-                    className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-900 text-sm font-medium focus:outline-none focus:border-[#0c9d7d] focus:bg-white transition-colors resize-none"
-                  />
-                </div>
-
-                {/* Error */}
-                {status === 'error' && errorMsg && (
-                  <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 flex items-start gap-2 text-sm text-rose-700 font-medium">
-                    <RiErrorWarningLine className="text-lg shrink-0 mt-0.5" />
-                    <span>{errorMsg}</span>
-                  </div>
-                )}
-
-                {/* Submit */}
-                <div className="pt-4">
-                  <button
-                    type="submit"
-                    disabled={status === 'sending'}
-                    className="w-full h-14 rounded-xl bg-slate-950 hover:bg-[#0c9d7d] text-white font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
-                  >
-                    {status === 'sending' ? (
-                      <><RiLoader4Line className="animate-spin text-xl" /> Submitting…</>
-                    ) : (
-                      <>Submit Application</>
-                    )}
-                  </button>
-
-                  <p className="text-xs text-slate-500 text-center mt-4">
-                    By submitting, you agree to our{' '}
-                    <Link href="/privacy-policy" className="text-[#0c9d7d] underline font-semibold">
-                      Privacy Policy
-                    </Link>
-                    .
-                  </p>
-                </div>
-              </motion.form>
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ============================================================
-   Reusable Form Fields
-============================================================ */
-function Field({
-  name, label, type, placeholder, error,
-}: {
-  name: string; label: string; type: string; placeholder: string; error?: boolean;
-}) {
-  return (
-    <div>
-      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-        {label}
-      </label>
-      <input
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        className={`w-full px-4 py-3 rounded-xl border-2 bg-slate-50 text-slate-900 text-sm font-medium focus:outline-none focus:bg-white transition-colors ${
-          error
-            ? 'border-rose-400 bg-rose-50'
-            : 'border-slate-200 focus:border-[#0c9d7d]'
-        }`}
-      />
-    </div>
-  );
-}
-
-function SelectField({
-  name, label, options,
-}: {
-  name: string; label: string; options: { label: string; value: string }[];
-}) {
-  return (
-    <div>
-      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-        {label}
-      </label>
-      <select
-        name={name}
-        defaultValue=""
-        className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-slate-50 text-slate-900 text-sm font-medium focus:outline-none focus:border-[#0c9d7d] focus:bg-white transition-colors"
-      >
-        {options.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
-    </div>
   );
 }
 </file>
@@ -21556,6 +20968,631 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 <file path="video.d.ts">
 /// <reference types="next-video/video-types/global" />
+</file>
+
+<file path="src/app/api/apply/route.ts">
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
+const MAX_CV_BYTES = 5 * 1024 * 1024; // 5MB
+const ALLOWED_MIME = [
+  'application/pdf',
+  'application/msword',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+];
+
+export async function POST(req: Request) {
+  try {
+    /* ---------- Parse multipart form ---------- */
+    const form = await req.formData();
+
+    const fullName = (form.get('fullName') as string | null)?.trim() || '';
+    const email = (form.get('email') as string | null)?.trim() || '';
+    const phone = (form.get('phone') as string | null)?.trim() || '';
+    // FIX: Match the field name sent from the frontend
+    const location = (form.get('currentLocation') as string | null)?.trim() || '';
+    const linkedin = (form.get('linkedin') as string | null)?.trim() || '';
+    const experience = (form.get('experience') as string | null)?.trim() || '';
+    const message = (form.get('message') as string | null)?.trim() || '';
+    const cv = form.get('cv');
+
+    /* ---------- Validation ---------- */
+    if (!fullName || !email || !phone) {
+      return NextResponse.json(
+        { status: 'error', error: 'Missing required fields: fullName, email, phone.' },
+        { status: 400 }
+      );
+    }
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!emailOk) {
+      return NextResponse.json(
+        { status: 'error', error: 'Invalid email address.' },
+        { status: 400 }
+      );
+    }
+    if (!(cv instanceof File) || cv.size === 0) {
+      return NextResponse.json(
+        { status: 'error', error: 'CV file is required.' },
+        { status: 400 }
+      );
+    }
+    if (cv.size > MAX_CV_BYTES) {
+      return NextResponse.json(
+        { status: 'error', error: 'CV exceeds 5MB limit.' },
+        { status: 400 }
+      );
+    }
+    if (!ALLOWED_MIME.includes(cv.type)) {
+      return NextResponse.json(
+        { status: 'error', error: 'CV must be PDF, DOC, or DOCX.' },
+        { status: 400 }
+      );
+    }
+
+    /* ---------- Read env (job-specific first, fallback to contact form) ---------- */
+    const smtpUser = process.env.JOB_SMTP_USER || process.env.SMTP_USER;
+    const smtpPass = process.env.JOB_SMTP_PASS || process.env.SMTP_PASS;
+    const toEmail = process.env.JOB_NOTIFICATION_EMAIL || '4bizdeveloper@gmail.com';
+
+    if (!smtpUser || !smtpPass) {
+      console.error('SMTP credentials missing');
+      return NextResponse.json(
+        { status: 'error', error: 'Mail server not configured.' },
+        { status: 500 }
+      );
+    }
+
+    /* ---------- Convert CV to Buffer ---------- */
+    const arrayBuffer = await cv.arrayBuffer();
+    const cvBuffer = Buffer.from(arrayBuffer);
+
+    /* ---------- Build email ---------- */
+    const subject = `New Job Application: ${fullName} — Senior SOC Analyst`;
+
+    const textBody = [
+      `New job application received via 4bizinternational.com/careers/apply`,
+      ``,
+      `Position:   Senior Analyst — SOC Monitoring`,
+      `Full Name:  ${fullName}`,
+      `Email:      ${email}`,
+      `Phone:      ${phone}`,
+      `Location:   ${location || '—'}`,
+      `LinkedIn:   ${linkedin || '—'}`,
+      `Experience: ${experience || '—'} years SOC`,
+      ``,
+      `Cover Note:`,
+      message || '—',
+      ``,
+      `CV attached: ${cv.name} (${(cv.size / 1024).toFixed(1)} KB)`,
+      `Submitted:   ${new Date().toISOString()}`,
+    ].join('\n');
+
+    const htmlBody = `
+      <div style="font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width:600px; margin:0 auto; background:#f8fafc; padding:24px;">
+        <div style="background:linear-gradient(135deg,#0f2054,#061033); padding:24px; border-radius:12px 12px 0 0;">
+          <h1 style="color:#00D3F2; margin:0 0 4px; font-size:20px;">New Job Application</h1>
+          <p style="color:#cbd5e1; margin:0; font-size:13px;">Senior Analyst — SOC Monitoring · 4Biz International</p>
+        </div>
+        <div style="background:#ffffff; padding:24px; border-radius:0 0 12px 12px; border:1px solid #e2e8f0; border-top:0;">
+          <table style="width:100%; border-collapse:collapse; font-size:14px; color:#0f172a;">
+            <tr><td style="padding:8px 0; font-weight:600; width:130px; color:#475569;">Full Name</td><td>${escapeHtml(fullName)}</td></tr>
+            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Email</td><td><a href="mailto:${escapeHtml(email)}" style="color:#0c9d7d;">${escapeHtml(email)}</a></td></tr>
+            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Phone</td><td><a href="tel:${escapeHtml(phone)}" style="color:#0c9d7d;">${escapeHtml(phone)}</a></td></tr>
+            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Location</td><td>${escapeHtml(location) || '—'}</td></tr>
+            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">LinkedIn</td><td>${linkedin ? `<a href="${escapeHtml(linkedin)}" style="color:#0c9d7d;">${escapeHtml(linkedin)}</a>` : '—'}</td></tr>
+            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Experience</td><td>${escapeHtml(experience) || '—'} years SOC</td></tr>
+          </table>
+          <div style="margin-top:20px; padding:16px; background:#f1f5f9; border-radius:8px; border-left:4px solid #0c9d7d;">
+            <p style="margin:0 0 6px; font-weight:600; color:#0f172a;">Cover Note:</p>
+            <p style="margin:0; color:#334155; white-space:pre-wrap; font-size:14px; line-height:1.6;">${escapeHtml(message) || '—'}</p>
+          </div>
+          <p style="margin:20px 0 0; font-size:12px; color:#64748b;">
+            CV attached: <strong>${escapeHtml(cv.name)}</strong> (${(cv.size / 1024).toFixed(1)} KB)<br>
+            Submitted: ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })} (Dubai)
+          </p>
+        </div>
+      </div>
+    `;
+
+    /* ---------- Send via SMTP ---------- */
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: { user: smtpUser, pass: smtpPass },
+    });
+
+    await transporter.sendMail({
+      from: `"4Biz Careers" <${smtpUser}>`,
+      to: toEmail,
+      replyTo: email,
+      subject,
+      text: textBody,
+      html: htmlBody,
+      attachments: [
+        {
+          filename: cv.name,
+          content: cvBuffer,
+          contentType: cv.type,
+        },
+      ],
+    });
+
+    return NextResponse.json(
+      { status: 'success', message: 'Application submitted successfully.' },
+      { status: 200 }
+    );
+  } catch (err: any) {
+    console.error('Job Application API error:', err);
+    
+    return NextResponse.json(
+      { 
+        status: 'error', 
+        error: err?.message || 'Internal server error. Failed to deliver email.' 
+      },
+      { status: 500 } 
+    );
+  }
+}
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+</file>
+
+<file path="src/app/careers/apply/page.tsx">
+'use client';
+
+import React, { useState, useRef } from 'react';
+import Link from 'next/link';
+import {
+  RiArrowLeftLine, RiCheckboxCircleLine, RiErrorWarningLine,
+  RiLoader4Line, RiUploadCloud2Line, RiFileTextLine, RiCloseLine,
+  RiShieldKeyholeLine
+} from 'react-icons/ri';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const MAX_CV_SIZE_MB = 5;
+const ACCEPTED_EXT = ['.pdf', '.doc', '.docx'];
+
+export default function ApplyPage() {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+  const [cvFile, setCvFile] = useState<File | null>(null);
+  const [dragOver, setDragOver] = useState(false);
+  const [validationAlerts, setValidationAlerts] = useState({
+    fullName: false, email: false, phone: false, cv: false,
+  });
+  const formRef = useRef<HTMLFormElement>(null);
+
+  /* ============== File handling ============== */
+  const validateFile = (file: File): string | null => {
+    const ext = '.' + file.name.split('.').pop()?.toLowerCase();
+    if (!ACCEPTED_EXT.includes(ext)) return 'Only PDF, DOC, or DOCX files are accepted.';
+    if (file.size > MAX_CV_SIZE_MB * 1024 * 1024)
+      return `File size must not exceed ${MAX_CV_SIZE_MB}MB.`;
+    return null;
+  };
+
+  const handleFileSelect = (file: File | null) => {
+    if (!file) { setCvFile(null); return; }
+    const err = validateFile(file);
+    if (err) {
+      setErrorMsg(err);
+      setStatus('error');
+      setTimeout(() => { if (status === 'error') { setStatus('idle'); setErrorMsg(''); } }, 4000);
+      return;
+    }
+    setCvFile(file);
+    setValidationAlerts(p => ({ ...p, cv: false }));
+  };
+
+  const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setDragOver(false);
+    const f = e.dataTransfer.files?.[0];
+    if (f) handleFileSelect(f);
+  };
+
+  /* ============== Submit ============== */
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+
+    const errors = {
+      fullName: !fd.get('fullName'),
+      email: !fd.get('email'),
+      phone: !fd.get('phone'),
+      cv: !cvFile,
+    };
+    setValidationAlerts(errors);
+    if (Object.values(errors).some(Boolean)) return;
+    if (!cvFile) return;
+
+    setStatus('sending');
+    setErrorMsg('');
+
+    const payload = new FormData();
+    payload.append('fullName', (fd.get('fullName') as string).trim());
+    payload.append('email', (fd.get('email') as string).trim());
+    payload.append('phone', (fd.get('phone') as string).trim());
+    payload.append('nationality', (fd.get('nationality') as string) || '');
+    payload.append('currentLocation', (fd.get('currentLocation') as string) || '');
+    payload.append('visaStatus', (fd.get('visaStatus') as string) || '');
+    payload.append('currentCompany', (fd.get('currentCompany') as string) || '');
+    payload.append('experience', (fd.get('experience') as string) || '');
+    payload.append('noticePeriod', (fd.get('noticePeriod') as string) || '');
+    payload.append('linkedin', (fd.get('linkedin') as string) || '');
+    payload.append('message', (fd.get('message') as string) || '');
+    payload.append('cv', cvFile);
+
+    try {
+      const res = await fetch('/api/apply', { method: 'POST', body: payload });
+      const data = await res.json().catch(() => ({}));
+      
+      if (res.ok && data.status === 'success') {
+        setStatus('success');
+        formRef.current?.reset();
+        setCvFile(null);
+      } else {
+        throw new Error(data.error || 'Submission failed. Please try again.');
+      }
+    } catch (err: any) {
+      setStatus('error');
+      setErrorMsg(err.message || 'Network error. Please try again.');
+    }
+  };
+
+  /* ============== File input refs ============== */
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  return (
+    <div
+      className="min-h-screen text-slate-100 font-sans antialiased overflow-x-hidden pt-24 sm:pt-28 md:pt-32 pb-16"
+      style={{
+        background:
+          'radial-gradient(circle at 50% 30%, #0f2054 0%, #061033 45%, #020717 100%)',
+      }}
+    >
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Back link */}
+        <Link
+          href="/careers"
+          className="inline-flex items-center gap-2 text-sm text-[#00D3F2] hover:text-cyan-300 font-bold uppercase tracking-widest mb-8 transition-colors"
+        >
+          <RiArrowLeftLine /> Back to Job Details
+        </Link>
+
+        {/* Header */}
+        <div className="mb-10">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00D3F2]/10 border border-[#00D3F2]/40 text-[#00D3F2] text-xs font-bold uppercase tracking-widest mb-5">
+            <RiShieldKeyholeLine /> Application Form
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
+            Apply: Digital Marketer 
+          </h1>
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            Complete the form below and attach your CV. Our hiring team will
+            review your application within 5 business days.
+          </p>
+        </div>
+
+        {/* Form Container - Full Width, No Sidebar */}
+        <div className="w-full rounded-2xl bg-white shadow-2xl p-6 sm:p-10">
+          <AnimatePresence mode="wait">
+            {status === 'success' ? (
+              <motion.div
+                key="success"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center py-10"
+              >
+                <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6">
+                  <RiCheckboxCircleLine className="text-5xl text-emerald-600" />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Application Submitted!</h2>
+                <p className="text-slate-600 mb-8 max-w-md mx-auto">
+                  Thank you for applying. Our hiring team has received your CV and
+                  will be in touch if your profile matches the role.
+                </p>
+                <Link
+                  href="/careers"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0c9d7d] hover:bg-[#0a8a6e] text-white font-bold transition-colors"
+                >
+                  <RiArrowLeftLine /> Back to Job
+                </Link>
+              </motion.div>
+            ) : (
+              <motion.form
+                key="form"
+                ref={formRef}
+                onSubmit={handleSubmit}
+                className="space-y-6"
+                noValidate
+              >
+                
+                {/* Personal Details Section */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <Field
+                    name="fullName"
+                    label="Full Name *"
+                    type="text"
+                    placeholder="Your full name"
+                    error={validationAlerts.fullName}
+                  />
+                  <Field
+                    name="email"
+                    label="Email Address *"
+                    type="email"
+                    placeholder="you@email.com"
+                    error={validationAlerts.email}
+                  />
+                  <Field
+                    name="phone"
+                    label="Phone Number *"
+                    type="tel"
+                    placeholder="+971 50 123 4567"
+                    error={validationAlerts.phone}
+                  />
+                  <Field
+                    name="nationality"
+                    label="Nationality"
+                    type="text"
+                    placeholder="e.g. Indian, Filipino, Emirati"
+                  />
+                </div>
+
+                {/* Location & Availability Section */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                  <Field
+                    name="currentLocation"
+                    label="Current Location"
+                    type="text"
+                    placeholder="e.g. Kozhikode, Kerala"
+                  />
+                  <Field
+                    name="visaStatus"
+                    label="Visa Status"
+                    type="text"
+                    placeholder="e.g. Visit Visa, Employment Visa"
+                  />
+                  <Field
+                    name="currentCompany"
+                    label="Current Company (Optional)"
+                    type="text"
+                    placeholder="e.g. Tech Solutions LLC"
+                  />
+                  <SelectField
+                    name="experience"
+                    label="Total Years of Experience"
+                    options={[
+                      { label: 'Select experience level', value: '' },
+                      { label: 'Fresher', value: 'fresher' },
+                      { label: '1–2 years', value: '1-2' },
+                      { label: '3–5 years', value: '3-5' },
+                      { label: '5+ years', value: '5+' },
+                    ]}
+                  />
+                  <SelectField
+                    name="noticePeriod"
+                    label="Notice Period"
+                    options={[
+                      { label: 'Select notice period', value: '' },
+                      { label: 'Immediate', value: 'immediate' },
+                      { label: '15 Days', value: '15-days' },
+                      { label: '30 Days', value: '30-days' },
+                      { label: '60 Days+', value: '60-days' },
+                    ]}
+                  />
+                  <Field
+                    name="linkedin"
+                    label="LinkedIn Profile (Optional)"
+                    type="url"
+                    placeholder="https://linkedin.com/in/yourprofile"
+                  />
+                </div>
+
+                {/* CV Upload */}
+                <div className="pt-2">
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                    Upload CV * <span className="text-slate-400 font-normal normal-case">(PDF, DOC, DOCX — max 5MB)</span>
+                  </label>
+
+                  <AnimatePresence initial={false}>
+                    {validationAlerts.cv && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="mb-2 p-2 bg-rose-500/10 border border-rose-500/20 rounded-lg flex items-center gap-2 text-xs font-bold text-rose-600"
+                      >
+                        <RiErrorWarningLine /> Please attach your CV
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  {!cvFile ? (
+                    <div
+                      onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+                      onDragLeave={() => setDragOver(false)}
+                      onDrop={onDrop}
+                      onClick={() => fileInputRef.current?.click()}
+                      className={`cursor-pointer rounded-xl border-2 border-dashed p-6 sm:p-8 text-center transition-colors ${
+                        dragOver
+                          ? 'border-[#0c9d7d] bg-emerald-50'
+                          : 'border-slate-300 bg-slate-50 hover:border-[#0c9d7d] hover:bg-emerald-50/50'
+                      }`}
+                    >
+                      <RiUploadCloud2Line className="text-4xl text-[#0c9d7d] mx-auto mb-3" />
+                      <p className="text-sm font-bold text-slate-700 mb-1">
+                        Click to upload or drag & drop
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        PDF, DOC, DOCX · max 5MB
+                      </p>
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                        onChange={(e) => handleFileSelect(e.target.files?.[0] || null)}
+                        className="hidden"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-3 p-4 rounded-xl border-2 border-emerald-300 bg-emerald-50">
+                      <div className="w-11 h-11 rounded-lg bg-emerald-600 flex items-center justify-center text-white shrink-0">
+                        <RiFileTextLine className="text-2xl" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold text-slate-900 truncate">{cvFile.name}</p>
+                        <p className="text-xs text-slate-500">
+                          {(cvFile.size / 1024 / 1024).toFixed(2)} MB
+                        </p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setCvFile(null)}
+                        className="p-2 rounded-lg text-slate-600 hover:bg-rose-100 hover:text-rose-600 transition-colors shrink-0"
+                        aria-label="Remove CV"
+                      >
+                        <RiCloseLine className="text-xl" />
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                {/* Cover Note */}
+                <div className="pt-2">
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                    Cover Note (Optional)
+                  </label>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    placeholder="Tell us briefly why you're a strong fit for this role…"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-900 text-sm font-medium focus:outline-none focus:border-[#0c9d7d] transition-colors resize-none"
+                  />
+                </div>
+
+                {/* Error */}
+                {status === 'error' && errorMsg && (
+                  <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 flex items-start gap-2 text-sm text-rose-700 font-medium">
+                    <RiErrorWarningLine className="text-lg shrink-0 mt-0.5" />
+                    <span>{errorMsg}</span>
+                  </div>
+                )}
+
+                {/* Submit */}
+                <div className="pt-4">
+                  <button
+                    type="submit"
+                    disabled={status === 'sending'}
+                    className="w-full h-14 rounded-xl bg-slate-950 hover:bg-[#0c9d7d] text-white font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {status === 'sending' ? (
+                      <><RiLoader4Line className="animate-spin text-xl" /> Submitting…</>
+                    ) : (
+                      <>Submit Application</>
+                    )}
+                  </button>
+
+                  <p className="text-xs text-slate-500 text-center mt-4">
+                    By submitting, you agree to our{' '}
+                    <Link href="/privacy-policy" className="text-[#0c9d7d] underline font-semibold">
+                      Privacy Policy
+                    </Link>
+                    .
+                  </p>
+                </div>
+              </motion.form>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+
+      {/* GLOBAL CSS OVERRIDE TO FORCE AUTOFILL COLORS */}
+      <style jsx global>{`
+        /* Force browser autofill to stay white with dark text */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        textarea:-webkit-autofill:active,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus,
+        select:-webkit-autofill:active {
+          -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+          box-shadow: 0 0 0 1000px #ffffff inset !important;
+          -webkit-text-fill-color: #0f172a !important;
+          transition: background-color 5000s ease-in-out 0s;
+        }
+      `}</style>
+    </div>
+  );
+}
+
+/* ============================================================
+   Reusable Form Fields
+============================================================ */
+function Field({
+  name, label, type, placeholder, error,
+}: {
+  name: string; label: string; type: string; placeholder: string; error?: boolean;
+}) {
+  return (
+    <div>
+      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+        {label}
+      </label>
+      <input
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        className={`w-full px-4 py-3 rounded-xl border-2 bg-white text-slate-900 text-sm font-medium focus:outline-none transition-colors ${
+          error
+            ? 'border-rose-400 bg-rose-50'
+            : 'border-slate-200 focus:border-[#0c9d7d]'
+        }`}
+      />
+    </div>
+  );
+}
+
+function SelectField({
+  name, label, options,
+}: {
+  name: string; label: string; options: { label: string; value: string }[];
+}) {
+  return (
+    <div>
+      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+        {label}
+      </label>
+      <select
+        name={name}
+        defaultValue=""
+        className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-900 text-sm font-medium focus:outline-none focus:border-[#0c9d7d] transition-colors"
+      >
+        {options.map((opt) => (
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
 </file>
 
 <file path="src/components/About.tsx">

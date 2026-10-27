@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { JOBS } from '@/lib/jobs'
 
 // Required for 'output: export' static HTML builds
 export const dynamic = 'force-static'
@@ -111,24 +112,47 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${baseUrl}/blog/website-design-services-uae/`,
-      lastModified: new Date('2026-10-15'), // Oct 15, 2026 
+      lastModified: new Date('2026-10-15'), // Oct 15, 2026
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-      {
+    {
       url: `${baseUrl}/blog/microsoft-365-vs-google-workspace-uae/`,
-      lastModified: new Date('2026-10-19'), // Oct 19, 2026 
+      lastModified: new Date('2026-10-19'), // Oct 19, 2026
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-      {
-      url: `${baseUrl}/blog/server-management-services-uae/ `,
-      lastModified: new Date('2026-10-22'), // Oct 22, 2026 
+    {
+      url: `${baseUrl}/blog/server-management-services-uae/`,
+      lastModified: new Date('2026-10-22'), // Oct 22, 2026
       changeFrequency: 'monthly',
       priority: 0.7,
     },
   ]
 
+  // 4. Careers Pages (listing + apply + every job in JOBS)
+  const careersPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/careers/`,
+      lastModified: new Date('2026-10-20'),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/careers/apply/`,
+      lastModified: new Date('2026-10-20'),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    // Every job in JOBS generates its own URL — no manual sync needed.
+    ...JOBS.map((job) => ({
+      url: `${baseUrl}/careers/${job.slug}/`,
+      lastModified: new Date(job.postedDate),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+  ]
+
   // Combine all routes into one clean sitemap array
-  return [...corePages, ...servicePages, ...blogPages]
+  return [...corePages, ...servicePages, ...blogPages, ...careersPages]
 }

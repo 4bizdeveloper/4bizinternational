@@ -1,332 +1,199 @@
-import React from 'react';
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+
+import React, { useState, useMemo } from "react";
+import Link from "next/link";
 import {
-  RiMapPinLine, RiBriefcaseLine, RiTimeLine,
-  RiCheckboxCircleLine, RiArrowRightLine,
-  RiFileList3Line, RiAwardLine, RiMailLine, RiPhoneLine, RiStarLine
-} from 'react-icons/ri';
+  Search, MapPin, Briefcase, Clock, ArrowRight, Filter,
+} from "lucide-react";
+import { JOBS } from "@/lib/jobs";
 
-/* ============================================================
-   SEO / AEO / GEO METADATA
-============================================================ */
-export const metadata: Metadata = {
-  title: 'Digital Marketer Jobs in Kozhikode | 4Biz Careers',
-  description:
-    'Join 4Biz International as a Digital Marketer (Fresher) in Kozhikode, Kerala. Hands-on experience in SEO, Google Ads, Meta Ads & content marketing. Apply today.',
-  keywords: [
-    'Digital Marketing jobs Kozhikode', 'Digital Marketer Fresher Kerala', 'SEO jobs Calicut',
-    'Google Ads jobs India', 'Social Media Marketing careers', '4Biz International careers',
-    'Content Marketing jobs UAE', 'Digital Marketing Internship Kozhikode',
-  ],
-  alternates: { canonical: 'https://www.4bizinternational.com/careers/' },
-  openGraph: {
-    title: 'Digital Marketer (Fresher) — Kozhikode | 4Biz International Careers',
-    description:
-      'We are hiring a Digital Marketer (Fresher / 0-1 Year) in Kozhikode. Hands-on experience in SEO, Ads & Social Media. Apply now.',
-    url: 'https://www.4bizinternational.com/careers/',
-    type: 'website',
-    siteName: '4Biz International',
-    images: [{ url: '/4biz_logo-1.png', width: 1200, height: 630, alt: '4Biz Careers' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Digital Marketer (Fresher) — Kozhikode | 4Biz Careers',
-    description: 'We are hiring a Digital Marketer (Fresher) in Kozhikode. 0-1 year experience in SEO & Ads.',
-    images: ['/4biz_logo-1.png'],
-  },
-  robots: { index: true, follow: true },
-};
+export default function CareersPage() {
+  const [titleQuery, setTitleQuery] = useState("");
+  const [locationQuery, setLocationQuery] = useState("");
 
-/* ============================================================
-   STRUCTURED DATA
-============================================================ */
-const TODAY_ISO = new Date().toISOString().split('T')[0];
+  const filteredJobs = useMemo(() => {
+    return JOBS.filter((job) => {
+      const matchesTitle =
+        titleQuery.trim() === "" ||
+        job.title.toLowerCase().includes(titleQuery.toLowerCase()) ||
+        job.department.toLowerCase().includes(titleQuery.toLowerCase());
 
-const jobPostingSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'JobPosting',
-  title: 'Digital Marketer (Fresher / 0–1 Year Experience)',
-  description:
-    '4 Biz International is hiring a Digital Marketer who is enthusiastic, creative, and eager to build a career in digital marketing. This role is ideal for fresh graduates or early-career professionals looking for hands-on experience across SEO, AEO, content marketing, paid advertising, and social media platforms.',
-  identifier: { '@type': 'PropertyValue', name: '4Biz International', value: 'MKT-DM-001' },
-  datePosted: TODAY_ISO,
-  validThrough: '2027-12-31',
-  employmentType: 'FULL_TIME',
-  hiringOrganization: {
-    '@type': 'Organization',
-    name: '4Biz International LLC',
-    sameAs: 'https://www.4bizinternational.com',
-    logo: 'https://www.4bizinternational.com/4biz_logo-1.png',
-  },
-  jobLocation: {
-    '@type': 'Place',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'HiLITE Business Park',
-      addressLocality: 'Kozhikode',
-      addressRegion: 'Kerala',
-      addressCountry: 'IN',
-    },
-  },
-  baseSalary: {
-    '@type': 'MonetaryAmount',
-    currency: 'INR',
-    value: { '@type': 'QuantitativeValue', unitText: 'MONTH', value: 'Competitive' },
-  },
-  qualifications:
-    'Fresher or 0–1 year experience in Digital Marketing. Knowledge of SEO & AEO fundamentals. Good understanding of content writing and copywriting. Basic knowledge of Google Ads & Meta Ads. Familiarity with social media platforms. Educational background in Marketing, Business, Mass Communication, or related field.',
-  responsibilities:
-    'Assist in planning and executing SEO & AEO strategies. Create engaging content for blogs, ads, and social media. Support and manage Google Ads & Meta Ads campaigns. Handle social media accounts. Conduct keyword research and basic performance analysis. Monitor campaign results and prepare basic reports.',
-  skills:
-    'SEO, AEO, Content Writing, Copywriting, Google Ads, Meta Ads, Social Media Management, Google Analytics, Search Console',
-  industry: 'Information Technology / Digital Marketing',
-  occupationalCategory: '11-2021.00 - Marketing Managers',
-  directApply: true,
-  applicantLocationRequirements: { '@type': 'Country', name: 'India' },
-  jobBenefits: 'Hands-on learning with real-time projects, exposure to multiple digital marketing channels, supportive work environment, strong career growth.',
-  workHours: 'Full-time',
-  inLanguage: 'en',
-};
+      const matchesLocation =
+        locationQuery.trim() === "" ||
+        job.location.toLowerCase().includes(locationQuery.toLowerCase());
 
-/* ============================================================
-   DATA CONSTANTS
-============================================================ */
-const RESPONSIBILITIES = [
-  'Assist in planning and executing SEO & AEO strategies.',
-  'Create engaging content for blogs, ads, and social media platforms.',
-  'Support and manage Google Ads & Meta Ads campaigns.',
-  'Handle social media accounts, posting schedules, and audience engagement.',
-  'Conduct keyword research and basic performance analysis.',
-  'Monitor campaign results and prepare basic reports.',
-  'Stay updated with digital marketing trends and best practices.',
-  'Collaborate with design, development, and marketing teams.',
-];
+      return matchesTitle && matchesLocation;
+    });
+  }, [titleQuery, locationQuery]);
 
-const QUALIFICATIONS = [
-  'Fresher or 0–1 year experience in Digital Marketing.',
-  'Knowledge of SEO & AEO fundamentals.',
-  'Good understanding of content writing and copywriting.',
-  'Basic knowledge of Google Ads & Meta Ads.',
-  'Familiarity with social media platforms (Instagram, Facebook, LinkedIn, etc.).',
-  'Strong communication skills (written & verbal).',
-  'Creative mindset with analytical thinking.',
-  'Educational background in Marketing, Business, Mass Communication, or a related field.',
-];
-
-const NICE_TO_HAVE = [
-  'Internship or certification in Digital Marketing.',
-  'Hands-on experience through projects or freelancing.',
-  'Basic knowledge of analytics tools (Google Analytics, Search Console).',
-  'Strong desire to learn and adapt to new marketing technologies.',
-];
-
-/* ============================================================
-   COMPONENT
-============================================================ */
-export default function CareersLandingPage() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
-      />
+    <div className="min-h-screen bg-white text-slate-900 font-sans">
 
-      <div className="min-h-screen text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-[#00D3F2] selection:text-black">
+      {/* ═══════════════ HERO WITH SEARCH ═══════════════ */}
+      <section className="relative w-full bg-[#0b1f4e] overflow-hidden pt-28 sm:pt-32 pb-20 sm:pb-24 px-4">
+        {/* Ambient glow */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-500/20 rounded-full blur-[120px]" />
+          <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px]" />
+        </div>
 
-        {/* ============================================================
-            HERO SECTION
-        ============================================================ */}
-        <section
-          aria-labelledby="job-title"
-          className="relative w-full isolate overflow-hidden border-b border-[#00D3F2]/20 pt-24 pb-14 sm:pt-32 sm:pb-20"
-          style={{
-            background: 'radial-gradient(circle at 50% 30%, #143373 0%, #0a1c4a 45%, #06122e 100%)',
-          }}
-        >
-          {/* Background image layer */}
-          <div className="absolute inset-0 -z-10">
-            <Image
-              src="/blog/digital-marketing-1.png"
-              alt=""
-              aria-hidden="true"
-              fill
-              priority
-              sizes="100vw"
-              quality={75}
-              className="object-cover object-center opacity-50"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#06122e]/60 via-[#0a1c4a]/25 to-[#06122e]/80" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] opacity-30" />
+        <div className="relative max-w-6xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-cyan-300 text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            We're Hiring
           </div>
 
-          <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#00D3F2]/40 bg-[#00D3F2]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#00D3F2] backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D3F2] motion-safe:animate-pulse" aria-hidden="true" />
-              Hiring: Digital Marketer
-            </div>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 leading-tight">
+            Find more details on our <br className="hidden sm:inline" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
+              open positions
+            </span>
+          </h1>
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-10">
+            Join a team that's redefining enterprise technology across the globe.
+          </p>
 
-            <h1
-              id="job-title"
-              className="mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-300 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.1] tracking-tight"
-              style={{ textWrap: 'balance' } as React.CSSProperties}
+          {/* SEARCH BAR BOX */}
+          <div className="bg-white rounded-2xl p-3 shadow-2xl max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-2">
+              {/* Title Input */}
+              <div className="flex-1 flex items-center gap-3 px-4 py-3 border border-slate-200 rounded-xl focus-within:border-[#0b1f4e] transition-colors">
+                <Search className="w-5 h-5 text-slate-400 shrink-0" />
+                <input
+                  type="text"
+                  placeholder="Search job title or department"
+                  value={titleQuery}
+                  onChange={(e) => setTitleQuery(e.target.value)}
+                  className="flex-1 outline-none text-slate-900 placeholder-slate-500 text-sm font-medium"
+                />
+              </div>
+
+              {/* Location Input */}
+              <div className="flex-1 flex items-center gap-3 px-4 py-3 border border-slate-200 rounded-xl focus-within:border-[#0b1f4e] transition-colors">
+                <MapPin className="w-5 h-5 text-slate-400 shrink-0" />
+                <input
+                  type="text"
+                  placeholder="Search location"
+                  value={locationQuery}
+                  onChange={(e) => setLocationQuery(e.target.value)}
+                  className="flex-1 outline-none text-slate-900 placeholder-slate-500 text-sm font-medium"
+                />
+              </div>
+
+              {/* Search Button */}
+              <button
+                type="button"
+                className="bg-[#0b1f4e] hover:bg-[#152f6b] text-white font-bold px-8 py-3 rounded-xl transition-colors text-sm uppercase tracking-wider shrink-0"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ JOB LISTINGS ═══════════════ */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+
+        {/* Header row */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#0b1f4e] tracking-tight">
+              Available Positions
+            </h2>
+            <p className="text-slate-500 text-sm mt-1">
+              Showing {filteredJobs.length} of {JOBS.length} open position
+              {JOBS.length !== 1 ? "s" : ""}
+            </p>
+          </div>
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-4 py-2 rounded-full">
+            <Filter className="w-3.5 h-3.5" />
+            Filtered Results
+          </div>
+        </div>
+
+        {/* Empty state */}
+        {filteredJobs.length === 0 && (
+          <div className="text-center py-20 bg-slate-50 rounded-2xl border border-slate-200">
+            <Briefcase className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-slate-700 mb-2">No matching jobs found</h3>
+            <p className="text-slate-500 mb-6">
+              Try different keywords or clear your filters.
+            </p>
+            <button
+              onClick={() => { setTitleQuery(""); setLocationQuery(""); }}
+              className="px-6 py-2.5 rounded-xl bg-[#0b1f4e] hover:bg-[#152f6b] text-white text-sm font-bold transition-colors"
             >
-              Digital Marketer (Fresher / 0–1 Year Experience)
-            </h1>
-
-            {/* Quick Facts Bar */}
-            <div className="mx-auto flex max-w-2xl flex-wrap items-center justify-center gap-3 sm:gap-6">
-              <div className="flex items-center gap-2 rounded-lg bg-slate-900/60 px-4 py-2 border border-slate-700/60 backdrop-blur-md">
-                <RiMapPinLine className="text-[#00D3F2]" />
-                <span className="text-sm font-medium text-slate-200">Kozhikode (Calicut), Kerala</span>
-              </div>
-              <div className="flex items-center gap-2 rounded-lg bg-slate-900/60 px-4 py-2 border border-slate-700/60 backdrop-blur-md">
-                <RiBriefcaseLine className="text-[#00D3F2]" />
-                <span className="text-sm font-medium text-slate-200">Full-Time</span>
-              </div>
-              <div className="flex items-center gap-2 rounded-lg bg-slate-900/60 px-4 py-2 border border-slate-700/60 backdrop-blur-md">
-                <RiTimeLine className="text-[#00D3F2]" />
-                <span className="text-sm font-medium text-slate-200">0–1 Year Exp</span>
-              </div>
-            </div>
-
-            <div className="mt-10 flex justify-center">
-              <Link
-                href="/careers/apply"
-                className="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-[#00D3F2] px-8 py-3.5 text-sm font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-[#00D3F2]/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[#00D3F2]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D3F2] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-              >
-                Apply Now
-                <RiArrowRightLine className="text-lg transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Link>
-            </div>
+              Clear Filters
+            </button>
           </div>
-        </section>
+        )}
 
-        {/* ============================================================
-            UNIFIED CONTENT SECTION (Job Details + Final CTA)
-        ============================================================ */}
-        <section className="relative w-full bg-gradient-to-br from-[#0c2d6b] via-[#0a2256] to-[#071b44]">
-          
-          {/* Job Details Content */}
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 md:pt-20 pb-14 sm:pb-16">
-            
-            {/* About the Role */}
-            <div className="mb-12">
-              <h2 className="mb-4 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-white drop-shadow-md">
-                About the Role
-              </h2>
-              <p className="max-w-4xl text-base leading-relaxed text-blue-50/90 drop-shadow-sm">
-                4 Biz International is hiring a Digital Marketer who is enthusiastic, creative, and eager to build a career in digital marketing. This role is ideal for fresh graduates or early-career professionals looking for hands-on experience across SEO, AEO, content marketing, paid advertising, and social media platforms. You will work closely with our marketing and design teams to plan, execute, and optimize digital campaigns while gaining exposure to real-world projects and performance-driven strategies.
-              </p>
-            </div>
+        {/* Job cards */}
+        <div className="space-y-4">
+          {filteredJobs.map((job) => (
+            <article
+              key={job.slug}
+              className="group relative bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 hover:border-[#0b1f4e] hover:shadow-[0_8px_40px_-12px_rgba(11,31,78,0.15)] transition-all duration-300"
+            >
+              <div className="flex flex-col lg:flex-row lg:items-center gap-6">
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
-              
-              {/* Key Responsibilities */}
-              <div className="rounded-2xl border border-[#00D3F2]/30 bg-[#07193c]/80 p-6 sm:p-8 backdrop-blur-md shadow-xl">
-                <div className="mb-5 flex items-center gap-3 border-b border-blue-400/20 pb-4">
-                  <RiFileList3Line className="shrink-0 text-2xl text-[#00D3F2] drop-shadow-[0_0_8px_rgba(0,211,242,0.6)]" aria-hidden="true" />
-                  <h3 className="text-lg font-bold text-white">
-                    Key Responsibilities
+                {/* Left: Info */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 mb-3">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-cyan-600 bg-cyan-50 px-2.5 py-1 rounded-md border border-cyan-200">
+                      {job.department}
+                    </span>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md">
+                      {job.workType}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl font-extrabold text-[#0b1f4e] group-hover:text-blue-700 transition-colors mb-2 leading-snug">
+                    <Link href={`/careers/${job.slug}`}>
+                      <span className="absolute inset-0 z-10" aria-hidden="true" />
+                      {job.title}
+                    </Link>
                   </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed mb-3 line-clamp-2">
+                    {job.shortDescription}
+                  </p>
+
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-500 font-medium">
+                    <span className="inline-flex items-center gap-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                      {job.location}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-slate-400" />
+                      {job.experience}
+                    </span>
+                  </div>
                 </div>
-                <ul className="space-y-3">
-                  {RESPONSIBILITIES.map((r, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-blue-100/90">
-                      <RiCheckboxCircleLine className="mt-0.5 shrink-0 text-[#00D3F2] text-lg drop-shadow-[0_0_5px_rgba(0,211,242,0.5)]" aria-hidden="true" />
-                      <span>{r}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
 
-              {/* Required Skills & Qualifications */}
-              <div className="rounded-2xl border border-[#00D3F2]/30 bg-[#07193c]/80 p-6 sm:p-8 backdrop-blur-md shadow-xl">
-                <div className="mb-5 flex items-center gap-3 border-b border-blue-400/20 pb-4">
-                  <RiAwardLine className="shrink-0 text-2xl text-[#00D3F2] drop-shadow-[0_0_8px_rgba(0,211,242,0.6)]" aria-hidden="true" />
-                  <h3 className="text-lg font-bold text-white">
-                    Required Skills & Qualifications
-                  </h3>
+                {/* Right: CTA */}
+                <div className="shrink-0 flex items-center gap-3 relative z-20">
+                  <Link
+                    href={`/careers/${job.slug}`}
+                    className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-[#0b1f4e] border-2 border-[#0b1f4e]/20 hover:border-[#0b1f4e] hover:bg-[#0b1f4e]/5 transition-all"
+                  >
+                    View Details
+                  </Link>
+                  <Link
+                    href={`/careers/apply?job=${job.slug}`}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-black uppercase tracking-wider text-white bg-[#0b1f4e] hover:bg-[#152f6b] transition-all shadow-lg shadow-[#0b1f4e]/20 group-hover:shadow-[#0b1f4e]/40"
+                  >
+                    Apply Now
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </div>
-                <ul className="space-y-3">
-                  {QUALIFICATIONS.map((q, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-blue-100/90">
-                      <RiCheckboxCircleLine className="mt-0.5 shrink-0 text-[#00D3F2] text-lg drop-shadow-[0_0_5px_rgba(0,211,242,0.5)]" aria-hidden="true" />
-                      <span>{q}</span>
-                    </li>
-                  ))}
-                </ul>
+
               </div>
-            </div>
-
-            {/* Nice to Have */}
-            <div className="mt-8 rounded-2xl border border-[#00D3F2]/30 bg-[#07193c]/80 p-6 sm:p-8 backdrop-blur-md shadow-xl">
-              <div className="mb-4 flex items-center gap-3 border-b border-blue-400/20 pb-4">
-                <RiStarLine className="shrink-0 text-2xl text-[#00D3F2] drop-shadow-[0_0_8px_rgba(0,211,242,0.6)]" aria-hidden="true" />
-                <h3 className="text-lg font-bold text-white">
-                  Nice to Have
-                </h3>
-              </div>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {NICE_TO_HAVE.map((n, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-blue-100/90">
-                    <RiCheckboxCircleLine className="mt-0.5 shrink-0 text-[#00D3F2] text-lg drop-shadow-[0_0_5px_rgba(0,211,242,0.5)]" aria-hidden="true" />
-                    <span>{n}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-          </div>
-
-          {/* Final CTA Content */}
-          <div className="relative overflow-hidden py-16 sm:py-20">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,211,242,0.15),transparent_60%)]" />
-            <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
-              <h2
-                id="cta-title"
-                className="mb-4 text-[clamp(1.75rem,4vw,2.5rem)] font-black tracking-tight text-white drop-shadow-md"
-              >
-                Interested candidates can apply now
-              </h2>
-              <p className="mx-auto mb-8 max-w-xl text-base leading-relaxed text-blue-100/90">
-                Send your CV & portfolio to our hiring team. We review applications on a rolling basis.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/careers/apply"
-                  className="group inline-flex min-h-[54px] w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#00D3F2] px-8 py-4 text-sm font-black uppercase tracking-wider text-slate-950 shadow-2xl shadow-[#00D3F2]/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[#00D3F2]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D3F2] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-                >
-                  Apply for This Role
-                  <RiArrowRightLine className="text-lg transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                </Link>
-              </div>
-
-              {/* Contact info - dot removed */}
-              <div className="mt-10 flex flex-col items-center justify-center gap-4 text-base font-medium text-blue-100 sm:flex-row sm:gap-6">
-                <a
-                  href="mailto:hr@4bizinternational.com"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-[#00D3F2]"
-                >
-                  <RiMailLine className="text-[#00D3F2]" aria-hidden="true" />
-                  hr@4bizinternational.com
-                </a>
-                <a
-                  href="tel:+971527925100"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-[#00D3F2]"
-                >
-                  <RiPhoneLine className="text-[#00D3F2]" aria-hidden="true" />
-                  +971 52 792 5100
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </section>
-
-      </div>
-    </>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
