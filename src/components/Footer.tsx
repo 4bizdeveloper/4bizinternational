@@ -101,10 +101,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-14 lg:gap-8 items-start mb-16">
           
           {/* Brand Architecture Column */}
-          <div className="lg:col-span-4 flex flex-col items-start space-y-6 md:space-y-8">
+          <div className="lg:col-span-4 flex flex-col items-start space-y-6 md:space-y-8 w-full">
             <Link 
               href="/" 
-              className="block group"
+              className="block group w-max"
               aria-label="4Biz International - Return to Homepage"
             >
               <motion.div 
@@ -116,7 +116,7 @@ const Footer = () => {
                   src="/4biz_logo-1.png" 
                   alt="4Biz International Corporate Logo - IT Infrastructure and Global Telecom Solutions" 
                   fill
-                  className="object-contain filter drop-shadow-[0_2px_10px_rgba(0,211,242,0.15)] group-hover:drop-shadow-[0_4px_20px_rgba(0,211,242,0.3)] transition-all duration-300"
+                  className="object-contain object-left filter drop-shadow-[0_2px_10px_rgba(0,211,242,0.15)] group-hover:drop-shadow-[0_4px_20px_rgba(0,211,242,0.3)] transition-all duration-300"
                   sizes="208px"
                   priority={true}
                 />
