@@ -47,7 +47,7 @@ const testimonialsData: TestimonialItem[] = [
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+  const [direction, setDirection] = useState(0);
   const [isAutoplay, setIsAutoplay] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -61,7 +61,6 @@ export default function Testimonials() {
     setActiveIndex((prev) => (prev - 1 + testimonialsData.length) % testimonialsData.length);
   };
 
-  // Autoplay functionality
   useEffect(() => {
     if (isAutoplay) {
       timerRef.current = setInterval(() => {
@@ -78,7 +77,6 @@ export default function Testimonials() {
     action();
   };
 
-  // Safe layout-preserving spring configurations 
   const slideVariants: Variants = {
     enter: (dir: number) => ({
       x: dir > 0 ? 40 : -40,
@@ -105,22 +103,16 @@ export default function Testimonials() {
   const currentTestimonial = testimonialsData[activeIndex];
 
   return (
-    <section 
-      className="relative w-full py-24 px-4 sm:px-6 lg:px-8 text-white overflow-hidden select-none transform-gpu flex flex-col justify-center -mt-px"
+    <section
+      className="relative w-full py-24 px-4 sm:px-6 lg:px-8 text-white overflow-hidden select-none -mt-px"
       style={{
         background: 'radial-gradient(circle at 50% 50%, #0d2266 0%, #030922 100%)',
-        contentVisibility: 'auto',
-        contain: 'paint',
-        containmentIntrinsicSize: '1px 750px',
       } as React.CSSProperties}
     >
-      {/* High-Tech Grid Structure adapted to cleanly fade out near edges and remove the hard top grid line */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf803_1px,transparent_1px),linear-gradient(to_bottom,#38bdf803_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
-        
-        {/* Header Block */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -138,7 +130,6 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        {/* Content Box Frame */}
         <div className="relative w-full overflow-hidden">
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
@@ -148,16 +139,14 @@ export default function Testimonials() {
               initial="enter"
               animate="center"
               exit="exit"
-              className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0d163a]/50 backdrop-blur-xl border border-slate-700/40 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.4)] group transform-gpu"
+              className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#0d163a]/50 backdrop-blur-xl border border-slate-700/40 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.4)] group"
             >
-              {/* Vibrant Background Quote Emblem */}
               <Quote className="absolute top-6 right-6 w-24 h-24 text-cyan-500/[0.04] pointer-events-none group-hover:text-cyan-500/10 group-hover:scale-105 transition-all duration-500 z-0" />
-              
-              {/* Left Column: Profile Card */}
+
               <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left border-b lg:border-b-0 lg:border-r border-slate-700/40 pb-6 lg:pb-0 lg:pr-8 z-10 w-full">
                 <div className="relative w-24 h-24 sm:w-28 sm:h-28 mb-4 rounded-2xl overflow-hidden p-0.5 bg-gradient-to-tr from-slate-600 via-slate-700 to-cyan-500/40 shadow-xl">
-                  <Image 
-                    src={currentTestimonial.image} 
+                  <Image
+                    src={currentTestimonial.image}
                     alt={currentTestimonial.name}
                     fill
                     sizes="(max-width: 768px) 96px, 112px"
@@ -166,7 +155,7 @@ export default function Testimonials() {
                     className="object-cover rounded-[14px]"
                   />
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-white tracking-wide">
                   {currentTestimonial.name}
                 </h3>
@@ -184,7 +173,6 @@ export default function Testimonials() {
                 </div>
               </div>
 
-              {/* Right Column: Content Block */}
               <div className="lg:col-span-8 flex flex-col justify-center relative px-2 sm:px-4 z-10 w-full">
                 <Quote className="w-10 h-10 text-cyan-400/20 mb-4 hidden lg:block" />
                 <p className="text-base sm:text-lg lg:text-xl text-slate-100 leading-relaxed font-light italic">
@@ -195,10 +183,7 @@ export default function Testimonials() {
           </AnimatePresence>
         </div>
 
-        {/* Navigation Controls */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 px-2">
-          
-          {/* Progress Indicators */}
           <div className="flex gap-2.5 order-2 sm:order-1">
             {testimonialsData.map((_, index) => (
               <button
@@ -215,7 +200,6 @@ export default function Testimonials() {
             ))}
           </div>
 
-          {/* Interactive Arrow Controls */}
           <div className="flex gap-4 order-1 sm:order-2">
             <button
               onClick={() => handleManualNavigation(slidePrev)}
@@ -232,9 +216,7 @@ export default function Testimonials() {
               <ChevronRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
             </button>
           </div>
-
         </div>
-
       </div>
     </section>
   );

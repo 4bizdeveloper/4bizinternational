@@ -63,12 +63,14 @@ The content is organized as follows:
         main
       remotes/
         origin/
+          HEAD
           main
     HEAD
   objects/
     00/
       ef6b3eb3a5ab2bccb516d23e364b493a83d5df
     01/
+      6dfad99da532e0e870e96b6cefb9369d68b9eb
       c1f3436f4a81d0842ab5f0e1d1c6e14ca84256
     02/
       bbabb0e0c38dcbcad00dd00cfc4fdb782d8feb
@@ -100,6 +102,7 @@ The content is organized as follows:
       811ebac8b6a7e2ede6f12829d876a5a0360424
     12/
       9335181fa44a2a3b5819d2e96f9e12a937b0ee
+      e582bb6219509a18b0190c635db5f1354393e7
     13/
       e1853174f48b20ec937399233a16eda46518e3
     16/
@@ -109,6 +112,7 @@ The content is organized as follows:
       27051aa45ec212d277b31096e4911ff8ec5237
     18/
       74205e5e5f8d45304fe5aef24e16fbd257d2e8
+      97c62ed41bae2a096fa1904cbdb86dfba5b4ef
       ea023e8ce5bdf8bf23e43891834cd2fbc696c9
       f6ce53cefb052d07a26afb2eb6a97328e44dc4
     19/
@@ -124,12 +128,17 @@ The content is organized as follows:
       c6fc59f163ab1c515526ba06eb86e3412f697c
     20/
       3988dbc30818b3d3a628f98eb3c47504661da7
+    24/
+      5f0c28211e3c11aa26fb8c7c3290f23415916e
     25/
       5a0d8b11c3df8e29f01cca866dbce382400d86
       6347490d27b9bb00ec1bd3184e03c19f59c3b3
       64fb7530dbbe2b2b6837253e596544e604ecd5
+      65fe7117d6096a1e46826fd0c637ad76fa5203
     27/
       36e530632ec80db723ff7882a426502bb4cd1b
+    2b/
+      c0287a84960d5589bf5d8b09025a84db162ca6
     2c/
       4ec00bae43c39d79d5f6828036f60cf371f8d7
     2d/
@@ -143,19 +152,23 @@ The content is organized as follows:
       9cf9c45b440873e5ec0224067f14d39d02a8a8
     31/
       407e608c17641f18b47129eb8e9e26299ac3a5
+      4105842d68ec2fdb68845d782ef727247a7eca
       44f534640f5b30a4f10c6d3f61ac05272d90e5
     34/
       f6e6c3e9d2ecafcf26cef2f442ee8335e39ded
     37/
       ccfff2e9e032ad001c66948526f326af610516
     38/
+      258f3961f6363745fbd3216bddaefb36e9d84c
       d293125564ffccd41aaba2432fc7b29b678583
       ed4a679e131096290f3fc3b4f2f2e0c7df1906
     39/
+      0d9e79b7a914e0aea933a1741ae2f872085f4e
       79ebbe76162cb426cd6fbb5dc370dd976ca77a
     3a/
       825f9fe50a3edfa5eadedfb273b3764081c09e
     3c/
+      6fee96cd1e798a6f20d7319230fc4069c618ed
       a37107b3e8da29bbf2854a08da31847474b108
     40/
       de4712af39585d65cd98b314acb3a06f4094f8
@@ -163,6 +176,8 @@ The content is organized as follows:
       b2df762273fb4287b745f5481db35bed0ca2ad
     43/
       c994c2d3617f947bcb5adf1933e21dabe46bb5
+    44/
+      416b53721144856cf3148f555759add374141b
     45/
       77205ac220cf7c264da1f021a527bca02fff10
       92a743e876b799bcfab3442806d140515faabb
@@ -178,6 +193,8 @@ The content is organized as follows:
       0274dd0305134366cbd9356e7e1b07a463a889
     4a/
       9c7a3a9ee3d83adc91f8f808ed2e1269508325
+    4b/
+      9728ab2378842d5b436751329b65c0f69b5add
     4c/
       95f770fad8834dade711ab4dd68d5e9c20b6bc
     4d/
@@ -193,10 +210,13 @@ The content is organized as follows:
       e41f436a28fbaf6e77d56d35b0be82cebd90e3
     51/
       5d4e725f4686f12a538762baacedee56b64c15
+    52/
+      6113da48b35673af54f54222cf6a747a6ff737
     54/
       3d5693cc8a840e28b3ed748d21d9618d547114
     57/
       1184b4d2f0d6e31f2d4ef5d4da7fd2ac71a01b
+      3b5a2fb03364555f06de7749fe0ecbb6ac3d29
     58/
       89b06ab185ad95a328626d42dcf4ec821e9268
     5a/
@@ -211,8 +231,10 @@ The content is organized as follows:
     62/
       c45e129812748860e65bed2f7e04b0aaab66b7
     63/
+      91df0a6997fd7952d2314d6b95f1be0400fc4b
       aed35b86ef7b278804295469681a3777e2ccf9
     64/
+      1ba3340a0bbea4b38ddb1c9cf5430348948337
       c1f262e116bf27cebcaf519d5975e85482115f
     66/
       92226875e00ce5bf1da18a0125c35a9447fee8
@@ -225,8 +247,10 @@ The content is organized as follows:
       f382ac0dd610020fbc01d75b487fa02f9816e5
     6c/
       046a873e4e84ae65f51fb79413245c8ea9c0bd
+      b8bbdc0d08d52c1c365e85becdd8efd1ec4025
       dc21d6e946e73c0c9d0e2561fcb1759fb8da12
     6d/
+      150349cdac382b266a28b6ad8bcf4f9ea00bc4
       63649f17bf903974c2797b07635287e6372ba9
     6e/
       6b6c49abe0e803e9c1056df55615ef3b306d9b
@@ -241,6 +265,7 @@ The content is organized as follows:
     72/
       07a8b086715c8d251d1c84dfc2e42766e0e2b5
       0fe6577642c5f18723ea617ff01df9148c822a
+      d14029f582f7cce63622cd6090f642ae95324b
     73/
       640991a4c3b95c95794c890d0499d98c9b7f00
       e1f47c0cdf0e0c720f60e4873cef521df66127
@@ -250,11 +275,14 @@ The content is organized as follows:
       37bc01dc4b4daa30066811fe4d90d8316390eb
       d94fcf894006cc00362dc8af5cd51d02727a83
     76/
+      5a742802b85fe0cd03452199f4ff57fdcbfa4e
       a3768597ca14485eb14eb4080773e8085a6747
     77/
       45ae74b1b34baa8801d7dee356098a5fab2abe
     78/
       d363abebaa488ec935b8eff2976da97601a183
+    7a/
+      87b7bef2626033b9923e0e6bbda6fdfcc98599
     7b/
       12e4d533a6dda38c37005cd9a86e95150853ba
       ae1c9e7efbf965d2fc6feb2ace823b5419e61f
@@ -286,6 +314,7 @@ The content is organized as follows:
     8b/
       d0e39085d5260e7f8faffcad2fdc45e10aef33
     8c/
+      8b6aa7a3412d1cb2d7f765d6bf0118a76a7543
       b7c0bde8ee3a90baac20da46861364b14b0bc2
       d960a83c3aa8e22bb9ab95d944c86f0e76cd5d
     8e/
@@ -295,29 +324,40 @@ The content is organized as follows:
       c6dacae10cf17b1a8b7fa3ac3b6d3937d210ae
     90/
       54257112a11697606c88a621dcff09bcea1214
+    92/
+      efd4322ebf4473822f642bbfdd4ea1b356b23d
     93/
       e43a6bd9d70e3235e2ddbf95b4267124d96099
     94/
       314cbffe0fb59d560354e9cab71fa94bdc2afb
     95/
       17bf5df7bb823b3a833b33b27b19a268b0a29a
+    96/
+      375d9c52f17fb64d21bb47ca85ee9890596926
     98/
       8f177204c5ae40c2193de384c1a33f1a2237c9
     9b/
       cdbca00ba637a9bfb2710856de88f597886dee
+      f3b157a679aae0d4ae8a24b1ba031bf379182c
     9c/
       13c45ece7066b7874c802c55b202f7d8382a3a
       8276f282a341897583806be23138ae15252d98
       fb773465ecbcb26fe0eeb947deb8a3d0ea3355
     9d/
       5ba99523bfb18fb861434f4d8373750ad2049a
+    9f/
+      5044308c452af2c6ee9dd9fb7f361129d859bc
     a0/
       4b2ecf88be0f436d185f177545f8cef21a52d4
+      76de2cb7e24c4aad4ce6c6cc450f0d3f914f26
     a1/
       7f512725cb6705f98080e9bccdf591a4ede238
+    a2/
+      a553bfdb0e293202b0fa6c578ebddcf1917ce9
     a7/
       a68ef6b4cb2e1fc199e5df360bea6a8b7cb6ff
     a9/
+      1b1d187e9f793f546b2683d351a74e8cec4ebb
       1e9b7d0092089f069a4e4f113f636d2dcecb50
       aaff9eb46cde86b3ad32e9f7331c9886d27f89
       da9f111b61282abb82939d9dc80d37cbcdf87f
@@ -334,11 +374,17 @@ The content is organized as follows:
     ae/
       2d364c3b55e9be3fc60689bdfde8b0008933a9
       e17deca28db8f563d550a7bc4eda39de29ac17
+    b0/
+      d5dccec42b157a5f69ffb704178b0e07c1c581
     b1/
+      461a15c9205599a5282b330d501c0220eec017
       b13f5a1e6ce37ce667b6906991ccc5d6a95f21
     b2/
       d3d86b849791a96dd18a72251bfb3fe01756ba
+    b6/
+      b01fa592f389986056e0e4e5e297706db7920b
     b7/
+      d12ef0715c4d4e81fc978de62a22d5deb30218
       d5daa9ed9c3f848b4a27a31319f30214df8301
     b9/
       ab94ccc9957683315419c0bcd38335da2756b2
@@ -350,12 +396,16 @@ The content is organized as follows:
       96faf31a9aefd5ca0fab13fa5cd36386aed6b5
     c0/
       2a1b220d5f28871305d896b8ebd8af3fda1096
+    c1/
+      a76564bea9c3751bc7b1a02a5ab750764c4f61
     c2/
       b21e746def5b5b8efb93ca91abbc36193f83c9
     c4/
       d9ed2bd269a92ab026723d0b7f40314da87740
     c5/
       e8c2635317fffbaa1e94b59dff0c915f19665f
+    c6/
+      78ffdda878b97a9742403b3197255c49dfcd18
     c8/
       4f267bbbf8ae7e136343704f30ffb449163206
     c9/
@@ -368,15 +418,20 @@ The content is organized as follows:
       76eef7f4f58c2bdabcb56c0799166204eb499e
     cc/
       1a7e7ac980e9a1fb0682fa3d8c5ee2b81f57be
+    cd/
+      211cca76fe31a37eab57a5a68878aa2aaf488d
     d1/
       cc7c37ba4d1f6175aa21adeea939ce7cb4acc9
       e1e20e8f5c6c16b3fdc30694c11bc057a33061
     d3/
+      1d1b18cc38b581fe9a795ff1fc8356b26fef80
       c38fc51afa92df8ac0336d41ea11e42aaafe07
     d4/
       03478600f490a26b7bcc28ddd87779c5cff4bc
       27077f9f550892129f92b04793be260be7b6a0
       2777a81656b2e3a9d63756009f8790a5d71c06
+    d5/
+      3c3bad9adf217cad4b15ee44ccf5cd5ec5a1f7
     d7/
       0f6e41998f7416b5d35b545f647f595884e8d5
       2d5de1a87963c6432b354a92f2977cb3fd528e
@@ -415,13 +470,17 @@ The content is organized as follows:
       bf29d33409ccb5eec3ffe0e87221527e2b0198
     e9/
       2f641e31c600865f6862505e3b9c4408911589
+      acf6b331bb2b4e8b8acb7c8d33e200d55b3c33
     ea/
+      2d6eb7ae9f409073deb36e722d39d9a314df2c
       2e80306badd4b2526573ab574504c878d67731
     eb/
       5625412a5745c0dfb50397b89b9a4816f67ba0
     ee/
+      792028c0075db737eb9cef14801eca42a9d6b3
       ac3215d7f23d93493cec86893f93f75cff6c7c
     ef/
+      9019a61fcb7a661aa7b5d9475c606effecb255
       b8094270f9e604e51910150455550b11be25f2
     f0/
       f28acf01654c6ac067126344293fff03c8a64d
@@ -454,18 +513,22 @@ The content is organized as follows:
       4f623851855fd2dd248e3769f4f6ac459f52d2
     ff/
       53c9b07f35e29e77efd85d423d432b4a5952cc
+      8744caccc05e92acdf7fb40f277d1895319d9f
       93fca817e7304b51929631409b8b3735bb28d7
   refs/
     heads/
       main
     remotes/
       origin/
+        HEAD
         main
   COMMIT_EDITMSG
   config
   description
+  FETCH_HEAD
   HEAD
   index
+  ORIG_HEAD
 .vscode/
   settings.json
 components-copies/
@@ -590,6 +653,9 @@ src/
     api/
       apply/
         route.ts
+      careers/
+        jobs/
+          route.ts
       send-mail/
         route.ts
     blog/
@@ -611,6 +677,8 @@ src/
         page.tsx
       page.tsx
     careers/
+      [slug]/
+        page.tsx
       apply/
         page.tsx
       page.tsx
@@ -666,6 +734,9 @@ src/
     MapSection.tsx
     Services.tsx
     Testimonials.tsx
+  lib/
+    careers-catalog.ts
+    jobs.ts
 videos/
   get-started.mp4.json
 .env
@@ -1655,12 +1726,24 @@ exit 0
 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4bizdeveloper <4bizdeveloper@gmail.com> 1793014757 +0530	Branch: renamed refs/heads/master to refs/heads/main
 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4592a743e876b799bcfab3442806d140515faabb 4bizdeveloper <4bizdeveloper@gmail.com> 1793015514 +0530	commit: today
 4592a743e876b799bcfab3442806d140515faabb 84f322cf5c3e14b19d6b194ee93ecd594c36462d 4bizdeveloper <4bizdeveloper@gmail.com> 1793083297 +0530	commit: today
+84f322cf5c3e14b19d6b194ee93ecd594c36462d 9bf3b157a679aae0d4ae8a24b1ba031bf379182c 4bizdeveloper <4bizdeveloper@gmail.com> 1793090898 +0530	commit: today
+9bf3b157a679aae0d4ae8a24b1ba031bf379182c 245f0c28211e3c11aa26fb8c7c3290f23415916e 4bizdeveloper <4bizdeveloper@gmail.com> 1793168239 +0530	pull origin main: Fast-forward
+245f0c28211e3c11aa26fb8c7c3290f23415916e 9f5044308c452af2c6ee9dd9fb7f361129d859bc 4bizdeveloper <4bizdeveloper@gmail.com> 1793168884 +0530	commit: today
+9f5044308c452af2c6ee9dd9fb7f361129d859bc c1a76564bea9c3751bc7b1a02a5ab750764c4f61 4bizdeveloper <4bizdeveloper@gmail.com> 1793169452 +0530	commit: today
+</file>
+
+<file path=".git/logs/refs/remotes/origin/HEAD">
+0000000000000000000000000000000000000000 245f0c28211e3c11aa26fb8c7c3290f23415916e 4bizdeveloper <4bizdeveloper@gmail.com> 1793168625 +0530	fetch
 </file>
 
 <file path=".git/logs/refs/remotes/origin/main">
 0000000000000000000000000000000000000000 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4bizdeveloper <4bizdeveloper@gmail.com> 1793014915 +0530	update by push
 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4592a743e876b799bcfab3442806d140515faabb 4bizdeveloper <4bizdeveloper@gmail.com> 1793015523 +0530	update by push
 4592a743e876b799bcfab3442806d140515faabb 84f322cf5c3e14b19d6b194ee93ecd594c36462d 4bizdeveloper <4bizdeveloper@gmail.com> 1793083307 +0530	update by push
+84f322cf5c3e14b19d6b194ee93ecd594c36462d 9bf3b157a679aae0d4ae8a24b1ba031bf379182c 4bizdeveloper <4bizdeveloper@gmail.com> 1793090929 +0530	update by push
+9bf3b157a679aae0d4ae8a24b1ba031bf379182c 245f0c28211e3c11aa26fb8c7c3290f23415916e 4bizdeveloper <4bizdeveloper@gmail.com> 1793168239 +0530	pull origin main: fast-forward
+245f0c28211e3c11aa26fb8c7c3290f23415916e 9f5044308c452af2c6ee9dd9fb7f361129d859bc 4bizdeveloper <4bizdeveloper@gmail.com> 1793168903 +0530	update by push
+9f5044308c452af2c6ee9dd9fb7f361129d859bc c1a76564bea9c3751bc7b1a02a5ab750764c4f61 4bizdeveloper <4bizdeveloper@gmail.com> 1793169467 +0530	update by push
 </file>
 
 <file path=".git/logs/HEAD">
@@ -1669,14 +1752,23 @@ exit 0
 0000000000000000000000000000000000000000 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4bizdeveloper <4bizdeveloper@gmail.com> 1793014757 +0530	Branch: renamed refs/heads/master to refs/heads/main
 8cd960a83c3aa8e22bb9ab95d944c86f0e76cd5d 4592a743e876b799bcfab3442806d140515faabb 4bizdeveloper <4bizdeveloper@gmail.com> 1793015514 +0530	commit: today
 4592a743e876b799bcfab3442806d140515faabb 84f322cf5c3e14b19d6b194ee93ecd594c36462d 4bizdeveloper <4bizdeveloper@gmail.com> 1793083297 +0530	commit: today
+84f322cf5c3e14b19d6b194ee93ecd594c36462d 9bf3b157a679aae0d4ae8a24b1ba031bf379182c 4bizdeveloper <4bizdeveloper@gmail.com> 1793090898 +0530	commit: today
+9bf3b157a679aae0d4ae8a24b1ba031bf379182c 245f0c28211e3c11aa26fb8c7c3290f23415916e 4bizdeveloper <4bizdeveloper@gmail.com> 1793168239 +0530	pull origin main: Fast-forward
+245f0c28211e3c11aa26fb8c7c3290f23415916e 245f0c28211e3c11aa26fb8c7c3290f23415916e 4bizdeveloper <4bizdeveloper@gmail.com> 1793168668 +0530	reset: moving to origin/main
+245f0c28211e3c11aa26fb8c7c3290f23415916e 9f5044308c452af2c6ee9dd9fb7f361129d859bc 4bizdeveloper <4bizdeveloper@gmail.com> 1793168884 +0530	commit: today
+9f5044308c452af2c6ee9dd9fb7f361129d859bc c1a76564bea9c3751bc7b1a02a5ab750764c4f61 4bizdeveloper <4bizdeveloper@gmail.com> 1793169452 +0530	commit: today
 </file>
 
 <file path=".git/refs/heads/main">
-84f322cf5c3e14b19d6b194ee93ecd594c36462d
+c1a76564bea9c3751bc7b1a02a5ab750764c4f61
+</file>
+
+<file path=".git/refs/remotes/origin/HEAD">
+ref: refs/remotes/origin/main
 </file>
 
 <file path=".git/refs/remotes/origin/main">
-84f322cf5c3e14b19d6b194ee93ecd594c36462d
+c1a76564bea9c3751bc7b1a02a5ab750764c4f61
 </file>
 
 <file path=".git/COMMIT_EDITMSG">
@@ -1703,8 +1795,16 @@ today
 Unnamed repository; edit this file 'description' to name the repository.
 </file>
 
+<file path=".git/FETCH_HEAD">
+245f0c28211e3c11aa26fb8c7c3290f23415916e		branch 'main' of https://github.com/4bizdeveloper/4bizinternational
+</file>
+
 <file path=".git/HEAD">
 ref: refs/heads/main
+</file>
+
+<file path=".git/ORIG_HEAD">
+245f0c28211e3c11aa26fb8c7c3290f23415916e
 </file>
 
 <file path=".env">
@@ -3843,6 +3943,19 @@ export default function AboutPage() {
       <AboutClientView />
     </>
   );
+}
+</file>
+
+<file path="src/app/api/careers/jobs/route.ts">
+import {NextResponse} from 'next/server';
+export const dynamic='force-dynamic';
+export async function GET(){
+ try{
+  const res=await fetch('http://127.0.0.1:3299/jobs',{cache:'no-store',signal:AbortSignal.timeout(4500)});
+  if(!res.ok)throw new Error('Catalog unavailable');
+  const data=await res.json();
+  return NextResponse.json(data,{headers:{'Cache-Control':'no-store'}});
+ }catch{return NextResponse.json({jobs:[],error:'Vacancies temporarily unavailable'},{status:503,headers:{'Cache-Control':'no-store'}})}
 }
 </file>
 
@@ -8920,341 +9033,6 @@ export default function BlogsLandingPage() {
           <BlogCardList blogs={blogDataList} />
         </div>
       </main>
-    </>
-  );
-}
-</file>
-
-<file path="src/app/careers/page.tsx">
-import React from 'react';
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
-import {
-  RiMapPinLine, RiBriefcaseLine, RiTimeLine,
-  RiCheckboxCircleLine, RiArrowRightLine,
-  RiFileList3Line, RiAwardLine, RiMailLine, RiPhoneLine, RiStarLine
-} from 'react-icons/ri';
-
-/* ============================================================
-   SEO / AEO / GEO METADATA
-============================================================ */
-export const metadata: Metadata = {
-  title: 'Digital Marketer Jobs in Kozhikode | 4Biz Careers',
-  description:
-    'Join 4Biz International as a Digital Marketer (Fresher) in Kozhikode, Kerala. Hands-on experience in SEO, Google Ads, Meta Ads & content marketing. Apply today.',
-  keywords: [
-    'Digital Marketing jobs Kozhikode', 'Digital Marketer Fresher Kerala', 'SEO jobs Calicut',
-    'Google Ads jobs India', 'Social Media Marketing careers', '4Biz International careers',
-    'Content Marketing jobs UAE', 'Digital Marketing Internship Kozhikode',
-  ],
-  alternates: { canonical: 'https://www.4bizinternational.com/careers/' },
-  openGraph: {
-    title: 'Digital Marketer (Fresher) — Kozhikode | 4Biz International Careers',
-    description:
-      'We are hiring a Digital Marketer (Fresher / 0-1 Year) in Kozhikode. Hands-on experience in SEO, Ads & Social Media. Apply now.',
-    url: 'https://www.4bizinternational.com/careers/',
-    type: 'website',
-    siteName: '4Biz International',
-    images: [{ url: '/4biz_logo-1.png', width: 1200, height: 630, alt: '4Biz Careers' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Digital Marketer (Fresher) — Kozhikode | 4Biz Careers',
-    description: 'We are hiring a Digital Marketer (Fresher) in Kozhikode. 0-1 year experience in SEO & Ads.',
-    images: ['/4biz_logo-1.png'],
-  },
-  robots: { index: true, follow: true },
-};
-
-/* ============================================================
-   STRUCTURED DATA
-============================================================ */
-const TODAY_ISO = new Date().toISOString().split('T')[0];
-
-const jobPostingSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'JobPosting',
-  title: 'Digital Marketer (Fresher / 0–1 Year Experience)',
-  description:
-    '4 Biz International is hiring a Digital Marketer who is enthusiastic, creative, and eager to build a career in digital marketing. This role is ideal for fresh graduates or early-career professionals looking for hands-on experience across SEO, AEO, content marketing, paid advertising, and social media platforms.',
-  identifier: { '@type': 'PropertyValue', name: '4Biz International', value: 'MKT-DM-001' },
-  datePosted: TODAY_ISO,
-  validThrough: '2027-12-31',
-  employmentType: 'FULL_TIME',
-  hiringOrganization: {
-    '@type': 'Organization',
-    name: '4Biz International LLC',
-    sameAs: 'https://www.4bizinternational.com',
-    logo: 'https://www.4bizinternational.com/4biz_logo-1.png',
-  },
-  jobLocation: {
-    '@type': 'Place',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'HiLITE Business Park',
-      addressLocality: 'Kozhikode',
-      addressRegion: 'Kerala',
-      addressCountry: 'IN',
-    },
-  },
-  baseSalary: {
-    '@type': 'MonetaryAmount',
-    currency: 'INR',
-    value: { '@type': 'QuantitativeValue', unitText: 'MONTH', value: 'Competitive' },
-  },
-  qualifications:
-    'Fresher or 0–1 year experience in Digital Marketing. Knowledge of SEO & AEO fundamentals. Good understanding of content writing and copywriting. Basic knowledge of Google Ads & Meta Ads. Familiarity with social media platforms. Educational background in Marketing, Business, Mass Communication, or related field.',
-  responsibilities:
-    'Assist in planning and executing SEO & AEO strategies. Create engaging content for blogs, ads, and social media. Support and manage Google Ads & Meta Ads campaigns. Handle social media accounts. Conduct keyword research and basic performance analysis. Monitor campaign results and prepare basic reports.',
-  skills:
-    'SEO, AEO, Content Writing, Copywriting, Google Ads, Meta Ads, Social Media Management, Google Analytics, Search Console',
-  industry: 'Information Technology / Digital Marketing',
-  occupationalCategory: '11-2021.00 - Marketing Managers',
-  directApply: true,
-  applicantLocationRequirements: { '@type': 'Country', name: 'India' },
-  jobBenefits: 'Hands-on learning with real-time projects, exposure to multiple digital marketing channels, supportive work environment, strong career growth.',
-  workHours: 'Full-time',
-  inLanguage: 'en',
-};
-
-/* ============================================================
-   DATA CONSTANTS
-============================================================ */
-const RESPONSIBILITIES = [
-  'Assist in planning and executing SEO & AEO strategies.',
-  'Create engaging content for blogs, ads, and social media platforms.',
-  'Support and manage Google Ads & Meta Ads campaigns.',
-  'Handle social media accounts, posting schedules, and audience engagement.',
-  'Conduct keyword research and basic performance analysis.',
-  'Monitor campaign results and prepare basic reports.',
-  'Stay updated with digital marketing trends and best practices.',
-  'Collaborate with design, development, and marketing teams.',
-];
-
-const QUALIFICATIONS = [
-  'Fresher or 0–1 year experience in Digital Marketing.',
-  'Knowledge of SEO & AEO fundamentals.',
-  'Good understanding of content writing and copywriting.',
-  'Basic knowledge of Google Ads & Meta Ads.',
-  'Familiarity with social media platforms (Instagram, Facebook, LinkedIn, etc.).',
-  'Strong communication skills (written & verbal).',
-  'Creative mindset with analytical thinking.',
-  'Educational background in Marketing, Business, Mass Communication, or a related field.',
-];
-
-const NICE_TO_HAVE = [
-  'Internship or certification in Digital Marketing.',
-  'Hands-on experience through projects or freelancing.',
-  'Basic knowledge of analytics tools (Google Analytics, Search Console).',
-  'Strong desire to learn and adapt to new marketing technologies.',
-];
-
-/* ============================================================
-   COMPONENT
-============================================================ */
-export default function CareersLandingPage() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
-      />
-
-      <div className="min-h-screen text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-[#00D3F2] selection:text-black">
-
-        {/* ============================================================
-            HERO SECTION
-        ============================================================ */}
-        <section
-          aria-labelledby="job-title"
-          className="relative w-full isolate overflow-hidden border-b border-[#00D3F2]/20 pt-24 pb-14 sm:pt-32 sm:pb-20"
-          style={{
-            background: 'radial-gradient(circle at 50% 30%, #143373 0%, #0a1c4a 45%, #06122e 100%)',
-          }}
-        >
-          {/* Background image layer */}
-          <div className="absolute inset-0 -z-10">
-            <Image
-              src="/blog/digital-marketing-1.png"
-              alt=""
-              aria-hidden="true"
-              fill
-              priority
-              sizes="100vw"
-              quality={75}
-              className="object-cover object-center opacity-50"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#06122e]/60 via-[#0a1c4a]/25 to-[#06122e]/80" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] opacity-30" />
-          </div>
-
-          <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#00D3F2]/40 bg-[#00D3F2]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#00D3F2] backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D3F2] motion-safe:animate-pulse" aria-hidden="true" />
-              Hiring: Digital Marketer
-            </div>
-
-            <h1
-              id="job-title"
-              className="mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-300 text-[clamp(2rem,5vw,3.5rem)] font-black leading-[1.1] tracking-tight"
-              style={{ textWrap: 'balance' } as React.CSSProperties}
-            >
-              Digital Marketer (Fresher / 0–1 Year Experience)
-            </h1>
-
-            {/* Quick Facts Bar */}
-            <div className="mx-auto flex max-w-2xl flex-wrap items-center justify-center gap-3 sm:gap-6">
-              <div className="flex items-center gap-2 rounded-lg bg-slate-900/60 px-4 py-2 border border-slate-700/60 backdrop-blur-md">
-                <RiMapPinLine className="text-[#00D3F2]" />
-                <span className="text-sm font-medium text-slate-200">Kozhikode (Calicut), Kerala</span>
-              </div>
-              <div className="flex items-center gap-2 rounded-lg bg-slate-900/60 px-4 py-2 border border-slate-700/60 backdrop-blur-md">
-                <RiBriefcaseLine className="text-[#00D3F2]" />
-                <span className="text-sm font-medium text-slate-200">Full-Time</span>
-              </div>
-              <div className="flex items-center gap-2 rounded-lg bg-slate-900/60 px-4 py-2 border border-slate-700/60 backdrop-blur-md">
-                <RiTimeLine className="text-[#00D3F2]" />
-                <span className="text-sm font-medium text-slate-200">0–1 Year Exp</span>
-              </div>
-            </div>
-
-            <div className="mt-10 flex justify-center">
-              <Link
-                href="/careers/apply"
-                className="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-xl bg-[#00D3F2] px-8 py-3.5 text-sm font-black uppercase tracking-wider text-slate-950 shadow-lg shadow-[#00D3F2]/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[#00D3F2]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D3F2] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-              >
-                Apply Now
-                <RiArrowRightLine className="text-lg transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* ============================================================
-            UNIFIED CONTENT SECTION (Job Details + Final CTA)
-        ============================================================ */}
-        <section className="relative w-full bg-gradient-to-br from-[#0c2d6b] via-[#0a2256] to-[#071b44]">
-          
-          {/* Job Details Content */}
-          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 md:pt-20 pb-14 sm:pb-16">
-            
-            {/* About the Role */}
-            <div className="mb-12">
-              <h2 className="mb-4 text-[clamp(1.5rem,3vw,2rem)] font-bold tracking-tight text-white drop-shadow-md">
-                About the Role
-              </h2>
-              <p className="max-w-4xl text-base leading-relaxed text-blue-50/90 drop-shadow-sm">
-                4 Biz International is hiring a Digital Marketer who is enthusiastic, creative, and eager to build a career in digital marketing. This role is ideal for fresh graduates or early-career professionals looking for hands-on experience across SEO, AEO, content marketing, paid advertising, and social media platforms. You will work closely with our marketing and design teams to plan, execute, and optimize digital campaigns while gaining exposure to real-world projects and performance-driven strategies.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
-              
-              {/* Key Responsibilities */}
-              <div className="rounded-2xl border border-[#00D3F2]/30 bg-[#07193c]/80 p-6 sm:p-8 backdrop-blur-md shadow-xl">
-                <div className="mb-5 flex items-center gap-3 border-b border-blue-400/20 pb-4">
-                  <RiFileList3Line className="shrink-0 text-2xl text-[#00D3F2] drop-shadow-[0_0_8px_rgba(0,211,242,0.6)]" aria-hidden="true" />
-                  <h3 className="text-lg font-bold text-white">
-                    Key Responsibilities
-                  </h3>
-                </div>
-                <ul className="space-y-3">
-                  {RESPONSIBILITIES.map((r, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-blue-100/90">
-                      <RiCheckboxCircleLine className="mt-0.5 shrink-0 text-[#00D3F2] text-lg drop-shadow-[0_0_5px_rgba(0,211,242,0.5)]" aria-hidden="true" />
-                      <span>{r}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Required Skills & Qualifications */}
-              <div className="rounded-2xl border border-[#00D3F2]/30 bg-[#07193c]/80 p-6 sm:p-8 backdrop-blur-md shadow-xl">
-                <div className="mb-5 flex items-center gap-3 border-b border-blue-400/20 pb-4">
-                  <RiAwardLine className="shrink-0 text-2xl text-[#00D3F2] drop-shadow-[0_0_8px_rgba(0,211,242,0.6)]" aria-hidden="true" />
-                  <h3 className="text-lg font-bold text-white">
-                    Required Skills & Qualifications
-                  </h3>
-                </div>
-                <ul className="space-y-3">
-                  {QUALIFICATIONS.map((q, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-blue-100/90">
-                      <RiCheckboxCircleLine className="mt-0.5 shrink-0 text-[#00D3F2] text-lg drop-shadow-[0_0_5px_rgba(0,211,242,0.5)]" aria-hidden="true" />
-                      <span>{q}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Nice to Have */}
-            <div className="mt-8 rounded-2xl border border-[#00D3F2]/30 bg-[#07193c]/80 p-6 sm:p-8 backdrop-blur-md shadow-xl">
-              <div className="mb-4 flex items-center gap-3 border-b border-blue-400/20 pb-4">
-                <RiStarLine className="shrink-0 text-2xl text-[#00D3F2] drop-shadow-[0_0_8px_rgba(0,211,242,0.6)]" aria-hidden="true" />
-                <h3 className="text-lg font-bold text-white">
-                  Nice to Have
-                </h3>
-              </div>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {NICE_TO_HAVE.map((n, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-blue-100/90">
-                    <RiCheckboxCircleLine className="mt-0.5 shrink-0 text-[#00D3F2] text-lg drop-shadow-[0_0_5px_rgba(0,211,242,0.5)]" aria-hidden="true" />
-                    <span>{n}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-          </div>
-
-          {/* Final CTA Content */}
-          <div className="relative overflow-hidden py-16 sm:py-20">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,211,242,0.15),transparent_60%)]" />
-            <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
-              <h2
-                id="cta-title"
-                className="mb-4 text-[clamp(1.75rem,4vw,2.5rem)] font-black tracking-tight text-white drop-shadow-md"
-              >
-                Interested candidates can apply now
-              </h2>
-              <p className="mx-auto mb-8 max-w-xl text-base leading-relaxed text-blue-100/90">
-                Send your CV & portfolio to our hiring team. We review applications on a rolling basis.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/careers/apply"
-                  className="group inline-flex min-h-[54px] w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#00D3F2] px-8 py-4 text-sm font-black uppercase tracking-wider text-slate-950 shadow-2xl shadow-[#00D3F2]/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[#00D3F2]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00D3F2] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
-                >
-                  Apply for This Role
-                  <RiArrowRightLine className="text-lg transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                </Link>
-              </div>
-
-              {/* Contact info - dot removed */}
-              <div className="mt-10 flex flex-col items-center justify-center gap-4 text-base font-medium text-blue-100 sm:flex-row sm:gap-6">
-                <a
-                  href="mailto:hr@4bizinternational.com"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-[#00D3F2]"
-                >
-                  <RiMailLine className="text-[#00D3F2]" aria-hidden="true" />
-                  hr@4bizinternational.com
-                </a>
-                <a
-                  href="tel:+971527925100"
-                  className="inline-flex items-center gap-2 transition-colors hover:text-[#00D3F2]"
-                >
-                  <RiPhoneLine className="text-[#00D3F2]" aria-hidden="true" />
-                  +971 52 792 5100
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </section>
-
-      </div>
     </>
   );
 }
@@ -15618,143 +15396,6 @@ export default function robots(): MetadataRoute.Robots {
 }
 </file>
 
-<file path="src/app/sitemap.ts">
-import type { MetadataRoute } from 'next'
-
-// Required for 'output: export' static HTML builds
-export const dynamic = 'force-static'
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.4bizinternational.com'
-
-  // 1. Core Pages (Explicit trailing slash for ALL pages)
-  const corePages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/`, // Home page
-      lastModified: new Date('2026-10-15'),
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/about/`, // About
-      lastModified: new Date('2026-10-15'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/services/`, // Services
-      lastModified: new Date('2026-10-15'),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog/`, // Blog listing
-      lastModified: new Date('2026-10-15'),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/clients/`, // Clients page
-      lastModified: new Date('2026-10-15'),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/contact/`, // Contact page
-      lastModified: new Date('2026-10-15'),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/privacy-policy/`, // Privacy policy page
-      lastModified: new Date('2026-10-15'),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/terms-and-conditions/`, // Terms and conditions page
-      lastModified: new Date('2026-10-15'),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-  ]
-
-  // 2. Service Sub-Pages
-  const serviceSubPagesList = [
-    'digital-workplace-productivity-solutions',
-    'enterprise-business-applications-erp-crm',
-    'web-mobile-commerce-solutions',
-    'digital-growth-marketing-brand-experience',
-    'communication-customer-engagement-solutions',
-    'cloud-hosting-infrastructure-services',
-    'cybersecurity-digital-protection',
-    'digital-transformation-emerging-technologies',
-  ]
-
-  const servicePages: MetadataRoute.Sitemap = serviceSubPagesList.map((slug) => ({
-    url: `${baseUrl}/services/${slug}/`,
-    lastModified: new Date('2026-10-15'),
-    changeFrequency: 'monthly',
-    priority: 0.75,
-  }))
-
-  // 3. Blog Articles (Sorted from Oldest to Newest)
-  const blogPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/blog/4biz-international-who-we-are/`,
-      lastModified: new Date('2026-07-07'), // Jul 07, 2026
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/what-is-aeo/`,
-      lastModified: new Date('2026-09-28'), // Sep 28, 2026
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/digital-marketing-agency-uae/`,
-      lastModified: new Date('2026-09-29'), // Sep 29, 2026
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/seo-services-uae/`,
-      lastModified: new Date('2026-10-01'), // Oct 01, 2026
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/google-ads-management-services-uae/`,
-      lastModified: new Date('2026-10-09'), // Oct 09, 2026
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/website-design-services-uae/`,
-      lastModified: new Date('2026-10-15'), // Oct 15, 2026 
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-      {
-      url: `${baseUrl}/blog/microsoft-365-vs-google-workspace-uae/`,
-      lastModified: new Date('2026-10-19'), // Oct 19, 2026 
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-      {
-      url: `${baseUrl}/blog/server-management-services-uae/ `,
-      lastModified: new Date('2026-10-22'), // Oct 22, 2026 
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-  ]
-
-  // Combine all routes into one clean sitemap array
-  return [...corePages, ...servicePages, ...blogPages]
-}
-</file>
-
 <file path="src/components/About copy.tsx">
 'use strict';
 
@@ -18649,292 +18290,6 @@ const QuickContactButtons = () => {
 export default QuickContactButtons;
 </file>
 
-<file path="src/components/Footer.tsx">
-"use client";
-
-import React, { useRef, useMemo } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { RiDownloadCloud2Line } from 'react-icons/ri';
-import Image from 'next/image';
-import Link from 'next/link';
-
-const Footer = () => {
-  const footerRef = useRef<HTMLElement>(null);
-  
-  // High-precision scroll tracking for Parallax ambient effects
-  const { scrollYProgress } = useScroll({
-    target: footerRef,
-    offset: ["start end", "end end"]
-  });
-
-  // PHYSICS: Eliminates "jitter" and frame stuttering on modern high-refresh displays
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 35,
-    restDelta: 0.001
-  });
-
-  // 3D Transforms trigger GPU rendering layers to prevent layout jerking
-  const y1 = useTransform(smoothProgress, [0, 1], ["0px", "-40px"]);
-  const y2 = useTransform(smoothProgress, [0, 1], ["0px", "40px"]);
-
-  // Declared social media schema
-  const socialLinks = useMemo(() => [
-    {
-      href: 'https://wa.me/971527925100?text=Hello%204Biz%20International,%20I%20am%20interested%20in%20your%20services.%20Please%20share%20more%20details.',
-      label: 'WhatsApp',
-      path: 'M20.52 3.48A11.8 11.8 0 0 0 12.04 0C5.4 0 .02 5.38.02 12c0 2.12.56 4.19 1.62 6.02L0 24l6.15-1.61A11.97 11.97 0 0 0 12.04 24C18.66 24 24 18.62 24 12c0-3.2-1.25-6.2-3.48-8.52zM12.04 21.9c-1.8 0-3.56-.48-5.1-1.38l-.36-.21-3.65.96.98-3.56-.24-.37A9.8 9.8 0 0 1 2.24 12c0-5.4 4.4-9.8 9.8-9.8s9.8 4.4 9.8 9.8-4.4 9.9-9.8 9.9zm5.38-7.36c-.29-.15-1.72-.85-1.99-.95-.27-.1-.47-.15-.66.15-.19.29-.76.95-.93 1.14-.17.19-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.43-.86-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.66-1.58-.9-2.16-.24-.58-.49-.5-.66-.51h-.56c-.19 0-.51.07-.78.36-.27.29-1.02 1-.98 2.43.05 1.43 1.02 2.81 1.16 3 .15.19 2.02 3.08 4.89 4.31.68.29 1.21.46 1.62.58.68.22 1.3.19 1.79.12.55-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.27-.19-.56-.34z',
-      target: '_blank',
-    },
-    {
-      href: 'https://www.facebook.com/4bizglobal',
-      label: 'Facebook',
-      path: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874V12h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z',
-      target: '_blank',
-    },
-    {
-      href: 'https://www.instagram.com/4biz_ae',
-      label: 'Instagram',
-      path: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4.162 4.162 0 1 1 0-8.324A4.162 4.162 0 0 1 12 16zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z',
-      target: '_blank',
-    },
-    {
-      href: 'https://www.linkedin.com/company/4biz-international/',
-      label: 'LinkedIn',
-      path: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z',
-      target: '_blank',
-    },
-    {
-      href: 'https://x.com/4biz123',
-      label: 'X',
-      path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z',
-      target: '_blank',
-    },
-    {
-      href: 'https://www.youtube.com/@4bizinternationalae',
-      label: 'YouTube',
-      path: 'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93-.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z',
-      target: '_blank',
-    }
-  ], []);
-
-  const navItems = useMemo(() => [
-    { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
-    { label: 'Services', path: '/services' },
-    { label: 'Contact', path: '/contact' },
-    { label: 'Blogs', path: '/blog' },
-  ], []);
-
-  const legalItems = useMemo(() => [
-    { label: 'Privacy Policy', path: '/privacy-policy/' },
-    { label: 'Terms & Conditions', path: '/terms-and-conditions/' },
-  ], []);
-
-  return (
-    <footer 
-      id="footer"
-      ref={footerRef} 
-      className="relative z-10 mt-0 pt-16 overflow-hidden border-t border-[#00D3F2] transform-gpu backface-hidden"
-      style={{ 
-        background: 'radial-gradient(circle at 50% 15%, #001b6b 0%, #001042 50%, #000933 100%)',
-        contentVisibility: 'auto', 
-        /* Safe area bottom buffer ensures no floating widget covers any links on mobile/tablet/desktop */
-        paddingBottom: 'calc(160px + env(safe-area-inset-bottom))'
-      } as React.CSSProperties}
-      itemScope 
-      itemType="https://schema.org/WPFooter"
-    >
-      {/* Hardware Accelerated Subtle Parallax Internal Ambient Accents */}
-      <motion.div 
-        style={{ y: y1, translateZ: 0 }} 
-        className="absolute top-0 -right-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-white/[0.012] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
-      />
-      <motion.div 
-        style={{ y: y2, translateZ: 0 }} 
-        className="absolute top-1/3 -left-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-black/[0.02] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        
-        {/* Top Centered Main Navigation Element */}
-        <div className="w-full flex justify-center mb-16 pb-8 border-b border-white/10">
-          <nav className="w-full" aria-label="Footer Navigation">
-            <ul className="grid grid-cols-2 justify-items-start max-w-[280px] mx-auto gap-y-4 sm:flex sm:grid-cols-none sm:max-w-none sm:justify-center sm:gap-x-6 md:gap-x-8 lg:gap-x-12 text-[12px] font-bold uppercase tracking-[0.2em] text-white/90">
-              {navItems.map((item) => (
-                <li key={item.label} className="w-full sm:w-auto">
-                  <Link href={item.path} className="hover:text-white transition-colors duration-200 flex items-center gap-2 py-1 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00D3F2] group-hover:bg-[#00D3F2]/80 transition-colors flex-shrink-0" />
-                    <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all group-hover:after:w-full">{item.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-
-        {/* Stacked 1 column layout on mobile & tablet (grid-cols-1), expanding to 12-cols only on desktop (lg:grid-cols-12) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-14 lg:gap-8 items-start mb-16">
-          
-          {/* Brand Architecture Column */}
-          <div className="lg:col-span-4 flex flex-col items-start space-y-6 md:space-y-8">
-            <Link 
-              href="/" 
-              className="block group"
-              aria-label="4Biz International - Return to Homepage"
-            >
-              <motion.div 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="relative h-14 w-52 transition-transform duration-300 transform-gpu"
-              >
-                <Image 
-                  src="/4biz_logo-1.png" 
-                  alt="4Biz International Corporate Logo - IT Infrastructure and Global Telecom Solutions" 
-                  fill
-                  className="object-contain filter drop-shadow-[0_2px_10px_rgba(0,211,242,0.15)] group-hover:drop-shadow-[0_4px_20px_rgba(0,211,242,0.3)] transition-all duration-300"
-                  sizes="208px"
-                  priority={true}
-                />
-              </motion.div>
-            </Link>
-            <p className="text-white/80 text-sm md:text-base leading-relaxed font-sans font-normal border-l-2 border-[#00D3F2]/40 pl-4 italic antialiased max-w-sm">
-              "Engineering secure digital frontiers and redefining IT excellence for the next generation of global leaders."
-            </p>
-            
-            {/* Unified Social Link Matrix */}
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map((link, i) => (
-                <a 
-                  key={i} 
-                  href={link.href} 
-                  target={link.target || undefined}
-                  rel={link.target ? "noopener noreferrer" : undefined}
-                  aria-label={`Follow 4Biz International on ${link.label}`}
-                  className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.02] flex items-center justify-center text-white/70 transition-all duration-300 hover:border-[#00D3F2]/50 hover:bg-white/10 hover:text-white hover:-translate-y-1 shadow-sm hover:shadow-[#00D3F2]/10 transform-gpu"
-                >
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d={link.path} />
-                  </svg>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Core Communications Terminals */}
-          <div className="lg:col-span-4 flex flex-col space-y-6">
-            <h2 className="text-white/60 font-sans font-bold uppercase tracking-wider text-[11px] flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-[#00D3F2]"></span> Digital Link & Infrastructure
-            </h2>
-            <div className="space-y-4">
-              {/* Mail Segment */}
-              <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group shadow-sm">
-                <span className="text-[9px] uppercase font-sans tracking-wide font-bold bg-white/10 text-white/90 px-2 py-0.5 rounded inline-block">Mail Infrastructure</span>
-                <a href="mailto:info@4bizinternational.com" className="text-[14px] text-white font-sans group-hover:text-[#00D3F2] transition-colors font-medium break-all block mt-2">
-                  info@4bizinternational.com
-                </a>
-              </div>
-              
-              {/* Telecoms Segment */}
-              <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 shadow-sm">
-                <span className="text-[9px] uppercase font-sans tracking-wide font-bold bg-white/10 text-white/90 px-2 py-0.5 rounded inline-block mb-2">HQ Telecoms / WhatsApp</span>
-                <div className="flex flex-col gap-2 mt-1">
-                  <div className="flex items-center justify-between gap-3 flex-wrap">
-                    <a href="https://wa.me/971527925100" target="_blank" rel="noopener noreferrer" className="text-[14px] font-sans font-medium text-white hover:text-[#00D3F2] transition-colors tracking-wide" aria-label="Contact Dubai HQ via WhatsApp">+971 52 792 5100</a>
-                    <span className="text-[9px] px-1.5 py-0.5 rounded font-sans font-bold bg-white/10 text-white/80 uppercase tracking-wide">Dubai</span>
-                  </div>
-                  <div className="flex items-center justify-between gap-3 flex-wrap">
-                    <a href="https://wa.me/+919388001524" target="_blank" rel="noopener noreferrer" className="text-[14px] font-sans font-medium text-white hover:text-[#00D3F2] transition-colors tracking-wide" aria-label="Contact India Tech Wing via WhatsApp">+91 93880 01524</a>
-                    <span className="text-[9px] px-1.5 py-0.5 rounded font-sans font-bold bg-white/10 text-white/80 uppercase tracking-wide">India</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Company Profile Panel Link */}
-              <a 
-                href="/documents/4biz-international-company-profile.pdf"
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group relative flex items-center justify-between bg-white/[0.02] border border-white/5 text-white py-3 px-4 rounded-xl transition-all hover:bg-white/[0.05] hover:border-[#00D3F2]/30 shadow-sm transform-gpu"
-              >
-                <div className="flex flex-col pr-4">
-                  <span className="text-[8px] uppercase tracking-[0.15em] text-white/50 font-sans mb-0.5">Access File</span>
-                  <span className="text-[11px] font-sans font-bold uppercase tracking-[0.05em] text-white/90 group-hover:text-[#00D3F2] transition-colors">Our Portfolio</span>
-                </div>
-                <RiDownloadCloud2Line className="text-lg text-white/70 group-hover:text-[#00D3F2] group-hover:-translate-y-0.5 transition-all duration-200" />
-              </a>
-            </div>
-          </div>
-
-          {/* Regional Enterprise Hubs Map */}
-          <div className="lg:col-span-4 flex flex-col space-y-6">
-            <h2 className="text-white/60 font-sans font-bold uppercase tracking-wider text-[11px] flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-[#00D3F2]"></span> Corporate Geographies
-            </h2>
-            <div className="space-y-6 text-white/80 pt-1">
-              {/* Dubai Corporate Hub */}
-              <div className="flex flex-col border-l border-white/10 hover:border-[#00D3F2]/50 pl-4 py-0.5 group transition-colors duration-300">
-                <div className="flex items-center gap-2 mb-2 flex-wrap">
-                  <span className="text-sm font-sans font-semibold text-white group-hover:text-[#00D3F2] transition-colors">Dubai Corporate Hub</span>
-                  <span className="text-[9px] font-sans font-bold bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Global HQ</span>
-                </div>
-                <p className="text-[13px] text-white/70 leading-relaxed font-sans font-normal group-hover:text-white/90 transition-colors">
-                  Crystal Building - Office # 104 - 2C St - near ADCB Metro Station - Al Karama - Dubai, UAE
-                </p>
-              </div>
-
-              {/* India Tech Wing */}
-              <div className="flex flex-col border-l border-white/10 hover:border-[#00D3F2]/50 pl-4 py-0.5 group transition-colors duration-300">
-                <div className="flex items-center gap-2 mb-2 flex-wrap">
-                  <span className="text-sm font-sans font-semibold text-white group-hover:text-[#00D3F2] transition-colors">India HiLite Business Park</span>
-                  <span className="text-[9px] font-sans font-bold bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Tech Wing</span>
-                </div>
-                <p className="text-[13px] text-white/70 leading-relaxed font-sans font-normal group-hover:text-white/90 transition-colors">
-                  Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Bottom Metadata Pipeline & Legal Navigation */}
-        <div className="pt-8 border-t border-white/10 flex flex-col items-center justify-center relative z-20 space-y-4">
-          {/* Privacy Policy and Terms Links with cyan bullets */}
-          <nav aria-label="Legal Navigation" className="w-full">
-            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70">
-              {legalItems.map((item) => (
-                <li key={item.label}>
-                  <Link 
-                    href={item.path} 
-                    className="hover:text-white transition-colors duration-200 flex items-center gap-2 py-1 group"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00D3F2] group-hover:bg-[#00D3F2]/80 transition-colors flex-shrink-0" />
-                    <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00D3F2] after:transition-all group-hover:after:w-full">
-                      {item.label}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* Copyright Metadata */}
-          <div className="w-full max-w-md mx-auto text-center px-4">
-            <p className="text-white/50 text-[10px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.2em] font-sans font-bold leading-relaxed break-words sm:break-normal">
-              &copy; {new Date().getFullYear()} 4Biz International.<br className="block sm:hidden" /> All Rights Reserved.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;
-</file>
-
 <file path="src/components/Header.tsx">
 "use client";
 import React, { useState, useEffect, useRef, useCallback } from 'react';
@@ -20391,6 +19746,156 @@ export default function Testimonials() {
 }
 </file>
 
+<file path="src/lib/careers-catalog.ts">
+import type {Job} from './jobs';
+type PublicJob={slug:string;title:string;country:string;location:string;type:string;description:string;requirements:string};
+export function normalizeJobs(rows:PublicJob[]):Job[]{
+ return rows.filter(j=>j&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(j.slug)).map(j=>({
+  slug:j.slug,title:j.title,department:'4BIZ International',location:j.location,
+  workType:j.type==='FULL_TIME'?'Full-Time':j.type==='PART_TIME'?'Part-Time':j.type==='CONTRACT'?'Contract':'Internship',
+  experience:'See requirements',postedDate:'2026-10-27',shortDescription:j.description,
+  about:j.description,responsibilities:[],qualifications:j.requirements.split(/\n|;/).map(s=>s.trim()).filter(Boolean)
+ }));
+}
+export async function getPublicJobs():Promise<Job[]>{
+ const r=await fetch('http://127.0.0.1:3299/jobs',{cache:'no-store',signal:AbortSignal.timeout(4500)});
+ if(!r.ok)throw new Error('Jobs unavailable');
+ const v=await r.json();return normalizeJobs(v.jobs||[]);
+}
+</file>
+
+<file path="src/lib/jobs.ts">
+export interface Job {
+  slug: string;
+  title: string;
+  department: string;
+  location: string;
+  workType: string;      // "Full-Time" | "Part-Time" | "Contract"
+  experience: string;    // "0–1 Year", "3+ Years" etc.
+  postedDate: string;    // ISO date
+  shortDescription: string;
+  about: string;
+  responsibilities: string[];
+  qualifications: string[];
+  niceToHave?: string[];
+}
+
+export const JOBS: Job[] = [
+  {
+    slug: "digital-marketer",
+    title: "Digital Marketer (Fresher / 0–1 Year Experience)",
+    department: "Digital Marketing",
+    location: "Kozhikode, Kerala, India",
+    workType: "Full-Time",
+    experience: "0–1 Year",
+    postedDate: "2026-10-01",
+    shortDescription:
+      "Join 4Biz International as a Digital Marketer. Hands-on experience in SEO, Google Ads, Meta Ads, and content marketing.",
+    about:
+      "4Biz International is hiring a Digital Marketer who is enthusiastic, creative, and eager to build a career in digital marketing. This role is ideal for fresh graduates or early-career professionals looking for hands-on experience across SEO, AEO, content marketing, paid advertising, and social media platforms.",
+    responsibilities: [
+      "Assist in planning and executing SEO & AEO strategies.",
+      "Create engaging content for blogs, ads, and social media platforms.",
+      "Support and manage Google Ads & Meta Ads campaigns.",
+      "Handle social media accounts, posting schedules, and audience engagement.",
+      "Conduct keyword research and basic performance analysis.",
+      "Monitor campaign results and prepare basic reports.",
+      "Stay updated with digital marketing trends and best practices.",
+      "Collaborate with design, development, and marketing teams.",
+    ],
+    qualifications: [
+      "Fresher or 0–1 year experience in Digital Marketing.",
+      "Knowledge of SEO & AEO fundamentals.",
+      "Good understanding of content writing and copywriting.",
+      "Basic knowledge of Google Ads & Meta Ads.",
+      "Familiarity with social media platforms.",
+      "Strong communication skills (written & verbal).",
+      "Creative mindset with analytical thinking.",
+      "Educational background in Marketing, Business, or related field.",
+    ],
+    niceToHave: [
+      "Internship or certification in Digital Marketing.",
+      "Hands-on experience through projects or freelancing.",
+      "Basic knowledge of Google Analytics, Search Console.",
+    ],
+  },
+  {
+    slug: "graphic-designer",
+    title: "Graphic Designer",
+    department: "Creative & Design",
+    location: "Kozhikode, Kerala, India",
+    workType: "Full-Time",
+    experience: "1–3 Years",
+    postedDate: "2026-10-15",
+    shortDescription:
+      "Design compelling visual assets for digital campaigns, social media, and web platforms. Bring brands to life with modern aesthetics.",
+    about:
+      "We are looking for a creative and detail-oriented Graphic Designer to join our team. You will be responsible for creating engaging visual content that aligns with our clients' brand identities across various digital channels. Ideal for candidates with a strong portfolio and a passion for modern design trends.",
+    responsibilities: [
+      "Create visually appealing graphics for social media, web, and marketing campaigns.",
+      "Collaborate with the marketing team to develop creative concepts and brand assets.",
+      "Edit short-form video content and motion graphics for social platforms.",
+      "Maintain brand consistency across all visual touchpoints.",
+      "Stay up-to-date with the latest design software and trends.",
+    ],
+    qualifications: [
+      "1–3 years of professional experience as a Graphic Designer.",
+      "Proficiency in Adobe Creative Suite (Photoshop, Illustrator, InDesign).",
+      "Strong understanding of typography, color theory, and layout design.",
+      "Experience designing for digital platforms (social media, web).",
+      "A strong portfolio demonstrating a range of design styles.",
+    ],
+    niceToHave: [
+      "Experience with video editing tools (Premiere Pro, After Effects, CapCut).",
+      "Familiarity with Figma or UI/UX design principles.",
+      "Basic understanding of web design constraints (HTML/CSS).",
+    ],
+  },
+  {
+    slug: "data-analyst",
+    title: "Data Analyst",
+    department: "Data & Analytics",
+    location: "Kozhikode, Kerala, India (Hybrid)",
+    workType: "Full-Time",
+    experience: "2–4 Years",
+    postedDate: "2026-10-20",
+    shortDescription:
+      "Transform complex data into actionable business insights. Build dashboards, write SQL queries, and drive data-driven decisions.",
+    about:
+      "We are seeking a detail-oriented Data Analyst to join our growing analytics team. You will be responsible for collecting, cleaning, and interpreting large datasets to provide actionable insights that drive strategic business decisions for our global clients.",
+    responsibilities: [
+      "Extract, clean, and analyze large datasets using SQL and Python.",
+      "Develop and maintain interactive dashboards using Power BI or Tableau.",
+      "Translate business requirements into technical data specifications.",
+      "Identify trends, patterns, and anomalies in complex data sets.",
+      "Collaborate with cross-functional teams to present data-driven recommendations.",
+    ],
+    qualifications: [
+      "2–4 years of professional experience as a Data Analyst.",
+      "Strong proficiency in SQL (PostgreSQL, MySQL, or similar).",
+      "Experience with data visualization tools (Power BI, Tableau, or Looker).",
+      "Proficient in Python (Pandas, NumPy) for data manipulation.",
+      "Excellent analytical and problem-solving skills.",
+    ],
+    niceToHave: [
+      "Experience with cloud data warehouses (BigQuery, Snowflake).",
+      "Knowledge of machine learning algorithms.",
+      "Google Data Analytics or Microsoft Certified: Data Analyst Associate certification.",
+    ],
+  },
+];
+
+/** Get all job slugs for static generation */
+export function getAllJobSlugs(): string[] {
+  return JOBS.map((j) => j.slug);
+}
+
+/** Get job by slug */
+export function getJobBySlug(slug: string): Job | undefined {
+  return JOBS.find((j) => j.slug === slug);
+}
+</file>
+
 <file path="videos/get-started.mp4.json">
 {
   "status": "ready",
@@ -20970,628 +20475,400 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 /// <reference types="next-video/video-types/global" />
 </file>
 
-<file path="src/app/api/apply/route.ts">
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+<file path="src/app/careers/[slug]/page.tsx">
+import { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import {
+  MapPin, Clock, Briefcase, ArrowRight, ArrowLeft,
+  CheckCircle2, Star,
+} from "lucide-react";
+import {getPublicJobs} from "@/lib/careers-catalog";
+export const dynamic="force-dynamic";
 
-export const runtime = 'nodejs';
-export const dynamic = 'force-dynamic';
-
-const MAX_CV_BYTES = 5 * 1024 * 1024; // 5MB
-const ALLOWED_MIME = [
-  'application/pdf',
-  'application/msword',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-];
-
-export async function POST(req: Request) {
-  try {
-    /* ---------- Parse multipart form ---------- */
-    const form = await req.formData();
-
-    const fullName = (form.get('fullName') as string | null)?.trim() || '';
-    const email = (form.get('email') as string | null)?.trim() || '';
-    const phone = (form.get('phone') as string | null)?.trim() || '';
-    // FIX: Match the field name sent from the frontend
-    const location = (form.get('currentLocation') as string | null)?.trim() || '';
-    const linkedin = (form.get('linkedin') as string | null)?.trim() || '';
-    const experience = (form.get('experience') as string | null)?.trim() || '';
-    const message = (form.get('message') as string | null)?.trim() || '';
-    const cv = form.get('cv');
-
-    /* ---------- Validation ---------- */
-    if (!fullName || !email || !phone) {
-      return NextResponse.json(
-        { status: 'error', error: 'Missing required fields: fullName, email, phone.' },
-        { status: 400 }
-      );
-    }
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if (!emailOk) {
-      return NextResponse.json(
-        { status: 'error', error: 'Invalid email address.' },
-        { status: 400 }
-      );
-    }
-    if (!(cv instanceof File) || cv.size === 0) {
-      return NextResponse.json(
-        { status: 'error', error: 'CV file is required.' },
-        { status: 400 }
-      );
-    }
-    if (cv.size > MAX_CV_BYTES) {
-      return NextResponse.json(
-        { status: 'error', error: 'CV exceeds 5MB limit.' },
-        { status: 400 }
-      );
-    }
-    if (!ALLOWED_MIME.includes(cv.type)) {
-      return NextResponse.json(
-        { status: 'error', error: 'CV must be PDF, DOC, or DOCX.' },
-        { status: 400 }
-      );
-    }
-
-    /* ---------- Read env (job-specific first, fallback to contact form) ---------- */
-    const smtpUser = process.env.JOB_SMTP_USER || process.env.SMTP_USER;
-    const smtpPass = process.env.JOB_SMTP_PASS || process.env.SMTP_PASS;
-    const toEmail = process.env.JOB_NOTIFICATION_EMAIL || '4bizdeveloper@gmail.com';
-
-    if (!smtpUser || !smtpPass) {
-      console.error('SMTP credentials missing');
-      return NextResponse.json(
-        { status: 'error', error: 'Mail server not configured.' },
-        { status: 500 }
-      );
-    }
-
-    /* ---------- Convert CV to Buffer ---------- */
-    const arrayBuffer = await cv.arrayBuffer();
-    const cvBuffer = Buffer.from(arrayBuffer);
-
-    /* ---------- Build email ---------- */
-    const subject = `New Job Application: ${fullName} — Senior SOC Analyst`;
-
-    const textBody = [
-      `New job application received via 4bizinternational.com/careers/apply`,
-      ``,
-      `Position:   Senior Analyst — SOC Monitoring`,
-      `Full Name:  ${fullName}`,
-      `Email:      ${email}`,
-      `Phone:      ${phone}`,
-      `Location:   ${location || '—'}`,
-      `LinkedIn:   ${linkedin || '—'}`,
-      `Experience: ${experience || '—'} years SOC`,
-      ``,
-      `Cover Note:`,
-      message || '—',
-      ``,
-      `CV attached: ${cv.name} (${(cv.size / 1024).toFixed(1)} KB)`,
-      `Submitted:   ${new Date().toISOString()}`,
-    ].join('\n');
-
-    const htmlBody = `
-      <div style="font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width:600px; margin:0 auto; background:#f8fafc; padding:24px;">
-        <div style="background:linear-gradient(135deg,#0f2054,#061033); padding:24px; border-radius:12px 12px 0 0;">
-          <h1 style="color:#00D3F2; margin:0 0 4px; font-size:20px;">New Job Application</h1>
-          <p style="color:#cbd5e1; margin:0; font-size:13px;">Senior Analyst — SOC Monitoring · 4Biz International</p>
-        </div>
-        <div style="background:#ffffff; padding:24px; border-radius:0 0 12px 12px; border:1px solid #e2e8f0; border-top:0;">
-          <table style="width:100%; border-collapse:collapse; font-size:14px; color:#0f172a;">
-            <tr><td style="padding:8px 0; font-weight:600; width:130px; color:#475569;">Full Name</td><td>${escapeHtml(fullName)}</td></tr>
-            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Email</td><td><a href="mailto:${escapeHtml(email)}" style="color:#0c9d7d;">${escapeHtml(email)}</a></td></tr>
-            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Phone</td><td><a href="tel:${escapeHtml(phone)}" style="color:#0c9d7d;">${escapeHtml(phone)}</a></td></tr>
-            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Location</td><td>${escapeHtml(location) || '—'}</td></tr>
-            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">LinkedIn</td><td>${linkedin ? `<a href="${escapeHtml(linkedin)}" style="color:#0c9d7d;">${escapeHtml(linkedin)}</a>` : '—'}</td></tr>
-            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Experience</td><td>${escapeHtml(experience) || '—'} years SOC</td></tr>
-          </table>
-          <div style="margin-top:20px; padding:16px; background:#f1f5f9; border-radius:8px; border-left:4px solid #0c9d7d;">
-            <p style="margin:0 0 6px; font-weight:600; color:#0f172a;">Cover Note:</p>
-            <p style="margin:0; color:#334155; white-space:pre-wrap; font-size:14px; line-height:1.6;">${escapeHtml(message) || '—'}</p>
-          </div>
-          <p style="margin:20px 0 0; font-size:12px; color:#64748b;">
-            CV attached: <strong>${escapeHtml(cv.name)}</strong> (${(cv.size / 1024).toFixed(1)} KB)<br>
-            Submitted: ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })} (Dubai)
-          </p>
-        </div>
-      </div>
-    `;
-
-    /* ---------- Send via SMTP ---------- */
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: { user: smtpUser, pass: smtpPass },
-    });
-
-    await transporter.sendMail({
-      from: `"4Biz Careers" <${smtpUser}>`,
-      to: toEmail,
-      replyTo: email,
-      subject,
-      text: textBody,
-      html: htmlBody,
-      attachments: [
-        {
-          filename: cv.name,
-          content: cvBuffer,
-          contentType: cv.type,
-        },
-      ],
-    });
-
-    return NextResponse.json(
-      { status: 'success', message: 'Application submitted successfully.' },
-      { status: 200 }
-    );
-  } catch (err: any) {
-    console.error('Job Application API error:', err);
-    
-    return NextResponse.json(
-      { 
-        status: 'error', 
-        error: err?.message || 'Internal server error. Failed to deliver email.' 
-      },
-      { status: 500 } 
-    );
-  }
+interface PageProps {
+  params: Promise<{ slug: string }>;
 }
 
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
+/* ---------- Static generation ---------- */
+
+/* ---------- Per-job metadata ---------- */
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const job = (await getPublicJobs().catch(()=>[])).find(j=>j.slug===slug);
+  if (!job) return { title: "Job Not Found" };
+
+  return {
+    title: `${job.title} | 4Biz Careers`,
+    description: job.shortDescription,
+    alternates: {
+      canonical: `https://www.4bizinternational.com/careers/${job.slug}/`,
+    },
+    openGraph: {
+      title: `${job.title} | 4Biz Careers`,
+      description: job.shortDescription,
+      url: `https://www.4bizinternational.com/careers/${job.slug}/`,
+      type: "article",
+    },
+  };
+}
+
+/* ---------- Page ---------- */
+export default async function JobDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const job = (await getPublicJobs().catch(()=>[])).find(j=>j.slug===slug);
+
+  if (!job) notFound();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: job.title,
+    description: job.about,
+    datePosted: job.postedDate,
+    employmentType: job.workType.toUpperCase().replace("-", "_"),
+    hiringOrganization: {
+      "@type": "Organization",
+      name: "4Biz International LLC",
+      sameAs: "https://www.4bizinternational.com",
+      logo: "https://www.4bizinternational.com/4biz_logo-1.png",
+    },
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: job.location.split(",")[0],
+        addressCountry: "IN",
+      },
+    },
+    qualifications: job.qualifications.join("; "),
+    responsibilities: job.responsibilities.join("; "),
+    industry: "Information Technology",
+    directApply: true,
+    applicantLocationRequirements: { "@type": "Country", name: "India" },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <div className="min-h-screen bg-white text-slate-900 font-sans">
+
+        {/* ═══════════ HERO ═══════════ */}
+        <section className="relative bg-[#0b1f4e] overflow-hidden pt-24 sm:pt-28 pb-16 px-4">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px]" />
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px]" />
+          </div>
+
+          <div className="relative max-w-5xl mx-auto">
+            <Link
+              href="/careers"
+              className="inline-flex items-center gap-2 text-sm text-cyan-300 hover:text-cyan-200 font-semibold mb-6 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to all jobs
+            </Link>
+
+            <div className="flex flex-wrap items-center gap-2 mb-4">
+              <span className="text-[10px] font-black uppercase tracking-widest text-cyan-300 bg-white/10 px-3 py-1.5 rounded-md border border-white/20 backdrop-blur-sm">
+                {job.department}
+              </span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-white/80 bg-white/5 px-3 py-1.5 rounded-md border border-white/10">
+                {job.workType}
+              </span>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-6">
+              {job.title}
+            </h1>
+
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-200">
+              <span className="inline-flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-cyan-400" />
+                {job.location}
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <Clock className="w-4 h-4 text-cyan-400" />
+                {job.experience}
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <Briefcase className="w-4 h-4 text-cyan-400" />
+                {job.workType}
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════ MAIN CONTENT ═══════════ */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+            {/* Left: details */}
+            <div className="lg:col-span-2 space-y-10">
+
+              {/* About */}
+              <div>
+                <h2 className="text-xl sm:text-2xl font-black text-[#0b1f4e] mb-4 pb-3 border-b-2 border-slate-100">
+                  About the Role
+                </h2>
+                <p className="text-slate-700 leading-relaxed text-base">{job.about}</p>
+              </div>
+
+              {/* Responsibilities */}
+              <div>
+                <h2 className="text-xl sm:text-2xl font-black text-[#0b1f4e] mb-4 pb-3 border-b-2 border-slate-100">
+                  Key Responsibilities
+                </h2>
+                <ul className="space-y-3">
+                  {job.responsibilities.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-slate-700 text-sm sm:text-base leading-relaxed">
+                      <CheckCircle2 className="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Qualifications */}
+              <div>
+                <h2 className="text-xl sm:text-2xl font-black text-[#0b1f4e] mb-4 pb-3 border-b-2 border-slate-100">
+                  Required Qualifications
+                </h2>
+                <ul className="space-y-3">
+                  {job.qualifications.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-slate-700 text-sm sm:text-base leading-relaxed">
+                      <CheckCircle2 className="w-5 h-5 text-cyan-600 shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Nice to have */}
+              {job.niceToHave && job.niceToHave.length > 0 && (
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-black text-[#0b1f4e] mb-4 pb-3 border-b-2 border-slate-100">
+                    Nice to Have
+                  </h2>
+                  <ul className="space-y-3">
+                    {job.niceToHave.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-slate-700 text-sm sm:text-base leading-relaxed">
+                        <Star className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            {/* Right: sticky apply card */}
+            <aside className="lg:col-span-1">
+              <div className="lg:sticky lg:top-24 bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-5">
+                <div>
+                  <p className="text-xs font-black uppercase tracking-widest text-slate-500 mb-1">
+                    Ready to apply?
+                  </p>
+                  <h3 className="text-lg font-extrabold text-[#0b1f4e] leading-snug">
+                    Submit your application
+                  </h3>
+                </div>
+
+                <Link
+                  href={`/careers/apply?job=${job.slug}`}
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-black uppercase tracking-wider text-white bg-[#0b1f4e] hover:bg-[#152f6b] transition-all shadow-lg shadow-[#0b1f4e]/20"
+                >
+                  Apply Now
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+
+                <div className="pt-4 border-t border-slate-200 space-y-3 text-xs text-slate-600">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                    {job.location}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-3.5 h-3.5 text-slate-400" />
+                    {job.experience} experience
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Briefcase className="w-3.5 h-3.5 text-slate-400" />
+                    {job.workType}
+                  </div>
+                </div>
+              </div>
+            </aside>
+
+          </div>
+        </section>
+      </div>
+    </>
+  );
 }
 </file>
 
-<file path="src/app/careers/apply/page.tsx">
-'use client';
+<file path="src/app/sitemap.ts">
+import type { MetadataRoute } from 'next'
+import { JOBS } from '@/lib/jobs'
 
-import React, { useState, useRef } from 'react';
-import Link from 'next/link';
-import {
-  RiArrowLeftLine, RiCheckboxCircleLine, RiErrorWarningLine,
-  RiLoader4Line, RiUploadCloud2Line, RiFileTextLine, RiCloseLine,
-  RiShieldKeyholeLine
-} from 'react-icons/ri';
-import { motion, AnimatePresence } from 'framer-motion';
+// Required for 'output: export' static HTML builds
+export const dynamic = 'force-static'
 
-const MAX_CV_SIZE_MB = 5;
-const ACCEPTED_EXT = ['.pdf', '.doc', '.docx'];
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = 'https://www.4bizinternational.com'
 
-export default function ApplyPage() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-  const [errorMsg, setErrorMsg] = useState('');
-  const [cvFile, setCvFile] = useState<File | null>(null);
-  const [dragOver, setDragOver] = useState(false);
-  const [validationAlerts, setValidationAlerts] = useState({
-    fullName: false, email: false, phone: false, cv: false,
-  });
-  const formRef = useRef<HTMLFormElement>(null);
+  // 1. Core Pages (Explicit trailing slash for ALL pages)
+  const corePages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/`, // Home page
+      lastModified: new Date('2026-10-15'),
+      changeFrequency: 'weekly',
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/about/`, // About
+      lastModified: new Date('2026-10-15'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/`, // Services
+      lastModified: new Date('2026-10-15'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/`, // Blog listing
+      lastModified: new Date('2026-10-15'),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/clients/`, // Clients page
+      lastModified: new Date('2026-10-15'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/contact/`, // Contact page
+      lastModified: new Date('2026-10-15'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/privacy-policy/`, // Privacy policy page
+      lastModified: new Date('2026-10-15'),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/terms-and-conditions/`, // Terms and conditions page
+      lastModified: new Date('2026-10-15'),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+  ]
 
-  /* ============== File handling ============== */
-  const validateFile = (file: File): string | null => {
-    const ext = '.' + file.name.split('.').pop()?.toLowerCase();
-    if (!ACCEPTED_EXT.includes(ext)) return 'Only PDF, DOC, or DOCX files are accepted.';
-    if (file.size > MAX_CV_SIZE_MB * 1024 * 1024)
-      return `File size must not exceed ${MAX_CV_SIZE_MB}MB.`;
-    return null;
-  };
+  // 2. Service Sub-Pages
+  const serviceSubPagesList = [
+    'digital-workplace-productivity-solutions',
+    'enterprise-business-applications-erp-crm',
+    'web-mobile-commerce-solutions',
+    'digital-growth-marketing-brand-experience',
+    'communication-customer-engagement-solutions',
+    'cloud-hosting-infrastructure-services',
+    'cybersecurity-digital-protection',
+    'digital-transformation-emerging-technologies',
+  ]
 
-  const handleFileSelect = (file: File | null) => {
-    if (!file) { setCvFile(null); return; }
-    const err = validateFile(file);
-    if (err) {
-      setErrorMsg(err);
-      setStatus('error');
-      setTimeout(() => { if (status === 'error') { setStatus('idle'); setErrorMsg(''); } }, 4000);
-      return;
-    }
-    setCvFile(file);
-    setValidationAlerts(p => ({ ...p, cv: false }));
-  };
+  const servicePages: MetadataRoute.Sitemap = serviceSubPagesList.map((slug) => ({
+    url: `${baseUrl}/services/${slug}/`,
+    lastModified: new Date('2026-10-15'),
+    changeFrequency: 'monthly',
+    priority: 0.75,
+  }))
 
-  const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    setDragOver(false);
-    const f = e.dataTransfer.files?.[0];
-    if (f) handleFileSelect(f);
-  };
+  // 3. Blog Articles (Sorted from Oldest to Newest)
+  const blogPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/blog/4biz-international-who-we-are/`,
+      lastModified: new Date('2026-07-07'), // Jul 07, 2026
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/what-is-aeo/`,
+      lastModified: new Date('2026-09-28'), // Sep 28, 2026
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/digital-marketing-agency-uae/`,
+      lastModified: new Date('2026-09-29'), // Sep 29, 2026
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/seo-services-uae/`,
+      lastModified: new Date('2026-10-01'), // Oct 01, 2026
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/google-ads-management-services-uae/`,
+      lastModified: new Date('2026-10-09'), // Oct 09, 2026
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/blog/website-design-services-uae/`,
+      lastModified: new Date('2026-10-15'), // Oct 15, 2026
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/microsoft-365-vs-google-workspace-uae/`,
+      lastModified: new Date('2026-10-19'), // Oct 19, 2026
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/server-management-services-uae/`,
+      lastModified: new Date('2026-10-22'), // Oct 22, 2026
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+  ]
 
-  /* ============== Submit ============== */
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+  // 4. Careers Pages (listing + apply + every job in JOBS)
+  const careersPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/careers/`,
+      lastModified: new Date('2026-10-20'),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/careers/apply/`,
+      lastModified: new Date('2026-10-20'),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    // Every job in JOBS generates its own URL — no manual sync needed.
+    ...JOBS.map((job) => ({
+      url: `${baseUrl}/careers/${job.slug}/`,
+      lastModified: new Date(job.postedDate),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+  ]
 
-    const errors = {
-      fullName: !fd.get('fullName'),
-      email: !fd.get('email'),
-      phone: !fd.get('phone'),
-      cv: !cvFile,
-    };
-    setValidationAlerts(errors);
-    if (Object.values(errors).some(Boolean)) return;
-    if (!cvFile) return;
-
-    setStatus('sending');
-    setErrorMsg('');
-
-    const payload = new FormData();
-    payload.append('fullName', (fd.get('fullName') as string).trim());
-    payload.append('email', (fd.get('email') as string).trim());
-    payload.append('phone', (fd.get('phone') as string).trim());
-    payload.append('nationality', (fd.get('nationality') as string) || '');
-    payload.append('currentLocation', (fd.get('currentLocation') as string) || '');
-    payload.append('visaStatus', (fd.get('visaStatus') as string) || '');
-    payload.append('currentCompany', (fd.get('currentCompany') as string) || '');
-    payload.append('experience', (fd.get('experience') as string) || '');
-    payload.append('noticePeriod', (fd.get('noticePeriod') as string) || '');
-    payload.append('linkedin', (fd.get('linkedin') as string) || '');
-    payload.append('message', (fd.get('message') as string) || '');
-    payload.append('cv', cvFile);
-
-    try {
-      const res = await fetch('/api/apply', { method: 'POST', body: payload });
-      const data = await res.json().catch(() => ({}));
-      
-      if (res.ok && data.status === 'success') {
-        setStatus('success');
-        formRef.current?.reset();
-        setCvFile(null);
-      } else {
-        throw new Error(data.error || 'Submission failed. Please try again.');
-      }
-    } catch (err: any) {
-      setStatus('error');
-      setErrorMsg(err.message || 'Network error. Please try again.');
-    }
-  };
-
-  /* ============== File input refs ============== */
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  return (
-    <div
-      className="min-h-screen text-slate-100 font-sans antialiased overflow-x-hidden pt-24 sm:pt-28 md:pt-32 pb-16"
-      style={{
-        background:
-          'radial-gradient(circle at 50% 30%, #0f2054 0%, #061033 45%, #020717 100%)',
-      }}
-    >
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Back link */}
-        <Link
-          href="/careers"
-          className="inline-flex items-center gap-2 text-sm text-[#00D3F2] hover:text-cyan-300 font-bold uppercase tracking-widest mb-8 transition-colors"
-        >
-          <RiArrowLeftLine /> Back to Job Details
-        </Link>
-
-        {/* Header */}
-        <div className="mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00D3F2]/10 border border-[#00D3F2]/40 text-[#00D3F2] text-xs font-bold uppercase tracking-widest mb-5">
-            <RiShieldKeyholeLine /> Application Form
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300">
-            Apply: Digital Marketer 
-          </h1>
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-            Complete the form below and attach your CV. Our hiring team will
-            review your application within 5 business days.
-          </p>
-        </div>
-
-        {/* Form Container - Full Width, No Sidebar */}
-        <div className="w-full rounded-2xl bg-white shadow-2xl p-6 sm:p-10">
-          <AnimatePresence mode="wait">
-            {status === 'success' ? (
-              <motion.div
-                key="success"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-center py-10"
-              >
-                <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6">
-                  <RiCheckboxCircleLine className="text-5xl text-emerald-600" />
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Application Submitted!</h2>
-                <p className="text-slate-600 mb-8 max-w-md mx-auto">
-                  Thank you for applying. Our hiring team has received your CV and
-                  will be in touch if your profile matches the role.
-                </p>
-                <Link
-                  href="/careers"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0c9d7d] hover:bg-[#0a8a6e] text-white font-bold transition-colors"
-                >
-                  <RiArrowLeftLine /> Back to Job
-                </Link>
-              </motion.div>
-            ) : (
-              <motion.form
-                key="form"
-                ref={formRef}
-                onSubmit={handleSubmit}
-                className="space-y-6"
-                noValidate
-              >
-                
-                {/* Personal Details Section */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <Field
-                    name="fullName"
-                    label="Full Name *"
-                    type="text"
-                    placeholder="Your full name"
-                    error={validationAlerts.fullName}
-                  />
-                  <Field
-                    name="email"
-                    label="Email Address *"
-                    type="email"
-                    placeholder="you@email.com"
-                    error={validationAlerts.email}
-                  />
-                  <Field
-                    name="phone"
-                    label="Phone Number *"
-                    type="tel"
-                    placeholder="+971 50 123 4567"
-                    error={validationAlerts.phone}
-                  />
-                  <Field
-                    name="nationality"
-                    label="Nationality"
-                    type="text"
-                    placeholder="e.g. Indian, Filipino, Emirati"
-                  />
-                </div>
-
-                {/* Location & Availability Section */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                  <Field
-                    name="currentLocation"
-                    label="Current Location"
-                    type="text"
-                    placeholder="e.g. Kozhikode, Kerala"
-                  />
-                  <Field
-                    name="visaStatus"
-                    label="Visa Status"
-                    type="text"
-                    placeholder="e.g. Visit Visa, Employment Visa"
-                  />
-                  <Field
-                    name="currentCompany"
-                    label="Current Company (Optional)"
-                    type="text"
-                    placeholder="e.g. Tech Solutions LLC"
-                  />
-                  <SelectField
-                    name="experience"
-                    label="Total Years of Experience"
-                    options={[
-                      { label: 'Select experience level', value: '' },
-                      { label: 'Fresher', value: 'fresher' },
-                      { label: '1–2 years', value: '1-2' },
-                      { label: '3–5 years', value: '3-5' },
-                      { label: '5+ years', value: '5+' },
-                    ]}
-                  />
-                  <SelectField
-                    name="noticePeriod"
-                    label="Notice Period"
-                    options={[
-                      { label: 'Select notice period', value: '' },
-                      { label: 'Immediate', value: 'immediate' },
-                      { label: '15 Days', value: '15-days' },
-                      { label: '30 Days', value: '30-days' },
-                      { label: '60 Days+', value: '60-days' },
-                    ]}
-                  />
-                  <Field
-                    name="linkedin"
-                    label="LinkedIn Profile (Optional)"
-                    type="url"
-                    placeholder="https://linkedin.com/in/yourprofile"
-                  />
-                </div>
-
-                {/* CV Upload */}
-                <div className="pt-2">
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Upload CV * <span className="text-slate-400 font-normal normal-case">(PDF, DOC, DOCX — max 5MB)</span>
-                  </label>
-
-                  <AnimatePresence initial={false}>
-                    {validationAlerts.cv && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="mb-2 p-2 bg-rose-500/10 border border-rose-500/20 rounded-lg flex items-center gap-2 text-xs font-bold text-rose-600"
-                      >
-                        <RiErrorWarningLine /> Please attach your CV
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-
-                  {!cvFile ? (
-                    <div
-                      onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-                      onDragLeave={() => setDragOver(false)}
-                      onDrop={onDrop}
-                      onClick={() => fileInputRef.current?.click()}
-                      className={`cursor-pointer rounded-xl border-2 border-dashed p-6 sm:p-8 text-center transition-colors ${
-                        dragOver
-                          ? 'border-[#0c9d7d] bg-emerald-50'
-                          : 'border-slate-300 bg-slate-50 hover:border-[#0c9d7d] hover:bg-emerald-50/50'
-                      }`}
-                    >
-                      <RiUploadCloud2Line className="text-4xl text-[#0c9d7d] mx-auto mb-3" />
-                      <p className="text-sm font-bold text-slate-700 mb-1">
-                        Click to upload or drag & drop
-                      </p>
-                      <p className="text-xs text-slate-500">
-                        PDF, DOC, DOCX · max 5MB
-                      </p>
-                      <input
-                        ref={fileInputRef}
-                        type="file"
-                        accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                        onChange={(e) => handleFileSelect(e.target.files?.[0] || null)}
-                        className="hidden"
-                      />
-                    </div>
-                  ) : (
-                    <div className="flex items-center gap-3 p-4 rounded-xl border-2 border-emerald-300 bg-emerald-50">
-                      <div className="w-11 h-11 rounded-lg bg-emerald-600 flex items-center justify-center text-white shrink-0">
-                        <RiFileTextLine className="text-2xl" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-bold text-slate-900 truncate">{cvFile.name}</p>
-                        <p className="text-xs text-slate-500">
-                          {(cvFile.size / 1024 / 1024).toFixed(2)} MB
-                        </p>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => setCvFile(null)}
-                        className="p-2 rounded-lg text-slate-600 hover:bg-rose-100 hover:text-rose-600 transition-colors shrink-0"
-                        aria-label="Remove CV"
-                      >
-                        <RiCloseLine className="text-xl" />
-                      </button>
-                    </div>
-                  )}
-                </div>
-
-                {/* Cover Note */}
-                <div className="pt-2">
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Cover Note (Optional)
-                  </label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    placeholder="Tell us briefly why you're a strong fit for this role…"
-                    className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-900 text-sm font-medium focus:outline-none focus:border-[#0c9d7d] transition-colors resize-none"
-                  />
-                </div>
-
-                {/* Error */}
-                {status === 'error' && errorMsg && (
-                  <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 flex items-start gap-2 text-sm text-rose-700 font-medium">
-                    <RiErrorWarningLine className="text-lg shrink-0 mt-0.5" />
-                    <span>{errorMsg}</span>
-                  </div>
-                )}
-
-                {/* Submit */}
-                <div className="pt-4">
-                  <button
-                    type="submit"
-                    disabled={status === 'sending'}
-                    className="w-full h-14 rounded-xl bg-slate-950 hover:bg-[#0c9d7d] text-white font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
-                  >
-                    {status === 'sending' ? (
-                      <><RiLoader4Line className="animate-spin text-xl" /> Submitting…</>
-                    ) : (
-                      <>Submit Application</>
-                    )}
-                  </button>
-
-                  <p className="text-xs text-slate-500 text-center mt-4">
-                    By submitting, you agree to our{' '}
-                    <Link href="/privacy-policy" className="text-[#0c9d7d] underline font-semibold">
-                      Privacy Policy
-                    </Link>
-                    .
-                  </p>
-                </div>
-              </motion.form>
-            )}
-          </AnimatePresence>
-        </div>
-      </div>
-
-      {/* GLOBAL CSS OVERRIDE TO FORCE AUTOFILL COLORS */}
-      <style jsx global>{`
-        /* Force browser autofill to stay white with dark text */
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover, 
-        input:-webkit-autofill:focus, 
-        input:-webkit-autofill:active,
-        textarea:-webkit-autofill,
-        textarea:-webkit-autofill:hover,
-        textarea:-webkit-autofill:focus,
-        textarea:-webkit-autofill:active,
-        select:-webkit-autofill,
-        select:-webkit-autofill:hover,
-        select:-webkit-autofill:focus,
-        select:-webkit-autofill:active {
-          -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
-          box-shadow: 0 0 0 1000px #ffffff inset !important;
-          -webkit-text-fill-color: #0f172a !important;
-          transition: background-color 5000s ease-in-out 0s;
-        }
-      `}</style>
-    </div>
-  );
-}
-
-/* ============================================================
-   Reusable Form Fields
-============================================================ */
-function Field({
-  name, label, type, placeholder, error,
-}: {
-  name: string; label: string; type: string; placeholder: string; error?: boolean;
-}) {
-  return (
-    <div>
-      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-        {label}
-      </label>
-      <input
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        className={`w-full px-4 py-3 rounded-xl border-2 bg-white text-slate-900 text-sm font-medium focus:outline-none transition-colors ${
-          error
-            ? 'border-rose-400 bg-rose-50'
-            : 'border-slate-200 focus:border-[#0c9d7d]'
-        }`}
-      />
-    </div>
-  );
-}
-
-function SelectField({
-  name, label, options,
-}: {
-  name: string; label: string; options: { label: string; value: string }[];
-}) {
-  return (
-    <div>
-      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-        {label}
-      </label>
-      <select
-        name={name}
-        defaultValue=""
-        className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-900 text-sm font-medium focus:outline-none focus:border-[#0c9d7d] transition-colors"
-      >
-        {options.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
+  // Combine all routes into one clean sitemap array
+  return [...corePages, ...servicePages, ...blogPages, ...careersPages]
 }
 </file>
 
@@ -21945,6 +21222,1030 @@ export default function About() {
 
       </div>
     </section>
+  );
+}
+</file>
+
+<file path="src/app/api/apply/route.ts">
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
+const MAX_CV_BYTES = 5 * 1024 * 1024; // 5MB
+const ALLOWED_MIME = [
+  'application/pdf',
+  'application/msword',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+];
+
+export async function POST(req: Request) {
+  try {
+    /* ---------- Parse multipart form ---------- */
+    const form = await req.formData();
+
+    const fullName = (form.get('fullName') as string | null)?.trim() || '';
+    const email = (form.get('email') as string | null)?.trim() || '';
+    const phone = (form.get('phone') as string | null)?.trim() || '';
+    const jobSlug = (form.get('job') as string | null)?.trim() || '';
+    const location = (form.get('currentLocation') as string | null)?.trim() || '';
+    const experience = (form.get('experience') as string | null)?.trim() || '';
+    const message = (form.get('message') as string | null)?.trim() || '';
+    const cv = form.get('cv');
+
+    /* ---------- Required field validation ---------- */
+    if (!fullName || !email || !phone) {
+      return NextResponse.json(
+        { status: 'error', error: 'Missing required fields: fullName, email, phone.' },
+        { status: 400 }
+      );
+    }
+    if (!jobSlug) {
+      return NextResponse.json(
+        { status: 'error', error: 'Please select a position.' },
+        { status: 400 }
+      );
+    }
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!emailOk) {
+      return NextResponse.json(
+        { status: 'error', error: 'Invalid email address.' },
+        { status: 400 }
+      );
+    }
+
+    /* ---------- CV validation ---------- */
+    if (!(cv instanceof File) || cv.size === 0) {
+      return NextResponse.json(
+        { status: 'error', error: 'CV file is required.' },
+        { status: 400 }
+      );
+    }
+    if (cv.size > MAX_CV_BYTES) {
+      return NextResponse.json(
+        { status: 'error', error: 'CV exceeds 5MB limit.' },
+        { status: 400 }
+      );
+    }
+    if (!ALLOWED_MIME.includes(cv.type)) {
+      return NextResponse.json(
+        { status: 'error', error: 'CV must be PDF, DOC, or DOCX.' },
+        { status: 400 }
+      );
+    }
+
+    /* ---------- Environment & SMTP setup ---------- */
+    const smtpUser = process.env.JOB_SMTP_USER || process.env.SMTP_USER;
+    const smtpPass = process.env.JOB_SMTP_PASS || process.env.SMTP_PASS;
+    const toEmail = process.env.JOB_NOTIFICATION_EMAIL || '4bizdeveloper@gmail.com';
+
+    if (!smtpUser || !smtpPass) {
+      console.error('SMTP credentials missing');
+      return NextResponse.json(
+        { status: 'error', error: 'Mail server not configured.' },
+        { status: 500 }
+      );
+    }
+
+    /* ---------- Read CV into buffer ---------- */
+    const arrayBuffer = await cv.arrayBuffer();
+    const cvBuffer = Buffer.from(arrayBuffer);
+
+    /* ---------- Human-readable position label ---------- */
+    // e.g. "digital-marketer" -> "Digital Marketer"
+    const positionLabel = jobSlug
+      .split('-')
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ');
+
+    /* ---------- Build email ---------- */
+    const subject = `New Job Application: ${fullName} — ${positionLabel}`;
+
+    const textBody = [
+      `New job application received via 4bizinternational.com/careers/apply`,
+      ``,
+      `Position:   ${positionLabel} (${jobSlug})`,
+      `Full Name:  ${fullName}`,
+      `Email:      ${email}`,
+      `Phone:      ${phone}`,
+      `Location:   ${location || '—'}`,
+      `Experience: ${experience || '—'}`,
+      ``,
+      `Cover Note:`,
+      message || '—',
+      ``,
+      `CV attached: ${cv.name} (${(cv.size / 1024).toFixed(1)} KB)`,
+      `Submitted:   ${new Date().toISOString()}`,
+    ].join('\n');
+
+    const htmlBody = `
+      <div style="font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width:600px; margin:0 auto; background:#f8fafc; padding:24px;">
+        <div style="background:linear-gradient(135deg,#0f2054,#061033); padding:24px; border-radius:12px 12px 0 0;">
+          <h1 style="color:#00D3F2; margin:0 0 4px; font-size:20px;">New Job Application</h1>
+          <p style="color:#cbd5e1; margin:0; font-size:13px;">${escapeHtml(positionLabel)} · 4Biz International</p>
+        </div>
+        <div style="background:#ffffff; padding:24px; border-radius:0 0 12px 12px; border:1px solid #e2e8f0; border-top:0;">
+          <table style="width:100%; border-collapse:collapse; font-size:14px; color:#0f172a;">
+            <tr><td style="padding:8px 0; font-weight:600; width:130px; color:#475569;">Position</td><td><strong>${escapeHtml(positionLabel)}</strong> <span style="color:#94a3b8; font-size:12px;">(${escapeHtml(jobSlug)})</span></td></tr>
+            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Full Name</td><td>${escapeHtml(fullName)}</td></tr>
+            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Email</td><td><a href="mailto:${escapeHtml(email)}" style="color:#0c9d7d;">${escapeHtml(email)}</a></td></tr>
+            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Phone</td><td><a href="tel:${escapeHtml(phone)}" style="color:#0c9d7d;">${escapeHtml(phone)}</a></td></tr>
+            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Location</td><td>${escapeHtml(location) || '—'}</td></tr>
+            <tr><td style="padding:8px 0; font-weight:600; color:#475569;">Experience</td><td>${escapeHtml(experience) || '—'}</td></tr>
+          </table>
+          <div style="margin-top:20px; padding:16px; background:#f1f5f9; border-radius:8px; border-left:4px solid #0c9d7d;">
+            <p style="margin:0 0 6px; font-weight:600; color:#0f172a;">Cover Note:</p>
+            <p style="margin:0; color:#334155; white-space:pre-wrap; font-size:14px; line-height:1.6;">${escapeHtml(message) || '—'}</p>
+          </div>
+          <p style="margin:20px 0 0; font-size:12px; color:#64748b;">
+            CV attached: <strong>${escapeHtml(cv.name)}</strong> (${(cv.size / 1024).toFixed(1)} KB)<br>
+            Submitted: ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })} (Dubai)
+          </p>
+        </div>
+      </div>
+    `;
+
+    /* ---------- Send email ---------- */
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: { user: smtpUser, pass: smtpPass },
+    });
+
+    await transporter.sendMail({
+      from: `"4Biz Careers" <${smtpUser}>`,
+      to: toEmail,
+      replyTo: email,
+      subject,
+      text: textBody,
+      html: htmlBody,
+      attachments: [
+        {
+          filename: cv.name,
+          content: cvBuffer,
+          contentType: cv.type,
+        },
+      ],
+    });
+
+    return NextResponse.json(
+      { status: 'success', message: 'Application submitted successfully.' },
+      { status: 200 }
+    );
+  } catch (err: any) {
+    console.error('Job Application API error:', err);
+
+    return NextResponse.json(
+      {
+        status: 'error',
+        error: err?.message || 'Internal server error. Failed to deliver email.',
+      },
+      { status: 500 }
+    );
+  }
+}
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+</file>
+
+<file path="src/app/careers/page.tsx">
+"use client";
+
+import React, { useState, useMemo, useEffect } from "react";
+import Link from "next/link";
+import {
+  Search, MapPin, Briefcase, Clock, ArrowRight, Filter,
+} from "lucide-react";
+import type {Job} from "@/lib/jobs";
+import {normalizeJobs} from "@/lib/careers-catalog";
+
+export default function CareersPage() {
+  const [jobs,setJobs] = useState<Job[]>([]);
+  const [loading,setLoading] = useState(true);
+  useEffect(()=>{let alive=true;fetch("/api/careers/jobs",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(d=>{if(alive)setJobs(normalizeJobs(d.jobs||[]))}).catch(()=>{if(alive)setJobs([])}).finally(()=>{if(alive)setLoading(false)});return()=>{alive=false}},[]);
+  const [titleQuery, setTitleQuery] = useState("");
+  const [locationQuery, setLocationQuery] = useState("");
+
+  const filteredJobs = useMemo(() => {
+    return jobs.filter((job) => {
+      const matchesTitle =
+        titleQuery.trim() === "" ||
+        job.title.toLowerCase().includes(titleQuery.toLowerCase()) ||
+        job.department.toLowerCase().includes(titleQuery.toLowerCase());
+
+      const matchesLocation =
+        locationQuery.trim() === "" ||
+        job.location.toLowerCase().includes(locationQuery.toLowerCase());
+
+      return matchesTitle && matchesLocation;
+    });
+  }, [titleQuery, locationQuery, jobs]);
+
+  return (
+    <div className="min-h-screen bg-white text-slate-900 font-sans">
+
+      {/* ═══════════════ HERO WITH SEARCH ═══════════════ */}
+      <section className="relative w-full bg-[#0b1f4e] overflow-hidden pt-28 sm:pt-32 pb-20 sm:pb-24 px-4">
+        {/* Ambient glow */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-500/20 rounded-full blur-[120px]" />
+          <div className="absolute top-20 right-0 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px]" />
+        </div>
+
+        <div className="relative max-w-6xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-cyan-300 text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            We're Hiring
+          </div>
+
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 leading-tight">
+            Find more details on our <br className="hidden sm:inline" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
+              open positions
+            </span>
+          </h1>
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-10">
+            Join a team that's redefining enterprise technology across the globe.
+          </p>
+
+          {/* SEARCH BAR BOX */}
+          <div className="bg-white rounded-2xl p-3 shadow-2xl max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-2">
+              {/* Title Input */}
+              <div className="flex-1 flex items-center gap-3 px-4 py-3 border border-slate-200 rounded-xl focus-within:border-[#0b1f4e] transition-colors">
+                <Search className="w-5 h-5 text-slate-400 shrink-0" />
+                <input
+                  type="text"
+                  placeholder="Search job title or department"
+                  value={titleQuery}
+                  onChange={(e) => setTitleQuery(e.target.value)}
+                  className="flex-1 outline-none text-slate-900 placeholder-slate-500 text-sm font-medium"
+                />
+              </div>
+
+              {/* Location Input */}
+              <div className="flex-1 flex items-center gap-3 px-4 py-3 border border-slate-200 rounded-xl focus-within:border-[#0b1f4e] transition-colors">
+                <MapPin className="w-5 h-5 text-slate-400 shrink-0" />
+                <input
+                  type="text"
+                  placeholder="Search location"
+                  value={locationQuery}
+                  onChange={(e) => setLocationQuery(e.target.value)}
+                  className="flex-1 outline-none text-slate-900 placeholder-slate-500 text-sm font-medium"
+                />
+              </div>
+
+              {/* Search Button */}
+              <button
+                type="button"
+                className="bg-[#0b1f4e] hover:bg-[#152f6b] text-white font-bold px-8 py-3 rounded-xl transition-colors text-sm uppercase tracking-wider shrink-0"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ JOB LISTINGS ═══════════════ */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+
+        {/* Header row */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#0b1f4e] tracking-tight">
+              Available Positions
+            </h2>
+            <p className="text-slate-500 text-sm mt-1">
+              Showing {filteredJobs.length} of {jobs.length} open position
+              {jobs.length !== 1 ? "s" : ""}
+            </p>
+          </div>
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-4 py-2 rounded-full">
+            <Filter className="w-3.5 h-3.5" />
+            Filtered Results
+          </div>
+        </div>
+
+        {/* Empty state */}
+        {!loading && filteredJobs.length === 0 && (
+          <div className="text-center py-20 bg-slate-50 rounded-2xl border border-slate-200">
+            <Briefcase className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+            <h3 className="text-xl font-bold text-slate-700 mb-2">No matching jobs found</h3>
+            <p className="text-slate-500 mb-6">
+              Try different keywords or clear your filters.
+            </p>
+            <button
+              onClick={() => { setTitleQuery(""); setLocationQuery(""); }}
+              className="px-6 py-2.5 rounded-xl bg-[#0b1f4e] hover:bg-[#152f6b] text-white text-sm font-bold transition-colors"
+            >
+              Clear Filters
+            </button>
+          </div>
+        )}
+
+        {loading && <p className="text-slate-500 py-6">Loading available positions…</p>}
+        {/* Job cards */}
+        <div className="space-y-4">
+          {filteredJobs.map((job) => (
+            <article
+              key={job.slug}
+              className="group relative bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 hover:border-[#0b1f4e] hover:shadow-[0_8px_40px_-12px_rgba(11,31,78,0.15)] transition-all duration-300"
+            >
+              <div className="flex flex-col lg:flex-row lg:items-center gap-6">
+
+                {/* Left: Info */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 mb-3">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-cyan-600 bg-cyan-50 px-2.5 py-1 rounded-md border border-cyan-200">
+                      {job.department}
+                    </span>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md">
+                      {job.workType}
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl font-extrabold text-[#0b1f4e] group-hover:text-blue-700 transition-colors mb-2 leading-snug">
+                    <Link href={`/careers/${job.slug}`}>
+                      <span className="absolute inset-0 z-10" aria-hidden="true" />
+                      {job.title}
+                    </Link>
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed mb-3 line-clamp-2">
+                    {job.shortDescription}
+                  </p>
+
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-500 font-medium">
+                    <span className="inline-flex items-center gap-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                      {job.location}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-slate-400" />
+                      {job.experience}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Right: CTA */}
+                <div className="shrink-0 flex items-center gap-3 relative z-20">
+                  <Link
+                    href={`/careers/${job.slug}`}
+                    className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-[#0b1f4e] border-2 border-[#0b1f4e]/20 hover:border-[#0b1f4e] hover:bg-[#0b1f4e]/5 transition-all"
+                  >
+                    View Details
+                  </Link>
+                  <Link
+                    href={`/careers/apply?job=${job.slug}`}
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-black uppercase tracking-wider text-white bg-[#0b1f4e] hover:bg-[#152f6b] transition-all shadow-lg shadow-[#0b1f4e]/20 group-hover:shadow-[#0b1f4e]/40"
+                  >
+                    Apply Now
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/Footer.tsx">
+"use client";
+
+import React, { useRef, useMemo } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { RiDownloadCloud2Line } from 'react-icons/ri';
+import Image from 'next/image';
+import Link from 'next/link';
+
+const Footer = () => {
+  const footerRef = useRef<HTMLElement>(null);
+  
+  // High-precision scroll tracking for Parallax ambient effects
+  const { scrollYProgress } = useScroll({
+    target: footerRef,
+    offset: ["start end", "end end"]
+  });
+
+  // PHYSICS: Eliminates "jitter" and frame stuttering on modern high-refresh displays
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 80,
+    damping: 35,
+    restDelta: 0.001
+  });
+
+  // 3D Transforms trigger GPU rendering layers to prevent layout jerking
+  const y1 = useTransform(smoothProgress, [0, 1], ["0px", "-40px"]);
+  const y2 = useTransform(smoothProgress, [0, 1], ["0px", "40px"]);
+
+  // Declared social media schema
+  const socialLinks = useMemo(() => [
+    {
+      href: 'https://wa.me/971527925100?text=Hello%204Biz%20International,%20I%20am%20interested%20in%20your%20services.%20Please%20share%20more%20details.',
+      label: 'WhatsApp',
+      path: 'M20.52 3.48A11.8 11.8 0 0 0 12.04 0C5.4 0 .02 5.38.02 12c0 2.12.56 4.19 1.62 6.02L0 24l6.15-1.61A11.97 11.97 0 0 0 12.04 24C18.66 24 24 18.62 24 12c0-3.2-1.25-6.2-3.48-8.52zM12.04 21.9c-1.8 0-3.56-.48-5.1-1.38l-.36-.21-3.65.96.98-3.56-.24-.37A9.8 9.8 0 0 1 2.24 12c0-5.4 4.4-9.8 9.8-9.8s9.8 4.4 9.8 9.8-4.4 9.9-9.8 9.9zm5.38-7.36c-.29-.15-1.72-.85-1.99-.95-.27-.1-.47-.15-.66.15-.19.29-.76.95-.93 1.14-.17.19-.34.22-.63.07-.29-.15-1.22-.45-2.33-1.43-.86-.77-1.45-1.72-1.62-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.66-1.58-.9-2.16-.24-.58-.49-.5-.66-.51h-.56c-.19 0-.51.07-.78.36-.27.29-1.02 1-.98 2.43.05 1.43 1.02 2.81 1.16 3 .15.19 2.02 3.08 4.89 4.31.68.29 1.21.46 1.62.58.68.22 1.3.19 1.79.12.55-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.27-.19-.56-.34z',
+      target: '_blank',
+    },
+    {
+      href: 'https://www.facebook.com/4bizglobal',
+      label: 'Facebook',
+      path: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874V12h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z',
+      target: '_blank',
+    },
+    {
+      href: 'https://www.instagram.com/4biz_ae',
+      label: 'Instagram',
+      path: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4.162 4.162 0 1 1 0-8.324A4.162 4.162 0 0 1 12 16zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z',
+      target: '_blank',
+    },
+    {
+      href: 'https://www.linkedin.com/company/4biz-international/',
+      label: 'LinkedIn',
+      path: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z',
+      target: '_blank',
+    },
+    {
+      href: 'https://x.com/4biz123',
+      label: 'X',
+      path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z',
+      target: '_blank',
+    },
+    {
+      href: 'https://www.youtube.com/@4bizinternationalae',
+      label: 'YouTube',
+      path: 'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93-.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z',
+      target: '_blank',
+    }
+  ], []);
+
+  const legalItems = useMemo(() => [
+    { label: 'Privacy Policy', path: '/privacy-policy/' },
+    { label: 'Terms & Conditions', path: '/terms-and-conditions/' },
+  ], []);
+
+  return (
+    <footer 
+      id="footer"
+      ref={footerRef} 
+      className="relative z-10 mt-0 pt-16 overflow-hidden border-t border-[#00D3F2] transform-gpu backface-hidden"
+      style={{ 
+        background: 'radial-gradient(circle at 50% 15%, #001b6b 0%, #001042 50%, #000933 100%)',
+        contentVisibility: 'auto', 
+        /* Safe area bottom buffer ensures no floating widget covers any links on mobile/tablet/desktop */
+        paddingBottom: 'calc(160px + env(safe-area-inset-bottom))'
+      } as React.CSSProperties}
+      itemScope 
+      itemType="https://schema.org/WPFooter"
+    >
+      {/* Hardware Accelerated Subtle Parallax Internal Ambient Accents */}
+      <motion.div 
+        style={{ y: y1, translateZ: 0 }} 
+        className="absolute top-0 -right-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-white/[0.012] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
+      />
+      <motion.div 
+        style={{ y: y2, translateZ: 0 }} 
+        className="absolute top-1/3 -left-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-black/[0.02] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        
+        {/* Stacked 1 column layout on mobile & tablet (grid-cols-1), expanding to 12-cols only on desktop (lg:grid-cols-12) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-14 lg:gap-8 items-start mb-16">
+          
+          {/* Brand Architecture Column */}
+          <div className="lg:col-span-4 flex flex-col items-start space-y-6 md:space-y-8 w-full">
+            <Link 
+              href="/" 
+              className="block group w-max"
+              aria-label="4Biz International - Return to Homepage"
+            >
+              <motion.div 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="relative h-14 w-52 transition-transform duration-300 transform-gpu"
+              >
+                <Image 
+                  src="/4biz_logo-1.png" 
+                  alt="4Biz International Corporate Logo - IT Infrastructure and Global Telecom Solutions" 
+                  fill
+                  className="object-contain object-left filter drop-shadow-[0_2px_10px_rgba(0,211,242,0.15)] group-hover:drop-shadow-[0_4px_20px_rgba(0,211,242,0.3)] transition-all duration-300"
+                  sizes="208px"
+                  priority={true}
+                />
+              </motion.div>
+            </Link>
+            <p className="text-white/80 text-sm md:text-base leading-relaxed font-sans font-normal border-l-2 border-[#00D3F2]/40 pl-4 italic antialiased max-w-sm">
+              "Engineering secure digital frontiers and redefining IT excellence for the next generation of global leaders."
+            </p>
+            
+            {/* Unified Social Link Matrix */}
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map((link, i) => (
+                <a 
+                  key={i} 
+                  href={link.href} 
+                  target={link.target || undefined}
+                  rel={link.target ? "noopener noreferrer" : undefined}
+                  aria-label={`Follow 4Biz International on ${link.label}`}
+                  className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.02] flex items-center justify-center text-white/70 transition-all duration-300 hover:border-[#00D3F2]/50 hover:bg-white/10 hover:text-white hover:-translate-y-1 shadow-sm hover:shadow-[#00D3F2]/10 transform-gpu"
+                >
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d={link.path} />
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Core Communications Terminals */}
+          <div className="lg:col-span-4 flex flex-col space-y-6">
+            <h2 className="text-white/60 font-sans font-bold uppercase tracking-wider text-[11px] flex items-center gap-2">
+              <span className="w-1 h-1 rounded-full bg-[#00D3F2]"></span> Digital Link & Infrastructure
+            </h2>
+            <div className="space-y-4">
+              {/* Mail Segment */}
+              <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 group shadow-sm">
+                <span className="text-[9px] uppercase font-sans tracking-wide font-bold bg-white/10 text-white/90 px-2 py-0.5 rounded inline-block">Mail Infrastructure</span>
+                <a href="mailto:info@4bizinternational.com" className="text-[14px] text-white font-sans group-hover:text-[#00D3F2] transition-colors font-medium break-all block mt-2">
+                  info@4bizinternational.com
+                </a>
+              </div>
+              
+              {/* Telecoms Segment */}
+              <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 shadow-sm">
+                <span className="text-[9px] uppercase font-sans tracking-wide font-bold bg-white/10 text-white/90 px-2 py-0.5 rounded inline-block mb-2">HQ Telecoms / WhatsApp</span>
+                <div className="flex flex-col gap-2 mt-1">
+                  <div className="flex items-center justify-between gap-3 flex-wrap">
+                    <a href="https://wa.me/971527925100" target="_blank" rel="noopener noreferrer" className="text-[14px] font-sans font-medium text-white hover:text-[#00D3F2] transition-colors tracking-wide" aria-label="Contact Dubai HQ via WhatsApp">+971 52 792 5100</a>
+                    <span className="text-[9px] px-1.5 py-0.5 rounded font-sans font-bold bg-white/10 text-white/80 uppercase tracking-wide">Dubai</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-3 flex-wrap">
+                    <a href="https://wa.me/+919388001524" target="_blank" rel="noopener noreferrer" className="text-[14px] font-sans font-medium text-white hover:text-[#00D3F2] transition-colors tracking-wide" aria-label="Contact India Tech Wing via WhatsApp">+91 93880 01524</a>
+                    <span className="text-[9px] px-1.5 py-0.5 rounded font-sans font-bold bg-white/10 text-white/80 uppercase tracking-wide">India</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Company Profile Panel Link */}
+              <a 
+                href="/documents/4biz-international-company-profile.pdf"
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex items-center justify-between bg-white/[0.02] border border-white/5 text-white py-3 px-4 rounded-xl transition-all hover:bg-white/[0.05] hover:border-[#00D3F2]/30 shadow-sm transform-gpu"
+              >
+                <div className="flex flex-col pr-4">
+                  <span className="text-[8px] uppercase tracking-[0.15em] text-white/50 font-sans mb-0.5">Access File</span>
+                  <span className="text-[11px] font-sans font-bold uppercase tracking-[0.05em] text-white/90 group-hover:text-[#00D3F2] transition-colors">Our Portfolio</span>
+                </div>
+                <RiDownloadCloud2Line className="text-lg text-white/70 group-hover:text-[#00D3F2] group-hover:-translate-y-0.5 transition-all duration-200" />
+              </a>
+            </div>
+          </div>
+
+          {/* Regional Enterprise Hubs Map */}
+          <div className="lg:col-span-4 flex flex-col space-y-6">
+            <h2 className="text-white/60 font-sans font-bold uppercase tracking-wider text-[11px] flex items-center gap-2">
+              <span className="w-1 h-1 rounded-full bg-[#00D3F2]"></span> Corporate Geographies
+            </h2>
+            <div className="space-y-6 text-white/80 pt-1">
+              {/* Dubai Corporate Hub */}
+              <div className="flex flex-col border-l border-white/10 hover:border-[#00D3F2]/50 pl-4 py-0.5 group transition-colors duration-300">
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <span className="text-sm font-sans font-semibold text-white group-hover:text-[#00D3F2] transition-colors">Dubai Corporate Hub</span>
+                  <span className="text-[9px] font-sans font-bold bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Global HQ</span>
+                </div>
+                <p className="text-[13px] text-white/70 leading-relaxed font-sans font-normal group-hover:text-white/90 transition-colors">
+                  Crystal Building - Office # 104 - 2C St - near ADCB Metro Station - Al Karama - Dubai, UAE
+                </p>
+              </div>
+
+              {/* India Tech Wing */}
+              <div className="flex flex-col border-l border-white/10 hover:border-[#00D3F2]/50 pl-4 py-0.5 group transition-colors duration-300">
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <span className="text-sm font-sans font-semibold text-white group-hover:text-[#00D3F2] transition-colors">India HiLite Business Park</span>
+                  <span className="text-[9px] font-sans font-bold bg-white/10 text-white/90 px-1.5 rounded uppercase tracking-wide">Tech Wing</span>
+                </div>
+                <p className="text-[13px] text-white/70 leading-relaxed font-sans font-normal group-hover:text-white/90 transition-colors">
+                  Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Metadata Pipeline & Legal Navigation */}
+        <div className="pt-8 border-t border-white/10 flex flex-col items-center justify-center relative z-20 space-y-4">
+          {/* Privacy Policy and Terms Links with cyan bullets */}
+          <nav aria-label="Legal Navigation" className="w-full">
+            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70">
+              {legalItems.map((item) => (
+                <li key={item.label}>
+                  <Link 
+                    href={item.path} 
+                    className="hover:text-white transition-colors duration-200 flex items-center gap-2 py-1 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00D3F2] group-hover:bg-[#00D3F2]/80 transition-colors flex-shrink-0" />
+                    <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#00D3F2] after:transition-all group-hover:after:w-full">
+                      {item.label}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Copyright Metadata */}
+          <div className="w-full max-w-md mx-auto text-center px-4">
+            <p className="text-white/50 text-[10px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.2em] font-sans font-bold leading-relaxed break-words sm:break-normal">
+              &copy; {new Date().getFullYear()} 4Biz International.<br className="block sm:hidden" /> All Rights Reserved.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+</file>
+
+<file path="src/app/careers/apply/page.tsx">
+"use client";
+
+import React, { useState, useRef, Suspense } from "react";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import {
+  ArrowLeft, CheckCircle2, AlertCircle, Loader2,
+  UploadCloud, FileText, X, ShieldCheck,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import {useEffect} from "react";
+import type {Job} from "@/lib/jobs";
+import {normalizeJobs} from "@/lib/careers-catalog";
+
+const MAX_CV_MB = 5;
+const ACCEPTED_EXT = [".pdf", ".doc", ".docx"];
+
+/* ─── Wrapper (needed for useSearchParams in a client component) ─── */
+export default function ApplyPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-[#0b1f4e] flex items-center justify-center">
+        <Loader2 className="w-8 h-8 text-cyan-400 animate-spin" />
+      </div>
+    }>
+      <ApplyPageInner />
+    </Suspense>
+  );
+}
+
+/* ─── Inner form (client) ─── */
+function ApplyPageInner() {
+  const searchParams = useSearchParams();
+  const jobSlug = searchParams.get("job") || "";
+  const [chosenJob,setChosenJob]=useState(jobSlug);
+  const [jobs,setJobs]=useState<Job[]>([]);
+  useEffect(()=>{let alive=true;fetch("/api/careers/jobs",{cache:"no-store"}).then(r=>r.json()).then(d=>{if(alive)setJobs(normalizeJobs(d.jobs||[]))}).catch(()=>{});return()=>{alive=false}},[]);
+  const selectedJob = jobs.find(j=>j.slug===chosenJob);
+
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+  const [cvFile, setCvFile] = useState<File | null>(null);
+  const [dragOver, setDragOver] = useState(false);
+  const [alerts, setAlerts] = useState({ fullName: false, email: false, phone: false, cv: false, job: false });
+  const formRef = useRef<HTMLFormElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const validateFile = (file: File): string | null => {
+    const ext = "." + file.name.split(".").pop()?.toLowerCase();
+    if (!ACCEPTED_EXT.includes(ext)) return "Only PDF, DOC, or DOCX accepted.";
+    if (file.size > MAX_CV_MB * 1024 * 1024) return `Max ${MAX_CV_MB}MB.`;
+    return null;
+  };
+
+  const handleFileSelect = (file: File | null) => {
+    if (!file) { setCvFile(null); return; }
+    const err = validateFile(file);
+    if (err) { setErrorMsg(err); setStatus("error"); return; }
+    setCvFile(file);
+    setAlerts((a) => ({ ...a, cv: false }));
+  };
+
+  const onDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setDragOver(false);
+    const f = e.dataTransfer.files?.[0];
+    if (f) handleFileSelect(f);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+
+    const errors = {
+      fullName: !fd.get("fullName"),
+      email: !fd.get("email"),
+      phone: !fd.get("phone"),
+      cv: !cvFile,
+      job: !fd.get("job"),
+    };
+    setAlerts(errors);
+    if (Object.values(errors).some(Boolean)) return;
+
+    setStatus("sending");
+    setErrorMsg("");
+
+    const payload = new FormData();
+    payload.append("fullName", (fd.get("fullName") as string).trim());
+    payload.append("email", (fd.get("email") as string).trim());
+    payload.append("phone", (fd.get("phone") as string).trim());
+    payload.append("job", (fd.get("job") as string).trim());
+    payload.append("currentLocation", (fd.get("currentLocation") as string) || "");
+    payload.append("experience", (fd.get("experience") as string) || "");
+    payload.append("message", (fd.get("message") as string) || "");
+    payload.append("cv", cvFile!);
+
+    try {
+      const res = await fetch("/api/apply", { method: "POST", body: payload });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.status === "success") {
+        setStatus("success");
+        formRef.current?.reset();
+        setCvFile(null);
+      } else {
+        throw new Error(data.error || "Submission failed.");
+      }
+    } catch (err: any) {
+      setStatus("error");
+      setErrorMsg(err.message || "Network error.");
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans flex flex-col">
+      
+      {/* ═══════════════ DARK BLUE HERO SECTION ═══════════════ */}
+      {/* Fixes the transparent header issue by providing a dark background for white text */}
+      <section className="relative w-full bg-[#0b1f4e] overflow-hidden pt-32 sm:pt-40 pb-32 px-4">
+        {/* Ambient glow */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -top-40 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[100px]" />
+        </div>
+
+        <div className="relative max-w-4xl mx-auto w-full">
+          {/* Back link */}
+          <Link
+            href={selectedJob ? `/careers/${selectedJob.slug}` : "/careers"}
+            className="inline-flex items-center gap-2 text-sm text-cyan-300 hover:text-cyan-200 font-bold uppercase tracking-wider mb-8 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            {selectedJob ? "Back to job details" : "Back to all jobs"}
+          </Link>
+
+          {/* Header Content */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-cyan-300 text-xs font-black uppercase tracking-widest mb-5 backdrop-blur-sm">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              Application Form
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4 leading-tight">
+              Apply for the role
+            </h1>
+            {selectedJob && (
+              <p className="text-base sm:text-lg text-slate-300">
+                You are applying for:{" "}
+                <span className="font-bold text-white">{selectedJob.title}</span>
+              </p>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ FORM SECTION ═══════════════ */}
+      {/* Pulled up with negative margin to overlap the dark hero */}
+      <section className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 pb-20 w-full flex-1">
+        
+        <div className="w-full rounded-3xl bg-white border border-slate-200 shadow-2xl p-6 sm:p-10">
+          <AnimatePresence mode="wait">
+            {status === "success" ? (
+              <motion.div key="success" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="text-center py-10">
+                <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle2 className="w-10 h-10 text-emerald-600" />
+                </div>
+                <h2 className="text-2xl font-black text-[#0b1f4e] mb-3">Application Submitted!</h2>
+                <p className="text-slate-600 max-w-md mx-auto mb-8">
+                  Thank you. Our hiring team will review your application and reach out within 5 business days.
+                </p>
+                <Link
+                  href="/careers"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0b1f4e] hover:bg-[#152f6b] text-white font-bold text-sm transition-colors"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Back to all jobs
+                </Link>
+              </motion.div>
+            ) : (
+              <motion.form key="form" ref={formRef} onSubmit={handleSubmit} className="space-y-6" noValidate>
+
+                {/* Job selector */}
+                <div>
+                  <label className="block text-xs font-black text-slate-700 uppercase tracking-wider mb-2">
+                    Position Applying For *
+                  </label>
+                  <select
+                    name="job"
+                    value={chosenJob}
+                    onChange={e=>setChosenJob(e.target.value)}
+                    className={`w-full px-4 py-3 rounded-xl border-2 bg-white text-slate-900 text-sm font-medium focus:outline-none transition-colors ${
+                      alerts.job ? "border-rose-400" : "border-slate-200 focus:border-[#0b1f4e]"
+                    }`}
+                  >
+                    <option value="">Select a position</option>
+                    {jobs.map((j) => (
+                      <option key={j.slug} value={j.slug}>{j.title}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Personal info */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <Field name="fullName" label="Full Name *" type="text" placeholder="Your full name" error={alerts.fullName} />
+                  <Field name="email" label="Email Address *" type="email" placeholder="you@email.com" error={alerts.email} />
+                  <Field name="phone" label="Phone Number *" type="tel" placeholder="+971 50 123 4567" error={alerts.phone} />
+                  <Field name="currentLocation" label="Current Location" type="text" placeholder="e.g. Kozhikode, Kerala" />
+                  <SelectField
+                    name="experience"
+                    label="Total Experience"
+                    options={[
+                      { label: "Select experience", value: "" },
+                      { label: "Fresher", value: "fresher" },
+                      { label: "1–2 years", value: "1-2" },
+                      { label: "3–5 years", value: "3-5" },
+                      { label: "5+ years", value: "5+" },
+                    ]}
+                  />
+                </div>
+
+                {/* CV Upload */}
+                <div>
+                  <label className="block text-xs font-black text-slate-700 uppercase tracking-wider mb-2">
+                    Upload CV * <span className="text-slate-400 font-normal normal-case">(PDF, DOC, DOCX — max {MAX_CV_MB}MB)</span>
+                  </label>
+
+                  {alerts.cv && !cvFile && (
+                    <div className="mb-2 p-2 bg-rose-50 border border-rose-200 rounded-lg flex items-center gap-2 text-xs font-bold text-rose-600">
+                      <AlertCircle className="w-4 h-4" /> Please attach your CV
+                    </div>
+                  )}
+
+                  {!cvFile ? (
+                    <div
+                      onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+                      onDragLeave={() => setDragOver(false)}
+                      onDrop={onDrop}
+                      onClick={() => fileInputRef.current?.click()}
+                      className={`cursor-pointer rounded-xl border-2 border-dashed p-6 sm:p-8 text-center transition-colors ${
+                        dragOver ? "border-[#0b1f4e] bg-blue-50" : "border-slate-300 bg-slate-50 hover:border-[#0b1f4e] hover:bg-blue-50/40"
+                      }`}
+                    >
+                      <UploadCloud className="w-10 h-10 text-[#0b1f4e] mx-auto mb-3" />
+                      <p className="text-sm font-bold text-slate-700 mb-1">Click to upload or drag & drop</p>
+                      <p className="text-xs text-slate-500">PDF, DOC, DOCX · max {MAX_CV_MB}MB</p>
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept=".pdf,.doc,.docx"
+                        onChange={(e) => handleFileSelect(e.target.files?.[0] || null)}
+                        className="hidden"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-3 p-4 rounded-xl border-2 border-emerald-300 bg-emerald-50">
+                      <div className="w-11 h-11 rounded-lg bg-emerald-600 flex items-center justify-center text-white shrink-0">
+                        <FileText className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold text-slate-900 truncate">{cvFile.name}</p>
+                        <p className="text-xs text-slate-500">{(cvFile.size / 1024 / 1024).toFixed(2)} MB</p>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setCvFile(null)}
+                        className="p-2 rounded-lg text-slate-600 hover:bg-rose-100 hover:text-rose-600 transition-colors"
+                      >
+                        <X className="w-5 h-5" />
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-xs font-black text-slate-700 uppercase tracking-wider mb-2">
+                    Cover Note (Optional)
+                  </label>
+                  <textarea
+                    name="message"
+                    rows={4}
+                    placeholder="Tell us why you're a great fit…"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-900 text-sm font-medium focus:outline-none focus:border-[#0b1f4e] transition-colors resize-none"
+                  />
+                </div>
+
+                {/* Error */}
+                {status === "error" && errorMsg && (
+                  <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 flex items-start gap-2 text-sm text-rose-700 font-medium">
+                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+                    <span>{errorMsg}</span>
+                  </div>
+                )}
+
+                {/* Submit */}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="w-full h-14 rounded-xl bg-[#0b1f4e] hover:bg-[#152f6b] text-white font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2 transition-all disabled:opacity-60"
+                  >
+                    {status === "sending" ? (
+                      <><Loader2 className="w-5 h-5 animate-spin" /> Submitting…</>
+                    ) : (
+                      "Submit Application"
+                    )}
+                  </button>
+                  <p className="text-xs text-slate-500 text-center mt-4">
+                    By submitting, you agree to our{" "}
+                    <Link href="/privacy-policy" className="text-[#0b1f4e] underline font-semibold">Privacy Policy</Link>.
+                  </p>
+                </div>
+              </motion.form>
+            )}
+          </AnimatePresence>
+        </div>
+      </section>
+
+      {/* Autofill fix */}
+      <style jsx global>{`
+        input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+          -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+          -webkit-text-fill-color: #0f172a !important;
+        }
+      `}</style>
+    </div>
+  );
+}
+
+/* ─── Field helpers ─── */
+function Field({ name, label, type, placeholder, error }: {
+  name: string; label: string; type: string; placeholder: string; error?: boolean;
+}) {
+  return (
+    <div>
+      <label className="block text-xs font-black text-slate-700 uppercase tracking-wider mb-2">{label}</label>
+      <input
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        className={`w-full px-4 py-3 rounded-xl border-2 bg-white text-slate-900 text-sm font-medium focus:outline-none transition-colors ${
+          error ? "border-rose-400 bg-rose-50" : "border-slate-200 focus:border-[#0b1f4e]"
+        }`}
+      />
+    </div>
+  );
+}
+
+function SelectField({ name, label, options }: {
+  name: string; label: string; options: { label: string; value: string }[];
+}) {
+  return (
+    <div>
+      <label className="block text-xs font-black text-slate-700 uppercase tracking-wider mb-2">{label}</label>
+      <select
+        name={name}
+        defaultValue=""
+        className="w-full px-4 py-3 rounded-xl border-2 border-slate-200 bg-white text-slate-900 text-sm font-medium focus:outline-none focus:border-[#0b1f4e] transition-colors"
+      >
+        {options.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
+      </select>
+    </div>
   );
 }
 </file>

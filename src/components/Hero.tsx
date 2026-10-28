@@ -3,14 +3,12 @@
 import React from 'react';
 import { FaFacebookF } from 'react-icons/fa6';
 
-// Extend video attributes to safely support fetchPriority without TypeScript errors
 interface CustomVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
   fetchPriority?: 'high' | 'low' | 'auto';
 }
 
 export default function Home() {
-  // High-performance hardware-accelerated interactive utility styles
-  const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-[1.15] opacity-90 hover:opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.4)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full vertical-alignment-safe transform-gpu will-change-transform';
+  const iconClass = 'text-white flex items-center justify-center transition-all duration-300 hover:scale-[1.15] opacity-90 hover:opacity-100 filter drop-shadow-[0_0_6px_rgba(255,255,255,0.4)] focus:outline-none focus:ring-2 focus:ring-white/40 rounded-full transform-gpu';
   const uniformIconSize = 'w-[20px] h-[20px] sm:w-[18px] sm:h-[18px] lg:w-[22px] lg:h-[22px] block shrink-0 transition-transform duration-300';
 
   const socials = [
@@ -45,22 +43,16 @@ export default function Home() {
   ];
 
   return (
-    <section 
+    <section
       className="relative w-full min-h-[100dvh] min-h-[480px] overflow-x-clip bg-black"
-      style={{ 
-        contentVisibility: 'auto', 
-        containIntrinsicSize: '100dvh',
+      style={{
         backgroundImage: "url('/hero-desktop-1.png')",
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
       aria-label="4Biz International Corporate Hero"
     >
-      {/* 
-        High Performance Video Container 
-        - Cross-origin configuration prevents browser execution thread block.
-        - hardware-acceleration layered safely via translate3d to offload computing cycles to device GPU.
-      */}
+      {/* Video: no content-visibility, no contain, paints immediately */}
       <video
         autoPlay
         muted
@@ -70,25 +62,19 @@ export default function Home() {
         crossOrigin="anonymous"
         poster="/hero-desktop-1.png"
         aria-label="4Biz International Corporate Hero Background Video - IT Consulting & Software Development Solutions"
-        className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 transform-gpu"
-        style={{ 
-          transform: 'translate3d(0,0,0)',
-          backfaceVisibility: 'hidden',
-          WebkitBackfaceVisibility: 'hidden'
-        }}
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
+        style={{ transform: 'translate3d(0,0,0)' }}
         {...({ fetchPriority: 'high' } as CustomVideoProps)}
       >
         <source src="/background-video-1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      {/* Mask Overlay Container */}
       <div className="absolute inset-0 bg-black/45 z-10 pointer-events-none" />
 
-      {/* ── SOCIAL PROFILE NAVIGATION SIDEBAR ── */}
       <nav
         aria-label="Social Profile Links"
-        className="absolute top-1/2 -translate-y-[60%] lg:-translate-y-1/2 z-40 flex flex-col items-center justify-center left-4 gap-6 sm:left-6 sm:gap-7 lg:left-8 opacity-100 pointer-events-auto transition-transform duration-500 will-change-transform transform-gpu"
+        className="absolute top-1/2 -translate-y-[60%] lg:-translate-y-1/2 z-40 flex flex-col items-center justify-center left-4 gap-6 sm:left-6 sm:gap-7 lg:left-8 pointer-events-auto"
       >
         {socials.map((social) => (
           <a
@@ -109,15 +95,10 @@ export default function Home() {
           </a>
         ))}
       </nav>
-      
-      {/* ── FLEX CENTER HERO CONTAINER ── */}
-      <div className="relative z-20 flex flex-col items-center justify-center min-h-[100dvh] text-center text-white px-6 w-full max-w-7xl mx-auto sm:px-12 md:px-16 pt-12 pb-6 min-h-0 transform-gpu -translate-y-12 sm:-translate-y-10 lg:-translate-y-4">
-        <header 
-          className="w-full flex flex-col items-center pointer-events-none transition-all duration-500 opacity-100 scale-100 will-change-transform transform-gpu"
-        >
+
+      <div className="relative z-20 flex flex-col items-center justify-center min-h-[100dvh] text-center text-white px-6 w-full max-w-7xl mx-auto sm:px-12 md:px-16 pt-12 pb-6 -translate-y-12 sm:-translate-y-10 lg:-translate-y-4">
+        <header className="w-full flex flex-col items-center">
           <div className="w-full max-w-[95vw] sm:max-w-[640px] md:max-w-[850px] lg:max-w-[1100px] flex flex-col items-center">
-            
-            {/* Main Title Headings - Engineered with responsive fluid layouts to prevent dynamic layout shifts */}
             <p
               className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 sm:gap-x-5 text-center font-semibold uppercase tracking-[0.06em] text-white leading-[1.15] md:leading-tight font-sans"
               style={{
@@ -132,8 +113,7 @@ export default function Home() {
               </span>
             </p>
 
-            {/* Subheading Tagline */}
-            <h2 
+            <h2
               className="mt-5 md:mt-6 text-[3.8vw] xs:text-[1.05rem] sm:text-[1.4rem] md:text-[1.65rem] lg:text-[1.65rem] font-medium uppercase tracking-[0.12em] text-white/95 leading-none font-sans pl-[0.12em] text-wrap text-center"
               style={{
                 textShadow: '0 2px 6px rgba(0,0,0,0.8), 0 4px 12px rgba(0,0,0,0.5)',

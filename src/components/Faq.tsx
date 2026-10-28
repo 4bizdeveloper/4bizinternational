@@ -32,10 +32,10 @@ interface FaqItemProps {
 
 const FaqItem = ({ question, answer, isOpen, onToggle, index }: FaqItemProps) => {
   return (
-    <article 
+    <article
       className="border-b border-blue-900/40 last:border-b-0 backdrop-blur-sm"
-      itemScope 
-      itemProp="mainEntity" 
+      itemScope
+      itemProp="mainEntity"
       itemType="https://schema.org/Question"
     >
       <button
@@ -45,19 +45,19 @@ const FaqItem = ({ question, answer, isOpen, onToggle, index }: FaqItemProps) =>
         aria-controls={`faq-answer-${index}`}
         id={`faq-question-${index}`}
       >
-        <span 
-          itemProp="name" 
+        <span
+          itemProp="name"
           className="text-sm sm:text-base md:text-lg font-medium text-white group-hover:text-blue-300 transition-colors duration-300 ease-out tracking-wide"
         >
           {question}
         </span>
-        
+
         <div className="relative w-4 h-4 flex items-center justify-center shrink-0">
           <span className="absolute w-3.5 h-[2px] bg-white rounded-full transition-transform duration-300 ease-in-out" />
-          <span 
+          <span
             className={`absolute h-3.5 w-[2px] bg-white rounded-full transition-all duration-300 ease-in-out ${
               isOpen ? 'rotate-90 scale-0 opacity-0' : 'rotate-0 scale-100 opacity-100'
-            }`} 
+            }`}
           />
         </div>
       </button>
@@ -69,23 +69,23 @@ const FaqItem = ({ question, answer, isOpen, onToggle, index }: FaqItemProps) =>
             role="region"
             aria-labelledby={`faq-question-${index}`}
             initial={{ height: 0, opacity: 0 }}
-            animate={{ 
-              height: 'auto', 
+            animate={{
+              height: 'auto',
               opacity: 1,
               transition: { height: { duration: 0.3, ease: [0.25, 1, 0.5, 1] }, opacity: { duration: 0.2, delay: 0.05 } }
             }}
-            exit={{ 
-              height: 0, 
+            exit={{
+              height: 0,
               opacity: 0,
               transition: { height: { duration: 0.25, ease: [0.25, 1, 0.5, 1] }, opacity: { duration: 0.1 } }
             }}
             className="overflow-hidden"
-            itemScope 
-            itemProp="acceptedAnswer" 
+            itemScope
+            itemProp="acceptedAnswer"
             itemType="https://schema.org/Answer"
           >
-            <p 
-              itemProp="text" 
+            <p
+              itemProp="text"
               className="pb-4 sm:pb-5 text-xs sm:text-sm text-blue-100/80 leading-relaxed pr-4 max-w-2xl antialiased"
             >
               {answer}
@@ -104,7 +104,6 @@ export default function FaqSection() {
     setOpenIndex(prevIndex => prevIndex === index ? null : index);
   };
 
-  // Structured Data / Schema Markup for 100/100 SEO & AEO Optimization
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -119,35 +118,34 @@ export default function FaqSection() {
   };
 
   return (
-    <section 
-      className="relative w-full pt-4 pb-10 sm:pt-6 sm:pb-14 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden flex items-center" 
+    <section
+      className="relative w-full pt-4 pb-10 sm:pt-6 sm:pb-14 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden flex items-center"
       style={{
         background: 'radial-gradient(circle at center bottom, #001f5c 0%, #000c24 70%, #000511 100%)'
       }}
       aria-labelledby="faq-title"
     >
-      {/* Schema Injection for Search Engines & LLMs */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       <div className="w-full max-w-3xl mx-auto relative z-10">
-        <h2 
-          id="faq-title" 
+        <h2
+          id="faq-title"
           className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 sm:mb-8 text-center tracking-tight bg-clip-text bg-gradient-to-b from-white to-neutral-300"
         >
           Frequently Asked Questions
         </h2>
-        
-        <div 
+
+        <div
           className="w-full flex flex-col border-t border-blue-900/40"
-          itemScope 
+          itemScope
           itemType="https://schema.org/FAQPage"
         >
           {faqData.map((item, index) => (
-            <FaqItem 
-              key={index} 
+            <FaqItem
+              key={index}
               index={index}
               question={item.question}
               answer={item.answer}

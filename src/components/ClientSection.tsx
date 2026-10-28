@@ -33,8 +33,8 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 10 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { duration: 0.3, ease: [0.215, 0.610, 0.355, 1.000] }
   }
@@ -42,20 +42,16 @@ const itemVariants: Variants = {
 
 export default function ClientSection() {
   return (
-    <section 
+    <section
       aria-labelledby="clients-title"
-      className="pt-10 pb-6 md:pt-14 md:pb-8 relative overflow-hidden transform-gpu select-none w-full"
+      className="pt-10 pb-6 md:pt-14 md:pb-8 relative overflow-hidden select-none w-full"
       style={{
-        background: 'radial-gradient(circle at center top, #001f5c 0%, #000c24 70%, #000511 100%)',
-        contentVisibility: 'auto',
-        contain: 'paint layout',
+        background: 'radial-gradient(circle at center top, #001f5c 0%, #000c24 70%, #000511 100%)'
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        
-        {/* Header Block */}
         <header className="text-center mb-6 md:mb-8">
-          <h2 
+          <h2
             id="clients-title"
             className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-[#00b49d] uppercase mb-2"
           >
@@ -66,8 +62,7 @@ export default function ClientSection() {
           </p>
         </header>
 
-        {/* Client Logos Grid */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 max-w-7xl mx-auto justify-items-center justify-center w-full"
           variants={containerVariants}
           initial="hidden"
@@ -78,33 +73,32 @@ export default function ClientSection() {
             const is15thItem = index === 14;
 
             return (
-              <motion.div 
-                key={client.id} 
-                className={is15thItem ? "hidden sm:block w-full" : "block w-full"} 
+              <motion.div
+                key={client.id}
+                className={is15thItem ? "hidden sm:block w-full" : "block w-full"}
                 variants={itemVariants}
               >
-                <ClientCard 
-                  client={client} 
-                  isColorful={client.isColorful} 
-                  isSharjahLogo={client.isSharjahLogo} 
+                <ClientCard
+                  client={client}
+                  isColorful={client.isColorful}
+                  isSharjahLogo={client.isSharjahLogo}
                 />
               </motion.div>
             );
           })}
         </motion.div>
 
-        {/* View All CTA Button */}
         <div className="mt-8 md:mt-10 text-center">
-          <Link 
-            href="/clients" 
+          <Link
+            href="/clients"
             title="View full portfolio of 4Biz International clients"
             aria-label="View full portfolio of 4Biz International clients"
             className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full border-2 border-[#00d2f1] bg-transparent text-xs font-bold text-white uppercase tracking-widest drop-shadow-[0_0_10px_rgba(0,210,241,0.75)] transition-all duration-300 hover:bg-[#00d2f1]/10 hover:shadow-[0_0_25px_rgba(0,210,241,0.4)] hover:scale-[1.01] transform-gpu"
           >
             <span>View All Clients</span>
-            <svg 
-              className="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-x-1 stroke-[#00d2f1]" 
-              fill="none" 
+            <svg
+              className="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-x-1 stroke-[#00d2f1]"
+              fill="none"
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
@@ -112,24 +106,23 @@ export default function ClientSection() {
             </svg>
           </Link>
         </div>
-
       </div>
     </section>
   );
 }
 
-const ClientCard = memo(({ 
-  client, 
-  isColorful, 
-  isSharjahLogo 
-}: { 
-  client: { src: string; alt: string }; 
-  isColorful?: boolean; 
-  isSharjahLogo?: boolean; 
+const ClientCard = memo(({
+  client,
+  isColorful,
+  isSharjahLogo
+}: {
+  client: { src: string; alt: string };
+  isColorful?: boolean;
+  isSharjahLogo?: boolean;
 }) => {
   let filterClass = "brightness-0 invert opacity-90 group-hover:opacity-100";
   let blendClass = "";
-  
+
   if (isColorful) {
     filterClass = "opacity-100 brightness-105 contrast-105";
   } else if (isSharjahLogo) {
@@ -138,8 +131,8 @@ const ClientCard = memo(({
   }
 
   return (
-    <div className="group relative flex items-center justify-center w-full h-[80px] sm:h-[95px] md:h-[105px] rounded-xl border border-blue-500/15 bg-white/[0.02] backdrop-blur-md overflow-hidden transition-all duration-300 hover:bg-white/[0.05] hover:border-[#00b49d]/50 hover:shadow-[0_0_20px_rgba(0,180,157,0.15)] transform-gpu">
-      <div className={`relative w-full h-full max-w-[65%] max-h-[45%] transition-all duration-300 ease-out transform-gpu group-hover:scale-105 ${blendClass}`}>
+    <div className="group relative flex items-center justify-center w-full h-[80px] sm:h-[95px] md:h-[105px] rounded-xl border border-blue-500/15 bg-white/[0.02] backdrop-blur-md overflow-hidden transition-all duration-300 hover:bg-white/[0.05] hover:border-[#00b49d]/50 hover:shadow-[0_0_20px_rgba(0,180,157,0.15)]">
+      <div className={`relative w-full h-full max-w-[65%] max-h-[45%] transition-all duration-300 ease-out group-hover:scale-105 ${blendClass}`}>
         <Image
           src={client.src}
           alt={client.alt}

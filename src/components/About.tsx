@@ -4,7 +4,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
 import Image from 'next/image';
 
-// ─── PERFORMANCE OPTIMIZED CLS-FREE COUNTER ─────────────────────────────────
 interface CounterProps {
   value: number;
   suffix?: string;
@@ -35,16 +34,15 @@ const Counter: React.FC<CounterProps> = ({ value, suffix = '' }) => {
   }, [rounded, suffix]);
 
   return (
-    <span 
-      ref={ref} 
-      className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight block drop-shadow-[0_2px_15px_rgba(255,255,255,0.15)] will-change-transform h-[1.2em]"
+    <span
+      ref={ref}
+      className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight block drop-shadow-[0_2px_15px_rgba(255,255,255,0.15)] h-[1.2em]"
     >
       0{suffix}
     </span>
   );
 };
 
-// ─── MAIN BRAND ARCHITECTURE ABOUT COMPONENT ────────────────────────────────
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -67,7 +65,6 @@ export default function About() {
     { value: 8, suffix: '+', label: 'COUNTRIES SERVING' },
   ];
 
-  // Schema.org Structured Data for Rich Search Snippets, AI Answer Engines (ChatGPT/Perplexity/Gemini), & Local GEO
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ITCorporation",
@@ -103,24 +100,20 @@ export default function About() {
   };
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="about" 
+      id="about"
       aria-labelledby="about-heading"
       className="relative w-full text-white py-12 md:py-20 lg:py-24 overflow-hidden font-sans select-text scroll-smooth"
-      style={{ 
-        contentVisibility: 'auto', 
-        containIntrinsicSize: '0 900px',
+      style={{
         background: 'radial-gradient(circle at 50% 45%, #112663 0%, #091336 60%, #04081a 100%)'
       }}
     >
-      {/* Structural Data Injection for Search Engines, Generative AI Parsing, and Geo Entities */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* CSS Injection for Smooth, Continuous Ring Rotations */}
       <style jsx global>{`
         @keyframes continuous-spin-clockwise {
           from { transform: rotate(0deg); }
@@ -144,55 +137,44 @@ export default function About() {
         }
       `}</style>
 
-      {/* Micro-mesh Grid Structural Backdrop Overlay for Premium High-Tech Feel */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff01_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none z-0 opacity-40" />
 
-      {/* ─── MAIN CONTENT CONTAINER ─── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 xl:px-24 relative z-10">
-        
-        {/* Two-Column Responsive Layout Node - Optimized for Zero Dead Space */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center pt-2 mb-10 md:mb-16">
-          
-          {/* Left Side Content Column */}
           <article className="w-full lg:col-span-7 flex flex-col order-1 lg:order-1 items-center lg:items-start text-center lg:text-left">
-            {/* Section Sub-Tag - Perfectly upsized & fluid responsive across all display platforms */}
             <div className="flex items-center justify-center lg:justify-start mb-4">
               <span className="text-[15px] sm:text-base md:text-lg lg:text-xl uppercase tracking-[0.35em] [word-spacing:0.35em] font-black text-white/95 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] select-text transition-all duration-300 ease-out">
                 WE ARE
               </span>
             </div>
-            
-            {/* Ultra Modern Dynamic Typography Canvas Area */}
-            <header 
+
+            <header
               ref={containerRef}
               onMouseMove={handleMouseMove}
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               className="relative w-full h-auto flex flex-col justify-center items-center lg:items-start select-text group py-1 mb-4 lg:cursor-none"
             >
-              {/* 📱 MOBILE & TABLET VIEW */}
               <h2 className="block lg:hidden text-[2.6rem] xs:text-[3.2rem] sm:text-6xl md:text-7xl font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00b0ff] to-[#6366f1] bg-clip-text text-transparent filter drop-shadow-[0_0_35px_rgba(0,240,255,0.4)] uppercase leading-[1.1] select-text pointer-events-auto w-full text-center">
                 4BIZ <br />
                 <span className="text-[0.52em] xs:text-[0.55em] sm:text-[0.42em] tracking-normal block mt-1">INTERNATIONAL LLC</span>
               </h2>
 
-              {/* 💻 DESKTOP VIEW: Outline Layer */}
-              <h2 
+              <h2
                 className="hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider text-transparent pointer-events-auto select-text transition-all duration-500 uppercase leading-[1.05]"
-                style={{ 
+                style={{
                   WebkitTextStroke: isHovered ? '2px rgba(57, 243, 255, 0.95)' : '2px rgba(0, 191, 255, 0.85)',
                   opacity: isHovered ? 0.95 : 0.8,
-                  filter: isHovered 
-                    ? 'drop-shadow(0 0 35px rgba(0, 240, 255, 0.5)) drop-shadow(0 0 10px rgba(0, 176, 255, 0.25))' 
+                  filter: isHovered
+                    ? 'drop-shadow(0 0 35px rgba(0, 240, 255, 0.5)) drop-shadow(0 0 10px rgba(0, 176, 255, 0.25))'
                     : 'drop-shadow(0 0 20px rgba(0, 176, 255, 0.35))'
                 }}
               >
                 4BIZ <br />
                 <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
-              </h2> 
+              </h2>
 
-              {/* 💻 DESKTOP VIEW: Spotlight Liquid Mask Overlay */}
-              <div 
+              <div
                 aria-hidden="true"
                 className="absolute inset-0 py-1 hidden lg:block text-[5.2rem] xl:text-[6.2rem] font-black tracking-wider bg-gradient-to-r from-[#39f3ff] via-[#00cdf4] to-[#4f46e5] bg-clip-text text-transparent pointer-events-none select-none filter drop-shadow-[0_0_40px_rgba(0,240,255,0.55)] uppercase transition-opacity duration-300 leading-[1.05]"
                 style={{
@@ -202,11 +184,10 @@ export default function About() {
               >
                 4BIZ <br />
                 <span className="text-[0.45em] tracking-normal block">INTERNATIONAL LLC</span>
-              </div> 
+              </div>
 
-              {/* 💻 DESKTOP VIEW: HUD Lens Flare Crosshair */}
               {isHovered && (
-                <div 
+                <div
                   aria-hidden="true"
                   className="absolute pointer-events-none rounded-full transition-transform duration-75 ease-out hidden lg:flex items-center justify-center"
                   style={{
@@ -225,23 +206,20 @@ export default function About() {
               )}
             </header>
 
-            {/* Core Continuous Flowing Typography Block */}
             <div className="flex flex-col space-y-5 pt-1 max-w-5xl items-center lg:items-start w-full">
               <h1 id="about-heading" className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black tracking-tight text-white leading-snug sm:leading-tight text-center lg:text-left select-text text-balance">
                 4Biz International | Leading IT Solutions &amp; Software Development Company in <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-[#38bdf8] to-blue-400 drop-shadow-[0_2px_10px_rgba(56,189,248,0.3)]">Dubai</span>
               </h1>
 
-              {/* OPTIMIZED PARAGRAPH WITH ENHANCED CONTRAST & READABILITY */}
               <p className="text-slate-100 text-justify lg:text-justify text-[13.5px] tracking-normal [word-spacing:0.04rem] leading-[1.8] xs:text-[14.5px] xs:leading-[1.85] md:text-base md:leading-[1.9] font-normal border-l-0 lg:border-l-[3px] border-cyan-400/60 lg:pl-4 py-1 select-text text-wrap-balance">
                 <strong className="font-semibold text-white">4Biz International</strong> is a leading IT solutions and digital transformation company in Dubai, helping businesses streamline operations, accelerate growth, and embrace innovation through advanced technology solutions. Our expertise spans <span className="text-cyan-200 font-medium">software development</span>, <span className="text-cyan-200 font-medium">mobile app development</span>, <span className="text-cyan-200 font-medium">web design</span>, <span className="text-cyan-200 font-medium">ERP and CRM solutions</span>, cloud services, cybersecurity, IT infrastructure, and digital marketing. With a client-focused approach and a team of experienced professionals, we deliver scalable, secure, and future-ready solutions tailored to meet unique business requirements. At 4Biz International, we bridge the gap between technology and business excellence, empowering organizations to thrive in an increasingly digital world.
               </p>
             </div>
-            
-            {/* CTA Button */}
+
             <div className="pt-6 text-center lg:text-left">
-              <a 
-                href="/about/" 
+              <a
+                href="/about/"
                 aria-label="Learn more about 4Biz International LLC IT Solutions and Software Development"
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 border border-white/30 hover:border-cyan-300 rounded-full text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase transition-all duration-300 shadow-[inset_0_0_12px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(0,240,255,0.3)] text-white hover:text-cyan-300 bg-white/[0.04] backdrop-blur-md group select-text focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-900"
               >
@@ -253,34 +231,25 @@ export default function About() {
             </div>
           </article>
 
-          {/* ─── RIGHT SIDE COLUMN: SYMMETRICAL COSMIC MATRIX ─── */}
           <div className="w-full lg:col-span-5 flex items-center justify-center relative min-h-[280px] xs:min-h-[320px] sm:min-h-[420px] lg:min-h-[450px] order-2 lg:order-2">
-            {/* Glowing Vibrant Space Backplane */}
             <div className="absolute inset-0 bg-radial-gradient from-cyan-500/20 via-purple-500/10 to-transparent blur-3xl pointer-events-none" />
 
-            {/* RIGID COMPOSITE CONTAINER */}
             <div className="absolute w-full h-full flex items-center justify-center pointer-events-none transform-gpu">
-              
-              {/* Complex Multi-layered Particle Rings & Cosmic Track System */}
               <div className="absolute inset-0 flex items-center justify-center transform-gpu">
-
-                {/* Diffuse Energy Vibrant Core */}
                 <div className="absolute w-36 h-36 sm:w-52 sm:h-52 bg-radial-gradient from-[#00d3f2]/20 via-[#ff41e3]/10 to-transparent blur-2xl animate-pulse" />
 
-                {/* ── INNER RINGS ── */}
                 <div className="absolute w-32 h-32 sm:w-44 sm:h-44 rounded-full border-[4px] sm:border-[5px] border-[#ff41e3]/30 shadow-[0_0_20px_rgba(255,65,227,0.3)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite]" />
                 <div className="absolute w-40 h-40 sm:w-56 sm:h-56 rounded-full border-[2px] sm:border-[3px] border-[#00d3f2]/20 shadow-[0_0_25px_rgba(0,211,242,0.2)] animate-[ping_3.8s_cubic-bezier(0.16,1,0.3,1)_infinite_1.1s]" />
 
-                {/* ── OUTER ROTATING RINGS ── */}
                 <div
-                  className="absolute w-44 h-44 xs:w-48 xs:h-48 sm:w-72 sm:h-72 rounded-full border-[2px] sm:border-[2.5px] border-dashed will-change-transform animate-spin-continuous-fast"
+                  className="absolute w-44 h-44 xs:w-48 xs:h-48 sm:w-72 sm:h-72 rounded-full border-[2px] sm:border-[2.5px] border-dashed animate-spin-continuous-fast"
                   style={{
                     borderColor: 'rgba(0,211,242,0.50)',
                     boxShadow: '0 0 15px rgba(0,211,242,0.20)'
                   }}
                 />
                 <div
-                  className="absolute w-52 h-52 xs:w-56 xs:h-56 sm:w-[19rem] sm:h-[19rem] rounded-full border-[1.5px] sm:border-[2px] border-double will-change-transform animate-spin-continuous-reverse"
+                  className="absolute w-52 h-52 xs:w-56 xs:h-56 sm:w-[19rem] sm:h-[19rem] rounded-full border-[1.5px] sm:border-[2px] border-double animate-spin-continuous-reverse"
                   style={{
                     borderColor: 'rgba(255,65,227,0.40)',
                     boxShadow: '0 0 15px rgba(255,65,227,0.15)'
@@ -288,7 +257,7 @@ export default function About() {
                 />
 
                 <div
-                  className="absolute w-[14rem] h-[14rem] xs:w-[15rem] xs:h-[15rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[3px] sm:border-[4px] border-transparent will-change-transform animate-spin-continuous-slow"
+                  className="absolute w-[14rem] h-[14rem] xs:w-[15rem] xs:h-[15rem] sm:w-[22rem] sm:h-[22rem] rounded-full border-[3px] sm:border-[4px] border-transparent animate-spin-continuous-slow"
                   style={{
                     borderTopColor: '#00d3f2',
                     borderBottomColor: '#ff41e3',
@@ -297,9 +266,9 @@ export default function About() {
                     filter: 'drop-shadow(0 0 15px rgba(0,211,242,0.5))'
                   }}
                 />
-                
+
                 <div
-                  className="absolute w-[15.5rem] h-[15.5rem] xs:w-[17rem] xs:h-[17rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[1.5px] sm:border-[2px] border-transparent will-change-transform animate-spin-continuous-slow-reverse"
+                  className="absolute w-[15.5rem] h-[15.5rem] xs:w-[17rem] xs:h-[17rem] sm:w-[25rem] sm:h-[25rem] rounded-full border-[1.5px] sm:border-[2px] border-transparent animate-spin-continuous-slow-reverse"
                   style={{
                     borderRightColor: 'rgba(255,65,227,0.85)',
                     borderLeftColor: 'rgba(0,211,242,0.75)',
@@ -309,9 +278,8 @@ export default function About() {
                   }}
                 />
               </div>
-              
-              {/* Center Logo Surface with High Priority LCP / SEO Alt attributes */}
-              <div className="absolute w-44 h-22 xs:w-52 xs:h-26 sm:w-76 sm:h-38 lg:w-80 lg:h-40 transition-transform duration-500 hover:scale-105 transform-gpu filter drop-shadow-[0_0_35px_rgba(6,182,212,0.35)] flex items-center justify-center">
+
+              <div className="absolute w-44 h-22 xs:w-52 xs:h-26 sm:w-76 sm:h-38 lg:w-80 lg:h-40 transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_35px_rgba(6,182,212,0.35)] flex items-center justify-center">
                 <Image
                   src="/4biz_logo-1.png"
                   alt="4Biz International LLC logo - Provider of IT solutions, custom software development, mobile apps, ERP, and CRM services in Dubai, UAE"
@@ -321,17 +289,14 @@ export default function About() {
                   priority
                 />
               </div>
-
             </div>
           </div>
-
         </div>
 
-        {/* Bottom Content Row: High-Brilliance Metric Cards with Semantic Grid Layout */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 sm:gap-6 lg:gap-10 pt-10 border-t border-white/10">
           {stats.map((stat, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="flex flex-col items-center lg:items-start space-y-1.5 pl-0 lg:pl-4 border-l-0 lg:border-l-2 border-white/10 hover:border-cyan-400/80 transition-all duration-300 group bg-gradient-to-r from-white/[0.01] to-transparent py-1 select-text"
             >
               <Counter value={stat.value} suffix={stat.suffix} />
@@ -344,7 +309,6 @@ export default function About() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
