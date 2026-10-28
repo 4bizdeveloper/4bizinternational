@@ -21,14 +21,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!job) return { title: "Job Not Found" };
 
   return {
-    title: `${job.title} | 4Biz Careers`,
-    description: job.shortDescription,
+    title: job.seoTitle || `${job.title} | 4Biz Careers`,
+    description: job.seoDescription || job.shortDescription,
     alternates: {
       canonical: `https://www.4bizinternational.com/careers/${job.slug}/`,
     },
     openGraph: {
-      title: `${job.title} | 4Biz Careers`,
-      description: job.shortDescription,
+      title: job.seoTitle || `${job.title} | 4Biz Careers`,
+      description: job.seoDescription || job.shortDescription,
       url: `https://www.4bizinternational.com/careers/${job.slug}/`,
       type: "article",
     },
@@ -60,14 +60,13 @@ export default async function JobDetailPage({ params }: PageProps) {
       address: {
         "@type": "PostalAddress",
         addressLocality: job.location.split(",")[0],
-        addressCountry: "IN",
+        addressCountry: job.country === "AE" ? "AE" : "IN",
       },
     },
     qualifications: job.qualifications.join("; "),
     responsibilities: job.responsibilities.join("; "),
     industry: "Information Technology",
     directApply: true,
-    applicantLocationRequirements: { "@type": "Country", name: "India" },
   };
 
   return (

@@ -1,5 +1,8 @@
 export interface Job {
   slug: string;
+  country?: string;
+  seoTitle?: string;
+  seoDescription?: string;
   title: string;
   department: string;
   location: string;

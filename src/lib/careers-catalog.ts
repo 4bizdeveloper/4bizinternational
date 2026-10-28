@@ -12,7 +12,7 @@ export function normalizeJobs(rows:PublicJob[]):Job[]{
   const rangeMin=Number(meta.experienceMin),rangeMax=Number(meta.experienceMax);
   const experience=Number.isFinite(rangeMin)&&Number.isFinite(rangeMax)&&rangeMax>0?`${rangeMin}–${rangeMax} years`:Number.isFinite(rangeMin)&&rangeMin>0?`${rangeMin}+ years`:legacy?.experience||'';
   return {
-   slug:j.slug,title:j.title,department:content(meta.department)||legacy?.department||'4BIZ International',location:j.location,
+   slug:j.slug,title:j.title,country:j.country,seoTitle:content(meta.seoTitle),seoDescription:content(meta.seoDescription),department:content(meta.department)||legacy?.department||'4BIZ International',location:j.location,
    workType:j.type==='FULL_TIME'?'Full-Time':j.type==='PART_TIME'?'Part-Time':j.type==='CONTRACT'?'Contract':'Internship',
    experience,postedDate:j.created_at?.slice(0,10)||legacy?.postedDate||new Date().toISOString().slice(0,10),
    shortDescription:content(meta.overview)||j.description,
