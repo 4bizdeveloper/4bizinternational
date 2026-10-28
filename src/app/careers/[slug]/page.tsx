@@ -113,10 +113,10 @@ export default async function JobDetailPage({ params }: PageProps) {
                 <MapPin className="w-4 h-4 text-cyan-400" />
                 {job.location}
               </span>
-              <span className="inline-flex items-center gap-2">
+              {job.experience && <span className="inline-flex items-center gap-2">
                 <Clock className="w-4 h-4 text-cyan-400" />
                 {job.experience}
-              </span>
+              </span>}
               <span className="inline-flex items-center gap-2">
                 <Briefcase className="w-4 h-4 text-cyan-400" />
                 {job.workType}
@@ -141,7 +141,7 @@ export default async function JobDetailPage({ params }: PageProps) {
               </div>
 
               {/* Responsibilities */}
-              <div>
+              {job.responsibilities.length > 0 && <div>
                 <h2 className="text-xl sm:text-2xl font-black text-[#0b1f4e] mb-4 pb-3 border-b-2 border-slate-100">
                   Key Responsibilities
                 </h2>
@@ -153,10 +153,10 @@ export default async function JobDetailPage({ params }: PageProps) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div>}
 
               {/* Qualifications */}
-              <div>
+              {job.qualifications.length > 0 && <div>
                 <h2 className="text-xl sm:text-2xl font-black text-[#0b1f4e] mb-4 pb-3 border-b-2 border-slate-100">
                   Required Qualifications
                 </h2>
@@ -168,7 +168,7 @@ export default async function JobDetailPage({ params }: PageProps) {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </div>}
 
               {/* Nice to have */}
               {job.niceToHave && job.niceToHave.length > 0 && (
@@ -213,10 +213,10 @@ export default async function JobDetailPage({ params }: PageProps) {
                     <MapPin className="w-3.5 h-3.5 text-slate-400" />
                     {job.location}
                   </div>
-                  <div className="flex items-center gap-2">
+                  {job.experience && <div className="flex items-center gap-2">
                     <Clock className="w-3.5 h-3.5 text-slate-400" />
-                    {job.experience} experience
-                  </div>
+                    {job.experience}
+                  </div>}
                   <div className="flex items-center gap-2">
                     <Briefcase className="w-3.5 h-3.5 text-slate-400" />
                     {job.workType}
