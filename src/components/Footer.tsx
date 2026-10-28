@@ -66,14 +66,6 @@ const Footer = () => {
     }
   ], []);
 
-  const navItems = useMemo(() => [
-    { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
-    { label: 'Services', path: '/services' },
-    { label: 'Contact', path: '/contact' },
-    { label: 'Blogs', path: '/blog' },
-  ], []);
-
   const legalItems = useMemo(() => [
     { label: 'Privacy Policy', path: '/privacy-policy/' },
     { label: 'Terms & Conditions', path: '/terms-and-conditions/' },
@@ -105,22 +97,6 @@ const Footer = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
-        {/* Top Centered Main Navigation Element */}
-        <div className="w-full flex justify-center mb-16 pb-8 border-b border-white/10">
-          <nav className="w-full" aria-label="Footer Navigation">
-            <ul className="grid grid-cols-2 justify-items-start max-w-[280px] mx-auto gap-y-4 sm:flex sm:grid-cols-none sm:max-w-none sm:justify-center sm:gap-x-6 md:gap-x-8 lg:gap-x-12 text-[12px] font-bold uppercase tracking-[0.2em] text-white/90">
-              {navItems.map((item) => (
-                <li key={item.label} className="w-full sm:w-auto">
-                  <Link href={item.path} className="hover:text-white transition-colors duration-200 flex items-center gap-2 py-1 group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#00D3F2] group-hover:bg-[#00D3F2]/80 transition-colors flex-shrink-0" />
-                    <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all group-hover:after:w-full">{item.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-
         {/* Stacked 1 column layout on mobile & tablet (grid-cols-1), expanding to 12-cols only on desktop (lg:grid-cols-12) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-14 lg:gap-8 items-start mb-16">
           
