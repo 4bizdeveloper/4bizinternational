@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   const footerRef = useRef<HTMLElement>(null);
-  
+
   // High-precision scroll tracking for Parallax ambient effects
   const { scrollYProgress } = useScroll({
     target: footerRef,
@@ -22,7 +22,7 @@ const Footer = () => {
     restDelta: 0.001
   });
 
-  // 3D Transforms trigger GPU rendering layers to prevent layout jerking
+  // Subtle parallax for the two ambient accent circles only
   const y1 = useTransform(smoothProgress, [0, 1], ["0px", "-40px"]);
   const y2 = useTransform(smoothProgress, [0, 1], ["0px", "40px"]);
 
@@ -72,49 +72,48 @@ const Footer = () => {
   ], []);
 
   return (
-    <footer 
+    <footer
       id="footer"
-      ref={footerRef} 
-      className="relative z-10 mt-0 pt-16 overflow-hidden border-t border-[#00D3F2] transform-gpu backface-hidden"
-      style={{ 
+      ref={footerRef}
+      className="relative z-10 mt-0 pt-16 overflow-hidden border-t border-[#00D3F2]"
+      style={{
         background: 'radial-gradient(circle at 50% 15%, #001b6b 0%, #001042 50%, #000933 100%)',
-        contentVisibility: 'auto', 
         /* Safe area bottom buffer ensures no floating widget covers any links on mobile/tablet/desktop */
         paddingBottom: 'calc(160px + env(safe-area-inset-bottom))'
       } as React.CSSProperties}
-      itemScope 
+      itemScope
       itemType="https://schema.org/WPFooter"
     >
-      {/* Hardware Accelerated Subtle Parallax Internal Ambient Accents */}
-      <motion.div 
-        style={{ y: y1, translateZ: 0 }} 
-        className="absolute top-0 -right-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-white/[0.012] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
+      {/* Ambient parallax accents — framer-motion auto-applies will-change when needed */}
+      <motion.div
+        style={{ y: y1 }}
+        className="absolute top-0 -right-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-white/[0.012] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10"
       />
-      <motion.div 
-        style={{ y: y2, translateZ: 0 }} 
-        className="absolute top-1/3 -left-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-black/[0.02] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10 will-change-transform" 
+      <motion.div
+        style={{ y: y2 }}
+        className="absolute top-1/3 -left-20 w-[320px] md:w-[700px] h-[320px] md:h-[700px] bg-black/[0.02] blur-[100px] md:blur-[160px] rounded-full pointer-events-none -z-10"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        
+
         {/* Stacked 1 column layout on mobile & tablet (grid-cols-1), expanding to 12-cols only on desktop (lg:grid-cols-12) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-14 lg:gap-8 items-start mb-16">
-          
+
           {/* Brand Architecture Column */}
           <div className="lg:col-span-4 flex flex-col items-start space-y-6 md:space-y-8 w-full">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="block group w-max"
               aria-label="4Biz International - Return to Homepage"
             >
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="relative h-14 w-52 transition-transform duration-300 transform-gpu"
+                className="relative h-14 w-52"
               >
-                <Image 
-                  src="/4biz_logo-1.png" 
-                  alt="4Biz International Corporate Logo - IT Infrastructure and Global Telecom Solutions" 
+                <Image
+                  src="/4biz_logo-1.png"
+                  alt="4Biz International Corporate Logo - IT Infrastructure and Global Telecom Solutions"
                   fill
                   className="object-contain object-left filter drop-shadow-[0_2px_10px_rgba(0,211,242,0.15)] group-hover:drop-shadow-[0_4px_20px_rgba(0,211,242,0.3)] transition-all duration-300"
                   sizes="208px"
@@ -123,19 +122,19 @@ const Footer = () => {
               </motion.div>
             </Link>
             <p className="text-white/80 text-sm md:text-base leading-relaxed font-sans font-normal border-l-2 border-[#00D3F2]/40 pl-4 italic antialiased max-w-sm">
-              "Engineering secure digital frontiers and redefining IT excellence for the next generation of global leaders."
+             &quot;Engineering secure digital frontiers and redefining IT excellence for the next generation of global leaders.&quot;
             </p>
-            
+
             {/* Unified Social Link Matrix */}
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((link, i) => (
-                <a 
-                  key={i} 
-                  href={link.href} 
+                <a
+                  key={i}
+                  href={link.href}
                   target={link.target || undefined}
                   rel={link.target ? "noopener noreferrer" : undefined}
                   aria-label={`Follow 4Biz International on ${link.label}`}
-                  className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.02] flex items-center justify-center text-white/70 transition-all duration-300 hover:border-[#00D3F2]/50 hover:bg-white/10 hover:text-white hover:-translate-y-1 shadow-sm hover:shadow-[#00D3F2]/10 transform-gpu"
+                  className="w-10 h-10 rounded-xl border border-white/10 bg-white/[0.02] flex items-center justify-center text-white/70 transition-all duration-300 hover:border-[#00D3F2]/50 hover:bg-white/10 hover:text-white hover:-translate-y-1 shadow-sm hover:shadow-[#00D3F2]/10"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                     <path d={link.path} />
@@ -158,7 +157,7 @@ const Footer = () => {
                   info@4bizinternational.com
                 </a>
               </div>
-              
+
               {/* Telecoms Segment */}
               <div className="p-3.5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300 shadow-sm">
                 <span className="text-[9px] uppercase font-sans tracking-wide font-bold bg-white/10 text-white/90 px-2 py-0.5 rounded inline-block mb-2">HQ Telecoms / WhatsApp</span>
@@ -175,11 +174,11 @@ const Footer = () => {
               </div>
 
               {/* Company Profile Panel Link */}
-              <a 
+              <a
                 href="/documents/4biz-international-company-profile.pdf"
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-between bg-white/[0.02] border border-white/5 text-white py-3 px-4 rounded-xl transition-all hover:bg-white/[0.05] hover:border-[#00D3F2]/30 shadow-sm transform-gpu"
+                className="group relative flex items-center justify-between bg-white/[0.02] border border-white/5 text-white py-3 px-4 rounded-xl transition-all hover:bg-white/[0.05] hover:border-[#00D3F2]/30 shadow-sm"
               >
                 <div className="flex flex-col pr-4">
                   <span className="text-[8px] uppercase tracking-[0.15em] text-white/50 font-sans mb-0.5">Access File</span>
@@ -229,8 +228,8 @@ const Footer = () => {
             <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70">
               {legalItems.map((item) => (
                 <li key={item.label}>
-                  <Link 
-                    href={item.path} 
+                  <Link
+                    href={item.path}
                     className="hover:text-white transition-colors duration-200 flex items-center gap-2 py-1 group"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00D3F2] group-hover:bg-[#00D3F2]/80 transition-colors flex-shrink-0" />
