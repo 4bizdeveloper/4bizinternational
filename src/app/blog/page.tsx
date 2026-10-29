@@ -120,6 +120,16 @@ function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
 
 export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
+      {
+      title: "Email Security Solutions in UAE: Stop Phishing & Spoofing | 4Biz International",
+      excerpt: "How do you stop phishing, spoofing, and hacked email accounts? 4Biz International explains business email security, SPF, DKIM, DMARC, and what to do if you click a bad link.",
+      slug: "/blog/email-security-solutions-uae/",
+      image: "/blog/email-security-solution-1.webp",
+      date: "Oct 29, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
 
       {
       title: "Server Management Services in UAE: What’s Included | 4Biz International",
