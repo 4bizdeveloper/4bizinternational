@@ -1,5 +1,5 @@
 import React from 'react';
-import Metadata from 'next';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -42,7 +42,7 @@ export default function EmailSecurityBlogPost() {
     "datePublished": publishedDate,
     "dateModified": publishedDate,
     "mainEntityOfPage": pageUrl,
-    "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&auto=format&fit=crop"
+    "image": "/blog/email-security-solution-1.webp"
   };
 
   const faqSchema = {
