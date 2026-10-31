@@ -121,6 +121,16 @@ function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
 export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
       {
+      title: "Best Digital Marketing Agency in UAE: How to Choose | 4Biz International",
+      excerpt: "Searching for the best digital marketing agency in UAE? 4Biz International explains what “best” really means, the 10 criteria to judge by, red flags, and questions to ask before you hire.",
+      slug: "/blog/best-digital-marketing-agency-uae/",
+      image: "/blog/digital-marketing-aganency-1.webp",
+      date: "Oct 31, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
+      {
       title: "Email Security Solutions in UAE: Stop Phishing & Spoofing | 4Biz International",
       excerpt: "How do you stop phishing, spoofing, and hacked email accounts? 4Biz International explains business email security, SPF, DKIM, DMARC, and what to do if you click a bad link.",
       slug: "/blog/email-security-solutions-uae/",

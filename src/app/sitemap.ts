@@ -134,6 +134,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+        {
+      url: `${baseUrl}/blog/best-digital-marketing-agency-uae/`,
+      lastModified: new Date('2026-10-31'), // Oct 31, 2026
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ]
 
   // 4. Careers Pages (listing + apply + every job in JOBS)
