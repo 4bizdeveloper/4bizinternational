@@ -120,6 +120,16 @@ function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
 
 export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
+          {
+      title: "AI Solutions for Businesses in UAE: Where to Start | 4Biz International",
+      excerpt: "Looking for AI solutions in UAE? 4Biz International explains what AI can do for a business, real use cases, how to start, and how to keep company data safe.",
+      slug: "/blog/ai-solutions-business-uae/",
+      image: "/blog/ai-1.webp",
+      date: "Nov 03, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
       {
       title: "Best Digital Marketing Agency in UAE: How to Choose | 4Biz International",
       excerpt: "Searching for the best digital marketing agency in UAE? 4Biz International explains what “best” really means, the 10 criteria to judge by, red flags, and questions to ask before you hire.",
