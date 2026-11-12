@@ -120,7 +120,17 @@ function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
 
 export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
-          {
+    {
+      title: "Website Design and SEO: How Design Affects Rankings | 4Biz",
+      excerpt: "Does website design affect SEO? See how mobile layout, speed, structure, and navigation shape rankings and user experience. By 4Biz International.",
+      slug: "/blog/website-design-seo-user-experience-uae/",
+      image: "/blog/how-websitedesign-effect-seo-1.webp",
+      date: "Nov 12, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
+      {
       title: "AI Solutions for Businesses in UAE: Where to Start | 4Biz International",
       excerpt: "Looking for AI solutions in UAE? 4Biz International explains what AI can do for a business, real use cases, how to start, and how to keep company data safe.",
       slug: "/blog/ai-solutions-business-uae/",
