@@ -120,6 +120,19 @@ function BlogCardList({ blogs }: { blogs: BlogItem[] }) {
 
 export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
+
+    {
+      title: "Web Hosting in UAE: Shared, VPS, Dedicated & Cloud | 4Biz",
+      excerpt: "Which web hosting is right for your business in UAE? 4Biz International compares shared, VPS, dedicated, and cloud hosting and what to check first.",
+      slug: "/blog/web-hosting-uae/",
+      image: "/blog/web-hosting-1.webp",
+      date: "Nov 14, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
+
+
     {
       title: "Website Design and SEO: How Design Affects Rankings | 4Biz",
       excerpt: "Does website design affect SEO? See how mobile layout, speed, structure, and navigation shape rankings and user experience. By 4Biz International.",

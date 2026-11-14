@@ -146,9 +146,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-        {
+    {
       url: `${baseUrl}/blog/website-design-seo-user-experience-uae/`,
       lastModified: new Date('2026-11-12'), // Nov 12, 2026
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/web-hosting-uae/`,
+      lastModified: new Date('2026-11-14'), // Nov 14, 2026
       changeFrequency: 'monthly',
       priority: 0.7,
     },
