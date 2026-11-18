@@ -122,6 +122,17 @@ export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
 
     {
+      title: "Domain and Hosting Services in UAE: Setup Checklist | 4Biz",
+      excerpt: "Setting up a domain and hosting in UAE? 4Biz International explains how to choose a domain, match hosting, avoid setup mistakes, and stay in control. ",
+      slug: "/blog/domain-and-hosting-services-uae/",
+      image: "/blog/domain-and-hosting-services-uae-1.webp",
+      date: "Nov 18, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
+
+    {
       title: "Web Hosting in UAE: Shared, VPS, Dedicated & Cloud | 4Biz",
       excerpt: "Which web hosting is right for your business in UAE? 4Biz International compares shared, VPS, dedicated, and cloud hosting and what to check first.",
       slug: "/blog/web-hosting-uae/",
