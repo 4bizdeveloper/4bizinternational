@@ -122,6 +122,18 @@ export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
 
     {
+      title: "Cloud Hosting Services in UAE: Cloud vs Traditional | 4Biz",
+      excerpt: "Cloud hosting or traditional hosting for your website in UAE? 4Biz International compares uptime, scaling, security, and when each fits.",
+      slug: "/blog/cloud-hosting-vs-traditional-hosting-uae/",
+      image: "/blog/cloud-hosting-vs-traditional-hosting-2.webp",
+      date: "Nov 23, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
+
+
+    {
       title: "Domain and Hosting Services in UAE: Setup Checklist | 4Biz",
       excerpt: "Setting up a domain and hosting in UAE? 4Biz International explains how to choose a domain, match hosting, avoid setup mistakes, and stay in control. ",
       slug: "/blog/domain-and-hosting-services-uae/",
