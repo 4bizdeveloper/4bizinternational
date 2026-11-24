@@ -13,7 +13,7 @@
     "@imagekit/next": "^2.1.5",
     "@types/react-google-recaptcha": "^2.1.9",
     "@vercel/functions": "^3.7.5",
-    "framer-motion": "^12.40.0",
+    "framer-motion": "^12.43.0",
     "lucide-react": "^1.17.0",
     "next": "16.2.7",
     "next-video": "^2.8.1",

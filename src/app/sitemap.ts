@@ -28,6 +28,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/product/invoicing/`, // e-Invoicing Product Page
+      lastModified: new Date('2026-11-24'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/blog/`, // Blog listing
       lastModified: new Date('2026-10-15'),
       changeFrequency: 'weekly',
