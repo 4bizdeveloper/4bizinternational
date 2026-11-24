@@ -848,13 +848,6 @@ export default function EInvoicingProductPage() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row flex-wrap gap-3.5">
-                      <a
-                        href="tel:+971559951285"
-                        className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-sm sm:text-base font-bold text-white bg-gradient-to-r from-blue-600 to-cyan-500 shadow-[0_8px_25px_rgba(6,182,212,0.4)] hover:shadow-[0_12px_35px_rgba(6,182,212,0.65)] transition-all"
-                      >
-                        <Phone className="w-4 h-4" />
-                        <span>+971 55 995 1285</span>
-                      </a>
 
                       <a
                         href="tel:+971527925100"
