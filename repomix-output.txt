@@ -94,6 +94,9 @@ The content is organized as follows:
       07d8a2fa5708c252a0a0c882340b02e6ccd84f
     16/
       4a7a4881d3d44bb152d4af83b91c8927f95b5d
+      6e1d13468433c134fdfd06ddc07650693dc777
+    19/
+      c9ea4ad4358fc569f8aa301220bb10d44df2ef
     1a/
       07663a45d0ae66ff178894a57ed78d012114b2
       66180a9489553c6153834cc60c4eadff7e1a75
@@ -102,6 +105,8 @@ The content is organized as follows:
     1f/
       07fc08d940ffb91ebb99c7c38f11c6b4d6c44c
       ef9071049d3221b353005fb16af10be40c2ccc
+    22/
+      a54f28eb26fe656c83ae0e9868d361cab76c8d
     23/
       843f3179e86224f6cdb863d1393d50ea753c1b
       85854b0f3a229b6fb93a92a0f35d373674dd54
@@ -128,8 +133,12 @@ The content is organized as follows:
       c59b63f85eca63b8826ec271ec73df9e814da1
     36/
       92d02d57ed78374f94439c5b7f344e30ec87e4
+    38/
+      03219add54b76b845d8520e43f005e882a3998
     39/
       102e8f8acd0d1cc3759264010d9a862a5b425c
+    3c/
+      cc6b5fe05a10a1232449f7b4020b7843727ce9
     3f/
       8861cdbcb79de6bd4d8aa5b8d0e1b093d263c0
       d7f345f7140f3d091d596e4beab3d4d6d71f59
@@ -171,9 +180,14 @@ The content is organized as follows:
       1cde4d464317412b4b4b80164717df07278f02
     5a/
       0ff9e256bc4cd2237c19b2d2cd279a13664acd
+      4e4dfc51d961fe37739b8aa6f0983d9c641f19
       81447c35dd37f10fcb03fee922e890a8566901
+    5c/
+      d8258026e21eeca8f3bbf58c1c3d683bddfe7e
     61/
       5ff858770910f39e79609c3b3281a4321d7963
+    62/
+      dc052d56fa5950a9cabf60a7ff188c62624d3a
     63/
       7c0b9660c0a92695a8408d160beef2700e0a4d
       c07faabd567b59f5218f0358feb8d165c3c20d
@@ -221,6 +235,7 @@ The content is organized as follows:
       e3401112fb876ab20c60cfad088d7ce9cd604e
     8c/
       3b74b5a09663396b647254330b443a5e669e45
+      b935d98606b2c8f8882e37b571e9721d52f489
     8e/
       1c54c82d57a5f11beca57d84a388094871a26c
       b8e6a0e2006893183e7947b68a2f69c22c45e0
@@ -266,19 +281,26 @@ The content is organized as follows:
     b2/
       402a1b5c6b5dbdee060e7d7cb336fd79f29dc4
     b4/
+      2f90cd1a49f7a1c30f1dc9e29898426e2d2313
       9c651002a8e36b9d7798ae98fccb4c6ac971d6
     b6/
       ad0f25ec6cf97a4166fd4261e8e82e3727f388
       e7a2b440530e0ad621798963f9642faad6d6de
     bb/
       493c32c46fd0cb9cd2d2d50646912f63da2675
+    bc/
+      f041d5e75c8ce9ccf49b7ceec8ae03a2c92f0e
     bd/
       5407c7344b5948b0cac28a499ba4347e584b7e
+    be/
+      915026cdfa6fae5bfee4314168b307dd732359
     c0/
       300446bb47d92213b2953c028adf1421f27e4a
       3a1b33a60e54a33371805172a3fcc036c787d2
     c2/
       d866b6a12c9f0e8e8fa2bd7fe379fdd159a9a1
+    c3/
+      c4a54ff9df1b4e0a8585bf9c68a2d34158f6d1
     c4/
       a1fc72580b8507be5e4270ef3ca836c87904a9
     c5/
@@ -303,10 +325,16 @@ The content is organized as follows:
     d4/
       482b77f38db224c40fc6fccdccbf5d82aa12dd
       6e6f197b4d153e2083e7cf88f59c4689480cbc
+    d5/
+      89789047bdb7bf0d8fe42bdb15d264192d51a5
     d6/
       641d873830197602a5afbe3ad99032f06658c4
     d8/
       ea157f0fcc7c78be52b045025165adbc201b8e
+    d9/
+      d762f4a271a9a97a260cbce17ad249bebf1222
+    db/
+      635868ca707cd6c95905bef7d63f35e924ea85
     dc/
       1239f7ecf980f70188c697f67ab32e135c2879
       7da1218564e2ee2cf579571d14666873cd25e0
@@ -334,6 +362,7 @@ The content is organized as follows:
       f8d70d739d3a6f6cab205fba9ba6515086e9e4
     f1/
       1982ef726e7b0e8e6f9c18109d023159ccda4b
+      3e0a6494859ee542f84cfbfed9c5818ed43271
     f4/
       092ea27d912aa84a7ef0605c5f24900e015d86
     f6/
@@ -571,6 +600,7 @@ src/
     product/
       invoicing/
         page.tsx
+      page.tsx
     services/
       cloud-hosting-infrastructure-services/
         page.tsx
@@ -1631,6 +1661,8 @@ a4fa2db4cce4c5f26be788b8346542c82165e299 5097e1124c4816296b22249e81bc6fad470cad5
 5097e1124c4816296b22249e81bc6fad470cad5d f80da0488de92980d6050df93850c21d1064fd4e 4bizdeveloper <4bizdeveloper@gmail.com> 1795408369 +0530	commit: today
 f80da0488de92980d6050df93850c21d1064fd4e 0b565af6fe8149b02af550678da6b4603d15d9b4 4bizdeveloper <4bizdeveloper@gmail.com> 1795517865 +0530	commit: today
 0b565af6fe8149b02af550678da6b4603d15d9b4 93cf405c886901e7fad23961292347ac94aacf86 4bizdeveloper <4bizdeveloper@gmail.com> 1795526885 +0530	commit: today
+93cf405c886901e7fad23961292347ac94aacf86 bcf041d5e75c8ce9ccf49b7ceec8ae03a2c92f0e 4bizdeveloper <4bizdeveloper@gmail.com> 1795588857 +0530	commit: today
+bcf041d5e75c8ce9ccf49b7ceec8ae03a2c92f0e c3c4a54ff9df1b4e0a8585bf9c68a2d34158f6d1 4bizdeveloper <4bizdeveloper@gmail.com> 1795589249 +0530	commit: today
 </file>
 
 <file path=".git/logs/refs/remotes/origin/HEAD">
@@ -1658,6 +1690,8 @@ a4fa2db4cce4c5f26be788b8346542c82165e299 5097e1124c4816296b22249e81bc6fad470cad5
 5097e1124c4816296b22249e81bc6fad470cad5d f80da0488de92980d6050df93850c21d1064fd4e 4bizdeveloper <4bizdeveloper@gmail.com> 1795408387 +0530	update by push
 f80da0488de92980d6050df93850c21d1064fd4e 0b565af6fe8149b02af550678da6b4603d15d9b4 4bizdeveloper <4bizdeveloper@gmail.com> 1795517883 +0530	update by push
 0b565af6fe8149b02af550678da6b4603d15d9b4 93cf405c886901e7fad23961292347ac94aacf86 4bizdeveloper <4bizdeveloper@gmail.com> 1795526895 +0530	update by push
+93cf405c886901e7fad23961292347ac94aacf86 bcf041d5e75c8ce9ccf49b7ceec8ae03a2c92f0e 4bizdeveloper <4bizdeveloper@gmail.com> 1795588871 +0530	update by push
+bcf041d5e75c8ce9ccf49b7ceec8ae03a2c92f0e c3c4a54ff9df1b4e0a8585bf9c68a2d34158f6d1 4bizdeveloper <4bizdeveloper@gmail.com> 1795589263 +0530	update by push
 </file>
 
 <file path=".git/logs/HEAD">
@@ -1684,6 +1718,8 @@ a4fa2db4cce4c5f26be788b8346542c82165e299 5097e1124c4816296b22249e81bc6fad470cad5
 5097e1124c4816296b22249e81bc6fad470cad5d f80da0488de92980d6050df93850c21d1064fd4e 4bizdeveloper <4bizdeveloper@gmail.com> 1795408369 +0530	commit: today
 f80da0488de92980d6050df93850c21d1064fd4e 0b565af6fe8149b02af550678da6b4603d15d9b4 4bizdeveloper <4bizdeveloper@gmail.com> 1795517865 +0530	commit: today
 0b565af6fe8149b02af550678da6b4603d15d9b4 93cf405c886901e7fad23961292347ac94aacf86 4bizdeveloper <4bizdeveloper@gmail.com> 1795526885 +0530	commit: today
+93cf405c886901e7fad23961292347ac94aacf86 bcf041d5e75c8ce9ccf49b7ceec8ae03a2c92f0e 4bizdeveloper <4bizdeveloper@gmail.com> 1795588857 +0530	commit: today
+bcf041d5e75c8ce9ccf49b7ceec8ae03a2c92f0e c3c4a54ff9df1b4e0a8585bf9c68a2d34158f6d1 4bizdeveloper <4bizdeveloper@gmail.com> 1795589249 +0530	commit: today
 </file>
 
 <file path=".git/objects/info/packs">
@@ -1691,7 +1727,7 @@ P pack-6ba4828ae005e37c9f49945d831eeee0043c6862.pack
 </file>
 
 <file path=".git/refs/heads/main">
-93cf405c886901e7fad23961292347ac94aacf86
+c3c4a54ff9df1b4e0a8585bf9c68a2d34158f6d1
 </file>
 
 <file path=".git/refs/remotes/origin/HEAD">
@@ -1699,7 +1735,7 @@ ref: refs/remotes/origin/main
 </file>
 
 <file path=".git/refs/remotes/origin/main">
-93cf405c886901e7fad23961292347ac94aacf86
+c3c4a54ff9df1b4e0a8585bf9c68a2d34158f6d1
 </file>
 
 <file path=".git/COMMIT_EDITMSG">
@@ -14537,6 +14573,589 @@ export default function PrivacyPolicyPage() {
 }
 </file>
 
+<file path="src/app/product/page.tsx">
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ChevronDown,
+  FileSpreadsheet,
+  Globe,
+  Layers,
+  ShieldCheck,
+  Sparkles,
+  Zap,
+} from "lucide-react";
+
+const SITE_URL = "https://www.4bizinternational.com";
+const PAGE_URL = `${SITE_URL}/product`;
+
+export const metadata: Metadata = {
+  title: "Enterprise Software Products & Business Solutions | 4Biz International",
+  description:
+    "Explore enterprise software products engineered by 4Biz International. Discover 4Biz Invoicing—our cloud billing, automated tax compliance, and multi-currency invoicing platform built for growing businesses in the UAE and globally.",
+  keywords: [
+    "4Biz International products",
+    "4Biz Invoicing",
+    "cloud invoicing software UAE",
+    "enterprise billing software Dubai",
+    "VAT compliant invoicing software",
+    "automated billing and accounting software",
+    "B2B SaaS products UAE",
+  ],
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    url: PAGE_URL,
+    siteName: "4Biz International",
+    title: "Enterprise Software Products & Cloud Solutions | 4Biz International",
+    description:
+      "Purpose-built business software by 4Biz International. Streamline billing, tax compliance, and financial operations with 4Biz Invoicing.",
+    images: [
+      {
+        url: `${SITE_URL}/products/4biz-invoicing-1.webp`,
+        width: 2160,
+        height: 2700,
+        alt: "4Biz Invoicing Cloud Billing and Tax Compliance Software Interface",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Enterprise Software Products | 4Biz International",
+    description:
+      "Purpose-built business software by 4Biz International. Explore 4Biz Invoicing for automated cloud billing and VAT compliance.",
+    images: [`${SITE_URL}/products/4biz-invoicing-1.webp`],
+  },
+};
+
+interface ProductItem {
+  id: string;
+  slug: string;
+  name: string;
+  tagline: string;
+  category: string;
+  status: string;
+  summary: string;
+  image: string;
+  imageAlt: string;
+  aspectRatioClass: string;
+  highlights: string[];
+  metrics: { label: string; value: string }[];
+  href: string;
+}
+
+/**
+ * Scalable Product Catalog
+ * Add future 4Biz International products to this array to automatically
+ * populate the responsive catalog grid and JSON-LD ItemList schema.
+ */
+const PRODUCTS: ProductItem[] = [
+  {
+    id: "4biz-invoicing",
+    slug: "invoicing",
+    name: "4Biz Invoicing",
+    tagline: "Automated Cloud Billing, Tax Compliance & Cash-Flow Intelligence",
+    category: "Finance & Billing SaaS",
+    status: "Flagship Release",
+    summary:
+      "4Biz Invoicing replaces manual spreadsheets and fragmented billing tools with a unified cloud invoicing engine. Generate VAT-ready invoices in seconds, automate recurring billing schedules, track real-time receivables, and accelerate client collections across desktop and mobile devices.",
+    image: "/products/4biz-invoicing-1.webp",
+    imageAlt:
+      "4Biz Invoicing cloud billing dashboard displaying automated tax invoices, payment tracking, and financial analytics",
+    aspectRatioClass: "aspect-[4/5]",
+    highlights: [
+      "Instant VAT & multi-currency invoice generation with branded templates",
+      "Automated recurring billing cycles & smart payment reminder workflows",
+      "Real-time aging reports, cash-flow tracking & export-ready ledgers",
+      "Role-based team access with enterprise cloud encryption & audit trails",
+    ],
+    metrics: [
+      { label: "Setup Time", value: "< 5 Mins" },
+      { label: "Tax Compliance", value: "UAE & Global VAT" },
+      { label: "Availability", value: "99.9% Cloud SLA" },
+    ],
+    href: "/product/invoicing",
+  },
+];
+
+const FAQS = [
+  {
+    question: "What software products does 4Biz International offer?",
+    answer:
+      "4Biz International develops cloud-native business software engineered for operational efficiency. Our flagship release is 4Biz Invoicing—a comprehensive cloud billing, automated tax compliance, and receivables management platform—with additional ERP, CRM, and workflow automation modules scheduled for upcoming releases.",
+  },
+  {
+    question: "Is 4Biz Invoicing compliant with UAE VAT and international tax standards?",
+    answer:
+      "Yes. 4Biz Invoicing natively supports UAE Federal Tax Authority (FTA) VAT formatting, TRN validation, automated tax calculations, credit notes, and multi-currency billing for organizations operating across the GCC and international markets.",
+  },
+  {
+    question: "Can 4Biz products integrate with our existing ERP or accounting tools?",
+    answer:
+      "Yes. All 4Biz software products are architected with clean REST APIs and structured data exports (CSV, Excel, and PDF), allowing seamless synchronization with existing accounting systems, payment gateways, and enterprise resource planning platforms.",
+  },
+  {
+    question: "How can businesses request a personalized demo or custom deployment?",
+    answer:
+      "You can explore full specifications on the 4Biz Invoicing product page or connect directly with our solutions engineering team via the Contact page for a tailored walkthrough, volume licensing, or custom enterprise onboarding.",
+  },
+];
+
+export default function ProductsListingPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${PAGE_URL}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: SITE_URL,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Products",
+            item: PAGE_URL,
+          },
+        ],
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": `${PAGE_URL}#webpage`,
+        url: PAGE_URL,
+        name: "Enterprise Software Products & Business Solutions | 4Biz International",
+        description:
+          "Official product catalog of 4Biz International featuring cloud-native business software including 4Biz Invoicing.",
+        isPartOf: {
+          "@id": `${SITE_URL}/#website`,
+        },
+        breadcrumb: {
+          "@id": `${PAGE_URL}#breadcrumb`,
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${PAGE_URL}#itemlist`,
+        name: "4Biz International Software Products",
+        numberOfItems: PRODUCTS.length,
+        itemListElement: PRODUCTS.map((product, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: `${SITE_URL}${product.href}`,
+          name: product.name,
+          item: {
+            "@type": "SoftwareApplication",
+            name: product.name,
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Web, Cloud, iOS, Android",
+            description: product.summary,
+            url: `${SITE_URL}${product.href}`,
+            image: `${SITE_URL}${product.image}`,
+            publisher: {
+              "@type": "Organization",
+              name: "4Biz International LLC",
+              url: SITE_URL,
+            },
+          },
+        })),
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${PAGE_URL}#faq`,
+        mainEntity: FAQS.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+    ],
+  };
+
+  return (
+    <main
+      id="main-content"
+      className="relative min-h-screen w-full overflow-x-clip text-white antialiased selection:bg-[#00D2F1] selection:text-[#04091a]"
+      style={{
+        background:
+          "linear-gradient(135deg, #0b1e54 0%, #0d2769 48%, #0a3473 100%)",
+        fontFamily:
+          'system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+      }}
+    >
+      {/* Structured Data for Search Engines, Answer Engines (AEO), and Generative AI (GEO) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      {/* Subtle architectural grid lines matching the site's visual language */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-20"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(-55deg, transparent, transparent 44px, rgba(255,255,255,0.03) 44px, rgba(255,255,255,0.03) 45px), repeating-linear-gradient(35deg, transparent, transparent 64px, rgba(0,210,241,0.025) 64px, rgba(0,210,241,0.025) 65px)",
+        }}
+      />
+
+      {/* Balanced Ambient Glow across the page */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-[380px] w-[min(92vw,960px)] rounded-full bg-[#1d4ed8]/20 blur-[120px]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 bottom-40 -translate-x-1/2 h-[360px] w-[min(92vw,960px)] rounded-full bg-[#0e3a8a]/25 blur-[130px]"
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pt-28 pb-20 sm:px-6 sm:pt-32 md:px-8 lg:px-12 lg:pt-36 lg:pb-28">
+        {/* Centered Breadcrumb Navigation */}
+        <nav
+          aria-label="Breadcrumb"
+          className="mb-8 flex w-full items-center justify-center"
+        >
+          <ol className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-1.5 text-xs sm:text-sm text-slate-100 backdrop-blur-md">
+            <li>
+              <Link
+                href="/"
+                className="font-medium text-slate-100 transition-colors hover:text-[#00D2F1] focus:outline-none focus-visible:underline"
+              >
+                Home
+              </Link>
+            </li>
+            <li aria-hidden="true" className="text-slate-300">
+              /
+            </li>
+            <li aria-current="page" className="font-semibold text-[#00D2F1]">
+              Products
+            </li>
+          </ol>
+        </nav>
+
+        {/* Hero Header */}
+        <header className="mx-auto max-w-4xl text-center">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#00D2F1]/40 bg-[#00D2F1]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-[#7ceeff]">
+            <Sparkles className="h-3.5 w-3.5 text-[#00D2F1]" aria-hidden="true" />
+            <span>4Biz Software Suite</span>
+          </div>
+
+          <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl leading-[1.12]">
+            Purpose-Built Software for{" "}
+            <span className="bg-gradient-to-r from-[#00D2F1] via-[#7ceeff] to-white bg-clip-text text-transparent">
+              Modern Business Growth
+            </span>
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-100 sm:text-lg md:text-xl font-normal">
+            Explore cloud-native applications engineered by 4Biz International to
+            eliminate operational bottlenecks, automate compliance, and give
+            leadership real-time financial clarity.
+          </p>
+
+          {/* Key Platform Pillars */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm text-slate-100">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 backdrop-blur-sm">
+              <Zap className="h-4 w-4 text-[#00D2F1]" aria-hidden="true" />
+              <span>Instant Cloud Deployment</span>
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 backdrop-blur-sm">
+              <ShieldCheck className="h-4 w-4 text-[#00D2F1]" aria-hidden="true" />
+              <span>Enterprise-Grade Security</span>
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 backdrop-blur-sm">
+              <Globe className="h-4 w-4 text-[#00D2F1]" aria-hidden="true" />
+              <span>UAE & Global Tax Ready</span>
+            </span>
+          </div>
+        </header>
+
+        {/* Product Listing Showcase Section */}
+        <section
+          aria-labelledby="product-catalog-heading"
+          className="mt-14 sm:mt-16 lg:mt-20"
+        >
+          <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between border-b border-white/15 pb-5">
+            <div>
+              <h2
+                id="product-catalog-heading"
+                className="text-2xl font-bold tracking-tight text-white sm:text-3xl"
+              >
+                Available Products
+              </h2>
+              <p className="mt-1 text-sm sm:text-base text-slate-100">
+                Production-ready business applications built and supported by our
+                engineering team.
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-2 self-start sm:self-auto rounded-lg border border-[#00D2F1]/40 bg-[#00D2F1]/10 px-3.5 py-1.5 text-xs sm:text-sm font-semibold text-[#7ceeff]">
+              <Layers className="h-4 w-4 text-[#00D2F1]" aria-hidden="true" />
+              <span>
+                Showing {PRODUCTS.length}{" "}
+                {PRODUCTS.length === 1 ? "Product" : "Products"}
+              </span>
+            </div>
+          </div>
+
+          {/* Responsive Product Grid — Scales cleanly from 1 featured flagship card to multi-column catalogs */}
+          <div
+            className={
+              PRODUCTS.length === 1
+                ? "grid grid-cols-1 gap-8"
+                : "grid grid-cols-1 gap-8 lg:grid-cols-2"
+            }
+          >
+            {PRODUCTS.map((product) => (
+              <article
+                key={product.id}
+                className="group relative overflow-hidden rounded-[1.75rem] sm:rounded-[2rem] bg-white text-slate-900 shadow-[0_24px_60px_rgba(6,17,44,0.45)] ring-1 ring-white/90 transition-transform duration-300 ease-out hover:-translate-y-1"
+              >
+                {/* Top subtle cyan accent bar */}
+                <div
+                  aria-hidden="true"
+                  className="h-1.5 w-full bg-gradient-to-r from-[#09153d] via-[#0284c7] to-[#00D2F1]"
+                />
+
+                <div
+                  className={
+                    PRODUCTS.length === 1
+                      ? "grid grid-cols-1 lg:grid-cols-12 items-stretch"
+                      : "flex flex-col h-full"
+                  }
+                >
+                  {/* Visual Preview Column */}
+                  <div
+                    className={
+                      PRODUCTS.length === 1
+                        ? "relative lg:col-span-6 bg-slate-50 border-b lg:border-b-0 lg:border-r border-slate-200/80 p-5 sm:p-8 flex flex-col justify-between"
+                        : "relative bg-slate-50 border-b border-slate-200/80 p-5 sm:p-6"
+                    }
+                  >
+                    <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-900 ring-1 ring-sky-200">
+                        <FileSpreadsheet
+                          className="h-3.5 w-3.5 text-sky-700"
+                          aria-hidden="true"
+                        />
+                        {product.category}
+                      </span>
+                      <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-900 ring-1 ring-emerald-200">
+                        {product.status}
+                      </span>
+                    </div>
+
+                    <Link
+                      href={product.href}
+                      aria-label={`Explore ${product.name}`}
+                      className={`relative mx-auto block w-full max-w-[440px] overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm ${product.aspectRatioClass}`}
+                    >
+                      <Image
+                        src={product.image}
+                        alt={product.imageAlt}
+                        fill
+                        priority
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 440px"
+                        className="object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                      />
+                    </Link>
+
+                    {/* Quick Specification Strip */}
+                    <dl className="mt-5 grid grid-cols-3 gap-2.5 sm:gap-3 pt-4 border-t border-slate-200/80">
+                      {product.metrics.map((metric) => (
+                        <div
+                          key={metric.label}
+                          className="rounded-xl bg-white p-2.5 sm:p-3 text-center ring-1 ring-slate-200/80"
+                        >
+                          <dt className="text-[11px] sm:text-xs font-medium text-slate-600">
+                            {metric.label}
+                          </dt>
+                          <dd className="mt-0.5 text-xs sm:text-sm font-extrabold text-[#09153d]">
+                            {metric.value}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+
+                  {/* Product Details Column — High Contrast Typography for Effortless Readability */}
+                  <div
+                    className={
+                      PRODUCTS.length === 1
+                        ? "lg:col-span-6 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-white"
+                        : "p-6 sm:p-8 flex-1 flex flex-col justify-between bg-white"
+                    }
+                  >
+                    <div>
+                      <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#09153d]">
+                        <Link
+                          href={product.href}
+                          className="text-[#09153d] transition-colors hover:text-[#0c2769] focus:outline-none focus-visible:underline"
+                        >
+                          {product.name}
+                        </Link>
+                      </h3>
+
+                      <p className="mt-1.5 text-sm sm:text-base font-semibold text-sky-800">
+                        {product.tagline}
+                      </p>
+
+                      <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-700">
+                        {product.summary}
+                      </p>
+
+                      <ul
+                        aria-label={`${product.name} key capabilities`}
+                        className="mt-6 space-y-2.5 border-t border-slate-200/80 pt-5"
+                      >
+                        {product.highlights.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-2.5 text-sm sm:text-[15px] leading-snug text-slate-800 font-medium"
+                          >
+                            <CheckCircle2
+                              className="mt-0.5 h-4 w-4 shrink-0 text-sky-700"
+                              aria-hidden="true"
+                            />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="mt-8 pt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                      <Link
+                        href={product.href}
+                        className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-[#09153d] px-6 py-3.5 text-sm sm:text-base font-bold text-white shadow-md shadow-slate-900/15 transition-colors duration-200 hover:bg-[#0e2a80] focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2"
+                      >
+                        <span>Explore {product.name}</span>
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </Link>
+
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-3.5 text-sm sm:text-base font-bold text-[#09153d] transition-colors duration-200 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 focus-visible:ring-offset-2"
+                      >
+                        Request a Demo
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Future Roadmap Banner (Sets clear expectations without cluttering the catalog) */}
+        <section
+          aria-labelledby="roadmap-heading"
+          className="mt-14 sm:mt-16 rounded-[1.75rem] border border-[#00D2F1]/35 bg-white/[0.06] p-6 sm:p-8 md:p-10 backdrop-blur-md"
+        >
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#00D2F1]">
+                Expanding Product Ecosystem
+              </p>
+              <h2
+                id="roadmap-heading"
+                className="mt-2 text-xl sm:text-2xl md:text-3xl font-bold text-white"
+              >
+                More Enterprise Modules in Active Development
+              </h2>
+              <p className="mt-2.5 text-sm sm:text-base leading-relaxed text-slate-100">
+                4Biz International is continuously expanding its cloud suite
+                across ERP operations, customer relationship management, and
+                AI-powered business workflows. Need a tailored enterprise
+                solution right now? Our engineering team builds custom platforms
+                to fit your exact workflow.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-white/20"
+              >
+                <span>Explore Custom Services</span>
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#00D2F1] px-6 py-3 text-sm sm:text-base font-bold text-[#04091a] transition-colors hover:bg-[#5ce5fa]"
+              >
+                <span>Talk to Solutions Team</span>
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* AEO & GEO Optimized FAQ Section using Native Zero-JS HTML Accordions */}
+        <section
+          aria-labelledby="products-faq-heading"
+          className="mt-16 sm:mt-20 mx-auto max-w-4xl"
+        >
+          <div className="text-center mb-8 sm:mb-10">
+            <h2
+              id="products-faq-heading"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white"
+            >
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-2.5 text-sm sm:text-base text-slate-100">
+              Direct answers about 4Biz International software products,
+              compliance, and deployment.
+            </p>
+          </div>
+
+          <div className="space-y-3.5">
+            {FAQS.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-2xl border border-white/15 bg-white/[0.06] px-5 py-4 sm:px-6 sm:py-5 backdrop-blur-sm transition-colors hover:border-[#00D2F1]/50"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-base sm:text-lg font-semibold text-white marker:content-none [&::-webkit-details-marker]:hidden">
+                  <span>{faq.question}</span>
+                  <ChevronDown
+                    className="h-5 w-5 shrink-0 text-[#00D2F1] transition-transform duration-200 group-open:rotate-180"
+                    aria-hidden="true"
+                  />
+                </summary>
+                <p className="mt-3.5 border-t border-white/15 pt-3.5 text-sm sm:text-base leading-relaxed text-slate-100">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}
+</file>
+
 <file path="src/app/services/cloud-hosting-infrastructure-services/page.tsx">
 import React from 'react';
 import Image from 'next/image';
@@ -22959,354 +23578,6 @@ const QuickContactButtons = () => {
 export default QuickContactButtons;
 </file>
 
-<file path="src/components/Header.tsx">
-"use client";
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-
-export default function Header() {
-  const [isSticky, setIsSticky] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const ticking = useRef(false);
-
-  // Throttled scroll handler via requestAnimationFrame for sub-millisecond layout stability
-  const handleScroll = useCallback(() => {
-    if (!ticking.current) {
-      window.requestAnimationFrame(() => {
-        const currentScrollPos = window.scrollY;
-        // Evaluate condition instantly past threshold
-        if (currentScrollPos > 20) {
-          setIsSticky(true);
-        } else {
-          setIsSticky(false);
-        }
-        ticking.current = false;
-      });
-      ticking.current = true;
-    }
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
-
-  // Performance Optimization: Prevent background scroll layout thrashing during overlay active state
-  useEffect(() => {
-    const body = document.body;
-    if (menuOpen) {
-      body.style.setProperty('overflow', 'hidden', 'important');
-      body.style.touchAction = 'none';
-    } else {
-      body.style.overflow = '';
-      body.style.touchAction = '';
-    }
-    return () => {
-      body.style.overflow = '';
-      body.style.touchAction = '';
-    };
-  }, [menuOpen]);
-
-  const iconClass =
-    'text-white hover:text-blue-400 hover:scale-110 transition-all duration-200 flex items-center justify-center min-w-[24px] min-h-[24px] transform-gpu';
-
-  const navLinkClass =
-    'text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl font-light tracking-wide text-white hover:text-blue-400 transition-colors duration-300 block py-2 lg:py-3.5 break-words';
-
-  const contactLinkClass = 'hover:text-blue-400 transition-colors duration-200 break-all';
-
-  // Structural hamburger properties
-  const lineClass = 'h-[2.5px] rounded-full bg-white transition-all duration-300 transform-gpu';
-
-  return (
-    <>
-      {/* ─── SERVER-LEVEL & AI-READABLE SCHEMA ORG DATA ────────────────────── */}
-      {/* Injecting Organization Microdata directly into the header so search crawlers and AI agents parsing raw HTML immediately context-map the business entity. */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "4biz International",
-            "url": "https://www.4bizinternational.com",
-            "logo": "https://www.4bizinternational.com/4biz_logo-3.png",
-            "contactPoint": [
-              {
-                "@type": "ContactPoint",
-                "telephone": "+971-52-792-5100",
-                "contactType": "customer service",
-                "areaServed": "AE"
-              },
-              {
-                "@type": "ContactPoint",
-                "telephone": "+91-93880-01524",
-                "contactType": "sales",
-                "areaServed": "IN"
-              }
-            ],
-            "sameAs": [
-              "https://www.facebook.com/4bizglobal",
-              "https://www.instagram.com/4biz_ae",
-              "https://www.linkedin.com/company/4biz-international/",
-              "https://x.com/4biz123",
-              "https://www.youtube.com/@4bizinternationalae"
-            ]
-          }),
-        }}
-      />
-
-      {/* ─── HEADER BAR ─────────────────────────────────────────────────────── */}
-      {/* Sizing, height, and padding parameters are completely static (py-2.5) across all scroll states. */}
-      {/* Added inline style dynamic rule for the specific #00d3f2 border color on scroll state without layout-shifting */}
-      <header
-        className={`fixed top-0 left-0 w-full z-50 text-white transform-gpu transition-all duration-300 ease-out border-b py-2.5 will-change-[border-color,box-shadow] ${
-          isSticky
-            ? 'shadow-lg shadow-blue-950/20'
-            : 'border-transparent'
-        }`}
-        style={{
-          borderBottomColor: isSticky ? '#00d3f2' : 'transparent'
-        }}
-      >
-        {/* Single Dynamic Background Layer: Shifts composite style smoothly without background-layer blending artifacts */}
-        <div 
-          style={{
-            backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(13, 27, 77, 0.95) 0%, rgba(8, 17, 49, 0.9) 100%)'
-          }}
-          className={`absolute inset-0 -z-10 transition-all duration-300 ease-out transform-gpu will-change-[opacity,backdrop-filter] ${
-            isSticky 
-              ? 'opacity-100 backdrop-blur-md' 
-              : 'opacity-0 backdrop-blur-none pointer-events-none'
-          }`} 
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
-          
-          {/* Main Header Logo Container - Explicit static dimensions guarantee zero dynamic element layout thrashing */}
-          <Link href="/" className="flex items-center flex-shrink-0 transition-opacity duration-300 hover:opacity-90" title="4biz International Home">
-            <div className="relative flex items-center justify-center transform-gpu w-20 h-10 sm:w-24 sm:h-12">
-              <Image
-                src="/4biz_logo-3.png"
-                alt="4biz International Logo - Global IT Solutions, Business Setup, and Corporate Consulting"
-                fill
-                sizes="(max-width: 640px) 96px, 112px"
-                className="object-contain"
-                priority
-              />
-            </div>
-          </Link>
-
-          {/* Right side controls */}
-          <div className="flex items-center gap-5 sm:gap-7 flex-shrink-0">
-            {/* Ultra-modern "Get In Touch" Button */}
-            <div className="hidden lg:flex items-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center border border-white text-white rounded-full uppercase tracking-wider font-medium transform-gpu transition-all duration-300 hover:bg-white hover:text-black whitespace-nowrap text-xs sm:text-sm px-4 py-1.5"
-              >
-                Get In Touch
-              </Link>
-            </div>
-
-            {/* Hamburger Activation Toggle */}
-            <button
-              onClick={() => setMenuOpen(true)}
-              className="flex flex-col gap-1.5 cursor-pointer p-1.5 focus:outline-none items-end justify-center group flex-shrink-0 min-w-[36px]"
-              aria-label="Open Menu"
-              aria-expanded={menuOpen}
-              aria-controls="main-nav-overlay"
-            >
-              <span className={`w-8 sm:w-9 ${lineClass}`} />
-              <span className={`w-6 sm:w-7 ${lineClass} group-hover:w-8 sm:group-hover:w-9`} />
-              <span className={`w-8 sm:w-9 ${lineClass}`} />
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* ─── FULLSCREEN OVERLAY MENU ────────────────────────────────────────── */}
-      <div
-        id="main-nav-overlay"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Navigation Menu"
-        className={`fixed inset-0 z-[9999999] bg-[#081131] bg-gradient-to-br from-[#081131] via-[#0d1b4d] to-blue-950 text-white
-          overflow-y-auto overscroll-contain min-h-screen w-full
-          transition-all duration-300 ease-out will-change-[transform,opacity] transform-gpu
-          ${menuOpen
-            ? 'opacity-100 translate-y-0 pointer-events-auto visible'
-            : 'opacity-0 translate-y-4 pointer-events-none invisible'
-          }`}
-      >
-        <div className="min-h-full flex flex-col max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-12">
-          
-          {/* Top Bar inside Overlay */}
-          <div className="flex justify-between items-center py-5 sm:py-7 flex-shrink-0 gap-4">
-            {/* Clickable Overlay Menu Logo pointing to Home and closing menu */}
-            <Link 
-              href="/" 
-              onClick={() => setMenuOpen(false)}
-              className="flex items-center flex-shrink-0 transition-opacity duration-300 hover:opacity-90" 
-              title="4biz International Home"
-            >
-              <div className="relative w-24 h-12 sm:w-28 sm:h-14 flex items-center justify-center transform-gpu">
-                <Image
-                  src="/4biz_logo-1.png"
-                  alt="4biz International Navigation Logo - IT Services and Corporate Advisory Consultancy"
-                  fill
-                  sizes="(max-width: 640px) 96px, 112px"
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </Link>
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="p-2 text-white hover:text-red-400 focus:outline-none text-4xl font-light hover:rotate-90 transition-all duration-300 ease-in-out leading-none select-none min-w-[48px] min-h-[48px] flex items-center justify-center transform-gpu"
-              aria-label="Close Menu"
-            >
-              ✕
-            </button>
-          </div>
-
-          {/* Main Layout Container */}
-          <div className="flex-grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 py-6 sm:py-10 items-start content-center">
-            
-            {/* LEFT: Navigation Links */}
-            <nav className="lg:col-span-6 flex flex-col justify-center space-y-1.5 sm:space-y-3">
-              <Link
-                href="/"
-                onClick={() => setMenuOpen(false)}
-                className={navLinkClass}
-              >
-                Home
-              </Link>
-
-              {[
-                { label: 'About', path: '/about' },
-                { label: 'Services', path: '/services' },
-                { label: 'Contact', path: '/contact' },
-                { label: 'Blog', path: '/blog' },
-              ].map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.path}
-                  onClick={() => {
-                    setTimeout(() => setMenuOpen(false), 50);
-                  }}
-                  className={navLinkClass}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-
-            {/* RIGHT: Contact Info Wrapper */}
-            <div className="lg:col-span-6 flex flex-col space-y-8 sm:space-y-10 lg:text-left text-xs sm:text-sm text-white">
-              
-              {/* BLOCK 1: Get Social */}
-              <div className="space-y-2.5 sm:space-y-3.5">
-                <h4 className="font-semibold text-white tracking-wider uppercase text-[11px] sm:text-xs opacity-80">
-                  Get Social
-                </h4>
-                <div className="flex flex-wrap gap-4 items-center pt-1">
-                  {/* Facebook */}
-                  <a href="https://www.facebook.com/4bizglobal" target="_blank" rel="noopener noreferrer" className={iconClass} aria-label="Follow 4biz International on Facebook">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874V12h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                  </a>
-                  {/* Instagram */}
-                  <a href="https://www.instagram.com/4biz_ae" target="_blank" rel="noopener noreferrer" className={iconClass} aria-label="Follow 4biz International on Instagram">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0 3.204.013-3.583.07-4.849.149-3.227 1.664-4.771-4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4.162 4.162 0 1 1 0-8.324A4.162 4.162 0 0 1 12 16zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-                    </svg>
-                  </a>
-                  {/* LinkedIn */}
-                  <a href="https://www.linkedin.com/company/4biz-international/" target="_blank" rel="noopener noreferrer" className={iconClass} aria-label="Connect with 4biz International on LinkedIn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
-                    </svg>
-                  </a>
-                  {/* X */}
-                  <a href="https://x.com/4biz123" target="_blank" rel="noopener noreferrer" className={iconClass} aria-label="Follow 4biz International on X">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                  </a>
-                  {/* YouTube */}
-                  <a href="https://www.youtube.com/@4bizinternationalae" target="_blank" rel="noopener noreferrer" className={iconClass} aria-label="Subscribe to 4biz International on YouTube">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93-.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-
-              {/* BLOCK 2: Say Hello */}
-              <div className="space-y-2.5 sm:space-y-3.5">
-                <h4 className="font-semibold text-white tracking-wider uppercase text-[11px] sm:text-xs opacity-80">
-                  Say Hello
-                </h4>
-                <div className="space-y-2.5 font-light text-[13px] sm:text-[14px]">
-                  <p className="flex flex-wrap items-baseline gap-x-2">
-                    <span className="font-medium text-white min-w-[80px] inline-block">Email:</span>
-                    <a href="mailto:info@4bizinternational.com" className={contactLinkClass}>
-                      info@4bizinternational.com
-                    </a>
-                  </p>
-                  <p className="flex flex-wrap items-baseline gap-x-2">
-                    <span className="font-medium text-white min-w-[80px] inline-block">UAE:</span>
-                    <a href="tel:+971527925100" className={contactLinkClass}>+971 52 792 5100</a>
-                  </p>
-                  <p className="flex flex-wrap items-baseline gap-x-2">
-                    <span className="font-medium text-white min-w-[80px] inline-block">India:</span>
-                    <a href="tel:+919388001524" className={contactLinkClass}>+91 93880 01524</a>
-                  </p>
-                  <p className="flex flex-wrap items-baseline gap-x-2">
-                    <span className="font-medium text-white min-w-[80px] inline-block">Whatsapp:</span>
-                    <a
-                      href="https://wa.me/971527925100?text=Hello%204Biz%20International%2C%20I%20am%20interested%20in%20your%20services."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={contactLinkClass}
-                    >
-                      +971 52 792 5100
-                    </a>
-                  </p>
-                </div>
-              </div>
-
-              {/* BLOCK 3: Contact Us Addresses */}
-              <div className="space-y-2.5 sm:space-y-3.5">
-                <h4 className="font-semibold text-white tracking-wider uppercase text-[11px] sm:text-xs opacity-80">
-                  Contact Us
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-5 font-light leading-relaxed text-[13px] sm:text-[14px]">
-                  <div>
-                    <strong className="font-semibold block text-white mb-0.5">Dubai:</strong>
-                    <p className="opacity-90">Office 104, Crystal Building, Al Karama, Near ADCB Metro, Dubai, UAE</p>
-                  </div>
-                  <div>
-                    <strong className="font-semibold block text-white mb-0.5">India (HiLITE):</strong>
-                    <p className="opacity-90">Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </>
-  );
-}
-</file>
-
 <file path="src/components/LeftFixedSocialIcons.tsx">
 'use client';
 
@@ -24879,953 +25150,6 @@ export default function EmailSecurityBlogPost() {
 }
 </file>
 
-<file path="src/app/product/invoicing/page.tsx">
-import React from "react";
-import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import {
-  CheckCircle2,
-  ArrowRight,
-  Phone,
-  ShieldCheck,
-  Zap,
-  Globe2,
-  Layers,
-  Server,
-  FileCode2,
-  Lock,
-  Sparkles,
-  ChevronDown,
-  Building2,
-  Check,
-  ExternalLink,
-} from "lucide-react";
-
-/**
- * SERVER-LEVEL SEO, AEO & GEO METADATA
- * Engineered for Google Search, Bing, Perplexity, ChatGPT Search, and AI Crawlers.
- */
-export const metadata: Metadata = {
-  title:
-    "4Biz e-Invoicing for Microsoft Dynamics 365 Business Central | UAE PINT AE & Peppol",
-  description:
-    "UAE-compliant e-Invoicing built natively inside Microsoft Dynamics 365 Business Central. Automated PINT AE XML generation, Peppol network transmission, and real-time FTA reporting by 4Biz International Dubai.",
-  keywords: [
-    "4Biz e-Invoicing",
-    "UAE e-Invoicing Business Central",
-    "Microsoft Dynamics 365 Business Central UAE",
-    "PINT AE XML",
-    "Peppol e-Invoicing UAE",
-    "FTA e-Invoicing compliance Dubai",
-    "4Biz International",
-    "ERP e-Invoicing UAE",
-  ],
-  alternates: {
-    canonical: "https://www.4bizinternational.com/product/invoicing",
-  },
-  openGraph: {
-    title: "4Biz e-Invoicing — Built for Microsoft Dynamics 365 Business Central",
-    description:
-      "It's never just an invoice. It's everything working behind it. Native UAE PINT AE, Peppol & FTA e-invoicing inside Business Central.",
-    url: "https://www.4bizinternational.com/products/invoicing",
-    siteName: "4Biz International",
-    locale: "en_AE",
-    type: "website",
-    images: [
-      {
-        url: "https://www.4bizinternational.com/products/4biz-invoicing-1.webp",
-        width: 2160,
-        height: 2700,
-        alt: "4Biz e-Invoicing for Microsoft Dynamics 365 Business Central",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "4Biz e-Invoicing for Microsoft Dynamics 365 Business Central",
-    description:
-      "Native UAE PINT AE & Peppol-compliant e-Invoicing inside Microsoft Dynamics 365 Business Central.",
-    images: ["https://www.4bizinternational.com/products/4biz-invoicing-1.webp"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
-
-const FAQ_ITEMS = [
-  {
-    question: "How does 4Biz e-Invoicing integrate with Microsoft Dynamics 365 Business Central?",
-    answer:
-      "4Biz e-Invoicing is built natively as an extension inside Microsoft Dynamics 365 Business Central. Finance teams generate, validate, sign, and transmit compliant invoices directly from their standard Sales Invoice and Service Invoice screens without exporting data or switching to external portals.",
-  },
-  {
-    question: "Is 4Biz e-Invoicing compliant with UAE FTA and PINT AE standards?",
-    answer:
-      "Yes. Every invoice is automatically structured into the UAE PINT AE XML schema, validated against Federal Tax Authority (FTA) mandatory data fields, cryptographically sealed, and transmitted via Accredited Service Providers (ASP) across the Peppol 5-corner model.",
-  },
-  {
-    question: "Do we need third-party middleware to connect to the Peppol network?",
-    answer:
-      "No separate middleware is required. 4Biz International handles end-to-end Peppol ASP onboarding, Participant ID registration, certificate provisioning, and direct API connectivity straight from your Business Central tenant.",
-  },
-  {
-    question: "How long does implementation and go-live take in the UAE?",
-    answer:
-      "For standard Microsoft Dynamics 365 Business Central environments, deployment, PINT AE field mapping, sandbox testing, and user training typically complete within 5 to 10 business days.",
-  },
-  {
-    question: "Does it support B2B, B2G, credit notes, and multi-currency UAE VAT transactions?",
-    answer:
-      "Yes. 4Biz e-Invoicing supports B2B and B2G workflows, standard tax invoices, simplified tax invoices, credit and debit notes, reverse-charge mechanisms, and AED/multi-currency reporting with real-time status tracking inside Business Central.",
-  },
-];
-
-/**
- * Tailed star configuration type.
- */
-type TailedStar = {
-  top: string;
-  left: string;
-  length: string;
-  delay: string;
-  duration: string;
-  angle: string;
-  headSize: string;
-};
-
-const HERO_STARS: TailedStar[] = [
-  { top: "9%", left: "12%", length: "150px", delay: "0s", duration: "3.4s", angle: "-32deg", headSize: "6px" },
-  { top: "18%", left: "54%", length: "190px", delay: "-1.1s", duration: "3.8s", angle: "-32deg", headSize: "7px" },
-  { top: "27%", left: "28%", length: "125px", delay: "-2.2s", duration: "3.1s", angle: "-32deg", headSize: "5px" },
-  { top: "14%", left: "78%", length: "165px", delay: "-0.7s", duration: "3.6s", angle: "-32deg", headSize: "6px" },
-  { top: "38%", left: "64%", length: "140px", delay: "-1.8s", duration: "3.5s", angle: "-32deg", headSize: "5px" },
-  { top: "44%", left: "18%", length: "175px", delay: "-2.7s", duration: "4.0s", angle: "-32deg", headSize: "6px" },
-];
-
-const OVERVIEW_STARS: TailedStar[] = [
-  { top: "12%", left: "8%", length: "160px", delay: "-0.4s", duration: "3.6s", angle: "-32deg", headSize: "6px" },
-  { top: "22%", left: "68%", length: "200px", delay: "-1.6s", duration: "4.0s", angle: "-32deg", headSize: "7px" },
-  { top: "48%", left: "36%", length: "135px", delay: "-2.4s", duration: "3.2s", angle: "-32deg", headSize: "5px" },
-  { top: "63%", left: "82%", length: "170px", delay: "-0.9s", duration: "3.7s", angle: "-32deg", headSize: "6px" },
-  { top: "78%", left: "22%", length: "150px", delay: "-2.9s", duration: "3.9s", angle: "-32deg", headSize: "5px" },
-];
-
-const ARCHITECTURE_STARS: TailedStar[] = [
-  { top: "10%", left: "42%", length: "185px", delay: "-1.3s", duration: "3.8s", angle: "-32deg", headSize: "7px" },
-  { top: "26%", left: "10%", length: "140px", delay: "-0.6s", duration: "3.3s", angle: "-32deg", headSize: "5px" },
-  { top: "40%", left: "74%", length: "175px", delay: "-2.1s", duration: "4.1s", angle: "-32deg", headSize: "6px" },
-  { top: "60%", left: "30%", length: "155px", delay: "-2.8s", duration: "3.5s", angle: "-32deg", headSize: "6px" },
-  { top: "82%", left: "58%", length: "190px", delay: "-1.0s", duration: "3.9s", angle: "-32deg", headSize: "7px" },
-];
-
-const CAPABILITIES_STARS: TailedStar[] = [
-  { top: "8%", left: "22%", length: "145px", delay: "-0.8s", duration: "3.4s", angle: "-32deg", headSize: "5px" },
-  { top: "20%", left: "62%", length: "195px", delay: "-1.9s", duration: "4.0s", angle: "-32deg", headSize: "7px" },
-  { top: "35%", left: "88%", length: "130px", delay: "-2.5s", duration: "3.2s", angle: "-32deg", headSize: "5px" },
-  { top: "55%", left: "14%", length: "170px", delay: "-0.3s", duration: "3.7s", angle: "-32deg", headSize: "6px" },
-  { top: "72%", left: "46%", length: "160px", delay: "-1.4s", duration: "3.6s", angle: "-32deg", headSize: "6px" },
-  { top: "88%", left: "70%", length: "140px", delay: "-2.7s", duration: "3.9s", angle: "-32deg", headSize: "5px" },
-];
-
-const DEMO_STARS: TailedStar[] = [
-  { top: "14%", left: "16%", length: "180px", delay: "-1.2s", duration: "3.7s", angle: "-32deg", headSize: "6px" },
-  { top: "30%", left: "56%", length: "150px", delay: "-0.5s", duration: "3.4s", angle: "-32deg", headSize: "5px" },
-  { top: "50%", left: "82%", length: "195px", delay: "-2.3s", duration: "4.0s", angle: "-32deg", headSize: "7px" },
-  { top: "70%", left: "28%", length: "135px", delay: "-2.9s", duration: "3.2s", angle: "-32deg", headSize: "5px" },
-  { top: "86%", left: "64%", length: "165px", delay: "-1.7s", duration: "3.8s", angle: "-32deg", headSize: "6px" },
-];
-
-const FAQ_STARS: TailedStar[] = [
-  { top: "10%", left: "36%", length: "160px", delay: "-0.9s", duration: "3.5s", angle: "-32deg", headSize: "6px" },
-  { top: "28%", left: "78%", length: "175px", delay: "-2.0s", duration: "3.9s", angle: "-32deg", headSize: "6px" },
-  { top: "46%", left: "12%", length: "145px", delay: "-1.5s", duration: "3.3s", angle: "-32deg", headSize: "5px" },
-  { top: "64%", left: "52%", length: "185px", delay: "-2.6s", duration: "4.0s", angle: "-32deg", headSize: "7px" },
-  { top: "84%", left: "26%", length: "150px", delay: "-0.4s", duration: "3.6s", angle: "-32deg", headSize: "5px" },
-];
-
-function TailedStars({ stars, showGrid = false }: { stars: TailedStar[]; showGrid?: boolean }) {
-  return (
-    <div
-      className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
-      aria-hidden="true"
-    >
-      {/* Optional grid background for the hero section */}
-      {showGrid && (
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_60%_at_50%_15%,#000_65%,transparent_100%)]" />
-      )}
-
-      {stars.map((star, idx) => (
-        <span
-          key={idx}
-          style={
-            {
-              top: star.top,
-              left: star.left,
-              width: star.length,
-              height: "2px",
-              animationDelay: star.delay,
-              animationDuration: star.duration,
-              rotate: star.angle,
-              "--star-head": star.headSize,
-              background:
-                "linear-gradient(90deg, rgba(0, 217, 255, 0) 0%, rgba(14, 165, 233, 0.35) 45%, rgba(56, 189, 248, 0.88) 85%, #e0f7ff 100%)",
-              filter: "drop-shadow(0 0 8px rgba(0, 217, 255, 0.75))",
-            } as React.CSSProperties
-          }
-          className="nylon-tailed-star block"
-        />
-      ))}
-    </div>
-  );
-}
-
-export default function EInvoicingProductPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.4bizinternational.com" },
-          { "@type": "ListItem", position: 2, name: "Products", item: "https://www.4bizinternational.com/products/invoicing" },
-          { "@type": "ListItem", position: 3, name: "4Biz e-Invoicing", item: "https://www.4bizinternational.com/products/invoicing" },
-        ],
-      },
-      {
-        "@type": "SoftwareApplication",
-        name: "4Biz e-Invoicing for Microsoft Dynamics 365 Business Central",
-        applicationCategory: "BusinessApplication",
-        applicationSubCategory: "ERP e-Invoicing & Tax Compliance Software",
-        operatingSystem: "Cloud / Microsoft Dynamics 365 Business Central",
-        description:
-          "Native UAE e-Invoicing solution built inside Microsoft Dynamics 365 Business Central supporting PINT AE XML, Peppol network transmission, and real-time FTA compliance.",
-        image: "https://www.4bizinternational.com/products/4biz-invoicing-1.webp",
-        url: "https://www.4bizinternational.com/products/invoicing",
-        author: {
-          "@type": "Organization",
-          name: "4Biz International",
-          url: "https://www.4bizinternational.com",
-          address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" },
-        },
-        offers: {
-          "@type": "Offer",
-          availability: "https://schema.org/InStock",
-          priceCurrency: "AED",
-          seller: { "@type": "Organization", name: "4Biz International" },
-        },
-        featureList: [
-          "Native Microsoft Dynamics 365 Business Central Integration",
-          "Automated UAE PINT AE XML Generation",
-          "Peppol Network 5-Corner Transmission",
-          "Real-time FTA Tax Reporting & Validation",
-          "Cryptographic Digital Signatures & Audit Trail",
-        ],
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: FAQ_ITEMS.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: { "@type": "Answer", text: faq.answer },
-        })),
-      },
-    ],
-  };
-
-  return (
-    <div
-      style={{
-        background: "linear-gradient(135deg, #06112c 0%, #0c1b40 45%, #08306b 100%)",
-      }}
-      className="min-h-screen text-white selection:bg-cyan-400/30 selection:text-cyan-100 overflow-x-clip relative"
-    >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      <style>{`
-        @keyframes floatSlow {
-          0%, 100% { transform: translate3d(0, 0px, 0); }
-          50% { transform: translate3d(0, -14px, 0); }
-        }
-        @keyframes floatReverse {
-          0%, 100% { transform: translate3d(0, 0px, 0); }
-          50% { transform: translate3d(0, 12px, 0); }
-        }
-        @keyframes pulseGlow {
-          0%, 100% { opacity: 0.45; transform: scale3d(1, 1, 1); }
-          50% { opacity: 0.8; transform: scale3d(1.06, 1.06, 1); }
-        }
-        @keyframes fadeUpIn {
-          from { opacity: 0; transform: translate3d(0, 22px, 0); }
-          to { opacity: 1; transform: translate3d(0, 0, 0); }
-        }
-        @keyframes nylonStarStreak {
-          0% {
-            opacity: 0;
-            transform: translate3d(0, 0, 0) scaleX(0.35);
-          }
-          18% {
-            opacity: 1;
-            transform: translate3d(42px, 26px, 0) scaleX(1);
-          }
-          78% {
-            opacity: 0.92;
-            transform: translate3d(175px, 108px, 0) scaleX(1.05);
-          }
-          100% {
-            opacity: 0;
-            transform: translate3d(240px, 148px, 0) scaleX(0.6);
-          }
-        }
-        .animate-float-slow {
-          animation: floatSlow 7s ease-in-out infinite;
-          will-change: transform;
-        }
-        .animate-float-reverse {
-          animation: floatReverse 8s ease-in-out infinite;
-          will-change: transform;
-        }
-        .animate-pulse-glow {
-          animation: pulseGlow 6s ease-in-out infinite;
-          will-change: transform, opacity;
-        }
-        .animate-hero-enter {
-          animation: fadeUpIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
-        }
-        .animate-hero-enter-delay-1 {
-          animation: fadeUpIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
-        }
-        .animate-hero-enter-delay-2 {
-          animation: fadeUpIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
-        }
-        .nylon-tailed-star {
-          position: relative;
-          transform-origin: right center;
-          animation-name: nylonStarStreak;
-          animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-          animation-iteration-count: infinite;
-          will-change: transform, opacity;
-        }
-        .nylon-tailed-star::after {
-          content: "";
-          position: absolute;
-          right: -2px;
-          top: 50%;
-          width: var(--star-head, 6px);
-          height: var(--star-head, 6px);
-          transform: translateY(-50%);
-          border-radius: 9999px;
-          background: #e0f7ff;
-          box-shadow:
-            0 0 10px 2px #00d9ff,
-            0 0 22px 6px rgba(0, 184, 255, 0.85),
-            0 0 38px 10px rgba(14, 165, 233, 0.45);
-        }
-        .cv-auto {
-          content-visibility: auto;
-          contain-intrinsic-size: 1px 900px;
-        }
-      `}</style>
-
-      {/* Global Ambient Lighting (Fixed) */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-32 -left-24 w-[480px] h-[480px] sm:w-[680px] sm:h-[680px] rounded-full bg-sky-500/15 blur-[130px] animate-pulse-glow" />
-        <div className="absolute top-[38%] -right-32 w-[420px] h-[420px] sm:w-[620px] sm:h-[620px] rounded-full bg-cyan-400/15 blur-[130px] animate-pulse-glow" />
-      </div>
-
-      <main className="relative z-10">
-        {/* =====================================================================
-            SECTION 1: HERO — CINEMATIC SPLIT SHOWCASE (Adjusted top padding for mobile headers)
-        ====================================================================== */}
-        <section
-          aria-labelledby="hero-heading"
-          className="relative overflow-hidden pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32"
-        >
-          <TailedStars stars={HERO_STARS} showGrid={true} />
-
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
-              {/* Left Column: High-Impact Product Narrative */}
-              <div className="lg:col-span-7 flex flex-col gap-6 text-left">
-                <div className="animate-hero-enter inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-cyan-300 text-xs sm:text-sm font-semibold w-fit shadow-[0_0_24px_rgba(34,211,238,0.12)]">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400" />
-                  </span>
-                  <span>Microsoft Dynamics 365 Business Central</span>
-                </div>
-
-                <h1
-                  id="hero-heading"
-                  className="animate-hero-enter-delay-1 text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-black tracking-tight leading-[1.06] text-white"
-                >
-                  It&apos;s never just{" "}
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-sky-200">
-                    an invoice.
-                  </span>
-                </h1>
-
-                <p className="animate-hero-enter-delay-1 text-xl sm:text-2xl md:text-3xl text-slate-200 font-light tracking-tight max-w-2xl">
-                  It&apos;s <strong className="font-extrabold text-white">everything</strong>{" "}
-                  working behind it.
-                </p>
-
-                <p className="animate-hero-enter-delay-2 text-slate-300/90 text-base sm:text-lg leading-relaxed max-w-xl">
-                  <strong className="text-white font-semibold">4Biz e-Invoicing</strong> embeds
-                  natively inside Microsoft Dynamics 365 Business Central—automating UAE PINT AE
-                  XML generation, Peppol transmission, and real-time FTA compliance with zero
-                  third-party friction.
-                </p>
-
-                {/* Primary & Secondary CTAs */}
-                <div className="animate-hero-enter-delay-2 flex flex-wrap items-center gap-4 pt-2">
-                  <a
-                    href="#demo"
-                    className="group relative inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full text-sm sm:text-base font-bold text-white bg-gradient-to-r from-blue-600 via-cyan-500 to-sky-500 shadow-[0_10px_35px_rgba(6,182,212,0.38)] hover:shadow-[0_14px_45px_rgba(6,182,212,0.6)] hover:-translate-y-0.5 transition-all duration-300"
-                  >
-                    <span>Book Your Live Demo</span>
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
-
-                  <a
-                    href="#architecture"
-                    className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm sm:text-base font-semibold text-slate-200 bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 backdrop-blur-md transition-all duration-300"
-                  >
-                    <span>Explore UAE Architecture</span>
-                  </a>
-                </div>
-
-                {/* Compliance Trust Strip */}
-                <div className="animate-hero-enter-delay-2 grid grid-cols-3 gap-3 sm:gap-6 pt-6 mt-2 border-t border-white/10 max-w-xl">
-                  <div>
-                    <div className="text-cyan-300 font-extrabold text-lg sm:text-2xl">PINT AE</div>
-                    <div className="text-xs sm:text-sm text-slate-400">UAE XML Schema</div>
-                  </div>
-                  <div>
-                    <div className="text-cyan-300 font-extrabold text-lg sm:text-2xl">Peppol</div>
-                    <div className="text-xs sm:text-sm text-slate-400">5-Corner Network</div>
-                  </div>
-                  <div>
-                    <div className="text-cyan-300 font-extrabold text-lg sm:text-2xl">100% Native</div>
-                    <div className="text-xs sm:text-sm text-slate-400">Business Central</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: Hero Image 1 */}
-              <div className="lg:col-span-5 flex justify-center mt-8 lg:mt-0">
-                <div className="relative w-full max-w-[380px] sm:max-w-[440px] lg:max-w-[480px] animate-float-slow">
-                  <div
-                    className="absolute -inset-4 rounded-[2.25rem] bg-gradient-to-tr from-blue-600/30 via-cyan-400/20 to-indigo-500/30 blur-2xl pointer-events-none"
-                    aria-hidden="true"
-                  />
-
-                  <div className="relative aspect-[4/5] w-full rounded-[1.75rem] p-2 bg-gradient-to-b from-white/20 via-white/5 to-cyan-500/20 shadow-[0_25px_70px_rgba(0,150,255,0.28)] backdrop-blur-sm">
-                    <div className="relative w-full h-full overflow-hidden rounded-[1.35rem] bg-[#040b1e]">
-                      <Image
-                        src="/products/4biz-invoicing-1.webp"
-                        alt="4Biz e-Invoicing — It's never just an invoice, it's everything working behind it"
-                        width={2160}
-                        height={2700}
-                        priority
-                        fetchPriority="high"
-                        sizes="(max-width: 640px) 92vw, (max-width: 1024px) 440px, 480px"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =====================================================================
-            SECTION 2: PRODUCT INTRODUCTION
-        ====================================================================== */}
-        <section
-          id="overview"
-          aria-labelledby="overview-heading"
-          className="cv-auto relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
-        >
-          <TailedStars stars={OVERVIEW_STARS} />
-
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              <div className="lg:col-span-5 order-2 lg:order-1 flex justify-center">
-                <div className="relative w-full max-w-[380px] sm:max-w-[440px] lg:max-w-[480px] animate-float-reverse">
-                  <div
-                    className="absolute -inset-4 rounded-[2.25rem] bg-gradient-to-bl from-cyan-500/25 via-blue-600/20 to-transparent blur-2xl pointer-events-none"
-                    aria-hidden="true"
-                  />
-                  <div className="relative aspect-[4/5] w-full rounded-[1.75rem] p-2 bg-gradient-to-b from-cyan-400/25 via-white/10 to-blue-600/20 shadow-[0_25px_70px_rgba(6,182,212,0.22)]">
-                    <div className="relative w-full h-full overflow-hidden rounded-[1.35rem] bg-[#040b1e]">
-                      <Image
-                        src="/products/4biz-invoicing-2.webp"
-                        alt="Introducing 4Biz e-Invoicing — UAE e-invoicing built for Microsoft Dynamics 365 Business Central"
-                        width={2160}
-                        height={2700}
-                        loading="lazy"
-                        sizes="(max-width: 640px) 92vw, (max-width: 1024px) 440px, 480px"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col gap-6">
-                <div className="inline-flex items-center gap-3">
-                  <span className="h-px w-10 bg-cyan-400" />
-                  <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase">
-                    Introducing 4Biz e-Invoicing
-                  </span>
-                </div>
-
-                <h2
-                  id="overview-heading"
-                  className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.12]"
-                >
-                  UAE e-invoicing, built natively for{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                    Microsoft Dynamics 365 Business Central.
-                  </span>
-                </h2>
-
-                <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-                  Eliminate disconnected middleware, manual XML exports, and compliance bottlenecks.
-                  4Biz e-Invoicing lives directly inside your Business Central workspace—turning
-                  every posted sales invoice or credit memo into a validated, signed, and
-                  FTA-compliant UAE e-invoice in seconds.
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  {[
-                    {
-                      title: "Zero-Friction ERP Extension",
-                      desc: "Post invoices from your existing Business Central screens with one-click automated dispatch.",
-                    },
-                    {
-                      title: "Real-Time Schema Validation",
-                      desc: "Pre-validates mandatory UAE VAT, TRN, and PINT AE fields before transmission to prevent rejections.",
-                    },
-                    {
-                      title: "Automated Peppol Exchange",
-                      desc: "Direct 5-corner Peppol network routing to buyers and Accredited Service Providers.",
-                    },
-                    {
-                      title: "Live Audit & Clearance Status",
-                      desc: "Instant UUID, cryptographic hash, QR code, and FTA reporting status logged on every document.",
-                    },
-                  ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/40 hover:bg-white/[0.06] transition-all duration-300"
-                    >
-                      <div className="flex items-start gap-3">
-                        <div className="mt-0.5 w-6 h-6 rounded-full bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-300 shrink-0">
-                          <Check className="w-3.5 h-3.5" />
-                        </div>
-                        <div>
-                          <h3 className="font-bold text-white text-base mb-1">{item.title}</h3>
-                          <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =====================================================================
-            SECTION 3: THE ARCHITECTURE
-        ====================================================================== */}
-        <section
-          id="architecture"
-          aria-labelledby="architecture-heading"
-          className="cv-auto relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06] bg-gradient-to-b from-blue-950/20 via-transparent to-blue-950/20"
-        >
-          <TailedStars stars={ARCHITECTURE_STARS} />
-
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-              <div className="inline-flex items-center justify-center gap-3 mb-4">
-                <span className="h-px w-8 bg-cyan-400" />
-                <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase">
-                  What Works Behind It
-                </span>
-                <span className="h-px w-8 bg-cyan-400" />
-              </div>
-
-              <h2
-                id="architecture-heading"
-                className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight mb-5"
-              >
-                Built to the{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300">
-                  UAE standard.
-                </span>
-              </h2>
-
-              <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-                A resilient, multi-layered compliance engine orchestrated seamlessly behind your
-                Microsoft Dynamics 365 Business Central interface.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-6 space-y-4">
-                {[
-                  {
-                    step: "01",
-                    title: "Microsoft Dynamics 365 Business Central",
-                    tag: "ERP Core",
-                    desc: "Captures customer TRN, line-item tax codes, discounts, and multi-currency totals directly from posted sales and credit documents.",
-                    icon: Layers,
-                  },
-                  {
-                    step: "02",
-                    title: "PINT AE XML Transformation Engine",
-                    tag: "UAE Data Standard",
-                    desc: "Maps ERP records into structured UBL 2.1 / PINT AE compliant XML with automated business-rule validation.",
-                    icon: FileCode2,
-                  },
-                  {
-                    step: "03",
-                    title: "Peppol Accredited Access Point",
-                    tag: "5-Corner Network",
-                    desc: "Encrypts, signs, and routes e-invoices securely across the Peppol network to the buyer's Access Point.",
-                    icon: Globe2,
-                  },
-                  {
-                    step: "04",
-                    title: "UAE FTA Continuous Transaction Controls",
-                    tag: "Regulatory Reporting",
-                    desc: "Transmits tax data to the Federal Tax Authority in real time and archives signed XML/PDF-A3 records for audit readiness.",
-                    icon: ShieldCheck,
-                  },
-                ].map((layer) => {
-                  const Icon = layer.icon;
-                  return (
-                    <div
-                      key={layer.step}
-                      className="group p-5 sm:p-6 rounded-2xl bg-[#060d24]/85 border border-white/10 hover:border-cyan-400/50 transition-all duration-300 shadow-lg"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-300 shrink-0 group-hover:scale-105 transition-transform">
-                          <Icon className="w-5 h-5" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-                            <span className="text-xs font-mono font-bold text-cyan-400">
-                              LAYER {layer.step} • {layer.tag}
-                            </span>
-                          </div>
-                          <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 group-hover:text-cyan-200 transition-colors">
-                            {layer.title}
-                          </h3>
-                          <p className="text-sm text-slate-400 leading-relaxed">{layer.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="lg:col-span-6 flex justify-center mt-8 lg:mt-0">
-                <div className="relative w-full max-w-[400px] sm:max-w-[460px] lg:max-w-[500px]">
-                  <div
-                    className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-tr from-blue-600/25 via-cyan-400/20 to-indigo-500/25 blur-2xl pointer-events-none"
-                    aria-hidden="true"
-                  />
-                  <div className="relative aspect-[4/5] w-full rounded-[1.75rem] p-2 bg-gradient-to-b from-white/20 via-cyan-400/15 to-blue-600/25 shadow-[0_25px_80px_rgba(0,150,255,0.28)]">
-                    <div className="relative w-full h-full overflow-hidden rounded-[1.35rem] bg-[#040b1e]">
-                      <Image
-                        src="/products/4biz-invoicing-3.webp"
-                        alt="What works behind it — Built to the UAE standard: PINT AE XML, FTA Reporting, Peppol Network, Business Central"
-                        width={2160}
-                        height={2700}
-                        loading="lazy"
-                        sizes="(max-width: 640px) 92vw, (max-width: 1024px) 460px, 500px"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =====================================================================
-            SECTION 4: ENTERPRISE CAPABILITIES
-        ====================================================================== */}
-        <section
-          id="capabilities"
-          aria-labelledby="capabilities-heading"
-          className="cv-auto relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
-        >
-          <TailedStars stars={CAPABILITIES_STARS} />
-
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
-              <div>
-                <div className="inline-flex items-center gap-2.5 mb-3">
-                  <Sparkles className="w-4 h-4 text-cyan-400" />
-                  <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase">
-                    Enterprise Capabilities
-                  </span>
-                </div>
-                <h2
-                  id="capabilities-heading"
-                  className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight"
-                >
-                  Engineered for high-volume{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                    UAE finance teams.
-                  </span>
-                </h2>
-              </div>
-              <p className="text-slate-400 text-sm sm:text-base max-w-md">
-                Complete lifecycle visibility from invoice creation to Peppol acknowledgment and
-                FTA audit archiving.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  icon: Zap,
-                  title: "Instant Bulk & Automated Dispatch",
-                  desc: "Transmit single invoices or schedule batch runs for thousands of daily transactions without slowing down Business Central.",
-                },
-                {
-                  icon: Lock,
-                  title: "Tamper-Proof Digital Signatures",
-                  desc: "Cryptographic hashing, UUID stamping, and compliant QR generation embedded automatically into human-readable PDF/A-3 files.",
-                },
-                {
-                  icon: Server,
-                  title: "Inbound Supplier e-Invoice Capture",
-                  desc: "Receive vendor Peppol e-invoices straight into Business Central Purchase Invoices with automated 3-way PO matching.",
-                },
-                {
-                  icon: ShieldCheck,
-                  title: "Pre-Submission Validation Guard",
-                  desc: "Catches missing buyer TRNs, invalid tax categories, or rounding mismatches inside ERP before hitting the Peppol gateway.",
-                },
-                {
-                  icon: Building2,
-                  title: "Multi-Entity & Multi-Branch Ready",
-                  desc: "Manage multiple UAE legal entities, TRNs, and Peppol Participant IDs from a unified Business Central environment.",
-                },
-                {
-                  icon: CheckCircle2,
-                  title: "Full Credit Note & Adjustment Flows",
-                  desc: "Native handling of partial/full credit notes, debit memos, advance payments, and UAE VAT reverse-charge scenarios.",
-                },
-              ].map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <div
-                    key={index}
-                    className="group relative p-7 rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.015] border border-white/10 hover:border-cyan-400/45 transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <div className="w-12 h-12 rounded-2xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300 mb-5 group-hover:bg-cyan-500/25 transition-colors">
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-2.5">{feature.title}</h3>
-                    <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-                      {feature.desc}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* =====================================================================
-            SECTION 5: BROUGHT TO YOU BY 4BIZ INTERNATIONAL
-        ====================================================================== */}
-        <section
-          id="demo"
-          aria-labelledby="demo-heading"
-          className="cv-auto relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
-        >
-          <TailedStars stars={DEMO_STARS} />
-
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-              <div className="lg:col-span-7 flex flex-col gap-7">
-                <div className="inline-flex items-center gap-3">
-                  <span className="h-px w-10 bg-cyan-400" />
-                  <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase">
-                    End-to-End UAE Delivery
-                  </span>
-                </div>
-
-                <h2
-                  id="demo-heading"
-                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-[1.12]"
-                >
-                  Brought to you by{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                    4Biz International.
-                  </span>
-                </h2>
-
-                <p className="text-lg sm:text-xl text-slate-300 leading-relaxed">
-                  IT solutions and digital transformation company, Dubai. We handle everything
-                  from Business Central deployment to Peppol onboarding and ongoing UAE regulatory
-                  support.
-                </p>
-
-                <div className="flex flex-wrap gap-2.5">
-                  {[
-                    "Implementation",
-                    "Peppol Integration",
-                    "Compliance",
-                    "Training",
-                    "Support",
-                  ].map((pill) => (
-                    <span
-                      key={pill}
-                      className="px-4 py-2 rounded-full bg-blue-500/10 border border-cyan-400/25 text-cyan-200 text-xs sm:text-sm font-semibold"
-                    >
-                      {pill}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="relative p-7 sm:p-9 rounded-3xl bg-gradient-to-br from-blue-900/45 via-[#071330]/90 to-cyan-900/35 border border-cyan-400/30 shadow-[0_20px_60px_rgba(6,182,212,0.18)] overflow-hidden">
-                  <div
-                    className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-cyan-400/20 blur-3xl pointer-events-none"
-                    aria-hidden="true"
-                  />
-
-                  <div className="relative z-10">
-                    <span className="inline-block px-3 py-1 rounded-full bg-cyan-400/15 text-cyan-300 text-xs font-bold uppercase tracking-wider mb-3">
-                      Live Walkthrough
-                    </span>
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">
-                      Book your demo
-                    </h3>
-                    <p className="text-slate-300 text-sm sm:text-base mb-6 max-w-xl">
-                      See 4Biz e-Invoicing running live inside Microsoft Dynamics 365 Business
-                      Central with real UAE PINT AE &amp; Peppol workflows.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row flex-wrap gap-3.5">
-
-                      <a
-                        href="tel:+971527925100"
-                        className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-sm sm:text-base font-bold text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all"
-                      >
-                        <Phone className="w-4 h-4 text-cyan-300" />
-                        <span>+971 52 792 5100</span>
-                      </a>
-
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm sm:text-base font-semibold text-cyan-300 hover:text-white border border-cyan-400/35 hover:bg-cyan-500/15 transition-all"
-                      >
-                        <span>Request Online Demo</span>
-                        <ExternalLink className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-5 flex justify-center mt-8 lg:mt-0">
-                <div className="relative w-full max-w-[380px] sm:max-w-[440px] lg:max-w-[480px] group">
-                  <div
-                    className="absolute -inset-4 rounded-[2.25rem] bg-gradient-to-tr from-cyan-500/25 via-blue-600/20 to-indigo-500/25 blur-2xl pointer-events-none"
-                    aria-hidden="true"
-                  />
-                  <div className="relative aspect-[4/5] w-full rounded-[1.75rem] p-2 bg-gradient-to-b from-white/20 via-white/5 to-cyan-500/25 shadow-[0_25px_70px_rgba(0,150,255,0.25)]">
-                    <div className="relative w-full h-full overflow-hidden rounded-[1.35rem] bg-[#040b1e]">
-                      <Image
-                        src="/products/4biz-invoicing-4.webp"
-                        alt="Brought to you by 4Biz International — IT solutions and digital transformation company, Dubai"
-                        width={2160}
-                        height={2700}
-                        loading="lazy"
-                        sizes="(max-width: 640px) 92vw, (max-width: 1024px) 440px, 480px"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =====================================================================
-            SECTION 6: FAQ ACCORDION
-        ====================================================================== */}
-        <section
-          id="faq"
-          aria-labelledby="faq-heading"
-          className="cv-auto relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
-        >
-          <TailedStars stars={FAQ_STARS} />
-
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 sm:mb-16">
-              <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase block mb-3">
-                Frequently Asked Questions
-              </span>
-              <h2
-                id="faq-heading"
-                className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight"
-              >
-                UAE e-Invoicing &amp; Business Central{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                  Explained.
-                </span>
-              </h2>
-            </div>
-
-            <div className="space-y-4">
-              {FAQ_ITEMS.map((faq, index) => (
-                <details
-                  key={index}
-                  className="group rounded-2xl bg-white/[0.03] border border-white/10 open:border-cyan-400/40 open:bg-white/[0.05] transition-all duration-300"
-                >
-                  <summary className="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer list-none font-bold text-base sm:text-lg text-white select-none">
-                    <span>{faq.question}</span>
-                    <ChevronDown className="w-5 h-5 text-cyan-400 shrink-0 transition-transform duration-300 group-open:rotate-180" />
-                  </summary>
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-slate-300 text-sm sm:text-base leading-relaxed border-t border-white/[0.06]">
-                    {faq.answer}
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-  );
-}
-</file>
-
 <file path="src/components/ClientSection.tsx">
 "use client";
 
@@ -26136,6 +25460,355 @@ export default function FaqSection() {
         </div>
       </div>
     </section>
+  );
+}
+</file>
+
+<file path="src/components/Header.tsx">
+"use client";
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+
+export default function Header() {
+  const [isSticky, setIsSticky] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const ticking = useRef(false);
+
+  // Throttled scroll handler via requestAnimationFrame for sub-millisecond layout stability
+  const handleScroll = useCallback(() => {
+    if (!ticking.current) {
+      window.requestAnimationFrame(() => {
+        const currentScrollPos = window.scrollY;
+        // Evaluate condition instantly past threshold
+        if (currentScrollPos > 20) {
+          setIsSticky(true);
+        } else {
+          setIsSticky(false);
+        }
+        ticking.current = false;
+      });
+      ticking.current = true;
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
+  // Performance Optimization: Prevent background scroll layout thrashing during overlay active state
+  useEffect(() => {
+    const body = document.body;
+    if (menuOpen) {
+      body.style.setProperty('overflow', 'hidden', 'important');
+      body.style.touchAction = 'none';
+    } else {
+      body.style.overflow = '';
+      body.style.touchAction = '';
+    }
+    return () => {
+      body.style.overflow = '';
+      body.style.touchAction = '';
+    };
+  }, [menuOpen]);
+
+  const iconClass =
+    'text-white hover:text-blue-400 hover:scale-110 transition-all duration-200 flex items-center justify-center min-w-[24px] min-h-[24px] transform-gpu';
+
+  const navLinkClass =
+    'text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl 2xl:text-5xl font-light tracking-wide text-white hover:text-blue-400 transition-colors duration-300 block py-2 lg:py-3.5 break-words';
+
+  const contactLinkClass = 'hover:text-blue-400 transition-colors duration-200 break-all';
+
+  // Structural hamburger properties
+  const lineClass = 'h-[2.5px] rounded-full bg-white transition-all duration-300 transform-gpu';
+
+  return (
+    <>
+      {/* ─── SERVER-LEVEL & AI-READABLE SCHEMA ORG DATA ────────────────────── */}
+      {/* Injecting Organization Microdata directly into the header so search crawlers and AI agents parsing raw HTML immediately context-map the business entity. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "4biz International",
+            "url": "https://www.4bizinternational.com",
+            "logo": "https://www.4bizinternational.com/4biz_logo-3.png",
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+971-52-792-5100",
+                "contactType": "customer service",
+                "areaServed": "AE"
+              },
+              {
+                "@type": "ContactPoint",
+                "telephone": "+91-93880-01524",
+                "contactType": "sales",
+                "areaServed": "IN"
+              }
+            ],
+            "sameAs": [
+              "https://www.facebook.com/4bizglobal",
+              "https://www.instagram.com/4biz_ae",
+              "https://www.linkedin.com/company/4biz-international/",
+              "https://x.com/4biz123",
+              "https://www.youtube.com/@4bizinternationalae"
+            ]
+          }),
+        }}
+      />
+
+      {/* ─── HEADER BAR ─────────────────────────────────────────────────────── */}
+      {/* Sizing, height, and padding parameters are completely static (py-2.5) across all scroll states. */}
+      {/* Added inline style dynamic rule for the specific #00d3f2 border color on scroll state without layout-shifting */}
+      <header
+        className={`fixed top-0 left-0 w-full z-50 text-white transform-gpu transition-all duration-300 ease-out border-b py-2.5 will-change-[border-color,box-shadow] ${
+          isSticky
+            ? 'shadow-lg shadow-blue-950/20'
+            : 'border-transparent'
+        }`}
+        style={{
+          borderBottomColor: isSticky ? '#00d3f2' : 'transparent'
+        }}
+      >
+        {/* Single Dynamic Background Layer: Shifts composite style smoothly without background-layer blending artifacts */}
+        <div 
+          style={{
+            backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(13, 27, 77, 0.95) 0%, rgba(8, 17, 49, 0.9) 100%)'
+          }}
+          className={`absolute inset-0 -z-10 transition-all duration-300 ease-out transform-gpu will-change-[opacity,backdrop-filter] ${
+            isSticky 
+              ? 'opacity-100 backdrop-blur-md' 
+              : 'opacity-0 backdrop-blur-none pointer-events-none'
+          }`} 
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
+          
+          {/* Main Header Logo Container - Explicit static dimensions guarantee zero dynamic element layout thrashing */}
+          <Link href="/" className="flex items-center flex-shrink-0 transition-opacity duration-300 hover:opacity-90" title="4biz International Home">
+            <div className="relative flex items-center justify-center transform-gpu w-20 h-10 sm:w-24 sm:h-12">
+              <Image
+                src="/4biz_logo-3.png"
+                alt="4biz International Logo - Global IT Solutions, Business Setup, and Corporate Consulting"
+                fill
+                sizes="(max-width: 640px) 96px, 112px"
+                className="object-contain"
+                priority
+              />
+            </div>
+          </Link>
+
+          {/* Right side controls */}
+          <div className="flex items-center gap-5 sm:gap-7 flex-shrink-0">
+            {/* Ultra-modern "Get In Touch" Button */}
+            <div className="hidden lg:flex items-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center border border-white text-white rounded-full uppercase tracking-wider font-medium transform-gpu transition-all duration-300 hover:bg-white hover:text-black whitespace-nowrap text-xs sm:text-sm px-4 py-1.5"
+              >
+                Get In Touch
+              </Link>
+            </div>
+
+            {/* Hamburger Activation Toggle */}
+            <button
+              onClick={() => setMenuOpen(true)}
+              className="flex flex-col gap-1.5 cursor-pointer p-1.5 focus:outline-none items-end justify-center group flex-shrink-0 min-w-[36px]"
+              aria-label="Open Menu"
+              aria-expanded={menuOpen}
+              aria-controls="main-nav-overlay"
+            >
+              <span className={`w-8 sm:w-9 ${lineClass}`} />
+              <span className={`w-6 sm:w-7 ${lineClass} group-hover:w-8 sm:group-hover:w-9`} />
+              <span className={`w-8 sm:w-9 ${lineClass}`} />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* ─── FULLSCREEN OVERLAY MENU ────────────────────────────────────────── */}
+      <div
+        id="main-nav-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation Menu"
+        className={`fixed inset-0 z-[9999999] bg-[#081131] bg-gradient-to-br from-[#081131] via-[#0d1b4d] to-blue-950 text-white
+          overflow-y-auto overscroll-contain min-h-screen w-full
+          transition-all duration-300 ease-out will-change-[transform,opacity] transform-gpu
+          ${menuOpen
+            ? 'opacity-100 translate-y-0 pointer-events-auto visible'
+            : 'opacity-0 translate-y-4 pointer-events-none invisible'
+          }`}
+      >
+        <div className="min-h-full flex flex-col max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 pb-12">
+          
+          {/* Top Bar inside Overlay */}
+          <div className="flex justify-between items-center py-5 sm:py-7 flex-shrink-0 gap-4">
+            {/* Clickable Overlay Menu Logo pointing to Home and closing menu */}
+            <Link 
+              href="/" 
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center flex-shrink-0 transition-opacity duration-300 hover:opacity-90" 
+              title="4biz International Home"
+            >
+              <div className="relative w-24 h-12 sm:w-28 sm:h-14 flex items-center justify-center transform-gpu">
+                <Image
+                  src="/4biz_logo-1.png"
+                  alt="4biz International Navigation Logo - IT Services and Corporate Advisory Consultancy"
+                  fill
+                  sizes="(max-width: 640px) 96px, 112px"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </Link>
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="p-2 text-white hover:text-red-400 focus:outline-none text-4xl font-light hover:rotate-90 transition-all duration-300 ease-in-out leading-none select-none min-w-[48px] min-h-[48px] flex items-center justify-center transform-gpu"
+              aria-label="Close Menu"
+            >
+              ✕
+            </button>
+          </div>
+
+          {/* Main Layout Container */}
+          <div className="flex-grow grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 py-6 sm:py-10 items-start content-center">
+            
+            {/* LEFT: Navigation Links */}
+            <nav className="lg:col-span-6 flex flex-col justify-center space-y-1.5 sm:space-y-3">
+              <Link
+                href="/"
+                onClick={() => setMenuOpen(false)}
+                className={navLinkClass}
+              >
+                Home
+              </Link>
+
+              {[
+                { label: 'About', path: '/about' },
+                { label: 'Services', path: '/services' },
+                { label: 'Contact', path: '/contact' },
+                { label: 'Blog', path: '/blog' },
+                { label: 'Products', path: '/product' },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.path}
+                  onClick={() => {
+                    setTimeout(() => setMenuOpen(false), 50);
+                  }}
+                  className={navLinkClass}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            {/* RIGHT: Contact Info Wrapper */}
+            <div className="lg:col-span-6 flex flex-col space-y-8 sm:space-y-10 lg:text-left text-xs sm:text-sm text-white">
+              
+              {/* BLOCK 1: Get Social */}
+              <div className="space-y-2.5 sm:space-y-3.5">
+                <h4 className="font-semibold text-white tracking-wider uppercase text-[11px] sm:text-xs opacity-80">
+                  Get Social
+                </h4>
+                <div className="flex flex-wrap gap-4 items-center pt-1">
+                  {/* Facebook */}
+                  <a href="https://www.facebook.com/4bizglobal" target="_blank" rel="noopener noreferrer" className={iconClass} aria-label="Follow 4biz International on Facebook">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874V12h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                  </a>
+                  {/* Instagram */}
+                  <a href="https://www.instagram.com/4biz_ae" target="_blank" rel="noopener noreferrer" className={iconClass} aria-label="Follow 4biz International on Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0 3.204.013-3.583.07-4.849.149-3.227 1.664-4.771-4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4.162 4.162 0 1 1 0-8.324A4.162 4.162 0 0 1 12 16zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                    </svg>
+                  </a>
+                  {/* LinkedIn */}
+                  <a href="https://www.linkedin.com/company/4biz-international/" target="_blank" rel="noopener noreferrer" className={iconClass} aria-label="Connect with 4biz International on LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                    </svg>
+                  </a>
+                  {/* X */}
+                  <a href="https://x.com/4biz123" target="_blank" rel="noopener noreferrer" className={iconClass} aria-label="Follow 4biz International on X">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                  </a>
+                  {/* YouTube */}
+                  <a href="https://www.youtube.com/@4bizinternationalae" target="_blank" rel="noopener noreferrer" className={iconClass} aria-label="Subscribe to 4biz International on YouTube">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93-.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* BLOCK 2: Say Hello */}
+              <div className="space-y-2.5 sm:space-y-3.5">
+                <h4 className="font-semibold text-white tracking-wider uppercase text-[11px] sm:text-xs opacity-80">
+                  Say Hello
+                </h4>
+                <div className="space-y-2.5 font-light text-[13px] sm:text-[14px]">
+                  <p className="flex flex-wrap items-baseline gap-x-2">
+                    <span className="font-medium text-white min-w-[80px] inline-block">Email:</span>
+                    <a href="mailto:info@4bizinternational.com" className={contactLinkClass}>
+                      info@4bizinternational.com
+                    </a>
+                  </p>
+                  <p className="flex flex-wrap items-baseline gap-x-2">
+                    <span className="font-medium text-white min-w-[80px] inline-block">UAE:</span>
+                    <a href="tel:+971527925100" className={contactLinkClass}>+971 52 792 5100</a>
+                  </p>
+                  <p className="flex flex-wrap items-baseline gap-x-2">
+                    <span className="font-medium text-white min-w-[80px] inline-block">India:</span>
+                    <a href="tel:+919388001524" className={contactLinkClass}>+91 93880 01524</a>
+                  </p>
+                  <p className="flex flex-wrap items-baseline gap-x-2">
+                    <span className="font-medium text-white min-w-[80px] inline-block">Whatsapp:</span>
+                    <a
+                      href="https://wa.me/971527925100?text=Hello%204Biz%20International%2C%20I%20am%20interested%20in%20your%20services."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={contactLinkClass}
+                    >
+                      +971 52 792 5100
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              {/* BLOCK 3: Contact Us Addresses */}
+              <div className="space-y-2.5 sm:space-y-3.5">
+                <h4 className="font-semibold text-white tracking-wider uppercase text-[11px] sm:text-xs opacity-80">
+                  Contact Us
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-5 font-light leading-relaxed text-[13px] sm:text-[14px]">
+                  <div>
+                    <strong className="font-semibold block text-white mb-0.5">Dubai:</strong>
+                    <p className="opacity-90">Office 104, Crystal Building, Al Karama, Near ADCB Metro, Dubai, UAE</p>
+                  </div>
+                  <div>
+                    <strong className="font-semibold block text-white mb-0.5">India (HiLITE):</strong>
+                    <p className="opacity-90">Tower 2, HiLITE Business Park, Office 2723, 7th Floor, near HiLITE Mall, Poovangal, Pantheeramkavu, Kozhikode, Kerala 673014, India</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </>
   );
 }
 </file>
@@ -27546,6 +27219,967 @@ export default function CareersPage() {
           ))}
         </div>
       </section>
+    </div>
+  );
+}
+</file>
+
+<file path="src/app/product/invoicing/page.tsx">
+import React from "react";
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  CheckCircle2,
+  ArrowRight,
+  Phone,
+  ShieldCheck,
+  Zap,
+  Globe2,
+  Layers,
+  Server,
+  FileCode2,
+  Lock,
+  Sparkles,
+  ChevronDown,
+  Building2,
+  Check,
+  ExternalLink,
+} from "lucide-react";
+
+/**
+ * SERVER-LEVEL SEO, AEO & GEO METADATA
+ * Engineered for Google Search, Bing, Perplexity, ChatGPT Search, and AI Crawlers.
+ */
+export const metadata: Metadata = {
+  title:
+    "4Biz e-Invoicing for Microsoft Dynamics 365 Business Central | UAE PINT AE & Peppol",
+  description:
+    "UAE-compliant e-Invoicing built natively inside Microsoft Dynamics 365 Business Central. Automated PINT AE XML generation, Peppol network transmission, and real-time FTA reporting by 4Biz International Dubai.",
+  keywords: [
+    "4Biz e-Invoicing",
+    "UAE e-Invoicing Business Central",
+    "Microsoft Dynamics 365 Business Central UAE",
+    "PINT AE XML",
+    "Peppol e-Invoicing UAE",
+    "FTA e-Invoicing compliance Dubai",
+    "4Biz International",
+    "ERP e-Invoicing UAE",
+  ],
+  alternates: {
+    canonical: "https://www.4bizinternational.com/product/invoicing",
+  },
+  openGraph: {
+    title: "4Biz e-Invoicing — Built for Microsoft Dynamics 365 Business Central",
+    description:
+      "It's never just an invoice. It's everything working behind it. Native UAE PINT AE, Peppol & FTA e-invoicing inside Business Central.",
+    url: "https://www.4bizinternational.com/products/invoicing",
+    siteName: "4Biz International",
+    locale: "en_AE",
+    type: "website",
+    images: [
+      {
+        url: "https://www.4bizinternational.com/products/4biz-invoicing-1.webp",
+        width: 2160,
+        height: 2700,
+        alt: "4Biz e-Invoicing for Microsoft Dynamics 365 Business Central",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "4Biz e-Invoicing for Microsoft Dynamics 365 Business Central",
+    description:
+      "Native UAE PINT AE & Peppol-compliant e-Invoicing inside Microsoft Dynamics 365 Business Central.",
+    images: ["https://www.4bizinternational.com/products/4biz-invoicing-1.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+const FAQ_ITEMS = [
+  {
+    question: "How does 4Biz e-Invoicing integrate with Microsoft Dynamics 365 Business Central?",
+    answer:
+      "4Biz e-Invoicing is built natively as an extension inside Microsoft Dynamics 365 Business Central. Finance teams generate, validate, sign, and transmit compliant invoices directly from their standard Sales Invoice and Service Invoice screens without exporting data or switching to external portals.",
+  },
+  {
+    question: "Is 4Biz e-Invoicing compliant with UAE FTA and PINT AE standards?",
+    answer:
+      "Yes. Every invoice is automatically structured into the UAE PINT AE XML schema, validated against Federal Tax Authority (FTA) mandatory data fields, cryptographically sealed, and transmitted via Accredited Service Providers (ASP) across the Peppol 5-corner model.",
+  },
+  {
+    question: "Do we need third-party middleware to connect to the Peppol network?",
+    answer:
+      "No separate middleware is required. 4Biz International handles end-to-end Peppol ASP onboarding, Participant ID registration, certificate provisioning, and direct API connectivity straight from your Business Central tenant.",
+  },
+  {
+    question: "How long does implementation and go-live take in the UAE?",
+    answer:
+      "For standard Microsoft Dynamics 365 Business Central environments, deployment, PINT AE field mapping, sandbox testing, and user training typically complete within 5 to 10 business days.",
+  },
+  {
+    question: "Does it support B2B, B2G, credit notes, and multi-currency UAE VAT transactions?",
+    answer:
+      "Yes. 4Biz e-Invoicing supports B2B and B2G workflows, standard tax invoices, simplified tax invoices, credit and debit notes, reverse-charge mechanisms, and AED/multi-currency reporting with real-time status tracking inside Business Central.",
+  },
+];
+
+/**
+ * Tailed star configuration type.
+ */
+type TailedStar = {
+  top: string;
+  left: string;
+  length: string;
+  delay: string;
+  duration: string;
+  angle: string;
+  headSize: string;
+};
+
+const HERO_STARS: TailedStar[] = [
+  { top: "9%", left: "12%", length: "150px", delay: "0s", duration: "3.4s", angle: "-32deg", headSize: "6px" },
+  { top: "18%", left: "54%", length: "190px", delay: "-1.1s", duration: "3.8s", angle: "-32deg", headSize: "7px" },
+  { top: "27%", left: "28%", length: "125px", delay: "-2.2s", duration: "3.1s", angle: "-32deg", headSize: "5px" },
+  { top: "14%", left: "78%", length: "165px", delay: "-0.7s", duration: "3.6s", angle: "-32deg", headSize: "6px" },
+  { top: "38%", left: "64%", length: "140px", delay: "-1.8s", duration: "3.5s", angle: "-32deg", headSize: "5px" },
+  { top: "44%", left: "18%", length: "175px", delay: "-2.7s", duration: "4.0s", angle: "-32deg", headSize: "6px" },
+];
+
+const OVERVIEW_STARS: TailedStar[] = [
+  { top: "12%", left: "8%", length: "160px", delay: "-0.4s", duration: "3.6s", angle: "-32deg", headSize: "6px" },
+  { top: "22%", left: "68%", length: "200px", delay: "-1.6s", duration: "4.0s", angle: "-32deg", headSize: "7px" },
+  { top: "48%", left: "36%", length: "135px", delay: "-2.4s", duration: "3.2s", angle: "-32deg", headSize: "5px" },
+  { top: "63%", left: "82%", length: "170px", delay: "-0.9s", duration: "3.7s", angle: "-32deg", headSize: "6px" },
+  { top: "78%", left: "22%", length: "150px", delay: "-2.9s", duration: "3.9s", angle: "-32deg", headSize: "5px" },
+];
+
+const ARCHITECTURE_STARS: TailedStar[] = [
+  { top: "10%", left: "42%", length: "185px", delay: "-1.3s", duration: "3.8s", angle: "-32deg", headSize: "7px" },
+  { top: "26%", left: "10%", length: "140px", delay: "-0.6s", duration: "3.3s", angle: "-32deg", headSize: "5px" },
+  { top: "40%", left: "74%", length: "175px", delay: "-2.1s", duration: "4.1s", angle: "-32deg", headSize: "6px" },
+  { top: "60%", left: "30%", length: "155px", delay: "-2.8s", duration: "3.5s", angle: "-32deg", headSize: "6px" },
+  { top: "82%", left: "58%", length: "190px", delay: "-1.0s", duration: "3.9s", angle: "-32deg", headSize: "7px" },
+];
+
+const CAPABILITIES_STARS: TailedStar[] = [
+  { top: "8%", left: "22%", length: "145px", delay: "-0.8s", duration: "3.4s", angle: "-32deg", headSize: "5px" },
+  { top: "20%", left: "62%", length: "195px", delay: "-1.9s", duration: "4.0s", angle: "-32deg", headSize: "7px" },
+  { top: "35%", left: "88%", length: "130px", delay: "-2.5s", duration: "3.2s", angle: "-32deg", headSize: "5px" },
+  { top: "55%", left: "14%", length: "170px", delay: "-0.3s", duration: "3.7s", angle: "-32deg", headSize: "6px" },
+  { top: "72%", left: "46%", length: "160px", delay: "-1.4s", duration: "3.6s", angle: "-32deg", headSize: "6px" },
+  { top: "88%", left: "70%", length: "140px", delay: "-2.7s", duration: "3.9s", angle: "-32deg", headSize: "5px" },
+];
+
+const DEMO_STARS: TailedStar[] = [
+  { top: "14%", left: "16%", length: "180px", delay: "-1.2s", duration: "3.7s", angle: "-32deg", headSize: "6px" },
+  { top: "30%", left: "56%", length: "150px", delay: "-0.5s", duration: "3.4s", angle: "-32deg", headSize: "5px" },
+  { top: "50%", left: "82%", length: "195px", delay: "-2.3s", duration: "4.0s", angle: "-32deg", headSize: "7px" },
+  { top: "70%", left: "28%", length: "135px", delay: "-2.9s", duration: "3.2s", angle: "-32deg", headSize: "5px" },
+  { top: "86%", left: "64%", length: "165px", delay: "-1.7s", duration: "3.8s", angle: "-32deg", headSize: "6px" },
+];
+
+const FAQ_STARS: TailedStar[] = [
+  { top: "10%", left: "36%", length: "160px", delay: "-0.9s", duration: "3.5s", angle: "-32deg", headSize: "6px" },
+  { top: "28%", left: "78%", length: "175px", delay: "-2.0s", duration: "3.9s", angle: "-32deg", headSize: "6px" },
+  { top: "46%", left: "12%", length: "145px", delay: "-1.5s", duration: "3.3s", angle: "-32deg", headSize: "5px" },
+  { top: "64%", left: "52%", length: "185px", delay: "-2.6s", duration: "4.0s", angle: "-32deg", headSize: "7px" },
+  { top: "84%", left: "26%", length: "150px", delay: "-0.4s", duration: "3.6s", angle: "-32deg", headSize: "5px" },
+];
+
+function TailedStars({ stars, showGrid = false }: { stars: TailedStar[]; showGrid?: boolean }) {
+  return (
+    <div
+      className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
+      aria-hidden="true"
+    >
+      {/* Optional grid background for the hero section */}
+      {showGrid && (
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_60%_at_50%_15%,#000_65%,transparent_100%)]" />
+      )}
+
+      {stars.map((star, idx) => (
+        <span
+          key={idx}
+          style={
+            {
+              top: star.top,
+              left: star.left,
+              width: star.length,
+              height: "2px",
+              animationDelay: star.delay,
+              animationDuration: star.duration,
+              rotate: star.angle,
+              "--star-head": star.headSize,
+              background:
+                "linear-gradient(90deg, rgba(0, 217, 255, 0) 0%, rgba(14, 165, 233, 0.35) 45%, rgba(56, 189, 248, 0.88) 85%, #e0f7ff 100%)",
+            } as React.CSSProperties
+          }
+          className="nylon-tailed-star block"
+        />
+      ))}
+    </div>
+  );
+}
+
+export default function EInvoicingProductPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.4bizinternational.com" },
+          { "@type": "ListItem", position: 2, name: "Products", item: "https://www.4bizinternational.com/products/invoicing" },
+          { "@type": "ListItem", position: 3, name: "4Biz e-Invoicing", item: "https://www.4bizinternational.com/products/invoicing" },
+        ],
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: "4Biz e-Invoicing for Microsoft Dynamics 365 Business Central",
+        applicationCategory: "BusinessApplication",
+        applicationSubCategory: "ERP e-Invoicing & Tax Compliance Software",
+        operatingSystem: "Cloud / Microsoft Dynamics 365 Business Central",
+        description:
+          "Native UAE e-Invoicing solution built inside Microsoft Dynamics 365 Business Central supporting PINT AE XML, Peppol network transmission, and real-time FTA compliance.",
+        image: "https://www.4bizinternational.com/products/4biz-invoicing-1.webp",
+        url: "https://www.4bizinternational.com/products/invoicing",
+        author: {
+          "@type": "Organization",
+          name: "4Biz International",
+          url: "https://www.4bizinternational.com",
+          address: { "@type": "PostalAddress", addressLocality: "Dubai", addressCountry: "AE" },
+        },
+        offers: {
+          "@type": "Offer",
+          availability: "https://schema.org/InStock",
+          priceCurrency: "AED",
+          seller: { "@type": "Organization", name: "4Biz International" },
+        },
+        featureList: [
+          "Native Microsoft Dynamics 365 Business Central Integration",
+          "Automated UAE PINT AE XML Generation",
+          "Peppol Network 5-Corner Transmission",
+          "Real-time FTA Tax Reporting & Validation",
+          "Cryptographic Digital Signatures & Audit Trail",
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: FAQ_ITEMS.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer },
+        })),
+      },
+    ],
+  };
+
+  return (
+    <div
+      style={{
+        background: "linear-gradient(135deg, #06112c 0%, #0c1b40 45%, #08306b 100%)",
+      }}
+      className="min-h-screen text-white selection:bg-cyan-400/30 selection:text-cyan-100 overflow-x-clip relative scroll-smooth"
+    >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <style>{`
+        html {
+          scroll-behavior: smooth;
+        }
+        @keyframes floatSlow {
+          0%, 100% { transform: translate3d(0, 0px, 0); }
+          50% { transform: translate3d(0, -14px, 0); }
+        }
+        @keyframes floatReverse {
+          0%, 100% { transform: translate3d(0, 0px, 0); }
+          50% { transform: translate3d(0, 12px, 0); }
+        }
+        @keyframes pulseGlow {
+          0%, 100% { opacity: 0.45; transform: scale3d(1, 1, 1); }
+          50% { opacity: 0.8; transform: scale3d(1.06, 1.06, 1); }
+        }
+        @keyframes fadeUpIn {
+          from { opacity: 0; transform: translate3d(0, 22px, 0); }
+          to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        @keyframes nylonStarStreak {
+          0% {
+            opacity: 0;
+            transform: translate3d(0, 0, 0) scaleX(0.35);
+          }
+          18% {
+            opacity: 1;
+            transform: translate3d(42px, 26px, 0) scaleX(1);
+          }
+          78% {
+            opacity: 0.92;
+            transform: translate3d(175px, 108px, 0) scaleX(1.05);
+          }
+          100% {
+            opacity: 0;
+            transform: translate3d(240px, 148px, 0) scaleX(0.6);
+          }
+        }
+        .animate-float-slow {
+          animation: floatSlow 7s ease-in-out infinite;
+          will-change: transform;
+        }
+        .animate-float-reverse {
+          animation: floatReverse 8s ease-in-out infinite;
+          will-change: transform;
+        }
+        .animate-pulse-glow {
+          animation: pulseGlow 6s ease-in-out infinite;
+          will-change: transform, opacity;
+        }
+        .animate-hero-enter {
+          animation: fadeUpIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+        .animate-hero-enter-delay-1 {
+          animation: fadeUpIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+        }
+        .animate-hero-enter-delay-2 {
+          animation: fadeUpIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+        }
+        .nylon-tailed-star {
+          position: relative;
+          transform-origin: right center;
+          animation-name: nylonStarStreak;
+          animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+          animation-iteration-count: infinite;
+          will-change: transform, opacity;
+        }
+        .nylon-tailed-star::after {
+          content: "";
+          position: absolute;
+          right: -2px;
+          top: 50%;
+          width: var(--star-head, 6px);
+          height: var(--star-head, 6px);
+          transform: translateY(-50%);
+          border-radius: 9999px;
+          background: #e0f7ff;
+          box-shadow:
+            0 0 10px 2px #00d9ff,
+            0 0 22px 6px rgba(0, 184, 255, 0.85),
+            0 0 38px 10px rgba(14, 165, 233, 0.45);
+        }
+        .cv-auto {
+          content-visibility: auto;
+          contain-intrinsic-size: 1px 900px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          html {
+            scroll-behavior: auto;
+          }
+          .animate-float-slow,
+          .animate-float-reverse,
+          .animate-pulse-glow,
+          .animate-hero-enter,
+          .animate-hero-enter-delay-1,
+          .animate-hero-enter-delay-2,
+          .nylon-tailed-star {
+            animation: none !important;
+          }
+        }
+      `}</style>
+
+      {/* Global Ambient Lighting (Fixed) */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div className="absolute -top-32 -left-24 w-[480px] h-[480px] sm:w-[680px] sm:h-[680px] rounded-full bg-sky-500/15 blur-[130px] animate-pulse-glow" />
+        <div className="absolute top-[38%] -right-32 w-[420px] h-[420px] sm:w-[620px] sm:h-[620px] rounded-full bg-cyan-400/15 blur-[130px] animate-pulse-glow" />
+      </div>
+
+      <main className="relative z-10">
+        {/* =====================================================================
+            SECTION 1: HERO — CINEMATIC SPLIT SHOWCASE (Adjusted top padding for mobile headers)
+        ====================================================================== */}
+        <section
+          aria-labelledby="hero-heading"
+          className="relative overflow-hidden pt-24 pb-20 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-32"
+        >
+          <TailedStars stars={HERO_STARS} showGrid={true} />
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+              {/* Left Column: High-Impact Product Narrative */}
+              <div className="lg:col-span-7 flex flex-col gap-6 text-left min-w-0">
+                <div className="animate-hero-enter inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-cyan-300 text-xs sm:text-sm font-semibold w-fit shadow-[0_0_24px_rgba(34,211,238,0.12)]">
+                  <span className="relative flex h-2.5 w-2.5 shrink-0">
+                    <span className="inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
+                  </span>
+                  <span>Microsoft Dynamics 365 Business Central</span>
+                </div>
+
+                <h1
+                  id="hero-heading"
+                  className="animate-hero-enter-delay-1 text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-black tracking-tight leading-[1.06] text-white"
+                >
+                  It&apos;s never just{" "}
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-sky-200">
+                    an invoice.
+                  </span>
+                </h1>
+
+                <p className="animate-hero-enter-delay-1 text-xl sm:text-2xl md:text-3xl text-slate-200 font-light tracking-tight max-w-2xl">
+                  It&apos;s <strong className="font-extrabold text-white">everything</strong>{" "}
+                  working behind it.
+                </p>
+
+                <p className="animate-hero-enter-delay-2 text-slate-300/90 text-base sm:text-lg leading-relaxed max-w-xl">
+                  <strong className="text-white font-semibold">4Biz e-Invoicing</strong> embeds
+                  natively inside Microsoft Dynamics 365 Business Central—automating UAE PINT AE
+                  XML generation, Peppol transmission, and real-time FTA compliance with zero
+                  third-party friction.
+                </p>
+
+                {/* Primary & Secondary CTAs */}
+                <div className="animate-hero-enter-delay-2 flex flex-wrap items-center gap-4 pt-2">
+                  <a
+                    href="#demo"
+                    className="group relative inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full text-sm sm:text-base font-bold text-white bg-gradient-to-r from-blue-600 via-cyan-500 to-sky-500 shadow-[0_10px_35px_rgba(6,182,212,0.38)] hover:shadow-[0_14px_45px_rgba(6,182,212,0.6)] hover:-translate-y-0.5 transition-all duration-300 touch-manipulation"
+                  >
+                    <span>Book Your Live Demo</span>
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </a>
+
+                  <a
+                    href="#architecture"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm sm:text-base font-semibold text-slate-200 bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 backdrop-blur-md transition-all duration-300 touch-manipulation"
+                  >
+                    <span>Explore UAE Architecture</span>
+                  </a>
+                </div>
+
+                {/* Compliance Trust Strip */}
+                <div className="animate-hero-enter-delay-2 grid grid-cols-3 gap-3 sm:gap-6 pt-6 mt-2 border-t border-white/10 max-w-xl">
+                  <div className="min-w-0">
+                    <div className="text-cyan-300 font-extrabold text-lg sm:text-2xl truncate">PINT AE</div>
+                    <div className="text-xs sm:text-sm text-slate-400">UAE XML Schema</div>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-cyan-300 font-extrabold text-lg sm:text-2xl truncate">Peppol</div>
+                    <div className="text-xs sm:text-sm text-slate-400">5-Corner Network</div>
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-cyan-300 font-extrabold text-lg sm:text-2xl truncate">100% Native</div>
+                    <div className="text-xs sm:text-sm text-slate-400">Business Central</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Hero Image 1 */}
+              <div className="lg:col-span-5 flex justify-center mt-8 lg:mt-0">
+                <div className="relative w-full max-w-[380px] sm:max-w-[440px] lg:max-w-[480px] animate-float-slow">
+                  <div
+                    className="absolute -inset-4 rounded-[2.25rem] bg-gradient-to-tr from-blue-600/30 via-cyan-400/20 to-indigo-500/30 blur-2xl pointer-events-none"
+                    aria-hidden="true"
+                  />
+
+                  <div className="relative aspect-[4/5] w-full rounded-[1.75rem] p-2 bg-gradient-to-b from-white/20 via-white/5 to-cyan-500/20 shadow-[0_25px_70px_rgba(0,150,255,0.28)] backdrop-blur-sm">
+                    <div className="relative w-full h-full overflow-hidden rounded-[1.35rem] bg-[#040b1e]">
+                      <Image
+                        src="/products/4biz-invoicing-1.webp"
+                        alt="4Biz e-Invoicing — It's never just an invoice, it's everything working behind it"
+                        width={2160}
+                        height={2700}
+                        priority
+                        fetchPriority="high"
+                        sizes="(max-width: 640px) 92vw, (max-width: 1024px) 440px, 480px"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =====================================================================
+            SECTION 2: PRODUCT INTRODUCTION
+        ====================================================================== */}
+        <section
+          id="overview"
+          aria-labelledby="overview-heading"
+          className="cv-auto scroll-mt-24 relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
+        >
+          <TailedStars stars={OVERVIEW_STARS} />
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+              <div className="lg:col-span-5 order-2 lg:order-1 flex justify-center">
+                <div className="relative w-full max-w-[380px] sm:max-w-[440px] lg:max-w-[480px] animate-float-reverse">
+                  <div
+                    className="absolute -inset-4 rounded-[2.25rem] bg-gradient-to-bl from-cyan-500/25 via-blue-600/20 to-transparent blur-2xl pointer-events-none"
+                    aria-hidden="true"
+                  />
+                  <div className="relative aspect-[4/5] w-full rounded-[1.75rem] p-2 bg-gradient-to-b from-cyan-400/25 via-white/10 to-blue-600/20 shadow-[0_25px_70px_rgba(6,182,212,0.22)]">
+                    <div className="relative w-full h-full overflow-hidden rounded-[1.35rem] bg-[#040b1e]">
+                      <Image
+                        src="/products/4biz-invoicing-2.webp"
+                        alt="Introducing 4Biz e-Invoicing — UAE e-invoicing built for Microsoft Dynamics 365 Business Central"
+                        width={2160}
+                        height={2700}
+                        loading="lazy"
+                        sizes="(max-width: 640px) 92vw, (max-width: 1024px) 440px, 480px"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col gap-6 min-w-0">
+                <div className="inline-flex items-center gap-3">
+                  <span className="h-px w-10 bg-cyan-400" />
+                  <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase">
+                    Introducing 4Biz e-Invoicing
+                  </span>
+                </div>
+
+                <h2
+                  id="overview-heading"
+                  className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.12]"
+                >
+                  UAE e-invoicing, built natively for{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                    Microsoft Dynamics 365 Business Central.
+                  </span>
+                </h2>
+
+                <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+                  Eliminate disconnected middleware, manual XML exports, and compliance bottlenecks.
+                  4Biz e-Invoicing lives directly inside your Business Central workspace—turning
+                  every posted sales invoice or credit memo into a validated, signed, and
+                  FTA-compliant UAE e-invoice in seconds.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                  {[
+                    {
+                      title: "Zero-Friction ERP Extension",
+                      desc: "Post invoices from your existing Business Central screens with one-click automated dispatch.",
+                    },
+                    {
+                      title: "Real-Time Schema Validation",
+                      desc: "Pre-validates mandatory UAE VAT, TRN, and PINT AE fields before transmission to prevent rejections.",
+                    },
+                    {
+                      title: "Automated Peppol Exchange",
+                      desc: "Direct 5-corner Peppol network routing to buyers and Accredited Service Providers.",
+                    },
+                    {
+                      title: "Live Audit & Clearance Status",
+                      desc: "Instant UUID, cryptographic hash, QR code, and FTA reporting status logged on every document.",
+                    },
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/40 hover:bg-white/[0.06] transition-all duration-300"
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className="mt-0.5 w-6 h-6 rounded-full bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-300 shrink-0">
+                          <Check className="w-3.5 h-3.5" />
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="font-bold text-white text-base mb-1">{item.title}</h3>
+                          <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =====================================================================
+            SECTION 3: THE ARCHITECTURE
+        ====================================================================== */}
+        <section
+          id="architecture"
+          aria-labelledby="architecture-heading"
+          className="cv-auto scroll-mt-24 relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06] bg-gradient-to-b from-blue-950/20 via-transparent to-blue-950/20"
+        >
+          <TailedStars stars={ARCHITECTURE_STARS} />
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
+              <div className="inline-flex items-center justify-center gap-3 mb-4">
+                <span className="h-px w-8 bg-cyan-400" />
+                <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase">
+                  What Works Behind It
+                </span>
+                <span className="h-px w-8 bg-cyan-400" />
+              </div>
+
+              <h2
+                id="architecture-heading"
+                className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight mb-5"
+              >
+                Built to the{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300">
+                  UAE standard.
+                </span>
+              </h2>
+
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+                A resilient, multi-layered compliance engine orchestrated seamlessly behind your
+                Microsoft Dynamics 365 Business Central interface.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-6 space-y-4 min-w-0">
+                {[
+                  {
+                    step: "01",
+                    title: "Microsoft Dynamics 365 Business Central",
+                    tag: "ERP Core",
+                    desc: "Captures customer TRN, line-item tax codes, discounts, and multi-currency totals directly from posted sales and credit documents.",
+                    icon: Layers,
+                  },
+                  {
+                    step: "02",
+                    title: "PINT AE XML Transformation Engine",
+                    tag: "UAE Data Standard",
+                    desc: "Maps ERP records into structured UBL 2.1 / PINT AE compliant XML with automated business-rule validation.",
+                    icon: FileCode2,
+                  },
+                  {
+                    step: "03",
+                    title: "Peppol Accredited Access Point",
+                    tag: "5-Corner Network",
+                    desc: "Encrypts, signs, and routes e-invoices securely across the Peppol network to the buyer's Access Point.",
+                    icon: Globe2,
+                  },
+                  {
+                    step: "04",
+                    title: "UAE FTA Continuous Transaction Controls",
+                    tag: "Regulatory Reporting",
+                    desc: "Transmits tax data to the Federal Tax Authority in real time and archives signed XML/PDF-A3 records for audit readiness.",
+                    icon: ShieldCheck,
+                  },
+                ].map((layer) => {
+                  const Icon = layer.icon;
+                  return (
+                    <div
+                      key={layer.step}
+                      className="group p-5 sm:p-6 rounded-2xl bg-[#060d24]/85 border border-white/10 hover:border-cyan-400/50 transition-all duration-300 shadow-lg"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-300 shrink-0 group-hover:scale-105 transition-transform">
+                          <Icon className="w-5 h-5" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                            <span className="text-xs font-mono font-bold text-cyan-400">
+                              LAYER {layer.step} • {layer.tag}
+                            </span>
+                          </div>
+                          <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 group-hover:text-cyan-200 transition-colors">
+                            {layer.title}
+                          </h3>
+                          <p className="text-sm text-slate-400 leading-relaxed">{layer.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="lg:col-span-6 flex justify-center mt-8 lg:mt-0">
+                <div className="relative w-full max-w-[400px] sm:max-w-[460px] lg:max-w-[500px]">
+                  <div
+                    className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-tr from-blue-600/25 via-cyan-400/20 to-indigo-500/25 blur-2xl pointer-events-none"
+                    aria-hidden="true"
+                  />
+                  <div className="relative aspect-[4/5] w-full rounded-[1.75rem] p-2 bg-gradient-to-b from-white/20 via-cyan-400/15 to-blue-600/25 shadow-[0_25px_80px_rgba(0,150,255,0.28)]">
+                    <div className="relative w-full h-full overflow-hidden rounded-[1.35rem] bg-[#040b1e]">
+                      <Image
+                        src="/products/4biz-invoicing-3.webp"
+                        alt="What works behind it — Built to the UAE standard: PINT AE XML, FTA Reporting, Peppol Network, Business Central"
+                        width={2160}
+                        height={2700}
+                        loading="lazy"
+                        sizes="(max-width: 640px) 92vw, (max-width: 1024px) 460px, 500px"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =====================================================================
+            SECTION 4: ENTERPRISE CAPABILITIES
+        ====================================================================== */}
+        <section
+          id="capabilities"
+          aria-labelledby="capabilities-heading"
+          className="cv-auto scroll-mt-24 relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
+        >
+          <TailedStars stars={CAPABILITIES_STARS} />
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+              <div className="min-w-0">
+                <div className="inline-flex items-center gap-2.5 mb-3">
+                  <Sparkles className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase">
+                    Enterprise Capabilities
+                  </span>
+                </div>
+                <h2
+                  id="capabilities-heading"
+                  className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight"
+                >
+                  Engineered for high-volume{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                    UAE finance teams.
+                  </span>
+                </h2>
+              </div>
+              <p className="text-slate-400 text-sm sm:text-base max-w-md">
+                Complete lifecycle visibility from invoice creation to Peppol acknowledgment and
+                FTA audit archiving.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: Zap,
+                  title: "Instant Bulk & Automated Dispatch",
+                  desc: "Transmit single invoices or schedule batch runs for thousands of daily transactions without slowing down Business Central.",
+                },
+                {
+                  icon: Lock,
+                  title: "Tamper-Proof Digital Signatures",
+                  desc: "Cryptographic hashing, UUID stamping, and compliant QR generation embedded automatically into human-readable PDF/A-3 files.",
+                },
+                {
+                  icon: Server,
+                  title: "Inbound Supplier e-Invoice Capture",
+                  desc: "Receive vendor Peppol e-invoices straight into Business Central Purchase Invoices with automated 3-way PO matching.",
+                },
+                {
+                  icon: ShieldCheck,
+                  title: "Pre-Submission Validation Guard",
+                  desc: "Catches missing buyer TRNs, invalid tax categories, or rounding mismatches inside ERP before hitting the Peppol gateway.",
+                },
+                {
+                  icon: Building2,
+                  title: "Multi-Entity & Multi-Branch Ready",
+                  desc: "Manage multiple UAE legal entities, TRNs, and Peppol Participant IDs from a unified Business Central environment.",
+                },
+                {
+                  icon: CheckCircle2,
+                  title: "Full Credit Note & Adjustment Flows",
+                  desc: "Native handling of partial/full credit notes, debit memos, advance payments, and UAE VAT reverse-charge scenarios.",
+                },
+              ].map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <div
+                    key={index}
+                    className="group relative p-7 rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.015] border border-white/10 hover:border-cyan-400/45 transition-all duration-300 hover:-translate-y-1 min-w-0"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300 mb-5 group-hover:bg-cyan-500/25 transition-colors">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2.5">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+                      {feature.desc}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* =====================================================================
+            SECTION 5: BROUGHT TO YOU BY 4BIZ INTERNATIONAL
+        ====================================================================== */}
+        <section
+          id="demo"
+          aria-labelledby="demo-heading"
+          className="cv-auto scroll-mt-24 relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
+        >
+          <TailedStars stars={DEMO_STARS} />
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+              <div className="lg:col-span-7 flex flex-col gap-7 min-w-0">
+                <div className="inline-flex items-center gap-3">
+                  <span className="h-px w-10 bg-cyan-400" />
+                  <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase">
+                    End-to-End UAE Delivery
+                  </span>
+                </div>
+
+                <h2
+                  id="demo-heading"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-[1.12]"
+                >
+                  Brought to you by{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                    4Biz International.
+                  </span>
+                </h2>
+
+                <p className="text-lg sm:text-xl text-slate-300 leading-relaxed">
+                  IT solutions and digital transformation company, Dubai. We handle everything
+                  from Business Central deployment to Peppol onboarding and ongoing UAE regulatory
+                  support.
+                </p>
+
+                <div className="flex flex-wrap gap-2.5">
+                  {[
+                    "Implementation",
+                    "Peppol Integration",
+                    "Compliance",
+                    "Training",
+                    "Support",
+                  ].map((pill) => (
+                    <span
+                      key={pill}
+                      className="px-4 py-2 rounded-full bg-blue-500/10 border border-cyan-400/25 text-cyan-200 text-xs sm:text-sm font-semibold"
+                    >
+                      {pill}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="relative p-7 sm:p-9 rounded-3xl bg-gradient-to-br from-blue-900/45 via-[#071330]/90 to-cyan-900/35 border border-cyan-400/30 shadow-[0_20px_60px_rgba(6,182,212,0.18)] overflow-hidden">
+                  <div
+                    className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-cyan-400/20 blur-3xl pointer-events-none"
+                    aria-hidden="true"
+                  />
+
+                  <div className="relative z-10">
+                    <span className="inline-block px-3 py-1 rounded-full bg-cyan-400/15 text-cyan-300 text-xs font-bold uppercase tracking-wider mb-3">
+                      Live Walkthrough
+                    </span>
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+                      Book your demo
+                    </h3>
+                    <p className="text-slate-300 text-sm sm:text-base mb-6 max-w-xl">
+                      See 4Biz e-Invoicing running live inside Microsoft Dynamics 365 Business
+                      Central with real UAE PINT AE &amp; Peppol workflows.
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row flex-wrap gap-3.5">
+                      <a
+                        href="tel:+971527925100"
+                        className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-sm sm:text-base font-bold text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all touch-manipulation"
+                      >
+                        <Phone className="w-4 h-4 text-cyan-300" />
+                        <span>+971 52 792 5100</span>
+                      </a>
+
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm sm:text-base font-semibold text-cyan-300 hover:text-white border border-cyan-400/35 hover:bg-cyan-500/15 transition-all touch-manipulation"
+                      >
+                        <span>Request Online Demo</span>
+                        <ExternalLink className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 flex justify-center mt-8 lg:mt-0">
+                <div className="relative w-full max-w-[380px] sm:max-w-[440px] lg:max-w-[480px] group">
+                  <div
+                    className="absolute -inset-4 rounded-[2.25rem] bg-gradient-to-tr from-cyan-500/25 via-blue-600/20 to-indigo-500/25 blur-2xl pointer-events-none"
+                    aria-hidden="true"
+                  />
+                  <div className="relative aspect-[4/5] w-full rounded-[1.75rem] p-2 bg-gradient-to-b from-white/20 via-white/5 to-cyan-500/25 shadow-[0_25px_70px_rgba(0,150,255,0.25)]">
+                    <div className="relative w-full h-full overflow-hidden rounded-[1.35rem] bg-[#040b1e]">
+                      <Image
+                        src="/products/4biz-invoicing-4.webp"
+                        alt="Brought to you by 4Biz International — IT solutions and digital transformation company, Dubai"
+                        width={2160}
+                        height={2700}
+                        loading="lazy"
+                        sizes="(max-width: 640px) 92vw, (max-width: 1024px) 440px, 480px"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =====================================================================
+            SECTION 6: FAQ ACCORDION
+        ====================================================================== */}
+        <section
+          id="faq"
+          aria-labelledby="faq-heading"
+          className="cv-auto scroll-mt-24 relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
+        >
+          <TailedStars stars={FAQ_STARS} />
+
+          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase block mb-3">
+                Frequently Asked Questions
+              </span>
+              <h2
+                id="faq-heading"
+                className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight"
+              >
+                UAE e-Invoicing &amp; Business Central{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                  Explained.
+                </span>
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {FAQ_ITEMS.map((faq, index) => (
+                <details
+                  key={index}
+                  className="group rounded-2xl bg-white/[0.03] border border-white/10 open:border-cyan-400/40 open:bg-white/[0.05] transition-all duration-300"
+                >
+                  <summary className="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer list-none font-bold text-base sm:text-lg text-white select-none touch-manipulation">
+                    <span>{faq.question}</span>
+                    <ChevronDown className="w-5 h-5 text-cyan-400 shrink-0 transition-transform duration-300 group-open:rotate-180" />
+                  </summary>
+                  <div className="px-5 sm:px-6 pb-6 pt-1 text-slate-300 text-sm sm:text-base leading-relaxed border-t border-white/[0.06]">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }
@@ -29144,7 +29778,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/product/invoicing/`, // e-Invoicing Product Page
+      url: `${baseUrl}/product/`, 
+      lastModified: new Date('2026-11-25'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/product/invoicing/`, 
       lastModified: new Date('2026-11-24'),
       changeFrequency: 'weekly',
       priority: 0.9,

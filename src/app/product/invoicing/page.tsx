@@ -15,6 +15,7 @@ import {
   Lock,
   Sparkles,
   ChevronDown,
+  ChevronRight,
   Building2,
   Check,
   ExternalLink,
@@ -213,8 +214,8 @@ export default function EInvoicingProductPage() {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: "https://www.4bizinternational.com" },
-          { "@type": "ListItem", position: 2, name: "Products", item: "https://www.4bizinternational.com/products/invoicing" },
-          { "@type": "ListItem", position: 3, name: "4Biz e-Invoicing", item: "https://www.4bizinternational.com/products/invoicing" },
+          { "@type": "ListItem", position: 2, name: "Products", item: "https://www.4bizinternational.com/product" },
+          { "@type": "ListItem", position: 3, name: "4Biz e-Invoicing", item: "https://www.4bizinternational.com/product/invoicing" },
         ],
       },
       {
@@ -389,6 +390,40 @@ export default function EInvoicingProductPage() {
           <TailedStars stars={HERO_STARS} showGrid={true} />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Centered Top Breadcrumb Inside Hero Section */}
+            <nav
+              aria-label="Breadcrumb"
+              className="animate-hero-enter mb-8 sm:mb-10"
+            >
+              <ol className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-center text-xs sm:text-sm text-slate-300/90">
+                <li>
+                  <Link
+                    href="/"
+                    className="hover:text-cyan-300 transition-colors rounded px-1 py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li aria-hidden="true" className="text-slate-500">
+                  <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                </li>
+                <li>
+                  <Link
+                    href="/product"
+                    className="hover:text-cyan-300 transition-colors rounded px-1 py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                  >
+                    Products
+                  </Link>
+                </li>
+                <li aria-hidden="true" className="text-slate-500">
+                  <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                </li>
+                <li aria-current="page" className="font-semibold text-cyan-300 px-1 py-0.5">
+                  4Biz e-Invoicing
+                </li>
+              </ol>
+            </nav>
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
               {/* Left Column: High-Impact Product Narrative */}
               <div className="lg:col-span-7 flex flex-col gap-6 text-left min-w-0">
