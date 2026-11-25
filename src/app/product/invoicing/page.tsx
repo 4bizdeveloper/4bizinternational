@@ -196,7 +196,6 @@ function TailedStars({ stars, showGrid = false }: { stars: TailedStar[]; showGri
               "--star-head": star.headSize,
               background:
                 "linear-gradient(90deg, rgba(0, 217, 255, 0) 0%, rgba(14, 165, 233, 0.35) 45%, rgba(56, 189, 248, 0.88) 85%, #e0f7ff 100%)",
-              filter: "drop-shadow(0 0 8px rgba(0, 217, 255, 0.75))",
             } as React.CSSProperties
           }
           className="nylon-tailed-star block"
@@ -264,7 +263,7 @@ export default function EInvoicingProductPage() {
       style={{
         background: "linear-gradient(135deg, #06112c 0%, #0c1b40 45%, #08306b 100%)",
       }}
-      className="min-h-screen text-white selection:bg-cyan-400/30 selection:text-cyan-100 overflow-x-clip relative"
+      className="min-h-screen text-white selection:bg-cyan-400/30 selection:text-cyan-100 overflow-x-clip relative scroll-smooth"
     >
       <script
         type="application/ld+json"
@@ -272,6 +271,9 @@ export default function EInvoicingProductPage() {
       />
 
       <style>{`
+        html {
+          scroll-behavior: smooth;
+        }
         @keyframes floatSlow {
           0%, 100% { transform: translate3d(0, 0px, 0); }
           50% { transform: translate3d(0, -14px, 0); }
@@ -354,6 +356,20 @@ export default function EInvoicingProductPage() {
           content-visibility: auto;
           contain-intrinsic-size: 1px 900px;
         }
+        @media (prefers-reduced-motion: reduce) {
+          html {
+            scroll-behavior: auto;
+          }
+          .animate-float-slow,
+          .animate-float-reverse,
+          .animate-pulse-glow,
+          .animate-hero-enter,
+          .animate-hero-enter-delay-1,
+          .animate-hero-enter-delay-2,
+          .nylon-tailed-star {
+            animation: none !important;
+          }
+        }
       `}</style>
 
       {/* Global Ambient Lighting (Fixed) */}
@@ -375,11 +391,10 @@ export default function EInvoicingProductPage() {
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
               {/* Left Column: High-Impact Product Narrative */}
-              <div className="lg:col-span-7 flex flex-col gap-6 text-left">
+              <div className="lg:col-span-7 flex flex-col gap-6 text-left min-w-0">
                 <div className="animate-hero-enter inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-cyan-300 text-xs sm:text-sm font-semibold w-fit shadow-[0_0_24px_rgba(34,211,238,0.12)]">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400" />
+                  <span className="relative flex h-2.5 w-2.5 shrink-0">
+                    <span className="inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
                   </span>
                   <span>Microsoft Dynamics 365 Business Central</span>
                 </div>
@@ -410,7 +425,7 @@ export default function EInvoicingProductPage() {
                 <div className="animate-hero-enter-delay-2 flex flex-wrap items-center gap-4 pt-2">
                   <a
                     href="#demo"
-                    className="group relative inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full text-sm sm:text-base font-bold text-white bg-gradient-to-r from-blue-600 via-cyan-500 to-sky-500 shadow-[0_10px_35px_rgba(6,182,212,0.38)] hover:shadow-[0_14px_45px_rgba(6,182,212,0.6)] hover:-translate-y-0.5 transition-all duration-300"
+                    className="group relative inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full text-sm sm:text-base font-bold text-white bg-gradient-to-r from-blue-600 via-cyan-500 to-sky-500 shadow-[0_10px_35px_rgba(6,182,212,0.38)] hover:shadow-[0_14px_45px_rgba(6,182,212,0.6)] hover:-translate-y-0.5 transition-all duration-300 touch-manipulation"
                   >
                     <span>Book Your Live Demo</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -418,7 +433,7 @@ export default function EInvoicingProductPage() {
 
                   <a
                     href="#architecture"
-                    className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm sm:text-base font-semibold text-slate-200 bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 backdrop-blur-md transition-all duration-300"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full text-sm sm:text-base font-semibold text-slate-200 bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 backdrop-blur-md transition-all duration-300 touch-manipulation"
                   >
                     <span>Explore UAE Architecture</span>
                   </a>
@@ -426,16 +441,16 @@ export default function EInvoicingProductPage() {
 
                 {/* Compliance Trust Strip */}
                 <div className="animate-hero-enter-delay-2 grid grid-cols-3 gap-3 sm:gap-6 pt-6 mt-2 border-t border-white/10 max-w-xl">
-                  <div>
-                    <div className="text-cyan-300 font-extrabold text-lg sm:text-2xl">PINT AE</div>
+                  <div className="min-w-0">
+                    <div className="text-cyan-300 font-extrabold text-lg sm:text-2xl truncate">PINT AE</div>
                     <div className="text-xs sm:text-sm text-slate-400">UAE XML Schema</div>
                   </div>
-                  <div>
-                    <div className="text-cyan-300 font-extrabold text-lg sm:text-2xl">Peppol</div>
+                  <div className="min-w-0">
+                    <div className="text-cyan-300 font-extrabold text-lg sm:text-2xl truncate">Peppol</div>
                     <div className="text-xs sm:text-sm text-slate-400">5-Corner Network</div>
                   </div>
-                  <div>
-                    <div className="text-cyan-300 font-extrabold text-lg sm:text-2xl">100% Native</div>
+                  <div className="min-w-0">
+                    <div className="text-cyan-300 font-extrabold text-lg sm:text-2xl truncate">100% Native</div>
                     <div className="text-xs sm:text-sm text-slate-400">Business Central</div>
                   </div>
                 </div>
@@ -475,7 +490,7 @@ export default function EInvoicingProductPage() {
         <section
           id="overview"
           aria-labelledby="overview-heading"
-          className="cv-auto relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
+          className="cv-auto scroll-mt-24 relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
         >
           <TailedStars stars={OVERVIEW_STARS} />
 
@@ -503,7 +518,7 @@ export default function EInvoicingProductPage() {
                 </div>
               </div>
 
-              <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col gap-6">
+              <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col gap-6 min-w-0">
                 <div className="inline-flex items-center gap-3">
                   <span className="h-px w-10 bg-cyan-400" />
                   <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase">
@@ -555,7 +570,7 @@ export default function EInvoicingProductPage() {
                         <div className="mt-0.5 w-6 h-6 rounded-full bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center text-cyan-300 shrink-0">
                           <Check className="w-3.5 h-3.5" />
                         </div>
-                        <div>
+                        <div className="min-w-0">
                           <h3 className="font-bold text-white text-base mb-1">{item.title}</h3>
                           <p className="text-sm text-slate-400 leading-relaxed">{item.desc}</p>
                         </div>
@@ -574,7 +589,7 @@ export default function EInvoicingProductPage() {
         <section
           id="architecture"
           aria-labelledby="architecture-heading"
-          className="cv-auto relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06] bg-gradient-to-b from-blue-950/20 via-transparent to-blue-950/20"
+          className="cv-auto scroll-mt-24 relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06] bg-gradient-to-b from-blue-950/20 via-transparent to-blue-950/20"
         >
           <TailedStars stars={ARCHITECTURE_STARS} />
 
@@ -605,7 +620,7 @@ export default function EInvoicingProductPage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-6 space-y-4">
+              <div className="lg:col-span-6 space-y-4 min-w-0">
                 {[
                   {
                     step: "01",
@@ -694,15 +709,15 @@ export default function EInvoicingProductPage() {
         <section
           id="capabilities"
           aria-labelledby="capabilities-heading"
-          className="cv-auto relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
+          className="cv-auto scroll-mt-24 relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
         >
           <TailedStars stars={CAPABILITIES_STARS} />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
-              <div>
+              <div className="min-w-0">
                 <div className="inline-flex items-center gap-2.5 mb-3">
-                  <Sparkles className="w-4 h-4 text-cyan-400" />
+                  <Sparkles className="w-4 h-4 text-cyan-400 shrink-0" />
                   <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase">
                     Enterprise Capabilities
                   </span>
@@ -760,7 +775,7 @@ export default function EInvoicingProductPage() {
                 return (
                   <div
                     key={index}
-                    className="group relative p-7 rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.015] border border-white/10 hover:border-cyan-400/45 transition-all duration-300 hover:-translate-y-1"
+                    className="group relative p-7 rounded-3xl bg-gradient-to-b from-white/[0.05] to-white/[0.015] border border-white/10 hover:border-cyan-400/45 transition-all duration-300 hover:-translate-y-1 min-w-0"
                   >
                     <div className="w-12 h-12 rounded-2xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-300 mb-5 group-hover:bg-cyan-500/25 transition-colors">
                       <Icon className="w-6 h-6" />
@@ -782,13 +797,13 @@ export default function EInvoicingProductPage() {
         <section
           id="demo"
           aria-labelledby="demo-heading"
-          className="cv-auto relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
+          className="cv-auto scroll-mt-24 relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
         >
           <TailedStars stars={DEMO_STARS} />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-              <div className="lg:col-span-7 flex flex-col gap-7">
+              <div className="lg:col-span-7 flex flex-col gap-7 min-w-0">
                 <div className="inline-flex items-center gap-3">
                   <span className="h-px w-10 bg-cyan-400" />
                   <span className="text-cyan-400 font-bold tracking-[0.2em] text-xs uppercase">
@@ -848,10 +863,9 @@ export default function EInvoicingProductPage() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row flex-wrap gap-3.5">
-
                       <a
                         href="tel:+971527925100"
-                        className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-sm sm:text-base font-bold text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all"
+                        className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-sm sm:text-base font-bold text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-all touch-manipulation"
                       >
                         <Phone className="w-4 h-4 text-cyan-300" />
                         <span>+971 52 792 5100</span>
@@ -859,7 +873,7 @@ export default function EInvoicingProductPage() {
 
                       <Link
                         href="/contact"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm sm:text-base font-semibold text-cyan-300 hover:text-white border border-cyan-400/35 hover:bg-cyan-500/15 transition-all"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-sm sm:text-base font-semibold text-cyan-300 hover:text-white border border-cyan-400/35 hover:bg-cyan-500/15 transition-all touch-manipulation"
                       >
                         <span>Request Online Demo</span>
                         <ExternalLink className="w-4 h-4" />
@@ -900,7 +914,7 @@ export default function EInvoicingProductPage() {
         <section
           id="faq"
           aria-labelledby="faq-heading"
-          className="cv-auto relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
+          className="cv-auto scroll-mt-24 relative overflow-hidden py-20 sm:py-28 border-t border-white/[0.06]"
         >
           <TailedStars stars={FAQ_STARS} />
 
@@ -926,7 +940,7 @@ export default function EInvoicingProductPage() {
                   key={index}
                   className="group rounded-2xl bg-white/[0.03] border border-white/10 open:border-cyan-400/40 open:bg-white/[0.05] transition-all duration-300"
                 >
-                  <summary className="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer list-none font-bold text-base sm:text-lg text-white select-none">
+                  <summary className="flex items-center justify-between gap-4 p-5 sm:p-6 cursor-pointer list-none font-bold text-base sm:text-lg text-white select-none touch-manipulation">
                     <span>{faq.question}</span>
                     <ChevronDown className="w-5 h-5 text-cyan-400 shrink-0 transition-transform duration-300 group-open:rotate-180" />
                   </summary>
