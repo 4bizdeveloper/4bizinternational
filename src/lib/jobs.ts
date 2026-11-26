@@ -57,7 +57,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: "graphic-designer",
-    title: "Graphic Designer",
+    title: "Graphic Designer (Fresher / 0–1 Year Experience)",
     department: "Creative & Design",
     location: "Kozhikode, Kerala, India",
     workType: "Full-Time",
@@ -89,7 +89,7 @@ export const JOBS: Job[] = [
   },
   {
     slug: "data-analyst",
-    title: "Data Analyst",
+    title: "Data Analyst (Fresher / 0–1 Year Experience)",
     department: "Data & Analytics",
     location: "Kozhikode, Kerala, India (Hybrid)",
     workType: "Full-Time",
