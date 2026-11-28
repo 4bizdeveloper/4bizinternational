@@ -122,6 +122,17 @@ export default function BlogsLandingPage() {
   const blogDataList: BlogItem[] = [
 
     {
+      title: "Managed Web Hosting in UAE: Managed vs Self-Managed | 4Biz ",
+      excerpt: "Cloud hosting or traditional hosting for your website in UAE? 4Biz International compares uptime, scaling, security, and when each fits.",
+      slug: "/blog/managed-web-hosting-uae/",
+      image: "/blog/managed-web-hosting-1.webp",
+      date: "Nov 28, 2026",
+      author: "4Biz International LLC",
+      authorUrl: "https://www.4bizinternational.com/",
+      category: "Digital Marketing"
+    },
+
+    {
       title: "Cloud Hosting Services in UAE: Cloud vs Traditional | 4Biz",
       excerpt: "Cloud hosting or traditional hosting for your website in UAE? 4Biz International compares uptime, scaling, security, and when each fits.",
       slug: "/blog/cloud-hosting-vs-traditional-hosting-uae/",

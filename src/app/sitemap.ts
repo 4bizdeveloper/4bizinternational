@@ -93,6 +93,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 3. Blog Articles (Sorted from Oldest to Newest)
   const blogPages: MetadataRoute.Sitemap = [
     {
+      url: `${baseUrl}/blog/managed-web-hosting-uae/`,
+      lastModified: new Date('2026-11-28'), // Nov 28, 2026
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: `${baseUrl}/blog/cloud-hosting-vs-traditional-hosting-uae/`,
       lastModified: new Date('2026-11-23'), // Nov 23, 2026
       changeFrequency: 'monthly',
